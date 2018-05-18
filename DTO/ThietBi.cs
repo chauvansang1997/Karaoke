@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class Room
+    class ThietBi
     {
-        private String name;
-        private String status;
-        //private String 
+        private string tenThietBi;
+        private string maThietBi;
+        private string gia;
     }
 }

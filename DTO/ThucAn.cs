@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class Ingredient
+    class ThucAn
     {
+        private String ten;
+        private List<NguyenLieu> listNguyenLieu;
 
     }
 }

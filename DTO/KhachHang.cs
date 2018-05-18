@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Customer
+    public class KhachHang
     {
         private String name;
         private String phoneNumber;

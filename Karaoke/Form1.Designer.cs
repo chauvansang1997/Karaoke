@@ -34,60 +34,7 @@
             this.menuItem2 = new System.Windows.Forms.MenuItem();
             this.menuItem37 = new System.Windows.Forms.MenuItem();
             this.menuItem80 = new System.Windows.Forms.MenuItem();
-            this.menuItem73 = new System.Windows.Forms.MenuItem();
-            this.menuItem77 = new System.Windows.Forms.MenuItem();
-            this.menuItem76 = new System.Windows.Forms.MenuItem();
-            this.menuItem153 = new System.Windows.Forms.MenuItem();
-            this.menuItem126 = new System.Windows.Forms.MenuItem();
-            this.menuItem74 = new System.Windows.Forms.MenuItem();
-            this.menuItem75 = new System.Windows.Forms.MenuItem();
-            this.menuItem78 = new System.Windows.Forms.MenuItem();
-            this.m219 = new System.Windows.Forms.MenuItem();
-            this.menuItem177 = new System.Windows.Forms.MenuItem();
-            this.menuItem79 = new System.Windows.Forms.MenuItem();
-            this.menuItem168 = new System.Windows.Forms.MenuItem();
-            this.menuItem170 = new System.Windows.Forms.MenuItem();
-            this.menuItem171 = new System.Windows.Forms.MenuItem();
-            this.menuItem172 = new System.Windows.Forms.MenuItem();
-            this.m203 = new System.Windows.Forms.MenuItem();
-            this.menuItem250 = new System.Windows.Forms.MenuItem();
-            this.menuItem173 = new System.Windows.Forms.MenuItem();
-            this.menuItem174 = new System.Windows.Forms.MenuItem();
-            this.menuItem175 = new System.Windows.Forms.MenuItem();
-            this.menuItem176 = new System.Windows.Forms.MenuItem();
-            this.m204 = new System.Windows.Forms.MenuItem();
-            this.menuItem136 = new System.Windows.Forms.MenuItem();
-            this.menuItem229 = new System.Windows.Forms.MenuItem();
-            this.menuItem230 = new System.Windows.Forms.MenuItem();
-            this.menuItem231 = new System.Windows.Forms.MenuItem();
-            this.m205 = new System.Windows.Forms.MenuItem();
-            this.menuItem112 = new System.Windows.Forms.MenuItem();
-            this.menuItem38 = new System.Windows.Forms.MenuItem();
-            this.menuItem39 = new System.Windows.Forms.MenuItem();
-            this.menuItem109 = new System.Windows.Forms.MenuItem();
-            this.menuItem41 = new System.Windows.Forms.MenuItem();
-            this.menuItem42 = new System.Windows.Forms.MenuItem();
-            this.menuItem165 = new System.Windows.Forms.MenuItem();
-            this.menuItem205 = new System.Windows.Forms.MenuItem();
-            this.menuItem92 = new System.Windows.Forms.MenuItem();
-            this.menuItem72 = new System.Windows.Forms.MenuItem();
-            this.menuItem95 = new System.Windows.Forms.MenuItem();
-            this.menuItem96 = new System.Windows.Forms.MenuItem();
-            this.menuItem97 = new System.Windows.Forms.MenuItem();
-            this.menuItem35 = new System.Windows.Forms.MenuItem();
-            this.m217 = new System.Windows.Forms.MenuItem();
-            this.m218 = new System.Windows.Forms.MenuItem();
-            this.menuItem115 = new System.Windows.Forms.MenuItem();
-            this.menuItem53 = new System.Windows.Forms.MenuItem();
-            this.menuItem116 = new System.Windows.Forms.MenuItem();
-            this.menuItem88 = new System.Windows.Forms.MenuItem();
-            this.menuItem118 = new System.Windows.Forms.MenuItem();
-            this.menuItem87 = new System.Windows.Forms.MenuItem();
             this.menuItem128 = new System.Windows.Forms.MenuItem();
-            this.menuItem159 = new System.Windows.Forms.MenuItem();
-            this.menuItem142 = new System.Windows.Forms.MenuItem();
-            this.menuItem167 = new System.Windows.Forms.MenuItem();
-            this.menuItem166 = new System.Windows.Forms.MenuItem();
             this.menuItem246 = new System.Windows.Forms.MenuItem();
             this.menuItem247 = new System.Windows.Forms.MenuItem();
             this.menuItem248 = new System.Windows.Forms.MenuItem();
@@ -311,7 +258,6 @@
             this.menuItem16 = new System.Windows.Forms.MenuItem();
             this.menuItem17 = new System.Windows.Forms.MenuItem();
             this.menuItem6 = new System.Windows.Forms.MenuItem();
-            this.menuItem8 = new System.Windows.Forms.MenuItem();
             this.SuspendLayout();
             // 
             // mainMenu1
@@ -339,39 +285,8 @@
             this.menuItem2.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem37,
             this.menuItem80,
-            this.menuItem73,
-            this.menuItem77,
-            this.menuItem76,
-            this.menuItem153,
-            this.menuItem126,
-            this.menuItem74,
-            this.menuItem75,
-            this.menuItem78,
-            this.m219,
-            this.menuItem177,
-            this.menuItem79,
-            this.menuItem168,
-            this.menuItem173,
-            this.menuItem136,
-            this.menuItem112,
-            this.menuItem38,
-            this.menuItem39,
-            this.menuItem109,
-            this.menuItem41,
-            this.menuItem42,
-            this.menuItem165,
-            this.menuItem205,
-            this.menuItem92,
-            this.menuItem72,
-            this.menuItem115,
-            this.menuItem53,
             this.menuItem128,
-            this.menuItem159,
-            this.menuItem142,
-            this.menuItem167,
-            this.menuItem166,
-            this.menuItem246,
-            this.menuItem8});
+            this.menuItem246});
             this.menuItem2.MergeOrder = 200;
             this.menuItem2.Text = "&Xuất kho";
             // 
@@ -387,344 +302,14 @@
             this.menuItem80.MergeOrder = 2002;
             this.menuItem80.Text = "Duyệt cấp theo kho dự trù";
             // 
-            // menuItem73
-            // 
-            this.menuItem73.Index = 2;
-            this.menuItem73.Text = "-";
-            // 
-            // menuItem77
-            // 
-            this.menuItem77.Index = 3;
-            this.menuItem77.MergeOrder = 2003;
-            this.menuItem77.Text = "Duyệt cấp theo người bệnh";
-            // 
-            // menuItem76
-            // 
-            this.menuItem76.Index = 4;
-            this.menuItem76.MergeOrder = 2004;
-            this.menuItem76.Text = "Duyệt bù cơ số tủ trực theo người bệnh";
-            // 
-            // menuItem153
-            // 
-            this.menuItem153.Index = 5;
-            this.menuItem153.MergeOrder = 2005;
-            this.menuItem153.Text = "Duyệt bù cơ số tủ trực theo người bệnh (cộng dồn số lượng)";
-            // 
-            // menuItem126
-            // 
-            this.menuItem126.Index = 6;
-            this.menuItem126.MergeOrder = 2006;
-            this.menuItem126.Text = "Duyệt bù cơ số tủ trực theo khoa phòng";
-            // 
-            // menuItem74
-            // 
-            this.menuItem74.Index = 7;
-            this.menuItem74.MergeOrder = 2007;
-            this.menuItem74.Text = "Duyệt cấp hao phí theo khoa/phòng";
-            // 
-            // menuItem75
-            // 
-            this.menuItem75.Index = 8;
-            this.menuItem75.MergeOrder = 2008;
-            this.menuItem75.Text = "Duyệt hoàn trả theo người bệnh";
-            // 
-            // menuItem78
-            // 
-            this.menuItem78.Index = 9;
-            this.menuItem78.MergeOrder = 2009;
-            this.menuItem78.Text = "Duyệt hoàn trả thừa trong khoa/phòng";
-            // 
-            // m219
-            // 
-            this.m219.Index = 10;
-            this.m219.MergeOrder = 20010;
-            this.m219.Text = "Danh sách đã dự trù";
-            // 
-            // menuItem177
-            // 
-            this.menuItem177.Index = 11;
-            this.menuItem177.MergeOrder = 20011;
-            this.menuItem177.Text = "Đánh dấu những phiếu đã phát thuốc";
-            // 
-            // menuItem79
-            // 
-            this.menuItem79.Index = 12;
-            this.menuItem79.Text = "-";
-            // 
-            // menuItem168
-            // 
-            this.menuItem168.Index = 13;
-            this.menuItem168.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem170,
-            this.menuItem171,
-            this.menuItem172,
-            this.m203,
-            this.menuItem250});
-            this.menuItem168.MergeOrder = 20012;
-            this.menuItem168.Text = "Bảo hiểm";
-            // 
-            // menuItem170
-            // 
-            this.menuItem170.Index = 0;
-            this.menuItem170.MergeOrder = 20012001;
-            this.menuItem170.Text = "Phiếu xuất";
-            // 
-            // menuItem171
-            // 
-            this.menuItem171.Index = 1;
-            this.menuItem171.MergeOrder = 20012002;
-            this.menuItem171.Text = "Phát thuốc";
-            // 
-            // menuItem172
-            // 
-            this.menuItem172.Index = 2;
-            this.menuItem172.MergeOrder = 20012003;
-            this.menuItem172.Text = "Viện phí";
-            // 
-            // m203
-            // 
-            this.m203.Index = 3;
-            this.m203.MergeOrder = 20012004;
-            this.m203.Text = "Xem phiếu";
-            // 
-            // menuItem250
-            // 
-            this.menuItem250.Index = 4;
-            this.menuItem250.MergeOrder = 20012005;
-            this.menuItem250.Text = "Phát thuốc chương trình";
-            // 
-            // menuItem173
-            // 
-            this.menuItem173.Index = 14;
-            this.menuItem173.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem174,
-            this.menuItem175,
-            this.menuItem176,
-            this.m204});
-            this.menuItem173.MergeOrder = 20013;
-            this.menuItem173.Text = "Không bảo hiểm (Ngoại trú)";
-            // 
-            // menuItem174
-            // 
-            this.menuItem174.Index = 0;
-            this.menuItem174.MergeOrder = 20013001;
-            this.menuItem174.Text = "Phiếu xuất";
-            // 
-            // menuItem175
-            // 
-            this.menuItem175.Index = 1;
-            this.menuItem175.MergeOrder = 20013002;
-            this.menuItem175.Text = "Phát thuốc";
-            // 
-            // menuItem176
-            // 
-            this.menuItem176.Index = 2;
-            this.menuItem176.MergeOrder = 20013003;
-            this.menuItem176.Text = "Viện phí";
-            // 
-            // m204
-            // 
-            this.m204.Index = 3;
-            this.m204.MergeOrder = 20013004;
-            this.m204.Text = "Xem phiếu";
-            // 
-            // menuItem136
-            // 
-            this.menuItem136.Index = 15;
-            this.menuItem136.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem229,
-            this.menuItem230,
-            this.menuItem231,
-            this.m205});
-            this.menuItem136.MergeOrder = 20014;
-            this.menuItem136.Text = "Điều trị ngoại trú";
-            // 
-            // menuItem229
-            // 
-            this.menuItem229.Index = 0;
-            this.menuItem229.MergeOrder = 20014001;
-            this.menuItem229.Text = "Phiếu xuất";
-            // 
-            // menuItem230
-            // 
-            this.menuItem230.Index = 1;
-            this.menuItem230.MergeOrder = 20014002;
-            this.menuItem230.Text = "Phát thuốc";
-            // 
-            // menuItem231
-            // 
-            this.menuItem231.Index = 2;
-            this.menuItem231.MergeOrder = 20014003;
-            this.menuItem231.Text = "Viện phí";
-            // 
-            // m205
-            // 
-            this.m205.Index = 3;
-            this.m205.MergeOrder = 20014004;
-            this.m205.Text = "Xem phiếu";
-            // 
-            // menuItem112
-            // 
-            this.menuItem112.Index = 16;
-            this.menuItem112.Text = "-";
-            // 
-            // menuItem38
-            // 
-            this.menuItem38.Index = 17;
-            this.menuItem38.Text = "Phiếu lĩnh";
-            // 
-            // menuItem39
-            // 
-            this.menuItem39.Index = 18;
-            this.menuItem39.Text = "Phiếu hoàn trả";
-            // 
-            // menuItem109
-            // 
-            this.menuItem109.Index = 19;
-            this.menuItem109.Text = "Phiếu xuất tủ trực";
-            // 
-            // menuItem41
-            // 
-            this.menuItem41.Index = 20;
-            this.menuItem41.Text = "Phiếu xuất ngoại trú";
-            // 
-            // menuItem42
-            // 
-            this.menuItem42.Index = 21;
-            this.menuItem42.MergeOrder = 20015;
-            this.menuItem42.Text = "Phiếu xuất khác";
-            // 
-            // menuItem165
-            // 
-            this.menuItem165.Index = 22;
-            this.menuItem165.Text = "Phiếu xuất hoàn trả nhà cung cấp";
-            // 
-            // menuItem205
-            // 
-            this.menuItem205.Index = 23;
-            this.menuItem205.Text = "Phiếu xuất Implants";
-            // 
-            // menuItem92
-            // 
-            this.menuItem92.Index = 24;
-            this.menuItem92.Text = "-";
-            // 
-            // menuItem72
-            // 
-            this.menuItem72.Index = 25;
-            this.menuItem72.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem95,
-            this.menuItem96,
-            this.menuItem97,
-            this.menuItem35,
-            this.m217,
-            this.m218});
-            this.menuItem72.MergeOrder = 20016;
-            this.menuItem72.Text = "Cơ số tủ trực";
-            // 
-            // menuItem95
-            // 
-            this.menuItem95.Index = 0;
-            this.menuItem95.MergeOrder = 20016001;
-            this.menuItem95.Text = "Bổ sung";
-            // 
-            // menuItem96
-            // 
-            this.menuItem96.Index = 1;
-            this.menuItem96.MergeOrder = 20016002;
-            this.menuItem96.Text = "Hoàn trả";
-            // 
-            // menuItem97
-            // 
-            this.menuItem97.Index = 2;
-            this.menuItem97.MergeOrder = 20016003;
-            this.menuItem97.Text = "Thu hồi";
-            // 
-            // menuItem35
-            // 
-            this.menuItem35.Index = 3;
-            this.menuItem35.Text = "-";
-            // 
-            // m217
-            // 
-            this.m217.Index = 4;
-            this.m217.Text = "Vay";
-            // 
-            // m218
-            // 
-            this.m218.Index = 5;
-            this.m218.Text = "Trả";
-            // 
-            // menuItem115
-            // 
-            this.menuItem115.Index = 26;
-            this.menuItem115.Text = "-";
-            // 
-            // menuItem53
-            // 
-            this.menuItem53.Index = 27;
-            this.menuItem53.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem116,
-            this.menuItem88,
-            this.menuItem118,
-            this.menuItem87});
-            this.menuItem53.MergeOrder = 20017;
-            this.menuItem53.Text = "Xuất bán";
-            // 
-            // menuItem116
-            // 
-            this.menuItem116.Index = 0;
-            this.menuItem116.MergeOrder = 20017001;
-            this.menuItem116.Text = "Phiếu xuất bán nhà thuốc";
-            // 
-            // menuItem88
-            // 
-            this.menuItem88.Index = 1;
-            this.menuItem88.MergeOrder = 20017002;
-            this.menuItem88.Text = "Phiếu xuất bán cho nội trú";
-            // 
-            // menuItem118
-            // 
-            this.menuItem118.Index = 2;
-            this.menuItem118.MergeOrder = 20017003;
-            this.menuItem118.Text = "Phiếu trả thuốc";
-            // 
-            // menuItem87
-            // 
-            this.menuItem87.Index = 3;
-            this.menuItem87.MergeOrder = 20017004;
-            this.menuItem87.Text = "Phát thuốc";
-            // 
             // menuItem128
             // 
-            this.menuItem128.Index = 28;
+            this.menuItem128.Index = 2;
             this.menuItem128.Text = "-";
-            // 
-            // menuItem159
-            // 
-            this.menuItem159.Index = 29;
-            this.menuItem159.MergeOrder = 20019;
-            this.menuItem159.Text = "Xuất Phường Xã";
-            // 
-            // menuItem142
-            // 
-            this.menuItem142.Index = 30;
-            this.menuItem142.MergeOrder = 20018;
-            this.menuItem142.Text = "Phiếu xuất chuyển nguồn";
-            // 
-            // menuItem167
-            // 
-            this.menuItem167.Index = 31;
-            this.menuItem167.Text = "Phiếu quyết toán vay";
-            // 
-            // menuItem166
-            // 
-            this.menuItem166.Index = 32;
-            this.menuItem166.Text = "Phiếu xuất vay";
             // 
             // menuItem246
             // 
-            this.menuItem246.Index = 33;
+            this.menuItem246.Index = 3;
             this.menuItem246.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem247,
             this.menuItem248});
@@ -2232,11 +1817,6 @@
             this.menuItem6.Index = 8;
             this.menuItem6.Text = "&C. Kết thúc";
             // 
-            // menuItem8
-            // 
-            this.menuItem8.Index = 34;
-            this.menuItem8.Text = "";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2259,60 +1839,7 @@
         private System.Windows.Forms.MenuItem menuItem2;
         private System.Windows.Forms.MenuItem menuItem37;
         private System.Windows.Forms.MenuItem menuItem80;
-        private System.Windows.Forms.MenuItem menuItem73;
-        private System.Windows.Forms.MenuItem menuItem77;
-        private System.Windows.Forms.MenuItem menuItem76;
-        private System.Windows.Forms.MenuItem menuItem153;
-        private System.Windows.Forms.MenuItem menuItem126;
-        private System.Windows.Forms.MenuItem menuItem74;
-        private System.Windows.Forms.MenuItem menuItem75;
-        private System.Windows.Forms.MenuItem menuItem78;
-        private System.Windows.Forms.MenuItem m219;
-        private System.Windows.Forms.MenuItem menuItem177;
-        private System.Windows.Forms.MenuItem menuItem79;
-        private System.Windows.Forms.MenuItem menuItem168;
-        private System.Windows.Forms.MenuItem menuItem170;
-        private System.Windows.Forms.MenuItem menuItem171;
-        private System.Windows.Forms.MenuItem menuItem172;
-        private System.Windows.Forms.MenuItem m203;
-        private System.Windows.Forms.MenuItem menuItem250;
-        private System.Windows.Forms.MenuItem menuItem173;
-        private System.Windows.Forms.MenuItem menuItem174;
-        private System.Windows.Forms.MenuItem menuItem175;
-        private System.Windows.Forms.MenuItem menuItem176;
-        private System.Windows.Forms.MenuItem m204;
-        private System.Windows.Forms.MenuItem menuItem136;
-        private System.Windows.Forms.MenuItem menuItem229;
-        private System.Windows.Forms.MenuItem menuItem230;
-        private System.Windows.Forms.MenuItem menuItem231;
-        private System.Windows.Forms.MenuItem m205;
-        private System.Windows.Forms.MenuItem menuItem112;
-        private System.Windows.Forms.MenuItem menuItem38;
-        private System.Windows.Forms.MenuItem menuItem39;
-        private System.Windows.Forms.MenuItem menuItem109;
-        private System.Windows.Forms.MenuItem menuItem41;
-        private System.Windows.Forms.MenuItem menuItem42;
-        private System.Windows.Forms.MenuItem menuItem165;
-        private System.Windows.Forms.MenuItem menuItem205;
-        private System.Windows.Forms.MenuItem menuItem92;
-        private System.Windows.Forms.MenuItem menuItem72;
-        private System.Windows.Forms.MenuItem menuItem95;
-        private System.Windows.Forms.MenuItem menuItem96;
-        private System.Windows.Forms.MenuItem menuItem97;
-        private System.Windows.Forms.MenuItem menuItem35;
-        private System.Windows.Forms.MenuItem m217;
-        private System.Windows.Forms.MenuItem m218;
-        private System.Windows.Forms.MenuItem menuItem115;
-        private System.Windows.Forms.MenuItem menuItem53;
-        private System.Windows.Forms.MenuItem menuItem116;
-        private System.Windows.Forms.MenuItem menuItem88;
-        private System.Windows.Forms.MenuItem menuItem118;
-        private System.Windows.Forms.MenuItem menuItem87;
         private System.Windows.Forms.MenuItem menuItem128;
-        private System.Windows.Forms.MenuItem menuItem159;
-        private System.Windows.Forms.MenuItem menuItem142;
-        private System.Windows.Forms.MenuItem menuItem167;
-        private System.Windows.Forms.MenuItem menuItem166;
         private System.Windows.Forms.MenuItem menuItem246;
         private System.Windows.Forms.MenuItem menuItem247;
         private System.Windows.Forms.MenuItem menuItem248;
@@ -2536,7 +2063,6 @@
         private System.Windows.Forms.MenuItem menuItem16;
         private System.Windows.Forms.MenuItem menuItem17;
         private System.Windows.Forms.MenuItem menuItem6;
-        private System.Windows.Forms.MenuItem menuItem8;
     }
 }
 
