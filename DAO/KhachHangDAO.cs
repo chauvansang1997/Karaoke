@@ -17,7 +17,7 @@ namespace DAO
         /// <returns></returns>
         public static List<KhachHang> LoadHanhKhach()
         {
-            string query = "EXEC usp_LoadHanhKhach";
+            string query = "select* from khachhang";
 
             DataTable table = Dataprovider.ExcuteQuery(query);
 
@@ -35,6 +35,9 @@ namespace DAO
 
 
         }
+
+        //public static void Nhap
+
         public static List<KhachHang> LoadCustomerWithType(String type)
         {
             string query = "EXEC usp_LoadHanhKhach @type";
