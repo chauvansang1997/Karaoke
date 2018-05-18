@@ -14,14 +14,14 @@ namespace DAO
     public static class Dataprovider
     {
         //Chuổi kết nối với sql
-        private static string connectionString = @"Data Source=.\sqlexpress;Initial Catalog=QLBV;Integrated Security=True";
+        private static string connectionString = @"Data Source=.\sqlexpress;Initial Catalog=dbQuanLyKaoraoke;Integrated Security=True";
 
 
         /// <summary>
         /// Phương thức này có vai trò lấy dữ liệu là các bảng trong SQL
         /// </summary>
         /// <param name="query">Chuỗi truy vấn được đưa xuống SQL</param>
-        /// <param name="sqlparameters"> mảng SqlParameter được thêm vào command(có thể không có)</param>
+        /// <param name="sqlparameters"> mảng tham số được thêm vào command(có thể không có)</param>
         /// <returns>Phương thức trả về kiểu dũ liệu DataTable</returns>
         public static DataTable ExcuteQuery(string query, SqlParameter[] sqlparameters = null)
         {

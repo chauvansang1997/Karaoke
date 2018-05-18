@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class Food
+    class Phong
     {
-
+        private String name;
+        private String status;
+        //private String 
     }
 }
