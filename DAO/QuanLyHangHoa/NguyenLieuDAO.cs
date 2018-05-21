@@ -21,9 +21,13 @@ namespace DAO.QuanLyHangHoa
             string query = "insert into NGUYENLIEU(manl,mancc,tennl,loainl,dvt,dongia,slton,sltoithieu) " +
                 "values (@manl,@mancc,@tennl,@loainl,@dvt,@dongia,@slton,@sltoithieu)";
 
+            //Tạo mã cho nguyên liệu
+            string manl = TaoMa.TaoMaNguyenLieu();
+
+            //truyền tham số vào câu truy vấn
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@manl",SqlDbType.NVarChar){IsNullable=false,Value=nguyenLieu.Ma },
+                new SqlParameter("@manl",SqlDbType.NVarChar){IsNullable=false,Value=manl },
                 new SqlParameter("@mancc",SqlDbType.NVarChar){IsNullable=false,Value=nguyenLieu.NhaCungCap },
                 new SqlParameter("@tennl",SqlDbType.NVarChar){IsNullable=false,Value=nguyenLieu.Ten },
                 new SqlParameter("@loainl",SqlDbType.NVarChar){IsNullable=false,Value=nguyenLieu.Loai },
@@ -32,6 +36,7 @@ namespace DAO.QuanLyHangHoa
                 new SqlParameter("@slton",SqlDbType.Int){IsNullable=false,Value=nguyenLieu.SoLuongTon },
                 new SqlParameter("@sltoithieu",SqlDbType.Int){IsNullable=false,Value=nguyenLieu.SoLuongToiThieu },
             };
+            //nếu số dòng thành công trả về lớn hơn 0 thì thành công
             int num = Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
             if (num == 0)
             {

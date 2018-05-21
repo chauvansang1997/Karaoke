@@ -64,10 +64,34 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="NguyenLieu\frmNguyenLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NguyenLieu\frmNguyenLieu.Designer.cs">
+      <DependentUpon>frmNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NguyenLieu\frmSuaNguyenLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NguyenLieu\frmSuaNguyenLieu.Designer.cs">
+      <DependentUpon>frmSuaNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NguyenLieu\frmThemNguyenLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NguyenLieu\frmThemNguyenLieu.Designer.cs">
+      <DependentUpon>frmThemNguyenLieu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NguyenLieu\frmNguyenLieu.resx">
+      <DependentUpon>frmNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NguyenLieu\frmSuaNguyenLieu.resx">
+      <DependentUpon>frmSuaNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,6 +116,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-arrow.png" />
+    <None Include="Resources\forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\back.png" />
+    <None Include="Resources\go_last.png" />
+    <None Include="Resources\go_first.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
