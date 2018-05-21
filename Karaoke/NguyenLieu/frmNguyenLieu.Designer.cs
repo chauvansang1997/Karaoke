@@ -30,17 +30,12 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label4 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNguyenLieu));
             this.btnFind = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnFirstPage = new System.Windows.Forms.Button();
-            this.btnLastPage = new System.Windows.Forms.Button();
-            this.btnPrevPage = new System.Windows.Forms.Button();
-            this.btnNextPage = new System.Windows.Forms.Button();
             this.dGVDanhSachNV = new System.Windows.Forms.DataGridView();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -51,32 +46,27 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnFirstPage = new System.Windows.Forms.Button();
+            this.btnLastPage = new System.Windows.Forms.Button();
+            this.btnPrevPage = new System.Windows.Forms.Button();
+            this.btnNextPage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachNV)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.SystemColors.Control;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(867, 45);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "QUẢN LÝ NGUYÊN LIỆU";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnFind
             // 
-            this.btnFind.BackColor = System.Drawing.SystemColors.Control;
+            this.btnFind.BackColor = System.Drawing.Color.Transparent;
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFind.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnFind.Location = new System.Drawing.Point(84, 389);
+            this.btnFind.Image = global::Karaoke.Properties.Resources.lens;
+            this.btnFind.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFind.Location = new System.Drawing.Point(165, 250);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(75, 29);
+            this.btnFind.Size = new System.Drawing.Size(70, 29);
             this.btnFind.TabIndex = 67;
             this.btnFind.Text = "Tìm";
             this.btnFind.UseVisualStyleBackColor = false;
@@ -121,65 +111,6 @@
             this.label6.TabIndex = 138;
             this.label6.Text = "Trang:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(867, 45);
-            this.panel1.TabIndex = 1;
-            // 
-            // btnFirstPage
-            // 
-            this.btnFirstPage.BackColor = System.Drawing.SystemColors.Control;
-            this.btnFirstPage.BackgroundImage = global::Karaoke.Properties.Resources.back;
-            this.btnFirstPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFirstPage.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnFirstPage.Location = new System.Drawing.Point(616, 69);
-            this.btnFirstPage.Name = "btnFirstPage";
-            this.btnFirstPage.Size = new System.Drawing.Size(32, 20);
-            this.btnFirstPage.TabIndex = 148;
-            this.btnFirstPage.UseVisualStyleBackColor = false;
-            // 
-            // btnLastPage
-            // 
-            this.btnLastPage.BackColor = System.Drawing.SystemColors.Control;
-            this.btnLastPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLastPage.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnLastPage.Location = new System.Drawing.Point(141, 424);
-            this.btnLastPage.Name = "btnLastPage";
-            this.btnLastPage.Size = new System.Drawing.Size(75, 33);
-            this.btnLastPage.TabIndex = 147;
-            this.btnLastPage.Text = "Trang cuối";
-            this.btnLastPage.UseVisualStyleBackColor = false;
-            // 
-            // btnPrevPage
-            // 
-            this.btnPrevPage.BackColor = System.Drawing.SystemColors.Control;
-            this.btnPrevPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPrevPage.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPrevPage.Location = new System.Drawing.Point(251, 453);
-            this.btnPrevPage.Name = "btnPrevPage";
-            this.btnPrevPage.Size = new System.Drawing.Size(75, 33);
-            this.btnPrevPage.TabIndex = 146;
-            this.btnPrevPage.Text = "Trang sau";
-            this.btnPrevPage.UseVisualStyleBackColor = false;
-            // 
-            // btnNextPage
-            // 
-            this.btnNextPage.BackColor = System.Drawing.SystemColors.Control;
-            this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNextPage.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnNextPage.Location = new System.Drawing.Point(248, 339);
-            this.btnNextPage.Name = "btnNextPage";
-            this.btnNextPage.Size = new System.Drawing.Size(75, 33);
-            this.btnNextPage.TabIndex = 145;
-            this.btnNextPage.Text = "Trang trước";
-            this.btnNextPage.UseVisualStyleBackColor = false;
             // 
             // dGVDanhSachNV
             // 
@@ -229,7 +160,7 @@
             this.btnThem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnThem.Location = new System.Drawing.Point(481, 437);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 33);
+            this.btnThem.Size = new System.Drawing.Size(80, 33);
             this.btnThem.TabIndex = 153;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
@@ -310,6 +241,80 @@
             this.radioButton1.Text = "Tất cả";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(867, 45);
+            this.panel1.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(867, 45);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "QUẢN LÝ NGUYÊN LIỆU";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnFirstPage
+            // 
+            this.btnFirstPage.BackColor = System.Drawing.Color.Transparent;
+            this.btnFirstPage.BackgroundImage = global::Karaoke.Properties.Resources.go_first;
+            this.btnFirstPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirstPage.ForeColor = System.Drawing.Color.Transparent;
+            this.btnFirstPage.Location = new System.Drawing.Point(593, 57);
+            this.btnFirstPage.Name = "btnFirstPage";
+            this.btnFirstPage.Size = new System.Drawing.Size(30, 30);
+            this.btnFirstPage.TabIndex = 148;
+            this.btnFirstPage.UseVisualStyleBackColor = false;
+            // 
+            // btnLastPage
+            // 
+            this.btnLastPage.BackColor = System.Drawing.Color.Transparent;
+            this.btnLastPage.BackgroundImage = global::Karaoke.Properties.Resources.go_last;
+            this.btnLastPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLastPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLastPage.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLastPage.Location = new System.Drawing.Point(711, 57);
+            this.btnLastPage.Name = "btnLastPage";
+            this.btnLastPage.Size = new System.Drawing.Size(30, 30);
+            this.btnLastPage.TabIndex = 147;
+            this.btnLastPage.UseVisualStyleBackColor = false;
+            // 
+            // btnPrevPage
+            // 
+            this.btnPrevPage.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrevPage.BackgroundImage = global::Karaoke.Properties.Resources.left_arrow;
+            this.btnPrevPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnPrevPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevPage.ForeColor = System.Drawing.Color.Transparent;
+            this.btnPrevPage.Location = new System.Drawing.Point(627, 53);
+            this.btnPrevPage.Name = "btnPrevPage";
+            this.btnPrevPage.Size = new System.Drawing.Size(34, 34);
+            this.btnPrevPage.TabIndex = 146;
+            this.btnPrevPage.UseVisualStyleBackColor = false;
+            // 
+            // btnNextPage
+            // 
+            this.btnNextPage.BackColor = System.Drawing.Color.Transparent;
+            this.btnNextPage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNextPage.BackgroundImage")));
+            this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNextPage.ForeColor = System.Drawing.Color.Transparent;
+            this.btnNextPage.Location = new System.Drawing.Point(670, 52);
+            this.btnNextPage.Name = "btnNextPage";
+            this.btnNextPage.Size = new System.Drawing.Size(35, 35);
+            this.btnNextPage.TabIndex = 145;
+            this.btnNextPage.UseVisualStyleBackColor = false;
+            // 
             // frmNguyenLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,23 +349,21 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmNguyenLieu_Load_1);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachNV)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.TextBox txtTotalPage;
         private System.Windows.Forms.TextBox txtPageNumber;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnFirstPage;
         private System.Windows.Forms.Button btnLastPage;
         private System.Windows.Forms.Button btnPrevPage;
@@ -375,5 +378,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
     }
 }

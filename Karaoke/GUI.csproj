@@ -64,6 +64,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="MonAn\frmMonAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonAn\frmMonAn.Designer.cs">
+      <DependentUpon>frmMonAn.cs</DependentUpon>
+    </Compile>
     <Compile Include="NguyenLieu\frmNguyenLieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,11 +93,17 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MonAn\frmMonAn.resx">
+      <DependentUpon>frmMonAn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NguyenLieu\frmNguyenLieu.resx">
       <DependentUpon>frmNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NguyenLieu\frmSuaNguyenLieu.resx">
       <DependentUpon>frmSuaNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NguyenLieu\frmThemNguyenLieu.resx">
+      <DependentUpon>frmThemNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -118,16 +130,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\left-arrow.png" />
     <None Include="Resources\forward.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\right-arrow.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Resources\back.png" />
+    <None Include="Resources\technics.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\lens.png" />
+    <None Include="Resources\right-arrow.png" />
+    <None Include="Resources\left-arrow.png" />
     <None Include="Resources\go_last.png" />
     <None Include="Resources\go_first.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
