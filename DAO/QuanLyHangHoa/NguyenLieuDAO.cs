@@ -56,18 +56,20 @@ namespace DAO.QuanLyHangHoa
         /// <param name="loaiNL">loại nguyên liệu</param>
         /// <param name="isXemToiThieu">nếu true thì ta xem các nguyên liệu đạt ngưỡng tối thiểu</param>
         /// <returns></returns>
-        public static DataTable XemNguyenLieu( string tenNguyenLieu,string maNhaCungCap, bool isXemToiThieu)
+        public static NguyenLieu XemNguyenLieu(string isXemToiThieu, string maNhaCungCap=null)
         {
-            string query = "EXEC uspXemNguyenLieu @tenNguyenLieu,@maNhaCungCap,@isXemToiThieu";
+            string query = "EXEC uspXemNguyenLieu @maNhaCungCap,@loaiNguyenLieu,@isXemToiThieu";
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@tenNguyenLieu",SqlDbType.NVarChar){IsNullable=true,Value=tenNguyenLieu },
-                new SqlParameter("@maNhaCungCap",SqlDbType.VarChar){IsNullable=true,Value=maNhaCungCap },
-                new SqlParameter("@isXemToiThieu",SqlDbType.Bit){IsNullable=true,Value=isXemToiThieu },
+                new SqlParameter("@manl",SqlDbType.NVarChar){IsNullable=false,Value=maNhaCungCap },
+                new SqlParameter("@tennl",SqlDbType.Bit){IsNullable=false,Value=isXemToiThieu },
 
             };
 
-            return Dataprovider.ExcuteQuery(query,parameters.ToArray());
+            DataTable table = Dataprovider.ExcuteQuery(query,parameters.ToArray());
+            //Chuyển Table thành List tên hành khách
+            return table.AsEnumerable().ToList().ConvertAll(x =>
+                new NguyenLieu() { Ma = x[0].ToString(), Ten = x[1].ToString(), NhaCungCap = x[2].ToString(), Id = x[2].ToString() });
         }
     }
 }

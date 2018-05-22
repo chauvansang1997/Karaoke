@@ -1,5 +1,4 @@
-﻿using Karaoke.NguyenLieu;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +16,7 @@ namespace Karaoke
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmNguyenLieu());
+            Application.Run(new frmMain());
         }
     }
 }
