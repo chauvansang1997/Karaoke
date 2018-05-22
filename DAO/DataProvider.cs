@@ -14,7 +14,7 @@ namespace DAO
     public static class Dataprovider
     {
         //Chuổi kết nối với sql
-        private static string connectionString = @"Data Source=.\sqlexpress;Initial Catalog=dbQuanLyKaoraoke;Integrated Security=True";
+        private static string connectionString = @"Data Source=.\sqlexpress;Initial Catalog=dbQuanLyKaraoke;Integrated Security=True";
 
 
         /// <summary>

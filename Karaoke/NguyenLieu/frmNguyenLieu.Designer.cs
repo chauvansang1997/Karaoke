@@ -34,16 +34,16 @@
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dGVDanhSachNV = new System.Windows.Forms.DataGridView();
+            this.dGVNguyenLieu = new System.Windows.Forms.DataGridView();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.cmbCMND = new System.Windows.Forms.ComboBox();
+            this.cmbNhaCungCap = new System.Windows.Forms.ComboBox();
             this.txtTenNguyenLieu = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbSoLuong = new System.Windows.Forms.RadioButton();
+            this.rbTatCa = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
@@ -107,7 +107,7 @@
             this.label6.Text = "/";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dGVDanhSachNV
+            // dGVNguyenLieu
             // 
             this.dGVDanhSachNV.AllowUserToAddRows = false;
             this.dGVDanhSachNV.AllowUserToDeleteRows = false;
@@ -189,7 +189,7 @@
             this.label7.Text = "Nhà cung cấp:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cmbCMND
+            // cmbNhaCungCap
             // 
             this.cmbCMND.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbCMND.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
@@ -219,7 +219,7 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cách tìm kiếm";
             // 
-            // radioButton2
+            // rbSoLuong
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -231,7 +231,7 @@
             this.radioButton2.Text = "Sắp hết số lượng";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbTatCa
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -250,7 +250,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(867, 45);
+            this.panel1.Size = new System.Drawing.Size(1019, 45);
             this.panel1.TabIndex = 1;
             // 
             // label4
@@ -261,7 +261,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(867, 45);
+            this.label4.Size = new System.Drawing.Size(1019, 45);
             this.label4.TabIndex = 1;
             this.label4.Text = "QUẢN LÝ NGUYÊN LIỆU";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -277,9 +277,9 @@
             this.splitContainer.Panel1.BackColor = System.Drawing.Color.DodgerBlue;
             this.splitContainer.Panel1.Controls.Add(this.label1);
             this.splitContainer.Panel1.Controls.Add(this.btnAn);
-            this.splitContainer.Panel1.Controls.Add(this.btnFind);
+            this.splitContainer.Panel1.Controls.Add(this.btnTimKiem);
             this.splitContainer.Panel1.Controls.Add(this.label7);
-            this.splitContainer.Panel1.Controls.Add(this.cmbCMND);
+            this.splitContainer.Panel1.Controls.Add(this.cmbNhaCungCap);
             this.splitContainer.Panel1.Controls.Add(this.groupBox1);
             this.splitContainer.Panel1.Controls.Add(this.label11);
             this.splitContainer.Panel1.Controls.Add(this.txtTenNguyenLieu);
@@ -296,11 +296,11 @@
             this.splitContainer.Panel2.Controls.Add(this.btnThem);
             this.splitContainer.Panel2.Controls.Add(this.btnLastPage);
             this.splitContainer.Panel2.Controls.Add(this.label6);
-            this.splitContainer.Panel2.Controls.Add(this.dGVDanhSachNV);
+            this.splitContainer.Panel2.Controls.Add(this.dGVNguyenLieu);
             this.splitContainer.Panel2.Controls.Add(this.btnPrevPage);
             this.splitContainer.Panel2.Controls.Add(this.btnNextPage);
-            this.splitContainer.Size = new System.Drawing.Size(863, 449);
-            this.splitContainer.SplitterDistance = 340;
+            this.splitContainer.Size = new System.Drawing.Size(1019, 449);
+            this.splitContainer.SplitterDistance = 360;
             this.splitContainer.TabIndex = 163;
             // 
             // label1
@@ -343,6 +343,21 @@
             this.btnFind.Text = "Tìm kiếm";
             this.btnFind.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFind.UseVisualStyleBackColor = false;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
+            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnTimKiem.Image = global::Karaoke.Properties.Resources.lens;
+            this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTimKiem.Location = new System.Drawing.Point(232, 214);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(70, 29);
+            this.btnTimKiem.TabIndex = 67;
+            this.btnTimKiem.Text = "Tìm";
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnFirstPage
             // 
@@ -417,7 +432,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(216)))), ((int)(((byte)(233)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(867, 494);
+            this.ClientSize = new System.Drawing.Size(1019, 494);
             this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.White;
@@ -428,7 +443,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachNV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVNguyenLieu)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -443,7 +458,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.TextBox txtTotalPage;
         private System.Windows.Forms.TextBox txtPageNumber;
@@ -452,16 +467,16 @@
         private System.Windows.Forms.Button btnLastPage;
         private System.Windows.Forms.Button btnPrevPage;
         private System.Windows.Forms.Button btnNextPage;
-        private System.Windows.Forms.DataGridView dGVDanhSachNV;
+        private System.Windows.Forms.DataGridView dGVNguyenLieu;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cmbCMND;
+        private System.Windows.Forms.ComboBox cmbNhaCungCap;
         private System.Windows.Forms.TextBox txtTenNguyenLieu;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbSoLuong;
+        private System.Windows.Forms.RadioButton rbTatCa;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.SplitContainer splitContainer;
