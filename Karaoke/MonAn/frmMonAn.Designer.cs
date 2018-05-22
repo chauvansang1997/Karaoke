@@ -40,11 +40,7 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.cmbCMND = new System.Windows.Forms.ComboBox();
             this.txtTenNguyenLieu = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.btnFirstPage = new System.Windows.Forms.Button();
@@ -52,8 +48,10 @@
             this.btnPrevPage = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachNV)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -177,7 +175,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(120, 22);
             this.label11.TabIndex = 158;
-            this.label11.Text = "Tên nguyên liệu:";
+            this.label11.Text = "Tên món ăn:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label7
@@ -189,19 +187,8 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 22);
             this.label7.TabIndex = 156;
-            this.label7.Text = "Nhà cung cấp:";
+            this.label7.Text = "Giá:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cmbCMND
-            // 
-            this.cmbCMND.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbCMND.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cmbCMND.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCMND.FormattingEnabled = true;
-            this.cmbCMND.Location = new System.Drawing.Point(135, 86);
-            this.cmbCMND.Name = "cmbCMND";
-            this.cmbCMND.Size = new System.Drawing.Size(179, 23);
-            this.cmbCMND.TabIndex = 160;
             // 
             // txtTenNguyenLieu
             // 
@@ -209,40 +196,6 @@
             this.txtTenNguyenLieu.Name = "txtTenNguyenLieu";
             this.txtTenNguyenLieu.Size = new System.Drawing.Size(179, 20);
             this.txtTenNguyenLieu.TabIndex = 161;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(29, 136);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(262, 57);
-            this.groupBox1.TabIndex = 162;
-            this.groupBox1.TabStop = false;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton2.Location = new System.Drawing.Point(138, 19);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(105, 17);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Sắp hết số lượng";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton1.Location = new System.Drawing.Point(18, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(56, 17);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Tất cả";
-            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -264,7 +217,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(867, 45);
             this.label4.TabIndex = 1;
-            this.label4.Text = "QUẢN LÝ NGUYÊN LIỆU";
+            this.label4.Text = "QUẢN LÝ MÓN ĂN";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnFirstPage
@@ -326,10 +279,11 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.textBox2);
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
             this.splitContainer1.Panel1.Controls.Add(this.btnFind);
             this.splitContainer1.Panel1.Controls.Add(this.label7);
-            this.splitContainer1.Panel1.Controls.Add(this.cmbCMND);
-            this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
             this.splitContainer1.Panel1.Controls.Add(this.label11);
             this.splitContainer1.Panel1.Controls.Add(this.txtTenNguyenLieu);
             this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
@@ -351,6 +305,32 @@
             this.splitContainer1.SplitterDistance = 340;
             this.splitContainer1.TabIndex = 163;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(135, 89);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(179, 20);
+            this.textBox1.TabIndex = 163;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(135, 134);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(179, 20);
+            this.textBox2.TabIndex = 165;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(12, 131);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 22);
+            this.label1.TabIndex = 164;
+            this.label1.Text = "Giá:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // frmMonAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,8 +349,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachNV)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -397,13 +375,12 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cmbCMND;
         private System.Windows.Forms.TextBox txtTenNguyenLieu;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

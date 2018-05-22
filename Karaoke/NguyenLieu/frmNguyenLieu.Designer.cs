@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnThoat = new System.Windows.Forms.Button();
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dGVDanhSachNV = new System.Windows.Forms.DataGridView();
+            this.dGVNguyenLieu = new System.Windows.Forms.DataGridView();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.cmbCMND = new System.Windows.Forms.ComboBox();
+            this.cmbNhaCungCap = new System.Windows.Forms.ComboBox();
             this.txtTenNguyenLieu = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbSoLuong = new System.Windows.Forms.RadioButton();
+            this.rbTatCa = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.btnFind = new System.Windows.Forms.Button();
+            this.btnAn = new System.Windows.Forms.Button();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnFirstPage = new System.Windows.Forms.Button();
             this.btnLastPage = new System.Windows.Forms.Button();
             this.btnPrevPage = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
-            this.btnAn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachNV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVNguyenLieu)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
@@ -67,7 +67,7 @@
             this.btnThoat.BackColor = System.Drawing.SystemColors.Control;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnThoat.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnThoat.Location = new System.Drawing.Point(417, 396);
+            this.btnThoat.Location = new System.Drawing.Point(520, 396);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 33);
             this.btnThoat.TabIndex = 0;
@@ -103,40 +103,40 @@
             this.label6.Text = "Trang:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dGVDanhSachNV
+            // dGVNguyenLieu
             // 
-            this.dGVDanhSachNV.AllowUserToAddRows = false;
-            this.dGVDanhSachNV.AllowUserToDeleteRows = false;
-            this.dGVDanhSachNV.AllowUserToResizeColumns = false;
-            this.dGVDanhSachNV.AllowUserToResizeRows = false;
-            this.dGVDanhSachNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dGVDanhSachNV.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dGVDanhSachNV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dGVDanhSachNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGVDanhSachNV.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dGVDanhSachNV.Location = new System.Drawing.Point(13, 48);
-            this.dGVDanhSachNV.Name = "dGVDanhSachNV";
-            this.dGVDanhSachNV.ReadOnly = true;
-            this.dGVDanhSachNV.RowHeadersVisible = false;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dGVDanhSachNV.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dGVDanhSachNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGVDanhSachNV.Size = new System.Drawing.Size(479, 342);
-            this.dGVDanhSachNV.TabIndex = 149;
+            this.dGVNguyenLieu.AllowUserToAddRows = false;
+            this.dGVNguyenLieu.AllowUserToDeleteRows = false;
+            this.dGVNguyenLieu.AllowUserToResizeColumns = false;
+            this.dGVNguyenLieu.AllowUserToResizeRows = false;
+            this.dGVNguyenLieu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGVNguyenLieu.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dGVNguyenLieu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dGVNguyenLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVNguyenLieu.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dGVNguyenLieu.Location = new System.Drawing.Point(5, 48);
+            this.dGVNguyenLieu.Name = "dGVNguyenLieu";
+            this.dGVNguyenLieu.ReadOnly = true;
+            this.dGVNguyenLieu.RowHeadersVisible = false;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dGVNguyenLieu.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dGVNguyenLieu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGVNguyenLieu.Size = new System.Drawing.Size(647, 342);
+            this.dGVNguyenLieu.TabIndex = 149;
             // 
             // btnSua
             // 
             this.btnSua.BackColor = System.Drawing.SystemColors.Control;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSua.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSua.Location = new System.Drawing.Point(302, 396);
+            this.btnSua.Location = new System.Drawing.Point(405, 396);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 33);
             this.btnSua.TabIndex = 155;
@@ -148,7 +148,7 @@
             this.btnThem.BackColor = System.Drawing.SystemColors.Control;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnThem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnThem.Location = new System.Drawing.Point(189, 396);
+            this.btnThem.Location = new System.Drawing.Point(292, 396);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(80, 33);
             this.btnThem.TabIndex = 153;
@@ -179,16 +179,16 @@
             this.label7.Text = "Nhà cung cấp:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cmbCMND
+            // cmbNhaCungCap
             // 
-            this.cmbCMND.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbCMND.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cmbCMND.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCMND.FormattingEnabled = true;
-            this.cmbCMND.Location = new System.Drawing.Point(135, 86);
-            this.cmbCMND.Name = "cmbCMND";
-            this.cmbCMND.Size = new System.Drawing.Size(179, 23);
-            this.cmbCMND.TabIndex = 160;
+            this.cmbNhaCungCap.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbNhaCungCap.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cmbNhaCungCap.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNhaCungCap.FormattingEnabled = true;
+            this.cmbNhaCungCap.Location = new System.Drawing.Point(135, 86);
+            this.cmbNhaCungCap.Name = "cmbNhaCungCap";
+            this.cmbNhaCungCap.Size = new System.Drawing.Size(179, 23);
+            this.cmbNhaCungCap.TabIndex = 160;
             // 
             // txtTenNguyenLieu
             // 
@@ -199,37 +199,37 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.rbSoLuong);
+            this.groupBox1.Controls.Add(this.rbTatCa);
             this.groupBox1.Location = new System.Drawing.Point(29, 136);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(262, 57);
             this.groupBox1.TabIndex = 162;
             this.groupBox1.TabStop = false;
             // 
-            // radioButton2
+            // rbSoLuong
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton2.Location = new System.Drawing.Point(138, 19);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(105, 17);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Sắp hết số lượng";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbSoLuong.AutoSize = true;
+            this.rbSoLuong.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rbSoLuong.Location = new System.Drawing.Point(138, 19);
+            this.rbSoLuong.Name = "rbSoLuong";
+            this.rbSoLuong.Size = new System.Drawing.Size(105, 17);
+            this.rbSoLuong.TabIndex = 3;
+            this.rbSoLuong.TabStop = true;
+            this.rbSoLuong.Text = "Sắp hết số lượng";
+            this.rbSoLuong.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbTatCa
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton1.Location = new System.Drawing.Point(18, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(56, 17);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Tất cả";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbTatCa.AutoSize = true;
+            this.rbTatCa.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rbTatCa.Location = new System.Drawing.Point(18, 19);
+            this.rbTatCa.Name = "rbTatCa";
+            this.rbTatCa.Size = new System.Drawing.Size(56, 17);
+            this.rbTatCa.TabIndex = 2;
+            this.rbTatCa.TabStop = true;
+            this.rbTatCa.Text = "Tất cả";
+            this.rbTatCa.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -238,7 +238,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(867, 45);
+            this.panel1.Size = new System.Drawing.Size(1019, 45);
             this.panel1.TabIndex = 1;
             // 
             // label4
@@ -249,7 +249,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(867, 45);
+            this.label4.Size = new System.Drawing.Size(1019, 45);
             this.label4.TabIndex = 1;
             this.label4.Text = "QUẢN LÝ NGUYÊN LIỆU";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -263,9 +263,9 @@
             // splitContainer.Panel1
             // 
             this.splitContainer.Panel1.Controls.Add(this.btnAn);
-            this.splitContainer.Panel1.Controls.Add(this.btnFind);
+            this.splitContainer.Panel1.Controls.Add(this.btnTimKiem);
             this.splitContainer.Panel1.Controls.Add(this.label7);
-            this.splitContainer.Panel1.Controls.Add(this.cmbCMND);
+            this.splitContainer.Panel1.Controls.Add(this.cmbNhaCungCap);
             this.splitContainer.Panel1.Controls.Add(this.groupBox1);
             this.splitContainer.Panel1.Controls.Add(this.label11);
             this.splitContainer.Panel1.Controls.Add(this.txtTenNguyenLieu);
@@ -280,26 +280,40 @@
             this.splitContainer.Panel2.Controls.Add(this.btnThem);
             this.splitContainer.Panel2.Controls.Add(this.btnLastPage);
             this.splitContainer.Panel2.Controls.Add(this.label6);
-            this.splitContainer.Panel2.Controls.Add(this.dGVDanhSachNV);
+            this.splitContainer.Panel2.Controls.Add(this.dGVNguyenLieu);
             this.splitContainer.Panel2.Controls.Add(this.btnPrevPage);
             this.splitContainer.Panel2.Controls.Add(this.btnNextPage);
-            this.splitContainer.Size = new System.Drawing.Size(863, 449);
-            this.splitContainer.SplitterDistance = 340;
+            this.splitContainer.Size = new System.Drawing.Size(1019, 449);
+            this.splitContainer.SplitterDistance = 360;
             this.splitContainer.TabIndex = 163;
             // 
-            // btnFind
+            // btnAn
             // 
-            this.btnFind.BackColor = System.Drawing.Color.Transparent;
-            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFind.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnFind.Image = global::Karaoke.Properties.Resources.lens;
-            this.btnFind.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFind.Location = new System.Drawing.Point(232, 214);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(70, 29);
-            this.btnFind.TabIndex = 67;
-            this.btnFind.Text = "Tìm";
-            this.btnFind.UseVisualStyleBackColor = false;
+            this.btnAn.BackColor = System.Drawing.Color.Transparent;
+            this.btnAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAn.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAn.Image = global::Karaoke.Properties.Resources.rewind;
+            this.btnAn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAn.Location = new System.Drawing.Point(295, 5);
+            this.btnAn.Name = "btnAn";
+            this.btnAn.Size = new System.Drawing.Size(41, 29);
+            this.btnAn.TabIndex = 163;
+            this.btnAn.UseVisualStyleBackColor = false;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
+            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnTimKiem.Image = global::Karaoke.Properties.Resources.lens;
+            this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTimKiem.Location = new System.Drawing.Point(232, 214);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(70, 29);
+            this.btnTimKiem.TabIndex = 67;
+            this.btnTimKiem.Text = "Tìm";
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnFirstPage
             // 
@@ -352,26 +366,13 @@
             this.btnNextPage.TabIndex = 145;
             this.btnNextPage.UseVisualStyleBackColor = false;
             // 
-            // btnAn
-            // 
-            this.btnAn.BackColor = System.Drawing.Color.Transparent;
-            this.btnAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAn.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAn.Image = global::Karaoke.Properties.Resources.rewind;
-            this.btnAn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAn.Location = new System.Drawing.Point(295, 5);
-            this.btnAn.Name = "btnAn";
-            this.btnAn.Size = new System.Drawing.Size(41, 29);
-            this.btnAn.TabIndex = 163;
-            this.btnAn.UseVisualStyleBackColor = false;
-            // 
             // frmNguyenLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(216)))), ((int)(((byte)(233)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(867, 494);
+            this.ClientSize = new System.Drawing.Size(1019, 494);
             this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.White;
@@ -382,7 +383,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachNV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVNguyenLieu)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -397,7 +398,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.TextBox txtTotalPage;
         private System.Windows.Forms.TextBox txtPageNumber;
@@ -406,16 +407,16 @@
         private System.Windows.Forms.Button btnLastPage;
         private System.Windows.Forms.Button btnPrevPage;
         private System.Windows.Forms.Button btnNextPage;
-        private System.Windows.Forms.DataGridView dGVDanhSachNV;
+        private System.Windows.Forms.DataGridView dGVNguyenLieu;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cmbCMND;
+        private System.Windows.Forms.ComboBox cmbNhaCungCap;
         private System.Windows.Forms.TextBox txtTenNguyenLieu;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbSoLuong;
+        private System.Windows.Forms.RadioButton rbTatCa;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.SplitContainer splitContainer;
