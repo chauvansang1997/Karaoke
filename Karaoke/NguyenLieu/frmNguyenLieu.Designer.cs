@@ -28,33 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnThoat = new System.Windows.Forms.Button();
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dGVNguyenLieu = new System.Windows.Forms.DataGridView();
+            this.dGVDanhSachNV = new System.Windows.Forms.DataGridView();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.cmbNhaCungCap = new System.Windows.Forms.ComboBox();
+            this.cmbCMND = new System.Windows.Forms.ComboBox();
             this.txtTenNguyenLieu = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbSoLuong = new System.Windows.Forms.RadioButton();
-            this.rbTatCa = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnAn = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.btnFirstPage = new System.Windows.Forms.Button();
             this.btnLastPage = new System.Windows.Forms.Button();
             this.btnPrevPage = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtTonToiThieu = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDVT = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtTenNL = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachNV)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -70,16 +80,17 @@
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnThoat.Location = new System.Drawing.Point(410, 401);
+            this.btnThoat.Location = new System.Drawing.Point(409, 454);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(100, 36);
+            this.btnThoat.Size = new System.Drawing.Size(100, 30);
             this.btnThoat.TabIndex = 0;
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThoat.UseVisualStyleBackColor = false;
             // 
             // txtTotalPage
             // 
-            this.txtTotalPage.Location = new System.Drawing.Point(269, 18);
+            this.txtTotalPage.Location = new System.Drawing.Point(269, 108);
             this.txtTotalPage.Name = "txtTotalPage";
             this.txtTotalPage.ReadOnly = true;
             this.txtTotalPage.Size = new System.Drawing.Size(37, 20);
@@ -89,7 +100,7 @@
             // 
             // txtPageNumber
             // 
-            this.txtPageNumber.Location = new System.Drawing.Point(214, 18);
+            this.txtPageNumber.Location = new System.Drawing.Point(214, 108);
             this.txtPageNumber.Name = "txtPageNumber";
             this.txtPageNumber.Size = new System.Drawing.Size(37, 20);
             this.txtPageNumber.TabIndex = 139;
@@ -100,14 +111,14 @@
             // 
             this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(253, 17);
+            this.label6.Location = new System.Drawing.Point(253, 107);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(15, 20);
             this.label6.TabIndex = 138;
             this.label6.Text = "/";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dGVNguyenLieu
+            // dGVDanhSachNV
             // 
             this.dGVDanhSachNV.AllowUserToAddRows = false;
             this.dGVDanhSachNV.AllowUserToDeleteRows = false;
@@ -117,22 +128,22 @@
             this.dGVDanhSachNV.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dGVDanhSachNV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dGVDanhSachNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGVDanhSachNV.DefaultCellStyle = dataGridViewCellStyle17;
-            this.dGVDanhSachNV.Location = new System.Drawing.Point(10, 48);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVDanhSachNV.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dGVDanhSachNV.Location = new System.Drawing.Point(11, 138);
             this.dGVDanhSachNV.Name = "dGVDanhSachNV";
             this.dGVDanhSachNV.ReadOnly = true;
             this.dGVDanhSachNV.RowHeadersVisible = false;
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-            this.dGVDanhSachNV.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dGVDanhSachNV.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGVDanhSachNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGVDanhSachNV.Size = new System.Drawing.Size(500, 342);
+            this.dGVDanhSachNV.Size = new System.Drawing.Size(498, 310);
             this.dGVDanhSachNV.TabIndex = 149;
             // 
             // btnSua
@@ -142,12 +153,12 @@
             this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSua.Image = global::Karaoke.Properties.Resources.edit;
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(304, 401);
+            this.btnSua.Location = new System.Drawing.Point(303, 454);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(100, 36);
+            this.btnSua.Size = new System.Drawing.Size(100, 30);
             this.btnSua.TabIndex = 155;
             this.btnSua.Text = "Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = false;
             // 
             // btnThem
@@ -157,22 +168,22 @@
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnThem.Image = global::Karaoke.Properties.Resources.plus1;
-            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(92, 400);
+            this.btnThem.Location = new System.Drawing.Point(91, 454);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(100, 36);
+            this.btnThem.Size = new System.Drawing.Size(100, 30);
             this.btnThem.TabIndex = 153;
             this.btnThem.Text = "Thêm";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
             // 
             // label11
             // 
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(12, 42);
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label11.Location = new System.Drawing.Point(7, 23);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(120, 22);
+            this.label11.Size = new System.Drawing.Size(110, 22);
             this.label11.TabIndex = 158;
             this.label11.Text = "Tên nguyên liệu:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -181,30 +192,30 @@
             // 
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(12, 163);
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label7.Location = new System.Drawing.Point(7, 59);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 22);
+            this.label7.Size = new System.Drawing.Size(111, 22);
             this.label7.TabIndex = 156;
             this.label7.Text = "Nhà cung cấp:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cmbNhaCungCap
+            // cmbCMND
             // 
             this.cmbCMND.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbCMND.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cmbCMND.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCMND.FormattingEnabled = true;
-            this.cmbCMND.Location = new System.Drawing.Point(16, 203);
+            this.cmbCMND.Location = new System.Drawing.Point(124, 61);
             this.cmbCMND.Name = "cmbCMND";
-            this.cmbCMND.Size = new System.Drawing.Size(305, 23);
+            this.cmbCMND.Size = new System.Drawing.Size(195, 23);
             this.cmbCMND.TabIndex = 160;
             // 
             // txtTenNguyenLieu
             // 
-            this.txtTenNguyenLieu.Location = new System.Drawing.Point(16, 77);
+            this.txtTenNguyenLieu.Location = new System.Drawing.Point(123, 26);
             this.txtTenNguyenLieu.Name = "txtTenNguyenLieu";
-            this.txtTenNguyenLieu.Size = new System.Drawing.Size(305, 20);
+            this.txtTenNguyenLieu.Size = new System.Drawing.Size(196, 20);
             this.txtTenNguyenLieu.TabIndex = 161;
             // 
             // groupBox1
@@ -212,18 +223,21 @@
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(16, 289);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.groupBox1.Location = new System.Drawing.Point(325, 8);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(305, 57);
+            this.groupBox1.Size = new System.Drawing.Size(184, 78);
             this.groupBox1.TabIndex = 162;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cách tìm kiếm";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // rbSoLuong
+            // radioButton2
             // 
             this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton2.Location = new System.Drawing.Point(170, 19);
+            this.radioButton2.Location = new System.Drawing.Point(18, 48);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(129, 23);
             this.radioButton2.TabIndex = 3;
@@ -231,11 +245,12 @@
             this.radioButton2.Text = "Sắp hết số lượng";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // rbTatCa
+            // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton1.Location = new System.Drawing.Point(16, 19);
+            this.radioButton1.Location = new System.Drawing.Point(18, 19);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(65, 23);
             this.radioButton1.TabIndex = 2;
@@ -250,7 +265,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1019, 45);
+            this.panel1.Size = new System.Drawing.Size(867, 45);
             this.panel1.TabIndex = 1;
             // 
             // label4
@@ -261,10 +276,10 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1019, 45);
+            this.label4.Size = new System.Drawing.Size(867, 45);
             this.label4.TabIndex = 1;
             this.label4.Text = "QUẢN LÝ NGUYÊN LIỆU";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // splitContainer
             // 
@@ -274,46 +289,44 @@
             // 
             // splitContainer.Panel1
             // 
-            this.splitContainer.Panel1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.splitContainer.Panel1.Controls.Add(this.label1);
-            this.splitContainer.Panel1.Controls.Add(this.btnAn);
-            this.splitContainer.Panel1.Controls.Add(this.btnTimKiem);
-            this.splitContainer.Panel1.Controls.Add(this.label7);
-            this.splitContainer.Panel1.Controls.Add(this.cmbNhaCungCap);
-            this.splitContainer.Panel1.Controls.Add(this.groupBox1);
-            this.splitContainer.Panel1.Controls.Add(this.label11);
-            this.splitContainer.Panel1.Controls.Add(this.txtTenNguyenLieu);
+            this.splitContainer.Panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.splitContainer.Panel1.Controls.Add(this.label9);
+            this.splitContainer.Panel1.Controls.Add(this.comboBox1);
+            this.splitContainer.Panel1.Controls.Add(this.button1);
+            this.splitContainer.Panel1.Controls.Add(this.label2);
+            this.splitContainer.Panel1.Controls.Add(this.txtTonToiThieu);
+            this.splitContainer.Panel1.Controls.Add(this.label3);
+            this.splitContainer.Panel1.Controls.Add(this.txtDonGia);
+            this.splitContainer.Panel1.Controls.Add(this.label5);
+            this.splitContainer.Panel1.Controls.Add(this.txtDVT);
+            this.splitContainer.Panel1.Controls.Add(this.label8);
+            this.splitContainer.Panel1.Controls.Add(this.txtTenNL);
             // 
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.BackColor = System.Drawing.Color.White;
+            this.splitContainer.Panel2.Controls.Add(this.btnAn);
             this.splitContainer.Panel2.Controls.Add(this.btnXoa);
+            this.splitContainer.Panel2.Controls.Add(this.btnFind);
             this.splitContainer.Panel2.Controls.Add(this.txtTotalPage);
+            this.splitContainer.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainer.Panel2.Controls.Add(this.cmbCMND);
+            this.splitContainer.Panel2.Controls.Add(this.label7);
             this.splitContainer.Panel2.Controls.Add(this.btnFirstPage);
             this.splitContainer.Panel2.Controls.Add(this.btnSua);
             this.splitContainer.Panel2.Controls.Add(this.btnThoat);
+            this.splitContainer.Panel2.Controls.Add(this.txtTenNguyenLieu);
+            this.splitContainer.Panel2.Controls.Add(this.label11);
             this.splitContainer.Panel2.Controls.Add(this.txtPageNumber);
             this.splitContainer.Panel2.Controls.Add(this.btnThem);
             this.splitContainer.Panel2.Controls.Add(this.btnLastPage);
             this.splitContainer.Panel2.Controls.Add(this.label6);
-            this.splitContainer.Panel2.Controls.Add(this.dGVNguyenLieu);
+            this.splitContainer.Panel2.Controls.Add(this.dGVDanhSachNV);
             this.splitContainer.Panel2.Controls.Add(this.btnPrevPage);
             this.splitContainer.Panel2.Controls.Add(this.btnNextPage);
-            this.splitContainer.Size = new System.Drawing.Size(1019, 449);
-            this.splitContainer.SplitterDistance = 360;
+            this.splitContainer.Size = new System.Drawing.Size(863, 502);
+            this.splitContainer.SplitterDistance = 340;
             this.splitContainer.TabIndex = 163;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(10, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(324, 22);
-            this.label1.TabIndex = 164;
-            this.label1.Text = "Tìm kiếm nguyên liệu";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnAn
             // 
@@ -322,7 +335,7 @@
             this.btnAn.ForeColor = System.Drawing.Color.Transparent;
             this.btnAn.Image = global::Karaoke.Properties.Resources.rewind;
             this.btnAn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAn.Location = new System.Drawing.Point(4, 417);
+            this.btnAn.Location = new System.Drawing.Point(11, 454);
             this.btnAn.Name = "btnAn";
             this.btnAn.Size = new System.Drawing.Size(41, 29);
             this.btnAn.TabIndex = 163;
@@ -330,34 +343,35 @@
             // 
             // btnFind
             // 
-            this.btnFind.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFind.BackColor = System.Drawing.Color.White;
+            this.btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFind.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFind.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnFind.Image = global::Karaoke.Properties.Resources.loupe;
-            this.btnFind.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFind.Location = new System.Drawing.Point(124, 400);
+            this.btnFind.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnFind.Location = new System.Drawing.Point(11, 102);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(100, 36);
+            this.btnFind.Size = new System.Drawing.Size(110, 30);
             this.btnFind.TabIndex = 67;
             this.btnFind.Text = "Tìm kiếm";
-            this.btnFind.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFind.UseVisualStyleBackColor = false;
             // 
-            // btnTimKiem
+            // btnXoa
             // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
-            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnTimKiem.Image = global::Karaoke.Properties.Resources.lens;
-            this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimKiem.Location = new System.Drawing.Point(232, 214);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(70, 29);
-            this.btnTimKiem.TabIndex = 67;
-            this.btnTimKiem.Text = "Tìm";
-            this.btnTimKiem.UseVisualStyleBackColor = false;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            this.btnXoa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnXoa.Image = global::Karaoke.Properties.Resources.eraser;
+            this.btnXoa.Location = new System.Drawing.Point(197, 454);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(100, 30);
+            this.btnXoa.TabIndex = 156;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = false;
             // 
             // btnFirstPage
             // 
@@ -366,7 +380,7 @@
             this.btnFirstPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirstPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFirstPage.Location = new System.Drawing.Point(161, 16);
+            this.btnFirstPage.Location = new System.Drawing.Point(161, 106);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(24, 24);
             this.btnFirstPage.TabIndex = 148;
@@ -379,7 +393,7 @@
             this.btnLastPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnLastPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLastPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLastPage.Location = new System.Drawing.Point(335, 16);
+            this.btnLastPage.Location = new System.Drawing.Point(335, 106);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(24, 24);
             this.btnLastPage.TabIndex = 147;
@@ -392,7 +406,7 @@
             this.btnPrevPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnPrevPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPrevPage.Location = new System.Drawing.Point(184, 16);
+            this.btnPrevPage.Location = new System.Drawing.Point(184, 106);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(24, 24);
             this.btnPrevPage.TabIndex = 146;
@@ -405,26 +419,118 @@
             this.btnNextPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnNextPage.Location = new System.Drawing.Point(312, 16);
+            this.btnNextPage.Location = new System.Drawing.Point(312, 106);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(24, 24);
             this.btnNextPage.TabIndex = 145;
             this.btnNextPage.UseVisualStyleBackColor = false;
             // 
-            // btnXoa
+            // comboBox1
             // 
-            this.btnXoa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnXoa.Image = global::Karaoke.Properties.Resources.eraser;
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(198, 400);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(100, 36);
-            this.btnXoa.TabIndex = 156;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = false;
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 158);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(318, 27);
+            this.comboBox1.TabIndex = 172;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(116, 454);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 30);
+            this.button1.TabIndex = 171;
+            this.button1.Text = "Lưu";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 334);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 19);
+            this.label2.TabIndex = 169;
+            this.label2.Text = "Số lượng tồn tối thiểu:";
+            // 
+            // txtTonToiThieu
+            // 
+            this.txtTonToiThieu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTonToiThieu.Location = new System.Drawing.Point(11, 360);
+            this.txtTonToiThieu.Name = "txtTonToiThieu";
+            this.txtTonToiThieu.Size = new System.Drawing.Size(319, 26);
+            this.txtTonToiThieu.TabIndex = 168;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 260);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 19);
+            this.label3.TabIndex = 167;
+            this.label3.Text = "Đơn giá:";
+            // 
+            // txtDonGia
+            // 
+            this.txtDonGia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonGia.Location = new System.Drawing.Point(11, 291);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.Size = new System.Drawing.Size(317, 26);
+            this.txtDonGia.TabIndex = 166;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 202);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 19);
+            this.label5.TabIndex = 165;
+            this.label5.Text = "Đơn vị tính:";
+            // 
+            // txtDVT
+            // 
+            this.txtDVT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDVT.Location = new System.Drawing.Point(12, 226);
+            this.txtDVT.Name = "txtDVT";
+            this.txtDVT.Size = new System.Drawing.Size(316, 26);
+            this.txtDVT.TabIndex = 164;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(12, 130);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(96, 19);
+            this.label8.TabIndex = 163;
+            this.label8.Text = "Nhà cung cấp:";
+            // 
+            // txtTenNL
+            // 
+            this.txtTenNL.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenNL.Location = new System.Drawing.Point(11, 82);
+            this.txtTenNL.Name = "txtTenNL";
+            this.txtTenNL.Size = new System.Drawing.Size(318, 26);
+            this.txtTenNL.TabIndex = 162;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(12, 56);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(105, 19);
+            this.label9.TabIndex = 173;
+            this.label9.Text = "Tên nguyên liệu:";
             // 
             // frmNguyenLieu
             // 
@@ -432,7 +538,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(216)))), ((int)(((byte)(233)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1019, 494);
+            this.ClientSize = new System.Drawing.Size(867, 547);
             this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.White;
@@ -443,7 +549,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)(this.dGVNguyenLieu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachNV)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -458,7 +564,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnTimKiem;
+        private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.TextBox txtTotalPage;
         private System.Windows.Forms.TextBox txtPageNumber;
@@ -467,21 +573,32 @@
         private System.Windows.Forms.Button btnLastPage;
         private System.Windows.Forms.Button btnPrevPage;
         private System.Windows.Forms.Button btnNextPage;
-        private System.Windows.Forms.DataGridView dGVNguyenLieu;
+        private System.Windows.Forms.DataGridView dGVDanhSachNV;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cmbNhaCungCap;
+        private System.Windows.Forms.ComboBox cmbCMND;
         private System.Windows.Forms.TextBox txtTenNguyenLieu;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbSoLuong;
-        private System.Windows.Forms.RadioButton rbTatCa;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.SplitContainer splitContainer;
         private System.Windows.Forms.Button btnAn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtTonToiThieu;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtDonGia;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtDVT;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtTenNL;
     }
 }
