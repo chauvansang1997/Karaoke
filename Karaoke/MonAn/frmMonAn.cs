@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace Karaoke.MonAn
     public partial class frmMonAn : Form
     {
         private DataTable dtNguyenLieu;
+        private uint donGia;
         public frmMonAn()
         {
             InitializeComponent();
@@ -58,6 +60,62 @@ namespace Karaoke.MonAn
                 pBAnhMinhHoa.Image = new Bitmap(oFDLayAnh.FileName);
                 // image file path  
                 txtAnhMinhHoa.Text = oFDLayAnh.FileName;
+            }
+        }
+
+        private void btnThemMonAn_Click(object sender, EventArgs e)
+        {
+            if (txtTenMonAn.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập tên món ăn!", "Thông báo", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
+                return;
+            }
+            if (cmbLoaiMon.Text == "")
+            {
+                MessageBox.Show("Bạn chưa chọn loại món ăn!", "Thông báo", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
+                return;
+            }
+            try
+            {
+                donGia = uint.Parse(txtGia.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Bạn chưa nhập giá !", "Thông báo", MessageBoxButtons.OK,
+                 MessageBoxIcon.Error, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
+                return;
+
+            }
+            if (dtNguyenLieu.Rows.Count == 0)
+            {
+                MessageBox.Show("Bạn nhập nguyên liệu cho món ăn!", "Thông báo", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
+                return;
+            }
+            BUS.MonAnBUS.ThemMonAn(new DTO.MonAn() { TenMonAn =txtTenMonAn.Text, LoaiMonAn = cmbLoaiMon.Text, Gia = donGia },
+                dtNguyenLieu.AsEnumerable().Select(r => r.Field<string>("manl"))
+                      .ToList());
+        }
+        /// <summary>
+        /// Tránh nhập kí tự vào số
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtGia_TextChanged(object sender, EventArgs e)
+        {
+            if (txtGia.Text == "")
+            {
+                return;
+            }
+            if (!Utility.IsContainsText(txtGia.Text))
+            {
+                donGia = Convert.ToUInt32(txtGia.Text);
+            }
+            else
+            {
+                txtGia.Text = donGia.ToString();
             }
         }
     }

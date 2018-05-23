@@ -35,6 +35,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtGiaTK = new System.Windows.Forms.TextBox();
+            this.cmbLoaiMonTK = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtTenTK = new System.Windows.Forms.TextBox();
             this.btnSuaMonAn = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -56,14 +62,8 @@
             this.cmbLoaiMon = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtTenNguyenLieu = new System.Windows.Forms.TextBox();
+            this.txtTenMonAn = new System.Windows.Forms.TextBox();
             this.oFDLayAnh = new System.Windows.Forms.OpenFileDialog();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtGiaTK = new System.Windows.Forms.TextBox();
-            this.cmbLoaiMonTK = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtTenTK = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVMonAn)).BeginInit();
             this.panel2.SuspendLayout();
@@ -90,6 +90,64 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(480, 530);
             this.panel1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(9, 61);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 22);
+            this.label5.TabIndex = 184;
+            this.label5.Text = "Giá:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtGiaTK
+            // 
+            this.txtGiaTK.Location = new System.Drawing.Point(12, 93);
+            this.txtGiaTK.Name = "txtGiaTK";
+            this.txtGiaTK.Size = new System.Drawing.Size(144, 20);
+            this.txtGiaTK.TabIndex = 185;
+            // 
+            // cmbLoaiMonTK
+            // 
+            this.cmbLoaiMonTK.FormattingEnabled = true;
+            this.cmbLoaiMonTK.Location = new System.Drawing.Point(193, 34);
+            this.cmbLoaiMonTK.Name = "cmbLoaiMonTK";
+            this.cmbLoaiMonTK.Size = new System.Drawing.Size(144, 21);
+            this.cmbLoaiMonTK.TabIndex = 183;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(189, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 22);
+            this.label7.TabIndex = 182;
+            this.label7.Text = "Loại món:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(8, 10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(85, 22);
+            this.label8.TabIndex = 180;
+            this.label8.Text = "Tên món ăn:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtTenTK
+            // 
+            this.txtTenTK.Location = new System.Drawing.Point(12, 35);
+            this.txtTenTK.Name = "txtTenTK";
+            this.txtTenTK.Size = new System.Drawing.Size(144, 20);
+            this.txtTenTK.TabIndex = 181;
             // 
             // btnSuaMonAn
             // 
@@ -135,6 +193,7 @@
             this.btnThemMonAn.TabIndex = 175;
             this.btnThemMonAn.Text = "Thêm món ăn";
             this.btnThemMonAn.UseVisualStyleBackColor = true;
+            this.btnThemMonAn.Click += new System.EventHandler(this.btnThemMonAn_Click);
             // 
             // label1
             // 
@@ -170,7 +229,7 @@
             this.panel2.Controls.Add(this.cmbLoaiMon);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.txtTenNguyenLieu);
+            this.panel2.Controls.Add(this.txtTenMonAn);
             this.panel2.Location = new System.Drawing.Point(13, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(543, 530);
@@ -269,6 +328,7 @@
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(144, 20);
             this.txtGia.TabIndex = 171;
+            this.txtGia.TextChanged += new System.EventHandler(this.txtGia_TextChanged);
             // 
             // cmbLoaiMon
             // 
@@ -302,74 +362,16 @@
             this.label11.Text = "Tên món ăn:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtTenNguyenLieu
+            // txtTenMonAn
             // 
-            this.txtTenNguyenLieu.Location = new System.Drawing.Point(12, 36);
-            this.txtTenNguyenLieu.Name = "txtTenNguyenLieu";
-            this.txtTenNguyenLieu.Size = new System.Drawing.Size(144, 20);
-            this.txtTenNguyenLieu.TabIndex = 167;
+            this.txtTenMonAn.Location = new System.Drawing.Point(12, 36);
+            this.txtTenMonAn.Name = "txtTenMonAn";
+            this.txtTenMonAn.Size = new System.Drawing.Size(144, 20);
+            this.txtTenMonAn.TabIndex = 167;
             // 
             // oFDLayAnh
             // 
             this.oFDLayAnh.FileName = "openFileDialog1";
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(9, 61);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 22);
-            this.label5.TabIndex = 184;
-            this.label5.Text = "Giá:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtGiaTK
-            // 
-            this.txtGiaTK.Location = new System.Drawing.Point(12, 93);
-            this.txtGiaTK.Name = "txtGiaTK";
-            this.txtGiaTK.Size = new System.Drawing.Size(144, 20);
-            this.txtGiaTK.TabIndex = 185;
-            // 
-            // cmbLoaiMonTK
-            // 
-            this.cmbLoaiMonTK.FormattingEnabled = true;
-            this.cmbLoaiMonTK.Location = new System.Drawing.Point(193, 34);
-            this.cmbLoaiMonTK.Name = "cmbLoaiMonTK";
-            this.cmbLoaiMonTK.Size = new System.Drawing.Size(144, 21);
-            this.cmbLoaiMonTK.TabIndex = 183;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(189, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 22);
-            this.label7.TabIndex = 182;
-            this.label7.Text = "Loại món:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(8, 10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 22);
-            this.label8.TabIndex = 180;
-            this.label8.Text = "Tên món ăn:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtTenTK
-            // 
-            this.txtTenTK.Location = new System.Drawing.Point(12, 35);
-            this.txtTenTK.Name = "txtTenTK";
-            this.txtTenTK.Size = new System.Drawing.Size(144, 20);
-            this.txtTenTK.TabIndex = 181;
             // 
             // frmMonAn
             // 
@@ -400,7 +402,7 @@
         private System.Windows.Forms.ComboBox cmbLoaiMon;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtTenNguyenLieu;
+        private System.Windows.Forms.TextBox txtTenMonAn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pBAnhMinhHoa;
         private System.Windows.Forms.OpenFileDialog oFDLayAnh;
