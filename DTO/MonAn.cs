@@ -6,16 +6,65 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class MonAn
+    public class MonAn
     {
         private string maMonAn;
         private string tenMonAn;
         private string gia;
         private string tenHinhAnh;
+        private string loaiMonAn;
+        public string MaMonAn
+        {
+            get
+            {
+                return maMonAn;
+            }
 
-        public string MaMonAn { get => maMonAn; set => maMonAn = value; }
-        public string TenMonAn { get => tenMonAn; set => tenMonAn = value; }
-        public string Gia { get => gia; set => gia = value; }
-        public string TenHinhAnh { get => tenHinhAnh; set => tenHinhAnh = value; }
+            set
+            {
+                maMonAn = value;
+            }
+        }
+
+        public string TenMonAn
+        {
+            get
+            {
+                return tenMonAn;
+            }
+
+            set
+            {
+                tenMonAn = value;
+            }
+        }
+
+        public string Gia
+        {
+            get
+            {
+                return gia;
+            }
+
+            set
+            {
+                gia = value;
+            }
+        }
+
+        public string TenHinhAnh
+        {
+            get
+            {
+                return tenHinhAnh;
+            }
+
+            set
+            {
+                tenHinhAnh = value;
+            }
+        }
+
+        public string LoaiMonAn { get => loaiMonAn; set => loaiMonAn = value; }
     }
 }

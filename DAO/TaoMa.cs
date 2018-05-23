@@ -49,7 +49,7 @@ namespace DAO
         }
         public static string TaoMaMonAn()
         {
-            string query = "select macuoi,soma,tiento from taoma where id=3";
+            string query = "select macuoi,soma,tiento from taoma where id=1";
             DataTable table = Dataprovider.ExcuteQuery(query);
             DataRow row = table.Rows[0];
 

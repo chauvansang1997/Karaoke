@@ -10,6 +10,31 @@ namespace DTO
     {
         private String name;
         private String status;
-        //private String 
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                name = value;
+            }
+        }
+
+        public string Status
+        {
+            get
+            {
+                return status;
+            }
+
+            set
+            {
+                status = value;
+            }
+        }
     }
 }

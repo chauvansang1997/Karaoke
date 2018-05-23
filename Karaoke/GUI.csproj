@@ -58,8 +58,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FoodLayout.cs" />
-    <Compile Include="FoodLayout.Designer.cs">
+    <Compile Include="FoodLayout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FoodLayout.designer.cs">
       <DependentUpon>FoodLayout.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
@@ -68,8 +70,10 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="MonAn\frmGoiMon.cs" />
-    <Compile Include="MonAn\frmGoiMon.Designer.cs">
+    <Compile Include="MonAn\frmGoiMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonAn\frmGoiMon.designer.cs">
       <DependentUpon>frmGoiMon.cs</DependentUpon>
     </Compile>
     <Compile Include="MonAn\frmMonAn.cs">
@@ -83,6 +87,12 @@
     </Compile>
     <Compile Include="MonAn\frmThemMonAn.Designer.cs">
       <DependentUpon>frmThemMonAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonAn\frmThemNguyenLieuMonAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonAn\frmThemNguyenLieuMonAn.designer.cs">
+      <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
     </Compile>
     <Compile Include="NguyenLieu\frmNguyenLieu.cs">
       <SubType>Form</SubType>
@@ -118,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MonAn\frmThemMonAn.resx">
       <DependentUpon>frmThemMonAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonAn\frmThemNguyenLieuMonAn.resx">
+      <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NguyenLieu\frmNguyenLieu.resx">
       <DependentUpon>frmNguyenLieu.cs</DependentUpon>

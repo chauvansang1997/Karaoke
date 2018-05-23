@@ -8,16 +8,63 @@ namespace DTO
 {
     public class KhachHang
     {
-        private String name;
-        private String phoneNumber;
-        private String address;
-        private String id;
+        private string name;
+        private string phoneNumber;
+        private string address;
+        private string id;
 
-        public string Name { get => name; set => name = value; }
-        public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
-        public string Address { get => address; set => address = value; }
-        public string Id { get => id; set => id = value; }
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
 
+            set
+            {
+                name = value;
+            }
+        }
 
+        public string PhoneNumber
+        {
+            get
+            {
+                return phoneNumber;
+            }
+
+            set
+            {
+                phoneNumber = value;
+            }
+        }
+
+        public string Address
+        {
+            get
+            {
+                return address;
+            }
+
+            set
+            {
+                address = value;
+            }
+        }
+
+        public string Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
     }
 }
+        
+

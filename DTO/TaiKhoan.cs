@@ -11,7 +11,30 @@ namespace DTO
         private string tenDangNhap;
         private string maKhau;
 
-        public string TenDangNhap { get => tenDangNhap; set => tenDangNhap = value; }
-        public string MaKhau { get => maKhau; set => maKhau = value; }
+        public string TenDangNhap
+        {
+            get
+            {
+                return tenDangNhap;
+            }
+
+            set
+            {
+                tenDangNhap = value;
+            }
+        }
+
+        public string MaKhau
+        {
+            get
+            {
+                return maKhau;
+            }
+
+            set
+            {
+                maKhau = value;
+            }
+        }
     }
 }

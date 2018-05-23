@@ -13,9 +13,56 @@ namespace DTO
         private string soDienThoai;
         private string diaChi;
 
-        public string Ten { get => ten; set => ten = value; }
-        public string Ma { get => ma; set => ma = value; }
-        public string SoDienThoai { get => soDienThoai; set => soDienThoai = value; }
-        public string DiaChi { get => diaChi; set => diaChi = value; }
+        public string Ten
+        {
+            get
+            {
+                return ten;
+            }
+
+            set
+            {
+                ten = value;
+            }
+        }
+
+        public string Ma
+        {
+            get
+            {
+                return ma;
+            }
+
+            set
+            {
+                ma = value;
+            }
+        }
+
+        public string SoDienThoai
+        {
+            get
+            {
+                return soDienThoai;
+            }
+
+            set
+            {
+                soDienThoai = value;
+            }
+        }
+
+        public string DiaChi
+        {
+            get
+            {
+                return diaChi;
+            }
+
+            set
+            {
+                diaChi = value;
+            }
+        }
     }
 }

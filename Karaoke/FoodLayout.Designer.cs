@@ -84,8 +84,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label txtPrice;
-        private System.Windows.Forms.PictureBox imgFood;
-        private System.Windows.Forms.Label txtName;
+        public System.Windows.Forms.Label txtPrice;
+        public System.Windows.Forms.PictureBox imgFood;
+        public System.Windows.Forms.Label txtName;
     }
 }

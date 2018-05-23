@@ -11,5 +11,44 @@ namespace DTO
         private string tenThietBi;
         private string maThietBi;
         private string gia;
+
+        public string TenThietBi
+        {
+            get
+            {
+                return tenThietBi;
+            }
+
+            set
+            {
+                tenThietBi = value;
+            }
+        }
+
+        public string MaThietBi
+        {
+            get
+            {
+                return maThietBi;
+            }
+
+            set
+            {
+                maThietBi = value;
+            }
+        }
+
+        public string Gia
+        {
+            get
+            {
+                return gia;
+            }
+
+            set
+            {
+                gia = value;
+            }
+        }
     }
 }
