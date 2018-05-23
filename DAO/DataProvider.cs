@@ -16,6 +16,8 @@ namespace DAO
         //Chuổi kết nối với sql
         private static string connectionString = @"Data Source=.\sqlexpress;Initial Catalog=dbQuanLyKaraoke;Integrated Security=True";
 
+        public static string ConnectionString { get => connectionString; set => connectionString = value; }
+
 
         /// <summary>
         /// Phương thức này có vai trò lấy dữ liệu là các bảng trong SQL
@@ -27,7 +29,7 @@ namespace DAO
         {
             DataTable table = new DataTable();
 
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 con.Open();
 
@@ -57,7 +59,7 @@ namespace DAO
         public static int ExcuteNonQuery(string query, SqlParameter[] sqlparameters = null)
         {
             int temp = 0;
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 con.Open();
                 SqlCommand command = new SqlCommand(query, con);
@@ -79,7 +81,7 @@ namespace DAO
         /// <returns></returns>
         public static object ExcuteScalar(string query, SqlParameter[] sqlparameters = null)
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 con.Open();
                 SqlCommand command = new SqlCommand(query, con);
@@ -93,5 +95,7 @@ namespace DAO
                 return temp;
             }
         }
+
+       // public static bool ExcuteNonQueryWithMore(SqlCommand)
     }
 }

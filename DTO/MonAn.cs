@@ -10,7 +10,7 @@ namespace DTO
     {
         private string maMonAn;
         private string tenMonAn;
-        private string gia;
+        private uint gia;
         private string tenHinhAnh;
         private string loaiMonAn;
         public string MaMonAn
@@ -39,7 +39,7 @@ namespace DTO
             }
         }
 
-        public string Gia
+        public uint Gia
         {
             get
             {

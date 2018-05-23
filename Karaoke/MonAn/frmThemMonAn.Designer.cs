@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -37,26 +39,31 @@
             this.dGVNguyenLieu = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnThemNguyenLieu = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.txtAnhMinhHoa = new System.Windows.Forms.TextBox();
             this.btnLayAnh = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.pBAnhMinhHoa = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
+            this.cmbLoaiMonAn = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtTenNguyenLieu = new System.Windows.Forms.TextBox();
+            this.txtTenMonaAn = new System.Windows.Forms.TextBox();
             this.oFDLayAnh = new System.Windows.Forms.OpenFileDialog();
-            this.pBAnhMinhHoa = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.errorTenMonAn = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorLoaiMonAn = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorGia = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVNguyenLieu)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBAnhMinhHoa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTenMonAn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorLoaiMonAn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorGia)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,6 +79,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(480, 490);
             this.panel1.TabIndex = 0;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(216, 439);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(80, 23);
+            this.button6.TabIndex = 179;
+            this.button6.Text = "Sửa món ăn";
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -132,7 +148,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.btnThemNguyenLieu);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.dataGridView2);
             this.panel2.Controls.Add(this.txtAnhMinhHoa);
@@ -140,11 +156,11 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.pBAnhMinhHoa);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.txtDonGia);
+            this.panel2.Controls.Add(this.cmbLoaiMonAn);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.txtTenNguyenLieu);
+            this.panel2.Controls.Add(this.txtTenMonaAn);
             this.panel2.Location = new System.Drawing.Point(13, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(543, 490);
@@ -159,14 +175,15 @@
             this.button1.Text = "Xóa nguyên liệu";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnThemNguyenLieu
             // 
-            this.button5.Location = new System.Drawing.Point(302, 439);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(112, 23);
-            this.button5.TabIndex = 178;
-            this.button5.Text = "Thêm nguyên liệu";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnThemNguyenLieu.Location = new System.Drawing.Point(302, 439);
+            this.btnThemNguyenLieu.Name = "btnThemNguyenLieu";
+            this.btnThemNguyenLieu.Size = new System.Drawing.Size(112, 23);
+            this.btnThemNguyenLieu.TabIndex = 178;
+            this.btnThemNguyenLieu.Text = "Thêm nguyên liệu";
+            this.btnThemNguyenLieu.UseVisualStyleBackColor = true;
+            this.btnThemNguyenLieu.Click += new System.EventHandler(this.btnThemNguyenLieu_Click);
             // 
             // label6
             // 
@@ -216,6 +233,14 @@
             this.label4.Text = "Ảnh minh họa:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pBAnhMinhHoa
+            // 
+            this.pBAnhMinhHoa.Location = new System.Drawing.Point(221, 35);
+            this.pBAnhMinhHoa.Name = "pBAnhMinhHoa";
+            this.pBAnhMinhHoa.Size = new System.Drawing.Size(179, 137);
+            this.pBAnhMinhHoa.TabIndex = 172;
+            this.pBAnhMinhHoa.TabStop = false;
+            // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
@@ -228,20 +253,21 @@
             this.label3.Text = "Giá:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // txtDonGia
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 168);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(144, 20);
-            this.textBox1.TabIndex = 171;
+            this.txtDonGia.Location = new System.Drawing.Point(12, 168);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.Size = new System.Drawing.Size(144, 20);
+            this.txtDonGia.TabIndex = 171;
+            this.txtDonGia.TextChanged += new System.EventHandler(this.txtDonGia_TextChanged);
             // 
-            // comboBox1
+            // cmbLoaiMonAn
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 93);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(144, 21);
-            this.comboBox1.TabIndex = 169;
+            this.cmbLoaiMonAn.FormattingEnabled = true;
+            this.cmbLoaiMonAn.Location = new System.Drawing.Point(12, 93);
+            this.cmbLoaiMonAn.Name = "cmbLoaiMonAn";
+            this.cmbLoaiMonAn.Size = new System.Drawing.Size(144, 21);
+            this.cmbLoaiMonAn.TabIndex = 169;
             // 
             // label2
             // 
@@ -267,33 +293,28 @@
             this.label11.Text = "Tên món ăn:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtTenNguyenLieu
+            // txtTenMonaAn
             // 
-            this.txtTenNguyenLieu.Location = new System.Drawing.Point(12, 36);
-            this.txtTenNguyenLieu.Name = "txtTenNguyenLieu";
-            this.txtTenNguyenLieu.Size = new System.Drawing.Size(144, 20);
-            this.txtTenNguyenLieu.TabIndex = 167;
+            this.txtTenMonaAn.Location = new System.Drawing.Point(12, 36);
+            this.txtTenMonaAn.Name = "txtTenMonaAn";
+            this.txtTenMonaAn.Size = new System.Drawing.Size(144, 20);
+            this.txtTenMonaAn.TabIndex = 167;
             // 
             // oFDLayAnh
             // 
             this.oFDLayAnh.FileName = "openFileDialog1";
             // 
-            // pBAnhMinhHoa
+            // errorTenMonAn
             // 
-            this.pBAnhMinhHoa.Location = new System.Drawing.Point(221, 35);
-            this.pBAnhMinhHoa.Name = "pBAnhMinhHoa";
-            this.pBAnhMinhHoa.Size = new System.Drawing.Size(179, 137);
-            this.pBAnhMinhHoa.TabIndex = 172;
-            this.pBAnhMinhHoa.TabStop = false;
+            this.errorTenMonAn.ContainerControl = this;
             // 
-            // button6
+            // errorLoaiMonAn
             // 
-            this.button6.Location = new System.Drawing.Point(216, 439);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(80, 23);
-            this.button6.TabIndex = 179;
-            this.button6.Text = "Sửa món ăn";
-            this.button6.UseVisualStyleBackColor = true;
+            this.errorLoaiMonAn.ContainerControl = this;
+            // 
+            // errorGia
+            // 
+            this.errorGia.ContainerControl = this;
             // 
             // frmThemMonAn
             // 
@@ -312,6 +333,9 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBAnhMinhHoa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTenMonAn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorLoaiMonAn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorGia)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,11 +345,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtDonGia;
+        private System.Windows.Forms.ComboBox cmbLoaiMonAn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtTenNguyenLieu;
+        private System.Windows.Forms.TextBox txtTenMonaAn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pBAnhMinhHoa;
         private System.Windows.Forms.OpenFileDialog oFDLayAnh;
@@ -340,7 +364,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnThemNguyenLieu;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ErrorProvider errorTenMonAn;
+        private System.Windows.Forms.ErrorProvider errorLoaiMonAn;
+        private System.Windows.Forms.ErrorProvider errorGia;
     }
 }
