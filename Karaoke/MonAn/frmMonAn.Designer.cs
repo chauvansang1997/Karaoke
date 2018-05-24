@@ -98,7 +98,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(79, 101);
+            this.label5.Location = new System.Drawing.Point(79, 114);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 22);
             this.label5.TabIndex = 184;
@@ -109,7 +109,7 @@
             // 
             this.txtGiaTK.BackColor = System.Drawing.SystemColors.Info;
             this.txtGiaTK.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiaTK.Location = new System.Drawing.Point(227, 103);
+            this.txtGiaTK.Location = new System.Drawing.Point(227, 116);
             this.txtGiaTK.Name = "txtGiaTK";
             this.txtGiaTK.Size = new System.Drawing.Size(252, 29);
             this.txtGiaTK.TabIndex = 185;
@@ -119,7 +119,7 @@
             this.cmbLoaiMonTK.BackColor = System.Drawing.SystemColors.Info;
             this.cmbLoaiMonTK.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLoaiMonTK.FormattingEnabled = true;
-            this.cmbLoaiMonTK.Location = new System.Drawing.Point(227, 56);
+            this.cmbLoaiMonTK.Location = new System.Drawing.Point(227, 69);
             this.cmbLoaiMonTK.Name = "cmbLoaiMonTK";
             this.cmbLoaiMonTK.Size = new System.Drawing.Size(252, 29);
             this.cmbLoaiMonTK.TabIndex = 183;
@@ -129,7 +129,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(79, 58);
+            this.label7.Location = new System.Drawing.Point(79, 71);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 22);
             this.label7.TabIndex = 182;
@@ -141,7 +141,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(79, 11);
+            this.label8.Location = new System.Drawing.Point(79, 24);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(134, 22);
             this.label8.TabIndex = 180;
@@ -152,7 +152,7 @@
             // 
             this.txtTenTK.BackColor = System.Drawing.SystemColors.Info;
             this.txtTenTK.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenTK.Location = new System.Drawing.Point(227, 9);
+            this.txtTenTK.Location = new System.Drawing.Point(227, 22);
             this.txtTenTK.Name = "txtTenTK";
             this.txtTenTK.Size = new System.Drawing.Size(252, 29);
             this.txtTenTK.TabIndex = 181;
