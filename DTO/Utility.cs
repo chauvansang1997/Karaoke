@@ -9,6 +9,10 @@ using System.Windows.Forms;
 
 namespace DTO
 {
+    public enum State{
+        Add,
+        Fix
+    }
     public static class Utility
     {
         public static void setRowNumber(this DataGridView dgv)

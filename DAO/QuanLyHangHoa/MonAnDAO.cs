@@ -14,7 +14,7 @@ namespace DAO.QuanLyHangHoa
         {
            
             //Thêm món ăn
-            string query = "uspThemMonAn @listNguyenLieu,@mamon,@tenmon,@loaimon,@anhminhhoa,@dongia)";
+            string query = "uspThemMonAn @listNguyenLieu,@mamon,@tenmon,@loaimon,@anhminhhoa,@dongia";
 
             //Tạo mã cho món ăn
             string maMonAn = TaoMa.TaoMaMonAn();

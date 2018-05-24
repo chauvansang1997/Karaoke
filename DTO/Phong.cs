@@ -6,21 +6,23 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class Phong
+    public class Phong
     {
-        private String name;
-        private String status;
-
-        public string Name
+        private string ten;
+        private string maLoai;
+        private uint gia;
+        private string status;
+        private string ma;
+        public string Ten
         {
             get
             {
-                return name;
+                return ten;
             }
 
             set
             {
-                name = value;
+                ten = value;
             }
         }
 
@@ -36,5 +38,43 @@ namespace DTO
                 status = value;
             }
         }
+        public string Ma
+        {
+            get
+            {
+                return ma;
+            }
+
+            set
+            {
+                ma = value;
+            }
+        }
+
+        public uint Gia
+        {
+            get
+            {
+                return gia;
+            }
+
+            set
+            {
+                gia = value;
+            }
+        }
+        public string MaLoai
+        {
+            get
+            {
+                return maLoai;
+            }
+
+            set
+            {
+                maLoai = value;
+            }
+        }
+
     }
 }
