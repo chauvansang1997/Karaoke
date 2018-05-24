@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -97,20 +97,20 @@
             this.dGVNguyenLieu.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dGVNguyenLieu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dGVNguyenLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGVNguyenLieu.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVNguyenLieu.DefaultCellStyle = dataGridViewCellStyle1;
             this.dGVNguyenLieu.Location = new System.Drawing.Point(10, 48);
             this.dGVNguyenLieu.Name = "dGVNguyenLieu";
             this.dGVNguyenLieu.ReadOnly = true;
             this.dGVNguyenLieu.RowHeadersVisible = false;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.dGVNguyenLieu.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dGVNguyenLieu.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGVNguyenLieu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVNguyenLieu.Size = new System.Drawing.Size(635, 392);
             this.dGVNguyenLieu.TabIndex = 149;
@@ -220,10 +220,10 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
+            this.btnTimKiem.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTimKiem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.ForeColor = System.Drawing.Color.White;
+            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnTimKiem.Image = global::Karaoke.Properties.Resources.loupe;
             this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTimKiem.Location = new System.Drawing.Point(95, 275);

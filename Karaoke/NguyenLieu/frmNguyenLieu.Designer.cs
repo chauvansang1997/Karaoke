@@ -35,8 +35,6 @@
             this.txtPageNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dGVDanhSachNV = new System.Windows.Forms.DataGridView();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbCMND = new System.Windows.Forms.ComboBox();
@@ -62,6 +60,8 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
             this.btnFirstPage = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.btnLastPage = new System.Windows.Forms.Button();
             this.btnPrevPage = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
@@ -146,36 +146,6 @@
             this.dGVDanhSachNV.Size = new System.Drawing.Size(498, 310);
             this.dGVDanhSachNV.TabIndex = 149;
             // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSua.Image = global::Karaoke.Properties.Resources.edit;
-            this.btnSua.Location = new System.Drawing.Point(303, 454);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(100, 30);
-            this.btnSua.TabIndex = 155;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSua.UseVisualStyleBackColor = false;
-            // 
-            // btnThem
-            // 
-            this.btnThem.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnThem.Image = global::Karaoke.Properties.Resources.plus1;
-            this.btnThem.Location = new System.Drawing.Point(91, 454);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(100, 30);
-            this.btnThem.TabIndex = 153;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThem.UseVisualStyleBackColor = false;
-            // 
             // label11
             // 
             this.label11.BackColor = System.Drawing.Color.Transparent;
@@ -204,18 +174,21 @@
             // 
             this.cmbCMND.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbCMND.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cmbCMND.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCMND.BackColor = System.Drawing.SystemColors.Info;
+            this.cmbCMND.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCMND.FormattingEnabled = true;
             this.cmbCMND.Location = new System.Drawing.Point(124, 61);
             this.cmbCMND.Name = "cmbCMND";
-            this.cmbCMND.Size = new System.Drawing.Size(195, 23);
+            this.cmbCMND.Size = new System.Drawing.Size(195, 27);
             this.cmbCMND.TabIndex = 160;
             // 
             // txtTenNguyenLieu
             // 
+            this.txtTenNguyenLieu.BackColor = System.Drawing.SystemColors.Info;
+            this.txtTenNguyenLieu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenNguyenLieu.Location = new System.Drawing.Point(123, 26);
             this.txtTenNguyenLieu.Name = "txtTenNguyenLieu";
-            this.txtTenNguyenLieu.Size = new System.Drawing.Size(196, 20);
+            this.txtTenNguyenLieu.Size = new System.Drawing.Size(196, 26);
             this.txtTenNguyenLieu.TabIndex = 161;
             // 
             // groupBox1
@@ -224,7 +197,7 @@
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(325, 8);
+            this.groupBox1.Location = new System.Drawing.Point(325, 10);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(184, 78);
             this.groupBox1.TabIndex = 162;
@@ -356,6 +329,7 @@
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Image = global::Karaoke.Properties.Resources.diskette;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.Location = new System.Drawing.Point(112, 378);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 36);
@@ -493,6 +467,36 @@
             this.btnFirstPage.Size = new System.Drawing.Size(24, 24);
             this.btnFirstPage.TabIndex = 148;
             this.btnFirstPage.UseVisualStyleBackColor = false;
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSua.Image = global::Karaoke.Properties.Resources.edit;
+            this.btnSua.Location = new System.Drawing.Point(303, 454);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(100, 30);
+            this.btnSua.TabIndex = 155;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSua.UseVisualStyleBackColor = false;
+            // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnThem.Image = global::Karaoke.Properties.Resources.plus1;
+            this.btnThem.Location = new System.Drawing.Point(91, 454);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(100, 30);
+            this.btnThem.TabIndex = 153;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThem.UseVisualStyleBackColor = false;
             // 
             // btnLastPage
             // 
