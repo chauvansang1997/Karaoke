@@ -188,6 +188,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\back.png" />
+    <None Include="Resources\noimage.gif" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\diskette.png" />
+    <None Include="Resources\photo-camera.png" />
     <None Include="Resources\technics.png" />
     <None Include="Resources\plus.png" />
     <None Include="Resources\lens.png" />
