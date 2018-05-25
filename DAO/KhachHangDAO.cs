@@ -38,18 +38,18 @@ namespace DAO
 
         //public static void Nhap
 
-        public static List<KhachHang> LoadCustomerWithType(String type)
+        public static List<KhachHang> LoadCustomerWithType(string type)
         {
             string query = "EXEC usp_LoadHanhKhach @type";
-
-            DataTable table = Dataprovider.ExcuteQuery(query);
-
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@type",SqlDbType.NVarChar){IsNullable=true,Value=type?? (Object)DBNull.Value },
 
-               
+
             };
+            DataTable table = Dataprovider.ExcuteQuery(query);
+
+         
             //Chuyển Table thành List tên hành khách
             return table.AsEnumerable().ToList().ConvertAll(x =>
                 new KhachHang() { Name = x[0].ToString(), PhoneNumber = x[1].ToString(), Address = x[2].ToString(), Id = x[2].ToString() });
@@ -57,6 +57,21 @@ namespace DAO
             return null;
         }
 
-        //public static 
+        public static bool KiemTraSoDienThoai(string soDienThoai)
+        {
+            string query = "select * from KHACHHANG where SDT=@soDienThoai";
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@soDienThoai",SqlDbType.VarChar){Value=soDienThoai  },
+
+
+            };
+            DataTable table = Dataprovider.ExcuteQuery(query);
+            if (table.Rows.Count == 0)
+            {
+                return true;
+            }
+            return false;
+        } 
     }
 }

@@ -429,7 +429,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmMonAn";
-            this.Text = "Thêm món ăn";
+
+            this.Text = "frmThemMonAn";
+            this.Load += new System.EventHandler(this.frmMonAn_Load);
+
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVMonAn)).EndInit();

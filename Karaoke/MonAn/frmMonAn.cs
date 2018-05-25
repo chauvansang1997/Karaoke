@@ -15,6 +15,7 @@ namespace Karaoke.MonAn
     {
         private DataTable dtNguyenLieu;
         private uint donGia;
+        private string tenHinhAnh="";
         public frmMonAn()
         {
             InitializeComponent();
@@ -46,7 +47,7 @@ namespace Karaoke.MonAn
             {
                 dtNguyenLieu.Rows.Add(dr.ItemArray);
             }
-            dGVMonAn.DataSource = dtNguyenLieu;
+            dGVNguyenLieu.DataSource = dtNguyenLieu;
         }
 
         private void btnLayAnh_Click(object sender, EventArgs e)
@@ -60,6 +61,8 @@ namespace Karaoke.MonAn
                 pBAnhMinhHoa.Image = new Bitmap(oFDLayAnh.FileName);
                 // image file path  
                 txtAnhMinhHoa.Text = oFDLayAnh.FileName;
+                string[] temp = oFDLayAnh.FileName.Split('\\');
+                tenHinhAnh = temp[temp.Length - 1];
             }
         }
 
@@ -94,9 +97,13 @@ namespace Karaoke.MonAn
                     MessageBoxIcon.Error, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
                 return;
             }
-            BUS.MonAnBUS.ThemMonAn(new DTO.MonAn() { TenMonAn =txtTenMonAn.Text, LoaiMonAn = cmbLoaiMon.Text, Gia = donGia },
+            BUS.MonAnBUS.ThemMonAn(new DTO.MonAn() { TenMonAn =txtTenMonAn.Text, LoaiMonAn = cmbLoaiMon.Text, Gia = donGia,TenHinhAnh = tenHinhAnh },
                 dtNguyenLieu.AsEnumerable().Select(r => r.Field<string>("manl"))
                       .ToList());
+            MessageBox.Show("Bạn nhập món ăn thành công", "Thông báo", MessageBoxButtons.OK,
+                  MessageBoxIcon.Error, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
+            tenHinhAnh = "";
+            txtTenMonAn.Text = "";
         }
         /// <summary>
         /// Tránh nhập kí tự vào số
@@ -117,6 +124,11 @@ namespace Karaoke.MonAn
             {
                 txtGia.Text = donGia.ToString();
             }
+        }
+
+        private void frmMonAn_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

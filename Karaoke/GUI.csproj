@@ -106,6 +106,24 @@
     <Compile Include="NguyenLieu\frmThemNguyenLieu.Designer.cs">
       <DependentUpon>frmThemNguyenLieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhongKaoraoke\frmPhongKaraoke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhongKaoraoke\frmPhongKaraoke.Designer.cs">
+      <DependentUpon>frmPhongKaraoke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhongKaoraoke\frmQuanLyPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhongKaoraoke\frmQuanLyPhong.Designer.cs">
+      <DependentUpon>frmQuanLyPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhongKaraoke.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PhongKaraoke.Designer.cs">
+      <DependentUpon>PhongKaraoke.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FoodLayout.resx">
@@ -131,6 +149,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NguyenLieu\frmThemNguyenLieu.resx">
       <DependentUpon>frmThemNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhongKaoraoke\frmPhongKaraoke.resx">
+      <DependentUpon>frmPhongKaraoke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhongKaoraoke\frmQuanLyPhong.resx">
+      <DependentUpon>frmQuanLyPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhongKaraoke.resx">
+      <DependentUpon>PhongKaraoke.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -183,5 +210,6 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
