@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
+    public enum TrangThai
+    {
+        DaDat,
+        KhongDat
+    }
     public class Phong
     {
         private string ten;
         private string maLoai;
         private uint gia;
-        private string status;
+        private int tinhTrang;
         private string ma;
         public string Ten
         {
@@ -26,16 +31,16 @@ namespace DTO
             }
         }
 
-        public string Status
+        public int TinhTrang
         {
             get
             {
-                return status;
+                return tinhTrang;
             }
 
             set
             {
-                status = value;
+                tinhTrang = value;
             }
         }
         public string Ma
