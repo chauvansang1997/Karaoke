@@ -1,4 +1,4 @@
-﻿using Karaoke.MonAn;
+﻿using Karaoke.GuiMonAn;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,7 @@ namespace Karaoke
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMonAn());
+            Application.Run(new frmGoiMon());
         }
     }
 }

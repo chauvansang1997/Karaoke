@@ -70,22 +70,22 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="MonAn\frmGoiMon.cs">
+    <Compile Include="GuiMonAn\frmGoiMon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MonAn\frmGoiMon.designer.cs">
+    <Compile Include="GuiMonAn\frmGoiMon.designer.cs">
       <DependentUpon>frmGoiMon.cs</DependentUpon>
     </Compile>
-    <Compile Include="MonAn\frmMonAn.cs">
+    <Compile Include="GuiMonAn\frmMonAn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MonAn\frmMonAn.Designer.cs">
+    <Compile Include="GuiMonAn\frmMonAn.Designer.cs">
       <DependentUpon>frmMonAn.cs</DependentUpon>
     </Compile>
-    <Compile Include="MonAn\frmThemNguyenLieuMonAn.cs">
+    <Compile Include="GuiMonAn\frmThemNguyenLieuMonAn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MonAn\frmThemNguyenLieuMonAn.designer.cs">
+    <Compile Include="GuiMonAn\frmThemNguyenLieuMonAn.designer.cs">
       <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
     </Compile>
     <Compile Include="NguyenLieu\frmNguyenLieu.cs">
@@ -118,11 +118,11 @@
     <Compile Include="PhongKaoraoke\frmQuanLyPhong.Designer.cs">
       <DependentUpon>frmQuanLyPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="PhongKaraoke.cs">
+    <Compile Include="PhongLayout.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PhongKaraoke.Designer.cs">
-      <DependentUpon>PhongKaraoke.cs</DependentUpon>
+    <Compile Include="PhongLayout.Designer.cs">
+      <DependentUpon>PhongLayout.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,13 +132,13 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MonAn\frmGoiMon.resx">
+    <EmbeddedResource Include="GuiMonAn\frmGoiMon.resx">
       <DependentUpon>frmGoiMon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MonAn\frmMonAn.resx">
+    <EmbeddedResource Include="GuiMonAn\frmMonAn.resx">
       <DependentUpon>frmMonAn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MonAn\frmThemNguyenLieuMonAn.resx">
+    <EmbeddedResource Include="GuiMonAn\frmThemNguyenLieuMonAn.resx">
       <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NguyenLieu\frmNguyenLieu.resx">
@@ -156,8 +156,8 @@
     <EmbeddedResource Include="PhongKaoraoke\frmQuanLyPhong.resx">
       <DependentUpon>frmQuanLyPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PhongKaraoke.resx">
-      <DependentUpon>PhongKaraoke.cs</DependentUpon>
+    <EmbeddedResource Include="PhongLayout.resx">
+      <DependentUpon>PhongLayout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

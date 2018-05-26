@@ -1,6 +1,6 @@
 ﻿namespace Karaoke
 {
-    partial class PhongKaraoke
+    partial class PhongLayout
     {
         /// <summary> 
         /// Required designer variable.

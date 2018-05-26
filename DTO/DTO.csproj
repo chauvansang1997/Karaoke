@@ -42,10 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietHoaDon.cs" />
+    <Compile Include="GoiMonDataSource.cs" />
     <Compile Include="LoaiPhong.cs" />
     <Compile Include="MonAn.cs" />
     <Compile Include="NhaCungCap.cs" />
     <Compile Include="NhanVien.cs" />
+    <Compile Include="SanPham.cs" />
     <Compile Include="TaiKhoan.cs" />
     <Compile Include="ThietBi.cs" />
     <Compile Include="ThucAn.cs" />

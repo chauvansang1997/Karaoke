@@ -24,14 +24,13 @@ namespace DAO.QuanLyHangHoa
             { 
                 new SqlParameter("@listNguyenLieu", SqlDbType.VarChar) { IsNullable = false, Value = listNguyenLieu },
                 new SqlParameter("@mamon",SqlDbType.VarChar){IsNullable=false,Value=maMonAn },
-                new SqlParameter("@tenmon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.TenMonAn },
-                new SqlParameter("@loaimon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.LoaiMonAn },
+                new SqlParameter("@tenmon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Ten },
+                new SqlParameter("@loaimon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Loai },
                 new SqlParameter("@anhminhhoa",SqlDbType.VarChar){IsNullable=false,Value=monAn.TenHinhAnh },
                 new SqlParameter("@dongia",SqlDbType.Decimal){IsNullable=false,Value=monAn.Gia },
             };
             try
             {
-                //nếu số dòng thành công trả về lớn hơn 0 thì thành công
                 Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
             }
             catch (Exception ex)
@@ -43,8 +42,41 @@ namespace DAO.QuanLyHangHoa
 
             return true;
         }
+        public static List<MonAn> XemMonAn(string tenMonAn, string loaiMonAn, int pageNumber,int pageSize,uint donGia = 0)
+        {
+            string query = "EXEC uspXemMonAn @tenMonAn,@loaiMonAn,@donGia,@pageNumber,@pageSize";
 
-        public static DataTable XemMonAn(string tenMonAn,string loaiMonAn,uint donGia = 0)
+            //truyền tham số vào câu truy vấn
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@tenMonAn",SqlDbType.NVarChar){IsNullable=false,Value=tenMonAn },
+                new SqlParameter("@loaiMonAn",SqlDbType.NVarChar){IsNullable=false,Value=loaiMonAn},
+                new SqlParameter("@donGia",SqlDbType.Decimal){IsNullable=false,Value=donGia },
+                 new SqlParameter("@pageNumber",SqlDbType.Int){IsNullable=false,Value=pageNumber},
+                new SqlParameter("@pageSize",SqlDbType.Int){IsNullable=false,Value=pageSize },
+            };
+            List<MonAn> list = new List<MonAn>();
+            try
+            {
+                DataTable table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+                list = table.AsEnumerable().ToList().ConvertAll(x =>
+                        new MonAn()
+                        {
+                            Ma = x[0].ToString(),
+                            Ten = x[1].ToString(),
+                            Loai = x[2].ToString(),                        
+                            TenHinhAnh = x[3].ToString(),
+                             Gia = uint.Parse(x[4].ToString())
+                        });
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+
+            return list;
+        }
+        public static List<MonAn> XemMonAn(string tenMonAn,string loaiMonAn,uint donGia = 0)
         {
             string query = "EXEC uspXemMonAn @tenMonAn,@loaiMonAn,@donGia";
 
@@ -56,8 +88,26 @@ namespace DAO.QuanLyHangHoa
                 new SqlParameter("@donGia",SqlDbType.Decimal){IsNullable=false,Value=donGia },
 
             };
-            DataTable table = Dataprovider.ExcuteQuery(query,parameters.ToArray());
-            return table;
+            List<MonAn> list = new List<MonAn>();
+            try
+            {
+               DataTable table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+               list = table.AsEnumerable().ToList().ConvertAll(x =>
+                       new MonAn()
+                       {
+                           Ma = x[0].ToString(),
+                           Ten = x[1].ToString(),
+                           Loai = x[2].ToString(),
+                           Gia = uint.Parse(x[3].ToString()),
+                           TenHinhAnh = x[4].ToString()
+                       });
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+
+            return list;
         }
         public static bool XoaMonAn(string maMonAn)
         {
@@ -77,6 +127,29 @@ namespace DAO.QuanLyHangHoa
                 return false;
             }
             return true;
+        }
+        public static int DemMonAn(string tenMonAn, string loaiMonAn, uint donGia = 0)
+        {
+            string query = "EXEC uspDemMonAn @tenMonAn,@loaiMonAn,@donGia";
+
+            //truyền tham số vào câu truy vấn
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@tenMonAn",SqlDbType.NVarChar){IsNullable=false,Value=tenMonAn },
+                new SqlParameter("@loaiMonAn",SqlDbType.NVarChar){IsNullable=false,Value=loaiMonAn},
+                new SqlParameter("@donGia",SqlDbType.Decimal){IsNullable=false,Value=donGia },
+
+            };
+            int count = 0;
+            try
+            {
+                count=int.Parse(Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            return count;
         }
     }
 }

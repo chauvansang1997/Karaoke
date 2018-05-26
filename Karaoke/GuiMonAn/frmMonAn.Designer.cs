@@ -1,4 +1,4 @@
-﻿namespace Karaoke.MonAn
+﻿namespace Karaoke.GuiMonAn
 {
     partial class frmMonAn
     {

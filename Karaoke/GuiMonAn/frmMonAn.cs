@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Karaoke.MonAn
+namespace Karaoke.GuiMonAn
 {
     public partial class frmMonAn : Form
     {
@@ -97,7 +97,7 @@ namespace Karaoke.MonAn
                     MessageBoxIcon.Error, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
                 return;
             }
-            BUS.MonAnBUS.ThemMonAn(new DTO.MonAn() { TenMonAn =txtTenMonAn.Text, LoaiMonAn = cmbLoaiMon.Text, Gia = donGia,TenHinhAnh = tenHinhAnh },
+            BUS.MonAnBUS.ThemMonAn(new DTO.MonAn() { Ten =txtTenMonAn.Text, Loai = cmbLoaiMon.Text, Gia = donGia,TenHinhAnh = tenHinhAnh },
                 dtNguyenLieu.AsEnumerable().Select(r => r.Field<string>("manl"))
                       .ToList());
             MessageBox.Show("Bạn nhập món ăn thành công", "Thông báo", MessageBoxButtons.OK,

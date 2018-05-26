@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Karaoke
 {
-    public partial class PhongKaraoke : UserControl
+    public partial class PhongLayout : UserControl
     {
-        public PhongKaraoke()
+        public PhongLayout()
         {
             InitializeComponent();
         }

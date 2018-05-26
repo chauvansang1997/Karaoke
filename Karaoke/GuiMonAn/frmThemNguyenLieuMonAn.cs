@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Karaoke.MonAn
+namespace Karaoke.GuiMonAn
 {
     public partial class frmThemNguyenLieuMonAn : Form
     {

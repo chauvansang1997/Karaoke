@@ -16,9 +16,17 @@ namespace BUS
             string listNguyenLieu = String.Join("|", listMaNguyenLieu);
             return MonAnDAO.ThemMonAn(monAn, listNguyenLieu);
         }
-        public static DataTable XemMonAn(string tenMonAn,string loaiMonAn,uint donGia=0)
+        public static List<MonAn> XemMonAn(string tenMonAn,string loaiMonAn,uint donGia=0)
         {
             return MonAnDAO.XemMonAn(tenMonAn, loaiMonAn, donGia);
+        }
+        public static List<MonAn> XemMonAn(string tenMonAn, string loaiMonAn, int pageNumber,int pageSize,uint donGia = 0)
+        {
+            return MonAnDAO.XemMonAn(tenMonAn, loaiMonAn,pageNumber,pageSize, donGia);
+        }
+        public static int DemMonAn(string tenMonAn, string loaiMonAn, uint donGia = 0)
+        {
+            return MonAnDAO.DemMonAn(tenMonAn, loaiMonAn, donGia);
         }
     }
 }

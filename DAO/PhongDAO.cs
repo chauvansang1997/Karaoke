@@ -20,7 +20,7 @@ namespace DAO
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@maphong",SqlDbType.NVarChar){ Value=ma  },
-                new SqlParameter("@maloaiphong",SqlDbType.NVarChar){Value=phong.MaLoai },
+                new SqlParameter("@maloaiphong",SqlDbType.NVarChar){Value=phong.TenLoai },
                 new SqlParameter("@tinhtrang",SqlDbType.NVarChar){Value=phong.TinhTrang }
 
             };
@@ -37,5 +37,33 @@ namespace DAO
 
             return true;
         }
+
+        public static List<Phong> XemPhong(string trangThai)
+        {
+            string query = "EXEC uspTraCuuPhong @trangThai";
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@trangThai",SqlDbType.VarChar){ Value=trangThai  }
+            };
+            List<Phong> list = new List<Phong>();
+            try
+            {
+                DataTable table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+                list = table.AsEnumerable().ToList().ConvertAll(x =>
+                        new Phong()
+                        {
+                            Ten = x[0].ToString(),
+                            TenLoai = x[1].ToString(),
+                            Gia = uint.Parse(x[2].ToString()),
+                            TinhTrang = int.Parse(x[3].ToString())
+                        });
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+
+            return list;
+        } 
     }
 }

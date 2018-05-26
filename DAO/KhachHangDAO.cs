@@ -54,7 +54,6 @@ namespace DAO
             return table.AsEnumerable().ToList().ConvertAll(x =>
                 new KhachHang() { Name = x[0].ToString(), PhoneNumber = x[1].ToString(), Address = x[2].ToString(), Id = x[2].ToString() });
 
-            return null;
         }
 
         public static bool KiemTraSoDienThoai(string soDienThoai)
