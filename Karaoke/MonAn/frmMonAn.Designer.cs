@@ -41,13 +41,21 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtTenTK = new System.Windows.Forms.TextBox();
+            this.btnSuaMonAn = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.btnXoaMonAn = new System.Windows.Forms.Button();
+            this.btnThemMonAn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dGVMonAn = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnXoaNguyenLieu = new System.Windows.Forms.Button();
+            this.btnThemNguyenLieu = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.dGVNguyenLieu = new System.Windows.Forms.DataGridView();
-            this.txtAnhMinhHoa = new System.Windows.Forms.TextBox();
+            this.btnLayAnh = new System.Windows.Forms.Button();
+            this.pBAnhMinhHoa = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtGia = new System.Windows.Forms.TextBox();
             this.cmbLoaiMon = new System.Windows.Forms.ComboBox();
@@ -55,15 +63,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtTenMonAn = new System.Windows.Forms.TextBox();
             this.oFDLayAnh = new System.Windows.Forms.OpenFileDialog();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnXoaNguyenLieu = new System.Windows.Forms.Button();
-            this.btnThemNguyenLieu = new System.Windows.Forms.Button();
-            this.btnLayAnh = new System.Windows.Forms.Button();
-            this.pBAnhMinhHoa = new System.Windows.Forms.PictureBox();
-            this.btnSuaMonAn = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.btnXoaMonAn = new System.Windows.Forms.Button();
-            this.btnThemMonAn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVMonAn)).BeginInit();
             this.panel2.SuspendLayout();
@@ -157,6 +156,32 @@
             this.txtTenTK.Size = new System.Drawing.Size(252, 29);
             this.txtTenTK.TabIndex = 181;
             // 
+            // btnSuaMonAn
+            // 
+            this.btnSuaMonAn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSuaMonAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaMonAn.Image = global::Karaoke.Properties.Resources.edit;
+            this.btnSuaMonAn.Location = new System.Drawing.Point(325, 508);
+            this.btnSuaMonAn.Name = "btnSuaMonAn";
+            this.btnSuaMonAn.Size = new System.Drawing.Size(74, 36);
+            this.btnSuaMonAn.TabIndex = 179;
+            this.btnSuaMonAn.Text = "Sửa";
+            this.btnSuaMonAn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSuaMonAn.UseVisualStyleBackColor = false;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Image = global::Karaoke.Properties.Resources.diskette;
+            this.btnLuu.Location = new System.Drawing.Point(398, 508);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(82, 36);
+            this.btnLuu.TabIndex = 178;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLuu.UseVisualStyleBackColor = false;
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -168,6 +193,33 @@
             this.button4.Text = "Thoát";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = false;
+            // 
+            // btnXoaMonAn
+            // 
+            this.btnXoaMonAn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnXoaMonAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaMonAn.Image = global::Karaoke.Properties.Resources.eraser;
+            this.btnXoaMonAn.Location = new System.Drawing.Point(231, 508);
+            this.btnXoaMonAn.Name = "btnXoaMonAn";
+            this.btnXoaMonAn.Size = new System.Drawing.Size(95, 36);
+            this.btnXoaMonAn.TabIndex = 176;
+            this.btnXoaMonAn.Text = "Xóa";
+            this.btnXoaMonAn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoaMonAn.UseVisualStyleBackColor = false;
+            // 
+            // btnThemMonAn
+            // 
+            this.btnThemMonAn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnThemMonAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemMonAn.Image = global::Karaoke.Properties.Resources.plus1;
+            this.btnThemMonAn.Location = new System.Drawing.Point(137, 508);
+            this.btnThemMonAn.Name = "btnThemMonAn";
+            this.btnThemMonAn.Size = new System.Drawing.Size(95, 36);
+            this.btnThemMonAn.TabIndex = 175;
+            this.btnThemMonAn.Text = "Thêm";
+            this.btnThemMonAn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThemMonAn.UseVisualStyleBackColor = false;
+            this.btnThemMonAn.Click += new System.EventHandler(this.btnThemMonAn_Click);
             // 
             // label1
             // 
@@ -197,7 +249,6 @@
             this.panel2.Controls.Add(this.btnThemNguyenLieu);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.dGVNguyenLieu);
-            this.panel2.Controls.Add(this.txtAnhMinhHoa);
             this.panel2.Controls.Add(this.btnLayAnh);
             this.panel2.Controls.Add(this.pBAnhMinhHoa);
             this.panel2.Controls.Add(this.label3);
@@ -211,10 +262,50 @@
             this.panel2.Size = new System.Drawing.Size(446, 554);
             this.panel2.TabIndex = 1;
             // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(3, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(434, 32);
+            this.label4.TabIndex = 180;
+            this.label4.Text = "THÊM MÓN ĂN";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnXoaNguyenLieu
+            // 
+            this.btnXoaNguyenLieu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnXoaNguyenLieu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaNguyenLieu.Image = global::Karaoke.Properties.Resources.eraser;
+            this.btnXoaNguyenLieu.Location = new System.Drawing.Point(287, 508);
+            this.btnXoaNguyenLieu.Name = "btnXoaNguyenLieu";
+            this.btnXoaNguyenLieu.Size = new System.Drawing.Size(150, 36);
+            this.btnXoaNguyenLieu.TabIndex = 179;
+            this.btnXoaNguyenLieu.Text = "Xóa nguyên liệu";
+            this.btnXoaNguyenLieu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoaNguyenLieu.UseVisualStyleBackColor = false;
+            // 
+            // btnThemNguyenLieu
+            // 
+            this.btnThemNguyenLieu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnThemNguyenLieu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemNguyenLieu.Image = global::Karaoke.Properties.Resources.plus1;
+            this.btnThemNguyenLieu.Location = new System.Drawing.Point(132, 508);
+            this.btnThemNguyenLieu.Name = "btnThemNguyenLieu";
+            this.btnThemNguyenLieu.Size = new System.Drawing.Size(156, 36);
+            this.btnThemNguyenLieu.TabIndex = 178;
+            this.btnThemNguyenLieu.Text = "Thêm nguyên liệu";
+            this.btnThemNguyenLieu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThemNguyenLieu.UseVisualStyleBackColor = false;
+            this.btnThemNguyenLieu.Click += new System.EventHandler(this.btnThemNguyenLieu_Click_1);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(8, 173);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(176, 21);
@@ -231,13 +322,28 @@
             this.dGVNguyenLieu.Size = new System.Drawing.Size(429, 302);
             this.dGVNguyenLieu.TabIndex = 176;
             // 
-            // txtAnhMinhHoa
+            // btnLayAnh
             // 
-            this.txtAnhMinhHoa.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnhMinhHoa.Location = new System.Drawing.Point(284, 13);
-            this.txtAnhMinhHoa.Name = "txtAnhMinhHoa";
-            this.txtAnhMinhHoa.Size = new System.Drawing.Size(153, 29);
-            this.txtAnhMinhHoa.TabIndex = 175;
+            this.btnLayAnh.BackColor = System.Drawing.Color.Transparent;
+            this.btnLayAnh.BackgroundImage = global::Karaoke.Properties.Resources.photo_camera;
+            this.btnLayAnh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLayAnh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLayAnh.Location = new System.Drawing.Point(407, 148);
+            this.btnLayAnh.Name = "btnLayAnh";
+            this.btnLayAnh.Size = new System.Drawing.Size(35, 30);
+            this.btnLayAnh.TabIndex = 174;
+            this.btnLayAnh.UseVisualStyleBackColor = false;
+            this.btnLayAnh.Click += new System.EventHandler(this.btnLayAnh_Click);
+            // 
+            // pBAnhMinhHoa
+            // 
+            this.pBAnhMinhHoa.BackColor = System.Drawing.Color.Transparent;
+            this.pBAnhMinhHoa.ErrorImage = global::Karaoke.Properties.Resources.noimage;
+            this.pBAnhMinhHoa.Location = new System.Drawing.Point(284, 44);
+            this.pBAnhMinhHoa.Name = "pBAnhMinhHoa";
+            this.pBAnhMinhHoa.Size = new System.Drawing.Size(153, 126);
+            this.pBAnhMinhHoa.TabIndex = 172;
+            this.pBAnhMinhHoa.TabStop = false;
             // 
             // label3
             // 
@@ -305,121 +411,6 @@
             // 
             this.oFDLayAnh.FileName = "openFileDialog1";
             // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(270, 32);
-            this.label4.TabIndex = 180;
-            this.label4.Text = "THÊM MÓN ĂN";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnXoaNguyenLieu
-            // 
-            this.btnXoaNguyenLieu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnXoaNguyenLieu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaNguyenLieu.Image = global::Karaoke.Properties.Resources.eraser;
-            this.btnXoaNguyenLieu.Location = new System.Drawing.Point(287, 508);
-            this.btnXoaNguyenLieu.Name = "btnXoaNguyenLieu";
-            this.btnXoaNguyenLieu.Size = new System.Drawing.Size(150, 36);
-            this.btnXoaNguyenLieu.TabIndex = 179;
-            this.btnXoaNguyenLieu.Text = "Xóa nguyên liệu";
-            this.btnXoaNguyenLieu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoaNguyenLieu.UseVisualStyleBackColor = false;
-            // 
-            // btnThemNguyenLieu
-            // 
-            this.btnThemNguyenLieu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnThemNguyenLieu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemNguyenLieu.Image = global::Karaoke.Properties.Resources.plus1;
-            this.btnThemNguyenLieu.Location = new System.Drawing.Point(132, 508);
-            this.btnThemNguyenLieu.Name = "btnThemNguyenLieu";
-            this.btnThemNguyenLieu.Size = new System.Drawing.Size(156, 36);
-            this.btnThemNguyenLieu.TabIndex = 178;
-            this.btnThemNguyenLieu.Text = "Thêm nguyên liệu";
-            this.btnThemNguyenLieu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThemNguyenLieu.UseVisualStyleBackColor = false;
-            this.btnThemNguyenLieu.Click += new System.EventHandler(this.btnThemNguyenLieu_Click_1);
-            // 
-            // btnLayAnh
-            // 
-            this.btnLayAnh.BackColor = System.Drawing.Color.Transparent;
-            this.btnLayAnh.BackgroundImage = global::Karaoke.Properties.Resources.photo_camera;
-            this.btnLayAnh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnLayAnh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLayAnh.Location = new System.Drawing.Point(407, 148);
-            this.btnLayAnh.Name = "btnLayAnh";
-            this.btnLayAnh.Size = new System.Drawing.Size(35, 30);
-            this.btnLayAnh.TabIndex = 174;
-            this.btnLayAnh.UseVisualStyleBackColor = false;
-            this.btnLayAnh.Click += new System.EventHandler(this.btnLayAnh_Click);
-            // 
-            // pBAnhMinhHoa
-            // 
-            this.pBAnhMinhHoa.BackColor = System.Drawing.Color.Transparent;
-            this.pBAnhMinhHoa.ErrorImage = global::Karaoke.Properties.Resources.noimage;
-            this.pBAnhMinhHoa.Location = new System.Drawing.Point(284, 54);
-            this.pBAnhMinhHoa.Name = "pBAnhMinhHoa";
-            this.pBAnhMinhHoa.Size = new System.Drawing.Size(153, 116);
-            this.pBAnhMinhHoa.TabIndex = 172;
-            this.pBAnhMinhHoa.TabStop = false;
-            // 
-            // btnSuaMonAn
-            // 
-            this.btnSuaMonAn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnSuaMonAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaMonAn.Image = global::Karaoke.Properties.Resources.edit;
-            this.btnSuaMonAn.Location = new System.Drawing.Point(325, 508);
-            this.btnSuaMonAn.Name = "btnSuaMonAn";
-            this.btnSuaMonAn.Size = new System.Drawing.Size(74, 36);
-            this.btnSuaMonAn.TabIndex = 179;
-            this.btnSuaMonAn.Text = "Sửa";
-            this.btnSuaMonAn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSuaMonAn.UseVisualStyleBackColor = false;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Image = global::Karaoke.Properties.Resources.diskette;
-            this.btnLuu.Location = new System.Drawing.Point(398, 508);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(82, 36);
-            this.btnLuu.TabIndex = 178;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLuu.UseVisualStyleBackColor = false;
-            // 
-            // btnXoaMonAn
-            // 
-            this.btnXoaMonAn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnXoaMonAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaMonAn.Image = global::Karaoke.Properties.Resources.eraser;
-            this.btnXoaMonAn.Location = new System.Drawing.Point(231, 508);
-            this.btnXoaMonAn.Name = "btnXoaMonAn";
-            this.btnXoaMonAn.Size = new System.Drawing.Size(95, 36);
-            this.btnXoaMonAn.TabIndex = 176;
-            this.btnXoaMonAn.Text = "Xóa";
-            this.btnXoaMonAn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoaMonAn.UseVisualStyleBackColor = false;
-            // 
-            // btnThemMonAn
-            // 
-            this.btnThemMonAn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnThemMonAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemMonAn.Image = global::Karaoke.Properties.Resources.plus1;
-            this.btnThemMonAn.Location = new System.Drawing.Point(137, 508);
-            this.btnThemMonAn.Name = "btnThemMonAn";
-            this.btnThemMonAn.Size = new System.Drawing.Size(95, 36);
-            this.btnThemMonAn.TabIndex = 175;
-            this.btnThemMonAn.Text = "Thêm";
-            this.btnThemMonAn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThemMonAn.UseVisualStyleBackColor = false;
-            this.btnThemMonAn.Click += new System.EventHandler(this.btnThemMonAn_Click);
-            // 
             // frmMonAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,7 +449,6 @@
         private System.Windows.Forms.Button btnXoaMonAn;
         private System.Windows.Forms.Button btnThemMonAn;
         private System.Windows.Forms.Button btnLuu;
-        private System.Windows.Forms.TextBox txtAnhMinhHoa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dGVMonAn;
         private System.Windows.Forms.Label label6;

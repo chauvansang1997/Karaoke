@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
 
 namespace Karaoke.MonAn
 {
@@ -15,6 +16,7 @@ namespace Karaoke.MonAn
     {
         private DataTable dtNguyenLieu;
         private uint donGia;
+        private string anhMinhHoa;
         public frmMonAn()
         {
             InitializeComponent();
@@ -59,7 +61,7 @@ namespace Karaoke.MonAn
                 // display image in picture box  
                 pBAnhMinhHoa.Image = new Bitmap(oFDLayAnh.FileName);
                 // image file path  
-                txtAnhMinhHoa.Text = oFDLayAnh.FileName;
+                anhMinhHoa = oFDLayAnh.FileName;
             }
         }
 

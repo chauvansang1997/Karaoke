@@ -31,6 +31,7 @@
             this.txtPrice = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.Label();
             this.imgFood = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgFood)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,17 +39,17 @@
             // 
             this.txtPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrice.AutoSize = true;
-            this.txtPrice.Location = new System.Drawing.Point(61, 4);
+            this.txtPrice.Location = new System.Drawing.Point(71, 110);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(31, 13);
+            this.txtPrice.Size = new System.Drawing.Size(43, 13);
             this.txtPrice.TabIndex = 0;
-            this.txtPrice.Text = "100$";
+            this.txtPrice.Text = "100000";
             // 
             // txtName
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtName.AutoSize = true;
-            this.txtName.Location = new System.Drawing.Point(24, 78);
+            this.txtName.Location = new System.Drawing.Point(3, 110);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(32, 13);
             this.txtName.TabIndex = 2;
@@ -61,21 +62,32 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.imgFood.BackgroundImage = global::Karaoke.Properties.Resources.go_first;
             this.imgFood.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgFood.Location = new System.Drawing.Point(16, 20);
+            this.imgFood.Location = new System.Drawing.Point(3, 3);
             this.imgFood.Name = "imgFood";
-            this.imgFood.Size = new System.Drawing.Size(65, 55);
+            this.imgFood.Size = new System.Drawing.Size(139, 101);
             this.imgFood.TabIndex = 1;
             this.imgFood.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(115, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "VNĐ";
             // 
             // FoodLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.imgFood);
             this.Controls.Add(this.txtPrice);
             this.Name = "FoodLayout";
-            this.Size = new System.Drawing.Size(100, 100);
+            this.Size = new System.Drawing.Size(145, 129);
             ((System.ComponentModel.ISupportInitialize)(this.imgFood)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -87,5 +99,6 @@
         public System.Windows.Forms.Label txtPrice;
         public System.Windows.Forms.PictureBox imgFood;
         public System.Windows.Forms.Label txtName;
+        public System.Windows.Forms.Label label1;
     }
 }

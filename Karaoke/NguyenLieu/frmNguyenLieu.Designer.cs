@@ -31,9 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.txtTotalPage = new System.Windows.Forms.TextBox();
-            this.txtPageNumber = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.dGVDanhSachNV = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -59,10 +56,13 @@
             this.btnAn = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
-            this.btnFirstPage = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.txtTotalPage = new System.Windows.Forms.TextBox();
+            this.btnFirstPage = new System.Windows.Forms.Button();
+            this.txtPageNumber = new System.Windows.Forms.TextBox();
             this.btnLastPage = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnPrevPage = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachNV)).BeginInit();
@@ -87,36 +87,6 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThoat.UseVisualStyleBackColor = false;
-            // 
-            // txtTotalPage
-            // 
-            this.txtTotalPage.Location = new System.Drawing.Point(269, 108);
-            this.txtTotalPage.Name = "txtTotalPage";
-            this.txtTotalPage.ReadOnly = true;
-            this.txtTotalPage.Size = new System.Drawing.Size(37, 20);
-            this.txtTotalPage.TabIndex = 140;
-            this.txtTotalPage.Text = "1";
-            this.txtTotalPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtPageNumber
-            // 
-            this.txtPageNumber.Location = new System.Drawing.Point(214, 108);
-            this.txtPageNumber.Name = "txtPageNumber";
-            this.txtPageNumber.Size = new System.Drawing.Size(37, 20);
-            this.txtPageNumber.TabIndex = 139;
-            this.txtPageNumber.Text = "1";
-            this.txtPageNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(253, 107);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 20);
-            this.label6.TabIndex = 138;
-            this.label6.Text = "/";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dGVDanhSachNV
             // 
@@ -143,7 +113,7 @@
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
             this.dGVDanhSachNV.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dGVDanhSachNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGVDanhSachNV.Size = new System.Drawing.Size(498, 310);
+            this.dGVDanhSachNV.Size = new System.Drawing.Size(498, 276);
             this.dGVDanhSachNV.TabIndex = 149;
             // 
             // label11
@@ -278,25 +248,25 @@
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.BackColor = System.Drawing.Color.White;
+            this.splitContainer.Panel2.Controls.Add(this.txtTotalPage);
+            this.splitContainer.Panel2.Controls.Add(this.btnFirstPage);
+            this.splitContainer.Panel2.Controls.Add(this.txtPageNumber);
+            this.splitContainer.Panel2.Controls.Add(this.btnLastPage);
+            this.splitContainer.Panel2.Controls.Add(this.label6);
+            this.splitContainer.Panel2.Controls.Add(this.btnPrevPage);
+            this.splitContainer.Panel2.Controls.Add(this.btnNextPage);
             this.splitContainer.Panel2.Controls.Add(this.btnAn);
             this.splitContainer.Panel2.Controls.Add(this.btnXoa);
             this.splitContainer.Panel2.Controls.Add(this.btnFind);
-            this.splitContainer.Panel2.Controls.Add(this.txtTotalPage);
             this.splitContainer.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer.Panel2.Controls.Add(this.cmbCMND);
             this.splitContainer.Panel2.Controls.Add(this.label7);
-            this.splitContainer.Panel2.Controls.Add(this.btnFirstPage);
             this.splitContainer.Panel2.Controls.Add(this.btnSua);
             this.splitContainer.Panel2.Controls.Add(this.btnThoat);
             this.splitContainer.Panel2.Controls.Add(this.txtTenNguyenLieu);
             this.splitContainer.Panel2.Controls.Add(this.label11);
-            this.splitContainer.Panel2.Controls.Add(this.txtPageNumber);
             this.splitContainer.Panel2.Controls.Add(this.btnThem);
-            this.splitContainer.Panel2.Controls.Add(this.btnLastPage);
-            this.splitContainer.Panel2.Controls.Add(this.label6);
             this.splitContainer.Panel2.Controls.Add(this.dGVDanhSachNV);
-            this.splitContainer.Panel2.Controls.Add(this.btnPrevPage);
-            this.splitContainer.Panel2.Controls.Add(this.btnNextPage);
             this.splitContainer.Size = new System.Drawing.Size(863, 502);
             this.splitContainer.SplitterDistance = 340;
             this.splitContainer.TabIndex = 163;
@@ -447,26 +417,13 @@
             this.btnFind.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnFind.Image = global::Karaoke.Properties.Resources.loupe;
             this.btnFind.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFind.Location = new System.Drawing.Point(11, 102);
+            this.btnFind.Location = new System.Drawing.Point(168, 98);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(110, 30);
             this.btnFind.TabIndex = 67;
             this.btnFind.Text = "Tìm kiếm";
             this.btnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFind.UseVisualStyleBackColor = false;
-            // 
-            // btnFirstPage
-            // 
-            this.btnFirstPage.BackColor = System.Drawing.Color.Transparent;
-            this.btnFirstPage.BackgroundImage = global::Karaoke.Properties.Resources.first_pape;
-            this.btnFirstPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFirstPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFirstPage.Location = new System.Drawing.Point(161, 106);
-            this.btnFirstPage.Name = "btnFirstPage";
-            this.btnFirstPage.Size = new System.Drawing.Size(24, 24);
-            this.btnFirstPage.TabIndex = 148;
-            this.btnFirstPage.UseVisualStyleBackColor = false;
             // 
             // btnSua
             // 
@@ -498,6 +455,38 @@
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
             // 
+            // txtTotalPage
+            // 
+            this.txtTotalPage.Location = new System.Drawing.Point(267, 420);
+            this.txtTotalPage.Name = "txtTotalPage";
+            this.txtTotalPage.ReadOnly = true;
+            this.txtTotalPage.Size = new System.Drawing.Size(37, 20);
+            this.txtTotalPage.TabIndex = 166;
+            this.txtTotalPage.Text = "1";
+            this.txtTotalPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnFirstPage
+            // 
+            this.btnFirstPage.BackColor = System.Drawing.Color.Transparent;
+            this.btnFirstPage.BackgroundImage = global::Karaoke.Properties.Resources.first_pape;
+            this.btnFirstPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirstPage.ForeColor = System.Drawing.Color.Transparent;
+            this.btnFirstPage.Location = new System.Drawing.Point(159, 418);
+            this.btnFirstPage.Name = "btnFirstPage";
+            this.btnFirstPage.Size = new System.Drawing.Size(24, 24);
+            this.btnFirstPage.TabIndex = 170;
+            this.btnFirstPage.UseVisualStyleBackColor = false;
+            // 
+            // txtPageNumber
+            // 
+            this.txtPageNumber.Location = new System.Drawing.Point(212, 420);
+            this.txtPageNumber.Name = "txtPageNumber";
+            this.txtPageNumber.Size = new System.Drawing.Size(37, 20);
+            this.txtPageNumber.TabIndex = 165;
+            this.txtPageNumber.Text = "1";
+            this.txtPageNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // btnLastPage
             // 
             this.btnLastPage.BackColor = System.Drawing.Color.Transparent;
@@ -505,11 +494,22 @@
             this.btnLastPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnLastPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLastPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLastPage.Location = new System.Drawing.Point(335, 106);
+            this.btnLastPage.Location = new System.Drawing.Point(333, 418);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(24, 24);
-            this.btnLastPage.TabIndex = 147;
+            this.btnLastPage.TabIndex = 169;
             this.btnLastPage.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(251, 419);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 20);
+            this.label6.TabIndex = 164;
+            this.label6.Text = "/";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnPrevPage
             // 
@@ -518,10 +518,10 @@
             this.btnPrevPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnPrevPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPrevPage.Location = new System.Drawing.Point(184, 106);
+            this.btnPrevPage.Location = new System.Drawing.Point(182, 418);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(24, 24);
-            this.btnPrevPage.TabIndex = 146;
+            this.btnPrevPage.TabIndex = 168;
             this.btnPrevPage.UseVisualStyleBackColor = false;
             // 
             // btnNextPage
@@ -531,10 +531,10 @@
             this.btnNextPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnNextPage.Location = new System.Drawing.Point(312, 106);
+            this.btnNextPage.Location = new System.Drawing.Point(310, 418);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(24, 24);
-            this.btnNextPage.TabIndex = 145;
+            this.btnNextPage.TabIndex = 167;
             this.btnNextPage.UseVisualStyleBackColor = false;
             // 
             // frmNguyenLieu
@@ -571,13 +571,6 @@
         #endregion
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.TextBox txtTotalPage;
-        private System.Windows.Forms.TextBox txtPageNumber;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnFirstPage;
-        private System.Windows.Forms.Button btnLastPage;
-        private System.Windows.Forms.Button btnPrevPage;
-        private System.Windows.Forms.Button btnNextPage;
         private System.Windows.Forms.DataGridView dGVDanhSachNV;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
@@ -592,7 +585,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.SplitContainer splitContainer;
         private System.Windows.Forms.Button btnAn;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -605,5 +597,12 @@
         private System.Windows.Forms.TextBox txtDVT;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtTenNL;
+        private System.Windows.Forms.TextBox txtTotalPage;
+        private System.Windows.Forms.Button btnFirstPage;
+        private System.Windows.Forms.TextBox txtPageNumber;
+        private System.Windows.Forms.Button btnLastPage;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnPrevPage;
+        private System.Windows.Forms.Button btnNextPage;
     }
 }
