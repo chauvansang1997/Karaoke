@@ -54,12 +54,12 @@ namespace DAO
             return true;
         }
 
-        public static List<Phong> XemPhong(string trangThai,int pageSize,int pagenumber)
+        public static List<Phong> XemPhong(int trangThai,int pageSize,int pagenumber)
         {
             string query = "EXEC uspTraCuuPhong @trangThai,@pageSize,@pageNumber";
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@trangThai",SqlDbType.VarChar){ Value=trangThai  },
+                new SqlParameter("@trangThai",SqlDbType.Int){ Value=trangThai  },
                  new SqlParameter("@pageSize",SqlDbType.Int){ Value=pageSize  },
                   new SqlParameter("@pageNumber",SqlDbType.Int){ Value=pagenumber  }
             };
@@ -85,14 +85,14 @@ namespace DAO
             return list;
         }
 
-        public static int DemPhong(string trangThai)
+        public static int DemPhong(int trangThai)
         {
             string query = "EXEC uspDemPhong @trangThai";
 
             //truyền tham số vào câu truy vấn
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@trangThai",SqlDbType.NVarChar){IsNullable=false,Value=trangThai }
+                new SqlParameter("@trangThai",SqlDbType.Int){IsNullable=false,Value=trangThai }
 
             };
             int count = 0;
