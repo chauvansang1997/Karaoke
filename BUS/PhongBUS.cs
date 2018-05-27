@@ -9,9 +9,19 @@ namespace BUS
 {
     public static class PhongBUS
     {
-        public static List<Phong> XemPhong(string trangThai)
+        public static List<Phong> XemPhong(string trangThai,int pageSize,int pageNumber)
         {
-            return DAO.PhongDAO.XemPhong(trangThai);
+            return DAO.PhongDAO.XemPhong(trangThai, pageSize, pageNumber);
+        }
+        public static int DemPhong(string trangThai)
+        {
+            return DAO.PhongDAO.DemPhong(trangThai);
+        }
+
+        public static bool GhiNhanDatPhong(KhachHang khachHang, string maPhong, string maNV)
+        {
+            return DAO.PhongDAO.GhiNhanDatPhong(khachHang, maPhong, maNV, 
+                DAO.KhachHangDAO.KiemTraKhachHang(khachHang.Ten, khachHang.SoDT));
         }
     }
 }

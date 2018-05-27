@@ -16,7 +16,8 @@ namespace DTO
         public string Soluong { get; set; }
         public string Thanhtien { get; set; }
         public string Loai { get; set ; }
-        public int Index { get; set; }
+        public int IndexDict { get; set; }
         public string Ma { get; set; }
+        public int IndexList { get; set; }
     }
 }

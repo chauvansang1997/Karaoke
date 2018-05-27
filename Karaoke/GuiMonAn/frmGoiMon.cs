@@ -15,7 +15,7 @@ namespace Karaoke.GuiMonAn
 {
     public partial class frmGoiMon : Form
     {
-        private const int pageSize = 10;
+        private const int pageSize = 1;
         private int pageNumber;
         private int totalPage;
         private List<FoodLayout> listFoodLayout;
@@ -24,11 +24,14 @@ namespace Karaoke.GuiMonAn
         private List<MonAn> listTraiCay;
         private List<MonAn> listMonAn;
         private DataTable dtHoaDon;
+        private List<bool> checkInit;
         private BindingSource bindingSource = new BindingSource();
         private uint tongCong;
         private float giamGia;
         private string maHD;
-
+        private int index;
+        private Dictionary<int, List<FoodLayout>> dictionaryFoodLayout;
+        private Dictionary<int, List<MonAn>> dictionaryMonAn;
         public frmGoiMon()
         {
             InitializeComponent();
@@ -52,10 +55,12 @@ namespace Karaoke.GuiMonAn
             dGVHoaDon.Columns["Thanhtien"].HeaderText = "Thành tiền";
             dGVHoaDon.Columns["Ma"].Visible = false;
             dGVHoaDon.Columns["Loai"].Visible = false;
-            dGVHoaDon.Columns["Index"].Visible = false;
+            dGVHoaDon.Columns["IndexDict"].Visible = false;
+            dGVHoaDon.Columns["IndexList"].Visible = false;
             dGVHoaDon.Columns["Gia"].ReadOnly = true;
             dGVHoaDon.Columns["Ten"].ReadOnly = true;
             dGVHoaDon.Columns["Thanhtien"].ReadOnly = true;
+          
 
         }
         private void themCotHoaDon()
@@ -85,8 +90,14 @@ namespace Karaoke.GuiMonAn
             txtTotalPage.Text = totalPage.ToString();
             pageNumber = 1;
             listMonAn = BUS.MonAnBUS.XemMonAn("", "", pageNumber, pageSize);
-            
-         
+            checkInit = new List<bool>();
+            dictionaryFoodLayout = new Dictionary<int, List<FoodLayout>>();
+            dictionaryMonAn = new Dictionary<int, List<MonAn>>();
+            for (int i = 0; i < totalPage; i++)
+            {
+                checkInit.Add(false);
+            }
+            checkInit[0] = true;
             TongCong = 0;
             hienThiDanhSachThucAn();
         }
@@ -95,41 +106,70 @@ namespace Karaoke.GuiMonAn
         /// </summary>
         private void hienThiDanhSachThucAn()
         {
-            for (int i = 0; i < listMonAn.Count; i++)
+            if (dictionaryMonAn.ContainsKey(pageNumber) == false)
             {
-                DTO.MonAn item = listMonAn[i];
-                // Get the current directory.
-                string path = Directory.GetCurrentDirectory();
-                path = Path.GetFullPath(Path.Combine(path, @"..\..\")) + @"\Image\" + item.TenHinhAnh;
-                //Image image = null;
-                Image image = Image.FromFile(path);
-                
-                FoodLayout foodLayout = new FoodLayout(image, item.Ten, item.Gia);
-                foodLayout.Index = i;
+                dictionaryMonAn.Add(pageNumber, BUS.MonAnBUS.XemMonAn("", "", pageNumber, pageSize));
 
-                foodLayout.setClick((sender, e) =>
-                {
-                    if (foodLayout.IsClick == false)
-                    {
-                        foodLayout.IsClick = true;
-                        bindingSource.Add(new GoiMonDataSource() { Ma= listMonAn[foodLayout.Index].Ma,
-                            Ten = foodLayout.Name,Gia= foodLayout.Price.ToString(),
-                            Soluong ="1",Thanhtien= foodLayout.Price.ToString(),
-                            Loai="ThucAn",Index= foodLayout.Index
-                        });
-                        TongCong = TongCong + foodLayout.Price;
-                    }
-                });
-                flowFoodLayout.Controls.Add(foodLayout);
-                listFoodLayout.Add(foodLayout);
             }
+            flowFoodLayout.Controls.Clear();
 
+            listMonAn = dictionaryMonAn[pageNumber];
+            if (dictionaryFoodLayout.ContainsKey(pageNumber)==false)
+            {
+                listFoodLayout = new List<FoodLayout>();
+                for (int i = 0; i < listMonAn.Count; i++)
+                {
+                    DTO.MonAn item = listMonAn[i];
+                    // Get the current directory.
+                    string path = Directory.GetCurrentDirectory();
+                    path = Path.GetFullPath(Path.Combine(path, @"..\..\")) + @"\Image\" + item.TenHinhAnh;
+                    //Image image = null;
+                    Image image = Image.FromFile(path);
+
+                    FoodLayout foodLayout = new FoodLayout(image, item.Ten, item.Gia);
+                    foodLayout.IndexDict = pageNumber;
+                    foodLayout.IndexList = i; 
+                    foodLayout.setClick((sender1, e1) =>
+                    {
+                        if (foodLayout.IsClick == false)
+                        {
+                            foodLayout.IsClick = true;
+                            bindingSource.Add(new GoiMonDataSource()
+                            {
+                                Ma = listMonAn[foodLayout.IndexList].Ma,
+                                Ten = foodLayout.Name,
+                                Gia = foodLayout.Price.ToString(),
+                                Soluong = "1",
+                                Thanhtien = foodLayout.Price.ToString(),
+                                Loai = "ThucAn",
+                                IndexDict = foodLayout.IndexDict,
+                                IndexList = foodLayout.IndexList
+                            });
+                            TongCong = TongCong + foodLayout.Price;
+                        }
+                    });
+                    flowFoodLayout.Controls.Add(foodLayout);
+
+                    listFoodLayout.Add(foodLayout);
+                }
+                dictionaryFoodLayout.Add(pageNumber, listFoodLayout);
+             
+            }
+            else
+            {
+                listFoodLayout = dictionaryFoodLayout[pageNumber];
+                for (int i = 0; i < listFoodLayout.Count; i++)
+                {
+                    flowFoodLayout.Controls.Add(listFoodLayout[i]);
+                }
+            }
 
         }
         private void hienThiDanhSachNuocUong()
         {
 
         }
+  
         private void btnNextPage_Click(object sender, EventArgs e)
         {
             if (pageNumber + 1 > totalPage)
@@ -141,8 +181,9 @@ namespace Karaoke.GuiMonAn
                 ++pageNumber;
             }
             txtPageNumber.Text = pageNumber.ToString();
+            hienThiDanhSachThucAn();
         }
-
+        
         private void btnPrevPage_Click(object sender, EventArgs e)
         {
             if (pageNumber - 1 == 0)
@@ -208,7 +249,10 @@ namespace Karaoke.GuiMonAn
         {
             if (e.ColumnIndex == 0 && e.RowIndex > -1)
             {
-                FoodLayout foodLayout = listFoodLayout[int.Parse(dGVHoaDon[6, e.RowIndex].Value.ToString())];
+                int indexDict = int.Parse(dGVHoaDon[6, e.RowIndex].Value.ToString());
+                int indexList = int.Parse(dGVHoaDon[8, e.RowIndex].Value.ToString());
+                listFoodLayout = dictionaryFoodLayout[indexDict];
+                FoodLayout foodLayout = listFoodLayout[indexList];
                 foodLayout.IsClick = false;
                 TongCong = TongCong - (foodLayout.Price * uint.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString()));
                 dGVHoaDon.Rows.RemoveAt(e.RowIndex);

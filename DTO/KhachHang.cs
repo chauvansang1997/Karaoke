@@ -13,7 +13,7 @@ namespace DTO
         private string address;
         private string id;
 
-        public string Name
+        public string Ten
         {
             get
             {
@@ -26,7 +26,7 @@ namespace DTO
             }
         }
 
-        public string PhoneNumber
+        public string SoDT
         {
             get
             {
@@ -52,7 +52,7 @@ namespace DTO
             }
         }
 
-        public string Id
+        public string Ma
         {
             get
             {

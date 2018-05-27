@@ -28,22 +28,40 @@ namespace DAO
             return Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0; 
         }
 
-        public static bool GhiNhanDatPhong(KhachHang khachHang,string maPhong,string maNV)
+        public static bool GhiNhanDatPhong(KhachHang khachHang,string maPhong,string maNV,bool isKhachHangTonTai)
         {
-            string query = "EXEC uspGhiNhanDatPhong @maPhong,@maKhachHang,@tenKhachHang,@soDienThoai,@soHoaDon,@maNV";
-            //Tạo mã hóa đơn và mã khách hàng
-            string maKhachHang = TaoMa.TaoMaKhachHang();
-            string maHoaDon = TaoMa.TaoHoaDon();
-
+            string query = "EXEC uspGhiNhanDatPhong @maPhong,@tenKhachHang,@soDienThoai,@soHoaDon,@maNV,@isKhachHangTonTai";
+      
+           
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@maPhong",SqlDbType.VarChar){ Value=maPhong  },
+                 new SqlParameter("@tenKhachHang",SqlDbType.NVarChar){ Value=khachHang.Ten  },
+                  new SqlParameter("@soDienThoai",SqlDbType.VarChar){ Value=khachHang.SoDT  },
+                  new SqlParameter("@soHoaDon",SqlDbType.VarChar){ Value=""  },
+                  new SqlParameter("@maNV",SqlDbType.VarChar){ Value=maNV  },
+                    new SqlParameter("@isKhachHangTonTai",SqlDbType.Bit){ Value=isKhachHangTonTai  }
+            };
+            try
+            {
+                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+                return false;
+            }
             return true;
         }
 
-        public static List<Phong> XemPhong(string trangThai)
+        public static List<Phong> XemPhong(string trangThai,int pageSize,int pagenumber)
         {
-            string query = "EXEC uspTraCuuPhong @trangThai";
+            string query = "EXEC uspTraCuuPhong @trangThai,@pageSize,@pageNumber";
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@trangThai",SqlDbType.VarChar){ Value=trangThai  }
+                new SqlParameter("@trangThai",SqlDbType.VarChar){ Value=trangThai  },
+                 new SqlParameter("@pageSize",SqlDbType.Int){ Value=pageSize  },
+                  new SqlParameter("@pageNumber",SqlDbType.Int){ Value=pagenumber  }
             };
             List<Phong> list = new List<Phong>();
             try
@@ -55,7 +73,8 @@ namespace DAO
                             Ten = x[0].ToString(),
                             TenLoai = x[1].ToString(),
                             Gia = uint.Parse(x[2].ToString()),
-                            TinhTrang = int.Parse(x[3].ToString())
+                            TinhTrang = int.Parse(x[3].ToString()),
+                            GetKhachHang=new KhachHang() { Ma= x[4].ToString(),Ten= x[5].ToString(),SoDT= x[6].ToString() }
                         });
             }
             catch (Exception ex)
@@ -64,6 +83,28 @@ namespace DAO
             }
 
             return list;
-        } 
+        }
+
+        public static int DemPhong(string trangThai)
+        {
+            string query = "EXEC uspDemPhong @trangThai";
+
+            //truyền tham số vào câu truy vấn
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@trangThai",SqlDbType.NVarChar){IsNullable=false,Value=trangThai }
+
+            };
+            int count = 0;
+            try
+            {
+                count = int.Parse(Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            return count;
+        }
     }
 }

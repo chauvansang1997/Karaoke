@@ -20,5 +20,6 @@ namespace DTO
         public uint Gia { get; set; }
         public string TenLoai  { get; set; }
 
+        public KhachHang GetKhachHang { get; set; }
     }
 }

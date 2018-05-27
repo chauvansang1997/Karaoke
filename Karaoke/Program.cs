@@ -1,4 +1,5 @@
 ﻿using Karaoke.GuiMonAn;
+using Karaoke.PhongKaoraoke;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Karaoke
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmGoiMon());
+            Application.Run(new frmPhongKaraoke());
         }
     }
 }

@@ -12,7 +12,8 @@ namespace Karaoke
 {
     public partial class FoodLayout : UserControl
     {
-        public int Index { get; set; }
+        public int IndexDict { get; set; }
+        public int IndexList { get; set; }
         public string Name { get; set; }
 
         public uint Price { get; set; }

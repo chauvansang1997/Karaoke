@@ -23,7 +23,7 @@ namespace DAO
 
             //Chuyển Table thành List tên hành khách
             return table.AsEnumerable().ToList().ConvertAll(x =>
-                new KhachHang() { Name = x[0].ToString(), PhoneNumber = x[1].ToString(), Address = x[2].ToString(), Id = x[2].ToString() });
+                new KhachHang() { Ten = x[0].ToString(), SoDT = x[1].ToString(), Address = x[2].ToString(), Ma = x[2].ToString() });
         }
         /// <summary>
         /// Nhập khách hàng
@@ -52,25 +52,29 @@ namespace DAO
          
             //Chuyển Table thành List tên hành khách
             return table.AsEnumerable().ToList().ConvertAll(x =>
-                new KhachHang() { Name = x[0].ToString(), PhoneNumber = x[1].ToString(), Address = x[2].ToString(), Id = x[2].ToString() });
+                new KhachHang() { Ten = x[0].ToString(), SoDT = x[1].ToString(), Address = x[2].ToString(), Ma = x[2].ToString() });
 
         }
 
-        public static bool KiemTraSoDienThoai(string soDienThoai)
+        public static bool KiemTraKhachHang(string ten,string soDienThoai)
         {
-            string query = "select * from KHACHHANG where SDT=@soDienThoai";
+            string query = "select COUNT(*) from KHACHHANG where SDT=@soDienThoai AND TENKH=@tenKhachHang";
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@soDienThoai",SqlDbType.VarChar){Value=soDienThoai  },
 
 
             };
-            DataTable table = Dataprovider.ExcuteQuery(query);
-            if (table.Rows.Count == 0)
+            int count = 0;
+            try
             {
-                return true;
+                count = int.Parse(Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString());
             }
-            return false;
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            return count == 0? false : true;
         } 
     }
 }

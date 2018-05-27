@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.txtType = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.imgPicture = new System.Windows.Forms.PictureBox();
+            this.txtTenPhong = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // txtType
@@ -44,28 +45,40 @@
             this.txtType.Text = "Thường";
             this.txtType.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // pictureBox1
+            // imgPicture
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.imgPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackgroundImage = global::Karaoke.Properties.Resources.left_arrow;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(17, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 54);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.imgPicture.BackgroundImage = global::Karaoke.Properties.Resources.left_arrow;
+            this.imgPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imgPicture.Location = new System.Drawing.Point(17, 24);
+            this.imgPicture.Name = "imgPicture";
+            this.imgPicture.Size = new System.Drawing.Size(64, 54);
+            this.imgPicture.TabIndex = 0;
+            this.imgPicture.TabStop = false;
             // 
-            // PhongKaraoke
+            // txtTenPhong
+            // 
+            this.txtTenPhong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTenPhong.AutoSize = true;
+            this.txtTenPhong.Location = new System.Drawing.Point(31, 84);
+            this.txtTenPhong.Name = "txtTenPhong";
+            this.txtTenPhong.Size = new System.Drawing.Size(35, 13);
+            this.txtTenPhong.TabIndex = 2;
+            this.txtTenPhong.Text = "label1";
+            // 
+            // PhongLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtTenPhong);
             this.Controls.Add(this.txtType);
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "PhongKaraoke";
+            this.Controls.Add(this.imgPicture);
+            this.Name = "PhongLayout";
             this.Size = new System.Drawing.Size(100, 100);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -73,7 +86,8 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgPicture;
         private System.Windows.Forms.Label txtType;
+        private System.Windows.Forms.Label txtTenPhong;
     }
 }
