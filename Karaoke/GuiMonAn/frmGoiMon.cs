@@ -354,19 +354,19 @@ namespace Karaoke.GuiMonAn
             List<string> soluongSanPham = new List<string>();
             for (int i = 0; i < dGVHoaDon.Rows.Count; i++)
             {
-                string ma = dGVHoaDon[5, i].Value.ToString();
+                string ma = dGVHoaDon[7, i].Value.ToString();
                 string soluong = dGVHoaDon[3, i].Value.ToString();
 
-                if (dGVHoaDon[5, i].Value.ToString() == "ThucAn")
-                {
-
-                    maMonAn.Add(ma);
-                    soluongMonAn.Add(soluong);
-                }
-                else
+                if (dGVHoaDon[5, i].Value.ToString() == "Nước uống" || dGVHoaDon[5, i].Value.ToString() == "Trái cây")
                 {
                     maSanPham.Add(ma);
                     soluongSanPham.Add(soluong);
+                  
+                }
+                else
+                {
+                    maMonAn.Add(ma);
+                    soluongMonAn.Add(soluong);
                 }
             }
             if (BUS.HoaDonBUS.ThemChiTietHoaDon(soHoaDon, maMonAn, soluongMonAn, maSanPham, soluongSanPham))
