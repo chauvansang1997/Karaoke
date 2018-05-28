@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ChiTietHoaDon.cs" />
     <Compile Include="GoiMonDataSource.cs" />
+    <Compile Include="HangHoa.cs" />
     <Compile Include="LoaiPhong.cs" />
     <Compile Include="MonAn.cs" />
     <Compile Include="NhaCungCap.cs" />

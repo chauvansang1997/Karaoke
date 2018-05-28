@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class SanPham
+    public class SanPham : HangHoa
     {
-
-        public string Ten { get ; set ; }
-        public string Ma { get; set; }
-        public string Loai { get; set; }
         public string NhaCungCap { get; set; }
-        public uint Gia { get ; set ; }
-        public string TenHinhAnh { get ; set ; }
+
     }
 }

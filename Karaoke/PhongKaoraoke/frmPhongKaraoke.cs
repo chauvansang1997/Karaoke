@@ -25,7 +25,6 @@ namespace Karaoke.PhongKaoraoke
         private int totalPage;
 
         private TrangThai trangThai;
-
         private Dictionary<int, List<PhongLayout>> dictionaryHienTai;
         private Dictionary<int, List<PhongLayout>> dictionaryAllLayout;
         private Dictionary<int, List<PhongLayout>> dictionaryAvailableLayout;
@@ -65,16 +64,34 @@ namespace Karaoke.PhongKaoraoke
         }
         private void thayDoiTrangThai()
         {
+            try
+            {
+                if (listPhongLayout[indexHienTai].Phong.TinhTrang == 0)
+                {
+                    listPhongLayout[indexHienTai].BackColor = Color.ForestGreen;
+                }
+                else
+                {
+                    listPhongLayout[indexHienTai].BackColor = Color.DarkRed;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
+
             if (trangThai == TrangThai.TatCa)
             {
-                totalPage =Utility.TinhKichThuocTrang (BUS.PhongBUS.DemPhong((int)trangThai),pageSize);
+                totalPage = Utility.TinhKichThuocTrang(BUS.PhongBUS.DemPhong((int)trangThai), pageSize);
                 txtTotalPage.Text = totalPage.ToString();
                 pageNumber = 1;
                 txtPageNumber.Text = "1";
                 indexHienTai = -1;
+
                 dictionaryHienTai = dictionaryAllLayout;
             }
-            else if(trangThai==TrangThai.DaDat)
+            else if (trangThai == TrangThai.DaDat)
             {
                 totalPage = Utility.TinhKichThuocTrang(BUS.PhongBUS.DemPhong((int)trangThai), pageSize);
                 txtTotalPage.Text = totalPage.ToString();
@@ -97,16 +114,14 @@ namespace Karaoke.PhongKaoraoke
         public void khoiTao()
         {
             trangThai = TrangThai.TatCa;
+            indexHienTai = -1;
             dictionaryAllLayout = new Dictionary<int, List<PhongLayout>>();
 
-
             dictionaryAvailableLayout = new Dictionary<int, List<PhongLayout>>();
- 
 
             dictionaryUnAvailableLayout = new Dictionary<int, List<PhongLayout>>();
-       
+
             thayDoiTrangThai();
-       
         }
         private void hienThiTatCaPhong()
         {
@@ -114,7 +129,7 @@ namespace Karaoke.PhongKaoraoke
             flowPhongLayout.Controls.Clear();
             if (dictionaryHienTai.ContainsKey(pageNumber) == false)
             {
-                listAllPhong= BUS.PhongBUS.XemPhong((int)trangThai, pageSize, pageNumber);
+                listAllPhong = BUS.PhongBUS.XemPhong((int)trangThai, pageSize, pageNumber);
                 listPhongLayout = new List<PhongLayout>();
                 for (int i = 0; i < listAllPhong.Count; i++)
                 {
@@ -183,10 +198,13 @@ namespace Karaoke.PhongKaoraoke
             DialogResult result = MessageBox.Show("Bạn có muốn đặt phòng không?", "Xác nhận", MessageBoxButtons.YesNoCancel);
             if (result == DialogResult.Yes)
             {
-                if (BUS.PhongBUS.GhiNhanDatPhong(new KhachHang(){Ten=txtTenKhachHang.Text,SoDT=txtSDT.Text}, PhongHienTai.Ten, "NV001"))
+                if (BUS.PhongBUS.GhiNhanDatPhong(new KhachHang() { Ten = txtTenKhachHang.Text, SoDT = txtSDT.Text }, PhongHienTai.Ten, "NV001"))
                 {
                     MessageBox.Show("Đặt phòng thành công");
                     listPhongLayout[indexHienTai].BackColor = Color.DarkRed;
+                    listPhongLayout[indexHienTai].Phong.TinhTrang = 1;
+                    listPhongLayout[indexHienTai].Phong.GetKhachHang.Ten = txtTenKhachHang.Text;
+                    listPhongLayout[indexHienTai].Phong.GetKhachHang.SoDT = txtSDT.Text;
                 }
                 else
                 {
@@ -256,7 +274,7 @@ namespace Karaoke.PhongKaoraoke
                 trangThai = TrangThai.ChuaDat;
                 thayDoiTrangThai();
             }
-         
+
 
         }
 
@@ -280,7 +298,8 @@ namespace Karaoke.PhongKaoraoke
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-           // frm
+            frmGoiMon goiMon = new frmGoiMon(BUS.HoaDonBUS.LayMaHoaDon(listPhongLayout[indexHienTai].Phong.Ten));
+            goiMon.ShowDialog();
         }
     }
 }

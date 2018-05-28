@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 
 namespace Karaoke
 {
@@ -14,23 +15,32 @@ namespace Karaoke
     {
         public int IndexDict { get; set; }
         public int IndexList { get; set; }
-        public string Name { get; set; }
 
-        public uint Price { get; set; }
+
         public bool IsClick { get; set; }
 
-        public FoodLayout(Image image, string name, uint price)
+        private HangHoa hangHoa;
+        public HangHoa HangHoa
+        {
+            get
+            {
+                return hangHoa;
+            }
+            set
+            {
+                hangHoa = value;
+                txtName.Text = hangHoa.Ten;
+                txtPrice.Text = hangHoa.Gia.ToString();
+            }
+        }
+        public FoodLayout(Image image)
         {
             InitializeComponent();
             if (image != null)
             {
-                imgFood.Image = image;
+                imgFood.BackgroundImage = image;
             }
 
-            txtPrice.Text = price.ToString();
-            txtName.Text = name;
-            Price = price;
-            Name = name;
         }
         public FoodLayout()
         {
@@ -40,14 +50,7 @@ namespace Karaoke
         {
             imgFood.Image = image;
         }
-        private void setPrice(uint price)
-        {
-            txtPrice.Text = price.ToString();
-        }
-        private void setName(string name)
-        {
-            txtName.Text = name;
-        }
+
         public void setClick(EventHandler handler)
         {
             imgFood.Click += handler;
