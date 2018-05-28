@@ -161,6 +161,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\back.png" />
+    <None Include="Resources\donut %281%29.png" />
+    <None Include="Resources\juice.png" />
+    <None Include="Resources\strawberry.png" />
+    <None Include="Resources\cocktail.png" />
+    <None Include="Resources\pizza %281%29.png" />
+    <None Include="Resources\pizza.png" />
     <None Include="Resources\noimage.gif" />
     <None Include="Resources\exit.png" />
     <None Include="Resources\diskette.png" />

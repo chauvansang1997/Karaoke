@@ -46,10 +46,6 @@
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.foodLayout1 = new Karaoke.FoodLayout();
             this.foodLayout2 = new Karaoke.FoodLayout();
@@ -60,12 +56,16 @@
             this.foodLayout8 = new Karaoke.FoodLayout();
             this.foodLayout5 = new Karaoke.FoodLayout();
             this.txtTotalPage = new System.Windows.Forms.TextBox();
-            this.btnFirstPage = new System.Windows.Forms.Button();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
-            this.btnLastPage = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnFirstPage = new System.Windows.Forms.Button();
+            this.btnLastPage = new System.Windows.Forms.Button();
             this.btnPrevPage = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -268,46 +268,6 @@
             this.panel2.Size = new System.Drawing.Size(110, 503);
             this.panel2.TabIndex = 1;
             // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(10, 366);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(90, 131);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Sinh tố";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(10, 243);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 117);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Trái cây";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(10, 126);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(90, 111);
-            this.button7.TabIndex = 5;
-            this.button7.Text = "Nước uống";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(10, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 107);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Thức ăn";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
@@ -391,6 +351,27 @@
             this.txtTotalPage.Text = "1";
             this.txtTotalPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // txtPageNumber
+            // 
+            this.txtPageNumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPageNumber.Location = new System.Drawing.Point(810, 483);
+            this.txtPageNumber.Name = "txtPageNumber";
+            this.txtPageNumber.Size = new System.Drawing.Size(37, 26);
+            this.txtPageNumber.TabIndex = 157;
+            this.txtPageNumber.Text = "1";
+            this.txtPageNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label10.Location = new System.Drawing.Point(846, 485);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(15, 20);
+            this.label10.TabIndex = 156;
+            this.label10.Text = "/";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // btnFirstPage
             // 
             this.btnFirstPage.BackColor = System.Drawing.Color.Transparent;
@@ -404,16 +385,6 @@
             this.btnFirstPage.TabIndex = 162;
             this.btnFirstPage.UseVisualStyleBackColor = false;
             // 
-            // txtPageNumber
-            // 
-            this.txtPageNumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPageNumber.Location = new System.Drawing.Point(810, 483);
-            this.txtPageNumber.Name = "txtPageNumber";
-            this.txtPageNumber.Size = new System.Drawing.Size(37, 26);
-            this.txtPageNumber.TabIndex = 157;
-            this.txtPageNumber.Text = "1";
-            this.txtPageNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // btnLastPage
             // 
             this.btnLastPage.BackColor = System.Drawing.Color.Transparent;
@@ -426,17 +397,6 @@
             this.btnLastPage.Size = new System.Drawing.Size(20, 20);
             this.btnLastPage.TabIndex = 161;
             this.btnLastPage.UseVisualStyleBackColor = false;
-            // 
-            // label10
-            // 
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(846, 485);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(15, 20);
-            this.label10.TabIndex = 156;
-            this.label10.Text = "/";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnPrevPage
             // 
@@ -463,6 +423,58 @@
             this.btnNextPage.Size = new System.Drawing.Size(20, 20);
             this.btnNextPage.TabIndex = 159;
             this.btnNextPage.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Image = global::Karaoke.Properties.Resources.juice;
+            this.button5.Location = new System.Drawing.Point(10, 366);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(90, 131);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Sinh tố";
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = global::Karaoke.Properties.Resources.strawberry;
+            this.button3.Location = new System.Drawing.Point(10, 243);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(90, 117);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Trái cây";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.White;
+            this.button7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Image = global::Karaoke.Properties.Resources.cocktail;
+            this.button7.Location = new System.Drawing.Point(10, 126);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(90, 111);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "Nước uống";
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::Karaoke.Properties.Resources.pizza__1_;
+            this.button2.Location = new System.Drawing.Point(10, 13);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(90, 107);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Thức ăn";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // frmGoiMon
             // 
