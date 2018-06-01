@@ -47,6 +47,7 @@
     <Compile Include="HangHoaDAO.cs" />
     <Compile Include="HoaDonDAO.cs" />
     <Compile Include="KhachHangDAO.cs" />
+    <Compile Include="PhieuDatTiecDAO.cs" />
     <Compile Include="PhongDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyHangHoa\MonAnDAO.cs" />

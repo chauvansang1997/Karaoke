@@ -20,8 +20,7 @@ namespace BUS
 
         public static bool GhiNhanDatPhong(KhachHang khachHang, string maPhong, string maNV)
         {
-            return DAO.PhongDAO.GhiNhanDatPhong(khachHang, maPhong, maNV, 
-                DAO.KhachHangDAO.KiemTraKhachHang(khachHang.Ten, khachHang.SoDT));
+            return DAO.PhongDAO.GhiNhanDatPhong(khachHang, maPhong, maNV);
         }
     }
 }

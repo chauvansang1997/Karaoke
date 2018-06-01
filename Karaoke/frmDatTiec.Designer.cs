@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dGVDatTiec = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.btnDatPhong = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dTPNgayNhanPhong = new System.Windows.Forms.DateTimePicker();
             this.txtTenPhong = new System.Windows.Forms.TextBox();
             this.labelTenPhong = new System.Windows.Forms.Label();
             this.labelLoaiPhong = new System.Windows.Forms.Label();
@@ -43,17 +43,10 @@
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.flowPhongLayout = new System.Windows.Forms.FlowLayoutPanel();
-            this.phongKaraoke1 = new Karaoke.PhongLayout();
-            this.phongKaraoke2 = new Karaoke.PhongLayout();
-            this.phongKaraoke3 = new Karaoke.PhongLayout();
-            this.phongKaraoke4 = new Karaoke.PhongLayout();
-            this.phongKaraoke5 = new Karaoke.PhongLayout();
-            this.phongKaraoke6 = new Karaoke.PhongLayout();
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.btnFirstPage = new System.Windows.Forms.Button();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
@@ -61,25 +54,30 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnPrevPage = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
-            this.phongKaraoke7 = new Karaoke.PhongLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnNhanPhong = new System.Windows.Forms.Button();
+            this.txtThoiGianDat = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVDatTiec)).BeginInit();
             this.panel1.SuspendLayout();
-            this.flowPhongLayout.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dGVDatTiec
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(64, 395);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(785, 270);
-            this.dataGridView1.TabIndex = 2;
+            this.dGVDatTiec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVDatTiec.Location = new System.Drawing.Point(12, 390);
+            this.dGVDatTiec.Name = "dGVDatTiec";
+            this.dGVDatTiec.ReadOnly = true;
+            this.dGVDatTiec.RowHeadersVisible = false;
+            this.dGVDatTiec.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGVDatTiec.Size = new System.Drawing.Size(816, 144);
+            this.dGVDatTiec.TabIndex = 2;
+            this.dGVDatTiec.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVDatTiec_CellClick);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(384, 366);
+            this.label3.Location = new System.Drawing.Point(350, 366);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 21);
             this.label3.TabIndex = 4;
@@ -92,13 +90,14 @@
             this.btnDatPhong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatPhong.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnDatPhong.Image = global::Karaoke.Properties.Resources.plus1;
-            this.btnDatPhong.Location = new System.Drawing.Point(609, 691);
+            this.btnDatPhong.Location = new System.Drawing.Point(449, 561);
             this.btnDatPhong.Name = "btnDatPhong";
             this.btnDatPhong.Size = new System.Drawing.Size(117, 30);
             this.btnDatPhong.TabIndex = 185;
             this.btnDatPhong.Text = "Đặt phòng";
             this.btnDatPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDatPhong.UseVisualStyleBackColor = false;
+            this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
             // 
             // button1
             // 
@@ -107,7 +106,7 @@
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Image = global::Karaoke.Properties.Resources.plus1;
-            this.button1.Location = new System.Drawing.Point(732, 691);
+            this.button1.Location = new System.Drawing.Point(583, 561);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 30);
             this.button1.TabIndex = 186;
@@ -115,14 +114,14 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker2
+            // dTPNgayNhanPhong
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(24, 43);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(165, 26);
-            this.dateTimePicker2.TabIndex = 1;
+            this.dTPNgayNhanPhong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dTPNgayNhanPhong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dTPNgayNhanPhong.Location = new System.Drawing.Point(24, 43);
+            this.dTPNgayNhanPhong.Name = "dTPNgayNhanPhong";
+            this.dTPNgayNhanPhong.Size = new System.Drawing.Size(165, 26);
+            this.dTPNgayNhanPhong.TabIndex = 1;
             // 
             // txtTenPhong
             // 
@@ -196,7 +195,6 @@
             this.txtTenKhachHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKhachHang.Location = new System.Drawing.Point(237, 200);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.ReadOnly = true;
             this.txtTenKhachHang.Size = new System.Drawing.Size(204, 26);
             this.txtTenKhachHang.TabIndex = 190;
             // 
@@ -215,24 +213,15 @@
             this.txtSDT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDT.Location = new System.Drawing.Point(24, 281);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.ReadOnly = true;
             this.txtSDT.Size = new System.Drawing.Size(165, 26);
             this.txtSDT.TabIndex = 192;
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(24, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(165, 26);
-            this.textBox1.TabIndex = 193;
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtThoiGianDat);
             this.panel1.Controls.Add(this.txtSDT);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtTenKhachHang);
@@ -243,21 +232,11 @@
             this.panel1.Controls.Add(this.labelLoaiPhong);
             this.panel1.Controls.Add(this.labelTenPhong);
             this.panel1.Controls.Add(this.txtTenPhong);
-            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.dTPNgayNhanPhong);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(453, 342);
             this.panel1.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 19);
-            this.label1.TabIndex = 194;
-            this.label1.Text = "Ngày nhận phòng:";
             // 
             // label2
             // 
@@ -269,97 +248,22 @@
             this.label2.TabIndex = 195;
             this.label2.Text = "Thời gian:";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(20, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 19);
+            this.label1.TabIndex = 194;
+            this.label1.Text = "Ngày nhận phòng:";
+            // 
             // flowPhongLayout
             // 
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke1);
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke2);
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke3);
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke4);
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke5);
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke6);
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke7);
             this.flowPhongLayout.Location = new System.Drawing.Point(491, 38);
             this.flowPhongLayout.Name = "flowPhongLayout";
             this.flowPhongLayout.Size = new System.Drawing.Size(338, 316);
             this.flowPhongLayout.TabIndex = 187;
-            // 
-            // phongKaraoke1
-            // 
-            this.phongKaraoke1.IndexDict = 0;
-            this.phongKaraoke1.IndexList = 0;
-            this.phongKaraoke1.KhachHang = null;
-            this.phongKaraoke1.Loai = null;
-            this.phongKaraoke1.Location = new System.Drawing.Point(3, 3);
-            this.phongKaraoke1.Name = "phongKaraoke1";
-            this.phongKaraoke1.Phong = null;
-            this.phongKaraoke1.Size = new System.Drawing.Size(100, 100);
-            this.phongKaraoke1.TabIndex = 0;
-            this.phongKaraoke1.Ten = null;
-            // 
-            // phongKaraoke2
-            // 
-            this.phongKaraoke2.IndexDict = 0;
-            this.phongKaraoke2.IndexList = 0;
-            this.phongKaraoke2.KhachHang = null;
-            this.phongKaraoke2.Loai = null;
-            this.phongKaraoke2.Location = new System.Drawing.Point(109, 3);
-            this.phongKaraoke2.Name = "phongKaraoke2";
-            this.phongKaraoke2.Phong = null;
-            this.phongKaraoke2.Size = new System.Drawing.Size(100, 100);
-            this.phongKaraoke2.TabIndex = 1;
-            this.phongKaraoke2.Ten = null;
-            // 
-            // phongKaraoke3
-            // 
-            this.phongKaraoke3.IndexDict = 0;
-            this.phongKaraoke3.IndexList = 0;
-            this.phongKaraoke3.KhachHang = null;
-            this.phongKaraoke3.Loai = null;
-            this.phongKaraoke3.Location = new System.Drawing.Point(215, 3);
-            this.phongKaraoke3.Name = "phongKaraoke3";
-            this.phongKaraoke3.Phong = null;
-            this.phongKaraoke3.Size = new System.Drawing.Size(100, 100);
-            this.phongKaraoke3.TabIndex = 2;
-            this.phongKaraoke3.Ten = null;
-            // 
-            // phongKaraoke4
-            // 
-            this.phongKaraoke4.IndexDict = 0;
-            this.phongKaraoke4.IndexList = 0;
-            this.phongKaraoke4.KhachHang = null;
-            this.phongKaraoke4.Loai = null;
-            this.phongKaraoke4.Location = new System.Drawing.Point(3, 109);
-            this.phongKaraoke4.Name = "phongKaraoke4";
-            this.phongKaraoke4.Phong = null;
-            this.phongKaraoke4.Size = new System.Drawing.Size(100, 100);
-            this.phongKaraoke4.TabIndex = 3;
-            this.phongKaraoke4.Ten = null;
-            // 
-            // phongKaraoke5
-            // 
-            this.phongKaraoke5.IndexDict = 0;
-            this.phongKaraoke5.IndexList = 0;
-            this.phongKaraoke5.KhachHang = null;
-            this.phongKaraoke5.Loai = null;
-            this.phongKaraoke5.Location = new System.Drawing.Point(109, 109);
-            this.phongKaraoke5.Name = "phongKaraoke5";
-            this.phongKaraoke5.Phong = null;
-            this.phongKaraoke5.Size = new System.Drawing.Size(100, 100);
-            this.phongKaraoke5.TabIndex = 4;
-            this.phongKaraoke5.Ten = null;
-            // 
-            // phongKaraoke6
-            // 
-            this.phongKaraoke6.IndexDict = 0;
-            this.phongKaraoke6.IndexList = 0;
-            this.phongKaraoke6.KhachHang = null;
-            this.phongKaraoke6.Loai = null;
-            this.phongKaraoke6.Location = new System.Drawing.Point(215, 109);
-            this.phongKaraoke6.Name = "phongKaraoke6";
-            this.phongKaraoke6.Phong = null;
-            this.phongKaraoke6.Size = new System.Drawing.Size(100, 100);
-            this.phongKaraoke6.TabIndex = 5;
-            this.phongKaraoke6.Ten = null;
             // 
             // txtTotalPage
             // 
@@ -383,6 +287,7 @@
             this.btnFirstPage.Size = new System.Drawing.Size(24, 24);
             this.btnFirstPage.TabIndex = 201;
             this.btnFirstPage.UseVisualStyleBackColor = false;
+            this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
             // 
             // txtPageNumber
             // 
@@ -405,6 +310,7 @@
             this.btnLastPage.Size = new System.Drawing.Size(24, 24);
             this.btnLastPage.TabIndex = 200;
             this.btnLastPage.UseVisualStyleBackColor = false;
+            this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
             // 
             // label7
             // 
@@ -429,6 +335,7 @@
             this.btnPrevPage.Size = new System.Drawing.Size(24, 24);
             this.btnPrevPage.TabIndex = 199;
             this.btnPrevPage.UseVisualStyleBackColor = false;
+            this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
             // 
             // btnNextPage
             // 
@@ -442,25 +349,47 @@
             this.btnNextPage.Size = new System.Drawing.Size(24, 24);
             this.btnNextPage.TabIndex = 198;
             this.btnNextPage.UseVisualStyleBackColor = false;
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
-            // phongKaraoke7
+            // btnNhanPhong
             // 
-            this.phongKaraoke7.IndexDict = 0;
-            this.phongKaraoke7.IndexList = 0;
-            this.phongKaraoke7.KhachHang = null;
-            this.phongKaraoke7.Loai = null;
-            this.phongKaraoke7.Location = new System.Drawing.Point(3, 215);
-            this.phongKaraoke7.Name = "phongKaraoke7";
-            this.phongKaraoke7.Phong = null;
-            this.phongKaraoke7.Size = new System.Drawing.Size(100, 100);
-            this.phongKaraoke7.TabIndex = 6;
-            this.phongKaraoke7.Ten = null;
+            this.btnNhanPhong.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnNhanPhong.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNhanPhong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhanPhong.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnNhanPhong.Image = global::Karaoke.Properties.Resources.plus1;
+            this.btnNhanPhong.Location = new System.Drawing.Point(712, 561);
+            this.btnNhanPhong.Name = "btnNhanPhong";
+            this.btnNhanPhong.Size = new System.Drawing.Size(117, 30);
+            this.btnNhanPhong.TabIndex = 202;
+            this.btnNhanPhong.Text = "Nhận phòng";
+            this.btnNhanPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNhanPhong.UseVisualStyleBackColor = false;
+            // 
+            // txtThoiGianDat
+            // 
+            this.txtThoiGianDat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThoiGianDat.Location = new System.Drawing.Point(24, 127);
+            this.txtThoiGianDat.Name = "txtThoiGianDat";
+            this.txtThoiGianDat.Size = new System.Drawing.Size(128, 26);
+            this.txtThoiGianDat.TabIndex = 193;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(158, 130);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(31, 19);
+            this.label8.TabIndex = 196;
+            this.label8.Text = "Giờ";
             // 
             // frmDatTiec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(909, 733);
+            this.ClientSize = new System.Drawing.Size(874, 603);
+            this.Controls.Add(this.btnNhanPhong);
             this.Controls.Add(this.txtTotalPage);
             this.Controls.Add(this.btnFirstPage);
             this.Controls.Add(this.txtPageNumber);
@@ -473,24 +402,23 @@
             this.Controls.Add(this.btnDatPhong);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dGVDatTiec);
             this.Name = "frmDatTiec";
             this.Text = "frmDatTiec";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVDatTiec)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.flowPhongLayout.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dGVDatTiec;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnDatPhong;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dTPNgayNhanPhong;
         private System.Windows.Forms.TextBox txtTenPhong;
         private System.Windows.Forms.Label labelTenPhong;
         private System.Windows.Forms.Label labelLoaiPhong;
@@ -501,17 +429,10 @@
         private System.Windows.Forms.TextBox txtTenKhachHang;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtSDT;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowPhongLayout;
-        private PhongLayout phongKaraoke1;
-        private PhongLayout phongKaraoke2;
-        private PhongLayout phongKaraoke3;
-        private PhongLayout phongKaraoke4;
-        private PhongLayout phongKaraoke5;
-        private PhongLayout phongKaraoke6;
         private System.Windows.Forms.TextBox txtTotalPage;
         private System.Windows.Forms.Button btnFirstPage;
         private System.Windows.Forms.TextBox txtPageNumber;
@@ -519,6 +440,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnPrevPage;
         private System.Windows.Forms.Button btnNextPage;
-        private PhongLayout phongKaraoke7;
+        private System.Windows.Forms.Button btnNhanPhong;
+        private System.Windows.Forms.TextBox txtThoiGianDat;
+        private System.Windows.Forms.Label label8;
     }
 }

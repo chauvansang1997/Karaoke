@@ -13,5 +13,11 @@ namespace DTO
         public string Loai { get; set; }
         public uint Gia { get; set; }
         public string TenHinhAnh { get; set; }
+
+        public string LoaiChiTiet { get; set; }
+
+        public LoaiHangHoa LoaiHangHoa { get; set; }
+
+     
     }
 }

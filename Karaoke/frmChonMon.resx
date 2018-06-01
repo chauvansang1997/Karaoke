@@ -120,6 +120,9 @@
   <metadata name="Xoa.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="Xoa.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnThanhToan.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -134,6 +137,31 @@
         BC3Qj8r6b1PUThbW8I7Eb4GUhsH/hNSM/1UNLWThwJDw/zImBCzYsvfw/8b27v/nbzz4X1he/d/B2Y1o
         rK2rR5wFF28/+v/s48//Z67dBfOJxeU1DcRZ8PzTL7Lw9HlLBsICpEqfX0Lmf3ZByf/O/ilk4ai4xP+C
         8mrwBgTIbJRmCysn90Q+YBOEEszCzjkBZh4TK3sBAMMlwpWRWnDMAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        pgAAAKYB3X3/OAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIISURBVEhLY2Bi
+        ZS8A4n5kzMUvOJVHWGS6gLjsXBjmERKbwSMoPA0X5uITmMLEwtbGwMAg9P//fwYYZmBkYv4t7Rz2H4aF
+        9az/qxua/Nc0svivbZ/x3z56+n9dp9z/qnom/8snTMeJRaRk//OrGf5mYuO4iWwJAyML6w+9won/YVjB
+        L+W/U3Dkf9fQ+P+eWev/Z836/98nf/t/O9/w/yc//8eJFXUM/qvHV/2XtPb9iWwJ1S0AmSFp4wey5BbI
+        EppYAMJSdv4/mdg5ruO0wDcu/b+kkuF/FUP3/1LKxv/dwuKxGgzD6BaAMMhsrBaYOnv8n7HjIEokTt+2
+        ///io+dxYmkVdeIs0Eis/S+mpvtfTFWbJCyuafhfO7uTsAXUxMPQAuXQ3P+CWmZkYcXA9P/KYflgjNMC
+        rfQWcCoiB2umNsExTgsU/VP/ixk7UIRVwvH4QEjd4L91fvN/797lZGHD2DywJXgtiFx5/H/Rjf9kYZAl
+        BC3Qj8r6b1PUThbW8I7Eb4GUhsH/hNSM/1UNLWThwJDw/zImBCzYsvfw/8b27v/nbzz4X1he/d/B2Y1o
+        rK2rR5wFF28/+v/s48//Z67dBfOJxeU1DcRZ8PzTL7Lw9HlLBsICpEqfX0Lmf3ZByf/O/ilk4ai4xP+C
+        8mrwBgTIbJRmCysn90Q+YBOEEszCzjkBZh4TK3sBAMMlwpWRWnDMAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="dataGridViewGrouper1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="dataGridViewGrouper1.Options" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAEpEYXRhR3JpZFZpZXdHcm91cGVyLCBWZXJzaW9uPTEuMC4wLjAs
+        IEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAHlN1YnJvLkNvbnRyb2xzLkdy
+        b3VwaW5nT3B0aW9ucwAAAAACAAAACw==
 </value>
   </data>
 </root>

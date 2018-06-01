@@ -140,18 +140,29 @@
             // 
             // dGVHoaDon
             // 
+            this.dGVHoaDon.AllowDrop = true;
+            this.dGVHoaDon.AllowUserToAddRows = false;
+            this.dGVHoaDon.AllowUserToDeleteRows = false;
+            this.dGVHoaDon.AllowUserToResizeColumns = false;
+            this.dGVHoaDon.AllowUserToResizeRows = false;
             this.dGVHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Xoa});
             this.dGVHoaDon.Location = new System.Drawing.Point(3, 3);
+            this.dGVHoaDon.MultiSelect = false;
             this.dGVHoaDon.Name = "dGVHoaDon";
             this.dGVHoaDon.RowHeadersVisible = false;
+            this.dGVHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVHoaDon.Size = new System.Drawing.Size(496, 368);
             this.dGVHoaDon.TabIndex = 0;
             this.dGVHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVHoaDon_CellClick);
             this.dGVHoaDon.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dGVHoaDon_CellValidating);
             this.dGVHoaDon.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVHoaDon_CellValueChanged);
+            this.dGVHoaDon.DragDrop += new System.Windows.Forms.DragEventHandler(this.dGVHoaDon_DragDrop);
+            this.dGVHoaDon.DragOver += new System.Windows.Forms.DragEventHandler(this.dGVHoaDon_DragOver);
+            this.dGVHoaDon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dGVHoaDon_MouseDown);
+            this.dGVHoaDon.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dGVHoaDon_MouseMove);
             // 
             // Xoa
             // 

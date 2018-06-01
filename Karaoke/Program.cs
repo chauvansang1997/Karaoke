@@ -18,7 +18,7 @@ namespace Karaoke
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPhongKaraoke());
+            Application.Run(new frmChonMon());
         }
     }
 }

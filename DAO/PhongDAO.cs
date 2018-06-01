@@ -25,14 +25,14 @@ namespace DAO
 
             };
 
-            return Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0; 
+            return Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0;
         }
 
-        public static bool GhiNhanDatPhong(KhachHang khachHang,string maPhong,string maNV,bool isKhachHangTonTai)
+        public static bool GhiNhanDatPhong(KhachHang khachHang, string maPhong, string maNV)
         {
-            string query = "EXEC uspGhiNhanDatPhong @maPhong,@tenKhachHang,@soDienThoai,@soHoaDon,@maNV,@isKhachHangTonTai";
-      
-           
+            string query = "EXEC uspGhiNhanDatPhong @maPhong,@tenKhachHang,@soDienThoai,@soHoaDon,@maNV";
+
+
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@maPhong",SqlDbType.VarChar){ Value=maPhong  },
@@ -40,7 +40,7 @@ namespace DAO
                   new SqlParameter("@soDienThoai",SqlDbType.VarChar){ Value=khachHang.SoDT  },
                   new SqlParameter("@soHoaDon",SqlDbType.VarChar){ Value=""  },
                   new SqlParameter("@maNV",SqlDbType.VarChar){ Value=maNV  },
-                    new SqlParameter("@isKhachHangTonTai",SqlDbType.Bit){ Value=isKhachHangTonTai  }
+
             };
             try
             {
@@ -54,7 +54,7 @@ namespace DAO
             return true;
         }
 
-        public static List<Phong> XemPhong(int trangThai,int pageSize,int pagenumber)
+        public static List<Phong> XemPhong(int trangThai, int pageSize, int pagenumber)
         {
             string query = "EXEC uspTraCuuPhong @trangThai,@pageSize,@pageNumber";
             List<SqlParameter> parameters = new List<SqlParameter>()
@@ -74,7 +74,7 @@ namespace DAO
                             TenLoai = x[1].ToString(),
                             Gia = uint.Parse(x[2].ToString()),
                             TinhTrang = int.Parse(x[3].ToString()),
-                            GetKhachHang=new KhachHang() { Ma= x[4].ToString(),Ten= x[5].ToString(),SoDT= x[6].ToString() }
+                            GetKhachHang = new KhachHang() { Ma = x[4].ToString(), Ten = x[5].ToString(), SoDT = x[6].ToString() }
                         });
             }
             catch (Exception ex)

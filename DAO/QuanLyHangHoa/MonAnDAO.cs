@@ -42,7 +42,7 @@ namespace DAO.QuanLyHangHoa
 
             return true;
         }
-        public static List<MonAn> XemMonAn(string tenMonAn, string loaiMonAn, int pageNumber,int pageSize,uint donGia = 0)
+        public static List<MonAn> XemMonAn(string tenMonAn, int loaiMonAn, int pageNumber,int pageSize,uint donGia = 0)
         {
             string query = "EXEC uspXemMonAn @tenMonAn,@loaiMonAn,@donGia,@pageNumber,@pageSize";
 
@@ -50,7 +50,7 @@ namespace DAO.QuanLyHangHoa
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@tenMonAn",SqlDbType.NVarChar){IsNullable=false,Value=tenMonAn },
-                new SqlParameter("@loaiMonAn",SqlDbType.NVarChar){IsNullable=false,Value=loaiMonAn},
+                new SqlParameter("@loaiMonAn",SqlDbType.Int){IsNullable=false,Value=loaiMonAn},
                 new SqlParameter("@donGia",SqlDbType.Decimal){IsNullable=false,Value=donGia },
                  new SqlParameter("@pageNumber",SqlDbType.Int){IsNullable=false,Value=pageNumber},
                 new SqlParameter("@pageSize",SqlDbType.Int){IsNullable=false,Value=pageSize },
@@ -76,7 +76,7 @@ namespace DAO.QuanLyHangHoa
 
             return list;
         }
-        public static List<MonAn> XemMonAn(string tenMonAn,string loaiMonAn,uint donGia = 0)
+        public static List<MonAn> XemMonAn(string tenMonAn,int loaiMonAn,uint donGia = 0)
         {
             string query = "EXEC uspXemMonAn @tenMonAn,@loaiMonAn,@donGia";
 
@@ -84,11 +84,11 @@ namespace DAO.QuanLyHangHoa
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@tenMonAn",SqlDbType.NVarChar){IsNullable=false,Value=tenMonAn },
-                new SqlParameter("@loaiMonAn",SqlDbType.NVarChar){IsNullable=false,Value=loaiMonAn},
+                new SqlParameter("@loaiMonAn",SqlDbType.Int){IsNullable=false,Value=loaiMonAn},
                 new SqlParameter("@donGia",SqlDbType.Decimal){IsNullable=false,Value=donGia },
 
             };
-            List<MonAn> list = new List<MonAn>();
+            List<MonAn> list = null;
             try
             {
                DataTable table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
@@ -150,6 +150,27 @@ namespace DAO.QuanLyHangHoa
                 Utility.Log(ex);
             }
             return count;
+        }
+        public static List<LoaiMon> XemLoaiMon()
+        {
+            string query = "SELECT * FROM LOAIMONAN";
+            List<LoaiMon> list = null;
+            try
+            {
+                DataTable table = Dataprovider.ExcuteQuery(query);
+                list = table.AsEnumerable().ToList().ConvertAll(x =>
+                        new LoaiMon()
+                        {
+                            Ma = x[0].ToString(),
+                            Ten = x[1].ToString()
+                        });
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+
+            return list;
         }
     }
 }

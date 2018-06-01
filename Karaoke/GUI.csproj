@@ -64,6 +64,18 @@
     <Compile Include="FoodLayout.designer.cs">
       <DependentUpon>FoodLayout.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChonMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChonMon.Designer.cs">
+      <DependentUpon>frmChonMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDatCoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDatCoc.Designer.cs">
+      <DependentUpon>frmDatCoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDatTiec.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +146,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FoodLayout.resx">
       <DependentUpon>FoodLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChonMon.resx">
+      <DependentUpon>frmChonMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDatCoc.resx">
+      <DependentUpon>frmDatCoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDatTiec.resx">
       <DependentUpon>frmDatTiec.cs</DependentUpon>
@@ -213,6 +231,10 @@
     <ProjectReference Include="..\BUS\BUS.csproj">
       <Project>{213a6d26-1a62-4539-9d89-f441da47c2e2}</Project>
       <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataGridViewGrouper\DataGridViewGrouper.csproj">
+      <Project>{785a6fbb-2ba0-42be-84c4-1703bcad15d2}</Project>
+      <Name>DataGridViewGrouper</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{b36479a8-0521-416a-a864-7d0003e17323}</Project>
