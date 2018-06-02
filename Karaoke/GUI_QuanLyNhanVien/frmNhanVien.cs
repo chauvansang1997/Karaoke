@@ -12,9 +12,20 @@ namespace Karaoke.GUI_QuanLyNhanVien
 {
     public partial class frmNhanVien : Form
     {
+        private DataTable dtDSNV;
+
+        private void KhoiTao()
+        {
+            dtDSNV = new DataTable();
+            dGVDSNV.DataSource = dtDSNV;
+        }
+
         public frmNhanVien()
         {
             InitializeComponent();
+            KhoiTao();
         }
+
+
     }
 }

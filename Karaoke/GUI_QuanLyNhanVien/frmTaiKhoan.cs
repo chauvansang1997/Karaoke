@@ -16,5 +16,15 @@ namespace Karaoke.GUI_QuanLyNhanVien
         {
             InitializeComponent();
         }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
