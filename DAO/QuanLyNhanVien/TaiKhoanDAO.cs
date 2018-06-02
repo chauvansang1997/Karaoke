@@ -36,6 +36,30 @@ namespace DAO.QuanLyNhanVien
             return true;
         }
 
+        // Kiểm tra tài khoản
+        public static bool KiemTraTaiKhoan(string tenTaiKhoan)
+        {
+            string query = "select COUNT(*) from TAIKHOAN where TENTK = @TENTK";
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@TENTK",SqlDbType.VarChar){Value = tenTaiKhoan },
+            };
+            int count = 0;
+            try
+            {
+                count = int.Parse(Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            if (count == 0)
+                return false;
+            else
+                return true;
+        }
+
+
         // Xóa tài khoản
         public static bool XoaTaiKhoan(TaiKhoan taiKhoan)
         {

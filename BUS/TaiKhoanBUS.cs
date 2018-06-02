@@ -14,6 +14,11 @@ namespace BUS
             return DAO.QuanLyNhanVien.TaiKhoanDAO.TaoTaiKhoan(taiKhoan);
         }
 
+        public static bool KiemTraTaiKhoan(TaiKhoan taiKhoan)
+        {
+            return DAO.QuanLyNhanVien.TaiKhoanDAO.KiemTraTaiKhoan(taiKhoan.TenTaiKhoan);
+        }
+
         public static bool XoaTaiKhoan(TaiKhoan taiKhoan)
         {
             return DAO.QuanLyNhanVien.TaiKhoanDAO.XoaTaiKhoan(taiKhoan);

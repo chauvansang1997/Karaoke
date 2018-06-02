@@ -64,13 +64,5 @@ namespace DTO
                 diaChi = value;
             }
         }
-
-        public NhanVien(string hoTen,string maNV,string soDienThoai,string diaChi)
-        {
-            this.HoTen = hoTen;
-            this.MaNV = maNV;
-            this.SoDienThoai = soDienThoai;
-            this.DiaChi = diaChi;
-        }
     }
 }
