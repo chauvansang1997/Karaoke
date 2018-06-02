@@ -32,7 +32,7 @@ namespace DAO
                         new HangHoa()
                         {
                             Ma = x[0].ToString(),
-                            Ten =loai.ToString(),
+                            Ten = x[1].ToString(),
                             Loai = loai.ToString(),
                             Gia = uint.Parse(x[3].ToString()),
                             TenHinhAnh = x[4].ToString(),

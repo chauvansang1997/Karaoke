@@ -21,5 +21,17 @@ namespace BUS
         {
             return DAO.HoaDonDAO.XemChiTietHoaDon(soHoaDon);
         }
+        public static bool DatCocTien(uint tienDatCoc, string soHD)
+        {
+            return DAO.HoaDonDAO.DatCocTien(tienDatCoc, soHD);
+        }
+        public static List<GoiMonDataSource> XemChiTietHoaDonDatTiec(string soHoaDon)
+        {
+            return DAO.HoaDonDAO.XemChiTietHoaDonDatTiec(soHoaDon);
+        }
+        public static string LayMaHoaDonDatTiec(string maPhong, string tenKhachHang, string soDienThoai, DateTime ngayNhanPhong)
+        {
+            return DAO.HoaDonDAO.LayMaHoaDonDatTiec(maPhong,tenKhachHang,soDienThoai,ngayNhanPhong);
+        }
     }
 }

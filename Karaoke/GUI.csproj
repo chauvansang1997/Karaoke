@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -70,6 +85,12 @@
     <Compile Include="frmChonMon.Designer.cs">
       <DependentUpon>frmChonMon.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChuyenPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChuyenPhong.Designer.cs">
+      <DependentUpon>frmChuyenPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDatCoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +108,12 @@
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThoiGianTonKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThoiGianTonKho.Designer.cs">
+      <DependentUpon>frmThoiGianTonKho.cs</DependentUpon>
     </Compile>
     <Compile Include="GuiMonAn\frmGoiMon.cs">
       <SubType>Form</SubType>
@@ -150,6 +177,9 @@
     <EmbeddedResource Include="frmChonMon.resx">
       <DependentUpon>frmChonMon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChuyenPhong.resx">
+      <DependentUpon>frmChuyenPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDatCoc.resx">
       <DependentUpon>frmDatCoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThoiGianTonKho.resx">
+      <DependentUpon>frmThoiGianTonKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuiMonAn\frmGoiMon.resx">
       <DependentUpon>frmGoiMon.cs</DependentUpon>
@@ -241,6 +274,12 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

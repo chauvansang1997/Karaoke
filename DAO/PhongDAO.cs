@@ -54,14 +54,14 @@ namespace DAO
             return true;
         }
 
-        public static List<Phong> XemPhong(int trangThai, int pageSize, int pagenumber)
+        public static List<Phong> XemPhong(int trangThai, int pageSize, int pageNumber)
         {
             string query = "EXEC uspTraCuuPhong @trangThai,@pageSize,@pageNumber";
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@trangThai",SqlDbType.Int){ Value=trangThai  },
                  new SqlParameter("@pageSize",SqlDbType.Int){ Value=pageSize  },
-                  new SqlParameter("@pageNumber",SqlDbType.Int){ Value=pagenumber  }
+                  new SqlParameter("@pageNumber",SqlDbType.Int){ Value=pageNumber  }
             };
             List<Phong> list = new List<Phong>();
             try

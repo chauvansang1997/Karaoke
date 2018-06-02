@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChonMon));
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.btnFirstPage = new System.Windows.Forms.Button();
@@ -50,7 +49,6 @@
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.dataGridViewGrouper1 = new Subro.Controls.DataGridViewGrouper(this.components);
             this.tabThucAn = new System.Windows.Forms.TabPage();
             this.tabControlThucAn = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -280,6 +278,7 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // button2
             // 
@@ -296,10 +295,6 @@
             this.button2.Text = "Đặt cọc";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // dataGridViewGrouper1
-            // 
-            this.dataGridViewGrouper1.Options = ((Subro.Controls.GroupingOptions)(resources.GetObject("dataGridViewGrouper1.Options")));
             // 
             // tabThucAn
             // 
@@ -393,7 +388,6 @@
         private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button button2;
-        private Subro.Controls.DataGridViewGrouper dataGridViewGrouper1;
         private System.Windows.Forms.TabPage tabThucAn;
         private System.Windows.Forms.TabControl tabControlThucAn;
         private System.Windows.Forms.TabPage tabPage3;

@@ -51,6 +51,8 @@ namespace Karaoke
 
         private void khoiTao()
         {
+            dTPNgayNhanPhong.Format = DateTimePickerFormat.Custom;
+            dTPNgayNhanPhong.CustomFormat = "dd/MM/yyyy  hh:mm:ss";
             pageNumber = 1;
             totalPage = PhongBUS.DemPhong(-1);
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
@@ -224,16 +226,20 @@ namespace Karaoke
 
             if (BUS.PhieuDatTiecBUS.KiemTraPhieuDatTiec(PhongHienTai.Ten, dateTimeNhanPhong, dateTimeKetThuc))
             {
-                if (BUS.PhieuDatTiecBUS.GhiNhanDatTiec(new KhachHang() { Ten = tenKhachHang, SoDT = soDienThoai },
-                                         PhongHienTai.Ten, User.NhanVien.MaNV,dateTimeNhanPhong,dateTimeDat,dateTimeKetThuc))
+               // User.NhanVien.MaNV = "NV001";
+                string soHoaDon = BUS.PhieuDatTiecBUS.GhiNhanDatTiec(new KhachHang() { Ten = tenKhachHang, SoDT = soDienThoai },
+                                         PhongHienTai.Ten, "NV001", dateTimeNhanPhong, dateTimeDat, dateTimeKetThuc);
+                if (soHoaDon != "")
                 {
                     MessageBox.Show("Đặt phòng thành công");
                     bindingSource.Add(new PhieuDatTiec() {TenKH= tenKhachHang, SoDienThoai= soDienThoai ,
                         NgayDat = dateTimeDat.ToString("dd/MM/yyyy HH:mm"),
                         NgayNhan= dateTimeNhanPhong.ToString("dd/MM/yyyy HH:mm"),
                         Phong= PhongHienTai.Ten,         
-                        
+                        SoHD= soHoaDon
                     });
+                    frmChonMon chonMon = new frmChonMon(soHoaDon);
+                    chonMon.ShowDialog();
                 }
                 else
                 {
@@ -243,6 +249,17 @@ namespace Karaoke
             else
             {
                 MessageBox.Show("Đã có khách hàng khác đặt vào thời gian này. Xin chọn thời gian khác");
+            }
+        }
+
+        private void btnXem_Click(object sender, EventArgs e)
+        {
+            if(dGVDatTiec.CurrentRow != null)
+            {
+                int index = dGVDatTiec.CurrentRow.Index;
+                string soHD = dGVDatTiec[5, index].Value.ToString();
+                frmChonMon chonMon = new frmChonMon(soHD);
+                chonMon.ShowDialog();
             }
         }
     }

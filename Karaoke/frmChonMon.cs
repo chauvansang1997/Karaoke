@@ -60,6 +60,13 @@ namespace Karaoke
         private List<LoaiHangHoa> listTenGroup;
         public frmChonMon()
         {
+            soHoaDon = "";
+            InitializeComponent();
+            khoiTao();
+        }
+        public frmChonMon(string soHD)
+        {
+            soHoaDon = soHD;
             InitializeComponent();
             khoiTao();
         }
@@ -150,26 +157,6 @@ namespace Karaoke
                     listDictionarySanPham.Add(dictionary);
                 }
             }
-            //bindingSource.Clear();
-            //bindingSource.Add(new GoiMonDataSource() { TenLoaiHangHoa="b"});
-            //bindingSource.Add(new GoiMonDataSource() { TenLoaiHangHoa = "a" });
-            //bindingSource.Add(new GoiMonDataSource() { TenLoaiHangHoa = "c" });
-            // List<HangHoa>
-            //List<GoiMonDataSource> temp = BUS.HoaDonBUS.XemChiTietHoaDon(soHoaDon);
-            //if (temp != null)
-            //{
-            //    uint tongCong = 0;
-            //    bindingSource.DataSource = BUS.HoaDonBUS.XemChiTietHoaDon(soHoaDon);
-            //    for (int i = 0; i < temp.Count; i++)
-            //    {
-            //        hashMaHangHoa.Add(temp[i].Ma);
-            //        tongCong += uint.Parse(temp[i].Thanhtien);
-
-            //    }
-            //    TongCong = tongCong;
-
-            //}
-            thayDoiLoai();
 
             listTenGroup = BUS.HangHoaBUS.XemLoaiMon(-1);
             if (listTenGroup != null)
@@ -180,6 +167,29 @@ namespace Karaoke
                     dictionaryDataSource.Add(listTenGroup[i].Ten, new Dictionary<string, GoiMonDataSource>());
                 }
             }
+            if (soHoaDon != "")
+            {
+                List<GoiMonDataSource> temp = BUS.HoaDonBUS.XemChiTietHoaDonDatTiec(soHoaDon);
+                if (temp != null)
+                {
+                    uint tongCong = 0;
+                  //  bindingSource.DataSource = BUS.HoaDonBUS.XemChiTietHoaDon(soHoaDon);
+                    for (int i = 0; i < temp.Count; i++)
+                    {
+                        hashMaHangHoa.Add(temp[i].Ma);
+                        dictionaryDataSource[temp[i].TenLoaiHangHoa].Add(temp[i].Ma, temp[i]);
+                        bindingSource.Add(temp[i]);
+                        tongCong += uint.Parse(temp[i].Thanhtien);
+
+                    }
+                    TongCong = tongCong;
+
+                }
+            }
+          
+            thayDoiLoai();
+
+           
         }
         private void sapXepLaiDanhSachHoaDon()
         {
@@ -189,10 +199,7 @@ namespace Karaoke
             {              
                 foreach (KeyValuePair<string, GoiMonDataSource> item in itemSource.Value)
                 {
-                   // MessageBox.Show(item.Value.TenLoaiHangHoa);
                     bindingSource.Add(item.Value);
-                    // bindingSource.Add(new GoiMonDataSource());
-                    //await Task.Delay(1000);
                 }
             }
         }
@@ -298,7 +305,7 @@ namespace Karaoke
                             dictionaryDataSource[tenLoaiHangHoa].Add(maHangHoa, new GoiMonDataSource()
                             {
 
-                                Ma = foodLayout.HangHoa.Ma,
+                                Ma = maHangHoa,
                                 Ten = foodLayout.HangHoa.Ten,
                                 Gia = foodLayout.HangHoa.Gia.ToString(),
                                 Soluong = "1",
@@ -307,12 +314,12 @@ namespace Karaoke
                                 IndexDict = foodLayout.IndexDict,
                                 IndexList = foodLayout.IndexList,
                                 MaLoaiHangHoa = foodLayout.HangHoa.LoaiHangHoa.Ma,
-                                TenLoaiHangHoa = foodLayout.HangHoa.LoaiHangHoa.Ten,
+                                TenLoaiHangHoa = tenLoaiHangHoa,
                             });
                         }
 
                      
-                        hashMaHangHoa.Add(foodLayout.HangHoa.Ma);
+                        hashMaHangHoa.Add(maHangHoa);
                         sapXepLaiDanhSachHoaDon();
                         //bindingSource.Add(new GoiMonDataSource()
                         //{
@@ -467,21 +474,25 @@ namespace Karaoke
             List<string> soluongMonAn = new List<string>();
             List<string> maSanPham = new List<string>();
             List<string> soluongSanPham = new List<string>();
-            for (int i = 0; i < dGVHoaDon.Rows.Count; i++)
+            foreach (KeyValuePair<string, Dictionary<string, GoiMonDataSource>> itemSource in dictionaryDataSource)
             {
-                string ma = dGVHoaDon[7, i].Value.ToString();
-                string soluong = dGVHoaDon[3, i].Value.ToString();
-
-                if (dGVHoaDon[5, i].Value.ToString() == "1" )
+                foreach (KeyValuePair<string, GoiMonDataSource> item in itemSource.Value)
                 {
-                    maSanPham.Add(ma);
-                    soluongSanPham.Add(soluong);
+                    string ma = item.Value.Ma;
+                    string soluong = item.Value.Soluong;
+                    string loai = item.Value.Loai;
 
-                }
-                else
-                {
-                    maMonAn.Add(ma);
-                    soluongMonAn.Add(soluong);
+                    if (loai == "1")
+                    {
+                        maSanPham.Add(ma);
+                        soluongSanPham.Add(soluong);
+
+                    }
+                    else
+                    {
+                        maMonAn.Add(ma);
+                        soluongMonAn.Add(soluong);
+                    }
                 }
             }
             if (BUS.HoaDonBUS.ThemChiTietHoaDon(soHoaDon, maMonAn, soluongMonAn, maSanPham, soluongSanPham))

@@ -17,13 +17,17 @@ namespace BUS
         {
             return DAO.PhieuDatTiecDAO.DemPhieuDatTiec(maPhong);
         }
-        public static bool GhiNhanDatTiec(KhachHang khachHang, string maPhong, string maNV, DateTime ngayNhanPhong, DateTime ngayDat, DateTime ngayGioKetThuc)
+        public static string GhiNhanDatTiec(KhachHang khachHang, string maPhong, string maNV, DateTime ngayNhanPhong, DateTime ngayDat, DateTime ngayGioKetThuc)
         {
             return DAO.PhieuDatTiecDAO.GhiNhanDatTiec(khachHang, maPhong, maNV, ngayNhanPhong, ngayDat, ngayGioKetThuc);
         }
         public static bool KiemTraPhieuDatTiec(string maPhong, DateTime ngayNhanPhong, DateTime ngayGioKetThuc)
         {
             return DAO.PhieuDatTiecDAO.KiemTraPhieuDatTiec(maPhong, ngayNhanPhong, ngayGioKetThuc);
+        }
+        public static List<Phong> XemChuyenPhong(string soHoaDon, int pageSize, int pageNumber)
+        {
+            return DAO.PhieuDatTiecDAO.XemChuyenPhong(soHoaDon, pageSize, pageNumber);
         }
     }
 }

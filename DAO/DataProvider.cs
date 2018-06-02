@@ -37,9 +37,8 @@ namespace DAO
 
                 if (sqlparameters != null)
                     command.Parameters.AddRange(sqlparameters);
-
+                
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
-
 
 
                 adapter.Fill(table);

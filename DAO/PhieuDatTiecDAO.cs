@@ -80,9 +80,10 @@ namespace DAO
         /// <param name="ngayNhanPhong"></param>
         /// <param name="thoiGianDat"></param>
         /// <returns></returns>
-        public static bool GhiNhanDatTiec(KhachHang khachHang, string maPhong, string maNV, DateTime ngayNhanPhong, DateTime ngayDat, DateTime ngayGioKetThuc)
+        public static string GhiNhanDatTiec(KhachHang khachHang, string maPhong, string maNV, DateTime ngayNhanPhong, DateTime ngayDat, DateTime ngayGioKetThuc)
         {
-            string query = "EXEC uspGhiNhanDatTiec @maPhong,@tenKhachHang,@soDienThoai,@soHoaDon,@maNV,@ngayNhanPhong,@ngayDat,@ngayGioKetThuc";
+            string query = "EXEC uspGhiNhanDatTiec @maPhong,@tenKhachHang,@soDienThoai,@maNV,@ngayNhanPhong,@ngayDat,@ngayGioKetThuc";
+            string result = "";
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                   new SqlParameter("@maPhong",SqlDbType.VarChar){ Value=maPhong  },
@@ -95,25 +96,25 @@ namespace DAO
             };
             try
             {
-                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+                result=Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString();
             }
             catch (Exception ex)
             {
                 Utility.Log(ex);
-                return false;
+                return result;
             }
-            return true;
+            return result;
         }
         public static bool KiemTraPhieuDatTiec(string maPhong, DateTime ngayNhanPhong, DateTime ngayGioKetThuc)
         {
-            string query = "EXEC uspKiemTraDatPhong @maPhong,@ngayNhanPhong,@thoiGianDat";
+            string query = "EXEC uspKiemTraDatPhong @maPhong,@ngayNhanPhong,@ngayGioKetThuc";
 
             //truyền tham số vào câu truy vấn
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                    new SqlParameter("@maPhong",SqlDbType.VarChar){IsNullable=false,Value=maPhong },
-                   new SqlParameter("@maNV",SqlDbType.DateTime){ Value=ngayNhanPhong  },
-                   new SqlParameter("@maNV",SqlDbType.DateTime){ Value=ngayGioKetThuc  }
+                   new SqlParameter("@ngayNhanPhong",SqlDbType.DateTime){ Value=ngayNhanPhong  },
+                   new SqlParameter("@ngayGioKetThuc",SqlDbType.DateTime){ Value=ngayGioKetThuc  }
             };
             int count = -1;
             try
@@ -124,7 +125,38 @@ namespace DAO
             {
                 Utility.Log(ex);
             }
-            return count > 0 ? true : false;
+            return count > 0 ? false : true;
+        }
+
+        public static List<Phong> XemChuyenPhong(string soHoaDon, int pageSize, int pageNumber)
+        {
+            string query = "EXEC uspXemChuyenPhong @thoiGianDat,@pageSize,@pageNumber";
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@trangThai",SqlDbType.VarChar){ Value=soHoaDon  },
+                 new SqlParameter("@pageSize",SqlDbType.Int){ Value=pageSize  },
+                  new SqlParameter("@pageNumber",SqlDbType.Int){ Value=pageNumber  }
+            };
+            List<Phong> list = new List<Phong>();
+            try
+            {
+                DataTable table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+                list = table.AsEnumerable().ToList().ConvertAll(x =>
+                        new Phong()
+                        {
+                            Ten = x[0].ToString(),
+                            TenLoai = x[1].ToString(),
+                            Gia = uint.Parse(x[2].ToString()),
+                            
+                            
+                        });
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+
+            return list;
         }
     }
 }

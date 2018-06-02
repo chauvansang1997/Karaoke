@@ -93,6 +93,93 @@ namespace DAO
             }
 
             return list;
-        } 
+        }
+        /// <summary>
+        /// Khác với chi tiết hóa đơn bình thường, có phân chia loại khai vị,món chính,món la séc
+        /// </summary>
+        /// <param name="soHoaDon">số hóa đơn</param>
+        /// <returns></returns>
+        public static List<GoiMonDataSource> XemChiTietHoaDonDatTiec(string soHoaDon)
+        {
+            string query = "EXEC uspXemChiTietHoaDonDatTiec @soHoaDon";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@soHoaDon",SqlDbType.VarChar){ Value=soHoaDon  }
+
+            };
+            List<GoiMonDataSource> list = null;
+            try
+            {
+                DataTable table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+                list = table.AsEnumerable().ToList().ConvertAll(x =>
+                        new GoiMonDataSource()
+                        {
+                            Ma = x[0].ToString(),
+                            Ten = x[1].ToString(),
+                            Soluong = x[2].ToString(),
+                            Loai = x[5].ToString(),
+                            Gia = x[4].ToString(),
+                            Thanhtien = (int.Parse(x[2].ToString()) * int.Parse(x[4].ToString())).ToString(),
+                            MaLoaiHangHoa= x[3].ToString(),
+                            TenLoaiHangHoa= x[6].ToString()
+
+                        }
+                        );
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+
+            return list;
+        }
+        public static bool DatCocTien(uint tienDatCoc,string soHD)
+        {
+            string query = "UPDATE HOADON SET tienDatCoc=@tienDatCoc WHERE SOHD=@soHD";
+            int num = 0;
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@tienDatCoc",SqlDbType.Int){IsNullable=false,Value=tienDatCoc },
+                new SqlParameter("@soHD",SqlDbType.VarChar){IsNullable=false,Value=soHD },
+
+
+            };
+            try
+            {
+                num = Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+                return false;
+            }
+            return num == 1 ? true : false;
+        }
+
+        public static string LayMaHoaDonDatTiec(string maPhong,string tenKhachHang,string soDienThoai,DateTime ngayNhanPhong)
+        {
+            string query = "EXEC uspLayHoaDonDatTiec @maPhong,@tenKhachHang,@soDienThoai,@ngayNhanPhong";
+
+            //truyền tham số vào câu truy vấn
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@maPhong",SqlDbType.VarChar){IsNullable=false,Value=maPhong },
+                new SqlParameter("@tenKhachHang",SqlDbType.NVarChar){IsNullable=false,Value=tenKhachHang },
+                new SqlParameter("@soDienThoai",SqlDbType.VarChar){IsNullable=false,Value=soDienThoai },
+                new SqlParameter("@ngayNhanPhong",SqlDbType.DateTime){IsNullable=false,Value=ngayNhanPhong }
+
+            };
+            string result = "";
+            try
+            {
+                result = Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString();
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            return result;
+        }
     }
 }
