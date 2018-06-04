@@ -273,6 +273,9 @@ namespace Karaoke.PhongKaoraoke
         }
         private void btnTrong_Click(object sender, EventArgs e)
         {
+            panelChoice.Height = btnTrong.Height;
+            panelChoice.Top = btnTrong.Top;
+
             if (trangThai != TrangThai.ChuaDat)
             {
                 trangThai = TrangThai.ChuaDat;
@@ -284,6 +287,9 @@ namespace Karaoke.PhongKaoraoke
 
         private void btnDaDat_Click(object sender, EventArgs e)
         {
+            panelChoice.Height = btnDaDat.Height;
+            panelChoice.Top = btnDaDat.Top;
+
             if (trangThai != TrangThai.DaDat)
             {
                 trangThai = TrangThai.DaDat;
@@ -293,6 +299,8 @@ namespace Karaoke.PhongKaoraoke
 
         private void btnTatCa_Click(object sender, EventArgs e)
         {
+            panelChoice.Height = btnTatCa.Height;
+            panelChoice.Top = btnTatCa.Top;
             if (trangThai != TrangThai.TatCa)
             {
                 trangThai = TrangThai.TatCa;
