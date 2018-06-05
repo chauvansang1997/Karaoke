@@ -278,9 +278,18 @@ namespace Subro.Controls
 
         protected override void Dispose(bool disposing)
         {
-            DataGridView = null;
-            source.Dispose();
-            base.Dispose(disposing);
+            try
+            {
+                DataGridView = null;
+                source.Dispose();
+                base.Dispose(disposing);
+            }
+            catch (Exception)
+            {
+
+                int test = 0;
+            }
+    
         }
         /*
         void grid_Sorted(object sender, EventArgs e)

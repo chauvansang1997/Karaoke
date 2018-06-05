@@ -775,13 +775,21 @@ namespace Subro.Controls
 
             public override object GetValue(object component)
             {
-                if (component is GroupRow)
+                try
                 {
-                    if (Owner.groupon.IsProperty(Property))
-                        return (component as GroupRow).Value;
+                    if (component is GroupRow)
+                    {
+                        if (Owner.groupon.IsProperty(Property))
+                            return (component as GroupRow).Value;
+                        return null;
+                    }
+                    return Property.GetValue(component);
+                }
+                catch (Exception)
+                {
                     return null;
                 }
-                return Property.GetValue(component);
+            
             }
 
             public override bool IsReadOnly

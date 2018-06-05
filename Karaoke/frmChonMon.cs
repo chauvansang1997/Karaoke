@@ -208,7 +208,7 @@ namespace Karaoke
             e.BackColor = (e.Group.GroupIndex % 2) == 0 ? Color.Orange : Color.LightBlue;
             e.Header = listTenGroup[int.Parse(e.DisplayValue)-1].Ten;
             e.DisplayValue = "";
-            
+            e.ForeColor = (e.Group.GroupIndex % 2) == 0 ? Color.White : Color.Black;
             // e.Summary = "contains " + e.Group.Count + " rows";
         }
         private void themCotHoaDon()
@@ -233,13 +233,13 @@ namespace Karaoke
         }
         private void thayDoiLoai()
         {
+            pageNumber = 1;
+            txtPageNumber.Text = "1";
             if (loaiHienTai == Loai.ThucAn)
             {
                 totalPage = BUS.HangHoaBUS.DemHangHoa((int)loaiHienTai, loaiThucAnHienTai);
                 totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
-
-                txtTotalPage.Text = totalPage.ToString();
-                pageNumber = 1;
+                txtTotalPage.Text = totalPage.ToString();        
                 dictionaryHienTai = listDictionaryThucAn[loaiThucAnHienTai - 1];
                 flowFoodLayoutHienTai = listLayoutThucAn[loaiThucAnHienTai - 1];
                 indexLoaiHienTai = loaiThucAnHienTai;
@@ -249,7 +249,6 @@ namespace Karaoke
                 totalPage = BUS.HangHoaBUS.DemHangHoa((int)loaiHienTai, loaiSanPhamHienTai);
                 totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
                 txtTotalPage.Text = totalPage.ToString();
-                pageNumber = 1;
                 dictionaryHienTai = listDictionarySanPham[loaiSanPhamHienTai - 1];
                 flowFoodLayoutHienTai = listLayoutSanPham[loaiSanPhamHienTai - 1];
                 indexLoaiHienTai = loaiSanPhamHienTai;
@@ -447,23 +446,41 @@ namespace Karaoke
 
         private void dGVHoaDon_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 3 && e.RowIndex > -1)
+            try
             {
-                dGVHoaDon[4, e.RowIndex].Value = int.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString()) *
-                    int.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString());
+                if (e.ColumnIndex == 3 && e.RowIndex > -1)
+                {
+                    dGVHoaDon[4, e.RowIndex].Value = int.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString()) *
+                        int.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString());
 
+                }
             }
+            catch (Exception)
+            {
+
+               
+            }
+   
         }
 
         private void dGVHoaDon_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            if (e.ColumnIndex == 3 && e.RowIndex > -1)
+            try
             {
-                uint oldValue = uint.Parse(dGVHoaDon[e.ColumnIndex, e.RowIndex].Value.ToString());
-                uint newValue = uint.Parse(e.FormattedValue.ToString());
-                TongCong = TongCong - oldValue * uint.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString())
-                    + newValue * uint.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString());
+                if (e.ColumnIndex == 3 && e.RowIndex > -1)
+                {
+                    uint oldValue = uint.Parse(dGVHoaDon[e.ColumnIndex, e.RowIndex].Value.ToString());
+                    uint newValue = uint.Parse(e.FormattedValue.ToString());
+                    TongCong = TongCong - oldValue * uint.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString())
+                        + newValue * uint.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString());
+                }
             }
+            catch (Exception)
+            {
+
+                
+            }
+        
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
