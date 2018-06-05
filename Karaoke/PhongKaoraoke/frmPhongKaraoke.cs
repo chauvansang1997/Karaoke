@@ -313,5 +313,20 @@ namespace Karaoke.PhongKaoraoke
             frmGoiMon goiMon = new frmGoiMon(BUS.HoaDonBUS.LayMaHoaDon(listPhongLayout[indexHienTai].Phong.Ten));
             goiMon.ShowDialog();
         }
+
+        private void btnDatPhong_MouseHover(object sender, EventArgs e)
+        {
+            this.btnDatPhong.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnThanhToan_MouseHover(object sender, EventArgs e)
+        {
+            this.btnThanhToan.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnThoat_MouseHover(object sender, EventArgs e)
+        {
+            this.btnThoat.FlatAppearance.BorderSize = 2;
+        }
     }
 }
