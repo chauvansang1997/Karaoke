@@ -262,5 +262,30 @@ namespace Karaoke
                 chonMon.ShowDialog();
             }
         }
+
+        private void btnChuyenPhong_MouseHover(object sender, EventArgs e)
+        {
+            this.btnChuyenPhong.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnDatPhong_MouseHover(object sender, EventArgs e)
+        {
+            this.btnDatPhong.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnHuy_MouseHover(object sender, EventArgs e)
+        {
+            this.btnHuy.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnXem_MouseHover(object sender, EventArgs e)
+        {
+            this.btnXem.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnNhanPhong_MouseHover(object sender, EventArgs e)
+        {
+            this.btnNhanPhong.FlatAppearance.BorderSize = 2;
+        }
     }
 }
