@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes" ?>
+<NewDataSet>
+	<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xs:element name="NewDataSet" msdata:IsDataSet="true">
+			<xs:complexType>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element name="Table">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="stt" type="xs:string" minOccurs="0" />
+								<xs:element name="nhom" type="xs:string" minOccurs="0" />
+								<xs:element name="ma" type="xs:string" minOccurs="0" />
+								<xs:element name="ten" type="xs:string" minOccurs="0" />
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:complexType>
+		</xs:element>
+	</xs:schema>
+	<Table>
+		<stt>01</stt>
+		<nhom>A</nhom>
+		<ma>J0?+J20?</ma>
+		<ten>A1: HO CẢM</ten>
+	</Table>
+	<Table>
+		<stt>02</stt>
+		<nhom>A</nhom>
+		<ma>J15+J15.1+J15.-1+J15.+1</ma>
+		<ten>A2: VIÊM PHỔI</ten>
+	</Table>
+	<Table>
+		<stt>03</stt>
+		<nhom>A</nhom>
+		<ma>J15.2+J15.-2+J15.+2</ma>
+		<ten>A3: VIÊM PHỔI NẶNG</ten>
+	</Table>
+	<Table>
+		<stt>04</stt>
+		<nhom>A</nhom>
+		<ma>J15.3+J15.-3+J15.+3</ma>
+		<ten>A4: VIÊM PHỔI RẤT NẶNG</ten>
+	</Table>
+	<Table>
+		<stt>05</stt>
+		<nhom>A</nhom>
+		<ma>J85?+J91?+J90?+J45?+J86?+J21?+J46?+J3?</ma>
+		<ten>A5: BỆNH ARI KHÁC</ten>
+	</Table>
+	<Table>
+		<stt>06</stt>
+		<nhom>A</nhom>
+		<ma>H6?+H7?+H8?+H9?</ma>
+		<ten>A6: BỆNH TMH KHÁC</ten>
+	</Table>
+	<Table>
+		<stt>07</stt>
+		<nhom>B</nhom>
+		<ma>A03?+A06?</ma>
+		<ten>B1: LỴ</ten>
+	</Table>
+	<Table>
+		<stt>08</stt>
+		<nhom>B</nhom>
+		<ma>A09?</ma>
+		<ten>B2: TIÊU CHẢY</ten>
+	</Table>
+	<Table>
+		<stt>09</stt>
+		<nhom>C</nhom>
+		<ma>-</ma>
+		<ten>C: CÁC BỆNH KHÁC</ten>
+	</Table>
+</NewDataSet>

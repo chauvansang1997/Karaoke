@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,21 @@ namespace Karaoke
         public frmBaoCaoTonKho()
         {
             InitializeComponent();
+        }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+
+            DataSet dsReport = new DataSet1();
+            // create temp dataset to read xml information 
+            DataSet dsTempReport = new DataSet();
+
+            dsTempReport.ReadXml(@"..\..\xml\bcari_save.xml",XmlReadMode.ReadSchema);
+            dsReport.Tables[0].Merge(dsTempReport.Tables[0]);
+
+            Tonkho crystalReport1 = new Tonkho();
+            crystalReport1.SetDataSource(dsReport.Tables[0]);
+            crystalReportViewer1.ReportSource = crystalReport1;
         }
     }
 }
