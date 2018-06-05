@@ -9,4 +9,5 @@ namespace DTO
     public class MonAn : HangHoa
     {
     }
+
 }
