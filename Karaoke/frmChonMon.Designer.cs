@@ -65,7 +65,7 @@
             // 
             // txtTotalPage
             // 
-            this.txtTotalPage.Location = new System.Drawing.Point(911, 540);
+            this.txtTotalPage.Location = new System.Drawing.Point(911, 551);
             this.txtTotalPage.Name = "txtTotalPage";
             this.txtTotalPage.ReadOnly = true;
             this.txtTotalPage.Size = new System.Drawing.Size(37, 20);
@@ -80,7 +80,7 @@
             this.btnFirstPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirstPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFirstPage.Location = new System.Drawing.Point(803, 536);
+            this.btnFirstPage.Location = new System.Drawing.Point(803, 547);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(24, 24);
             this.btnFirstPage.TabIndex = 162;
@@ -89,7 +89,7 @@
             // 
             // txtPageNumber
             // 
-            this.txtPageNumber.Location = new System.Drawing.Point(855, 540);
+            this.txtPageNumber.Location = new System.Drawing.Point(855, 551);
             this.txtPageNumber.Name = "txtPageNumber";
             this.txtPageNumber.Size = new System.Drawing.Size(37, 20);
             this.txtPageNumber.TabIndex = 157;
@@ -103,7 +103,7 @@
             this.btnLastPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnLastPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLastPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLastPage.Location = new System.Drawing.Point(976, 536);
+            this.btnLastPage.Location = new System.Drawing.Point(976, 547);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(24, 24);
             this.btnLastPage.TabIndex = 161;
@@ -114,7 +114,7 @@
             // 
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(894, 540);
+            this.label7.Location = new System.Drawing.Point(894, 551);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(15, 20);
             this.label7.TabIndex = 156;
@@ -128,7 +128,7 @@
             this.btnPrevPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnPrevPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPrevPage.Location = new System.Drawing.Point(829, 536);
+            this.btnPrevPage.Location = new System.Drawing.Point(829, 547);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(24, 24);
             this.btnPrevPage.TabIndex = 160;
@@ -142,7 +142,7 @@
             this.btnNextPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnNextPage.Location = new System.Drawing.Point(950, 536);
+            this.btnNextPage.Location = new System.Drawing.Point(950, 547);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(24, 24);
             this.btnNextPage.TabIndex = 159;
@@ -368,8 +368,8 @@
             this.tabThucAn.Controls.Add(this.tabControlThucAn);
             this.tabThucAn.Location = new System.Drawing.Point(4, 28);
             this.tabThucAn.Name = "tabThucAn";
-            this.tabThucAn.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabThucAn.Size = new System.Drawing.Size(647, 503);
+            this.tabThucAn.Padding = new System.Windows.Forms.Padding(3);
+            this.tabThucAn.Size = new System.Drawing.Size(647, 515);
             this.tabThucAn.TabIndex = 0;
             this.tabThucAn.Text = "Thức ăn";
             this.tabThucAn.UseVisualStyleBackColor = true;
@@ -378,11 +378,11 @@
             // 
             this.tabControlThucAn.Controls.Add(this.tabPage3);
             this.tabControlThucAn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlThucAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControlThucAn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlThucAn.Location = new System.Drawing.Point(3, 3);
             this.tabControlThucAn.Name = "tabControlThucAn";
             this.tabControlThucAn.SelectedIndex = 0;
-            this.tabControlThucAn.Size = new System.Drawing.Size(641, 497);
+            this.tabControlThucAn.Size = new System.Drawing.Size(641, 509);
             this.tabControlThucAn.TabIndex = 1;
             this.tabControlThucAn.SelectedIndexChanged += new System.EventHandler(this.tabControlThucAn_SelectedIndexChanged);
             // 
@@ -390,7 +390,7 @@
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(633, 465);
+            this.tabPage3.Size = new System.Drawing.Size(633, 477);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -398,11 +398,11 @@
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabThucAn);
-            this.tabControl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl.Location = new System.Drawing.Point(571, 1);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(655, 535);
+            this.tabControl.Size = new System.Drawing.Size(655, 547);
             this.tabControl.TabIndex = 0;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
