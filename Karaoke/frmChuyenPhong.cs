@@ -16,5 +16,15 @@ namespace Karaoke
         {
             InitializeComponent();
         }
+
+        private void btnLuu_MouseHover(object sender, EventArgs e)
+        {
+            this.btnLuu.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnThoat_MouseHover(object sender, EventArgs e)
+        {
+            this.btnThoat.FlatAppearance.BorderSize = 2;
+        }
     }
 }
