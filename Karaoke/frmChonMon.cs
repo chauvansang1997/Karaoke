@@ -447,23 +447,41 @@ namespace Karaoke
 
         private void dGVHoaDon_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 3 && e.RowIndex > -1)
+            try
             {
-                dGVHoaDon[4, e.RowIndex].Value = int.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString()) *
-                    int.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString());
+                if (e.ColumnIndex == 3 && e.RowIndex > -1)
+                {
+                    dGVHoaDon[4, e.RowIndex].Value = int.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString()) *
+                        int.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString());
 
+                }
             }
+            catch (Exception)
+            {
+
+               
+            }
+   
         }
 
         private void dGVHoaDon_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            if (e.ColumnIndex == 3 && e.RowIndex > -1)
+            try
             {
-                uint oldValue = uint.Parse(dGVHoaDon[e.ColumnIndex, e.RowIndex].Value.ToString());
-                uint newValue = uint.Parse(e.FormattedValue.ToString());
-                TongCong = TongCong - oldValue * uint.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString())
-                    + newValue * uint.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString());
+                if (e.ColumnIndex == 3 && e.RowIndex > -1)
+                {
+                    uint oldValue = uint.Parse(dGVHoaDon[e.ColumnIndex, e.RowIndex].Value.ToString());
+                    uint newValue = uint.Parse(e.FormattedValue.ToString());
+                    TongCong = TongCong - oldValue * uint.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString())
+                        + newValue * uint.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString());
+                }
             }
+            catch (Exception)
+            {
+
+                
+            }
+        
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
