@@ -1,4 +1,5 @@
 ﻿using Karaoke.GuiMonAn;
+using Karaoke.GUI_QuanLyNhanVien;
 using Karaoke.PhongKaoraoke;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace Karaoke
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPhongKaraoke());
+            Application.Run(new frmNhanVien());
         }
     }
 }

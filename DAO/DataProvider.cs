@@ -14,9 +14,9 @@ namespace DAO
     public static class Dataprovider
     {
         //Chuổi kết nối với sql
-        private static string connectionString = @"Data Source=.\sqlexpress;Initial Catalog=dbQuanLyKaraoke;Integrated Security=True";
+        private static string connectionString = "Data Source=DESKTOP-NP59ULF;Initial Catalog=dbQuanLyKaraoke;Integrated Security=True";
 
-        public static string ConnectionString { get => connectionString; set => connectionString = value; }
+     //   public static string ConnectionString { get => connectionString; set => connectionString = value; }
 
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace DAO
         {
             DataTable table = new DataTable();
 
-            using (SqlConnection con = new SqlConnection(ConnectionString))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
 
@@ -59,7 +59,7 @@ namespace DAO
         public static int ExcuteNonQuery(string query, SqlParameter[] sqlparameters = null)
         {
             int temp = 0;
-            using (SqlConnection con = new SqlConnection(ConnectionString))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
                 SqlCommand command = new SqlCommand(query, con);
@@ -81,7 +81,7 @@ namespace DAO
         /// <returns></returns>
         public static object ExcuteScalar(string query, SqlParameter[] sqlparameters = null)
         {
-            using (SqlConnection con = new SqlConnection(ConnectionString))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
                 SqlCommand command = new SqlCommand(query, con);
@@ -96,6 +96,6 @@ namespace DAO
             }
         }
 
-       // public static bool ExcuteNonQueryWithMore(SqlCommand)
+        // public static bool ExcuteNonQueryWithMore(SqlCommand)
     }
 }

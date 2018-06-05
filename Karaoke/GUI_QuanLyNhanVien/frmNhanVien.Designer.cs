@@ -243,6 +243,7 @@
             this.dGVDSNV.RowTemplate.Height = 24;
             this.dGVDSNV.Size = new System.Drawing.Size(822, 217);
             this.dGVDSNV.TabIndex = 8;
+            this.dGVDSNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVDSNV_CellClick);
             // 
             // btnThoat
             // 

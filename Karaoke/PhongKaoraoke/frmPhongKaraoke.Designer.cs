@@ -194,13 +194,13 @@
             // 
             // flowPhongLayout
             // 
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke1);
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke2);
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke3);
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke4);
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke5);
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke6);
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke7);
+            //this.flowPhongLayout.Controls.Add(this.phongKaraoke1);
+            //this.flowPhongLayout.Controls.Add(this.phongKaraoke2);
+            //this.flowPhongLayout.Controls.Add(this.phongKaraoke3);
+            //this.flowPhongLayout.Controls.Add(this.phongKaraoke4);
+            //this.flowPhongLayout.Controls.Add(this.phongKaraoke5);
+            //this.flowPhongLayout.Controls.Add(this.phongKaraoke6);
+            //this.flowPhongLayout.Controls.Add(this.phongKaraoke7);
             this.flowPhongLayout.Location = new System.Drawing.Point(577, 45);
             this.flowPhongLayout.Name = "flowPhongLayout";
             this.flowPhongLayout.Size = new System.Drawing.Size(511, 507);

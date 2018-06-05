@@ -8,11 +8,11 @@ namespace DTO
 {
     public class ChucVu
     {
-        private int maChucVu;
+        private string maChucVu;
         private string tenChucVu;
         private float heSoLuong;
 
-        public int MaChucVu
+        public string MaChucVu
         {
             get
             {

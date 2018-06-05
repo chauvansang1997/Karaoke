@@ -61,15 +61,13 @@ namespace DAO.QuanLyNhanVien
 
 
         // Xóa tài khoản
-        public static bool XoaTaiKhoan(TaiKhoan taiKhoan)
+        public static bool XoaTaiKhoan(string tentk)
         {
             string query = "EXEC usp_XoaTaiKhoan @TENTK";
 
-            string tenTaiKhoan = taiKhoan.TenTaiKhoan;
-
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@TENTK", SqlDbType.VarChar) {IsNullable = false, Value = tenTaiKhoan}
+                new SqlParameter("@TENTK", SqlDbType.VarChar) {IsNullable = false, Value = tentk}
             };
             try
             {

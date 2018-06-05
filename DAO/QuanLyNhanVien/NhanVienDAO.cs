@@ -12,7 +12,7 @@ namespace DAO.QuanLyNhanVien
     public static class NhanVienDAO
     {
         // Thêm nhân viên mới
-        public static bool ThemNhanVien(NhanVien nv, ChucVu cv, TaiKhoan tk)
+        public static bool ThemNhanVien(NhanVien nv, string maCV, string tenTK)
         {
             string query = "EXEC usp_ThemNhanVien @MANV, @TENTK, @MACV, @TENNV, @SDT, @DIACHI";
 
@@ -20,15 +20,13 @@ namespace DAO.QuanLyNhanVien
             string tenNV = nv.HoTen;
             string sdt = nv.SoDienThoai;
             string diaChi = nv.DiaChi;
-            string tenTK = tk.TenTaiKhoan;
-            int maCV = cv.MaChucVu;
 
             // Truyền tham số
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@MANV", SqlDbType.Char) {IsNullable = false, Value = maNV},
                 new SqlParameter("@TENTK", SqlDbType.VarChar) {IsNullable = false, Value = tenTK},
-                new SqlParameter("@MACV", SqlDbType.Int) {IsNullable = false, Value = maCV},
+                new SqlParameter("@MACV", SqlDbType.Char) {IsNullable = false, Value = maCV},
                 new SqlParameter("@TENNV", SqlDbType.NVarChar) {IsNullable = false, Value = tenNV},
                 new SqlParameter("@SDT", SqlDbType.NVarChar) {IsNullable = false, Value = sdt},
                 new SqlParameter("@DIACHI", SqlDbType.NVarChar) {IsNullable = false, Value = diaChi},
@@ -47,7 +45,7 @@ namespace DAO.QuanLyNhanVien
         }
 
         // Cập nhật thông tin nhân viên
-        public static bool CapNhatNhanVien(NhanVien nv, ChucVu cv)
+        public static bool CapNhatNhanVien(NhanVien nv, string maCV)
         {
             string query = "EXEC usp_CapNhatNhanVien @MANV, @MACV, @TENNV, @SDT, @DIACHI";
 
@@ -55,13 +53,12 @@ namespace DAO.QuanLyNhanVien
             string tenNV = nv.HoTen;
             string sdt = nv.SoDienThoai;
             string diaChi = nv.DiaChi;
-            int maCV = cv.MaChucVu;
 
             // Truyền tham số
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@MANV", SqlDbType.Char) {IsNullable = false, Value = maNV},
-                new SqlParameter("@MACV", SqlDbType.Int) {IsNullable = false, Value = maCV},
+                new SqlParameter("@MACV", SqlDbType.Char) {IsNullable = false, Value = maCV},
                 new SqlParameter("@TENNV", SqlDbType.NVarChar) {IsNullable = false, Value = tenNV},
                 new SqlParameter("@SDT", SqlDbType.NVarChar) {IsNullable = false, Value = sdt},
                 new SqlParameter("@DIACHI", SqlDbType.NVarChar) {IsNullable = false, Value = diaChi},
@@ -80,16 +77,15 @@ namespace DAO.QuanLyNhanVien
         }
 
         // Xóa nhân viên
-        public static bool XoaNhanVien(NhanVien nv)
+        public static bool XoaNhanVien(string maNV, string tenTK)
         {
-            string query = "EXEC usp_XoaNhanVien @MANV";
-
-            string maNV = nv.MaNV;
+            string query = "EXEC usp_XoaNhanVien @MANV, @TENTK";
 
             // Truyền tham số
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@MANV", SqlDbType.Char) {IsNullable = false, Value = maNV},
+                new SqlParameter("@TENTK", SqlDbType.VarChar) {IsNullable = false, Value = tenTK},
             };
             try
             {
@@ -104,7 +100,7 @@ namespace DAO.QuanLyNhanVien
             return true;
         }
 
-        // Kiểm tra thông tin nhân viên
+        // Kiểm tra nhân viên
         public static bool KiemTraNhanVien(string maNV)
         {
             string query = "select COUNT(*) from NHANVIEN where MANV = @MANV";
@@ -125,6 +121,36 @@ namespace DAO.QuanLyNhanVien
                 return false;
             else
                 return true;
+        }
+
+        // Load thông tin nhân viên
+        public static DataTable LoadNhanVien()
+        {
+            string query = "SELECT * FROM NHANVIEN WHERE TENTK IS NOT NULL";
+            return Dataprovider.ExcuteQuery(query);
+        }
+
+        // Tra cứu thông tin nhân viên
+        public static DataTable TraCuuNhanVien(NhanVien nv, string maCV, string tenTK)
+        {
+            string query = "EXEC usp_TraCuuNhanVien @MANV, @TENTK, @MACV, @TENNV, @SDT, @DIACHI";
+
+            string maNV = nv.MaNV;
+            string tenNV = nv.HoTen;
+            string sdt = nv.SoDienThoai;
+            string diaChi = nv.DiaChi;
+
+            // Truyền tham số
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@MANV", SqlDbType.Char) {IsNullable = true, Value = maNV},
+                new SqlParameter("@TENTK", SqlDbType.VarChar) {IsNullable = true, Value = tenTK},
+                new SqlParameter("@MACV", SqlDbType.Char) {IsNullable = true, Value = maCV},
+                new SqlParameter("@TENNV", SqlDbType.NVarChar) {IsNullable = true, Value = tenNV},
+                new SqlParameter("@SDT", SqlDbType.NVarChar) {IsNullable = true, Value = sdt},
+                new SqlParameter("@DIACHI", SqlDbType.NVarChar) {IsNullable = true, Value = diaChi},
+            };
+            return Dataprovider.ExcuteQuery(query, parameters.ToArray());
         }
     }
 }

@@ -17,33 +17,52 @@ namespace Karaoke.GUI_QuanLyNhanVien
         {
             InitializeComponent();
         }
+    
+        public string TheValue
+        {
+            get { return txtTenTK.Text; }
+        }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (txtTenTK.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập tên tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
+                MessageBox.Show("Vui lòng nhập tên tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            else if (BUS.TaiKhoanBUS.KiemTraTaiKhoan(new DTO.TaiKhoan() { TenTaiKhoan = txtTenTK.Text }))
+            else if (txtTenTK.Text.Length > 20)
             {
-                MessageBox.Show("Tài khoản đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
+                MessageBox.Show("Tên tài khoản đã vượt quá 20 ký tự, vui lòng nhập lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            else if (BUS.TaiKhoanBUS.KiemTraTaiKhoan(txtTenTK.Text ))
+            {
+                MessageBox.Show("Tên tài khoản đã tồn tại, vui lòng chọn tên khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
             if (txtMatKhau.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
+                MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            else if (txtMatKhau.Text.Length > 20)
+            {
+                MessageBox.Show("Mật khẩu đã vượt quá 20 ký tự, vui lòng nhập lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            BUS.TaiKhoanBUS.TaoTaiKhoan(new DTO.TaiKhoan() { TenTaiKhoan = txtTenTK.Text, MatKhau = txtMatKhau.Text });
-            MessageBox.Show("Tạo tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            if (!BUS.TaiKhoanBUS.TaoTaiKhoan(new DTO.TaiKhoan() { TenTaiKhoan = txtTenTK.Text, MatKhau = txtMatKhau.Text }))
+            {
+                MessageBox.Show("Tạo tài khoản thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Tạo tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                this.Close();
+                return;
+            }
         }
     }
 }

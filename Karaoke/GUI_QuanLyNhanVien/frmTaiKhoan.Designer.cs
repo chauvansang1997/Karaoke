@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.lblTenTK = new System.Windows.Forms.Label();
             this.lblMatKhau = new System.Windows.Forms.Label();
             this.txtTenTK = new System.Windows.Forms.TextBox();
@@ -50,23 +49,13 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(221, 189);
+            this.btnOK.Location = new System.Drawing.Point(315, 186);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 25);
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Location = new System.Drawing.Point(315, 189);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 25);
-            this.btnThoat.TabIndex = 2;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // lblTenTK
             // 
@@ -109,11 +98,10 @@
             this.Controls.Add(this.txtTenTK);
             this.Controls.Add(this.lblMatKhau);
             this.Controls.Add(this.lblTenTK);
-            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.label1);
             this.Name = "frmTaiKhoan";
-            this.Text = "Thêm tài khoản";
+            this.Text = "Tạo tài khoản";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,7 +111,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Label lblTenTK;
         private System.Windows.Forms.Label lblMatKhau;
         private System.Windows.Forms.TextBox txtTenTK;

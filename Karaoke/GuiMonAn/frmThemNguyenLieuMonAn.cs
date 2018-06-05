@@ -16,7 +16,17 @@ namespace Karaoke.GuiMonAn
         private DataTable dtNguyeLieuMonAn;
         private List<String> listMaNguyenLieu;
 
-        public DataTable DtNguyeLieuMonAn { get => dtNguyeLieuMonAn; set => dtNguyeLieuMonAn = value; }
+        public DataTable DtNguyeLieuMonAn
+        {
+            get
+            {
+                return dtNguyeLieuMonAn;
+            }
+            set
+            {
+                dtNguyeLieuMonAn = value;
+            }
+        }
 
         public frmThemNguyenLieuMonAn(DataTable dtNguyeLieuMonAn)
         {
