@@ -208,7 +208,7 @@ namespace Karaoke
             e.BackColor = (e.Group.GroupIndex % 2) == 0 ? Color.Orange : Color.LightBlue;
             e.Header = listTenGroup[int.Parse(e.DisplayValue)-1].Ten;
             e.DisplayValue = "";
-            
+            e.ForeColor = (e.Group.GroupIndex % 2) == 0 ? Color.White : Color.Black;
             // e.Summary = "contains " + e.Group.Count + " rows";
         }
         private void themCotHoaDon()
@@ -233,13 +233,13 @@ namespace Karaoke
         }
         private void thayDoiLoai()
         {
+            pageNumber = 1;
+            txtPageNumber.Text = "1";
             if (loaiHienTai == Loai.ThucAn)
             {
                 totalPage = BUS.HangHoaBUS.DemHangHoa((int)loaiHienTai, loaiThucAnHienTai);
                 totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
-
-                txtTotalPage.Text = totalPage.ToString();
-                pageNumber = 1;
+                txtTotalPage.Text = totalPage.ToString();        
                 dictionaryHienTai = listDictionaryThucAn[loaiThucAnHienTai - 1];
                 flowFoodLayoutHienTai = listLayoutThucAn[loaiThucAnHienTai - 1];
                 indexLoaiHienTai = loaiThucAnHienTai;
@@ -249,7 +249,6 @@ namespace Karaoke
                 totalPage = BUS.HangHoaBUS.DemHangHoa((int)loaiHienTai, loaiSanPhamHienTai);
                 totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
                 txtTotalPage.Text = totalPage.ToString();
-                pageNumber = 1;
                 dictionaryHienTai = listDictionarySanPham[loaiSanPhamHienTai - 1];
                 flowFoodLayoutHienTai = listLayoutSanPham[loaiSanPhamHienTai - 1];
                 indexLoaiHienTai = loaiSanPhamHienTai;
