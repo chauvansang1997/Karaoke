@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatTiec));
             this.dGVDatTiec = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.dTPNgayNhanPhong = new System.Windows.Forms.DateTimePicker();
@@ -438,8 +439,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dGVDatTiec);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDatTiec";
-            this.Text = "frmDatTiec";
+            this.Text = "Đặt tiệc";
             ((System.ComponentModel.ISupportInitialize)(this.dGVDatTiec)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

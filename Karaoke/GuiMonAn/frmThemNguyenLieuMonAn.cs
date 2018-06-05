@@ -95,5 +95,14 @@ namespace Karaoke.GuiMonAn
 
         }
 
+        private void btnThem_MouseHover(object sender, EventArgs e)
+        {
+            this.btnThem.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnThoat_MouseHover(object sender, EventArgs e)
+        {
+            this.btnThoat.FlatAppearance.BorderSize = 2;
+        }
     }
 }

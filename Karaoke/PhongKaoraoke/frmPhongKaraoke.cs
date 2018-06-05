@@ -328,5 +328,21 @@ namespace Karaoke.PhongKaoraoke
         {
             this.btnThoat.FlatAppearance.BorderSize = 2;
         }
+
+        private void btnTatCa_MouseHover(object sender, EventArgs e)
+        {
+            this.btnTatCa.BackColor = System.Drawing.Color.LightGray;
+
+        }
+
+        private void btnTrong_MouseHover(object sender, EventArgs e)
+        {
+            this.btnTrong.BackColor = System.Drawing.Color.LightGray;
+        }
+
+        private void btnDaDat_MouseHover(object sender, EventArgs e)
+        {
+            this.btnDaDat.BackColor = System.Drawing.Color.LightGray;
+        }
     }
 }
