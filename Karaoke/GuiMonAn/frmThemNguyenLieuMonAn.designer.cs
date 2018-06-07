@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThemNguyenLieuMonAn));
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
@@ -98,20 +98,20 @@
             this.dGVNguyenLieu.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dGVNguyenLieu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dGVNguyenLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGVNguyenLieu.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVNguyenLieu.DefaultCellStyle = dataGridViewCellStyle1;
             this.dGVNguyenLieu.Location = new System.Drawing.Point(10, 48);
             this.dGVNguyenLieu.Name = "dGVNguyenLieu";
             this.dGVNguyenLieu.ReadOnly = true;
             this.dGVNguyenLieu.RowHeadersVisible = false;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.dGVNguyenLieu.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dGVNguyenLieu.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGVNguyenLieu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVNguyenLieu.Size = new System.Drawing.Size(635, 392);
             this.dGVNguyenLieu.TabIndex = 149;
@@ -167,7 +167,7 @@
             // 
             // splitContainer.Panel1
             // 
-            this.splitContainer.Panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.splitContainer.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
             this.splitContainer.Panel1.Controls.Add(this.label1);
             this.splitContainer.Panel1.Controls.Add(this.btnAn);
             this.splitContainer.Panel1.Controls.Add(this.btnTimKiem);
@@ -178,7 +178,7 @@
             // 
             // splitContainer.Panel2
             // 
-            this.splitContainer.Panel2.BackColor = System.Drawing.Color.White;
+            this.splitContainer.Panel2.BackColor = System.Drawing.SystemColors.Control;
             this.splitContainer.Panel2.Controls.Add(this.txtTotalPage);
             this.splitContainer.Panel2.Controls.Add(this.btnFirstPage);
             this.splitContainer.Panel2.Controls.Add(this.btnThoat);
@@ -199,9 +199,9 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label1.Location = new System.Drawing.Point(6, 20);
+            this.label1.Location = new System.Drawing.Point(57, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(345, 41);
+            this.label1.Size = new System.Drawing.Size(234, 41);
             this.label1.TabIndex = 164;
             this.label1.Text = "THÊM NGUYÊN LIỆU";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -209,13 +209,13 @@
             // btnAn
             // 
             this.btnAn.BackColor = System.Drawing.Color.Transparent;
+            this.btnAn.FlatAppearance.BorderSize = 0;
             this.btnAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAn.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAn.Image = global::Karaoke.Properties.Resources.rewind;
-            this.btnAn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAn.Location = new System.Drawing.Point(3, 462);
+            this.btnAn.Image = ((System.Drawing.Image)(resources.GetObject("btnAn.Image")));
+            this.btnAn.Location = new System.Drawing.Point(12, 14);
             this.btnAn.Name = "btnAn";
-            this.btnAn.Size = new System.Drawing.Size(41, 29);
+            this.btnAn.Size = new System.Drawing.Size(30, 30);
             this.btnAn.TabIndex = 163;
             this.btnAn.UseVisualStyleBackColor = false;
             // 
@@ -251,13 +251,12 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.BackColor = System.Drawing.Color.LightGray;
-            this.btnThoat.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnThoat.FlatAppearance.BorderSize = 0;
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
+            this.btnThoat.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnThoat.Image = global::Karaoke.Properties.Resources.exit;
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.Location = new System.Drawing.Point(545, 446);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(100, 36);
@@ -269,13 +268,12 @@
             // 
             // btnThem
             // 
-            this.btnThem.BackColor = System.Drawing.Color.LightGray;
-            this.btnThem.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnThem.FlatAppearance.BorderSize = 0;
+            this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
+            this.btnThem.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnThem.Image = global::Karaoke.Properties.Resources.plus1;
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.Location = new System.Drawing.Point(439, 446);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(100, 36);

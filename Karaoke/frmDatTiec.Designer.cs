@@ -209,9 +209,9 @@
             this.panel1.Controls.Add(this.labelTenPhong);
             this.panel1.Controls.Add(this.txtTenPhong);
             this.panel1.Controls.Add(this.dTPNgayNhanPhong);
-            this.panel1.Location = new System.Drawing.Point(0, -1);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(467, 355);
+            this.panel1.Size = new System.Drawing.Size(455, 342);
             this.panel1.TabIndex = 3;
             // 
             // label8
@@ -261,7 +261,7 @@
             // 
             // txtTotalPage
             // 
-            this.txtTotalPage.Location = new System.Drawing.Point(678, 324);
+            this.txtTotalPage.Location = new System.Drawing.Point(678, 333);
             this.txtTotalPage.Name = "txtTotalPage";
             this.txtTotalPage.ReadOnly = true;
             this.txtTotalPage.Size = new System.Drawing.Size(37, 20);
@@ -271,7 +271,7 @@
             // 
             // txtPageNumber
             // 
-            this.txtPageNumber.Location = new System.Drawing.Point(622, 324);
+            this.txtPageNumber.Location = new System.Drawing.Point(622, 333);
             this.txtPageNumber.Name = "txtPageNumber";
             this.txtPageNumber.Size = new System.Drawing.Size(37, 20);
             this.txtPageNumber.TabIndex = 196;
@@ -282,7 +282,7 @@
             // 
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(661, 324);
+            this.label7.Location = new System.Drawing.Point(661, 333);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(15, 20);
             this.label7.TabIndex = 195;
@@ -314,7 +314,7 @@
             this.btnFirstPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirstPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFirstPage.Location = new System.Drawing.Point(570, 320);
+            this.btnFirstPage.Location = new System.Drawing.Point(570, 329);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(24, 24);
             this.btnFirstPage.TabIndex = 201;
@@ -328,7 +328,7 @@
             this.btnLastPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnLastPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLastPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLastPage.Location = new System.Drawing.Point(743, 320);
+            this.btnLastPage.Location = new System.Drawing.Point(743, 329);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(24, 24);
             this.btnLastPage.TabIndex = 200;
@@ -342,7 +342,7 @@
             this.btnPrevPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnPrevPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPrevPage.Location = new System.Drawing.Point(596, 320);
+            this.btnPrevPage.Location = new System.Drawing.Point(596, 329);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(24, 24);
             this.btnPrevPage.TabIndex = 199;
@@ -356,7 +356,7 @@
             this.btnNextPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnNextPage.Location = new System.Drawing.Point(717, 320);
+            this.btnNextPage.Location = new System.Drawing.Point(717, 329);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(24, 24);
             this.btnNextPage.TabIndex = 198;

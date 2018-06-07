@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FoodLayout));
             this.txtPrice = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.Label();
             this.imgFood = new System.Windows.Forms.PictureBox();
@@ -38,7 +39,7 @@
             // 
             this.txtPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrice.AutoSize = true;
-            this.txtPrice.Location = new System.Drawing.Point(61, 4);
+            this.txtPrice.Location = new System.Drawing.Point(66, 78);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(31, 13);
             this.txtPrice.TabIndex = 0;
@@ -48,7 +49,7 @@
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtName.AutoSize = true;
-            this.txtName.Location = new System.Drawing.Point(24, 78);
+            this.txtName.Location = new System.Drawing.Point(0, 78);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(32, 13);
             this.txtName.TabIndex = 2;
@@ -59,11 +60,11 @@
             this.imgFood.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.imgFood.BackgroundImage = global::Karaoke.Properties.Resources.go_first;
+            this.imgFood.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgFood.BackgroundImage")));
             this.imgFood.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgFood.Location = new System.Drawing.Point(16, 20);
+            this.imgFood.Location = new System.Drawing.Point(3, 3);
             this.imgFood.Name = "imgFood";
-            this.imgFood.Size = new System.Drawing.Size(65, 55);
+            this.imgFood.Size = new System.Drawing.Size(94, 72);
             this.imgFood.TabIndex = 1;
             this.imgFood.TabStop = false;
             // 

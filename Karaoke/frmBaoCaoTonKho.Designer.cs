@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-=======
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCaoTonKho));
->>>>>>> f9b3290f43ce872f8b1c65df1429f4a24d5ec1c3
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -52,11 +49,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 440);
-<<<<<<< HEAD
             this.Controls.Add(this.crystalReportViewer1);
-=======
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
->>>>>>> f9b3290f43ce872f8b1c65df1429f4a24d5ec1c3
             this.Name = "frmBaoCaoTonKho";
             this.Text = "Báo cáo tồn kho";
             this.ResumeLayout(false);
