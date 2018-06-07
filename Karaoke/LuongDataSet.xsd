@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LuongDataSet" targetNamespace="http://tempuri.org/LuongDataSet.xsd" xmlns:mstns="http://tempuri.org/LuongDataSet.xsd" xmlns="http://tempuri.org/LuongDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LuongDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LuongDataSet" msprop:Generator_UserDSName="LuongDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LUONG" msprop:Generator_TableClassName="LUONGDataTable" msprop:Generator_TableVarName="tableLUONG" msprop:Generator_TablePropName="LUONG" msprop:Generator_RowDeletingName="LUONGRowDeleting" msprop:Generator_RowChangingName="LUONGRowChanging" msprop:Generator_RowEvHandlerName="LUONGRowChangeEventHandler" msprop:Generator_RowDeletedName="LUONGRowDeleted" msprop:Generator_UserTableName="LUONG" msprop:Generator_RowChangedName="LUONGRowChanged" msprop:Generator_RowEvArgName="LUONGRowChangeEvent" msprop:Generator_RowClassName="LUONGRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MANV" msprop:Generator_ColumnVarNameInTable="columnMANV" msprop:Generator_ColumnPropNameInRow="MANV" msprop:Generator_ColumnPropNameInTable="MANVColumn" msprop:Generator_UserColumnName="MANV" type="xs:string" minOccurs="0" />
+              <xs:element name="TENNV" msprop:Generator_ColumnVarNameInTable="columnTENNV" msprop:Generator_ColumnPropNameInRow="TENNV" msprop:Generator_ColumnPropNameInTable="TENNVColumn" msprop:Generator_UserColumnName="TENNV" type="xs:string" minOccurs="0" />
+              <xs:element name="THANGLUONG" msprop:Generator_ColumnVarNameInTable="columnTHANGLUONG" msprop:Generator_ColumnPropNameInRow="THANGLUONG" msprop:Generator_ColumnPropNameInTable="THANGLUONGColumn" msprop:Generator_UserColumnName="THANGLUONG" type="xs:string" minOccurs="0" />
+              <xs:element name="SOTIEN" msprop:Generator_ColumnVarNameInTable="columnSOTIEN" msprop:Generator_ColumnPropNameInRow="SOTIEN" msprop:Generator_ColumnPropNameInTable="SOTIENColumn" msprop:Generator_UserColumnName="SOTIEN" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

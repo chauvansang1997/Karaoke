@@ -57,7 +57,6 @@
     <Compile Include="QuanLyHangHoa\NguyenLieuDAO.cs" />
     <Compile Include="SqlCommandParameter.cs" />
     <Compile Include="TaoMa.cs" />
-    <Compile Include="QuanLyLuong\LuongDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="QuanLyNhanVien\" />

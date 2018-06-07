@@ -49,6 +49,7 @@
     <Compile Include="LoaiHangHoa.cs" />
     <Compile Include="LoaiMon.cs" />
     <Compile Include="LoaiPhong.cs" />
+    <Compile Include="Luong.cs" />
     <Compile Include="MonAn.cs" />
     <Compile Include="NhaCungCap.cs" />
     <Compile Include="NhanVien.cs" />
