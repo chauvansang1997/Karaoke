@@ -177,6 +177,18 @@
     <Compile Include="GuiMonAn\frmThemNguyenLieuMonAn.designer.cs">
       <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_QuanLyNhanVien\frmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_QuanLyNhanVien\frmNhanVien.Designer.cs">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_QuanLyNhanVien\frmTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_QuanLyNhanVien\frmTaiKhoan.Designer.cs">
+      <DependentUpon>frmTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="NguyenLieu\frmNguyenLieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +276,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GuiMonAn\frmThemNguyenLieuMonAn.resx">
       <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_QuanLyNhanVien\frmNhanVien.resx">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_QuanLyNhanVien\frmTaiKhoan.resx">
+      <DependentUpon>frmTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NguyenLieu\frmNguyenLieu.resx">
       <DependentUpon>frmNguyenLieu.cs</DependentUpon>

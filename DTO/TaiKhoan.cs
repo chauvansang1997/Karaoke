@@ -6,34 +6,34 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class TaiKhoan
+    public class TaiKhoan
     {
-        private string tenDangNhap;
-        private string maKhau;
+        private string tenTaiKhoan;
+        private string matKhau;
 
-        public string TenDangNhap
+        public string TenTaiKhoan
         {
             get
             {
-                return tenDangNhap;
+                return tenTaiKhoan;
             }
 
             set
             {
-                tenDangNhap = value;
+                tenTaiKhoan = value;
             }
         }
 
-        public string MaKhau
+        public string MatKhau
         {
             get
             {
-                return maKhau;
+                return matKhau;
             }
 
             set
             {
-                maKhau = value;
+                matKhau = value;
             }
         }
     }
