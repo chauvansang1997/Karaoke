@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhongLayout));
             this.txtType = new System.Windows.Forms.Label();
             this.imgPicture = new System.Windows.Forms.PictureBox();
             this.txtTenPhong = new System.Windows.Forms.Label();
@@ -50,7 +51,7 @@
             this.imgPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.imgPicture.BackgroundImage = global::Karaoke.Properties.Resources.left_arrow;
+            this.imgPicture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgPicture.BackgroundImage")));
             this.imgPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.imgPicture.Location = new System.Drawing.Point(17, 24);
             this.imgPicture.Name = "imgPicture";
