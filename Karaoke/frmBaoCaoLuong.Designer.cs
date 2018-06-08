@@ -29,7 +29,9 @@
 		private void InitializeComponent()
 		{
 			this.crBaoCaoLuong = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-			this.rpBangLuong1 = new Karaoke.rpBangLuong();
+			this.rpBangLuong1 = new Karaoke.rpBangLuongChiTietNhanVien();
+			this.cbDanhSachNhanVien = new System.Windows.Forms.ComboBox();
+			this.cbThangLuong = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
 			// 
 			// crBaoCaoLuong
@@ -42,11 +44,29 @@
 			this.crBaoCaoLuong.Size = new System.Drawing.Size(1037, 565);
 			this.crBaoCaoLuong.TabIndex = 0;
 			// 
+			// cbDanhSachNhanVien
+			// 
+			this.cbDanhSachNhanVien.FormattingEnabled = true;
+			this.cbDanhSachNhanVien.Location = new System.Drawing.Point(272, 24);
+			this.cbDanhSachNhanVien.Name = "cbDanhSachNhanVien";
+			this.cbDanhSachNhanVien.Size = new System.Drawing.Size(121, 21);
+			this.cbDanhSachNhanVien.TabIndex = 1;
+			// 
+			// cbThangLuong
+			// 
+			this.cbThangLuong.FormattingEnabled = true;
+			this.cbThangLuong.Location = new System.Drawing.Point(462, 23);
+			this.cbThangLuong.Name = "cbThangLuong";
+			this.cbThangLuong.Size = new System.Drawing.Size(121, 21);
+			this.cbThangLuong.TabIndex = 2;
+			// 
 			// frmBaoCaoLuong
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1051, 643);
+			this.Controls.Add(this.cbThangLuong);
+			this.Controls.Add(this.cbDanhSachNhanVien);
 			this.Controls.Add(this.crBaoCaoLuong);
 			this.Name = "frmBaoCaoLuong";
 			this.Text = "frmBaoCaoLuong";
@@ -58,6 +78,8 @@
 		#endregion
 
 		private CrystalDecisions.Windows.Forms.CrystalReportViewer crBaoCaoLuong;
-		private rpBangLuong rpBangLuong1;
+		private rpBangLuongChiTietNhanVien rpBangLuong1;
+		private System.Windows.Forms.ComboBox cbDanhSachNhanVien;
+		private System.Windows.Forms.ComboBox cbThangLuong;
 	}
 }

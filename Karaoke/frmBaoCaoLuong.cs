@@ -21,9 +21,9 @@ namespace Karaoke
 		{
 			DataSet dataSet = new LuongDataSet();
 			DataTable dataTable = new DataTable();
-			dataTable = BUS.LuongBUS.XemLuong(null);
+			dataTable = BUS.LuongBUS.XemLuong("%NV%","%%",null);
 			dataSet.Tables[0].Merge(dataTable);
-			rpBangLuong rpLuong = new rpBangLuong();
+			rpBangLuongChiTietNhanVien rpLuong = new rpBangLuongChiTietNhanVien();
 
 			ParameterFields pField = new ParameterFields();
 			ParameterField pTruongKeToan = new ParameterField();
@@ -55,7 +55,14 @@ namespace Karaoke
 			crBaoCaoLuong.ReportSource = rpLuong;
 
 
+			//Load to combobox 
+			cbDanhSachNhanVien.DisplayMember = "tenNV";
+			cbDanhSachNhanVien.ValueMember = "maNV"; //Field in the datatable which you want to be the value of the combobox 
+			cbDanhSachNhanVien.DataSource = dataSet.Tables[0];
 
+			cbThangLuong.DisplayMember = "thangLuong";
+			cbThangLuong.ValueMember = "thangLuong"; //Field in the datatable which you want to be the value of the combobox 
+			cbThangLuong.DataSource = dataSet.Tables[0];
 		}
 	}
 }

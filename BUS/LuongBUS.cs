@@ -10,9 +10,9 @@ namespace BUS
 {
 	public static class LuongBUS
 	{
-		public static DataTable XemLuong(String maNV)
+		public static DataTable XemLuong(String maNV,String tenNV,String thangLuong)
 		{
-			return LuongDAO.XemLuong(maNV);
+			return LuongDAO.XemLuong(maNV,tenNV,thangLuong);
 		}
 	}
 }

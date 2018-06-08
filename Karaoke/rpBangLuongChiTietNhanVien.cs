@@ -16,14 +16,14 @@ namespace Karaoke {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpBangLuong : ReportClass {
+    public class rpBangLuongChiTietNhanVien : ReportClass {
         
-        public rpBangLuong() {
+        public rpBangLuongChiTietNhanVien() {
         }
         
         public override string ResourceName {
             get {
-                return "rpBangLuong.rpt";
+                return "rpBangLuongChiTietNhanVien.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Karaoke {
         
         public override string FullResourceName {
             get {
-                return "Karaoke.rpBangLuong.rpt";
+                return "Karaoke.rpBangLuongChiTietNhanVien.rpt";
             }
             set {
                 // Do nothing
@@ -74,7 +74,7 @@ namespace Karaoke {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection2 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace Karaoke {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,7 +90,7 @@ namespace Karaoke {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection2 {
             get {
                 return this.ReportDefinition.Sections[5];
             }
@@ -98,9 +98,25 @@ namespace Karaoke {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[6];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+            get {
+                return this.ReportDefinition.Sections[7];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[8];
             }
         }
         
@@ -130,9 +146,9 @@ namespace Karaoke {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrpBangLuong : Component, ICachedReport {
+    public class CachedrpBangLuongChiTietNhanVien : Component, ICachedReport {
         
-        public CachedrpBangLuong() {
+        public CachedrpBangLuongChiTietNhanVien() {
         }
         
         [Browsable(false)]
@@ -169,7 +185,7 @@ namespace Karaoke {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpBangLuong rpt = new rpBangLuong();
+            rpBangLuongChiTietNhanVien rpt = new rpBangLuongChiTietNhanVien();
             rpt.Site = this.Site;
             return rpt;
         }
