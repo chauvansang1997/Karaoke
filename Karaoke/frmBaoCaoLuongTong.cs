@@ -10,31 +10,21 @@ using System.Windows.Forms;
 
 namespace Karaoke
 {
-	public partial class frmBaoCaoLuong : Form
+	public partial class frmBaoCaoLuongTong : Form
 	{
 		DataSet dataSet = new LuongDataSet();
 		DataTable dataTable = new DataTable();
-		public frmBaoCaoLuong()
+		public frmBaoCaoLuongTong()
 		{
 			InitializeComponent();
-			bindingCombox();
 		}
 
-		private void bindingCombox()
+		private void frmBaoCaoLuongTong_Load(object sender, EventArgs e)
 		{
-			cbDanhSachNhanVien.DisplayMember = "tenNV";
-			cbDanhSachNhanVien.ValueMember = "maNV"; //Field in the datatable which you want to be the value of the combobox 
-			cbDanhSachNhanVien.DataSource = BUS.LuongBUS.table_Select("SELECT DISTINCT dbo.PHANCONG.MANV,TENNV FROM dbo.NHANVIEN JOIN dbo.PHANCONG ON PHANCONG.MANV = NHANVIEN.MANV");
-
+			cbThangLuong.DataSource = BUS.LuongBUS.table_Select("SELECT DISTINCT THANGLUONG FROM dbo.LUONG");
 			cbThangLuong.DisplayMember = "thangLuong";
-			cbThangLuong.ValueMember = "thangLuong"; //Field in the datatable which you want to be the value of the combobox 
-			cbThangLuong.DataSource = BUS.LuongBUS.table_Select("select distinct THANGLUONG FROM LUONG");
-		}
-
-		private void frmBaoCaoLuong_Load(object sender, EventArgs e)
-		{
-
-			dataTable = BUS.LuongBUS.XemLuong("%%", null);
+			cbThangLuong.ValueMember = "thangLuong";
+			dataTable = BUS.LuongBUS.XemLuongTong(null, cbThangLuong.SelectedValue.ToString());
 			loadRepport(dataTable);
 
 		}
@@ -42,7 +32,7 @@ namespace Karaoke
 		public void loadRepport(DataTable dataTable)
 		{
 			dataSet.Tables[0].Merge(dataTable);
-			rpBangLuongChiTietNhanVien rpLuong = new rpBangLuongChiTietNhanVien();
+			rpLuongTong rpLuongTong = new rpLuongTong();
 
 			ParameterFields pField = new ParameterFields();
 			ParameterField pTruongKeToan = new ParameterField();
@@ -66,19 +56,24 @@ namespace Karaoke
 			pDiaChiQuan.CurrentValues.Add(pDiaChiQuan_value);
 			pField.Add(pDiaChiQuan);
 
-			crBaoCaoLuong.ParameterFieldInfo = pField;
+			crLuongTong.ParameterFieldInfo = pField;
+			rpLuongTong.SetDataSource(dataSet.Tables[0]);
+			crLuongTong.ReportSource = rpLuongTong;
 
-
-			rpLuong.SetDataSource(dataSet.Tables[0]);
-			rpLuong.Refresh();
-			crBaoCaoLuong.ReportSource = rpLuong;
 			dataSet.Tables[0].Reset();
 		}
 
-		private void btnThucThiBCCTL_Click(object sender, EventArgs e)
+		private void btnThucThi_Click(object sender, EventArgs e)
 		{
-			dataTable = BUS.LuongBUS.XemLuong(cbDanhSachNhanVien.SelectedValue.ToString(), cbThangLuong.SelectedValue.ToString());
+			dataTable = BUS.LuongBUS.XemLuongTong(null, cbThangLuong.SelectedValue.ToString());
 			loadRepport(dataTable);
+		}
+
+		private void lbXemChiTiet_Click(object sender, EventArgs e)
+		{
+			frmBaoCaoLuong baoCaoLuong = new frmBaoCaoLuong();
+			baoCaoLuong.StartPosition = FormStartPosition.CenterScreen;
+			baoCaoLuong.ShowDialog();
 		}
 	}
 }

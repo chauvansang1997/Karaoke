@@ -38,12 +38,15 @@
 			// crBaoCaoLuong
 			// 
 			this.crBaoCaoLuong.ActiveViewIndex = -1;
+			this.crBaoCaoLuong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.crBaoCaoLuong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.crBaoCaoLuong.Cursor = System.Windows.Forms.Cursors.Default;
 			this.crBaoCaoLuong.Location = new System.Drawing.Point(13, 72);
 			this.crBaoCaoLuong.Name = "crBaoCaoLuong";
 			this.crBaoCaoLuong.Size = new System.Drawing.Size(1037, 565);
 			this.crBaoCaoLuong.TabIndex = 0;
+			this.crBaoCaoLuong.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
 			// 
 			// cbDanhSachNhanVien
 			// 

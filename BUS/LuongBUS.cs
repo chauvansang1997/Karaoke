@@ -18,5 +18,10 @@ namespace BUS
 		{
 			return LuongDAO.table_Select(sql);
 		}
+
+		public static DataTable XemLuongTong(String maNV,String thangLuong)
+		{
+			return LuongDAO.XemLuongTong(maNV, thangLuong);
+		}
 	}
 }

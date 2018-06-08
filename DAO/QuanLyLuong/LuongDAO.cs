@@ -35,6 +35,28 @@ namespace DAO.TinhLuong
 			return table;
 		}
 
+		public static DataTable XemLuongTong(String maNV,String thangLuong)
+		{
+			string query = "EXECUTE usp_XemLuong @maNV ,@thangLuong";
+			List<SqlParameter> parameters = new List<SqlParameter>()
+			{
+				 new SqlParameter("@maNV",SqlDbType.NVarChar){IsNullable=true,Value=maNV??(Object)DBNull.Value},
+				 new SqlParameter("@thangLuong",SqlDbType.NVarChar){IsNullable=true,Value=thangLuong??(Object)DBNull.Value}
+			};
+			DataTable table = null;
+			try
+			{
+				table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+
+			}
+			catch (Exception ex)
+			{
+				Utility.Log(ex);
+			}
+
+			return table;
+		}
+
 		public static DataTable table_Select(String sql)
 		{
 			adapter = new SqlDataAdapter(sql,DAO.Dataprovider.ConnectionString );
