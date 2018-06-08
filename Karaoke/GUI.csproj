@@ -145,6 +145,12 @@
     <Compile Include="frmDatTiec.Designer.cs">
       <DependentUpon>frmDatTiec.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLuongTong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLuongTong.Designer.cs">
+      <DependentUpon>frmLuongTong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,12 @@
       <DependentUpon>rpBangLuongChiTietNhanVien.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="rpLuongTong.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpLuongTong.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Tonkho.cs">
       <AutoGen>True</AutoGen>
@@ -264,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDatTiec.resx">
       <DependentUpon>frmDatTiec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLuongTong.resx">
+      <DependentUpon>frmLuongTong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -311,6 +326,10 @@
     <EmbeddedResource Include="rpBangLuongChiTietNhanVien.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpBangLuongChiTietNhanVien.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rpLuongTong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpLuongTong.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Tonkho.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

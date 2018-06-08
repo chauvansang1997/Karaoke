@@ -32,6 +32,7 @@
 			this.rpBangLuong1 = new Karaoke.rpBangLuongChiTietNhanVien();
 			this.cbDanhSachNhanVien = new System.Windows.Forms.ComboBox();
 			this.cbThangLuong = new System.Windows.Forms.ComboBox();
+			this.btnThucThiBCCTL = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// crBaoCaoLuong
@@ -60,11 +61,22 @@
 			this.cbThangLuong.Size = new System.Drawing.Size(121, 21);
 			this.cbThangLuong.TabIndex = 2;
 			// 
+			// btnThucThiBCCTL
+			// 
+			this.btnThucThiBCCTL.Location = new System.Drawing.Point(608, 23);
+			this.btnThucThiBCCTL.Name = "btnThucThiBCCTL";
+			this.btnThucThiBCCTL.Size = new System.Drawing.Size(75, 23);
+			this.btnThucThiBCCTL.TabIndex = 3;
+			this.btnThucThiBCCTL.Text = "Thực thi";
+			this.btnThucThiBCCTL.UseVisualStyleBackColor = true;
+			this.btnThucThiBCCTL.Click += new System.EventHandler(this.btnThucThiBCCTL_Click);
+			// 
 			// frmBaoCaoLuong
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1051, 643);
+			this.Controls.Add(this.btnThucThiBCCTL);
 			this.Controls.Add(this.cbThangLuong);
 			this.Controls.Add(this.cbDanhSachNhanVien);
 			this.Controls.Add(this.crBaoCaoLuong);
@@ -81,5 +93,6 @@
 		private rpBangLuongChiTietNhanVien rpBangLuong1;
 		private System.Windows.Forms.ComboBox cbDanhSachNhanVien;
 		private System.Windows.Forms.ComboBox cbThangLuong;
+		private System.Windows.Forms.Button btnThucThiBCCTL;
 	}
 }

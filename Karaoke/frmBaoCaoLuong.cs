@@ -12,16 +12,35 @@ namespace Karaoke
 {
 	public partial class frmBaoCaoLuong : Form
 	{
+		DataSet dataSet = new LuongDataSet();
+		DataTable dataTable = new DataTable();
 		public frmBaoCaoLuong()
 		{
 			InitializeComponent();
+			bindingCombox();
+		}
+
+		private void bindingCombox()
+		{
+			cbDanhSachNhanVien.DisplayMember = "tenNV";
+			cbDanhSachNhanVien.ValueMember = "maNV"; //Field in the datatable which you want to be the value of the combobox 
+			cbDanhSachNhanVien.DataSource = BUS.LuongBUS.table_Select("SELECT DISTINCT dbo.PHANCONG.MANV,TENNV FROM dbo.NHANVIEN JOIN dbo.PHANCONG ON PHANCONG.MANV = NHANVIEN.MANV");
+
+			cbThangLuong.DisplayMember = "thangLuong";
+			cbThangLuong.ValueMember = "thangLuong"; //Field in the datatable which you want to be the value of the combobox 
+			cbThangLuong.DataSource = BUS.LuongBUS.table_Select("select distinct THANGLUONG FROM LUONG");
 		}
 
 		private void frmBaoCaoLuong_Load(object sender, EventArgs e)
 		{
-			DataSet dataSet = new LuongDataSet();
-			DataTable dataTable = new DataTable();
-			dataTable = BUS.LuongBUS.XemLuong("%NV%","%%",null);
+
+			dataTable = BUS.LuongBUS.XemLuong("%%", null);
+			loadRepport(dataTable);
+
+		}
+
+		public void loadRepport(DataTable dataTable)
+		{
 			dataSet.Tables[0].Merge(dataTable);
 			rpBangLuongChiTietNhanVien rpLuong = new rpBangLuongChiTietNhanVien();
 
@@ -53,16 +72,12 @@ namespace Karaoke
 			rpLuong.SetDataSource(dataSet.Tables[0]);
 			rpLuong.Refresh();
 			crBaoCaoLuong.ReportSource = rpLuong;
+		}
 
-
-			//Load to combobox 
-			cbDanhSachNhanVien.DisplayMember = "tenNV";
-			cbDanhSachNhanVien.ValueMember = "maNV"; //Field in the datatable which you want to be the value of the combobox 
-			cbDanhSachNhanVien.DataSource = dataSet.Tables[0];
-
-			cbThangLuong.DisplayMember = "thangLuong";
-			cbThangLuong.ValueMember = "thangLuong"; //Field in the datatable which you want to be the value of the combobox 
-			cbThangLuong.DataSource = dataSet.Tables[0];
+		private void btnThucThiBCCTL_Click(object sender, EventArgs e)
+		{
+			dataTable = BUS.LuongBUS.XemLuong(cbDanhSachNhanVien.SelectedValue.ToString(), cbThangLuong.SelectedValue.ToString());
+			loadRepport(dataTable);
 		}
 	}
 }

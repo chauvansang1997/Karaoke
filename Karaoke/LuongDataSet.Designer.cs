@@ -769,7 +769,7 @@ namespace Karaoke {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TONGLUONGRow AddTONGLUONGRow(string MANV, string TENNV, string THANGLUONG, string SOTIEN) {
+            public TONGLUONGRow AddTONGLUONGRow(string MANV, string TENNV, string THANGLUONG, short SOTIEN) {
                 TONGLUONGRow rowTONGLUONGRow = ((TONGLUONGRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MANV,
@@ -813,7 +813,7 @@ namespace Karaoke {
                 base.Columns.Add(this.columnTENNV);
                 this.columnTHANGLUONG = new global::System.Data.DataColumn("THANGLUONG", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTHANGLUONG);
-                this.columnSOTIEN = new global::System.Data.DataColumn("SOTIEN", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnSOTIEN = new global::System.Data.DataColumn("SOTIEN", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSOTIEN);
             }
             
@@ -1244,10 +1244,10 @@ namespace Karaoke {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string SOTIEN {
+            public short SOTIEN {
                 get {
                     try {
-                        return ((string)(this[this.tableTONGLUONG.SOTIENColumn]));
+                        return ((short)(this[this.tableTONGLUONG.SOTIENColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'SOTIEN\' in table \'TONGLUONG\' is DBNull.", e);

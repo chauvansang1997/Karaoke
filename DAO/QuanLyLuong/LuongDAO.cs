@@ -5,19 +5,21 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using DAO;
 
 namespace DAO.TinhLuong
 {
 	public static class LuongDAO
 	{
-		public static DataTable XemLuong(String maNV,String tenNV,String thangLuong)
+		private static SqlDataAdapter adapter;
+
+		public static DataTable XemLuong(String maNV,String thangLuong)
 		{
-			string query = "EXECUTE dbo.usp_CapNhatChiTietLuong @maNV, @tenNV ,@thangLuong";
+			string query = "EXECUTE dbo.usp_CapNhatChiTietLuong @maNV ,@thangLuong";
 			List<SqlParameter> parameters = new List<SqlParameter>()
 			{
 				 new SqlParameter("@maNV",SqlDbType.VarChar){IsNullable=true,Value=maNV??(Object)DBNull.Value},
-				 new SqlParameter("@tenNV",SqlDbType.VarChar){IsNullable=true,Value=tenNV??(Object)DBNull.Value},
-				 new SqlParameter("@thangLuong",SqlDbType.VarChar){IsNullable=true,Value=thangLuong??(Object)DBNull.Value}
+				 new SqlParameter("@thangLuong",SqlDbType.NVarChar){IsNullable=true,Value=thangLuong??(Object)DBNull.Value}
 			};
 			DataTable table = null;
 			try
@@ -33,26 +35,14 @@ namespace DAO.TinhLuong
 			return table;
 		}
 
-		public static DataTable XemLuongT(String maNV, String tenNV, String thangLuong)
+		public static DataTable table_Select(String sql)
 		{
-			string query = "EXECUTE dbo.usp_CapNhatChiTietLuong @maNV, @tenNV ,@thangLuong";
-			List<SqlParameter> parameters = new List<SqlParameter>()
-			{
-				 new SqlParameter("@maNV",SqlDbType.VarChar){IsNullable=true,Value=maNV??(Object)DBNull.Value},
-				 new SqlParameter("@tenNV",SqlDbType.VarChar){IsNullable=true,Value=tenNV??(Object)DBNull.Value},
-				 new SqlParameter("@thangLuong",SqlDbType.VarChar){IsNullable=true,Value=thangLuong??(Object)DBNull.Value}
-			};
-			DataTable table = null;
-			try
-			{
-				table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
-
-			}
-			catch (Exception ex)
-			{
-				Utility.Log(ex);
-			}
-
+			adapter = new SqlDataAdapter(sql,DAO.Dataprovider.ConnectionString );
+			//Tạo mới table
+			var table = new DataTable();
+			//Đỗ dữ lêiuj vào
+			adapter.Fill(table);
+			//Trả về data table
 			return table;
 		}
 	}
