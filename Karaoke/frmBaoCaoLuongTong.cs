@@ -21,7 +21,7 @@ namespace Karaoke
 
 		private void frmBaoCaoLuongTong_Load(object sender, EventArgs e)
 		{
-			cbThangLuong.DataSource = BUS.LuongBUS.table_Select("SELECT DISTINCT THANGLUONG FROM dbo.LUONG");
+			cbThangLuong.DataSource = BUS.LuongBUS.table_Select("SELECT DISTINCT THANGLUONG FROM dbo.LUONG ORDER BY THANGLUONG DESC");
 			cbThangLuong.DisplayMember = "thangLuong";
 			cbThangLuong.ValueMember = "thangLuong";
 			dataTable = BUS.LuongBUS.XemLuongTong(null, cbThangLuong.SelectedValue.ToString());

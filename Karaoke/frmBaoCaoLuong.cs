@@ -28,7 +28,7 @@ namespace Karaoke
 
 			cbThangLuong.DisplayMember = "thangLuong";
 			cbThangLuong.ValueMember = "thangLuong"; //Field in the datatable which you want to be the value of the combobox 
-			cbThangLuong.DataSource = BUS.LuongBUS.table_Select("select distinct THANGLUONG FROM LUONG");
+			cbThangLuong.DataSource = BUS.LuongBUS.table_Select("SELECT DISTINCT THANGLUONG FROM dbo.LUONG ORDER BY THANGLUONG DESC");
 		}
 
 		private void frmBaoCaoLuong_Load(object sender, EventArgs e)
