@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -16,6 +17,10 @@ namespace Karaoke.QuanLyPhanCong
 		String maNV = "";
 		String maCa = "";
 		DateTime ngay = DateTime.Now;
+		String maNVCu = "";
+		String maCaCu = "";
+		DateTime ngayCu = DateTime.Now;
+
 		DataTable tableNhanVien;
 		public frmPhanCong()
 		{
@@ -53,7 +58,8 @@ namespace Karaoke.QuanLyPhanCong
 			dgvDanhSachPhanCong.Columns[3].HeaderCell.Value = "Tên ca";
 			dgvDanhSachPhanCong.Columns[4].HeaderCell.Value = "Ngày";
 			dgvDanhSachPhanCong.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
+			dgvDanhSachPhanCong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			dgvDanhSachPhanCong.ReadOnly = true;
 			bindingToCombox(dgvDanhSachPhanCong.DataSource);
 
 		}
@@ -94,7 +100,26 @@ namespace Karaoke.QuanLyPhanCong
 
 		private void btnCapNhat_Click(object sender, EventArgs e)
 		{
+			maNV = cbMaNV.SelectedValue.ToString();
+			maCa = cbTenCa.SelectedValue.ToString();
+			ngay = dtpNgayPhanCong.Value;
 
+			maNVCu = dgvDanhSachPhanCong.CurrentRow.Cells[0].Value.ToString();
+			maCaCu = dgvDanhSachPhanCong.CurrentRow.Cells[2].Value.ToString();
+			ngayCu = DateTime.Parse(dgvDanhSachPhanCong.CurrentRow.Cells[4].Value.ToString());
+			if (BUS.PhanCongBUS.CapNhatPhanCong(maNVCu, maCaCu, ngayCu, maNV, maCa, ngay))
+			{
+				MessageBox.Show("Cập nhật phân công thành công", "Cập nhật phân công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				frmPhanCong_Load(sender, e);
+			}
+			else
+			{
+				MessageBox.Show("Cập nhật phân công thất bại xin kiểm tra lại!", "Cập nhật phân công", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+			maNVCu = "";
+			maCaCu = "";
+			ngayCu = DateTime.Now;
 		}
 
 		private void btnXoa_Click(object sender, EventArgs e)

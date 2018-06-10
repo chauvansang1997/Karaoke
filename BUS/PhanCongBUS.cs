@@ -26,5 +26,9 @@ namespace BUS
 		{
 			return DAO.PhanCong.PhanCongDAO.XoaPhanCong(maNV, maCa, ngay);
 		}
+		public static bool CapNhatPhanCong(String maNVCu, String maCaCu, DateTime ngayCu, String maNV, String maCa, DateTime ngay)
+		{
+			return DAO.PhanCong.PhanCongDAO.CapNhatPhanCong(maNVCu, maCaCu, ngayCu,maNV,maCa,ngay);
+		}
 	}
 }

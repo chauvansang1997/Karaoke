@@ -62,11 +62,14 @@ namespace DAO.PhanCong
 			return false;
 		}
 
-		public static bool CapNhatPhanCong(String maNV, String maCa, DateTime ngay)
+		public static bool CapNhatPhanCong(String maNVCu, String maCaCu, DateTime ngayCu, String maNV, String maCa, DateTime ngay)
 		{
-			string query = "EXEC usp_CapNhatPhanCong @maNV,@maCa,@ngay";
+			string query = "EXEC usp_CapNhatPhanCong @maNVCu,@maCaCu,@ngayCu,@maNV,@maCa,@ngay";
 			List<SqlParameter> parameters = new List<SqlParameter>()
 			{
+				new SqlParameter("@maNVCu", SqlDbType.VarChar) {IsNullable = false, Value =maNVCu},
+				new SqlParameter("@maCaCu", SqlDbType.VarChar) {IsNullable = false, Value = maCaCu },
+				new SqlParameter("@ngayCu", SqlDbType.DateTime) {IsNullable = false, Value = ngayCu },
 				new SqlParameter("@maNV", SqlDbType.VarChar) {IsNullable = false, Value =maNV },
 				new SqlParameter("@maCa", SqlDbType.VarChar) {IsNullable = false, Value = maCa },
 				new SqlParameter("@ngay", SqlDbType.DateTime) {IsNullable = false, Value = ngay },
