@@ -19,7 +19,7 @@ namespace Karaoke
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmBaoCaoLuongTong());
+            Application.Run(new frmMain());
         }
     }
 }
