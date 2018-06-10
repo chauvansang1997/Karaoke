@@ -30,6 +30,7 @@
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCaoTonKho));
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -51,7 +52,6 @@
             this.ClientSize = new System.Drawing.Size(990, 440);
             this.Controls.Add(this.crystalReportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-
             this.Name = "frmBaoCaoTonKho";
             this.Text = "Báo cáo tồn kho";
             this.ResumeLayout(false);

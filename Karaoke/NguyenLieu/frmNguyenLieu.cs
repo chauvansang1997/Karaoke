@@ -72,30 +72,5 @@ namespace Karaoke.NguyenLieu
         {
 
         }
-
-        private void btnFind_MouseHover(object sender, EventArgs e)
-        {
-            this.btnFind.FlatAppearance.BorderSize = 2;
-        }
-
-        private void btnThem_MouseHover(object sender, EventArgs e)
-        {
-            this.btnThem.FlatAppearance.BorderSize = 2;
-        }
-
-        private void btnXoa_MouseHover(object sender, EventArgs e)
-        {
-            this.btnXoa.FlatAppearance.BorderSize = 2;
-        }
-
-        private void btnSua_MouseHover(object sender, EventArgs e)
-        {
-            this.btnSua.FlatAppearance.BorderSize = 2;
-        }
-
-        private void btnThoat_MouseHover(object sender, EventArgs e)
-        {
-            this.btnThoat.FlatAppearance.BorderSize = 2;
-        }
     }
 }

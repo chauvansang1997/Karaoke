@@ -53,7 +53,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
             this.panel1.Controls.Add(this.btnLuu);
             this.panel1.Controls.Add(this.txtGia);
             this.panel1.Controls.Add(this.label2);
@@ -71,7 +71,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
             this.btnLuu.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -164,34 +164,33 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.btnThoat);
             this.panel2.Controls.Add(this.btnThem);
-            this.panel2.Location = new System.Drawing.Point(381, 0);
+            this.panel2.Location = new System.Drawing.Point(369, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(558, 529);
+            this.panel2.Size = new System.Drawing.Size(575, 526);
             this.panel2.TabIndex = 4;
             // 
             // btnXoa
             // 
-            this.btnXoa.BackColor = System.Drawing.Color.LightGray;
-            this.btnXoa.FlatAppearance.BorderSize = 0;
+            this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
+            this.btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnXoa.Image = global::Karaoke.Properties.Resources.eraser;
-            this.btnXoa.Location = new System.Drawing.Point(207, 482);
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.Location = new System.Drawing.Point(219, 476);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(110, 36);
             this.btnXoa.TabIndex = 160;
             this.btnXoa.Text = " Xóa";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.MouseHover += new System.EventHandler(this.btnXoa_MouseHover);
             // 
             // label3
             // 
@@ -206,13 +205,13 @@
             // 
             // btnSua
             // 
-            this.btnSua.BackColor = System.Drawing.Color.LightGray;
-            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
+            this.btnSua.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSua.Image = global::Karaoke.Properties.Resources.edit;
-            this.btnSua.Location = new System.Drawing.Point(323, 482);
+            this.btnSua.ForeColor = System.Drawing.Color.White;
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.Location = new System.Drawing.Point(335, 476);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(110, 36);
             this.btnSua.TabIndex = 159;
@@ -220,51 +219,48 @@
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            this.btnSua.MouseHover += new System.EventHandler(this.btnSua_MouseHover);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(11, 67);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(538, 402);
+            this.dataGridView1.Size = new System.Drawing.Size(550, 402);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnThoat
             // 
-            this.btnThoat.BackColor = System.Drawing.Color.LightGray;
-            this.btnThoat.FlatAppearance.BorderSize = 0;
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
+            this.btnThoat.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnThoat.Image = global::Karaoke.Properties.Resources.exit;
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThoat.Location = new System.Drawing.Point(439, 482);
+            this.btnThoat.Location = new System.Drawing.Point(451, 476);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(110, 36);
             this.btnThoat.TabIndex = 157;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThoat.UseVisualStyleBackColor = false;
-            this.btnThoat.MouseHover += new System.EventHandler(this.btnThoat_MouseHover);
             // 
             // btnThem
             // 
-            this.btnThem.BackColor = System.Drawing.Color.LightGray;
-            this.btnThem.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnThem.FlatAppearance.BorderSize = 0;
+            this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
+            this.btnThem.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnThem.Image = global::Karaoke.Properties.Resources.plus1;
-            this.btnThem.Location = new System.Drawing.Point(91, 482);
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.Location = new System.Drawing.Point(103, 476);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(110, 36);
             this.btnThem.TabIndex = 158;
             this.btnThem.Text = " Thêm";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.MouseHover += new System.EventHandler(this.btnThem_MouseHover);
             // 
             // frmQuanLyPhong
             // 

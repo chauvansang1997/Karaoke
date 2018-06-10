@@ -1,4 +1,5 @@
 ﻿using Karaoke.GuiMonAn;
+using Karaoke.GUI_QuanLyNhanVien;
 using Karaoke.PhongKaoraoke;
 using System;
 using System.Collections.Generic;

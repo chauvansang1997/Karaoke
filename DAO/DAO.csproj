@@ -55,6 +55,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyHangHoa\MonAnDAO.cs" />
     <Compile Include="QuanLyHangHoa\NguyenLieuDAO.cs" />
+    <Compile Include="QuanLyNhanVien\ChucVuDAO.cs" />
+    <Compile Include="QuanLyNhanVien\NhanVienDAO.cs" />
+    <Compile Include="QuanLyNhanVien\TaiKhoanDAO.cs" />
     <Compile Include="SqlCommandParameter.cs" />
     <Compile Include="TaoMa.cs" />
     <Compile Include="QuanLyLuong\LuongDAO.cs" />
@@ -71,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+    <Folder Include="QuanLyPhongKaraoke\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -90,7 +90,6 @@
             this.btnXem.Text = " Xem báo cáo";
             this.btnXem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXem.UseVisualStyleBackColor = false;
-            this.btnXem.MouseHover += new System.EventHandler(this.btnXem_MouseHover);
             // 
             // label3
             // 
@@ -106,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(426, 225);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnXem);
