@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCaoLuong));
 			this.crBaoCaoLuong = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
 			this.rpBangLuong1 = new Karaoke.rpBangLuongChiTietNhanVien();
 			this.cbDanhSachNhanVien = new System.Windows.Forms.ComboBox();
@@ -83,8 +84,9 @@
 			this.Controls.Add(this.cbThangLuong);
 			this.Controls.Add(this.cbDanhSachNhanVien);
 			this.Controls.Add(this.crBaoCaoLuong);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "frmBaoCaoLuong";
-			this.Text = "frmBaoCaoLuong";
+			this.Text = "Chi tiết lương";
 			this.Load += new System.EventHandler(this.frmBaoCaoLuong_Load);
 			this.ResumeLayout(false);
 

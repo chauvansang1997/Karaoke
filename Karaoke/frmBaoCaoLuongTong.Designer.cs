@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCaoLuongTong));
 			this.crLuongTong = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
 			this.cbThangLuong = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
@@ -81,9 +82,9 @@
 			this.lbXemChiTiet.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.lbXemChiTiet.Location = new System.Drawing.Point(593, 31);
 			this.lbXemChiTiet.Name = "lbXemChiTiet";
-			this.lbXemChiTiet.Size = new System.Drawing.Size(142, 13);
+			this.lbXemChiTiet.Size = new System.Drawing.Size(62, 13);
 			this.lbXemChiTiet.TabIndex = 4;
-			this.lbXemChiTiet.Text = "Bấm vào đây để xem chi tiết";
+			this.lbXemChiTiet.Text = "Xem chi tiết";
 			this.lbXemChiTiet.Click += new System.EventHandler(this.lbXemChiTiet_Click);
 			// 
 			// frmBaoCaoLuongTong
@@ -96,8 +97,9 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.cbThangLuong);
 			this.Controls.Add(this.crLuongTong);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "frmBaoCaoLuongTong";
-			this.Text = "frmLuongTong";
+			this.Text = "Lương tổng";
 			this.Load += new System.EventHandler(this.frmBaoCaoLuongTong_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();

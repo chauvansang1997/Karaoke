@@ -382,6 +382,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\back.png" />
+    <Content Include="Resources\salary.png" />
+    <Content Include="Resources\salary_icon.ico" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\noimage.gif" />
     <None Include="Resources\exit.png" />
