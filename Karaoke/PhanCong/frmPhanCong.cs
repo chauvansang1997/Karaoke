@@ -13,6 +13,9 @@ namespace Karaoke.QuanLyPhanCong
 	{
 		private static String SELECT_MANV = "SELECT DISTINCT MANV,TENNV FROM NHANVIEN";
 		private static String SELECT_TENCA = "SELECT DISTINCT MACA,TENCA FROM CALAMVIEC";
+		String maNV = "";
+		String maCa = "";
+		DateTime ngay = DateTime.Now;
 		DataTable tableNhanVien;
 		public frmPhanCong()
 		{
@@ -72,5 +75,51 @@ namespace Karaoke.QuanLyPhanCong
 			this.Dispose();
 		}
 
+		private void btnThem_Click(object sender, EventArgs e)
+		{
+			maNV = cbMaNV.SelectedValue.ToString();
+			maCa = cbTenCa.SelectedValue.ToString();
+			ngay = dtpNgayPhanCong.Value;
+				if(BUS.PhanCongBUS.ThemPhanCong(maNV, maCa, ngay))
+				{
+					MessageBox.Show("Thêm nhân viên thành công", "Thêm phân công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					frmPhanCong_Load(sender, e);
+				}
+				else
+				{
+					MessageBox.Show("Thêm nhân viên thất bại xin kiểm tra lại!", "Thêm phân công", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
+				}
+		}
+
+		private void btnCapNhat_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnXoa_Click(object sender, EventArgs e)
+		{
+			maNV = cbMaNV.SelectedValue.ToString();
+			maCa = cbTenCa.SelectedValue.ToString();
+			ngay = dtpNgayPhanCong.Value;
+			if(ngay <= (DateTime.Now))
+			{
+				MessageBox.Show("Không được xoá ngày phân công nhỏ hơn hiện tại!", "Xoá phân công", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+			else
+			{
+				if (BUS.PhanCongBUS.XoaPhanCong(maNV, maCa, ngay))
+				{
+					MessageBox.Show("Xoá phân công thành công", "Xoá phân công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					frmPhanCong_Load(sender, e);
+				}
+				else
+				{
+					MessageBox.Show("Xoá phân công xin kiểm tra lại!", "Xoá phân công", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
+				}
+			}
+		}
 	}
 }

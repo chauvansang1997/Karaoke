@@ -31,11 +31,11 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhanCong));
 			this.btnLastPage = new System.Windows.Forms.Button();
 			this.btnThoat = new System.Windows.Forms.Button();
-			this.btnTatCa = new System.Windows.Forms.Button();
+			this.btnThem = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label4 = new System.Windows.Forms.Label();
-			this.btnTrong = new System.Windows.Forms.Button();
-			this.btnDaDat = new System.Windows.Forms.Button();
+			this.btnCapNhat = new System.Windows.Forms.Button();
+			this.btnXoa = new System.Windows.Forms.Button();
 			this.btnNextPage = new System.Windows.Forms.Button();
 			this.btnPrevPage = new System.Windows.Forms.Button();
 			this.labelLoaiPhong = new System.Windows.Forms.Label();
@@ -89,28 +89,29 @@
 			this.btnThoat.UseVisualStyleBackColor = false;
 			this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
 			// 
-			// btnTatCa
+			// btnThem
 			// 
-			this.btnTatCa.FlatAppearance.BorderSize = 0;
-			this.btnTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnTatCa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnTatCa.ForeColor = System.Drawing.Color.White;
-			this.btnTatCa.Image = ((System.Drawing.Image)(resources.GetObject("btnTatCa.Image")));
-			this.btnTatCa.Location = new System.Drawing.Point(13, 205);
-			this.btnTatCa.Name = "btnTatCa";
-			this.btnTatCa.Size = new System.Drawing.Size(143, 60);
-			this.btnTatCa.TabIndex = 187;
-			this.btnTatCa.Text = "Thêm";
-			this.btnTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnTatCa.UseVisualStyleBackColor = true;
+			this.btnThem.FlatAppearance.BorderSize = 0;
+			this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnThem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnThem.ForeColor = System.Drawing.Color.White;
+			this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+			this.btnThem.Location = new System.Drawing.Point(13, 205);
+			this.btnThem.Name = "btnThem";
+			this.btnThem.Size = new System.Drawing.Size(143, 60);
+			this.btnThem.TabIndex = 187;
+			this.btnThem.Text = "Thêm";
+			this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnThem.UseVisualStyleBackColor = true;
+			this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
 			// 
 			// panel2
 			// 
 			this.panel2.BackColor = System.Drawing.Color.Gray;
 			this.panel2.Controls.Add(this.label4);
-			this.panel2.Controls.Add(this.btnTrong);
-			this.panel2.Controls.Add(this.btnDaDat);
-			this.panel2.Controls.Add(this.btnTatCa);
+			this.panel2.Controls.Add(this.btnCapNhat);
+			this.panel2.Controls.Add(this.btnXoa);
+			this.panel2.Controls.Add(this.btnThem);
 			this.panel2.Location = new System.Drawing.Point(335, 1);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(159, 535);
@@ -126,35 +127,37 @@
 			this.label4.Size = new System.Drawing.Size(0, 21);
 			this.label4.TabIndex = 185;
 			// 
-			// btnTrong
+			// btnCapNhat
 			// 
-			this.btnTrong.FlatAppearance.BorderSize = 0;
-			this.btnTrong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnTrong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnTrong.ForeColor = System.Drawing.Color.White;
-			this.btnTrong.Image = ((System.Drawing.Image)(resources.GetObject("btnTrong.Image")));
-			this.btnTrong.Location = new System.Drawing.Point(11, 265);
-			this.btnTrong.Name = "btnTrong";
-			this.btnTrong.Size = new System.Drawing.Size(146, 60);
-			this.btnTrong.TabIndex = 2;
-			this.btnTrong.Text = "Cập nhật";
-			this.btnTrong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnTrong.UseVisualStyleBackColor = true;
+			this.btnCapNhat.FlatAppearance.BorderSize = 0;
+			this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnCapNhat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnCapNhat.ForeColor = System.Drawing.Color.White;
+			this.btnCapNhat.Image = ((System.Drawing.Image)(resources.GetObject("btnCapNhat.Image")));
+			this.btnCapNhat.Location = new System.Drawing.Point(11, 265);
+			this.btnCapNhat.Name = "btnCapNhat";
+			this.btnCapNhat.Size = new System.Drawing.Size(146, 60);
+			this.btnCapNhat.TabIndex = 2;
+			this.btnCapNhat.Text = "Cập nhật";
+			this.btnCapNhat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnCapNhat.UseVisualStyleBackColor = true;
+			this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
 			// 
-			// btnDaDat
+			// btnXoa
 			// 
-			this.btnDaDat.FlatAppearance.BorderSize = 0;
-			this.btnDaDat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnDaDat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnDaDat.ForeColor = System.Drawing.Color.White;
-			this.btnDaDat.Image = ((System.Drawing.Image)(resources.GetObject("btnDaDat.Image")));
-			this.btnDaDat.Location = new System.Drawing.Point(11, 324);
-			this.btnDaDat.Name = "btnDaDat";
-			this.btnDaDat.Size = new System.Drawing.Size(146, 60);
-			this.btnDaDat.TabIndex = 1;
-			this.btnDaDat.Text = "Xoá";
-			this.btnDaDat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnDaDat.UseVisualStyleBackColor = true;
+			this.btnXoa.FlatAppearance.BorderSize = 0;
+			this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnXoa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnXoa.ForeColor = System.Drawing.Color.White;
+			this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+			this.btnXoa.Location = new System.Drawing.Point(11, 324);
+			this.btnXoa.Name = "btnXoa";
+			this.btnXoa.Size = new System.Drawing.Size(146, 60);
+			this.btnXoa.TabIndex = 1;
+			this.btnXoa.Text = "Xoá";
+			this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnXoa.UseVisualStyleBackColor = true;
+			this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
 			// 
 			// btnNextPage
 			// 
@@ -374,11 +377,11 @@
 
 		private System.Windows.Forms.Button btnLastPage;
 		private System.Windows.Forms.Button btnThoat;
-		private System.Windows.Forms.Button btnTatCa;
+		private System.Windows.Forms.Button btnThem;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Button btnTrong;
-		private System.Windows.Forms.Button btnDaDat;
+		private System.Windows.Forms.Button btnCapNhat;
+		private System.Windows.Forms.Button btnXoa;
 		private System.Windows.Forms.Button btnNextPage;
 		private System.Windows.Forms.Button btnPrevPage;
 		private System.Windows.Forms.Label labelLoaiPhong;
