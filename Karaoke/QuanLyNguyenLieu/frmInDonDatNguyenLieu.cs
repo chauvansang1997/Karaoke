@@ -17,8 +17,8 @@ namespace Karaoke.QuanLyNguyenLieu
         string soPhieuDat;
         string nguoiDat;
         string ngayDat;
-        NhaCungCap nhaCungCap;
-        public frmInDonDatNguyenLieu(NhaCungCap nhaCungCap,string soPhieuDat,string nguoiDat,string ngayDat)
+        DTO.NhaCungCap nhaCungCap;
+        public frmInDonDatNguyenLieu(DTO.NhaCungCap nhaCungCap,string soPhieuDat,string nguoiDat,string ngayDat)
         {
             this.soPhieuDat = soPhieuDat;
             this.nhaCungCap = nhaCungCap;
@@ -37,9 +37,9 @@ namespace Karaoke.QuanLyNguyenLieu
             //lấy datable ,list
             rptPhieuNhapHang phieuNhapHang = new rptPhieuNhapHang();
             phieuNhapHang.SetDataSource(dataSet);
-            phieuNhapHang.DataDefinition.FormulaFields["NhaCungCap"].Text = nhaCungCap.Ten;
+            phieuNhapHang.DataDefinition.FormulaFields["NhaCungCap"].Text = nhaCungCap.TenNCC;
             phieuNhapHang.DataDefinition.FormulaFields["DiaChi"].Text = nhaCungCap.DiaChi;
-            phieuNhapHang.DataDefinition.FormulaFields["SoDienThoai"].Text = nhaCungCap.SoDienThoai;
+            phieuNhapHang.DataDefinition.FormulaFields["SoDienThoai"].Text = nhaCungCap.SDT;
             phieuNhapHang.DataDefinition.FormulaFields["NguoiDat"].Text = nguoiDat;
             phieuNhapHang.DataDefinition.FormulaFields["NgayDat"].Text = ngayDat;
             crystalReportViewer1.ReportSource = phieuNhapHang;

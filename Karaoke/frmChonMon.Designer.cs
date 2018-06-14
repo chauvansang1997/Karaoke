@@ -150,7 +150,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel1.Controls.Add(this.btnIn);
-            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnThanhToan);
             this.panel1.Controls.Add(this.btnDatCoc);
             this.panel1.Controls.Add(this.btnLuu);
@@ -168,23 +167,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(572, 580);
             this.panel1.TabIndex = 163;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(256, 533);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 36);
-            this.button2.TabIndex = 179;
-            this.button2.Text = "Đặt cọc";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
+
             // 
             // btnThanhToan
             // 
@@ -472,7 +455,6 @@
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnDatCoc;
         private System.Windows.Forms.Button btnThanhToan;
-        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnIn;
     }
 }

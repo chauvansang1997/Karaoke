@@ -276,7 +276,6 @@
             // splitContainer.Panel1
             // 
             this.splitContainer.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
-            this.splitContainer.Panel1.Controls.Add(this.btnLuu);
             this.splitContainer.Panel1.Controls.Add(this.label9);
             this.splitContainer.Panel1.Controls.Add(this.comboBox1);
             this.splitContainer.Panel1.Controls.Add(this.label2);

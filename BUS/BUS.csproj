@@ -51,7 +51,6 @@
     <Compile Include="MonAnBUS.cs" />
     <Compile Include="NguyenLieuBUS.cs" />
     <Compile Include="NhaCungCapBUS.cs" />
-    <Compile Include="NhaCungCapBUS.cs" />
     <Compile Include="PhanCongBUS.cs" />
     <Compile Include="PhieuDatTiecBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />

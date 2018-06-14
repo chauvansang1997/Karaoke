@@ -113,12 +113,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TonKhoDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="d_bcnxt_ck_kt.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>d_bcnxt_ck_kt.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="FoodLayout.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -217,7 +211,6 @@
     <Compile Include="GUI_QuanLyNhanVien\frmTaiKhoan.Designer.cs">
       <DependentUpon>frmTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="NguyenLieu\frmNguyenLieu.cs">
     <Compile Include="GuiMonAn\frmReportGoiMon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,12 +339,17 @@
       <DependentUpon>rptPhieuNhapHang.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="report\rptTonKhoTheoNgay.cs">
     <Compile Include="PhanCong\frmPhanCong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PhanCong\frmPhanCong.Designer.cs">
       <DependentUpon>frmPhanCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\rptTonKhoTheoNgay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTonKhoTheoNgay.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="rpBangLuongChiTietNhanVien.cs">
       <AutoGen>True</AutoGen>
@@ -360,26 +358,18 @@
       <DependentUpon>rpBangLuongChiTietNhanVien.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="TonkhoTheoNgay.cs">
     <Compile Include="rpLuongTong.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpLuongTong.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ThietBi\frmThietBi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ThietBi\frmThietBi.Designer.cs">
       <DependentUpon>frmThietBi.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CrystalReport1.rpt">
-    <EmbeddedResource Include="d_bcnxt_ck_kt.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>d_bcnxt_ck_kt.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="FoodLayout.resx">
       <DependentUpon>FoodLayout.cs</DependentUpon>
     </EmbeddedResource>
@@ -425,7 +415,6 @@
     <EmbeddedResource Include="GUI_QuanLyNhanVien\frmTaiKhoan.resx">
       <DependentUpon>frmTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NguyenLieu\frmNguyenLieu.resx">
     <EmbeddedResource Include="GuiMonAn\frmReportGoiMon.resx">
       <DependentUpon>frmReportGoiMon.cs</DependentUpon>
     </EmbeddedResource>
@@ -496,9 +485,12 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptPhieuNhapHang.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="report\rptTonKhoTheoNgay.rpt">
     <EmbeddedResource Include="PhanCong\frmPhanCong.resx">
       <DependentUpon>frmPhanCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\rptTonKhoTheoNgay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTonKhoTheoNgay.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="rpBangLuongChiTietNhanVien.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -584,7 +576,6 @@
     <Content Include="Resources\salary.png" />
     <Content Include="Resources\salary_icon.ico" />
     <Content Include="Resources\word.png" />
-    <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\noimage.gif" />
     <None Include="Resources\exit.png" />
     <None Include="Resources\diskette.png" />
@@ -622,9 +613,6 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Folder Include="SqlServerTypes\x64\" />
-    <Folder Include="SqlServerTypes\x86\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

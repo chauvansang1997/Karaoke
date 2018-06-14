@@ -16,9 +16,9 @@ namespace Karaoke.QuanLySanPham
     public partial class frmNhapChiTietSanPham : Form
     {
 
-        private NhaCungCap nhaCungCap;
+        private DTO.NhaCungCap nhaCungCap;
         private PhieuNhapHang phieuNhapHang;
-        public frmNhapChiTietSanPham(NhaCungCap nhaCungCap, PhieuNhapHang phieuNhapHang = null)
+        public frmNhapChiTietSanPham(DTO.NhaCungCap nhaCungCap, PhieuNhapHang phieuNhapHang = null)
         {
             this.nhaCungCap = nhaCungCap;
             this.phieuNhapHang = phieuNhapHang;
@@ -227,7 +227,7 @@ namespace Karaoke.QuanLySanPham
             flowFoodLayoutHienTai.Controls.Clear();
             if (dictionaryHienTai.ContainsKey(pageNumber) == false)
             {
-                listHangHoa = BUS.SanPhamBUS.XemSanPham(nhaCungCap.Ma, loaiHienTai, pageNumber, pageSize);
+                listHangHoa = BUS.SanPhamBUS.XemSanPham(nhaCungCap.MaNCC, loaiHienTai, pageNumber, pageSize);
                 listFoodLayout = new List<FoodLayout>();
                 for (int i = 0; i < listHangHoa.Count; i++)
                 {
