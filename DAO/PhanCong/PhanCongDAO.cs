@@ -20,6 +20,18 @@ namespace DAO.PhanCong
 			return Dataprovider.ExcuteQuery(query);
 		}
 
+		public static DataTable LayMaNV()
+		{
+			string query = "SELECT DISTINCT MANV,TENNV FROM NHANVIEN";
+			return Dataprovider.ExcuteQuery(query);
+		}
+
+		public static DataTable LayMaCa()
+		{
+			string query ="SELECT DISTINCT MACA,TENCA FROM CALAMVIEC";
+			return Dataprovider.ExcuteQuery(query);
+		}
+
 		public static bool  ThemPhanCong(String maNV,String maCa,DateTime ngay)
 		{
 			string query = "EXEC usp_ThemPhanCong @maNV,@maCa,@ngay";

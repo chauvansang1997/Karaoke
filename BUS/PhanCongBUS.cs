@@ -30,5 +30,15 @@ namespace BUS
 		{
 			return DAO.PhanCong.PhanCongDAO.CapNhatPhanCong(maNVCu, maCaCu, ngayCu,maNV,maCa,ngay);
 		}
+
+		public static DataTable LayMaNV()
+		{
+			return DAO.PhanCong.PhanCongDAO.LayMaNV();
+		}
+
+		public static DataTable LayMaCa()
+		{
+			return DAO.PhanCong.PhanCongDAO.LayMaCa();
+		}
 	}
 }

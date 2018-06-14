@@ -67,5 +67,17 @@ namespace DAO.TinhLuong
 			//Trả về data table
 			return table;
 		}
+
+		public static DataTable LoadNhanVienPhanCong()
+		{
+			string query = "SELECT DISTINCT dbo.PHANCONG.MANV,TENNV FROM dbo.NHANVIEN JOIN dbo.PHANCONG ON PHANCONG.MANV = NHANVIEN.MANV";
+			return Dataprovider.ExcuteQuery(query);
+		}
+
+		public static DataTable LoadThangLuongDesc()
+		{
+			string query = "SELECT DISTINCT THANGLUONG FROM dbo.LUONG ORDER BY THANGLUONG DESC";
+			return Dataprovider.ExcuteQuery(query);
+		}
 	}
 }

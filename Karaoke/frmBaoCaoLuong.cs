@@ -24,11 +24,11 @@ namespace Karaoke
 		{
 			cbDanhSachNhanVien.DisplayMember = "tenNV";
 			cbDanhSachNhanVien.ValueMember = "maNV"; //Field in the datatable which you want to be the value of the combobox 
-			cbDanhSachNhanVien.DataSource = BUS.LuongBUS.table_Select("SELECT DISTINCT dbo.PHANCONG.MANV,TENNV FROM dbo.NHANVIEN JOIN dbo.PHANCONG ON PHANCONG.MANV = NHANVIEN.MANV");
+			cbDanhSachNhanVien.DataSource = BUS.LuongBUS.LoadNhanVienPhanCong();
 
 			cbThangLuong.DisplayMember = "thangLuong";
 			cbThangLuong.ValueMember = "thangLuong"; //Field in the datatable which you want to be the value of the combobox 
-			cbThangLuong.DataSource = BUS.LuongBUS.table_Select("SELECT DISTINCT THANGLUONG FROM dbo.LUONG ORDER BY THANGLUONG DESC");
+			cbThangLuong.DataSource = BUS.LuongBUS.LoadThangLuongDesc();
 		}
 
 		private void frmBaoCaoLuong_Load(object sender, EventArgs e)

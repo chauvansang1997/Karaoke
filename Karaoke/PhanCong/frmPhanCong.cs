@@ -12,8 +12,6 @@ namespace Karaoke.QuanLyPhanCong
 {
 	public partial class frmPhanCong : Form
 	{
-		private static String SELECT_MANV = "SELECT DISTINCT MANV,TENNV FROM NHANVIEN";
-		private static String SELECT_TENCA = "SELECT DISTINCT MACA,TENCA FROM CALAMVIEC";
 		String maNV = "";
 		String maCa = "";
 		DateTime ngay = DateTime.Now;
@@ -33,7 +31,7 @@ namespace Karaoke.QuanLyPhanCong
 			cbMaNV.DropDownStyle = ComboBoxStyle.DropDownList;
 			cbMaNV.DisplayMember = "maNV";
 			cbMaNV.ValueMember = "maNV";
-			tableNhanVien= BUS.PhanCongBUS.SelectAll(SELECT_MANV);
+			tableNhanVien= BUS.PhanCongBUS.LayMaNV();
 			cbMaNV.DataSource = tableNhanVien;
 
 			cbTenNV.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -44,7 +42,7 @@ namespace Karaoke.QuanLyPhanCong
 			cbTenCa.DropDownStyle = ComboBoxStyle.DropDownList;
 			cbTenCa.DisplayMember = "tenCa";
 			cbTenCa.ValueMember = "maCa";
-			cbTenCa.DataSource = BUS.PhanCongBUS.SelectAll(SELECT_TENCA);
+			cbTenCa.DataSource = BUS.PhanCongBUS.LayMaCa();
 			
 		}
 

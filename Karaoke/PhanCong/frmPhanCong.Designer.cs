@@ -361,7 +361,7 @@
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.btnThoat);
 			this.Name = "frmPhanCong";
-			this.Text = "frmPhanCong";
+			this.Text = "Phân công ca làm việc";
 			this.Load += new System.EventHandler(this.frmPhanCong_Load);
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
