@@ -270,18 +270,6 @@
     <Compile Include="ThietBi\frmThietBi.Designer.cs">
       <DependentUpon>frmThietBi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tonkho.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Tonkho.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="TonkhoTheoNgay.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TonkhoTheoNgay.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <EmbeddedResource Include="CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
@@ -375,14 +363,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThietBi\frmThietBi.resx">
       <DependentUpon>frmThietBi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tonkho.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Tonkho.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TonkhoTheoNgay.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>TonkhoTheoNgay.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
