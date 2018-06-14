@@ -16,14 +16,14 @@ namespace Karaoke {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class TonkhoTheoNgay : ReportClass {
+    public class rpTongLuong : ReportClass {
         
-        public TonkhoTheoNgay() {
+        public rpTongLuong() {
         }
         
         public override string ResourceName {
             get {
-                return "TonkhoTheoNgay.rpt";
+                return "rpTongLuong.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Karaoke {
         
         public override string FullResourceName {
             get {
-                return "Karaoke.TonkhoTheoNgay.rpt";
+                return "Karaoke.rpTongLuong.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace Karaoke {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace Karaoke {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,33 +82,17 @@ namespace Karaoke {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
+                return this.ReportDefinition.Sections[4];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedTonkhoTheoNgay : Component, ICachedReport {
+    public class CachedrpTongLuong : Component, ICachedReport {
         
-        public CachedTonkhoTheoNgay() {
+        public CachedrpTongLuong() {
         }
         
         [Browsable(false)]
@@ -145,7 +129,7 @@ namespace Karaoke {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            TonkhoTheoNgay rpt = new TonkhoTheoNgay();
+            rpTongLuong rpt = new rpTongLuong();
             rpt.Site = this.Site;
             return rpt;
         }

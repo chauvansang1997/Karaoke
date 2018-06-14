@@ -19,7 +19,7 @@ namespace DAO
             try
             {
                 list = table.AsEnumerable().ToList().ConvertAll(x =>
-                new NhaCungCap() { Ten = x[1].ToString(), SoDienThoai = x[2].ToString(), DiaChi = x[3].ToString(), Ma = x[0].ToString() });
+                new NhaCungCap() { Ten = x[1].ToString(), SDT = x[2].ToString(), DiaChi = x[3].ToString(), MaNCC = x[0].ToString() });
             }
             catch (Exception ex)
             {

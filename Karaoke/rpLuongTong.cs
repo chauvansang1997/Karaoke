@@ -16,14 +16,14 @@ namespace Karaoke {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class d_bcnxt_ck_kt : ReportClass {
+    public class rpLuongTong : ReportClass {
         
-        public d_bcnxt_ck_kt() {
+        public rpLuongTong() {
         }
         
         public override string ResourceName {
             get {
-                return "d_bcnxt_ck_kt.rpt";
+                return "rpLuongTong.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Karaoke {
         
         public override string FullResourceName {
             get {
-                return "Karaoke.d_bcnxt_ck_kt.rpt";
+                return "Karaoke.rpLuongTong.rpt";
             }
             set {
                 // Do nothing
@@ -98,7 +98,7 @@ namespace Karaoke {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section10 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
                 return this.ReportDefinition.Sections[6];
             }
@@ -106,17 +106,33 @@ namespace Karaoke {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.Shared.IParameterField Parameter_TenQuan {
             get {
-                return this.ReportDefinition.Sections[7];
+                return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_DiaChiQuan {
+            get {
+                return this.DataDefinition.ParameterFields[1];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_TruongKeToan {
+            get {
+                return this.DataDefinition.ParameterFields[2];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedd_bcnxt_ck_kt : Component, ICachedReport {
+    public class CachedrpLuongTong : Component, ICachedReport {
         
-        public Cachedd_bcnxt_ck_kt() {
+        public CachedrpLuongTong() {
         }
         
         [Browsable(false)]
@@ -153,7 +169,7 @@ namespace Karaoke {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            d_bcnxt_ck_kt rpt = new d_bcnxt_ck_kt();
+            rpLuongTong rpt = new rpLuongTong();
             rpt.Site = this.Site;
             return rpt;
         }

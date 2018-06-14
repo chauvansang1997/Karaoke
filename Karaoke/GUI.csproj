@@ -48,18 +48,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.20.2399\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.20.2399\lib\CrystalDecisions.ReportSource.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.20.2399\lib\CrystalDecisions.Shared.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.20.2399\lib\CrystalDecisions.Web.dll</HintPath>
-    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -121,17 +113,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TonKhoDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="d_bcnxt_ck_kt.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>d_bcnxt_ck_kt.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="FoodLayout.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="FoodLayout.designer.cs">
       <DependentUpon>FoodLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBaoCaoLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoLuong.Designer.cs">
+      <DependentUpon>frmBaoCaoLuong.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBaoCaoTonKho.cs">
       <SubType>Form</SubType>
@@ -163,6 +155,12 @@
     <Compile Include="frmDatTiec.Designer.cs">
       <DependentUpon>frmDatTiec.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBaoCaoLuongTong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoLuongTong.Designer.cs">
+      <DependentUpon>frmBaoCaoLuongTong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +190,26 @@
     </Compile>
     <Compile Include="GuiMonAn\frmThemNguyenLieuMonAn.designer.cs">
       <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuongDataSet.cs">
+      <DependentUpon>LuongDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LuongDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LuongDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_QuanLyNhanVien\frmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_QuanLyNhanVien\frmNhanVien.Designer.cs">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_QuanLyNhanVien\frmTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_QuanLyNhanVien\frmTaiKhoan.Designer.cs">
+      <DependentUpon>frmTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="GuiMonAn\frmReportGoiMon.cs">
       <SubType>Form</SubType>
@@ -240,6 +258,12 @@
     </Compile>
     <Compile Include="QuanLyNguyenLieu\frmThemNguyenLieu.Designer.cs">
       <DependentUpon>frmThemNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhaCungCap\frmNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhaCungCap\frmNhaCungCap.Designer.cs">
+      <DependentUpon>frmNhaCungCap.cs</DependentUpon>
     </Compile>
     <Compile Include="PhongKaoraoke\frmPhongKaraoke.cs">
       <SubType>Form</SubType>
@@ -315,25 +339,42 @@
       <DependentUpon>rptPhieuNhapHang.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="PhanCong\frmPhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanCong\frmPhanCong.Designer.cs">
+      <DependentUpon>frmPhanCong.cs</DependentUpon>
+    </Compile>
     <Compile Include="report\rptTonKhoTheoNgay.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptTonKhoTheoNgay.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="TonkhoTheoNgay.cs">
+    <Compile Include="rpBangLuongChiTietNhanVien.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TonkhoTheoNgay.rpt</DependentUpon>
+      <DependentUpon>rptTonKhoTheoNgay.rpt</DependentUpon>
+      <DependentUpon>rpBangLuongChiTietNhanVien.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="d_bcnxt_ck_kt.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>d_bcnxt_ck_kt.cs</LastGenOutput>
-    </EmbeddedResource>
+    <Compile Include="rpLuongTong.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpLuongTong.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ThietBi\frmThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThietBi\frmThietBi.Designer.cs">
+      <DependentUpon>frmThietBi.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FoodLayout.resx">
       <DependentUpon>FoodLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBaoCaoLuong.resx">
+      <DependentUpon>frmBaoCaoLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBaoCaoTonKho.resx">
       <DependentUpon>frmBaoCaoTonKho.cs</DependentUpon>
@@ -350,6 +391,9 @@
     <EmbeddedResource Include="frmDatTiec.resx">
       <DependentUpon>frmDatTiec.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBaoCaoLuongTong.resx">
+      <DependentUpon>frmBaoCaoLuongTong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -364,6 +408,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GuiMonAn\frmThemNguyenLieuMonAn.resx">
       <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_QuanLyNhanVien\frmNhanVien.resx">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_QuanLyNhanVien\frmTaiKhoan.resx">
+      <DependentUpon>frmTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuiMonAn\frmReportGoiMon.resx">
       <DependentUpon>frmReportGoiMon.cs</DependentUpon>
@@ -385,6 +435,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNguyenLieu\frmThemNguyenLieu.resx">
       <DependentUpon>frmThemNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhaCungCap\frmNhaCungCap.resx">
+      <DependentUpon>frmNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhongKaoraoke\frmPhongKaraoke.resx">
       <DependentUpon>frmPhongKaraoke.cs</DependentUpon>
@@ -432,13 +485,24 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptPhieuNhapHang.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="PhanCong\frmPhanCong.resx">
+      <DependentUpon>frmPhanCong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="report\rptTonKhoTheoNgay.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptTonKhoTheoNgay.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="TonkhoTheoNgay.rpt">
+    <EmbeddedResource Include="rpBangLuongChiTietNhanVien.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>TonkhoTheoNgay.cs</LastGenOutput>
+      <LastGenOutput>rptTonKhoTheoNgay.cs</LastGenOutput>
+      <LastGenOutput>rpBangLuongChiTietNhanVien.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rpLuongTong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpLuongTong2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThietBi\frmThietBi.resx">
+      <DependentUpon>frmThietBi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSetContainer\HoaDonDataSet.xsc">
       <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
@@ -473,6 +537,17 @@
     <None Include="DataSetContainer\TonKhoDataSet.xss">
       <DependentUpon>TonKhoDataSet.xsd</DependentUpon>
     </None>
+    <None Include="LuongDataSet.xsc">
+      <DependentUpon>LuongDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LuongDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LuongDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="LuongDataSet.xss">
+      <DependentUpon>LuongDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -495,19 +570,12 @@
   <ItemGroup>
     <None Include="Image\coca.jpg" />
     <Content Include="Resources\back.png" />
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Resources\excel.png" />
+    <Content Include="Resources\pdf.png" />
+    <Content Include="Resources\powerpoint.png" />
+    <Content Include="Resources\salary.png" />
+    <Content Include="Resources\salary_icon.ico" />
+    <Content Include="Resources\word.png" />
     <None Include="Resources\noimage.gif" />
     <None Include="Resources\exit.png" />
     <None Include="Resources\diskette.png" />
@@ -544,6 +612,7 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

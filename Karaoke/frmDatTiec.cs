@@ -262,15 +262,6 @@ namespace Karaoke
             }
         }
 
-        private void btnChuyenPhong_MouseHover(object sender, EventArgs e)
-        {
-            this.btnChuyenPhong.FlatAppearance.BorderSize = 2;
-        }
-
-        private void btnDatPhong_MouseHover(object sender, EventArgs e)
-        {
-            this.btnDatPhong.FlatAppearance.BorderSize = 2;
-        }
 
         private void btnHuy_MouseHover(object sender, EventArgs e)
         {

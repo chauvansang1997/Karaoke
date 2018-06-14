@@ -131,33 +131,6 @@ namespace Karaoke.GuiMonAn
 
         }
 
-        private void btnThemMonAn_MouseHover(object sender, EventArgs e)
-        {
-            this.btnThemMonAn.FlatAppearance.BorderSize = 2;
-        }
-
-        private void btnXoaMonAn_MouseHover(object sender, EventArgs e)
-        {
-            this.btnXoaMonAn.FlatAppearance.BorderSize = 2;
-
-        }
-
-        private void btnSuaMonAn_MouseHover(object sender, EventArgs e)
-        {
-            this.btnSuaMonAn.FlatAppearance.BorderSize = 2;
-
-        }
-
-        private void btnLuu_MouseHover(object sender, EventArgs e)
-        {
-            this.btnLuu.FlatAppearance.BorderSize = 2;
-
-        }
-
-        private void btnThoat_MouseHover(object sender, EventArgs e)
-        {
-            this.btnThoat.FlatAppearance.BorderSize = 2;
-
-        }
+        
     }
 }

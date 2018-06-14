@@ -25,14 +25,14 @@ namespace Karaoke.QuanLySanPham
         private void khoiTao()
         {
 
-            List<NhaCungCap> list = BUS.NhaCungCapBUS.XemNhaCungCap();
+            List<DTO.NhaCungCap> list = BUS.NhaCungCapBUS.XemNhaCungCap();
             cmbNhaCungCap.DataSource = list;
             cmbNhaCungCap.DisplayMember = "Ten";
             cmbNhaCungCap.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbNhaCungCap.AutoCompleteSource = AutoCompleteSource.ListItems;
 
 
-            cmbTKNhaCC.DataSource = new List<NhaCungCap>(list);
+            cmbTKNhaCC.DataSource = new List<DTO.NhaCungCap>(list);
             cmbTKNhaCC.DisplayMember = "Ten";
             cmbTKNhaCC.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbTKNhaCC.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -63,8 +63,8 @@ namespace Karaoke.QuanLySanPham
             DialogResult result = MessageBox.Show("Bạn có muốn đặt phòng không?", "Xác nhận", MessageBoxButtons.YesNoCancel);
             if (result == DialogResult.Yes)
             {
-                NhaCungCap nhaCungCap = ((NhaCungCap)cmbNhaCungCap.SelectedValue);
-                PhieuNhapHang phieuNhap = BUS.SanPhamBUS.LapPhieuNhap(nhaCungCap.Ma, "NV001");
+                DTO.NhaCungCap nhaCungCap = ((DTO.NhaCungCap)cmbNhaCungCap.SelectedValue);
+                PhieuNhapHang phieuNhap = BUS.SanPhamBUS.LapPhieuNhap(nhaCungCap.MaNCC, "NV001");
                 if (phieuNhap != null)
                 {
                     MessageBox.Show("Đặt phòng thành công");
@@ -101,7 +101,7 @@ namespace Karaoke.QuanLySanPham
             if (dGVPhieuNhap.CurrentRow != null)
             {
                 int index = dGVPhieuNhap.CurrentRow.Index;
-                NhaCungCap nhaCungCap = ((NhaCungCap)cmbNhaCungCap.SelectedValue);
+                DTO.NhaCungCap nhaCungCap = ((DTO.NhaCungCap)cmbNhaCungCap.SelectedValue);
                 PhieuNhapHang phieuNhapHang = (PhieuNhapHang)bindingSource[index];
                 string soPhieuNhap = dGVPhieuNhap[0, index].Value.ToString();
            

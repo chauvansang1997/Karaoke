@@ -1,4 +1,5 @@
 ﻿using Karaoke.GuiMonAn;
+using Karaoke.GUI_QuanLyNhanVien;
 using Karaoke.NguyenLieu;
 using Karaoke.PhongKaoraoke;
 using Karaoke.QuanLySanPham;
@@ -7,6 +8,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Karaoke.QuanLyPhanCong;
+using Karaoke.NhaCungCap;
+using Karaoke.ThietBi;
 
 namespace Karaoke
 {

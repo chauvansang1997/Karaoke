@@ -16,9 +16,9 @@ namespace Karaoke.QuanLySanPham
     public partial class frmInDonNhapSanPham : Form
     {
         PhieuNhapHang phieuNhap;
-        NhaCungCap nhaCungCap;
+        DTO.NhaCungCap nhaCungCap;
         bool bDaGiaoHang;
-        public frmInDonNhapSanPham(NhaCungCap nhaCungCap, PhieuNhapHang phieuNhap,bool bDaGiaoHang=false)
+        public frmInDonNhapSanPham(DTO.NhaCungCap nhaCungCap, PhieuNhapHang phieuNhap,bool bDaGiaoHang=false)
         {
             this.phieuNhap = phieuNhap;
             this.nhaCungCap = nhaCungCap;
@@ -39,7 +39,7 @@ namespace Karaoke.QuanLySanPham
                 phieuNhapHang.SetDataSource(dataSet);
                 phieuNhapHang.DataDefinition.FormulaFields["NhaCungCap"].Text = nhaCungCap.Ten;
                 phieuNhapHang.DataDefinition.FormulaFields["DiaChi"].Text = nhaCungCap.DiaChi;
-                phieuNhapHang.DataDefinition.FormulaFields["SoDienThoai"].Text = nhaCungCap.SoDienThoai;
+                phieuNhapHang.DataDefinition.FormulaFields["SoDienThoai"].Text = nhaCungCap.SDT;
                 phieuNhapHang.DataDefinition.FormulaFields["NguoiDat"].Text = phieuNhap.SoPhieu;
                 phieuNhapHang.DataDefinition.FormulaFields["NgayDat"].Text = phieuNhap.NgayDat;
                 crystalReportViewer1.ReportSource = phieuNhapHang;

@@ -26,14 +26,14 @@ namespace Karaoke.NguyenLieu
         private void khoiTao()
         {
 
-            List<NhaCungCap> list = BUS.NhaCungCapBUS.XemNhaCungCap();
+            List<DTO.NhaCungCap> list = BUS.NhaCungCapBUS.XemNhaCungCap();
             cmbNhaCungCap.DataSource = list;
             cmbNhaCungCap.DisplayMember = "Ten";
             cmbNhaCungCap.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbNhaCungCap.AutoCompleteSource = AutoCompleteSource.ListItems;
 
 
-            cmbTKNhaCC.DataSource = new List<NhaCungCap>(list);
+            cmbTKNhaCC.DataSource = new List<DTO.NhaCungCap>(list);
             cmbTKNhaCC.DisplayMember = "Ten";
             cmbTKNhaCC.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbTKNhaCC.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -61,8 +61,8 @@ namespace Karaoke.NguyenLieu
             DialogResult result = MessageBox.Show("Bạn có muốn lập phiếu không?", "Xác nhận", MessageBoxButtons.YesNoCancel);
             if (result == DialogResult.Yes)
             {
-                NhaCungCap nhaCungCap = ((NhaCungCap)cmbNhaCungCap.SelectedValue);
-                PhieuNhapHang soPhieuNhap = BUS.NguyenLieuBUS.LapPhieuNhap(nhaCungCap.Ma, "NV001");
+                DTO.NhaCungCap nhaCungCap = ((DTO.NhaCungCap)cmbNhaCungCap.SelectedValue);
+                PhieuNhapHang soPhieuNhap = BUS.NguyenLieuBUS.LapPhieuNhap(nhaCungCap.MaNCC, "NV001");
                 if (soPhieuNhap != null)
                 {
                     MessageBox.Show("Đặt phòng thành công");
@@ -99,7 +99,7 @@ namespace Karaoke.NguyenLieu
             if (dGVPhieuNhap.CurrentRow != null)
             {
                 int index = dGVPhieuNhap.CurrentRow.Index;
-                NhaCungCap nhaCungCap = ((NhaCungCap)cmbNhaCungCap.SelectedValue);
+                DTO.NhaCungCap nhaCungCap = ((DTO.NhaCungCap)cmbNhaCungCap.SelectedValue);
                 PhieuNhapHang soPhieuNhap = (PhieuNhapHang)bindingSource[index];
                 frmNhapCTNguyenLieu nhapCTNguyenLieu = new frmNhapCTNguyenLieu(nhaCungCap, soPhieuNhap);
                 nhapCTNguyenLieu.ShowDialog();

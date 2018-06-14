@@ -16,8 +16,8 @@ namespace Karaoke.NguyenLieu
 {
     public partial class frmNhapCTNguyenLieu : Form
     {
-
-        public frmNhapCTNguyenLieu(NhaCungCap nhaCungCap, PhieuNhapHang phieuNhapHang)
+       
+        public frmNhapCTNguyenLieu(DTO.NhaCungCap nhaCungCap, PhieuNhapHang phieuNhapHang)
         {
             this.nhaCungCap = nhaCungCap;
             this.phieuNhapHang = phieuNhapHang;
@@ -30,7 +30,7 @@ namespace Karaoke.NguyenLieu
         private int totalPage;
 
 
-        private NhaCungCap nhaCungCap;
+        private DTO.NhaCungCap nhaCungCap;
         private PhieuNhapHang phieuNhapHang;
 
 
@@ -84,9 +84,9 @@ namespace Karaoke.NguyenLieu
             //grouper.Options.GroupSortOrder = SortOrder.None;
             //    grouper.DisplayGroup += grouper_DisplayGroup;
 
-            nguyenLieuSource.Add(BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu("", nhaCungCap.Ma, false, 1, pageSize));
+            nguyenLieuSource.Add(BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu("", nhaCungCap.MaNCC, false, 1, pageSize));
             //  nguyenLieuSource.da
-            bindingListNguyenLieu =new BindingList<DTO.NguyenLieu>( BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu("", nhaCungCap.Ma, false, 1, pageSize));
+            bindingListNguyenLieu =new BindingList<DTO.NguyenLieu>( BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu("", nhaCungCap.MaNCC, false, 1, pageSize));
             dGVNguyenLieu.DataSource = bindingListNguyenLieu;
             dGVNguyenLieu.Columns["Ten"].HeaderText = "Tên";
             dGVNguyenLieu.Columns["Ma"].HeaderText = "Mã";
@@ -189,12 +189,12 @@ namespace Karaoke.NguyenLieu
 
             pageNumber = 1;
             txtPageNumber.Text = "1";
-            totalPage = BUS.NguyenLieuBUS.DemNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.Ma, rbHetSoLuong.Checked);
+            totalPage = BUS.NguyenLieuBUS.DemNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, rbHetSoLuong.Checked);
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
             txtTotalPage.Text = totalPage.ToString();
 
             bindingListNguyenLieu = new BindingList<DTO.NguyenLieu>(
-                BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.Ma, rbHetSoLuong.Checked, pageNumber, pageSize));
+                BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, rbHetSoLuong.Checked, pageNumber, pageSize));
            // bindingList = ;
 
             //nguyenLieuSource.DataSource
@@ -221,7 +221,7 @@ namespace Karaoke.NguyenLieu
                 ++pageNumber;
             }
             txtPageNumber.Text = pageNumber.ToString();
-            nguyenLieuSource.Add(BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.Ma, rbHetSoLuong.Checked, pageNumber, pageSize));
+            nguyenLieuSource.Add(BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, rbHetSoLuong.Checked, pageNumber, pageSize));
         }
 
         private void btnPrevPage_Click(object sender, EventArgs e)
@@ -235,21 +235,21 @@ namespace Karaoke.NguyenLieu
                 --pageNumber;
             }
             txtPageNumber.Text = pageNumber.ToString();
-            nguyenLieuSource.Add(BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.Ma, rbHetSoLuong.Checked, pageNumber, pageSize));
+            nguyenLieuSource.Add(BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, rbHetSoLuong.Checked, pageNumber, pageSize));
         }
 
         private void btnFirstPage_Click(object sender, EventArgs e)
         {
             pageNumber = 1;
             txtPageNumber.Text = pageNumber.ToString();
-            nguyenLieuSource.Add(BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.Ma, rbHetSoLuong.Checked, pageNumber, pageSize));
+            nguyenLieuSource.Add(BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, rbHetSoLuong.Checked, pageNumber, pageSize));
         }
 
         private void btnLastPage_Click(object sender, EventArgs e)
         {
             pageNumber = totalPage;
             txtPageNumber.Text = pageNumber.ToString();
-            nguyenLieuSource.Add(BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.Ma, rbHetSoLuong.Checked, pageNumber, pageSize));
+            nguyenLieuSource.Add(BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, rbHetSoLuong.Checked, pageNumber, pageSize));
         }
 
         private void txtPageNumber_TextChanged(object sender, EventArgs e)
@@ -271,7 +271,7 @@ namespace Karaoke.NguyenLieu
 
                 txtPageNumber.Text = pageNumber.ToString();
             }
-            nguyenLieuSource.Add(BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.Ma, rbHetSoLuong.Checked, pageNumber, pageSize));
+            nguyenLieuSource.Add(BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, rbHetSoLuong.Checked, pageNumber, pageSize));
         }
 
 

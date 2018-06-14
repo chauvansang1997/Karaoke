@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FoodLayout));
             this.txtPrice = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.Label();
             this.imgFood = new System.Windows.Forms.PictureBox();
@@ -63,7 +64,7 @@
             this.imgFood.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.imgFood.Location = new System.Drawing.Point(31, 32);
             this.imgFood.Name = "imgFood";
-            this.imgFood.Size = new System.Drawing.Size(65, 55);
+            this.imgFood.Size = new System.Drawing.Size(94, 72);
             this.imgFood.TabIndex = 1;
             this.imgFood.TabStop = false;
             // 
