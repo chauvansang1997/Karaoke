@@ -15,7 +15,7 @@ namespace DAO.QuanLyNCC
 			string query = "EXECUTE usp_ThemNCC @maNCC,@tenNCC,@loaiHangCC,@sdt,@diaChi";
 
 			string maNCC = ncc.MaNCC;
-			string tenNCC = ncc.TenNCC;
+			string tenNCC = ncc.Ten;
 			string loaiHangCC = ncc.LoaiHangCC;
 			string sdt = ncc.SDT;
 			string diaChi = ncc.DiaChi;
@@ -47,7 +47,7 @@ namespace DAO.QuanLyNCC
 			string query = "EXEC usp_CapNhatNCC @maNCC,@tenNCC,@loaiHangCC,@sdt,@diaChi";
 
 			string maNCC = ncc.MaNCC;
-			string tenNCC = ncc.TenNCC;
+			string tenNCC = ncc.Ten;
 			string loaiHangCC = ncc.LoaiHangCC;
 			string sdt = ncc.SDT;
 			string diaChi = ncc.DiaChi;
@@ -79,7 +79,7 @@ namespace DAO.QuanLyNCC
 			string query = "EXEC usp_XoaNCC @maNCC";
 
 			string maNCC = ncc.MaNCC;
-			string tenNCC = ncc.TenNCC;
+			string tenNCC = ncc.Ten;
 			string loaiHangCC = ncc.LoaiHangCC;
 			string sdt = ncc.SDT;
 			string diaChi = ncc.DiaChi;

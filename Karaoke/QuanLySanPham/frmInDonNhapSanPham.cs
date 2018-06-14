@@ -37,7 +37,7 @@ namespace Karaoke.QuanLySanPham
                 //lấy datable ,list
                 rptDonDatHang phieuNhapHang = new rptDonDatHang();
                 phieuNhapHang.SetDataSource(dataSet);
-                phieuNhapHang.DataDefinition.FormulaFields["NhaCungCap"].Text = nhaCungCap.TenNCC;
+                phieuNhapHang.DataDefinition.FormulaFields["NhaCungCap"].Text = nhaCungCap.Ten;
                 phieuNhapHang.DataDefinition.FormulaFields["DiaChi"].Text = nhaCungCap.DiaChi;
                 phieuNhapHang.DataDefinition.FormulaFields["SoDienThoai"].Text = nhaCungCap.SDT;
                 phieuNhapHang.DataDefinition.FormulaFields["NguoiDat"].Text = phieuNhap.SoPhieu;

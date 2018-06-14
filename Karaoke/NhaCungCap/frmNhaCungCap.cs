@@ -51,7 +51,7 @@ namespace Karaoke.NhaCungCap
 		private void btnThemNCC_Click(object sender, EventArgs e)
 		{
 			ncc.MaNCC = txtMaNCC.Text;
-			ncc.TenNCC = txtTenNCC.Text;
+			ncc.Ten = txtTenNCC.Text;
 			ncc.LoaiHangCC = txtLoaiHangCC.Text;
 			ncc.SDT = txtSDT.Text;
 			ncc.DiaChi = txtDiaChi.Text;
@@ -71,7 +71,7 @@ namespace Karaoke.NhaCungCap
 		private void btnCapNhatNCC_Click(object sender, EventArgs e)
 		{
 			ncc.MaNCC = txtMaNCC.Text;
-			ncc.TenNCC = txtTenNCC.Text;
+			ncc.Ten = txtTenNCC.Text;
 			ncc.LoaiHangCC = txtLoaiHangCC.Text;
 			ncc.SDT = txtSDT.Text;
 			ncc.DiaChi = txtDiaChi.Text;
@@ -91,7 +91,7 @@ namespace Karaoke.NhaCungCap
 		private void btnXoaNCC_Click(object sender, EventArgs e)
 		{
 			ncc.MaNCC = txtMaNCC.Text;
-			ncc.TenNCC = txtTenNCC.Text;
+			ncc.Ten = txtTenNCC.Text;
 			ncc.LoaiHangCC = txtLoaiHangCC.Text;
 			ncc.SDT = txtSDT.Text;
 			ncc.DiaChi = txtDiaChi.Text;
