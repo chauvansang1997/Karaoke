@@ -15,8 +15,8 @@ namespace Karaoke.QuanLyNguyenLieu
     public partial class frmInDonDatNguyenLieu : Form
     {
         PhieuNhapHang phieuNhap;
-        NhaCungCap nhaCungCap;
-        public frmInDonDatNguyenLieu(NhaCungCap nhaCungCap, PhieuNhapHang phieuNhap)
+        DTO.NhaCungCap nhaCungCap;
+        public frmInDonDatNguyenLieu(DTO.NhaCungCap nhaCungCap, PhieuNhapHang phieuNhap)
         {
             this.phieuNhap = phieuNhap;
             this.nhaCungCap = nhaCungCap;
@@ -37,7 +37,7 @@ namespace Karaoke.QuanLyNguyenLieu
                 phieuNhapHang.SetDataSource(dataSet);
                 phieuNhapHang.DataDefinition.FormulaFields["NhaCungCap"].Text = "'" + nhaCungCap.Ten + "'";
                 phieuNhapHang.DataDefinition.FormulaFields["DiaChi"].Text = "'" + nhaCungCap.DiaChi + "'";
-                phieuNhapHang.DataDefinition.FormulaFields["SoDienThoai"].Text = "'" + nhaCungCap.SoDienThoai + "'";
+                phieuNhapHang.DataDefinition.FormulaFields["SoDienThoai"].Text = "'" + nhaCungCap.SDT + "'";
                 phieuNhapHang.DataDefinition.FormulaFields["NguoiDat"].Text = "'" + phieuNhap.SoPhieu + "'";
                 phieuNhapHang.DataDefinition.FormulaFields["NgayDat"].Text = "'" + phieuNhap.NgayDat + "'";
                 crystalReportViewer1.ReportSource = phieuNhapHang;
