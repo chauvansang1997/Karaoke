@@ -181,7 +181,6 @@
     <Compile Include="GuiMonAn\frmThemNguyenLieuMonAn.designer.cs">
       <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
     </Compile>
-
     <Compile Include="LuongDataSet.cs">
       <DependentUpon>LuongDataSet.xsd</DependentUpon>
     </Compile>
@@ -189,7 +188,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LuongDataSet.xsd</DependentUpon>
-      </Compile>
+    </Compile>
     <Compile Include="GUI_QuanLyNhanVien\frmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,7 +200,6 @@
     </Compile>
     <Compile Include="GUI_QuanLyNhanVien\frmTaiKhoan.Designer.cs">
       <DependentUpon>frmTaiKhoan.cs</DependentUpon>
-
     </Compile>
     <Compile Include="NguyenLieu\frmNguyenLieu.cs">
       <SubType>Form</SubType>
@@ -241,6 +239,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PhanCong\frmPhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanCong\frmPhanCong.Designer.cs">
+      <DependentUpon>frmPhanCong.cs</DependentUpon>
+    </Compile>
     <Compile Include="rpBangLuongChiTietNhanVien.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -254,6 +258,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ThietBi\frmThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThietBi\frmThietBi.Designer.cs">
+      <DependentUpon>frmThietBi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tonkho.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -343,6 +353,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="PhanCong\frmPhanCong.resx">
+      <DependentUpon>frmPhanCong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="rpBangLuongChiTietNhanVien.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpBangLuongChiTietNhanVien.cs</LastGenOutput>
