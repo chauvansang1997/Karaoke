@@ -8,8 +8,8 @@ namespace DTO
 {
     public class NhanVien
     {
-        private string hoTen;
         private string maNV;
+        private string hoTen;
         private string soDienThoai;
         private string diaChi;
 
@@ -63,14 +63,6 @@ namespace DTO
             {
                 diaChi = value;
             }
-        }
-
-        public NhanVien(string hoTen,string maNV,string soDienThoai,string diaChi)
-        {
-            this.HoTen = hoTen;
-            this.MaNV = maNV;
-            this.SoDienThoai = soDienThoai;
-            this.DiaChi = diaChi;
         }
     }
 }

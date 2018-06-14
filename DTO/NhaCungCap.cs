@@ -8,61 +8,75 @@ namespace DTO
 {
     public class NhaCungCap
     {
-        private string ten;
-        private string ma;
-        private string soDienThoai;
-        private string diaChi;
+		private string maNCC;
+		private string tenNCC;
+		private string loaiHangCungCap;
+		private string sdt;
+		private string diaChi;
 
-        public string Ten
-        {
-            get
-            {
-                return ten;
-            }
+		public string MaNCC
+		{
+			get
+			{
+				return maNCC;
+			}
 
-            set
-            {
-                ten = value;
-            }
-        }
+			set
+			{
+				maNCC = value;
+			}
+		}
 
-        public string Ma
-        {
-            get
-            {
-                return ma;
-            }
+		public string TenNCC
+		{
+			get
+			{
+				return tenNCC;
+			}
 
-            set
-            {
-                ma = value;
-            }
-        }
+			set
+			{
+				tenNCC = value;
+			}
+		}
 
-        public string SoDienThoai
-        {
-            get
-            {
-                return soDienThoai;
-            }
+		public string LoaiHangCC
+		{
+			get
+			{
+				return loaiHangCungCap;
+			}
 
-            set
-            {
-                soDienThoai = value;
-            }
-        }
+			set
+			{
+				loaiHangCungCap = value;
+			}
+		}
 
-        public string DiaChi
-        {
-            get
-            {
-                return diaChi;
-            }
+		public string SDT
+		{
+			get
+			{
+				return sdt;
+			}
 
-            set
-            {
-                diaChi = value;
-            }
-        }
-    }
+			set
+			{
+				sdt = value;
+			}
+		}
+
+		public string DiaChi
+		{
+			get
+			{
+				return diaChi;
+			}
+
+			set
+			{
+				diaChi = value;
+			}
+		}
+	}
 }
