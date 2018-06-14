@@ -56,6 +56,7 @@
             this.tabControlThucAn = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.btnIn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVHoaDon)).BeginInit();
             this.tabThucAn.SuspendLayout();
@@ -152,6 +153,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.Controls.Add(this.btnIn);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnThanhToan);
             this.panel1.Controls.Add(this.btnLuu);
@@ -204,6 +206,7 @@
             this.btnThanhToan.Text = " Thanh toán";
             this.btnThanhToan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThanhToan.UseVisualStyleBackColor = false;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // btnLuu
             // 
@@ -355,6 +358,10 @@
             this.dGVHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVHoaDon_CellClick);
             this.dGVHoaDon.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dGVHoaDon_CellValidating);
             this.dGVHoaDon.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVHoaDon_CellValueChanged);
+            this.dGVHoaDon.DragDrop += new System.Windows.Forms.DragEventHandler(this.dGVHoaDon_DragDrop);
+            this.dGVHoaDon.DragOver += new System.Windows.Forms.DragEventHandler(this.dGVHoaDon_DragOver);
+            this.dGVHoaDon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dGVHoaDon_MouseDown);
+            this.dGVHoaDon.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dGVHoaDon_MouseMove);
             // 
             // Xoa
             // 
@@ -369,7 +376,7 @@
             this.tabThucAn.Location = new System.Drawing.Point(4, 28);
             this.tabThucAn.Name = "tabThucAn";
             this.tabThucAn.Padding = new System.Windows.Forms.Padding(3);
-            this.tabThucAn.Size = new System.Drawing.Size(647, 515);
+            this.tabThucAn.Size = new System.Drawing.Size(589, 515);
             this.tabThucAn.TabIndex = 0;
             this.tabThucAn.Text = "Thức ăn";
             this.tabThucAn.UseVisualStyleBackColor = true;
@@ -382,15 +389,16 @@
             this.tabControlThucAn.Location = new System.Drawing.Point(3, 3);
             this.tabControlThucAn.Name = "tabControlThucAn";
             this.tabControlThucAn.SelectedIndex = 0;
-            this.tabControlThucAn.Size = new System.Drawing.Size(641, 509);
+            this.tabControlThucAn.Size = new System.Drawing.Size(583, 509);
             this.tabControlThucAn.TabIndex = 1;
             this.tabControlThucAn.SelectedIndexChanged += new System.EventHandler(this.tabControlThucAn_SelectedIndexChanged);
             // 
             // tabPage3
             // 
+            this.tabPage3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(633, 477);
+            this.tabPage3.Size = new System.Drawing.Size(575, 477);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -402,15 +410,33 @@
             this.tabControl.Location = new System.Drawing.Point(571, 1);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(655, 547);
+            this.tabControl.Size = new System.Drawing.Size(597, 547);
             this.tabControl.TabIndex = 0;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
+            // 
+            // btnIn
+            // 
+            this.btnIn.BackColor = System.Drawing.Color.Transparent;
+            this.btnIn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.ForeColor = System.Drawing.Color.White;
+            this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
+            this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIn.Location = new System.Drawing.Point(44, 532);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(100, 36);
+            this.btnIn.TabIndex = 180;
+            this.btnIn.Text = "In";
+            this.btnIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnIn.UseVisualStyleBackColor = false;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // frmChonMon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1225, 578);
+            this.ClientSize = new System.Drawing.Size(1195, 578);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtTotalPage);
             this.Controls.Add(this.btnFirstPage);
@@ -462,5 +488,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnIn;
     }
 }

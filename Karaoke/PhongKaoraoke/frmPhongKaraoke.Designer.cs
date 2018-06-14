@@ -519,9 +519,9 @@
             this.btnThanhToan.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.Image")));
             this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThanhToan.Location = new System.Drawing.Point(807, 566);
+            this.btnThanhToan.Location = new System.Drawing.Point(777, 566);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(175, 36);
+            this.btnThanhToan.Size = new System.Drawing.Size(204, 36);
             this.btnThanhToan.TabIndex = 186;
             this.btnThanhToan.Text = " Gọi món/Thanh toán";
             this.btnThanhToan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -538,7 +538,7 @@
             this.btnDatPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatPhong.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnDatPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnDatPhong.Image")));
-            this.btnDatPhong.Location = new System.Drawing.Point(673, 566);
+            this.btnDatPhong.Location = new System.Drawing.Point(643, 566);
             this.btnDatPhong.Name = "btnDatPhong";
             this.btnDatPhong.Size = new System.Drawing.Size(128, 36);
             this.btnDatPhong.TabIndex = 184;

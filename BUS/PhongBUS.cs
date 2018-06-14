@@ -22,5 +22,9 @@ namespace BUS
         {
             return DAO.PhongDAO.GhiNhanDatPhong(khachHang, maPhong, maNV);
         }
+        public static bool NhanPhongDatTruoc(string soHoaDon)
+        {
+            return DAO.PhongDAO.NhanPhongDatTruoc(soHoaDon);
+        }
     }
 }

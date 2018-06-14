@@ -16,14 +16,14 @@ namespace Karaoke {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Tonkho : ReportClass {
+    public class d_bcnxt_ck_kt : ReportClass {
         
-        public Tonkho() {
+        public d_bcnxt_ck_kt() {
         }
         
         public override string ResourceName {
             get {
-                return "Tonkho.rpt";
+                return "d_bcnxt_ck_kt.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Karaoke {
         
         public override string FullResourceName {
             get {
-                return "Karaoke.Tonkho.rpt";
+                return "Karaoke.d_bcnxt_ck_kt.rpt";
             }
             set {
                 // Do nothing
@@ -98,17 +98,25 @@ namespace Karaoke {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section10 {
             get {
                 return this.ReportDefinition.Sections[6];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[7];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedTonkho : Component, ICachedReport {
+    public class Cachedd_bcnxt_ck_kt : Component, ICachedReport {
         
-        public CachedTonkho() {
+        public Cachedd_bcnxt_ck_kt() {
         }
         
         [Browsable(false)]
@@ -145,7 +153,7 @@ namespace Karaoke {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Tonkho rpt = new Tonkho();
+            d_bcnxt_ck_kt rpt = new d_bcnxt_ck_kt();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -29,8 +29,12 @@ namespace Karaoke
             set
             {
                 hangHoa = value;
-                txtName.Text = hangHoa.Ten;
-                txtPrice.Text = hangHoa.Gia.ToString();
+                if (value != null)
+                {
+                    txtName.Text = hangHoa.Ten;
+                    txtPrice.Text = hangHoa.Gia.ToString();
+                }
+               
             }
         }
         public FoodLayout(Image image)
@@ -39,8 +43,9 @@ namespace Karaoke
             if (image != null)
             {
                 imgFood.BackgroundImage = image;
+                
             }
-
+            imgFood.BackgroundImageLayout = ImageLayout.Stretch;
         }
         public FoodLayout()
         {
@@ -48,7 +53,8 @@ namespace Karaoke
         }
         private void setImage(Image image)
         {
-            imgFood.Image = image;
+            imgFood.BackgroundImage = image;
+            imgFood.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         public void setClick(EventHandler handler)

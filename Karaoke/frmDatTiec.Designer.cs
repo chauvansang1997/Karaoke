@@ -305,6 +305,7 @@
             this.btnNhanPhong.Text = " Nhận phòng";
             this.btnNhanPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNhanPhong.UseVisualStyleBackColor = false;
+            this.btnNhanPhong.Click += new System.EventHandler(this.btnNhanPhong_Click);
             this.btnNhanPhong.MouseHover += new System.EventHandler(this.btnNhanPhong_MouseHover);
             // 
             // btnFirstPage

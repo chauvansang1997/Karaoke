@@ -5,22 +5,17 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Karaoke.NguyenLieu
+namespace Karaoke.QuanLySanPham
 {
-    public partial class frmNguyenLieu : Form
+    public partial class frmSamPham : Form
     {
-        public frmNguyenLieu()
+        public frmSamPham()
         {
             InitializeComponent();
         }
 
-        private void frmNguyenLieu_Load(object sender, EventArgs e)
-        {
-
-        }
         private void AddGridTableStyle()
         {
             DataGridTableStyle table = new DataGridTableStyle
@@ -96,6 +91,11 @@ namespace Karaoke.NguyenLieu
         private void btnThoat_MouseHover(object sender, EventArgs e)
         {
             this.btnThoat.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

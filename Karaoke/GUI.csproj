@@ -100,16 +100,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
+    <Compile Include="DataSetContainer\HoaDonDataSet.cs">
+      <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet1.Designer.cs">
+    <Compile Include="DataSetContainer\HoaDonDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetContainer\PhieuDatHangDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhieuDatHangDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetContainer\TonKhoDataSet.cs">
+      <DependentUpon>TonKhoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetContainer\TonKhoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TonKhoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="d_bcnxt_ck_kt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>d_bcnxt_ck_kt.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="FoodLayout.cs">
       <SubType>UserControl</SubType>
@@ -177,22 +193,52 @@
     <Compile Include="GuiMonAn\frmThemNguyenLieuMonAn.designer.cs">
       <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
     </Compile>
-    <Compile Include="NguyenLieu\frmNguyenLieu.cs">
+    <Compile Include="GuiMonAn\frmReportGoiMon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NguyenLieu\frmNguyenLieu.Designer.cs">
+    <Compile Include="GuiMonAn\frmReportGoiMon.Designer.cs">
+      <DependentUpon>frmReportGoiMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyNguyenLieu\frmGiaoNguyenLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyNguyenLieu\frmGiaoNguyenLieu.Designer.cs">
+      <DependentUpon>frmGiaoNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyNguyenLieu\frmInDonDatNguyenLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyNguyenLieu\frmInDonDatNguyenLieu.Designer.cs">
+      <DependentUpon>frmInDonDatNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyNguyenLieu\frmNguyenLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyNguyenLieu\frmNguyenLieu.Designer.cs">
       <DependentUpon>frmNguyenLieu.cs</DependentUpon>
     </Compile>
-    <Compile Include="NguyenLieu\frmSuaNguyenLieu.cs">
+    <Compile Include="QuanLyNguyenLieu\frmNhapCTNguyenLieu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NguyenLieu\frmSuaNguyenLieu.Designer.cs">
+    <Compile Include="QuanLyNguyenLieu\frmNhapCTNguyenLieu.Designer.cs">
+      <DependentUpon>frmNhapCTNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyNguyenLieu\frmNhapNguyenLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyNguyenLieu\frmNhapNguyenLieu.Designer.cs">
+      <DependentUpon>frmNhapNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyNguyenLieu\frmSuaNguyenLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyNguyenLieu\frmSuaNguyenLieu.Designer.cs">
       <DependentUpon>frmSuaNguyenLieu.cs</DependentUpon>
     </Compile>
-    <Compile Include="NguyenLieu\frmThemNguyenLieu.cs">
+    <Compile Include="QuanLyNguyenLieu\frmThemNguyenLieu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NguyenLieu\frmThemNguyenLieu.Designer.cs">
+    <Compile Include="QuanLyNguyenLieu\frmThemNguyenLieu.Designer.cs">
       <DependentUpon>frmThemNguyenLieu.cs</DependentUpon>
     </Compile>
     <Compile Include="PhongKaoraoke\frmPhongKaraoke.cs">
@@ -215,22 +261,76 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="Tonkho.cs">
+    <Compile Include="QuanLyHangHoa\frmNhapHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyHangHoa\frmNhapHangHoa.Designer.cs">
+      <DependentUpon>frmNhapHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySanPham\frmGiaoSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanPham\frmGiaoSanPham.Designer.cs">
+      <DependentUpon>frmGiaoSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySanPham\frmInDonNhapSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanPham\frmInDonNhapSanPham.Designer.cs">
+      <DependentUpon>frmInDonNhapSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySanPham\frmNhapChiTietSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanPham\frmNhapChiTietSanPham.Designer.cs">
+      <DependentUpon>frmNhapChiTietSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySanPham\frmNhapSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanPham\frmNhapSanPham.Designer.cs">
+      <DependentUpon>frmNhapSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySanPham\frmSamPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanPham\frmSamPham.Designer.cs">
+      <DependentUpon>frmSamPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\rptHoaDon.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Tonkho.rpt</DependentUpon>
+      <DependentUpon>rptHoaDon.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="report\rptDonDatHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDonDatHang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\rptPhieuNhapHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPhieuNhapHang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\rptTonKhoTheoNgay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTonKhoTheoNgay.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="TonkhoTheoNgay.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TonkhoTheoNgay.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="CrystalReport1.rpt">
+    <EmbeddedResource Include="d_bcnxt_ck_kt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+      <LastGenOutput>d_bcnxt_ck_kt.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FoodLayout.resx">
       <DependentUpon>FoodLayout.cs</DependentUpon>
@@ -265,13 +365,25 @@
     <EmbeddedResource Include="GuiMonAn\frmThemNguyenLieuMonAn.resx">
       <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NguyenLieu\frmNguyenLieu.resx">
+    <EmbeddedResource Include="GuiMonAn\frmReportGoiMon.resx">
+      <DependentUpon>frmReportGoiMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyNguyenLieu\frmInDonDatNguyenLieu.resx">
+      <DependentUpon>frmInDonDatNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyNguyenLieu\frmNguyenLieu.resx">
       <DependentUpon>frmNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NguyenLieu\frmSuaNguyenLieu.resx">
+    <EmbeddedResource Include="QuanLyNguyenLieu\frmNhapCTNguyenLieu.resx">
+      <DependentUpon>frmNhapCTNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyNguyenLieu\frmNhapNguyenLieu.resx">
+      <DependentUpon>frmNhapNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyNguyenLieu\frmSuaNguyenLieu.resx">
       <DependentUpon>frmSuaNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NguyenLieu\frmThemNguyenLieu.resx">
+    <EmbeddedResource Include="QuanLyNguyenLieu\frmThemNguyenLieu.resx">
       <DependentUpon>frmThemNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhongKaoraoke\frmPhongKaraoke.resx">
@@ -293,24 +405,73 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Tonkho.rpt">
+    <EmbeddedResource Include="QuanLyHangHoa\frmNhapHangHoa.resx">
+      <DependentUpon>frmNhapHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanPham\frmGiaoSanPham.resx">
+      <DependentUpon>frmGiaoSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanPham\frmNhapChiTietSanPham.resx">
+      <DependentUpon>frmNhapChiTietSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanPham\frmNhapSanPham.resx">
+      <DependentUpon>frmNhapSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanPham\frmSamPham.resx">
+      <DependentUpon>frmSamPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\rptHoaDon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Tonkho.cs</LastGenOutput>
+      <LastGenOutput>rptHoaDon.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\rptDonDatHang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDonDatHang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\rptPhieuNhapHang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPhieuNhapHang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\rptTonKhoTheoNgay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTonKhoTheoNgay.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="TonkhoTheoNgay.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TonkhoTheoNgay.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="DataSetContainer\HoaDonDataSet.xsc">
+      <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DataSet1.xsd">
+    <None Include="DataSetContainer\HoaDonDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>HoaDonDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="DataSetContainer\HoaDonDataSet.xss">
+      <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetContainer\PhieuDatHangDataSet.xsc">
+      <DependentUpon>PhieuDatHangDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetContainer\PhieuDatHangDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PhieuDatHangDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetContainer\PhieuDatHangDataSet.xss">
+      <DependentUpon>PhieuDatHangDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetContainer\TonKhoDataSet.xsc">
+      <DependentUpon>TonKhoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetContainer\TonKhoDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TonKhoDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetContainer\TonKhoDataSet.xss">
+      <DependentUpon>TonKhoDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -332,6 +493,7 @@
     <None Include="Resources\forward.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Image\coca.jpg" />
     <Content Include="Resources\back.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -382,5 +544,6 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

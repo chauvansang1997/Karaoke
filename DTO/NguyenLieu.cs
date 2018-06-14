@@ -13,7 +13,7 @@ namespace DTO
         private string nhaCungCap;
         private string loai;
         private string donViTinh;
-        private decimal dongia;
+        private uint dongia;
         private int soLuongTon;
         private int soLuongToiThieu;
 
@@ -82,7 +82,7 @@ namespace DTO
             }
         }
 
-        public decimal Dongia
+        public uint Dongia
         {
             get
             {

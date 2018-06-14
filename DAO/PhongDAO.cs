@@ -53,7 +53,29 @@ namespace DAO
             }
             return true;
         }
+        public static bool NhanPhongDatTruoc(string soHoaDon)
+        {
+            string query = "EXEC uspNhanPhong @soHoaDon,@NgayNhan";
 
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                  new SqlParameter("@soHoaDon",SqlDbType.VarChar){ Value=soHoaDon  },
+                  new SqlParameter("@soHoaDon",SqlDbType.DateTime){ Value=DateTime.Now  },
+
+
+            };
+            try
+            {
+                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+                return false;
+            }
+            return true;
+        }
         public static List<Phong> XemPhong(int trangThai, int pageSize, int pageNumber)
         {
             string query = "EXEC uspTraCuuPhong @trangThai,@pageSize,@pageNumber";

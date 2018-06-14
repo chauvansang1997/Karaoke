@@ -1,4 +1,6 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
+using Karaoke.DataSetContainer;
+using Karaoke.report;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +15,8 @@ namespace Karaoke
 {
     public partial class frmBaoCaoTonKho : Form
     {
+        ReportDocument oRpt;
+        string reportFile;
         public frmBaoCaoTonKho()
         {
             InitializeComponent();
@@ -20,17 +24,30 @@ namespace Karaoke
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
+            DataSet dataSet = new TonKhoDataSet();
+            DataTable data = BUS.BaoCaoBUS.XemTonKho(dTPNgayBayDau.Value, dtpNgayKetThuc.Value);
+            //tao khung
+            dataSet.Tables[0].Merge(data);
 
-            DataSet dsReport = new DataSet1();
-            // create temp dataset to read xml information 
-            DataSet dsTempReport = new DataSet();
+            //lấy datable ,list
+            rptTonKhoTheoNgay tonKhoTheoNgay = new rptTonKhoTheoNgay();
+            tonKhoTheoNgay.SetDataSource(dataSet);
+            //phieuNhapHang.DataDefinition.FormulaFields["NhaCungCap"].Text = nhaCungCap.Ten;
+            //phieuNhapHang.DataDefinition.FormulaFields["DiaChi"].Text = nhaCungCap.DiaChi;
+            //phieuNhapHang.DataDefinition.FormulaFields["SoDienThoai"].Text = nhaCungCap.SoDienThoai;
+            //phieuNhapHang.DataDefinition.FormulaFields["NguoiDat"].Text = phieuNhap.SoPhieu;
+            //phieuNhapHang.DataDefinition.FormulaFields["NgayDat"].Text = phieuNhap.NgayDat;
+            crystalReportViewer1.ReportSource = tonKhoTheoNgay;
 
-            dsTempReport.ReadXml(@"..\..\xml\bcari_save.xml",XmlReadMode.ReadSchema);
-            dsReport.Tables[0].Merge(dsTempReport.Tables[0]);
+        }
 
-            Tonkho crystalReport1 = new Tonkho();
-            crystalReport1.SetDataSource(dsReport.Tables[0]);
-            crystalReportViewer1.ReportSource = crystalReport1;
+        private void frmBaoCaoTonKho_Load(object sender, EventArgs e)
+        {
+            dTPNgayBayDau.Format = DateTimePickerFormat.Custom;
+            dTPNgayBayDau.CustomFormat = "dd/MM/yyyy  hh:mm:ss";
+            dtpNgayKetThuc.Format = DateTimePickerFormat.Custom;
+            dtpNgayKetThuc.CustomFormat = "dd/MM/yyyy  hh:mm:ss";
+
         }
     }
 }
