@@ -362,7 +362,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rpLuongTong.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpLuongTong.cs</LastGenOutput>
+      <LastGenOutput>rpLuongTong2.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Tonkho.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
