@@ -219,6 +219,12 @@
     <Compile Include="NguyenLieu\frmThemNguyenLieu.Designer.cs">
       <DependentUpon>frmThemNguyenLieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhaCungCap\frmNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhaCungCap\frmNhaCungCap.Designer.cs">
+      <DependentUpon>frmNhaCungCap.cs</DependentUpon>
+    </Compile>
     <Compile Include="PhongKaoraoke\frmPhongKaraoke.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NguyenLieu\frmThemNguyenLieu.resx">
       <DependentUpon>frmThemNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhaCungCap\frmNhaCungCap.resx">
+      <DependentUpon>frmNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhongKaoraoke\frmPhongKaraoke.resx">
       <DependentUpon>frmPhongKaraoke.cs</DependentUpon>

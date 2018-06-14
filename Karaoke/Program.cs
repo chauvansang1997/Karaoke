@@ -7,6 +7,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Karaoke.QuanLyPhanCong;
+using Karaoke.NhaCungCap;
+using Karaoke.ThietBi;
 
 namespace Karaoke
 {
@@ -20,7 +22,7 @@ namespace Karaoke
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmBaoCaoLuongTong());
+            Application.Run(new frmThietBi());
         }
     }
 }

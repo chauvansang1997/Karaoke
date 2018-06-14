@@ -32,8 +32,6 @@ namespace DAO
         public static void NhapKhachHang(KhachHang khachHang)
         {
             string query = "insert into KhachHang(tenkhachhang,sodt,diachi) values (@TenKH,@SoDT,@diaChi)";
-
-
         }
 
         //public static void Nhap
@@ -44,8 +42,6 @@ namespace DAO
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@type",SqlDbType.NVarChar){IsNullable=true,Value=type?? (Object)DBNull.Value },
-
-
             };
             DataTable table = Dataprovider.ExcuteQuery(query);
 
