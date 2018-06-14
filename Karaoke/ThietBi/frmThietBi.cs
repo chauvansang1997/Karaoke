@@ -15,5 +15,17 @@ namespace Karaoke.ThietBi
 		{
 			InitializeComponent();
 		}
+
+		private void btnThoat_Click(object sender, EventArgs e)
+		{
+			this.Dispose();
+		}
+
+		private void tpNhapThietBi_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		
 	}
 }

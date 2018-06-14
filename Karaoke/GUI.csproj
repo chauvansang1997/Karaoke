@@ -364,6 +364,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpLuongTong2.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThietBi\frmThietBi.resx">
+      <DependentUpon>frmThietBi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tonkho.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Tonkho.cs</LastGenOutput>
@@ -415,8 +418,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\back.png" />
+    <Content Include="Resources\excel.png" />
+    <Content Include="Resources\pdf.png" />
+    <Content Include="Resources\powerpoint.png" />
     <Content Include="Resources\salary.png" />
     <Content Include="Resources\salary_icon.ico" />
+    <Content Include="Resources\word.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\noimage.gif" />
     <None Include="Resources\exit.png" />

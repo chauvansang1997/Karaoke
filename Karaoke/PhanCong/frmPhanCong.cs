@@ -144,5 +144,10 @@ namespace Karaoke.QuanLyPhanCong
 				}
 			}
 		}
+
+		private void btnPDFExport_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
