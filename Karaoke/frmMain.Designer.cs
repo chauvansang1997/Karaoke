@@ -105,7 +105,7 @@
             this.báoCáoDoanhThuToolStripMenuItem});
             this.baoCáoToolStripMenuItem.Name = "baoCáoToolStripMenuItem";
             this.baoCáoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.baoCáoToolStripMenuItem.Text = "Bao cáo";
+            this.baoCáoToolStripMenuItem.Text = "Báo cáo";
             // 
             // báoCáoTồnKhoToolStripMenuItem
             // 

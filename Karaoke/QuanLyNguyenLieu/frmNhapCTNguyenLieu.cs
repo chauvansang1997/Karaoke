@@ -1,4 +1,5 @@
 ﻿using DTO;
+using Karaoke.QuanLyNguyenLieu;
 using Karaoke.QuanLySanPham;
 using Subro.Controls;
 using System;
@@ -479,8 +480,8 @@ namespace Karaoke.NguyenLieu
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            frmInDonNhapSanPham donNhapSanPham = new frmInDonNhapSanPham(nhaCungCap, phieuNhapHang);
-            donNhapSanPham.ShowDialog();
+            frmInDonDatNguyenLieu   inDonDatNguyenLieu = new frmInDonDatNguyenLieu(nhaCungCap, phieuNhapHang);
+            inDonDatNguyenLieu.ShowDialog();
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)

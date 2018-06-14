@@ -429,7 +429,7 @@ namespace Karaoke.DataSetContainer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string SoPhieu, string Ma, string Ten, string Loai, string DonViTinh, long DonGia, int SoLuong, long ThanhTien) {
+            public DataTable1Row AddDataTable1Row(string SoPhieu, string Ma, string Ten, string Loai, string DonViTinh, int DonGia, int SoLuong, int ThanhTien) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         SoPhieu,
@@ -485,11 +485,11 @@ namespace Karaoke.DataSetContainer {
                 base.Columns.Add(this.columnLoai);
                 this.columnDonViTinh = new global::System.Data.DataColumn("DonViTinh", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDonViTinh);
-                this.columnDonGia = new global::System.Data.DataColumn("DonGia", typeof(long), null, global::System.Data.MappingType.Element);
+                this.columnDonGia = new global::System.Data.DataColumn("DonGia", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDonGia);
                 this.columnSoLuong = new global::System.Data.DataColumn("SoLuong", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSoLuong);
-                this.columnThanhTien = new global::System.Data.DataColumn("ThanhTien", typeof(long), null, global::System.Data.MappingType.Element);
+                this.columnThanhTien = new global::System.Data.DataColumn("ThanhTien", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnThanhTien);
             }
             
@@ -713,10 +713,10 @@ namespace Karaoke.DataSetContainer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public long DonGia {
+            public int DonGia {
                 get {
                     try {
-                        return ((long)(this[this.tableDataTable1.DonGiaColumn]));
+                        return ((int)(this[this.tableDataTable1.DonGiaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'DonGia\' in table \'DataTable1\' is DBNull.", e);
@@ -745,10 +745,10 @@ namespace Karaoke.DataSetContainer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public long ThanhTien {
+            public int ThanhTien {
                 get {
                     try {
-                        return ((long)(this[this.tableDataTable1.ThanhTienColumn]));
+                        return ((int)(this[this.tableDataTable1.ThanhTienColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ThanhTien\' in table \'DataTable1\' is DBNull.", e);

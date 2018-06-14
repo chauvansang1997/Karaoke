@@ -14,35 +14,44 @@ namespace Karaoke.QuanLyNguyenLieu
 {
     public partial class frmInDonDatNguyenLieu : Form
     {
-        string soPhieuDat;
-        string nguoiDat;
-        string ngayDat;
+        PhieuNhapHang phieuNhap;
         NhaCungCap nhaCungCap;
-        public frmInDonDatNguyenLieu(NhaCungCap nhaCungCap,string soPhieuDat,string nguoiDat,string ngayDat)
+        public frmInDonDatNguyenLieu(NhaCungCap nhaCungCap, PhieuNhapHang phieuNhap)
         {
-            this.soPhieuDat = soPhieuDat;
+            this.phieuNhap = phieuNhap;
             this.nhaCungCap = nhaCungCap;
-            this.nguoiDat = nguoiDat;
-            this.ngayDat = ngayDat;
+
             InitializeComponent();
         }
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
             DataSet dataSet = new PhieuDatHangDataSet();
-            DataTable data = BUS.NguyenLieuBUS.XemChiTietPhieuNhapHang(soPhieuDat);
+            DataTable data = BUS.NguyenLieuBUS.XemChiTietPhieuNhapHang(phieuNhap.SoPhieu);
             //tao khung
             dataSet.Tables[0].Merge(data);
+            if (phieuNhap.NgayGiao == "" || phieuNhap.NgayGiao == null)
+            {
+                //lấy datable ,list
+                rptDonDatHang phieuNhapHang = new rptDonDatHang();
+                phieuNhapHang.SetDataSource(dataSet);
+                phieuNhapHang.DataDefinition.FormulaFields["NhaCungCap"].Text = "'" + nhaCungCap.Ten + "'";
+                phieuNhapHang.DataDefinition.FormulaFields["DiaChi"].Text = "'" + nhaCungCap.DiaChi + "'";
+                phieuNhapHang.DataDefinition.FormulaFields["SoDienThoai"].Text = "'" + nhaCungCap.SoDienThoai + "'";
+                phieuNhapHang.DataDefinition.FormulaFields["NguoiDat"].Text = "'" + phieuNhap.SoPhieu + "'";
+                phieuNhapHang.DataDefinition.FormulaFields["NgayDat"].Text = "'" + phieuNhap.NgayDat + "'";
+                crystalReportViewer1.ReportSource = phieuNhapHang;
+            }
+            else
+            {
+                //lấy datable ,list
+                rptPhieuNhapHang phieuNhapHang = new rptPhieuNhapHang();
+                phieuNhapHang.SetDataSource(dataSet);
+                phieuNhapHang.DataDefinition.FormulaFields["NguoiGiaoHang"].Text = "'" + phieuNhap.NguoiGiao + "'";
+                phieuNhapHang.DataDefinition.FormulaFields["NgayGiaoHang"].Text = "'" + phieuNhap.NgayGiao + "'";
 
-            //lấy datable ,list
-            rptPhieuNhapHang phieuNhapHang = new rptPhieuNhapHang();
-            phieuNhapHang.SetDataSource(dataSet);
-            phieuNhapHang.DataDefinition.FormulaFields["NhaCungCap"].Text = nhaCungCap.Ten;
-            phieuNhapHang.DataDefinition.FormulaFields["DiaChi"].Text = nhaCungCap.DiaChi;
-            phieuNhapHang.DataDefinition.FormulaFields["SoDienThoai"].Text = nhaCungCap.SoDienThoai;
-            phieuNhapHang.DataDefinition.FormulaFields["NguoiDat"].Text = nguoiDat;
-            phieuNhapHang.DataDefinition.FormulaFields["NgayDat"].Text = ngayDat;
-            crystalReportViewer1.ReportSource = phieuNhapHang;
+                crystalReportViewer1.ReportSource = phieuNhapHang;
+            }
         }
     }
 }

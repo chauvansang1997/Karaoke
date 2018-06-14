@@ -199,7 +199,7 @@ namespace DAO.QuanLyHangHoa
             string query = "EXEC uspXemChiTietPhieuNhapNguyenLieu @soPhieuDat";
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@soPhieuDat",SqlDbType.Int){IsNullable=false,Value=soPhieuDat },
+                new SqlParameter("@soPhieuDat",SqlDbType.VarChar){IsNullable=false,Value=soPhieuDat },
 
             };
 
