@@ -14,6 +14,7 @@ namespace Karaoke.ThietBi
 	public partial class frmThietBi : Form
 	{
 		DTO.ThietBi thietBi;
+		DataTable data;
 		public frmThietBi()
 		{
 			InitializeComponent();
@@ -35,7 +36,7 @@ namespace Karaoke.ThietBi
 			thietBi.MaThietBi = txtMaTB.Text;
 			thietBi.TenThietBi = txtTenTB.Text;
 			thietBi.MaNCC = cbMaNCC.SelectedValue.ToString();
-			thietBi.DVT = cbDVT.SelectedValue.ToString();
+			thietBi.DVT = txtDVT.Text;
 			thietBi.DonGia = txtDonGiaTB.Text;
 
 			if (BUS.ThietBiBUS.ThemThietBi(thietBi))
@@ -54,11 +55,6 @@ namespace Karaoke.ThietBi
 			nhaCungCap.Visible = true;
 		}
 
-		private void btnThemDVT_Click(object sender, EventArgs e)
-		{
-
-		}
-
 		private void btnThemPhieuNhapTB_Click(object sender, EventArgs e)
 		{
 
@@ -71,6 +67,18 @@ namespace Karaoke.ThietBi
 
 		private void btnXoaPhieuNhapTB_Click(object sender, EventArgs e)
 		{
+
+		}
+
+		private void frmThietBi_Load(object sender, EventArgs e)
+		{
+			cbMaNCC.DisplayMember = "tenNCC";
+			cbMaNCC.ValueMember = "maNCC";
+			cbMaNCC.DataSource = BUS.NhaCungCapBUS.LoadNCC();
+			cbMaNCC.Refresh();
+
+			//Load thietbi
+
 
 		}
 	}
