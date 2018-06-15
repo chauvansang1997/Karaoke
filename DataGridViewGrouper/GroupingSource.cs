@@ -505,33 +505,41 @@ namespace Subro.Controls
 
             if (shouldreset)
             {
-                switch (e.ListChangedType)
+                try
                 {
-                    case ListChangedType.ItemChanged:
-                        if (groupon.IsProperty(e.PropertyDescriptor) && !info.Groups.IsNewRow(e.NewIndex))
+                    switch (e.ListChangedType)
+                    {
+                        case ListChangedType.ItemChanged:
+                            if (groupon.IsProperty(e.PropertyDescriptor) && !info.Groups.IsNewRow(e.NewIndex))
+                                reset(true);
+                            else
+                                FireBaseChanged(new ListChangedEventArgs(ListChangedType.ItemChanged,
+                                    IndexOf(List[e.NewIndex]),
+                                    e.PropertyDescriptor),
+                                    false);
+                            return;
+                        case ListChangedType.ItemAdded:
+                            if (info.Groups.HasNewRow)
+                                info.Groups.AddNew(List[e.NewIndex], true);
+                            else
+                                reset(true);
+                            return;
+                        case ListChangedType.ItemDeleted:
                             reset(true);
-                        else    
-                            FireBaseChanged(new ListChangedEventArgs( ListChangedType.ItemChanged,
-                                IndexOf(List[e.NewIndex]),
-                                e.PropertyDescriptor),
-                                false);
-                        return;
-                    case ListChangedType.ItemAdded:
-                        if (info.Groups.HasNewRow)
-                            info.Groups.AddNew(List[e.NewIndex], true);
-                        else
-                            reset(true);                    
-                        return;
-                    case ListChangedType.ItemDeleted:
-                        reset(true);
-                        return;
-                    case ListChangedType.Reset:
-                        reset(true);
-                        return;
-                    case ListChangedType.ItemMoved:
-                        reset(true); //check sorting??
-                        return;
+                            return;
+                        case ListChangedType.Reset:
+                            reset(true);
+                            return;
+                        case ListChangedType.ItemMoved:
+                            reset(true); //check sorting??
+                            return;
+                    }
                 }
+                catch (Exception)
+                {
+
+                }
+              
             }
 
             switch (e.ListChangedType)

@@ -424,6 +424,7 @@ namespace Karaoke.GuiMonAn
             }
         }
         private string soluong;
+        private bool bChange;
         private void dGVHoaDon_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -434,6 +435,8 @@ namespace Karaoke.GuiMonAn
                     {
                         dGVHoaDon[3, e.RowIndex].Value = soluong;
                         MessageBox.Show("Món hàng không đủ số lượng");
+                        bKiemTraTon = true;
+                        SendKeys.Send("{tab}");
                         return;
                     }
                     dGVHoaDon[4, e.RowIndex].Value = int.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString()) *
@@ -447,23 +450,27 @@ namespace Karaoke.GuiMonAn
 
                 
             }
-            bKiemTraTon = false;
+            
         }
 
         private void dGVHoaDon_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
             try
             {
+               
                 if (e.ColumnIndex == 3 && e.RowIndex > -1)
                 {
-                    if (BUS.HoaDonBUS.KiemTraGoiMon(dGVHoaDon[6, e.RowIndex].Value.ToString(), int.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString())))
-                    {
-                        soluong = dGVHoaDon[e.ColumnIndex, e.RowIndex].Value.ToString();
-                        bKiemTraTon = true;
-                        return;
-                    }
                     uint oldValue = uint.Parse(dGVHoaDon[e.ColumnIndex, e.RowIndex].Value.ToString());
                     uint newValue = uint.Parse(e.FormattedValue.ToString());
+                    if (!BUS.HoaDonBUS.KiemTraGoiMon(dGVHoaDon[7, e.RowIndex].Value.ToString(), int.Parse(e.FormattedValue.ToString())))
+                    {
+                        soluong = dGVHoaDon[e.ColumnIndex, e.RowIndex].Value.ToString();
+                        bKiemTraTon = false;
+                     
+                        return;
+                    }
+                    bKiemTraTon = true;
+                
                  
                     TongCong = TongCong - oldValue * uint.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString())
                         + newValue * uint.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString());
