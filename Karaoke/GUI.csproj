@@ -116,14 +116,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TonKhoDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DoanhThuDataSet.cs">
-      <DependentUpon>DoanhThuDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DoanhThuDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DoanhThuDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="FoodLayout.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -201,30 +193,6 @@
     </Compile>
     <Compile Include="GuiMonAn\frmThemNguyenLieuMonAn.designer.cs">
       <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI_BaoCaoDoanhThu\frmBaoCaoDoanhThu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI_BaoCaoDoanhThu\frmBaoCaoDoanhThu.Designer.cs">
-      <DependentUpon>frmBaoCaoDoanhThu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI_BaoCaoDoanhThu\rpBaoCaoDoanhThu.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rpBaoCaoDoanhThu.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="GUI_KhachHang\frmKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI_KhachHang\frmKhachHang.Designer.cs">
-      <DependentUpon>frmKhachHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI_LoaiKH\frmLoaiKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI_LoaiKH\frmLoaiKhachHang.Designer.cs">
-      <DependentUpon>frmLoaiKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="LuongDataSet.cs">
       <DependentUpon>LuongDataSet.xsd</DependentUpon>
@@ -468,19 +436,6 @@
     <EmbeddedResource Include="GuiMonAn\frmThemNguyenLieuMonAn.resx">
       <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI_BaoCaoDoanhThu\frmBaoCaoDoanhThu.resx">
-      <DependentUpon>frmBaoCaoDoanhThu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI_BaoCaoDoanhThu\rpBaoCaoDoanhThu.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpBaoCaoDoanhThu.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI_KhachHang\frmKhachHang.resx">
-      <DependentUpon>frmKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI_LoaiKH\frmLoaiKhachHang.resx">
-      <DependentUpon>frmLoaiKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI_QuanLyNhanVien\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -539,6 +494,9 @@
     <EmbeddedResource Include="QuanLySanPham\frmGiaoSanPham.resx">
       <DependentUpon>frmGiaoSanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanPham\frmInDonNhapSanPham.resx">
+      <DependentUpon>frmInDonNhapSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\frmNhapChiTietSanPham.resx">
       <DependentUpon>frmNhapChiTietSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -548,8 +506,17 @@
     <EmbeddedResource Include="QuanLySanPham\frmSamPham.resx">
       <DependentUpon>frmSamPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyThietBi\frmGiaoThietBi.resx">
+      <DependentUpon>frmGiaoThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyThietBi\frmInDonNhapThietBi.resx">
+      <DependentUpon>frmInDonNhapThietBi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyThietBi\frmNhapChiTietThietBi.resx">
       <DependentUpon>frmNhapChiTietThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyThietBi\frmNhapThietBi.resx">
+      <DependentUpon>frmNhapThietBi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyThietBi\frmThietBi.resx">
       <DependentUpon>frmThietBi.cs</DependentUpon>
@@ -614,17 +581,6 @@
     </None>
     <None Include="DataSetContainer\TonKhoDataSet.xss">
       <DependentUpon>TonKhoDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DoanhThuDataSet.xsc">
-      <DependentUpon>DoanhThuDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DoanhThuDataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DoanhThuDataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DoanhThuDataSet.xss">
-      <DependentUpon>DoanhThuDataSet.xsd</DependentUpon>
     </None>
     <None Include="LuongDataSet.xsc">
       <DependentUpon>LuongDataSet.xsd</DependentUpon>

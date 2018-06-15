@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportGoiMon));
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
@@ -43,14 +44,15 @@
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
-            // rptGoiMon
+            // frmReportGoiMon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 495);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "rptGoiMon";
-            this.Text = "rptGoiMon";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frmReportGoiMon";
+            this.Text = "Báo cáo doanh thu từ món ăn";
             this.ResumeLayout(false);
 
         }

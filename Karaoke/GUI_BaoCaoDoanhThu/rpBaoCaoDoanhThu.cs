@@ -127,6 +127,30 @@ namespace Karaoke.GUI_BaoCaoDoanhThu {
                 return this.DataDefinition.ParameterFields[2];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_TenQuan {
+            get {
+                return this.DataDefinition.ParameterFields[3];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_DiaChiQuan {
+            get {
+                return this.DataDefinition.ParameterFields[4];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_TruongKeToan {
+            get {
+                return this.DataDefinition.ParameterFields[5];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
