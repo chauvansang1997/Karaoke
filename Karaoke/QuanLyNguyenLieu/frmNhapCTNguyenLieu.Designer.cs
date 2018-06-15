@@ -463,6 +463,7 @@
             this.Controls.Add(this.btnNextPage);
             this.Name = "frmNhapCTNguyenLieu";
             this.Text = "Chọn món";
+            this.Load += new System.EventHandler(this.frmNhapCTNguyenLieu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVHoaDon)).EndInit();

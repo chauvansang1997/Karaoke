@@ -16,5 +16,15 @@ namespace Karaoke
         {
             InitializeComponent();
         }
+
+        private void suaSanPham_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void suaNguyenLieu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

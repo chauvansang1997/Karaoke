@@ -44,8 +44,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.btnAn = new System.Windows.Forms.Button();
+            this.cmbLoai = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTonToiThieu = new System.Windows.Forms.TextBox();
@@ -55,6 +57,8 @@
             this.txtDVT = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtTenNL = new System.Windows.Forms.TextBox();
+            this.cmbTKLoai = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
             this.btnFirstPage = new System.Windows.Forms.Button();
@@ -63,11 +67,6 @@
             this.btnLastPage = new System.Windows.Forms.Button();
             this.btnPrevPage = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.cmbLoai = new System.Windows.Forms.ComboBox();
-            this.cmbTKLoai = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachNV)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -146,6 +145,7 @@
             this.dGVDanhSachNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVDanhSachNV.Size = new System.Drawing.Size(498, 310);
             this.dGVDanhSachNV.TabIndex = 149;
+            this.dGVDanhSachNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVDanhSachNV_CellClick);
             // 
             // label11
             // 
@@ -266,7 +266,6 @@
             this.splitContainer.Panel1.BackColor = System.Drawing.Color.RoyalBlue;
             this.splitContainer.Panel1.Controls.Add(this.cmbLoai);
             this.splitContainer.Panel1.Controls.Add(this.label10);
-            this.splitContainer.Panel1.Controls.Add(this.btnAn);
             this.splitContainer.Panel1.Controls.Add(this.label9);
             this.splitContainer.Panel1.Controls.Add(this.comboBox1);
             this.splitContainer.Panel1.Controls.Add(this.button1);
@@ -307,18 +306,26 @@
             this.splitContainer.SplitterDistance = 340;
             this.splitContainer.TabIndex = 163;
             // 
-            // btnAn
+            // cmbLoai
             // 
-            this.btnAn.BackColor = System.Drawing.Color.Transparent;
-            this.btnAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAn.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAn.Image = global::Karaoke.Properties.Resources.rewind;
-            this.btnAn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAn.Location = new System.Drawing.Point(3, 487);
-            this.btnAn.Name = "btnAn";
-            this.btnAn.Size = new System.Drawing.Size(41, 29);
-            this.btnAn.TabIndex = 163;
-            this.btnAn.UseVisualStyleBackColor = false;
+            this.cmbLoai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbLoai.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cmbLoai.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLoai.FormattingEnabled = true;
+            this.cmbLoai.Location = new System.Drawing.Point(11, 185);
+            this.cmbLoai.Name = "cmbLoai";
+            this.cmbLoai.Size = new System.Drawing.Size(318, 27);
+            this.cmbLoai.TabIndex = 176;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(12, 162);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 19);
+            this.label10.TabIndex = 175;
+            this.label10.Text = "Loại:";
             // 
             // label9
             // 
@@ -329,6 +336,17 @@
             this.label9.Size = new System.Drawing.Size(116, 19);
             this.label9.TabIndex = 173;
             this.label9.Text = "Tên sản phẩm:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 114);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(318, 27);
+            this.comboBox1.TabIndex = 172;
             // 
             // button1
             // 
@@ -417,6 +435,30 @@
             this.txtTenNL.Name = "txtTenNL";
             this.txtTenNL.Size = new System.Drawing.Size(318, 27);
             this.txtTenNL.TabIndex = 162;
+            // 
+            // cmbTKLoai
+            // 
+            this.cmbTKLoai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbTKLoai.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cmbTKLoai.BackColor = System.Drawing.Color.White;
+            this.cmbTKLoai.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTKLoai.FormattingEnabled = true;
+            this.cmbTKLoai.Location = new System.Drawing.Point(134, 93);
+            this.cmbTKLoai.Name = "cmbTKLoai";
+            this.cmbTKLoai.Size = new System.Drawing.Size(188, 27);
+            this.cmbTKLoai.TabIndex = 164;
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label12.Location = new System.Drawing.Point(10, 94);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(111, 22);
+            this.label12.TabIndex = 163;
+            this.label12.Text = "Loại:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnXoa
             // 
@@ -549,62 +591,6 @@
             this.btnNextPage.TabIndex = 145;
             this.btnNextPage.UseVisualStyleBackColor = false;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 162);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 19);
-            this.label10.TabIndex = 175;
-            this.label10.Text = "Loại:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 114);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(318, 27);
-            this.comboBox1.TabIndex = 172;
-            // 
-            // cmbLoai
-            // 
-            this.cmbLoai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbLoai.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cmbLoai.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbLoai.FormattingEnabled = true;
-            this.cmbLoai.Location = new System.Drawing.Point(11, 185);
-            this.cmbLoai.Name = "cmbLoai";
-            this.cmbLoai.Size = new System.Drawing.Size(318, 27);
-            this.cmbLoai.TabIndex = 176;
-            // 
-            // cmbTKLoai
-            // 
-            this.cmbTKLoai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbTKLoai.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cmbTKLoai.BackColor = System.Drawing.Color.White;
-            this.cmbTKLoai.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTKLoai.FormattingEnabled = true;
-            this.cmbTKLoai.Location = new System.Drawing.Point(134, 93);
-            this.cmbTKLoai.Name = "cmbTKLoai";
-            this.cmbTKLoai.Size = new System.Drawing.Size(188, 27);
-            this.cmbTKLoai.TabIndex = 164;
-            // 
-            // label12
-            // 
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label12.Location = new System.Drawing.Point(10, 94);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(111, 22);
-            this.label12.TabIndex = 163;
-            this.label12.Text = "Loại:";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // frmSamPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -669,7 +655,6 @@
         private System.Windows.Forms.TextBox txtDVT;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtTenNL;
-        private System.Windows.Forms.Button btnAn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTonToiThieu;
         private System.Windows.Forms.Label label10;

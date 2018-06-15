@@ -97,5 +97,10 @@ namespace Karaoke.QuanLySanPham
         {
 
         }
+
+        private void dGVDanhSachNV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

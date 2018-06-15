@@ -59,7 +59,14 @@ namespace BUS
         {
             return NguyenLieuDAO.NhapNguyenLieu(nguyenLieu);
         }
-
+        public static bool CapNhatNguyenLieu(NguyenLieu nguyenLieu)
+        {
+            return NguyenLieuDAO.CapNhatNguyenLieu(nguyenLieu);
+        }
+        public static bool XoaNguyenLieu(string maNguyenLieu)
+        {
+            return NguyenLieuDAO.XoaNguyenLieu(maNguyenLieu);
+        }
         public static PhieuNhapHang LapPhieuNhap(string nhaCungCap, string maNhanVien)
         {
             return NguyenLieuDAO.LapPhieuNhap(nhaCungCap, maNhanVien);

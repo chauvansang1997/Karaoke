@@ -29,9 +29,15 @@ namespace BUS
 			return DAO.ThietBiDAO.LayMaNCC();
 		}
 
-		public static DataTable LoadThietBi()
-		{
-			return DAO.ThietBiDAO.LoadThietBi();
+        public static DataTable XemThietBi(string tenThietBi, string maNhaCungCap, int pageNumber, int pageSize)
+        {
+			return DAO.ThietBiDAO.LoadThietBi(tenThietBi, maNhaCungCap, pageNumber, pageSize);
 		}
-	}
+
+        public static int DemThietBi(string tenThietBi, string maNhaCungCap)
+        {
+            return DAO.ThietBiDAO.DemThietBi(tenThietBi, maNhaCungCap);
+        }
+
+    }
 }

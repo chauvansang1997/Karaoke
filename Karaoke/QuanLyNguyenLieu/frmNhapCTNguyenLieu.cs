@@ -541,6 +541,9 @@ namespace Karaoke.NguyenLieu
             }
         }
 
-      
+        private void frmNhapCTNguyenLieu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

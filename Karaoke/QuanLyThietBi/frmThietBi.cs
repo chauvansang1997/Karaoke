@@ -6,12 +6,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Karaoke.NguyenLieu
+namespace Karaoke.QuanLyThietBi
 {
-    public partial class frmNguyenLieu : Form
+    public partial class frmThietBi : Form
     {
         private bool bSua;
         private bool bThem;
@@ -19,23 +18,14 @@ namespace Karaoke.NguyenLieu
         private int pageNumber;
         private int totalPage;
         private string ma;
-        public frmNguyenLieu()
+        public frmThietBi()
         {
             InitializeComponent();
         }
 
         private void frmNguyenLieu_Load(object sender, EventArgs e)
         {
-            bSua = false;
-            bThem = false;
-            pageNumber = 1;
-            rbTatCa.Checked = true;
-            txtPageNumber.Text = "1";
-            totalPage = BUS.NguyenLieuBUS.DemNguyenLieu("", "", rbSapHet.Checked);
-            totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
-            txtTotalPage.Text = totalPage.ToString();
-            dGVDanhSach.DataSource = BUS.NguyenLieuBUS.TiemKiemNguyenLieu("", "", rbSapHet.Checked,pageNumber,pageSize);
-            AddGridTableStyle();
+
         }
         private void AddGridTableStyle()
         {
@@ -52,16 +42,12 @@ namespace Karaoke.NguyenLieu
             this.dGVDanhSach.AlternatingRowsDefaultCellStyle = cell;
             this.dGVDanhSach.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSteelBlue;
             this.dGVDanhSach.Columns["MANCC"].Visible = false;
-            this.dGVDanhSach.Columns["manl"].Visible = false;
-            this.dGVDanhSach.Columns["TENNL"].HeaderText = "Tên";
-            this.dGVDanhSach.Columns["TENNCC"].HeaderText = "Nhà cung cấp";
-            this.dGVDanhSach.Columns["DVT"].HeaderText = "Đơn vị tính";
-            this.dGVDanhSach.Columns["DONGIA"].HeaderText = "Đơn giá";
-            this.dGVDanhSach.Columns["SLTOITHIEU"].HeaderText = "Tồn tối thiểu";
+            this.dGVDanhSach.Columns["MATB"].Visible = false;
             cmbNhaCC.DataSource = BUS.NhaCungCapBUS.XemNhaCungCap();
             cmbNhaCC.DisplayMember = "Ten";
             cmbNhaCCTK.DataSource = BUS.NhaCungCapBUS.XemNhaCungCap();
             cmbNhaCCTK.DisplayMember = "Ten";
+            //this.dataGrid1.TableStyles.Add(table);
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -72,11 +58,65 @@ namespace Karaoke.NguyenLieu
             txtTenNL.Enabled = true;
             cmbNhaCC.Enabled = true;
         }
+        private void frmThietBi_Load(object sender, EventArgs e)
+        {
+            bSua = false;
+            bThem = false;
+            pageNumber = 1;
+            txtPageNumber.Text = "1";
+            totalPage = BUS.ThietBiBUS.DemThietBi("", "");
+            totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+            txtTotalPage.Text = totalPage.ToString();
+            dGVDanhSach.DataSource =BUS.ThietBiBUS.XemThietBi("", "", pageNumber, pageSize);
+            AddGridTableStyle();
+        }
 
-        private void frmNguyenLieu_Load_1(object sender, EventArgs e)
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
+
+        private void btnFind_MouseHover(object sender, EventArgs e)
+        {
+            this.btnFind.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnThem_MouseHover(object sender, EventArgs e)
+        {
+            this.btnThem.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnXoa_MouseHover(object sender, EventArgs e)
+        {
+            this.btnXoa.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnSua_MouseHover(object sender, EventArgs e)
+        {
+            this.btnSua.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnThoat_MouseHover(object sender, EventArgs e)
+        {
+            this.btnThoat.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            txtDonGia.Enabled = true;
+            txtDVT.Enabled = true;
+            txtTenNL.Enabled = true;
+            cmbNhaCC.Enabled = true;
+            bThem = true;
+            txtDonGia.Text = "";
+            txtDVT.Text = "";
+            txtTenNL.Text = "";
+            //btnLuu.Enabled = true;
+            //btnXoa.Enabled = false;
+            //btnSua.Enabled = false;
+        }
+
         private void btnNextPage_Click(object sender, EventArgs e)
         {
             if (pageNumber + 1 > totalPage)
@@ -143,31 +183,6 @@ namespace Karaoke.NguyenLieu
             loadDanhSach();
         }
 
-        private void loadDanhSach()
-        {
-            dGVDanhSach.DataSource = BUS.NguyenLieuBUS.TiemKiemNguyenLieu(txtTenNL.Text,
-                ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC, rbSapHet.Checked, pageNumber, pageSize);
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnFind_MouseHover(object sender, EventArgs e)
-        {
-            this.btnFind.FlatAppearance.BorderSize = 2;
-        }
-
-        private void btnThem_MouseHover(object sender, EventArgs e)
-        {
-            this.btnThem.FlatAppearance.BorderSize = 2;
-        }
-
-        private void btnXoa_MouseHover(object sender, EventArgs e)
-        {
-            this.btnXoa.FlatAppearance.BorderSize = 2;
-        }
         private void dGVDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (bThem)
@@ -181,59 +196,34 @@ namespace Karaoke.NguyenLieu
             if (dGVDanhSach.CurrentCell != null)
             {
                 int index = dGVDanhSach.CurrentCell.RowIndex;
-                txtTenNL.Text = dGVDanhSach[1, index].Value.ToString();
-                txtDVT.Text = dGVDanhSach[3, index].Value.ToString();
-                txtDonGia.Text = dGVDanhSach[4, index].Value.ToString();
-              //  cmbNhaCC.SelectedValue = dGVDanhSach[6, index].Value.ToString();
+                txtTenNL.Text = dGVDanhSach[0, index].Value.ToString();
+                txtDVT.Text = dGVDanhSach[1, index].Value.ToString();
+                txtDonGia.Text = dGVDanhSach[2, index].Value.ToString();
                 for (int i = 0; i < cmbNhaCC.Items.Count; i++)
                 {
-                    if(((DTO.NhaCungCap)cmbNhaCC.Items[i]).MaNCC== dGVDanhSach[6, index].Value.ToString())
+                    if (((DTO.NhaCungCap)cmbNhaCC.Items[i]).MaNCC == dGVDanhSach[4, index].Value.ToString())
                     {
                         cmbNhaCC.SelectedIndex = i;
                     }
                 }
-                txtTonToiThieu.Text= dGVDanhSach[5, index].Value.ToString();
-                ma = dGVDanhSach[0, index].Value.ToString();
+                ma = dGVDanhSach[5, index].Value.ToString();
             }
 
-        }
-        private void btnSua_MouseHover(object sender, EventArgs e)
-        {
-            this.btnSua.FlatAppearance.BorderSize = 2;
-        }
-
-        private void btnThoat_MouseHover(object sender, EventArgs e)
-        {
-            this.btnThoat.FlatAppearance.BorderSize = 2;
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            txtDonGia.Enabled = true;
-            txtDVT.Enabled = true;
-            txtTenNL.Enabled = true;
-            cmbNhaCC.Enabled = true;
-            bThem = true;
-            txtDonGia.Text = "";
-            txtDVT.Text = "";
-            txtTenNL.Text = "";
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (bThem)
             {
-                if (BUS.NguyenLieuBUS.ThemNguyenLieu(new DTO.NguyenLieu()
+                if (BUS.ThietBiBUS.ThemThietBi(new DTO.ThietBi()
                 {
-                    Ten = txtTenNL.Text,
-                    Dongia = uint.Parse(txtDonGia.Text),
-                    DonViTinh = txtDVT.Text,
-                    NhaCungCap = ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC,
-                    SoLuongToiThieu=int.Parse(txtTonToiThieu.Text),
-                    
+                    TenThietBi = txtTenNL.Text,
+                    DonGia = txtDonGia.Text,
+                    DVT = txtDVT.Text,
+                    MaNCC = ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC
                 }))
                 {
-                    MessageBox.Show("Thêm thiết bị thành công");
+                    MessageBox.Show("Thêm nguyên liệu thành công");
                 }
                 bThem = false;
                 txtDonGia.Enabled = false;
@@ -244,17 +234,16 @@ namespace Karaoke.NguyenLieu
             }
             else if (bSua)
             {
-                if (BUS.NguyenLieuBUS.CapNhatNguyenLieu(new DTO.NguyenLieu()
+                if (BUS.ThietBiBUS.ThemThietBi(new DTO.ThietBi()
                 {
-                    Ma=ma,
-                    Ten = txtTenNL.Text,
-                    Dongia = uint.Parse(txtDonGia.Text),
-                    DonViTinh = txtDVT.Text,
-                    NhaCungCap = ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC,
-                    SoLuongToiThieu = int.Parse(txtTonToiThieu.Text),
+                    MaThietBi = ma,
+                    TenThietBi = txtTenNL.Text,
+                    DonGia = txtDonGia.Text,
+                    DVT = txtDVT.Text,
+                    MaNCC = ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC
                 }))
                 {
-                    MessageBox.Show("Sửa thiết bị thành công");
+                    MessageBox.Show("Sửa nguyên liệu thành công");
                 }
                 bSua = false;
                 txtDonGia.Enabled = false;
@@ -264,47 +253,55 @@ namespace Karaoke.NguyenLieu
                 resetDanhSach();
             }
         }
-
         private void resetDanhSach()
+        {
+            bSua = false;
+            bThem = false;
+            pageNumber = 1;
+            txtPageNumber.Text = "1";
+            totalPage = BUS.ThietBiBUS.DemThietBi(txtTenNguyenLieu.Text, ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC);
+            totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+            txtTotalPage.Text = totalPage.ToString();
+
+            dGVDanhSach.DataSource =
+    BUS.ThietBiBUS.XemThietBi("", "", pageNumber, pageSize);
+
+            AddGridTableStyle();
+        }
+        private void loadDanhSach()
+        {
+            dGVDanhSach.DataSource =
+    BUS.ThietBiBUS.XemThietBi(txtTenNguyenLieu.Text, ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC, pageNumber, pageSize);
+        }
+        private void btnFind_Click(object sender, EventArgs e)
         {
             pageNumber = 1;
             txtPageNumber.Text = "1";
-            totalPage = BUS.NguyenLieuBUS.DemNguyenLieu(txtTenNguyenLieu.Text, ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC, rbSapHet.Checked);
+            totalPage = BUS.ThietBiBUS.DemThietBi(txtTenNguyenLieu.Text,((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC);
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
             txtTotalPage.Text = totalPage.ToString();
-            dGVDanhSach.DataSource = BUS.NguyenLieuBUS.TiemKiemNguyenLieu("", "", rbSapHet.Checked, pageNumber, pageSize);
-
-            bSua = false;
-            bThem = false;
-            AddGridTableStyle();
+            loadDanhSach();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (BUS.NguyenLieuBUS.XoaNguyenLieu(ma))
+            if (BUS.ThietBiBUS.XoaThietBi(new DTO.ThietBi()
+            {
+                MaThietBi = ma,
+                TenThietBi = txtTenNL.Text,
+                DonGia = txtDonGia.Text,
+                DVT = txtDVT.Text,
+                MaNCC = ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC
+            }))
             {
                 MessageBox.Show("Xóa thiết bị thành công");
                 resetDanhSach();
-            }
-            else
-            {
-                MessageBox.Show("Nguyên liệu nằm trong món ăn");
             }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnFind_Click(object sender, EventArgs e)
-        {
-            pageNumber = 1;
-            txtPageNumber.Text = "1";
-            totalPage = BUS.NguyenLieuBUS.DemNguyenLieu(txtTenNguyenLieu.Text, ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC,rbSapHet.Checked);
-            totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
-            txtTotalPage.Text = totalPage.ToString();
-            loadDanhSach();
         }
     }
 }

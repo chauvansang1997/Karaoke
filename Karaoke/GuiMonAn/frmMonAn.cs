@@ -131,6 +131,9 @@ namespace Karaoke.GuiMonAn
 
         }
 
-        
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -321,6 +321,24 @@
     <Compile Include="QuanLySanPham\frmSamPham.Designer.cs">
       <DependentUpon>frmSamPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyThietBi\frmSuaThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyThietBi\frmSuaThietBi.Designer.cs">
+      <DependentUpon>frmSuaThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyThietBi\frmThemThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyThietBi\frmThemThietBi.Designer.cs">
+      <DependentUpon>frmThemThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyThietBi\frmThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyThietBi\frmThietBi.Designer.cs">
+      <DependentUpon>frmThietBi.cs</DependentUpon>
+    </Compile>
     <Compile Include="report\rptHoaDon.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -363,12 +381,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rpLuongTong.rpt</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ThietBi\frmThietBi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThietBi\frmThietBi.Designer.cs">
-      <DependentUpon>frmThietBi.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FoodLayout.resx">
       <DependentUpon>FoodLayout.cs</DependentUpon>
@@ -473,6 +485,9 @@
     <EmbeddedResource Include="QuanLySanPham\frmSamPham.resx">
       <DependentUpon>frmSamPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyThietBi\frmThietBi.resx">
+      <DependentUpon>frmThietBi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="report\rptHoaDon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHoaDon.cs</LastGenOutput>
@@ -500,9 +515,6 @@
     <EmbeddedResource Include="rpLuongTong.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpLuongTong2.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ThietBi\frmThietBi.resx">
-      <DependentUpon>frmThietBi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSetContainer\HoaDonDataSet.xsc">
       <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
@@ -612,7 +624,9 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ThietBi\" />
+  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
