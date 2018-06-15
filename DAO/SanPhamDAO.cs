@@ -227,6 +227,8 @@ namespace DAO
                     TenNhanVien = result[2].ToString(),
                     SoDienThoai = result[3].ToString(),
                     NgayDat = result[4].ToString(),
+                    MaNhaCungCap= result[5].ToString(),
+                    TenNhaCungCap = result[6].ToString(),
                 };
             }
             catch (Exception ex)

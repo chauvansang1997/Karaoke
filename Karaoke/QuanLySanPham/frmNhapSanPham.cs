@@ -103,6 +103,7 @@ namespace Karaoke.QuanLySanPham
                 int index = dGVPhieuNhap.CurrentRow.Index;
                 DTO.NhaCungCap nhaCungCap = ((DTO.NhaCungCap)cmbNhaCungCap.SelectedValue);
                 PhieuNhapHang phieuNhapHang = (PhieuNhapHang)bindingSource[index];
+                
                 string soPhieuNhap = dGVPhieuNhap[0, index].Value.ToString();
            
                 frmNhapChiTietSanPham chiTietSanPham = new 

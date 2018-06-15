@@ -1,4 +1,5 @@
 ﻿using Karaoke.NguyenLieu;
+using Karaoke.PhongKaoraoke;
 using Karaoke.QuanLySanPham;
 using System;
 using System.Collections.Generic;
@@ -50,6 +51,17 @@ namespace Karaoke
         }
 
         private void baoCaoDoanhThu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void datPhongMenu_Click(object sender, EventArgs e)
+        {
+            frmPhongKaraoke phongKaraoke = new frmPhongKaraoke();
+            phongKaraoke.ShowDialog();
+        }
+
+        private void nhanDatTiecMenu_Click(object sender, EventArgs e)
         {
 
         }

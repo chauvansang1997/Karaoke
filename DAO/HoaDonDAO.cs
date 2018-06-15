@@ -239,16 +239,38 @@ namespace DAO
             }
             return result;
         }
-        public static bool ThanhToan(string soHoaDon)
+        //public static int TinhTienGio(string soHoaDon, DateTime, gioRa)
+        //{
+        //    string query = "EXEC uspThanhToanPhong @soHoaDon";
+
+        //    List<SqlParameter> parameters = new List<SqlParameter>()
+        //    {
+        //        new SqlParameter("@soHoaDon",SqlDbType.VarChar){IsNullable=false,Value=soHoaDon }
+
+
+        //    };
+        //    int result = 0;
+        //    try
+        //    {
+        //        result = (int)Dataprovider.ExcuteScalar(query, parameters.ToArray());
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Utility.Log(ex);
+        //    }
+        //    return result == 0 ? false : true;
+        //}
+        public static bool ThanhToan(string soHoaDon,DateTime gioRa,int thanhTien,int giamGia)
         {
 
-            string query = "EXEC uspThanhToanPhong @soHoaDon";
+            string query = "EXEC uspThanhToanPhong @soHoaDon,@thanhTien,@thanhTien";
     
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@soHoaDon",SqlDbType.VarChar){IsNullable=false,Value=soHoaDon }
-
-
+                new SqlParameter("@soHoaDon",SqlDbType.VarChar){IsNullable=false,Value=soHoaDon },
+                new SqlParameter("@gioRa",SqlDbType.DateTime){IsNullable=false,Value=thanhTien },
+                new SqlParameter("@thanhTien",SqlDbType.Int){IsNullable=false,Value=thanhTien },
+                                new SqlParameter("@thanhTien",SqlDbType.Int){IsNullable=false,Value=giamGia },
             };
             try
             {

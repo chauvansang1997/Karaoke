@@ -390,7 +390,25 @@ namespace Karaoke.GuiMonAn
 
         private void dGVHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                if (e.ColumnIndex == 0 && e.RowIndex > -1)
+                {
+                    int indexDict = int.Parse(dGVHoaDon[6, e.RowIndex].Value.ToString());
+                    int indexList = int.Parse(dGVHoaDon[8, e.RowIndex].Value.ToString());
+                    string maHangHoa = dGVHoaDon[7, e.RowIndex].Value.ToString();
+                    hashMaHangHoa.Remove(maHangHoa);
+                    dictionaryDataSource[dGVHoaDon[10, e.RowIndex].Value.ToString()].Remove(maHangHoa);
 
+                    TongCong = TongCong - (uint.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString()) *
+                        uint.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString()));
+                    dGVHoaDon.Rows.RemoveAt(e.RowIndex);
+
+                }
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void dGVHoaDon_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -473,7 +491,7 @@ namespace Karaoke.GuiMonAn
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if (BUS.HoaDonBUS.ThanhToan(soHoaDon))
+            if (BUS.HoaDonBUS.ThanhToan(soHoaDon,DateTime.Now,int.Parse(txtThanhTien.Text),int.Parse(txtGiamGia.Text)))
             {
                 MessageBox.Show("Thanh toán thành công");
             }
