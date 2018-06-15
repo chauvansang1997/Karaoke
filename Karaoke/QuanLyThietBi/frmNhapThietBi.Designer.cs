@@ -35,8 +35,17 @@
             this.txtPageNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbChuaGiao = new System.Windows.Forms.RadioButton();
+            this.rbDaGiao = new System.Windows.Forms.RadioButton();
+            this.cmbTKNhaCC = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnThanhToan = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.cmbNhaCungCap = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnNhapHang = new System.Windows.Forms.Button();
             this.btnFirstPage = new System.Windows.Forms.Button();
             this.btnLastPage = new System.Windows.Forms.Button();
@@ -45,19 +54,10 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.cmbNhaCungCap = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.cmbTKNhaCC = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbChuaGiao = new System.Windows.Forms.RadioButton();
-            this.rbDaGiao = new System.Windows.Forms.RadioButton();
-            this.btnFind = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVPhieuNhap)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dGVPhieuNhap
@@ -130,18 +130,88 @@
             this.panel2.Size = new System.Drawing.Size(339, 287);
             this.panel2.TabIndex = 184;
             // 
-            // panel1
+            // btnFind
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnThem);
-            this.panel1.Controls.Add(this.cmbNhaCungCap);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(9, 329);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(339, 86);
-            this.panel1.TabIndex = 183;
+            this.btnFind.BackColor = System.Drawing.Color.LightGray;
+            this.btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnFind.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFind.FlatAppearance.BorderSize = 0;
+            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFind.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFind.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnFind.Image = global::Karaoke.Properties.Resources.loupe;
+            this.btnFind.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnFind.Location = new System.Drawing.Point(36, 213);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(110, 30);
+            this.btnFind.TabIndex = 182;
+            this.btnFind.Text = "Tìm kiếm";
+            this.btnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFind.UseVisualStyleBackColor = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbChuaGiao);
+            this.groupBox1.Controls.Add(this.rbDaGiao);
+            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.groupBox1.Location = new System.Drawing.Point(18, 88);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(184, 99);
+            this.groupBox1.TabIndex = 181;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Cách tìm kiếm";
+            // 
+            // rbChuaGiao
+            // 
+            this.rbChuaGiao.AutoSize = true;
+            this.rbChuaGiao.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbChuaGiao.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rbChuaGiao.Location = new System.Drawing.Point(16, 63);
+            this.rbChuaGiao.Name = "rbChuaGiao";
+            this.rbChuaGiao.Size = new System.Drawing.Size(84, 20);
+            this.rbChuaGiao.TabIndex = 3;
+            this.rbChuaGiao.TabStop = true;
+            this.rbChuaGiao.Text = "Chưa giao";
+            this.rbChuaGiao.UseVisualStyleBackColor = true;
+            // 
+            // rbDaGiao
+            // 
+            this.rbDaGiao.AutoSize = true;
+            this.rbDaGiao.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDaGiao.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rbDaGiao.Location = new System.Drawing.Point(16, 34);
+            this.rbDaGiao.Name = "rbDaGiao";
+            this.rbDaGiao.Size = new System.Drawing.Size(70, 20);
+            this.rbDaGiao.TabIndex = 2;
+            this.rbDaGiao.TabStop = true;
+            this.rbDaGiao.Text = "Đã giao";
+            this.rbDaGiao.UseVisualStyleBackColor = true;
+            this.rbDaGiao.CheckedChanged += new System.EventHandler(this.rbDaGiao_CheckedChanged);
+            // 
+            // cmbTKNhaCC
+            // 
+            this.cmbTKNhaCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbTKNhaCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cmbTKNhaCC.BackColor = System.Drawing.Color.White;
+            this.cmbTKNhaCC.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTKNhaCC.FormattingEnabled = true;
+            this.cmbTKNhaCC.Location = new System.Drawing.Point(14, 52);
+            this.cmbTKNhaCC.Name = "cmbTKNhaCC";
+            this.cmbTKNhaCC.Size = new System.Drawing.Size(188, 27);
+            this.cmbTKNhaCC.TabIndex = 180;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(11, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 22);
+            this.label2.TabIndex = 179;
+            this.label2.Text = "Nhà cung cấp:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnThanhToan
             // 
@@ -159,6 +229,60 @@
             this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThanhToan.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnThem);
+            this.panel1.Controls.Add(this.cmbNhaCungCap);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.ForeColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(9, 329);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(339, 86);
+            this.panel1.TabIndex = 183;
+            // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
+            this.btnThem.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.Location = new System.Drawing.Point(198, 40);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(128, 36);
+            this.btnThem.TabIndex = 167;
+            this.btnThem.Text = " Lập phiếu";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // cmbNhaCungCap
+            // 
+            this.cmbNhaCungCap.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbNhaCungCap.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cmbNhaCungCap.BackColor = System.Drawing.Color.White;
+            this.cmbNhaCungCap.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNhaCungCap.FormattingEnabled = true;
+            this.cmbNhaCungCap.Location = new System.Drawing.Point(8, 46);
+            this.cmbNhaCungCap.Name = "cmbNhaCungCap";
+            this.cmbNhaCungCap.Size = new System.Drawing.Size(172, 27);
+            this.cmbNhaCungCap.TabIndex = 164;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label7.Location = new System.Drawing.Point(5, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(121, 22);
+            this.label7.TabIndex = 163;
+            this.label7.Text = "Nhà cung cấp:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnNhapHang
             // 
@@ -287,128 +411,6 @@
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThoat.UseVisualStyleBackColor = false;
             // 
-            // cmbNhaCungCap
-            // 
-            this.cmbNhaCungCap.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbNhaCungCap.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cmbNhaCungCap.BackColor = System.Drawing.Color.White;
-            this.cmbNhaCungCap.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbNhaCungCap.FormattingEnabled = true;
-            this.cmbNhaCungCap.Location = new System.Drawing.Point(8, 46);
-            this.cmbNhaCungCap.Name = "cmbNhaCungCap";
-            this.cmbNhaCungCap.Size = new System.Drawing.Size(172, 27);
-            this.cmbNhaCungCap.TabIndex = 164;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(5, 10);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(121, 22);
-            this.label7.TabIndex = 163;
-            this.label7.Text = "Nhà cung cấp:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnThem
-            // 
-            this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
-            this.btnThem.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.Location = new System.Drawing.Point(198, 40);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(128, 36);
-            this.btnThem.TabIndex = 167;
-            this.btnThem.Text = " Lập phiếu";
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThem.UseVisualStyleBackColor = false;
-            // 
-            // cmbTKNhaCC
-            // 
-            this.cmbTKNhaCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbTKNhaCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cmbTKNhaCC.BackColor = System.Drawing.Color.White;
-            this.cmbTKNhaCC.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTKNhaCC.FormattingEnabled = true;
-            this.cmbTKNhaCC.Location = new System.Drawing.Point(14, 52);
-            this.cmbTKNhaCC.Name = "cmbTKNhaCC";
-            this.cmbTKNhaCC.Size = new System.Drawing.Size(188, 27);
-            this.cmbTKNhaCC.TabIndex = 180;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(11, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 22);
-            this.label2.TabIndex = 179;
-            this.label2.Text = "Nhà cung cấp:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rbChuaGiao);
-            this.groupBox1.Controls.Add(this.rbDaGiao);
-            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(18, 88);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(184, 99);
-            this.groupBox1.TabIndex = 181;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cách tìm kiếm";
-            // 
-            // rbChuaGiao
-            // 
-            this.rbChuaGiao.AutoSize = true;
-            this.rbChuaGiao.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbChuaGiao.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.rbChuaGiao.Location = new System.Drawing.Point(16, 63);
-            this.rbChuaGiao.Name = "rbChuaGiao";
-            this.rbChuaGiao.Size = new System.Drawing.Size(84, 20);
-            this.rbChuaGiao.TabIndex = 3;
-            this.rbChuaGiao.TabStop = true;
-            this.rbChuaGiao.Text = "Chưa giao";
-            this.rbChuaGiao.UseVisualStyleBackColor = true;
-            // 
-            // rbDaGiao
-            // 
-            this.rbDaGiao.AutoSize = true;
-            this.rbDaGiao.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDaGiao.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.rbDaGiao.Location = new System.Drawing.Point(16, 34);
-            this.rbDaGiao.Name = "rbDaGiao";
-            this.rbDaGiao.Size = new System.Drawing.Size(70, 20);
-            this.rbDaGiao.TabIndex = 2;
-            this.rbDaGiao.TabStop = true;
-            this.rbDaGiao.Text = "Đã giao";
-            this.rbDaGiao.UseVisualStyleBackColor = true;
-            // 
-            // btnFind
-            // 
-            this.btnFind.BackColor = System.Drawing.Color.LightGray;
-            this.btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnFind.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFind.FlatAppearance.BorderSize = 0;
-            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFind.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFind.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnFind.Image = global::Karaoke.Properties.Resources.loupe;
-            this.btnFind.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFind.Location = new System.Drawing.Point(36, 213);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(110, 30);
-            this.btnFind.TabIndex = 182;
-            this.btnFind.Text = "Tìm kiếm";
-            this.btnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFind.UseVisualStyleBackColor = false;
-            // 
             // frmNhapThietBi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -435,9 +437,9 @@
             this.Load += new System.EventHandler(this.frmNhapSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGVPhieuNhap)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

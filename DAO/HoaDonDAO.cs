@@ -10,11 +10,11 @@ namespace DAO
 {
     public static class HoaDonDAO
     {
-        public static bool ThemChiTietHoaDon(string mahd,List<string> listMa,List<string> listSoLuongMa, List<string> listSp, List<string> listSoLuongSp)
+        public static bool ThemChiTietHoaDon(string mahd, List<string> listMa, List<string> listSoLuongMa, List<string> listSp, List<string> listSoLuongSp)
         {
             string query = "EXEC uspThemChiTietHoaDon @maHD,@danhSachMa,@danhSachSoLuongMa,@danhSachSp,@danhSachSoLuongSp";
 
-            string danhSachMa= String.Join("|", listMa);
+            string danhSachMa = String.Join("|", listMa);
             string danhSachSoLuongMa = String.Join("|", listSoLuongMa);
             string danhSachSp = String.Join("|", listSp);
             string danhSachSoLuongSp = String.Join("|", listSoLuongSp);
@@ -50,7 +50,7 @@ namespace DAO
                 new SqlParameter("@maPhong",SqlDbType.VarChar){IsNullable=false,Value=maPhong }
 
             };
-            string result="";
+            string result = "";
             try
             {
                 result = Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString();
@@ -69,7 +69,7 @@ namespace DAO
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@soHoaDon",SqlDbType.VarChar){ Value=soHoaDon  }
-     
+
             };
             List<GoiMonDataSource> list = null;
             try
@@ -78,12 +78,12 @@ namespace DAO
                 list = table.AsEnumerable().ToList().ConvertAll(x =>
                         new GoiMonDataSource()
                         {
-                            Ma= x[0].ToString(),
+                            Ma = x[0].ToString(),
                             Ten = x[1].ToString(),
                             Soluong = x[2].ToString(),
-                            Loai = x[3].ToString(),                          
+                            Loai = x[3].ToString(),
                             Gia = x[4].ToString(),
-                            Thanhtien = (int.Parse(x[2].ToString())* int.Parse(x[4].ToString())).ToString()
+                            Thanhtien = (int.Parse(x[2].ToString()) * int.Parse(x[4].ToString())).ToString()
                         }
                         );
             }
@@ -108,7 +108,7 @@ namespace DAO
             try
             {
                 table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
-        
+
             }
             catch (Exception ex)
             {
@@ -144,8 +144,8 @@ namespace DAO
                             Loai = x[5].ToString(),
                             Gia = x[4].ToString(),
                             Thanhtien = (int.Parse(x[2].ToString()) * int.Parse(x[4].ToString())).ToString(),
-                            MaLoaiHangHoa= x[3].ToString(),
-                            TenLoaiHangHoa= x[6].ToString()
+                            MaLoaiHangHoa = x[3].ToString(),
+                            TenLoaiHangHoa = x[6].ToString()
 
                         }
                         );
@@ -179,7 +179,7 @@ namespace DAO
                             Loai = x[5].ToString(),
                             Gia = x[4].ToString(),
                             Thanhtien = (int.Parse(x[2].ToString()) * int.Parse(x[4].ToString())).ToString(),
-                            MaLoaiHangHoa = x[5].ToString()=="0"? "1": x[3].ToString(),
+                            MaLoaiHangHoa = x[5].ToString() == "0" ? "1" : x[3].ToString(),
                             TenLoaiHangHoa = x[5].ToString() == "0" ? "Thức ăn" : x[6].ToString()
 
                         }
@@ -192,7 +192,7 @@ namespace DAO
 
             return list;
         }
-        public static bool DatCocTien(uint tienDatCoc,string soHD)
+        public static bool DatCocTien(uint tienDatCoc, string soHD)
         {
             string query = "UPDATE HOADON SET tienDatCoc=@tienDatCoc WHERE SOHD=@soHD";
             int num = 0;
@@ -215,7 +215,7 @@ namespace DAO
             return num == 1 ? true : false;
         }
 
-        public static string LayMaHoaDonDatTiec(string maPhong,string tenKhachHang,string soDienThoai,DateTime ngayNhanPhong)
+        public static string LayMaHoaDonDatTiec(string maPhong, string tenKhachHang, string soDienThoai, DateTime ngayNhanPhong)
         {
             string query = "EXEC uspLayHoaDonDatTiec @maPhong,@tenKhachHang,@soDienThoai,@ngayNhanPhong";
 
@@ -260,11 +260,11 @@ namespace DAO
         //    }
         //    return result == 0 ? false : true;
         //}
-        public static bool ThanhToan(string soHoaDon,DateTime gioRa,int thanhTien,int giamGia)
+        public static bool ThanhToan(string soHoaDon, DateTime gioRa, int thanhTien, int giamGia)
         {
 
             string query = "EXEC uspThanhToanPhong @soHoaDon,@gioRa,@thanhTien,@giamGia";
-    
+
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@soHoaDon",SqlDbType.VarChar){IsNullable=false,Value=soHoaDon },
@@ -274,7 +274,7 @@ namespace DAO
             };
             try
             {
-                 Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
             }
             catch (Exception ex)
             {
@@ -302,9 +302,57 @@ namespace DAO
             {
                 Utility.Log(ex);
             }
-            return result == 0 ? false:true;
+            return result == 0 ? false : true;
         }
-        public static bool KiemTraGoiMon(string ma,int soluong)
+
+        public static bool ThemHoaDonMonAn(string soHoaDon, string ma, int soLuong)
+        {
+            string query = "EXEC uspThemHangHoaDon @soHoaDon,@ma,@soLuong";
+
+            //truyền tham số vào câu truy vấn
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@soHoaDon",SqlDbType.VarChar){IsNullable=false,Value=soHoaDon },
+                new SqlParameter("@soHoaDon",SqlDbType.VarChar){IsNullable=false,Value=ma },
+                new SqlParameter("@soHoaDon",SqlDbType.Int){IsNullable=false,Value=soLuong },
+
+            };
+            try
+            {
+                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+                return false;
+            }
+            return true;
+        }
+        public static bool CapNhatTon(string soHoaDon, string ma, int soLuongCu, int soLuongMoi)
+        {
+            string query = "EXEC uspCapNhatTon @soHoaDon,@ma,@soLuongCu,@soLuongMoi";
+
+            //truyền tham số vào câu truy vấn
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@soHoaDon",SqlDbType.VarChar){IsNullable=false,Value=soHoaDon },
+                new SqlParameter("@soHoaDon",SqlDbType.VarChar){IsNullable=false,Value=ma },
+                new SqlParameter("@soHoaDon",SqlDbType.Int){IsNullable=false,Value=soLuongCu },
+                new SqlParameter("@soHoaDon",SqlDbType.Int){IsNullable=false,Value=soLuongMoi }
+
+            };
+            try
+            {
+                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+                return false;
+            }
+            return true;
+        }
+        public static bool KiemTraGoiMon(string ma, int soluong)
         {
             string query = "EXEC uspKiemTraGoiMon @ma,@soluong";
 

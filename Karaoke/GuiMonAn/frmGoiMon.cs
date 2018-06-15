@@ -423,7 +423,7 @@ namespace Karaoke.GuiMonAn
             {
             }
         }
-
+        private string soluong;
         private void dGVHoaDon_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -432,6 +432,7 @@ namespace Karaoke.GuiMonAn
                 {
                     if (!bKiemTraTon)
                     {
+                        dGVHoaDon[3, e.RowIndex].Value = soluong;
                         MessageBox.Show("Món hàng không đủ số lượng");
                         return;
                     }
@@ -457,6 +458,7 @@ namespace Karaoke.GuiMonAn
                 {
                     if (BUS.HoaDonBUS.KiemTraGoiMon(dGVHoaDon[6, e.RowIndex].Value.ToString(), int.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString())))
                     {
+                        soluong = dGVHoaDon[e.ColumnIndex, e.RowIndex].Value.ToString();
                         bKiemTraTon = true;
                         return;
                     }
@@ -477,17 +479,28 @@ namespace Karaoke.GuiMonAn
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (listCu.Count > 0)
+            if (listMoi.Count > 0)
             {
-                foreach (KeyValuePair<string, int> itemSource in listCu)
+                //foreach (KeyValuePair<string, int> itemSource in listCu)
+                //{
+                //    if (listMoi.ContainsKey(itemSource.Key))
+                //    {
+                //        BUS.HoaDonBUS.CapNhatTon(soHoaDon, itemSource.Key, itemSource.Value, listMoi[itemSource.Key]);
+                //    }
+                //    else
+                //    {
+                //        BUS.HoaDonBUS.ThemHoaDonMonAn(soHoaDon, itemSource.Key, itemSource.Value, listMoi[itemSource.Key]);
+                //    }
+                //}
+                foreach (KeyValuePair<string, int> itemSource in listMoi)
                 {
-                    if (listMoi.ContainsKey(itemSource.Key))
+                    if (listCu.ContainsKey(itemSource.Key))
                     {
-
+                        BUS.HoaDonBUS.CapNhatTon(soHoaDon, itemSource.Key, listCu[itemSource.Key], itemSource.Value);
                     }
                     else
                     {
-
+                        BUS.HoaDonBUS.ThemHoaDonMonAn(soHoaDon, itemSource.Key, itemSource.Value);
                     }
                 }
             }

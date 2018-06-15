@@ -50,6 +50,8 @@ namespace Karaoke.QuanLySanPham
             //bindingSource.Clear();
             dGVPhieuNhap.Columns["SoPhieu"].HeaderText = "Số phiếu";
             dGVPhieuNhap.Columns["MaNhanVien"].Visible = false;
+            dGVPhieuNhap.Columns["TenNhaCungCap"].Visible = false;
+            dGVPhieuNhap.Columns["MaNhaCungCap"].Visible = false;
             dGVPhieuNhap.Columns["NgayDat"].HeaderText = "Ngày đặt";
             dGVPhieuNhap.Columns["NgayGiao"].HeaderText = "Ngày giao";
             dGVPhieuNhap.Columns["ThanhTien"].HeaderText = "Thành tiền";
@@ -70,6 +72,7 @@ namespace Karaoke.QuanLySanPham
                     MessageBox.Show("Lập đơn đặt hàng thành công");
                     frmNhapChiTietSanPham chiTietSanPham = new frmNhapChiTietSanPham(nhaCungCap, phieuNhap);
                     chiTietSanPham.ShowDialog();
+                    bindingSource.DataSource = BUS.SanPhamBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
                 }
                 else
                 {
@@ -198,6 +201,16 @@ namespace Karaoke.QuanLySanPham
         private void btnXoa_Click(object sender, EventArgs e)
         {
             bindingSource.DataSource = BUS.SanPhamBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
