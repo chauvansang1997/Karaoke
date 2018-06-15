@@ -76,14 +76,12 @@ namespace DAO
 		public static bool ThemKhachHang(KhachHang khachHang)
 		{
 			int rowNum = 0;
-			string query = "EXEC usp_ThemKhachHang @maKH,@tenKH,@loaiKH,@sdt";
-			string maKH =khachHang.Ma= DAO.TaoMa.TaoMaKhachHang();
+			string query = "EXEC usp_ThemKhachHang @tenKH,@loaiKH,@sdt";
 			string tenKH = khachHang.Ten;
 			int loaiKH = khachHang.LoaiKH;
 			string sdt = khachHang.SDT;
 			List<SqlParameter> parameters = new List<SqlParameter>
 			{
-				new SqlParameter("@maKH",SqlDbType.NVarChar){IsNullable=false,Value=maKH },
 				new SqlParameter("@tenKH",SqlDbType.NVarChar){IsNullable=false,Value=tenKH },
 				new SqlParameter("@loaiKH",SqlDbType.Int){IsNullable=true,Value=loaiKH!=0?loaiKH:0},
 				new SqlParameter("@sdt",SqlDbType.NVarChar){IsNullable=true,Value=sdt??(Object)DBNull.Value}

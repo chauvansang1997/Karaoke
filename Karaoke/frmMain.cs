@@ -1,4 +1,5 @@
-﻿using Karaoke.NguyenLieu;
+﻿using Karaoke.KhachHang;
+using Karaoke.NguyenLieu;
 using Karaoke.PhongKaoraoke;
 using Karaoke.QuanLySanPham;
 using System;
@@ -64,6 +65,12 @@ namespace Karaoke
         private void nhanDatTiecMenu_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void khachHangMenu_Click(object sender, EventArgs e)
+        {
+            frmKhachHang khachHang = new frmKhachHang();
+            khachHang.ShowDialog();
         }
     }
 }

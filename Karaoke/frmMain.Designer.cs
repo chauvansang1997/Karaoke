@@ -46,6 +46,7 @@
             this.tiếpNhậnKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nhanDatTiecMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.datPhongMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.khachHangMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,12 +56,13 @@
             this.quảnLýNguyênLiệuToolStripMenuItem,
             this.quảnLýSảnPhẩmToolStripMenuItem,
             this.quảnLýThiếtBịToolStripMenuItem,
+            this.tiếpNhậnKháchHàngToolStripMenuItem,
             this.baoCáoToolStripMenuItem,
             this.quảnLýNhânViênToolStripMenuItem,
-            this.tiếpNhậnKháchHàngToolStripMenuItem});
+            this.khachHangMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(759, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(810, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -183,12 +185,19 @@
             this.datPhongMenu.Text = "Đặt phòng";
             this.datPhongMenu.Click += new System.EventHandler(this.datPhongMenu_Click);
             // 
+            // khachHangMenu
+            // 
+            this.khachHangMenu.Name = "khachHangMenu";
+            this.khachHangMenu.Size = new System.Drawing.Size(125, 20);
+            this.khachHangMenu.Text = "Quản lý khách hàng";
+            this.khachHangMenu.Click += new System.EventHandler(this.khachHangMenu_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(216)))), ((int)(((byte)(233)))));
-            this.ClientSize = new System.Drawing.Size(759, 379);
+            this.ClientSize = new System.Drawing.Size(810, 379);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -221,6 +230,7 @@
         private System.Windows.Forms.ToolStripMenuItem tiếpNhậnKháchHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nhanDatTiecMenu;
         private System.Windows.Forms.ToolStripMenuItem datPhongMenu;
+        private System.Windows.Forms.ToolStripMenuItem khachHangMenu;
     }
 }
 

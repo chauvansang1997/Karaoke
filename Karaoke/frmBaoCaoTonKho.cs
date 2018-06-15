@@ -32,11 +32,7 @@ namespace Karaoke
             //lấy datable ,list
             rptTonKhoTheoNgay tonKhoTheoNgay = new rptTonKhoTheoNgay();
             tonKhoTheoNgay.SetDataSource(dataSet);
-            //phieuNhapHang.DataDefinition.FormulaFields["NhaCungCap"].Text = nhaCungCap.Ten;
-            //phieuNhapHang.DataDefinition.FormulaFields["DiaChi"].Text = nhaCungCap.DiaChi;
-            //phieuNhapHang.DataDefinition.FormulaFields["SoDienThoai"].Text = nhaCungCap.SoDienThoai;
-            //phieuNhapHang.DataDefinition.FormulaFields["NguoiDat"].Text = phieuNhap.SoPhieu;
-            //phieuNhapHang.DataDefinition.FormulaFields["NgayDat"].Text = phieuNhap.NgayDat;
+
             crystalReportViewer1.ReportSource = tonKhoTheoNgay;
 
         }
@@ -48,6 +44,20 @@ namespace Karaoke
             dtpNgayKetThuc.Format = DateTimePickerFormat.Custom;
             dtpNgayKetThuc.CustomFormat = "dd/MM/yyyy  hh:mm:ss";
 
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            DataSet dataSet = new TonKhoDataSet();
+            DataTable data = BUS.BaoCaoBUS.XemTonKho(dTPNgayBayDau.Value, dtpNgayKetThuc.Value);
+            //tao khung
+            dataSet.Tables[0].Merge(data);
+
+            //lấy datable ,list
+            rptTonKhoTheoNgay tonKhoTheoNgay = new rptTonKhoTheoNgay();
+            tonKhoTheoNgay.SetDataSource(dataSet);
+
+            crystalReportViewer1.ReportSource = tonKhoTheoNgay;
         }
     }
 }

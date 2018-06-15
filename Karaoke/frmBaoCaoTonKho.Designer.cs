@@ -104,6 +104,7 @@
             this.btnFind.Text = "Xem";
             this.btnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFind.UseVisualStyleBackColor = false;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // frmBaoCaoTonKho
             // 
