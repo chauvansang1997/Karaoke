@@ -47,13 +47,13 @@
             this.cmbNhaCungCap = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnThanhToan = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbChuaGiao = new System.Windows.Forms.RadioButton();
             this.rbDaGiao = new System.Windows.Forms.RadioButton();
             this.btnFind = new System.Windows.Forms.Button();
             this.cmbTKNhaCC = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnThanhToan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVPhieuNhap)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -123,7 +123,7 @@
             this.btnNhapHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhapHang.ForeColor = System.Drawing.Color.White;
             this.btnNhapHang.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapHang.Image")));
-            this.btnNhapHang.Location = new System.Drawing.Point(435, 365);
+            this.btnNhapHang.Location = new System.Drawing.Point(435, 380);
             this.btnNhapHang.Name = "btnNhapHang";
             this.btnNhapHang.Size = new System.Drawing.Size(128, 36);
             this.btnNhapHang.TabIndex = 180;
@@ -200,7 +200,7 @@
             this.btnXoa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(569, 365);
+            this.btnXoa.Location = new System.Drawing.Point(569, 380);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(110, 36);
             this.btnXoa.TabIndex = 168;
@@ -216,7 +216,7 @@
             this.btnSua.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.Location = new System.Drawing.Point(685, 365);
+            this.btnSua.Location = new System.Drawing.Point(685, 380);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(110, 36);
             this.btnSua.TabIndex = 167;
@@ -233,7 +233,7 @@
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(801, 365);
+            this.btnThoat.Location = new System.Drawing.Point(801, 380);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(110, 36);
             this.btnThoat.TabIndex = 165;
@@ -307,23 +307,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(339, 287);
             this.panel2.TabIndex = 182;
-            // 
-            // btnThanhToan
-            // 
-            this.btnThanhToan.BackColor = System.Drawing.Color.LightBlue;
-            this.btnThanhToan.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnThanhToan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThanhToan.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.Image")));
-            this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThanhToan.Location = new System.Drawing.Point(383, 501);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(128, 36);
-            this.btnThanhToan.TabIndex = 173;
-            this.btnThanhToan.Text = "Thanh toán";
-            this.btnThanhToan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThanhToan.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -406,6 +389,23 @@
             this.label2.Text = "Nhà cung cấp:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnThanhToan
+            // 
+            this.btnThanhToan.BackColor = System.Drawing.Color.LightBlue;
+            this.btnThanhToan.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnThanhToan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThanhToan.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.Image")));
+            this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThanhToan.Location = new System.Drawing.Point(383, 501);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(128, 36);
+            this.btnThanhToan.TabIndex = 173;
+            this.btnThanhToan.Text = "Thanh toán";
+            this.btnThanhToan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThanhToan.UseVisualStyleBackColor = false;
+            // 
             // frmNhapNguyenLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,7 +428,7 @@
             this.Controls.Add(this.dGVPhieuNhap);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNhapNguyenLieu";
-            this.Text = "Nhập sản phẩm";
+            this.Text = "Nhập nguyên liệu";
             ((System.ComponentModel.ISupportInitialize)(this.dGVPhieuNhap)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

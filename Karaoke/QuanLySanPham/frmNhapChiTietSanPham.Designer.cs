@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapChiTietSanPham));
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,7 +55,7 @@
             // 
             // txtTotalPage
             // 
-            this.txtTotalPage.Location = new System.Drawing.Point(911, 551);
+            this.txtTotalPage.Location = new System.Drawing.Point(892, 546);
             this.txtTotalPage.Name = "txtTotalPage";
             this.txtTotalPage.ReadOnly = true;
             this.txtTotalPage.Size = new System.Drawing.Size(37, 20);
@@ -64,7 +65,7 @@
             // 
             // txtPageNumber
             // 
-            this.txtPageNumber.Location = new System.Drawing.Point(855, 551);
+            this.txtPageNumber.Location = new System.Drawing.Point(836, 546);
             this.txtPageNumber.Name = "txtPageNumber";
             this.txtPageNumber.Size = new System.Drawing.Size(37, 20);
             this.txtPageNumber.TabIndex = 157;
@@ -75,7 +76,7 @@
             // 
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(894, 551);
+            this.label7.Location = new System.Drawing.Point(875, 546);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(15, 20);
             this.label7.TabIndex = 156;
@@ -84,7 +85,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
             this.panel1.Controls.Add(this.btnIn);
             this.panel1.Controls.Add(this.btnLuu);
             this.panel1.Controls.Add(this.label6);
@@ -107,12 +108,13 @@
             this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIn.ForeColor = System.Drawing.Color.White;
+            this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
             this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnIn.Location = new System.Drawing.Point(283, 532);
+            this.btnIn.Location = new System.Drawing.Point(349, 532);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(100, 36);
             this.btnIn.TabIndex = 184;
-            this.btnIn.Text = "In";
+            this.btnIn.Text = " In";
             this.btnIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIn.UseVisualStyleBackColor = false;
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
@@ -124,12 +126,13 @@
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLuu.Location = new System.Drawing.Point(414, 532);
+            this.btnLuu.Location = new System.Drawing.Point(455, 532);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(100, 36);
             this.btnLuu.TabIndex = 181;
-            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Text = " Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -139,7 +142,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(481, 481);
+            this.label6.Location = new System.Drawing.Point(516, 481);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 19);
             this.label6.TabIndex = 10;
@@ -150,7 +153,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(481, 414);
+            this.label3.Location = new System.Drawing.Point(516, 414);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 19);
             this.label3.TabIndex = 8;
@@ -161,7 +164,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(46, 481);
+            this.label4.Location = new System.Drawing.Point(15, 481);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 19);
             this.label4.TabIndex = 5;
@@ -184,7 +187,7 @@
             this.txtTongCong.AutoSize = true;
             this.txtTongCong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongCong.ForeColor = System.Drawing.Color.White;
-            this.txtTongCong.Location = new System.Drawing.Point(386, 414);
+            this.txtTongCong.Location = new System.Drawing.Point(421, 414);
             this.txtTongCong.Name = "txtTongCong";
             this.txtTongCong.Size = new System.Drawing.Size(108, 19);
             this.txtTongCong.TabIndex = 3;
@@ -196,7 +199,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(44, 414);
+            this.label1.Location = new System.Drawing.Point(15, 414);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 19);
             this.label1.TabIndex = 1;
@@ -238,7 +241,7 @@
             this.txtThanhTien.AutoSize = true;
             this.txtThanhTien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtThanhTien.ForeColor = System.Drawing.Color.White;
-            this.txtThanhTien.Location = new System.Drawing.Point(386, 481);
+            this.txtThanhTien.Location = new System.Drawing.Point(421, 481);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.Size = new System.Drawing.Size(108, 19);
             this.txtThanhTien.TabIndex = 12;
@@ -248,10 +251,10 @@
             // tabControl
             // 
             this.tabControl.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl.Location = new System.Drawing.Point(571, 1);
+            this.tabControl.Location = new System.Drawing.Point(581, 12);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(597, 547);
+            this.tabControl.Size = new System.Drawing.Size(597, 529);
             this.tabControl.TabIndex = 0;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
@@ -262,7 +265,7 @@
             this.btnFirstPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirstPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFirstPage.Location = new System.Drawing.Point(803, 547);
+            this.btnFirstPage.Location = new System.Drawing.Point(784, 546);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(24, 24);
             this.btnFirstPage.TabIndex = 162;
@@ -276,7 +279,7 @@
             this.btnLastPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnLastPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLastPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLastPage.Location = new System.Drawing.Point(976, 547);
+            this.btnLastPage.Location = new System.Drawing.Point(957, 546);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(24, 24);
             this.btnLastPage.TabIndex = 161;
@@ -290,7 +293,7 @@
             this.btnPrevPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnPrevPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPrevPage.Location = new System.Drawing.Point(829, 547);
+            this.btnPrevPage.Location = new System.Drawing.Point(810, 546);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(24, 24);
             this.btnPrevPage.TabIndex = 160;
@@ -304,7 +307,7 @@
             this.btnNextPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnNextPage.Location = new System.Drawing.Point(950, 547);
+            this.btnNextPage.Location = new System.Drawing.Point(931, 546);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(24, 24);
             this.btnNextPage.TabIndex = 159;
@@ -315,7 +318,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1195, 578);
+            this.ClientSize = new System.Drawing.Size(1186, 578);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtTotalPage);
             this.Controls.Add(this.btnFirstPage);
@@ -325,8 +328,9 @@
             this.Controls.Add(this.btnPrevPage);
             this.Controls.Add(this.btnNextPage);
             this.Controls.Add(this.tabControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNhapChiTietSanPham";
-            this.Text = "Chọn món";
+            this.Text = "Quản lý chi tiết nhập sản phẩm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVHoaDon)).EndInit();
