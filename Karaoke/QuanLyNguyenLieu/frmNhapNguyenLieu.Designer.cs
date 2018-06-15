@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapNguyenLieu));
             this.cmbNhaCungCap = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dGVPhieuNhap = new System.Windows.Forms.DataGridView();
@@ -387,8 +388,9 @@
             this.Controls.Add(this.dGVPhieuNhap);
             this.Controls.Add(this.cmbNhaCungCap);
             this.Controls.Add(this.label7);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNhapNguyenLieu";
-            this.Text = "frmNhapSanPham";
+            this.Text = "Nhập sản phẩm";
             ((System.ComponentModel.ISupportInitialize)(this.dGVPhieuNhap)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

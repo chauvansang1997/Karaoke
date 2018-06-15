@@ -80,12 +80,7 @@ namespace Karaoke.GuiMonAn
         }
         private void btnThemNguyenLieu_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnThemNguyenLieu_Click_1(object sender, EventArgs e)
-        {
-            frmThemNguyenLieuMonAn nguyenLieuMonAn = new frmThemNguyenLieuMonAn(this);
+            frmThemNguyenLieuMonAn nguyenLieuMonAn = new frmThemNguyenLieuMonAn(dtNguyenLieu);
             nguyenLieuMonAn.ShowDialog();
             //if (dtNguyenLieu.Rows.Count == 0)
             //{

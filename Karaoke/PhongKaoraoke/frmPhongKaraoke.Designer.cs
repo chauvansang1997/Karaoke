@@ -48,6 +48,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnTrong = new System.Windows.Forms.Button();
             this.btnDaDat = new System.Windows.Forms.Button();
+            this.btnTatCa = new System.Windows.Forms.Button();
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,7 +58,6 @@
             this.btnNextPage = new System.Windows.Forms.Button();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnDatPhong = new System.Windows.Forms.Button();
-            this.btnTatCa = new System.Windows.Forms.Button();
             this.phongKaraoke1 = new Karaoke.PhongLayout();
             this.phongKaraoke2 = new Karaoke.PhongLayout();
             this.phongKaraoke3 = new Karaoke.PhongLayout();
@@ -282,7 +282,7 @@
             this.btnTrong.Image = ((System.Drawing.Image)(resources.GetObject("btnTrong.Image")));
             this.btnTrong.Location = new System.Drawing.Point(3, 126);
             this.btnTrong.Name = "btnTrong";
-            this.btnTrong.Size = new System.Drawing.Size(146, 60);
+            this.btnTrong.Size = new System.Drawing.Size(145, 60);
             this.btnTrong.TabIndex = 2;
             this.btnTrong.Text = "  Chưa đặt";
             this.btnTrong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -298,12 +298,28 @@
             this.btnDaDat.Image = ((System.Drawing.Image)(resources.GetObject("btnDaDat.Image")));
             this.btnDaDat.Location = new System.Drawing.Point(3, 185);
             this.btnDaDat.Name = "btnDaDat";
-            this.btnDaDat.Size = new System.Drawing.Size(146, 60);
+            this.btnDaDat.Size = new System.Drawing.Size(145, 60);
             this.btnDaDat.TabIndex = 1;
             this.btnDaDat.Text = "  Đã đặt";
             this.btnDaDat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDaDat.UseVisualStyleBackColor = true;
             this.btnDaDat.Click += new System.EventHandler(this.btnDaDat_Click);
+            // 
+            // btnTatCa
+            // 
+            this.btnTatCa.FlatAppearance.BorderSize = 0;
+            this.btnTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTatCa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTatCa.ForeColor = System.Drawing.Color.White;
+            this.btnTatCa.Image = ((System.Drawing.Image)(resources.GetObject("btnTatCa.Image")));
+            this.btnTatCa.Location = new System.Drawing.Point(2, 67);
+            this.btnTatCa.Name = "btnTatCa";
+            this.btnTatCa.Size = new System.Drawing.Size(145, 60);
+            this.btnTatCa.TabIndex = 187;
+            this.btnTatCa.Text = " Tất cả";
+            this.btnTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTatCa.UseVisualStyleBackColor = true;
+            this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
             // 
             // txtTotalPage
             // 
@@ -400,9 +416,9 @@
             this.btnThanhToan.ForeColor = System.Drawing.Color.White;
             this.btnThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.Image")));
             this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThanhToan.Location = new System.Drawing.Point(777, 566);
+            this.btnThanhToan.Location = new System.Drawing.Point(768, 560);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(204, 36);
+            this.btnThanhToan.Size = new System.Drawing.Size(212, 36);
             this.btnThanhToan.TabIndex = 186;
             this.btnThanhToan.Text = " Gọi món/Thanh toán";
             this.btnThanhToan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -417,7 +433,7 @@
             this.btnDatPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatPhong.ForeColor = System.Drawing.Color.White;
             this.btnDatPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnDatPhong.Image")));
-            this.btnDatPhong.Location = new System.Drawing.Point(643, 566);
+            this.btnDatPhong.Location = new System.Drawing.Point(634, 560);
             this.btnDatPhong.Name = "btnDatPhong";
             this.btnDatPhong.Size = new System.Drawing.Size(128, 36);
             this.btnDatPhong.TabIndex = 184;
@@ -425,21 +441,6 @@
             this.btnDatPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDatPhong.UseVisualStyleBackColor = false;
             this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
-            // 
-            // btnTatCa
-            // 
-            this.btnTatCa.FlatAppearance.BorderSize = 0;
-            this.btnTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTatCa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTatCa.ForeColor = System.Drawing.Color.White;
-            this.btnTatCa.Image = ((System.Drawing.Image)(resources.GetObject("btnTatCa.Image")));
-            this.btnTatCa.Location = new System.Drawing.Point(2, 67);
-            this.btnTatCa.Name = "btnTatCa";
-            this.btnTatCa.Size = new System.Drawing.Size(148, 60);
-            this.btnTatCa.TabIndex = 187;
-            this.btnTatCa.Text = " Tất cả";
-            this.btnTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTatCa.UseVisualStyleBackColor = true;
             // 
             // phongKaraoke1
             // 

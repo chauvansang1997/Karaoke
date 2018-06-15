@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapCTNguyenLieu));
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.btnFirstPage = new System.Windows.Forms.Button();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
@@ -48,7 +49,6 @@
             this.dGVHoaDon = new System.Windows.Forms.DataGridView();
             this.Xoa = new System.Windows.Forms.DataGridViewImageColumn();
             this.dGVNguyenLieu = new System.Windows.Forms.DataGridView();
-            this.btnFind = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbHetSoLuong = new System.Windows.Forms.RadioButton();
             this.rbTatCa = new System.Windows.Forms.RadioButton();
@@ -56,6 +56,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnChon = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.btnFind = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVNguyenLieu)).BeginInit();
@@ -64,7 +65,7 @@
             // 
             // txtTotalPage
             // 
-            this.txtTotalPage.Location = new System.Drawing.Point(740, 558);
+            this.txtTotalPage.Location = new System.Drawing.Point(888, 504);
             this.txtTotalPage.Name = "txtTotalPage";
             this.txtTotalPage.ReadOnly = true;
             this.txtTotalPage.Size = new System.Drawing.Size(37, 20);
@@ -79,7 +80,7 @@
             this.btnFirstPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirstPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFirstPage.Location = new System.Drawing.Point(632, 554);
+            this.btnFirstPage.Location = new System.Drawing.Point(780, 504);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(24, 24);
             this.btnFirstPage.TabIndex = 162;
@@ -88,7 +89,7 @@
             // 
             // txtPageNumber
             // 
-            this.txtPageNumber.Location = new System.Drawing.Point(684, 558);
+            this.txtPageNumber.Location = new System.Drawing.Point(832, 504);
             this.txtPageNumber.Name = "txtPageNumber";
             this.txtPageNumber.Size = new System.Drawing.Size(37, 20);
             this.txtPageNumber.TabIndex = 157;
@@ -102,7 +103,7 @@
             this.btnLastPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnLastPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLastPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLastPage.Location = new System.Drawing.Point(805, 554);
+            this.btnLastPage.Location = new System.Drawing.Point(953, 504);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(24, 24);
             this.btnLastPage.TabIndex = 161;
@@ -113,7 +114,7 @@
             // 
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(723, 558);
+            this.label7.Location = new System.Drawing.Point(871, 504);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(15, 20);
             this.label7.TabIndex = 156;
@@ -127,7 +128,7 @@
             this.btnPrevPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnPrevPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPrevPage.Location = new System.Drawing.Point(658, 554);
+            this.btnPrevPage.Location = new System.Drawing.Point(806, 504);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(24, 24);
             this.btnPrevPage.TabIndex = 160;
@@ -141,7 +142,7 @@
             this.btnNextPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnNextPage.Location = new System.Drawing.Point(779, 554);
+            this.btnNextPage.Location = new System.Drawing.Point(927, 504);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(24, 24);
             this.btnNextPage.TabIndex = 159;
@@ -150,7 +151,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
             this.panel1.Controls.Add(this.btnIn);
             this.panel1.Controls.Add(this.btnLuu);
             this.panel1.Controls.Add(this.txtThanhTien);
@@ -163,7 +164,7 @@
             this.panel1.Controls.Add(this.dGVHoaDon);
             this.panel1.Location = new System.Drawing.Point(0, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(572, 580);
+            this.panel1.Size = new System.Drawing.Size(572, 584);
             this.panel1.TabIndex = 163;
             // 
             // btnIn
@@ -173,12 +174,13 @@
             this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIn.ForeColor = System.Drawing.Color.White;
+            this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
             this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnIn.Location = new System.Drawing.Point(283, 532);
+            this.btnIn.Location = new System.Drawing.Point(351, 532);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(100, 36);
             this.btnIn.TabIndex = 184;
-            this.btnIn.Text = "In";
+            this.btnIn.Text = " In";
             this.btnIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIn.UseVisualStyleBackColor = false;
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
@@ -190,12 +192,13 @@
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLuu.Location = new System.Drawing.Point(414, 532);
+            this.btnLuu.Location = new System.Drawing.Point(457, 532);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(100, 36);
             this.btnLuu.TabIndex = 181;
-            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Text = " Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -205,7 +208,7 @@
             this.txtThanhTien.AutoSize = true;
             this.txtThanhTien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtThanhTien.ForeColor = System.Drawing.Color.White;
-            this.txtThanhTien.Location = new System.Drawing.Point(386, 481);
+            this.txtThanhTien.Location = new System.Drawing.Point(376, 481);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.Size = new System.Drawing.Size(108, 19);
             this.txtThanhTien.TabIndex = 12;
@@ -287,7 +290,7 @@
             this.dGVHoaDon.AllowUserToResizeColumns = false;
             this.dGVHoaDon.AllowUserToResizeRows = false;
             this.dGVHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dGVHoaDon.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dGVHoaDon.BackgroundColor = System.Drawing.Color.White;
             this.dGVHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Xoa});
@@ -317,6 +320,7 @@
             this.dGVNguyenLieu.AllowUserToDeleteRows = false;
             this.dGVNguyenLieu.AllowUserToResizeColumns = false;
             this.dGVNguyenLieu.AllowUserToResizeRows = false;
+            this.dGVNguyenLieu.BackgroundColor = System.Drawing.Color.White;
             this.dGVNguyenLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVNguyenLieu.Location = new System.Drawing.Point(590, 99);
             this.dGVNguyenLieu.MultiSelect = false;
@@ -324,28 +328,9 @@
             this.dGVNguyenLieu.ReadOnly = true;
             this.dGVNguyenLieu.RowHeadersVisible = false;
             this.dGVNguyenLieu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGVNguyenLieu.Size = new System.Drawing.Size(571, 442);
+            this.dGVNguyenLieu.Size = new System.Drawing.Size(571, 399);
             this.dGVNguyenLieu.TabIndex = 164;
             this.dGVNguyenLieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVNguyenLieu_CellClick);
-            // 
-            // btnFind
-            // 
-            this.btnFind.BackColor = System.Drawing.Color.LightGray;
-            this.btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnFind.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFind.FlatAppearance.BorderSize = 0;
-            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFind.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFind.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnFind.Image = global::Karaoke.Properties.Resources.loupe;
-            this.btnFind.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFind.Location = new System.Drawing.Point(590, 63);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(110, 30);
-            this.btnFind.TabIndex = 165;
-            this.btnFind.Text = "Tìm kiếm";
-            this.btnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFind.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -353,7 +338,7 @@
             this.groupBox1.Controls.Add(this.rbTatCa);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(962, 15);
+            this.groupBox1.Location = new System.Drawing.Point(977, 15);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(184, 78);
             this.groupBox1.TabIndex = 168;
@@ -391,7 +376,7 @@
             // 
             this.txtTenNguyenLieu.BackColor = System.Drawing.Color.White;
             this.txtTenNguyenLieu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenNguyenLieu.Location = new System.Drawing.Point(770, 29);
+            this.txtTenNguyenLieu.Location = new System.Drawing.Point(715, 22);
             this.txtTenNguyenLieu.Name = "txtTenNguyenLieu";
             this.txtTenNguyenLieu.Size = new System.Drawing.Size(189, 27);
             this.txtTenNguyenLieu.TabIndex = 167;
@@ -401,7 +386,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label11.Location = new System.Drawing.Point(644, 31);
+            this.label11.Location = new System.Drawing.Point(587, 27);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(120, 22);
             this.label11.TabIndex = 166;
@@ -410,45 +395,64 @@
             // 
             // btnChon
             // 
-            this.btnChon.BackColor = System.Drawing.Color.Transparent;
+            this.btnChon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
             this.btnChon.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnChon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChon.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChon.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnChon.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChon.Location = new System.Drawing.Point(905, 546);
+            this.btnChon.ForeColor = System.Drawing.Color.White;
+            this.btnChon.Image = ((System.Drawing.Image)(resources.GetObject("btnChon.Image")));
+            this.btnChon.Location = new System.Drawing.Point(955, 532);
             this.btnChon.Name = "btnChon";
             this.btnChon.Size = new System.Drawing.Size(100, 36);
             this.btnChon.TabIndex = 182;
-            this.btnChon.Text = "Chọn";
+            this.btnChon.Text = " Chọn";
             this.btnChon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChon.UseVisualStyleBackColor = false;
             this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
             // 
             // btnThoat
             // 
-            this.btnThoat.BackColor = System.Drawing.Color.Transparent;
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
             this.btnThoat.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThoat.Location = new System.Drawing.Point(1037, 546);
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.Location = new System.Drawing.Point(1061, 532);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(100, 36);
             this.btnThoat.TabIndex = 185;
-            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Text = " Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThoat.UseVisualStyleBackColor = false;
+            // 
+            // btnFind
+            // 
+            this.btnFind.BackColor = System.Drawing.Color.Transparent;
+            this.btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnFind.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFind.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFind.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnFind.Image = ((System.Drawing.Image)(resources.GetObject("btnFind.Image")));
+            this.btnFind.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnFind.Location = new System.Drawing.Point(590, 63);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(110, 30);
+            this.btnFind.TabIndex = 186;
+            this.btnFind.Text = "Tìm kiếm";
+            this.btnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFind.UseVisualStyleBackColor = false;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // frmNhapCTNguyenLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1195, 604);
+            this.ClientSize = new System.Drawing.Size(1174, 580);
+            this.Controls.Add(this.btnFind);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnChon);
-            this.Controls.Add(this.btnFind);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtTenNguyenLieu);
             this.Controls.Add(this.label11);
@@ -461,8 +465,9 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnPrevPage);
             this.Controls.Add(this.btnNextPage);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNhapCTNguyenLieu";
-            this.Text = "Chọn món";
+            this.Text = "Quản lý nhập nguyên liệu";
             this.Load += new System.EventHandler(this.frmNhapCTNguyenLieu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -496,7 +501,6 @@
         private System.Windows.Forms.Button btnIn;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.DataGridView dGVNguyenLieu;
-        private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbHetSoLuong;
         private System.Windows.Forms.RadioButton rbTatCa;
@@ -504,5 +508,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnChon;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnFind;
     }
 }

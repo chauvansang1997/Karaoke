@@ -60,7 +60,6 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuu.UseVisualStyleBackColor = false;
-            this.btnLuu.MouseHover += new System.EventHandler(this.btnLuu_MouseHover);
             // 
             // label1
             // 
