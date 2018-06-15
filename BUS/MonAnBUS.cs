@@ -11,10 +11,11 @@ namespace BUS
 {
     public static class MonAnBUS
     {
-        public static bool ThemMonAn(MonAn monAn,List<string> listMaNguyenLieu)
+        public static bool ThemMonAn(MonAn monAn,List<string> listMaNguyenLieu, List<string> listSoLuongNL)
         {
             string listNguyenLieu = String.Join("|", listMaNguyenLieu);
-            return MonAnDAO.ThemMonAn(monAn, listNguyenLieu);
+            string listSoLuong = String.Join("|", listSoLuongNL);
+            return MonAnDAO.ThemMonAn(monAn, listNguyenLieu, listSoLuong);
         }
 
         public static bool CapNhatMonAn(MonAn monAn, List<string> listMaNguyenLieu)

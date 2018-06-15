@@ -97,7 +97,7 @@ namespace DAO
         }
         public static List<HangHoa> XemSanPham(string nhaCungCap, int loai, int pageNumber, int pageSize)
         {
-            string query = "EXEC uspXemSanPham @nhaCungCap,@loai,@pageNumber,@pageSize";
+            string query = "EXEC uspXemSanPham @nhaCungCap,@loai,'',@pageNumber,@pageSize";
 
             //truyền tham số vào câu truy vấn
             List<SqlParameter> parameters = new List<SqlParameter>()

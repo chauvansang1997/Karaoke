@@ -324,18 +324,6 @@
     <Compile Include="QuanLySanPham\frmSamPham.Designer.cs">
       <DependentUpon>frmSamPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyThietBi\frmSuaThietBi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyThietBi\frmSuaThietBi.Designer.cs">
-      <DependentUpon>frmSuaThietBi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyThietBi\frmThemThietBi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyThietBi\frmThemThietBi.Designer.cs">
-      <DependentUpon>frmThemThietBi.cs</DependentUpon>
-    </Compile>
     <Compile Include="QuanLyThietBi\frmThietBi.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -10,11 +10,11 @@ namespace DAO.QuanLyHangHoa
 {
     public static class MonAnDAO
     {
-        public static bool ThemMonAn(MonAn monAn,string listNguyenLieu)
+        public static bool ThemMonAn(MonAn monAn,string listNguyenLieu,string listSoLuong)
         {
            
             //Thêm món ăn
-            string query = " EXEC uspThemMonAn @listNguyenLieu,@mamon,@tenmon,@loaimon,@anhminhhoa,@dongia";
+            string query = " EXEC uspThemMonAn @listNguyenLieu,@listSoLuong,@tenmon,@loaimon,@anhminhhoa,@dongia";
 
 
            
@@ -22,6 +22,7 @@ namespace DAO.QuanLyHangHoa
             List<SqlParameter> parameters = new List<SqlParameter>()
             { 
                 new SqlParameter("@listNguyenLieu", SqlDbType.VarChar) { IsNullable = false, Value = listNguyenLieu },
+                    new SqlParameter("@listSoLuong", SqlDbType.VarChar) { IsNullable = false, Value = listSoLuong },
                 new SqlParameter("@tenmon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Ten },
                 new SqlParameter("@loaimon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Loai },
                 new SqlParameter("@anhminhhoa",SqlDbType.VarChar){IsNullable=false,Value=monAn.TenHinhAnh },
@@ -36,8 +37,6 @@ namespace DAO.QuanLyHangHoa
                 Utility.Log(ex);
                 return false;
             }
-          
-
             return true;
         }
 

@@ -34,7 +34,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnIn = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.txtThanhTien = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dGVHoaDon = new System.Windows.Forms.DataGridView();
             this.Xoa = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtThanhTien = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.btnFirstPage = new System.Windows.Forms.Button();
             this.btnLastPage = new System.Windows.Forms.Button();
@@ -133,18 +133,6 @@
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // txtThanhTien
-            // 
-            this.txtThanhTien.AutoSize = true;
-            this.txtThanhTien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThanhTien.ForeColor = System.Drawing.Color.White;
-            this.txtThanhTien.Location = new System.Drawing.Point(386, 481);
-            this.txtThanhTien.Name = "txtThanhTien";
-            this.txtThanhTien.Size = new System.Drawing.Size(108, 19);
-            this.txtThanhTien.TabIndex = 12;
-            this.txtThanhTien.Text = "10000000000";
-            this.txtThanhTien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label6
             // 
@@ -245,9 +233,21 @@
             this.Xoa.Name = "Xoa";
             this.Xoa.Width = 32;
             // 
+            // txtThanhTien
+            // 
+            this.txtThanhTien.AutoSize = true;
+            this.txtThanhTien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThanhTien.ForeColor = System.Drawing.Color.White;
+            this.txtThanhTien.Location = new System.Drawing.Point(386, 481);
+            this.txtThanhTien.Name = "txtThanhTien";
+            this.txtThanhTien.Size = new System.Drawing.Size(108, 19);
+            this.txtThanhTien.TabIndex = 12;
+            this.txtThanhTien.Text = "10000000000";
+            this.txtThanhTien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // tabControl
             // 
-            this.tabControl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl.Location = new System.Drawing.Point(571, 1);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
