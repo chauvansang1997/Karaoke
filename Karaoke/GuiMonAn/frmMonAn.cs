@@ -38,7 +38,7 @@ namespace Karaoke.GuiMonAn
             dtNguyenLieu = new DataTable();
             dGVMonAn.DataSource = dtNguyenLieu;
 
-            bindingSource.Add(new NguyenLieuDataSource());
+            bindingSource.Add(new PhieuNhapHangDataSource());
             dGVNguyenLieu.DataSource = bindingSource;
             bindingSource.RemoveAt(0);
             dGVNguyenLieu.Columns["Ten"].HeaderText = "Tên";
@@ -183,12 +183,12 @@ namespace Karaoke.GuiMonAn
             List<string> monan = new List<string>();
             for (int i = 0; i < bindingSource.Count; i++)
             {
-                monan.Add(((NguyenLieuDataSource)bindingSource[i]).Ma);
+                monan.Add(((PhieuNhapHangDataSource)bindingSource[i]).Ma);
             }
             List<string> soluong = new List<string>();
             for (int i = 0; i < bindingSource.Count; i++)
             {
-                soluong.Add(((NguyenLieuDataSource)bindingSource[i]).Soluong);
+                soluong.Add(((PhieuNhapHangDataSource)bindingSource[i]).Soluong);
             }
             BUS.MonAnBUS.ThemMonAn(new DTO.MonAn() { Ten = txtTenMonAn.Text, Loai = ((LoaiMon)cmbLoaiMon.SelectedValue).Ma, Gia = donGia, TenHinhAnh = tenHinhAnh },
                monan,

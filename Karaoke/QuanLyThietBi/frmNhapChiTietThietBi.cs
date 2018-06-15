@@ -1,23 +1,21 @@
 ﻿using DTO;
 using Karaoke.QuanLyNguyenLieu;
-using Karaoke.QuanLySanPham;
 using Subro.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Karaoke.NguyenLieu
+namespace Karaoke.QuanLyThietBi
 {
-    public partial class frmNhapCTNguyenLieu : Form
+    public partial class frmNhapChiTietThietBi : Form
     {
-       
-        public frmNhapCTNguyenLieu(DTO.NhaCungCap nhaCungCap, PhieuNhapHang phieuNhapHang)
+
+        public frmNhapChiTietThietBi(DTO.NhaCungCap nhaCungCap, PhieuNhapHang phieuNhapHang)
         {
             this.nhaCungCap = nhaCungCap;
             this.phieuNhapHang = phieuNhapHang;
@@ -38,8 +36,8 @@ namespace Karaoke.NguyenLieu
         private HashSet<string> hashMaHangHoa;
         private DataTable dtHoaDon;
         private BindingSource bindingSource = new BindingSource();
-        private BindingList<PhieuNhapHangDataSource> bindingListPhieu=new BindingList<PhieuNhapHangDataSource>();
-        private BindingList<DTO.NguyenLieu> bindingListNguyenLieu = new BindingList<DTO.NguyenLieu>();
+        private BindingList<PhieuNhapHangDataSource> bindingListPhieu = new BindingList<PhieuNhapHangDataSource>();
+        private BindingList<DTO.ThietBi> bindingListNguyenLieu = new BindingList<DTO.ThietBi>();
         private BindingSource nguyenLieuSource = new BindingSource();
         private uint tongCong;
         private float giamGia;
@@ -84,27 +82,25 @@ namespace Karaoke.NguyenLieu
             //grouper.Options.GroupSortOrder = SortOrder.None;
             //    grouper.DisplayGroup += grouper_DisplayGroup;
 
-            nguyenLieuSource.Add(BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu("", nhaCungCap.MaNCC, false, 1, pageSize));
+            nguyenLieuSource.Add(BUS.ThietBiBUS.XemThietBi("", nhaCungCap.MaNCC, 1, pageSize));
             //  nguyenLieuSource.da
-            bindingListNguyenLieu =new BindingList<DTO.NguyenLieu>( BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu("", nhaCungCap.MaNCC, false, 1, pageSize));
+            bindingListNguyenLieu = new BindingList<DTO.ThietBi>(BUS.ThietBiBUS.XemThietBi("", nhaCungCap.MaNCC, 1, pageSize));
             dGVNguyenLieu.DataSource = bindingListNguyenLieu;
             dGVNguyenLieu.Columns["Ten"].HeaderText = "Tên";
             dGVNguyenLieu.Columns["Ma"].HeaderText = "Mã";
-            dGVNguyenLieu.Columns["Loai"].HeaderText = "Loại";
-            dGVNguyenLieu.Columns["NhaCungCap"].HeaderText = "Nhà cung cấp";
-            dGVNguyenLieu.Columns["DonViTinh"].HeaderText = "Đơn vị tinh";
+            dGVNguyenLieu.Columns["TenNhaCungCap"].HeaderText = "Nhà cung cấp";
+            dGVNguyenLieu.Columns["DVT"].HeaderText = "Đơn vị tinh";
             dGVNguyenLieu.Columns["Dongia"].HeaderText = "Đơn giá";
-            dGVNguyenLieu.Columns["SoLuongTon"].HeaderText = "Số lượng tồn";
-            dGVNguyenLieu.Columns["SoLuongToiThieu"].Visible = false;
-
-            List<PhieuNhapHangDataSource> temp = BUS.NguyenLieuBUS.XemChiTietPhieuNhapNguyenlieu(phieuNhapHang.SoPhieu);
+            dGVNguyenLieu.Columns["MaNCC"].Visible = false;
+            
+            List<PhieuNhapHangDataSource> temp = BUS.ThietBiBUS.XemChiTietPhieuNhapThietBi(phieuNhapHang.SoPhieu);
             if (temp != null)
             {
                 uint tongCong = 0;
                 for (int i = 0; i < temp.Count; i++)
                 {
                     hashMaHangHoa.Add(temp[i].Ma);
-                  
+
                     bindingSource.Add(temp[i]);
                     tongCong += uint.Parse(temp[i].Thanhtien);
 
@@ -145,6 +141,12 @@ namespace Karaoke.NguyenLieu
 
 
         }
+
+        private void frmNhapCTNguyenLieu_Load(object sender, EventArgs e)
+        {
+            
+        }
+
         private void sapXepLaiDanhSachHoaDon()
         {
             bindingSource.Clear();
@@ -189,13 +191,13 @@ namespace Karaoke.NguyenLieu
 
             pageNumber = 1;
             txtPageNumber.Text = "1";
-            totalPage = BUS.NguyenLieuBUS.DemNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, rbHetSoLuong.Checked);
+            totalPage = BUS.ThietBiBUS.DemThietBi(txtTenNguyenLieu.Text, nhaCungCap.MaNCC);
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
             txtTotalPage.Text = totalPage.ToString();
 
-            bindingListNguyenLieu = new BindingList<DTO.NguyenLieu>(
-                BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, rbHetSoLuong.Checked, pageNumber, pageSize));
-           // bindingList = ;
+            bindingListNguyenLieu = new BindingList<DTO.ThietBi>(
+             BUS.ThietBiBUS.XemThietBi(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, pageNumber, pageSize));
+            // bindingList = ;
 
             //nguyenLieuSource.DataSource
 
@@ -209,7 +211,7 @@ namespace Karaoke.NguyenLieu
 
 
         }
-  
+
         private void btnNextPage_Click(object sender, EventArgs e)
         {
             if (pageNumber + 1 > totalPage)
@@ -221,7 +223,7 @@ namespace Karaoke.NguyenLieu
                 ++pageNumber;
             }
             txtPageNumber.Text = pageNumber.ToString();
-            nguyenLieuSource.Add(BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, rbHetSoLuong.Checked, pageNumber, pageSize));
+            nguyenLieuSource.Add(BUS.ThietBiBUS.XemThietBi(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, pageNumber, pageSize));
         }
 
         private void btnPrevPage_Click(object sender, EventArgs e)
@@ -235,21 +237,21 @@ namespace Karaoke.NguyenLieu
                 --pageNumber;
             }
             txtPageNumber.Text = pageNumber.ToString();
-            nguyenLieuSource.Add(BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, rbHetSoLuong.Checked, pageNumber, pageSize));
+            nguyenLieuSource.Add(BUS.ThietBiBUS.XemThietBi(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, pageNumber, pageSize));
         }
 
         private void btnFirstPage_Click(object sender, EventArgs e)
         {
             pageNumber = 1;
             txtPageNumber.Text = pageNumber.ToString();
-            nguyenLieuSource.Add(BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, rbHetSoLuong.Checked, pageNumber, pageSize));
+            nguyenLieuSource.Add(BUS.ThietBiBUS.XemThietBi(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, pageNumber, pageSize));
         }
 
         private void btnLastPage_Click(object sender, EventArgs e)
         {
             pageNumber = totalPage;
             txtPageNumber.Text = pageNumber.ToString();
-            nguyenLieuSource.Add(BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, rbHetSoLuong.Checked, pageNumber, pageSize));
+            nguyenLieuSource.Add(BUS.ThietBiBUS.XemThietBi(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, pageNumber, pageSize));
         }
 
         private void txtPageNumber_TextChanged(object sender, EventArgs e)
@@ -271,7 +273,7 @@ namespace Karaoke.NguyenLieu
 
                 txtPageNumber.Text = pageNumber.ToString();
             }
-            nguyenLieuSource.Add(BUS.NguyenLieuBUS.TimKiemDanhSachNguyenLieu(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, rbHetSoLuong.Checked, pageNumber, pageSize));
+            nguyenLieuSource.Add(BUS.ThietBiBUS.XemThietBi(txtTenNguyenLieu.Text, nhaCungCap.MaNCC, pageNumber, pageSize));
         }
 
 
@@ -281,17 +283,17 @@ namespace Karaoke.NguyenLieu
         {
             try
             {
-                if(phieuNhapHang.NgayGiao!="" && phieuNhapHang.NgayGiao != null)
+                if (phieuNhapHang.NgayGiao != "" && phieuNhapHang.NgayGiao != null)
                 {
                     MessageBox.Show("Đơn đặt hàng đã giao bạn không được phép sửa");
                     return;
                 }
                 if (e.ColumnIndex == 0 && e.RowIndex > -1)
                 {
-                   
+
                     string maHangHoa = dGVHoaDon[1, e.RowIndex].Value.ToString();
                     hashMaHangHoa.Remove(maHangHoa);
-                    
+
 
                     TongCong = TongCong - (uint.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString()) *
                         uint.Parse(dGVHoaDon[4, e.RowIndex].Value.ToString()));
@@ -356,7 +358,7 @@ namespace Karaoke.NguyenLieu
                 maSanPham.Add(ma);
                 soluongSanPham.Add(soluong);
             }
-            if (BUS.NguyenLieuBUS.NhapHangNguyeLieu(phieuNhapHang.SoPhieu, maSanPham, soluongSanPham, TongCong))
+            if (BUS.ThietBiBUS.NhapHang(phieuNhapHang.SoPhieu, maSanPham, soluongSanPham, TongCong))
             {
                 MessageBox.Show("Lưu thành công");
             }
@@ -480,7 +482,7 @@ namespace Karaoke.NguyenLieu
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            frmInDonDatNguyenLieu   inDonDatNguyenLieu = new frmInDonDatNguyenLieu(nhaCungCap, phieuNhapHang);
+            frmInDonDatNguyenLieu inDonDatNguyenLieu = new frmInDonDatNguyenLieu(nhaCungCap, phieuNhapHang);
             inDonDatNguyenLieu.ShowDialog();
         }
 
@@ -505,45 +507,40 @@ namespace Karaoke.NguyenLieu
             {
                 int index = dGVNguyenLieu.CurrentRow.Index;
                 string soHD = dGVNguyenLieu[5, index].Value.ToString();
-                DTO.NguyenLieu nguyenLieu= bindingListNguyenLieu[index];
+                DTO.ThietBi thietBi = bindingListNguyenLieu[index];
 
-                if (hashMaHangHoa.Contains(nguyenLieu.Ma))
+                if (hashMaHangHoa.Contains(thietBi.Ma))
                 {
                     for (int i = 0; i < bindingSource.Count; i++)
                     {
-                        if(((PhieuNhapHangDataSource)bindingSource[i]).Ma== nguyenLieu.Ma)
+                        if (((PhieuNhapHangDataSource)bindingSource[i]).Ma == thietBi.Ma)
                         {
                             index = i;
                             break;
                         }
                     }
-               
+
                     dGVHoaDon[4, index].Value = int.Parse(dGVHoaDon[4, index].Value.ToString()) + 1;
                     return;
                 }
-     
-                string maHangHoa = nguyenLieu.Ma;
-            
+
+                string maHangHoa = thietBi.Ma;
+
 
 
                 hashMaHangHoa.Add(maHangHoa);
                 bindingSource.Add(new PhieuNhapHangDataSource()
                 {
-                    Ma = nguyenLieu.Ma,
-                    Ten = nguyenLieu.Ten,
-                    DonViTinh = nguyenLieu.DonViTinh,
-                    Gia = nguyenLieu.Dongia.ToString(),
-                    Loai = nguyenLieu.Loai,
+                    Ma = thietBi.Ma,
+                    Ten = thietBi.Ten,
+                    DonViTinh = thietBi.DVT,
+                    Gia = thietBi.DonGia,
+                 
                     Soluong = "1",
-                    Thanhtien = nguyenLieu.Dongia.ToString(),
+                    Thanhtien = thietBi.DonGia,
                 });
-                TongCong = TongCong +nguyenLieu.Dongia;
+                TongCong = TongCong + uint.Parse(thietBi.DonGia);
             }
-        }
-
-        private void frmNhapCTNguyenLieu_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -131,7 +131,7 @@ namespace BUS
         {
             return NguyenLieuDAO.XemChiTietPhieuNhapHangTable(soPhieuDat);
         }
-        public static List<NguyenLieuDataSource> XemChiTietPhieuNhapNguyenlieu(string soPhieuDat)
+        public static List<PhieuNhapHangDataSource> XemChiTietPhieuNhapNguyenlieu(string soPhieuDat)
         {
             return NguyenLieuDAO.XemChiTietPhieuNhapNguyenlieu(soPhieuDat);
         }

@@ -346,7 +346,7 @@ namespace DAO
             return list;
 
         }
-        public static int DemPhieuNhapSanPham(int loai)
+        public static int DemPhieuNhapHang(int loai)
         {
             string query = "EXEC uspDemPhieuNhapSanPham @loai";
             List<SqlParameter> parameters = new List<SqlParameter>()

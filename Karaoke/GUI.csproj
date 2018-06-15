@@ -324,6 +324,30 @@
     <Compile Include="QuanLySanPham\frmSamPham.Designer.cs">
       <DependentUpon>frmSamPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyThietBi\frmGiaoThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyThietBi\frmGiaoThietBi.Designer.cs">
+      <DependentUpon>frmGiaoThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyThietBi\frmInDonNhapThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyThietBi\frmInDonNhapThietBi.Designer.cs">
+      <DependentUpon>frmInDonNhapThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyThietBi\frmNhapChiTietThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyThietBi\frmNhapChiTietThietBi.Designer.cs">
+      <DependentUpon>frmNhapChiTietThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyThietBi\frmNhapThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyThietBi\frmNhapThietBi.Designer.cs">
+      <DependentUpon>frmNhapThietBi.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyThietBi\frmThietBi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -475,6 +499,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\frmSamPham.resx">
       <DependentUpon>frmSamPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyThietBi\frmNhapChiTietThietBi.resx">
+      <DependentUpon>frmNhapChiTietThietBi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyThietBi\frmThietBi.resx">
       <DependentUpon>frmThietBi.cs</DependentUpon>

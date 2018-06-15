@@ -304,7 +304,7 @@ namespace DAO.QuanLyHangHoa
             }
             return count;
         }
-        public static List<NguyenLieuDataSource> XemChiTietPhieuNhapNguyenlieu(string soPhieuDat)
+        public static List<PhieuNhapHangDataSource> XemChiTietPhieuNhapNguyenlieu(string soPhieuDat)
         {
             string query = "EXEC uspXemChiTietPhieuNhapNguyenLieu @soPhieuDat";
             List<SqlParameter> parameters = new List<SqlParameter>()
@@ -312,11 +312,11 @@ namespace DAO.QuanLyHangHoa
                 new SqlParameter("@soPhieuDat",SqlDbType.VarChar){IsNullable=false,Value=soPhieuDat },
 
             };
-            List<NguyenLieuDataSource> list = null;
+            List<PhieuNhapHangDataSource> list = null;
             try
             {
                 list = Dataprovider.ExcuteQuery(query,parameters.ToArray()).AsEnumerable().ToList().ConvertAll(x =>
-                 new NguyenLieuDataSource()
+                 new PhieuNhapHangDataSource()
                  {
                      Ma = x[1].ToString(),
                      Ten = x[2].ToString(),

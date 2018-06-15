@@ -32,7 +32,7 @@ namespace BUS
         }
         public static int DemPhieuNhapSanPham(int loai)
         {
-            return DAO.SanPhamDAO.DemPhieuNhapSanPham(loai);
+            return DAO.SanPhamDAO.DemPhieuNhapHang(loai);
         }
         public static DataTable XemChiTietPhieuNhapSanPhamTable(string soPhieuDat)
         {
