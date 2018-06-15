@@ -53,6 +53,9 @@
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DAO">
+      <HintPath>..\BUS\bin\Debug\DAO.dll</HintPath>
+    </Reference>
     <Reference Include="FastMember, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FastMember.1.3.0\lib\net40\FastMember.dll</HintPath>
     </Reference>
@@ -115,6 +118,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TonKhoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DoanhThuDataSet.cs" />
+    <Compile Include="DoanhThuDataSet.designer.cs">
+      <DependentUpon>DoanhThuDataSet.cs</DependentUpon>
     </Compile>
     <Compile Include="FoodLayout.cs">
       <SubType>UserControl</SubType>
@@ -193,6 +200,27 @@
     </Compile>
     <Compile Include="GuiMonAn\frmThemNguyenLieuMonAn.designer.cs">
       <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_BaoCaoDoanhThu\frmBaoCaoDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_BaoCaoDoanhThu\frmBaoCaoDoanhThu.Designer.cs">
+      <DependentUpon>frmBaoCaoDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_BaoCaoDoanhThu\rpBaoCaoDoanhThu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI_KhachHang\frmKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_KhachHang\frmKhachHang.designer.cs">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_LoaiKH\frmLoaiKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_LoaiKH\frmLoaiKhachHang.designer.cs">
+      <DependentUpon>frmLoaiKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="LuongDataSet.cs">
       <DependentUpon>LuongDataSet.xsd</DependentUpon>
@@ -435,6 +463,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GuiMonAn\frmThemNguyenLieuMonAn.resx">
       <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_BaoCaoDoanhThu\frmBaoCaoDoanhThu.resx">
+      <DependentUpon>frmBaoCaoDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_BaoCaoDoanhThu\rpBaoCaoDoanhThu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpBaoCaoDoanhThu1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_KhachHang\frmKhachHang.resx">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_LoaiKH\frmLoaiKhachHang.resx">
+      <DependentUpon>frmLoaiKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_QuanLyNhanVien\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>

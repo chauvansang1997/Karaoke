@@ -211,7 +211,7 @@ namespace Karaoke.PhongKaoraoke
             DialogResult result = MessageBox.Show("Bạn có muốn đặt phòng không?", "Xác nhận", MessageBoxButtons.YesNoCancel);
             if (result == DialogResult.Yes)
             {
-                if (BUS.PhongBUS.GhiNhanDatPhong(new KhachHang() { Ten = txtTenKhachHang.Text, SoDT = txtSDT.Text }, PhongHienTai.Ten, "NV001"))
+                if (BUS.PhongBUS.GhiNhanDatPhong(new DTO.KhachHang() { Ten = txtTenKhachHang.Text, SoDT = txtSDT.Text }, PhongHienTai.Ten, "NV001"))
                 {
                     MessageBox.Show("Đặt phòng thành công");
                     listPhongLayout[indexHienTai].BackColor = Color.DarkRed;
