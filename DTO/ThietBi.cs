@@ -6,13 +6,29 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class ThietBi
+    public class ThietBi
     {
-        private string tenThietBi;
-        private string maThietBi;
-        private string gia;
+		private string maThietBi;
+		private string tenThietBi;
+		private string maNCC;
+		private string dvt;
+		private string donGia;
 
-        public string TenThietBi
+
+		public string MaThietBi
+		{
+			get
+			{
+				return maThietBi;
+			}
+
+			set
+			{
+				maThietBi = value;
+			}
+		}
+
+		public string TenThietBi
         {
             get
             {
@@ -25,30 +41,45 @@ namespace DTO
             }
         }
 
-        public string MaThietBi
+		public string MaNCC
+		{
+			get
+			{
+				return maNCC;
+			}
+
+			set
+			{
+				maNCC = value;
+			}
+		}
+
+		public string DonGia
         {
             get
             {
-                return maThietBi;
+                return donGia;
             }
 
             set
             {
-                maThietBi = value;
+				donGia = value;
             }
         }
 
-        public string Gia
-        {
-            get
-            {
-                return gia;
-            }
 
-            set
-            {
-                gia = value;
-            }
-        }
-    }
+
+		public string DVT
+		{
+			get
+			{
+				return dvt;
+			}
+
+			set
+			{
+				dvt = value;
+			}
+		}
+	}
 }

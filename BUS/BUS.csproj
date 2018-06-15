@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCaoBUS.cs" />
     <Compile Include="ChucVuBUS.cs" />
     <Compile Include="HangHoaBUS.cs" />
     <Compile Include="HoaDonBUS.cs" />
@@ -49,11 +50,16 @@
     <Compile Include="LuongBUS.cs" />
     <Compile Include="MonAnBUS.cs" />
     <Compile Include="NguyenLieuBUS.cs" />
+    <Compile Include="NhaCungCapBUS.cs" />
+    <Compile Include="PhanCongBUS.cs" />
     <Compile Include="PhieuDatTiecBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="PhongBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaiKhoanBUS.cs" />
+    <Compile Include="ThietBiBUS.cs" />
+    <Compile Include="SanPhamBUS.cs" />
+    <Compile Include="TestBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">

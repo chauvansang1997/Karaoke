@@ -226,7 +226,6 @@ namespace Karaoke
 
             if (BUS.PhieuDatTiecBUS.KiemTraPhieuDatTiec(PhongHienTai.Ten, dateTimeNhanPhong, dateTimeKetThuc))
             {
-               // User.NhanVien.MaNV = "NV001";
                 string soHoaDon = BUS.PhieuDatTiecBUS.GhiNhanDatTiec(new KhachHang() { Ten = tenKhachHang, SoDT = soDienThoai },
                                          PhongHienTai.Ten, "NV001", dateTimeNhanPhong, dateTimeDat, dateTimeKetThuc);
                 if (soHoaDon != "")
@@ -264,5 +263,37 @@ namespace Karaoke
         }
 
 
+        private void btnHuy_MouseHover(object sender, EventArgs e)
+        {
+            this.btnHuy.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnXem_MouseHover(object sender, EventArgs e)
+        {
+            this.btnXem.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnNhanPhong_MouseHover(object sender, EventArgs e)
+        {
+            this.btnNhanPhong.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnNhanPhong_Click(object sender, EventArgs e)
+        {
+            if (dGVDatTiec.CurrentRow != null)
+            {
+                int index = dGVDatTiec.CurrentRow.Index;
+                string soHD = dGVDatTiec[5, index].Value.ToString();
+                if (BUS.PhongBUS.NhanPhongDatTruoc(soHD))
+                {
+                    MessageBox.Show("Nhận phòng thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Đã có lỗi xảy ra");
+                }
+            }
+
+        }
     }
 }

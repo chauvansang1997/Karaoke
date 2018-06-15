@@ -42,7 +42,7 @@ namespace Karaoke.GuiMonAn
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
 
-            dtNguyenLieu = BUS.NguyenLieuBUS.TiemKiemNguyenLieu(txtTenNguyenLieu.Text, cmbNhaCungCap.Text, false, listMaNguyenLieu);
+         //   dtNguyenLieu = BUS.NguyenLieuBUS.TiemKiemNguyenLieu(txtTenNguyenLieu.Text, cmbNhaCungCap.Text, false, listMaNguyenLieu);
            // if (this.DtNguyeLieuMonAn == null)
             //{
              this.DtNguyeLieuMonAn = dtNguyenLieu.Clone();

@@ -198,10 +198,6 @@ namespace Karaoke.PhongKaoraoke
             DialogResult result = MessageBox.Show("Bạn có muốn đặt phòng không?", "Xác nhận", MessageBoxButtons.YesNoCancel);
             if (result == DialogResult.Yes)
             {
-                //if(BUS.KhachHangBUS.KiemTraKhachHang(txtTenKhachHang.Text, txtSDT.Text))
-                //{
-
-                //}
                 if (BUS.PhongBUS.GhiNhanDatPhong(new KhachHang() { Ten = txtTenKhachHang.Text, SoDT = txtSDT.Text }, PhongHienTai.Ten, "NV001"))
                 {
                     MessageBox.Show("Đặt phòng thành công");
@@ -310,8 +306,27 @@ namespace Karaoke.PhongKaoraoke
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            frmGoiMon goiMon = new frmGoiMon(BUS.HoaDonBUS.LayMaHoaDon(listPhongLayout[indexHienTai].Phong.Ten));
-            goiMon.ShowDialog();
+            try
+            {
+                string soHoaDon = BUS.HoaDonBUS.LayMaHoaDon(listPhongLayout[indexHienTai].Phong.Ten);
+                if (BUS.HoaDonBUS.HoaDonDatTiec(soHoaDon))
+                {
+                    frmChonMon chonMon = new frmChonMon(soHoaDon);
+                    chonMon.ShowDialog();
+                }
+                else
+                {
+                    frmGoiMon goiMon = new frmGoiMon(soHoaDon);
+                    goiMon.ShowDialog();
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Bạn phải chọn phòng");
+            }
+       
+     
         }
 
        }

@@ -13,9 +13,18 @@ namespace BUS
         {
             return DAO.HangHoaDAO.XemHangHoa(loai, pageNumber, pageSize, loaiChiTiet);
         }
+        public static List<HangHoa> XemHangHoaGoiMon(int loai, int pageNumber, int pageSize)
+        {
+            return DAO.HangHoaDAO.XemHangHoaGoiMon(loai, pageNumber, pageSize);
+        }
+        
         public static int DemHangHoa(int loai,int loaiChiTiet=0)
         {
             return DAO.HangHoaDAO.DemHangHoa(loai,loaiChiTiet);
+        }
+        public static int DemHangHoaGoiMon(int loai)
+        {
+            return DAO.HangHoaDAO.DemHangHoaGoiMon(loai);
         }
         public static List<LoaiHangHoa> XemLoaiMon(int loai)
         {

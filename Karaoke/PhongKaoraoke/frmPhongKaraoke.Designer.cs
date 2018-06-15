@@ -506,6 +506,7 @@
             this.btnThanhToan.ForeColor = System.Drawing.Color.White;
             this.btnThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.Image")));
             this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnThanhToan.Location = new System.Drawing.Point(777, 566);
             this.btnThanhToan.Location = new System.Drawing.Point(768, 560);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(212, 36);

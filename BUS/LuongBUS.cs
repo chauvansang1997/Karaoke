@@ -23,5 +23,15 @@ namespace BUS
 		{
 			return LuongDAO.XemLuongTong(maNV, thangLuong);
 		}
+
+		public static DataTable LoadNhanVienPhanCong()
+		{
+			return DAO.TinhLuong.LuongDAO.LoadNhanVienPhanCong();
+		}
+
+		public static DataTable LoadThangLuongDesc()
+		{
+			return DAO.TinhLuong.LuongDAO.LoadThangLuongDesc();
+		}
 	}
 }
