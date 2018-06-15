@@ -18,27 +18,24 @@ namespace DAO
         /// <summary>
         /// Nhập nguyên liệu
         /// </summary>
-        /// <param name="nguyenLieu"> các thông tin về nguyên liệu</param>
+        /// <param name="sanPham"> các thông tin về nguyên liệu</param>
         /// <returns></returns>
-        public static bool NhapNguyenLieu(NguyenLieu nguyenLieu)
+        public static bool ThemSanPham(SanPham sanPham)
         {
-            string query = "insert into NGUYENLIEU(manl,mancc,tennl,loainl,dvt,dongia,slton,sltoithieu) " +
-                "values (@manl,@mancc,@tennl,@loainl,@dvt,@dongia,@slton,@sltoithieu)";
+            string query = "EXEC uspThemSanPham @ten,@maNhaCungCap,@maLoai,@donViTinh,@donGia,@soLuongToiThieu,@anhMinhHoa,@donGiaNhap";
 
-            //Tạo mã cho nguyên liệu
-            string manl = TaoMa.TaoMaNguyenLieu();
 
             //truyền tham số vào câu truy vấn
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@manl",SqlDbType.NVarChar){IsNullable=false,Value=manl },
-                new SqlParameter("@mancc",SqlDbType.NVarChar){IsNullable=false,Value=nguyenLieu.NhaCungCap },
-                new SqlParameter("@tennl",SqlDbType.NVarChar){IsNullable=false,Value=nguyenLieu.Ten },
-                new SqlParameter("@loainl",SqlDbType.NVarChar){IsNullable=false,Value=nguyenLieu.Loai },
-                new SqlParameter("@dvt",SqlDbType.NVarChar){IsNullable=false,Value=nguyenLieu.DonViTinh },
-                new SqlParameter("@dongia",SqlDbType.Decimal){IsNullable=false,Value=nguyenLieu.Dongia },
-                new SqlParameter("@slton",SqlDbType.Int){IsNullable=false,Value=nguyenLieu.SoLuongTon },
-                new SqlParameter("@sltoithieu",SqlDbType.Int){IsNullable=false,Value=nguyenLieu.SoLuongToiThieu },
+                new SqlParameter("@ten",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.Ten },
+                new SqlParameter("@maNhaCungCap",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.NhaCungCap },
+                new SqlParameter("@maLoai",SqlDbType.VarChar){IsNullable=false,Value=sanPham.Loai },
+                new SqlParameter("@donViTinh",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.DonViTinh },
+                new SqlParameter("@donGia",SqlDbType.Int){IsNullable=false,Value=sanPham.Gia },
+                new SqlParameter("@soLuongToiThieu",SqlDbType.Int){IsNullable=false,Value=sanPham.SoLuongToiThieu },
+                new SqlParameter("@anhMinhHoa",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.TenHinhAnh },
+                new SqlParameter("@donGiaNhap",SqlDbType.Int){IsNullable=false,Value=sanPham.DonGiaNhap },
             };
             //nếu số dòng thành công trả về lớn hơn 0 thì thành công
             int num = Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
@@ -48,7 +45,32 @@ namespace DAO
             }
             return true;
         }
+        public static bool CapNhatSanPham(SanPham sanPham)
+        {
+            string query = "EXEC uspCapNhatSanPham @ma,@ten,@maNhaCungCap,@maLoai,@donViTinh,@donGia,@soLuongToiThieu,@anhMinhHoa,@donGiaNhap";
 
+
+            //truyền tham số vào câu truy vấn
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                 new SqlParameter("@ma",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.Ma },
+                new SqlParameter("@ten",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.Ten },
+                new SqlParameter("@maNhaCungCap",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.NhaCungCap },
+                new SqlParameter("@maLoai",SqlDbType.VarChar){IsNullable=false,Value=sanPham.Loai },
+                new SqlParameter("@donViTinh",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.DonViTinh },
+                new SqlParameter("@donGia",SqlDbType.Int){IsNullable=false,Value=sanPham.Gia },
+                new SqlParameter("@soLuongToiThieu",SqlDbType.Int){IsNullable=false,Value=sanPham.SoLuongToiThieu },
+                new SqlParameter("@anhMinhHoa",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.TenHinhAnh },
+                new SqlParameter("@donGiaNhap",SqlDbType.Int){IsNullable=false,Value=sanPham.DonGiaNhap },
+            };
+            //nếu số dòng thành công trả về lớn hơn 0 thì thành công
+            int num = Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+            if (num == 0)
+            {
+                return false;
+            }
+            return true;
+        }
         public static bool XoaMonAn(string ma)
         {
             return false;
@@ -110,6 +132,79 @@ namespace DAO
 
             return list;
         }
+
+        public static DataTable XemSanPhamTable(string nhaCungCap, int loai, string ten, int pageNumber, int pageSize)
+        {
+            string query = "EXEC uspXemSanPham @nhaCungCap,@loai,@ten,@pageNumber,@pageSize";
+
+            //truyền tham số vào câu truy vấn
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                 new SqlParameter("@nhaCungCap",SqlDbType.VarChar){IsNullable=false,Value=nhaCungCap},
+                 new SqlParameter("@loai",SqlDbType.Int){IsNullable=false,Value=loai },
+                 new SqlParameter("@ten",SqlDbType.NVarChar){IsNullable=false,Value=ten },
+                 new SqlParameter("@pageNumber",SqlDbType.Int){IsNullable=false,Value=pageNumber},
+                 new SqlParameter("@pageSize",SqlDbType.Int){IsNullable=false,Value=pageSize },
+
+            };
+            DataTable table = null;
+            try
+            {
+                table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+
+            return table;
+        }
+        public static int DemSanPham(string nhaCungCap, int loai, string ten)
+        {
+            string query = "EXEC uspDemSanPham  @nhaCungCap,@loai,@ten";
+            //truyền tham số vào câu truy vấn
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                 new SqlParameter("@nhaCungCap",SqlDbType.VarChar){IsNullable=false,Value=nhaCungCap},
+                 new SqlParameter("@loai",SqlDbType.Int){IsNullable=false,Value=loai },
+                 new SqlParameter("@ten",SqlDbType.NVarChar){IsNullable=false,Value=ten },
+
+            };
+            int count = 0;
+            try
+            {
+                count = int.Parse(Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            return count;
+        }
+        public static List<LoaiHangHoa> XemLoai()
+        {
+            string query = "SELECT * FROM LOAISANPHAM";
+
+
+            List<LoaiHangHoa> list = new List<LoaiHangHoa>();
+            try
+            {
+                DataTable table = Dataprovider.ExcuteQuery(query);
+                list = table.AsEnumerable().ToList().ConvertAll(x =>
+                       new LoaiHangHoa()
+                       {
+                           Ma = x[0].ToString(),
+                           Ten = x[1].ToString()
+                       });
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+
+            return list;
+        }
         public static PhieuNhapHang LapPhieuNhap(string nhaCungCap, string maNhanVien)
         {
             string query = "EXEC uspLapPhieuNhapSanPham @nhaCungCap,@maNhanVien";
@@ -131,7 +226,7 @@ namespace DAO
                     MaNhanVien = result[1].ToString(),
                     TenNhanVien = result[2].ToString(),
                     SoDienThoai = result[3].ToString(),
-                    NgayDat = result[4].ToString(),                  
+                    NgayDat = result[4].ToString(),
                 };
             }
             catch (Exception ex)
@@ -213,7 +308,7 @@ namespace DAO
             }
             return result;
         }
-        public static List<PhieuNhapHang> XemPhieuNhapHang(int loai,int pageNumber,int pageSize)
+        public static List<PhieuNhapHang> XemPhieuNhapHang(int loai, int pageNumber, int pageSize)
         {
             string query = "EXEC uspXemPhieuNhapSanPham @loai,@pageNumber,@pageSize";
 
@@ -239,8 +334,8 @@ namespace DAO
                     NgayGiao = x[3].ToString(),
                     ThanhTien = uint.Parse(x[4].ToString()),
                     NguoiGiao = x[5].ToString(),
-                    TenNhanVien=x[6].ToString(),
-                    SoDienThoai=x[7].ToString(),
+                    TenNhanVien = x[6].ToString(),
+                    SoDienThoai = x[7].ToString(),
                 });
             }
             catch (Exception ex)
@@ -303,19 +398,19 @@ namespace DAO
             List<HangHoaDataSource> list = null;
             try
             {
-                list = Dataprovider.ExcuteQuery(query,parameters.ToArray()).AsEnumerable().ToList().ConvertAll(x =>
-                 new HangHoaDataSource()
-                 {
-                    Ma=x[1].ToString(),
-                    Ten = x[2].ToString(),
-                    Loai = x[3].ToString(),
-                    DonViTinh = x[4].ToString(),
-                    Gia = x[5].ToString(),
-                    Soluong = x[6].ToString(),
-                    Thanhtien = x[7].ToString(),
-                    MaLoaiHangHoa = x[3].ToString(),
-                    TenLoaiHangHoa = x[8].ToString(),
-                 });
+                list = Dataprovider.ExcuteQuery(query, parameters.ToArray()).AsEnumerable().ToList().ConvertAll(x =>
+                  new HangHoaDataSource()
+                  {
+                      Ma = x[1].ToString(),
+                      Ten = x[2].ToString(),
+                      Loai = x[3].ToString(),
+                      DonViTinh = x[4].ToString(),
+                      Gia = x[5].ToString(),
+                      Soluong = x[6].ToString(),
+                      Thanhtien = x[7].ToString(),
+                      MaLoaiHangHoa = x[3].ToString(),
+                      TenLoaiHangHoa = x[8].ToString(),
+                  });
             }
             catch (Exception ex)
             {

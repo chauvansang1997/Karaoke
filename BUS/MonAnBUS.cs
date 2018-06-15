@@ -16,6 +16,12 @@ namespace BUS
             string listNguyenLieu = String.Join("|", listMaNguyenLieu);
             return MonAnDAO.ThemMonAn(monAn, listNguyenLieu);
         }
+
+        public static bool CapNhatMonAn(MonAn monAn, List<string> listMaNguyenLieu)
+        {
+            string listNguyenLieu = String.Join("|", listMaNguyenLieu);
+            return MonAnDAO.CapNhatMonAn(monAn, listNguyenLieu);
+        }
         public static List<MonAn> XemMonAn(string tenMonAn,int loaiMonAn,uint donGia=0)
         {
             return MonAnDAO.XemMonAn(tenMonAn, loaiMonAn, donGia);

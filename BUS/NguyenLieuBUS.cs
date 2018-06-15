@@ -28,7 +28,19 @@ namespace BUS
             {
                 foreach (string item in exceptList)
                 {
-                    table = table.Select("manl <> '" + item + "'").CopyToDataTable();
+                    if (item != null)
+                    {
+                        try
+                        {
+                            table = table.Select("manl <> '" + item + "'").CopyToDataTable();
+                        }
+                        catch (Exception ex)
+                        {
+                            Utility.Log(ex);
+                            table.Clear();
+                        }
+                    }
+            
                 }
             }
             return table;
@@ -88,9 +100,32 @@ namespace BUS
             return NguyenLieuDAO.GiaoHang(soPhieuNhap, nguoiGiao);
         }
 
-        public static int DemNguyenLieu(string tenNguyenLieu, string maNhaCungCap, bool isXemToiThieu)
+        public static int DemNguyenLieu(string tenNguyenLieu, string maNhaCungCap, bool isXemToiThieu,List<string> exceptList = null)
         {
-            return NguyenLieuDAO.DemNguyenLieu(tenNguyenLieu, maNhaCungCap, isXemToiThieu);
+
+            DataTable table = NguyenLieuDAO.DemNguyenLieu(tenNguyenLieu, maNhaCungCap, isXemToiThieu).
+                Select("", "manl,tennl").CopyToDataTable();
+            if (exceptList != null)
+            {
+                foreach (string item in exceptList)
+                {
+                    if (item != null)
+                    {
+                        try
+                        {
+                            table = table.Select("manl <> '" + item + "'").CopyToDataTable();
+                        }
+                        catch (Exception ex)
+                        {
+                            Utility.Log(ex);
+                            table.Clear();
+                        }
+                       
+                    }
+                   
+                }
+            }
+            return table.Rows.Count;
         }
         public static DataTable XemChiTietPhieuNhapHang(string soPhieuDat)
         {
