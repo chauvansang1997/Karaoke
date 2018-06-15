@@ -50,6 +50,7 @@
 			this.baoCaoDoanhThu = new System.Windows.Forms.ToolStripMenuItem();
 			this.phanCongItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.caTrucItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.baoCaoLuongMenu = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -199,7 +200,8 @@
 			// 
 			this.baoCáoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.baoCaoTonKho,
-            this.baoCaoDoanhThu});
+            this.baoCaoDoanhThu,
+            this.baoCaoLuongMenu});
 			this.baoCáoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.baoCáoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("baoCáoToolStripMenuItem.Image")));
 			this.baoCáoToolStripMenuItem.Name = "baoCáoToolStripMenuItem";
@@ -233,6 +235,14 @@
 			this.caTrucItem.Size = new System.Drawing.Size(180, 22);
 			this.caTrucItem.Text = "Ca trực";
 			this.caTrucItem.Click += new System.EventHandler(this.caTrucItem_Click);
+			// 
+			// baoCaoLuongMenu
+			// 
+			this.baoCaoLuongMenu.Image = global::Karaoke.Properties.Resources.salary;
+			this.baoCaoLuongMenu.Name = "baoCaoLuongMenu";
+			this.baoCaoLuongMenu.Size = new System.Drawing.Size(186, 22);
+			this.baoCaoLuongMenu.Text = "Báo cáo lương";
+			this.baoCaoLuongMenu.Click += new System.EventHandler(this.baoCaoLuongMenu_Click);
 			// 
 			// frmMain
 			// 
@@ -276,6 +286,7 @@
 		private System.Windows.Forms.ToolStripMenuItem phanCongMenu;
 		private System.Windows.Forms.ToolStripMenuItem phanCongItem;
 		private System.Windows.Forms.ToolStripMenuItem caTrucItem;
+		private System.Windows.Forms.ToolStripMenuItem baoCaoLuongMenu;
 	}
 }
 

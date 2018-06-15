@@ -100,5 +100,18 @@ namespace Karaoke
 			frmCaTruc caTruc = new frmCaTruc();
 			caTruc.ShowDialog();
 		}
+
+		private void baoCaoLuongMenu_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				frmBaoCaoLuongTong baoCaoLuongTong = new frmBaoCaoLuongTong();
+				baoCaoLuongTong.ShowDialog();
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
 	}
 }
