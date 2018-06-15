@@ -69,7 +69,10 @@ namespace Karaoke.KhachHang
 
 		private void btnThemKhachHang_Click(object sender, EventArgs e)
 		{
-			khachHang.Ten = txtTenKH.Text;
+            panelChoice.Height = btnThemKhachHang.Height;
+            panelChoice.Top = btnThemKhachHang.Top;
+
+            khachHang.Ten = txtTenKH.Text;
 			khachHang.LoaiKH = Convert.ToInt16(cbLoaiKH.SelectedValue.ToString());
 			khachHang.SDT = txtSDT.Text;
 			if (BUS.KhachHangBUS.ThemKhachHang(khachHang))
@@ -86,7 +89,10 @@ namespace Karaoke.KhachHang
 
 		private void btnCapNhatKhachHang_Click(object sender, EventArgs e)
 		{
-			khachHang.Ma = dgvDanhSachKhachHang.CurrentRow.Cells[0].Value.ToString();
+            panelChoice.Height = btnCapNhatKhachHang.Height;
+            panelChoice.Top = btnCapNhatKhachHang.Top;
+
+            khachHang.Ma = dgvDanhSachKhachHang.CurrentRow.Cells[0].Value.ToString();
 			khachHang.Ten = txtTenKH.Text;
 			khachHang.LoaiKH = Convert.ToInt16(cbLoaiKH.SelectedValue.ToString());
 			khachHang.SDT = txtSDT.Text;
@@ -104,7 +110,10 @@ namespace Karaoke.KhachHang
 
 		private void btnXoaKhachHang_Click(object sender, EventArgs e)
 		{
-			khachHang.Ma = dgvDanhSachKhachHang.CurrentRow.Cells[0].Value.ToString();
+            panelChoice.Height = btnXoaKhachHang.Height;
+            panelChoice.Top = btnXoaKhachHang.Top;
+
+            khachHang.Ma = dgvDanhSachKhachHang.CurrentRow.Cells[0].Value.ToString();
 			if (BUS.KhachHangBUS.XoaKhachHang(khachHang))
 			{
 				MessageBox.Show("Xoá khách hàng thành công", "Xoá khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -116,5 +125,5 @@ namespace Karaoke.KhachHang
 				return;
 			}
 		}
-	}
+    }
 }
