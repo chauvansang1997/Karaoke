@@ -103,6 +103,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DoanhThuDataSet.cs">
+      <DependentUpon>DoanhThuDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DoanhThuDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoanhThuDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FoodLayout.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -180,6 +188,18 @@
     </Compile>
     <Compile Include="GuiMonAn\frmThemNguyenLieuMonAn.designer.cs">
       <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_BaoCaoDoanhThu\frmBaoCaoDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_BaoCaoDoanhThu\frmBaoCaoDoanhThu.Designer.cs">
+      <DependentUpon>frmBaoCaoDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_BaoCaoDoanhThu\rpBaoCaoDoanhThu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpBaoCaoDoanhThu.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="GUI_KhachHang\frmKhachHang.cs">
       <SubType>Form</SubType>
@@ -325,6 +345,13 @@
     <EmbeddedResource Include="GuiMonAn\frmThemNguyenLieuMonAn.resx">
       <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_BaoCaoDoanhThu\frmBaoCaoDoanhThu.resx">
+      <DependentUpon>frmBaoCaoDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_BaoCaoDoanhThu\rpBaoCaoDoanhThu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpBaoCaoDoanhThu.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_KhachHang\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -392,6 +419,17 @@
     </None>
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DoanhThuDataSet.xsc">
+      <DependentUpon>DoanhThuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DoanhThuDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DoanhThuDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DoanhThuDataSet.xss">
+      <DependentUpon>DoanhThuDataSet.xsd</DependentUpon>
     </None>
     <None Include="LuongDataSet.xsc">
       <DependentUpon>LuongDataSet.xsd</DependentUpon>

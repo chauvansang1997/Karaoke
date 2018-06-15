@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChucVuBUS.cs" />
+    <Compile Include="DataTa.cs" />
+    <Compile Include="DoanhThuBUS.cs" />
     <Compile Include="HangHoaBUS.cs" />
     <Compile Include="HoaDonBUS.cs" />
     <Compile Include="KhachHangBUS.cs" />

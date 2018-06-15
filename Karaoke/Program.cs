@@ -11,6 +11,7 @@ using Karaoke.NhaCungCap;
 using Karaoke.ThietBi;
 using Karaoke.GUI_LoaiKH;
 using Karaoke.KhachHang;
+using Karaoke.GUI_BaoCaoDoanhThu;
 
 namespace Karaoke
 {
@@ -24,7 +25,7 @@ namespace Karaoke
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmKhachHang());
+            Application.Run(new frmBaoCaoDoanhThu());
         }
     }
 }

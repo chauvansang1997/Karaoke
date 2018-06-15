@@ -28,9 +28,9 @@ namespace Karaoke
             dsTempReport.ReadXml(@"..\..\xml\bcari_save.xml",XmlReadMode.ReadSchema);
             dsReport.Tables[0].Merge(dsTempReport.Tables[0]);
 
-            Tonkho crystalReport1 = new Tonkho();
-            crystalReport1.SetDataSource(dsReport.Tables[0]);
-            crystalReportViewer1.ReportSource = crystalReport1;
+            //Tonkho crystalReport1 = new Tonkho();
+            //crystalReport1.SetDataSource(dsReport.Tables[0]);
+            //crystalReportViewer1.ReportSource = crystalReport1;
         }
     }
 }
