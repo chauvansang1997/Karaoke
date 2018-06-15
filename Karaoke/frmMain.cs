@@ -1,5 +1,6 @@
 ﻿
 using Karaoke.GUI_QuanLyNhanVien;
+using Karaoke.GuiMonAn;
 using Karaoke.KhachHang;
 using Karaoke.NguyenLieu;
 using Karaoke.PhongKaoraoke;
@@ -88,5 +89,11 @@ namespace Karaoke
 			frmPhanCong phanCong = new frmPhanCong();
 			phanCong.ShowDialog();
 		}
-	}
+
+        private void nhapMonAnMenu_Click(object sender, EventArgs e)
+        {
+            frmMonAn monAn = new frmMonAn();
+            monAn.ShowDialog();
+        }
+    }
 }
