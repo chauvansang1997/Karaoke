@@ -81,7 +81,10 @@ namespace Karaoke.QuanLyPhanCong
 
 		private void btnThem_Click(object sender, EventArgs e)
 		{
-			maNV = cbMaNV.SelectedValue.ToString();
+            panelChoice.Height = btnThem.Height;
+            panelChoice.Top = btnThem.Top;
+
+            maNV = cbMaNV.SelectedValue.ToString();
 			maCa = cbTenCa.SelectedValue.ToString();
 			ngay = dtpNgayPhanCong.Value;
 				if(BUS.PhanCongBUS.ThemPhanCong(maNV, maCa, ngay))
@@ -98,7 +101,10 @@ namespace Karaoke.QuanLyPhanCong
 
 		private void btnCapNhat_Click(object sender, EventArgs e)
 		{
-			maNV = cbMaNV.SelectedValue.ToString();
+            panelChoice.Height = btnCapNhat.Height;
+            panelChoice.Top = btnCapNhat.Top;
+
+            maNV = cbMaNV.SelectedValue.ToString();
 			maCa = cbTenCa.SelectedValue.ToString();
 			ngay = dtpNgayPhanCong.Value;
 
@@ -122,7 +128,10 @@ namespace Karaoke.QuanLyPhanCong
 
 		private void btnXoa_Click(object sender, EventArgs e)
 		{
-			maNV = cbMaNV.SelectedValue.ToString();
+            panelChoice.Height = btnXoa.Height;
+            panelChoice.Top = btnXoa.Top;
+
+            maNV = cbMaNV.SelectedValue.ToString();
 			maCa = cbTenCa.SelectedValue.ToString();
 			ngay = dtpNgayPhanCong.Value;
 			if(ngay <= (DateTime.Now))

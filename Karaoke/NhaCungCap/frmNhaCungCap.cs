@@ -50,7 +50,9 @@ namespace Karaoke.NhaCungCap
 
 		private void btnThemNCC_Click(object sender, EventArgs e)
 		{
-			ncc.MaNCC = txtMaNCC.Text;
+            panelChoice.Height = btnThemNCC.Height;
+            panelChoice.Top = btnThemNCC.Top;
+            ncc.MaNCC = txtMaNCC.Text;
 			ncc.Ten = txtTenNCC.Text;
 			ncc.LoaiHangCC = txtLoaiHangCC.Text;
 			ncc.SDT = txtSDT.Text;
@@ -70,7 +72,10 @@ namespace Karaoke.NhaCungCap
 
 		private void btnCapNhatNCC_Click(object sender, EventArgs e)
 		{
-			ncc.MaNCC = txtMaNCC.Text;
+            panelChoice.Height = btnCapNhatNCC.Height;
+            panelChoice.Top = btnCapNhatNCC.Top;
+
+            ncc.MaNCC = txtMaNCC.Text;
 			ncc.Ten = txtTenNCC.Text;
 			ncc.LoaiHangCC = txtLoaiHangCC.Text;
 			ncc.SDT = txtSDT.Text;
@@ -90,7 +95,10 @@ namespace Karaoke.NhaCungCap
 
 		private void btnXoaNCC_Click(object sender, EventArgs e)
 		{
-			ncc.MaNCC = txtMaNCC.Text;
+            panelChoice.Height = btnXoaNCC.Height;
+            panelChoice.Top = btnXoaNCC.Top;
+
+            ncc.MaNCC = txtMaNCC.Text;
 			ncc.Ten = txtTenNCC.Text;
 			ncc.LoaiHangCC = txtLoaiHangCC.Text;
 			ncc.SDT = txtSDT.Text;
@@ -112,5 +120,5 @@ namespace Karaoke.NhaCungCap
 		{
 			this.Dispose();
 		}
-	}
+    }
 }

@@ -43,13 +43,6 @@
             this.txtTenPhong = new System.Windows.Forms.TextBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.flowPhongLayout = new System.Windows.Forms.FlowLayoutPanel();
-            this.phongKaraoke1 = new Karaoke.PhongLayout();
-            this.phongKaraoke2 = new Karaoke.PhongLayout();
-            this.phongKaraoke3 = new Karaoke.PhongLayout();
-            this.phongKaraoke4 = new Karaoke.PhongLayout();
-            this.phongKaraoke5 = new Karaoke.PhongLayout();
-            this.phongKaraoke6 = new Karaoke.PhongLayout();
-            this.phongKaraoke7 = new Karaoke.PhongLayout();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelChoice = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -65,6 +58,13 @@
             this.btnNextPage = new System.Windows.Forms.Button();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnDatPhong = new System.Windows.Forms.Button();
+            this.phongKaraoke1 = new Karaoke.PhongLayout();
+            this.phongKaraoke2 = new Karaoke.PhongLayout();
+            this.phongKaraoke3 = new Karaoke.PhongLayout();
+            this.phongKaraoke4 = new Karaoke.PhongLayout();
+            this.phongKaraoke5 = new Karaoke.PhongLayout();
+            this.phongKaraoke6 = new Karaoke.PhongLayout();
+            this.phongKaraoke7 = new Karaoke.PhongLayout();
             this.panel1.SuspendLayout();
             this.flowPhongLayout.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -242,97 +242,6 @@
             this.flowPhongLayout.Size = new System.Drawing.Size(497, 497);
             this.flowPhongLayout.TabIndex = 0;
             // 
-            // phongKaraoke1
-            // 
-            this.phongKaraoke1.IndexDict = 0;
-            this.phongKaraoke1.IndexList = 0;
-            this.phongKaraoke1.KhachHang = null;
-            this.phongKaraoke1.Loai = null;
-            this.phongKaraoke1.Location = new System.Drawing.Point(3, 3);
-            this.phongKaraoke1.Name = "phongKaraoke1";
-            this.phongKaraoke1.Phong = null;
-            this.phongKaraoke1.Size = new System.Drawing.Size(100, 100);
-            this.phongKaraoke1.TabIndex = 0;
-            this.phongKaraoke1.Ten = null;
-            // 
-            // phongKaraoke2
-            // 
-            this.phongKaraoke2.IndexDict = 0;
-            this.phongKaraoke2.IndexList = 0;
-            this.phongKaraoke2.KhachHang = null;
-            this.phongKaraoke2.Loai = null;
-            this.phongKaraoke2.Location = new System.Drawing.Point(109, 3);
-            this.phongKaraoke2.Name = "phongKaraoke2";
-            this.phongKaraoke2.Phong = null;
-            this.phongKaraoke2.Size = new System.Drawing.Size(100, 100);
-            this.phongKaraoke2.TabIndex = 1;
-            this.phongKaraoke2.Ten = null;
-            // 
-            // phongKaraoke3
-            // 
-            this.phongKaraoke3.IndexDict = 0;
-            this.phongKaraoke3.IndexList = 0;
-            this.phongKaraoke3.KhachHang = null;
-            this.phongKaraoke3.Loai = null;
-            this.phongKaraoke3.Location = new System.Drawing.Point(215, 3);
-            this.phongKaraoke3.Name = "phongKaraoke3";
-            this.phongKaraoke3.Phong = null;
-            this.phongKaraoke3.Size = new System.Drawing.Size(100, 100);
-            this.phongKaraoke3.TabIndex = 2;
-            this.phongKaraoke3.Ten = null;
-            // 
-            // phongKaraoke4
-            // 
-            this.phongKaraoke4.IndexDict = 0;
-            this.phongKaraoke4.IndexList = 0;
-            this.phongKaraoke4.KhachHang = null;
-            this.phongKaraoke4.Loai = null;
-            this.phongKaraoke4.Location = new System.Drawing.Point(321, 3);
-            this.phongKaraoke4.Name = "phongKaraoke4";
-            this.phongKaraoke4.Phong = null;
-            this.phongKaraoke4.Size = new System.Drawing.Size(100, 100);
-            this.phongKaraoke4.TabIndex = 3;
-            this.phongKaraoke4.Ten = null;
-            // 
-            // phongKaraoke5
-            // 
-            this.phongKaraoke5.IndexDict = 0;
-            this.phongKaraoke5.IndexList = 0;
-            this.phongKaraoke5.KhachHang = null;
-            this.phongKaraoke5.Loai = null;
-            this.phongKaraoke5.Location = new System.Drawing.Point(3, 109);
-            this.phongKaraoke5.Name = "phongKaraoke5";
-            this.phongKaraoke5.Phong = null;
-            this.phongKaraoke5.Size = new System.Drawing.Size(100, 100);
-            this.phongKaraoke5.TabIndex = 4;
-            this.phongKaraoke5.Ten = null;
-            // 
-            // phongKaraoke6
-            // 
-            this.phongKaraoke6.IndexDict = 0;
-            this.phongKaraoke6.IndexList = 0;
-            this.phongKaraoke6.KhachHang = null;
-            this.phongKaraoke6.Loai = null;
-            this.phongKaraoke6.Location = new System.Drawing.Point(109, 109);
-            this.phongKaraoke6.Name = "phongKaraoke6";
-            this.phongKaraoke6.Phong = null;
-            this.phongKaraoke6.Size = new System.Drawing.Size(100, 100);
-            this.phongKaraoke6.TabIndex = 5;
-            this.phongKaraoke6.Ten = null;
-            // 
-            // phongKaraoke7
-            // 
-            this.phongKaraoke7.IndexDict = 0;
-            this.phongKaraoke7.IndexList = 0;
-            this.phongKaraoke7.KhachHang = null;
-            this.phongKaraoke7.Loai = null;
-            this.phongKaraoke7.Location = new System.Drawing.Point(215, 109);
-            this.phongKaraoke7.Name = "phongKaraoke7";
-            this.phongKaraoke7.Phong = null;
-            this.phongKaraoke7.Size = new System.Drawing.Size(100, 100);
-            this.phongKaraoke7.TabIndex = 6;
-            this.phongKaraoke7.Ten = null;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gray;
@@ -373,7 +282,7 @@
             this.btnTrong.Image = ((System.Drawing.Image)(resources.GetObject("btnTrong.Image")));
             this.btnTrong.Location = new System.Drawing.Point(3, 126);
             this.btnTrong.Name = "btnTrong";
-            this.btnTrong.Size = new System.Drawing.Size(146, 60);
+            this.btnTrong.Size = new System.Drawing.Size(145, 60);
             this.btnTrong.TabIndex = 2;
             this.btnTrong.Text = "  Chưa đặt";
             this.btnTrong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -389,7 +298,7 @@
             this.btnDaDat.Image = ((System.Drawing.Image)(resources.GetObject("btnDaDat.Image")));
             this.btnDaDat.Location = new System.Drawing.Point(3, 185);
             this.btnDaDat.Name = "btnDaDat";
-            this.btnDaDat.Size = new System.Drawing.Size(146, 60);
+            this.btnDaDat.Size = new System.Drawing.Size(145, 60);
             this.btnDaDat.TabIndex = 1;
             this.btnDaDat.Text = "  Đã đặt";
             this.btnDaDat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -405,11 +314,12 @@
             this.btnTatCa.Image = ((System.Drawing.Image)(resources.GetObject("btnTatCa.Image")));
             this.btnTatCa.Location = new System.Drawing.Point(2, 67);
             this.btnTatCa.Name = "btnTatCa";
-            this.btnTatCa.Size = new System.Drawing.Size(148, 60);
+            this.btnTatCa.Size = new System.Drawing.Size(145, 60);
             this.btnTatCa.TabIndex = 187;
             this.btnTatCa.Text = " Tất cả";
             this.btnTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTatCa.UseVisualStyleBackColor = true;
+            this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
             // 
             // txtTotalPage
             // 
@@ -506,7 +416,6 @@
             this.btnThanhToan.ForeColor = System.Drawing.Color.White;
             this.btnThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.Image")));
             this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThanhToan.Location = new System.Drawing.Point(777, 566);
             this.btnThanhToan.Location = new System.Drawing.Point(768, 560);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(212, 36);
@@ -532,6 +441,97 @@
             this.btnDatPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDatPhong.UseVisualStyleBackColor = false;
             this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
+            // 
+            // phongKaraoke1
+            // 
+            this.phongKaraoke1.IndexDict = 0;
+            this.phongKaraoke1.IndexList = 0;
+            this.phongKaraoke1.KhachHang = null;
+            this.phongKaraoke1.Loai = null;
+            this.phongKaraoke1.Location = new System.Drawing.Point(3, 3);
+            this.phongKaraoke1.Name = "phongKaraoke1";
+            this.phongKaraoke1.Phong = null;
+            this.phongKaraoke1.Size = new System.Drawing.Size(100, 100);
+            this.phongKaraoke1.TabIndex = 0;
+            this.phongKaraoke1.Ten = null;
+            // 
+            // phongKaraoke2
+            // 
+            this.phongKaraoke2.IndexDict = 0;
+            this.phongKaraoke2.IndexList = 0;
+            this.phongKaraoke2.KhachHang = null;
+            this.phongKaraoke2.Loai = null;
+            this.phongKaraoke2.Location = new System.Drawing.Point(109, 3);
+            this.phongKaraoke2.Name = "phongKaraoke2";
+            this.phongKaraoke2.Phong = null;
+            this.phongKaraoke2.Size = new System.Drawing.Size(100, 100);
+            this.phongKaraoke2.TabIndex = 1;
+            this.phongKaraoke2.Ten = null;
+            // 
+            // phongKaraoke3
+            // 
+            this.phongKaraoke3.IndexDict = 0;
+            this.phongKaraoke3.IndexList = 0;
+            this.phongKaraoke3.KhachHang = null;
+            this.phongKaraoke3.Loai = null;
+            this.phongKaraoke3.Location = new System.Drawing.Point(215, 3);
+            this.phongKaraoke3.Name = "phongKaraoke3";
+            this.phongKaraoke3.Phong = null;
+            this.phongKaraoke3.Size = new System.Drawing.Size(100, 100);
+            this.phongKaraoke3.TabIndex = 2;
+            this.phongKaraoke3.Ten = null;
+            // 
+            // phongKaraoke4
+            // 
+            this.phongKaraoke4.IndexDict = 0;
+            this.phongKaraoke4.IndexList = 0;
+            this.phongKaraoke4.KhachHang = null;
+            this.phongKaraoke4.Loai = null;
+            this.phongKaraoke4.Location = new System.Drawing.Point(321, 3);
+            this.phongKaraoke4.Name = "phongKaraoke4";
+            this.phongKaraoke4.Phong = null;
+            this.phongKaraoke4.Size = new System.Drawing.Size(100, 100);
+            this.phongKaraoke4.TabIndex = 3;
+            this.phongKaraoke4.Ten = null;
+            // 
+            // phongKaraoke5
+            // 
+            this.phongKaraoke5.IndexDict = 0;
+            this.phongKaraoke5.IndexList = 0;
+            this.phongKaraoke5.KhachHang = null;
+            this.phongKaraoke5.Loai = null;
+            this.phongKaraoke5.Location = new System.Drawing.Point(3, 109);
+            this.phongKaraoke5.Name = "phongKaraoke5";
+            this.phongKaraoke5.Phong = null;
+            this.phongKaraoke5.Size = new System.Drawing.Size(100, 100);
+            this.phongKaraoke5.TabIndex = 4;
+            this.phongKaraoke5.Ten = null;
+            // 
+            // phongKaraoke6
+            // 
+            this.phongKaraoke6.IndexDict = 0;
+            this.phongKaraoke6.IndexList = 0;
+            this.phongKaraoke6.KhachHang = null;
+            this.phongKaraoke6.Loai = null;
+            this.phongKaraoke6.Location = new System.Drawing.Point(109, 109);
+            this.phongKaraoke6.Name = "phongKaraoke6";
+            this.phongKaraoke6.Phong = null;
+            this.phongKaraoke6.Size = new System.Drawing.Size(100, 100);
+            this.phongKaraoke6.TabIndex = 5;
+            this.phongKaraoke6.Ten = null;
+            // 
+            // phongKaraoke7
+            // 
+            this.phongKaraoke7.IndexDict = 0;
+            this.phongKaraoke7.IndexList = 0;
+            this.phongKaraoke7.KhachHang = null;
+            this.phongKaraoke7.Loai = null;
+            this.phongKaraoke7.Location = new System.Drawing.Point(215, 109);
+            this.phongKaraoke7.Name = "phongKaraoke7";
+            this.phongKaraoke7.Phong = null;
+            this.phongKaraoke7.Size = new System.Drawing.Size(100, 100);
+            this.phongKaraoke7.TabIndex = 6;
+            this.phongKaraoke7.Ten = null;
             // 
             // frmPhongKaraoke
             // 
