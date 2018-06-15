@@ -30,6 +30,7 @@ namespace Karaoke.QuanLyThietBi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapChiTietThietBi));
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.btnFirstPage = new System.Windows.Forms.Button();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
@@ -62,7 +63,7 @@ namespace Karaoke.QuanLyThietBi
             // 
             // txtTotalPage
             // 
-            this.txtTotalPage.Location = new System.Drawing.Point(740, 558);
+            this.txtTotalPage.Location = new System.Drawing.Point(817, 511);
             this.txtTotalPage.Name = "txtTotalPage";
             this.txtTotalPage.ReadOnly = true;
             this.txtTotalPage.Size = new System.Drawing.Size(37, 20);
@@ -77,7 +78,7 @@ namespace Karaoke.QuanLyThietBi
             this.btnFirstPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirstPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFirstPage.Location = new System.Drawing.Point(632, 554);
+            this.btnFirstPage.Location = new System.Drawing.Point(709, 511);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(24, 24);
             this.btnFirstPage.TabIndex = 162;
@@ -86,7 +87,7 @@ namespace Karaoke.QuanLyThietBi
             // 
             // txtPageNumber
             // 
-            this.txtPageNumber.Location = new System.Drawing.Point(684, 558);
+            this.txtPageNumber.Location = new System.Drawing.Point(761, 511);
             this.txtPageNumber.Name = "txtPageNumber";
             this.txtPageNumber.Size = new System.Drawing.Size(37, 20);
             this.txtPageNumber.TabIndex = 157;
@@ -100,7 +101,7 @@ namespace Karaoke.QuanLyThietBi
             this.btnLastPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnLastPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLastPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLastPage.Location = new System.Drawing.Point(805, 554);
+            this.btnLastPage.Location = new System.Drawing.Point(882, 511);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(24, 24);
             this.btnLastPage.TabIndex = 161;
@@ -111,7 +112,7 @@ namespace Karaoke.QuanLyThietBi
             // 
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(723, 558);
+            this.label7.Location = new System.Drawing.Point(800, 511);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(15, 20);
             this.label7.TabIndex = 156;
@@ -125,7 +126,7 @@ namespace Karaoke.QuanLyThietBi
             this.btnPrevPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnPrevPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPrevPage.Location = new System.Drawing.Point(658, 554);
+            this.btnPrevPage.Location = new System.Drawing.Point(735, 511);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(24, 24);
             this.btnPrevPage.TabIndex = 160;
@@ -139,7 +140,7 @@ namespace Karaoke.QuanLyThietBi
             this.btnNextPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnNextPage.Location = new System.Drawing.Point(779, 554);
+            this.btnNextPage.Location = new System.Drawing.Point(856, 511);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(24, 24);
             this.btnNextPage.TabIndex = 159;
@@ -148,7 +149,7 @@ namespace Karaoke.QuanLyThietBi
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
             this.panel1.Controls.Add(this.btnIn);
             this.panel1.Controls.Add(this.btnLuu);
             this.panel1.Controls.Add(this.txtThanhTien);
@@ -161,7 +162,7 @@ namespace Karaoke.QuanLyThietBi
             this.panel1.Controls.Add(this.dGVHoaDon);
             this.panel1.Location = new System.Drawing.Point(0, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(572, 580);
+            this.panel1.Size = new System.Drawing.Size(572, 585);
             this.panel1.TabIndex = 163;
             // 
             // btnIn
@@ -171,12 +172,13 @@ namespace Karaoke.QuanLyThietBi
             this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIn.ForeColor = System.Drawing.Color.White;
+            this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
             this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnIn.Location = new System.Drawing.Point(283, 532);
+            this.btnIn.Location = new System.Drawing.Point(349, 532);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(100, 36);
             this.btnIn.TabIndex = 184;
-            this.btnIn.Text = "In";
+            this.btnIn.Text = " In";
             this.btnIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIn.UseVisualStyleBackColor = false;
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
@@ -188,12 +190,13 @@ namespace Karaoke.QuanLyThietBi
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLuu.Location = new System.Drawing.Point(414, 532);
+            this.btnLuu.Location = new System.Drawing.Point(455, 532);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(100, 36);
             this.btnLuu.TabIndex = 181;
-            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Text = " Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -203,7 +206,7 @@ namespace Karaoke.QuanLyThietBi
             this.txtThanhTien.AutoSize = true;
             this.txtThanhTien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtThanhTien.ForeColor = System.Drawing.Color.White;
-            this.txtThanhTien.Location = new System.Drawing.Point(386, 481);
+            this.txtThanhTien.Location = new System.Drawing.Point(400, 481);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.Size = new System.Drawing.Size(108, 19);
             this.txtThanhTien.TabIndex = 12;
@@ -215,7 +218,7 @@ namespace Karaoke.QuanLyThietBi
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(481, 481);
+            this.label6.Location = new System.Drawing.Point(514, 481);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 19);
             this.label6.TabIndex = 10;
@@ -226,7 +229,7 @@ namespace Karaoke.QuanLyThietBi
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(481, 414);
+            this.label3.Location = new System.Drawing.Point(514, 414);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 19);
             this.label3.TabIndex = 8;
@@ -237,7 +240,7 @@ namespace Karaoke.QuanLyThietBi
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(46, 481);
+            this.label4.Location = new System.Drawing.Point(17, 481);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 19);
             this.label4.TabIndex = 5;
@@ -260,7 +263,7 @@ namespace Karaoke.QuanLyThietBi
             this.txtTongCong.AutoSize = true;
             this.txtTongCong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongCong.ForeColor = System.Drawing.Color.White;
-            this.txtTongCong.Location = new System.Drawing.Point(386, 414);
+            this.txtTongCong.Location = new System.Drawing.Point(400, 414);
             this.txtTongCong.Name = "txtTongCong";
             this.txtTongCong.Size = new System.Drawing.Size(108, 19);
             this.txtTongCong.TabIndex = 3;
@@ -272,7 +275,7 @@ namespace Karaoke.QuanLyThietBi
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(44, 414);
+            this.label1.Location = new System.Drawing.Point(15, 414);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 19);
             this.label1.TabIndex = 1;
@@ -285,7 +288,7 @@ namespace Karaoke.QuanLyThietBi
             this.dGVHoaDon.AllowUserToResizeColumns = false;
             this.dGVHoaDon.AllowUserToResizeRows = false;
             this.dGVHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dGVHoaDon.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dGVHoaDon.BackgroundColor = System.Drawing.Color.White;
             this.dGVHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Xoa});
@@ -315,41 +318,42 @@ namespace Karaoke.QuanLyThietBi
             this.dGVNguyenLieu.AllowUserToDeleteRows = false;
             this.dGVNguyenLieu.AllowUserToResizeColumns = false;
             this.dGVNguyenLieu.AllowUserToResizeRows = false;
+            this.dGVNguyenLieu.BackgroundColor = System.Drawing.Color.White;
             this.dGVNguyenLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVNguyenLieu.Location = new System.Drawing.Point(590, 99);
+            this.dGVNguyenLieu.Location = new System.Drawing.Point(578, 63);
             this.dGVNguyenLieu.MultiSelect = false;
             this.dGVNguyenLieu.Name = "dGVNguyenLieu";
             this.dGVNguyenLieu.ReadOnly = true;
             this.dGVNguyenLieu.RowHeadersVisible = false;
             this.dGVNguyenLieu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGVNguyenLieu.Size = new System.Drawing.Size(571, 442);
+            this.dGVNguyenLieu.Size = new System.Drawing.Size(453, 442);
             this.dGVNguyenLieu.TabIndex = 164;
             this.dGVNguyenLieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVNguyenLieu_CellClick);
             // 
             // btnFind
             // 
-            this.btnFind.BackColor = System.Drawing.Color.LightGray;
+            this.btnFind.BackColor = System.Drawing.Color.Transparent;
             this.btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnFind.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFind.FlatAppearance.BorderSize = 0;
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFind.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFind.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnFind.Image = global::Karaoke.Properties.Resources.loupe;
+            this.btnFind.Image = ((System.Drawing.Image)(resources.GetObject("btnFind.Image")));
             this.btnFind.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFind.Location = new System.Drawing.Point(590, 63);
+            this.btnFind.Location = new System.Drawing.Point(906, 14);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(110, 30);
             this.btnFind.TabIndex = 165;
             this.btnFind.Text = "Tìm kiếm";
             this.btnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFind.UseVisualStyleBackColor = false;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // txtTenNguyenLieu
             // 
             this.txtTenNguyenLieu.BackColor = System.Drawing.Color.White;
             this.txtTenNguyenLieu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenNguyenLieu.Location = new System.Drawing.Point(770, 29);
+            this.txtTenNguyenLieu.Location = new System.Drawing.Point(684, 17);
             this.txtTenNguyenLieu.Name = "txtTenNguyenLieu";
             this.txtTenNguyenLieu.Size = new System.Drawing.Size(189, 27);
             this.txtTenNguyenLieu.TabIndex = 167;
@@ -359,7 +363,7 @@ namespace Karaoke.QuanLyThietBi
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label11.Location = new System.Drawing.Point(644, 31);
+            this.label11.Location = new System.Drawing.Point(575, 19);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(120, 22);
             this.label11.TabIndex = 166;
@@ -368,34 +372,36 @@ namespace Karaoke.QuanLyThietBi
             // 
             // btnChon
             // 
-            this.btnChon.BackColor = System.Drawing.Color.Transparent;
+            this.btnChon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
             this.btnChon.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnChon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChon.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChon.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnChon.ForeColor = System.Drawing.Color.White;
+            this.btnChon.Image = ((System.Drawing.Image)(resources.GetObject("btnChon.Image")));
             this.btnChon.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChon.Location = new System.Drawing.Point(905, 546);
+            this.btnChon.Location = new System.Drawing.Point(825, 537);
             this.btnChon.Name = "btnChon";
             this.btnChon.Size = new System.Drawing.Size(100, 36);
             this.btnChon.TabIndex = 182;
-            this.btnChon.Text = "Chọn";
+            this.btnChon.Text = " Chọn";
             this.btnChon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChon.UseVisualStyleBackColor = false;
             this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
             // 
             // btnThoat
             // 
-            this.btnThoat.BackColor = System.Drawing.Color.Transparent;
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
             this.btnThoat.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThoat.Location = new System.Drawing.Point(1037, 546);
+            this.btnThoat.Location = new System.Drawing.Point(931, 537);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(100, 36);
             this.btnThoat.TabIndex = 185;
-            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Text = " Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThoat.UseVisualStyleBackColor = false;
             // 
@@ -403,7 +409,7 @@ namespace Karaoke.QuanLyThietBi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1195, 604);
+            this.ClientSize = new System.Drawing.Size(1037, 580);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnChon);
             this.Controls.Add(this.btnFind);
@@ -418,8 +424,9 @@ namespace Karaoke.QuanLyThietBi
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnPrevPage);
             this.Controls.Add(this.btnNextPage);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNhapChiTietThietBi";
-            this.Text = "Chọn món";
+            this.Text = "Chi tiết nhập thiết bị";
             this.Load += new System.EventHandler(this.frmNhapCTNguyenLieu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
