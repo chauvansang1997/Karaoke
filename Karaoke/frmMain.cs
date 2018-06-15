@@ -1,7 +1,9 @@
 ﻿
 using Karaoke.GUI_QuanLyNhanVien;
+using Karaoke.KhachHang;
 using Karaoke.NguyenLieu;
 using Karaoke.PhongKaoraoke;
+using Karaoke.QuanLyPhanCong;
 using Karaoke.QuanLySanPham;
 using System;
 using System.Collections.Generic;
@@ -71,14 +73,20 @@ namespace Karaoke
 
         private void khachHangMenu_Click(object sender, EventArgs e)
         {
-            //frmKhachHang khachHang = new frmKhachHang();
-            //khachHang.ShowDialog();
-        }
+			frmKhachHang khachHang = new frmKhachHang();
+			khachHang.ShowDialog();
+		}
 
         private void nhanVienMenu_Click(object sender, EventArgs e)
         {
             frmNhanVien nhanVien = new frmNhanVien();
             nhanVien.ShowDialog();
         }
-    }
+
+		private void phanCongMenu_Click(object sender, EventArgs e)
+		{
+			frmPhanCong phanCong = new frmPhanCong();
+			phanCong.ShowDialog();
+		}
+	}
 }

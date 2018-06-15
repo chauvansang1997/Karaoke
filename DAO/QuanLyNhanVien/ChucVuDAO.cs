@@ -14,7 +14,7 @@ namespace DAO.QuanLyNhanVien
         // Load mã chức vụ 
         public static DataTable LoadMaChucVu()
         {
-            string query = "SELECT MACV FROM CHUCVU";
+            string query = "SELECT MACV,TENCV FROM CHUCVU";
             return Dataprovider.ExcuteQuery(query);
         }
     }
