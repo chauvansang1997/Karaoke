@@ -433,6 +433,9 @@
     <EmbeddedResource Include="GuiMonAn\frmReportGoiMon.resx">
       <DependentUpon>frmReportGoiMon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyNguyenLieu\frmGiaoNguyenLieu.resx">
+      <DependentUpon>frmGiaoNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNguyenLieu\frmInDonDatNguyenLieu.resx">
       <DependentUpon>frmInDonDatNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
