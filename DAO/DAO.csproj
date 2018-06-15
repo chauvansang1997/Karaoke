@@ -57,6 +57,7 @@
     <Compile Include="PhieuDatTiecDAO.cs" />
     <Compile Include="PhongDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyCaTruc\CaLamViecDAO.cs" />
     <Compile Include="QuanLyDoanhThu\DoanhThuDAO.cs" />
     <Compile Include="QuanLyHangHoa\MonAnDAO.cs" />
     <Compile Include="QuanLyHangHoa\NguyenLieuDAO.cs" />

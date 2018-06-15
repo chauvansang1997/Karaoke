@@ -1,7 +1,9 @@
 ﻿
+using Karaoke.GUI_BaoCaoDoanhThu;
 using Karaoke.GUI_QuanLyNhanVien;
 using Karaoke.KhachHang;
 using Karaoke.NguyenLieu;
+using Karaoke.PhanCong;
 using Karaoke.PhongKaoraoke;
 using Karaoke.QuanLyPhanCong;
 using Karaoke.QuanLySanPham;
@@ -56,9 +58,9 @@ namespace Karaoke
 
         private void baoCaoDoanhThu_Click(object sender, EventArgs e)
         {
-           // frmBaoCaoDoanhThu baoCaoDoanhThu = new frmBaoCaoDoanhThu();
-          //  baoCaoDoanhThu.ShowDialog();
-        }
+			frmBaoCaoDoanhThu baoCaoDoanhThu = new frmBaoCaoDoanhThu();
+			baoCaoDoanhThu.ShowDialog();
+		}
 
         private void datPhongMenu_Click(object sender, EventArgs e)
         {
@@ -85,8 +87,18 @@ namespace Karaoke
 
 		private void phanCongMenu_Click(object sender, EventArgs e)
 		{
+		}
+
+		private void phanCongItem_Click(object sender, EventArgs e)
+		{
 			frmPhanCong phanCong = new frmPhanCong();
 			phanCong.ShowDialog();
+		}
+
+		private void caTrucItem_Click(object sender, EventArgs e)
+		{
+			frmCaTruc caTruc = new frmCaTruc();
+			caTruc.ShowDialog();
 		}
 	}
 }

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaLamViec.cs" />
     <Compile Include="ChiTietHoaDon.cs" />
     <Compile Include="DatTiecDataSource.cs" />
     <Compile Include="ChucVu.cs" />
