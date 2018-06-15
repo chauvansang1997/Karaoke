@@ -264,9 +264,9 @@ namespace DAO.QuanLyHangHoa
             return table;
 
         }
-        public static int DemNguyenLieu(string tenNguyenLieu, string maNhaCungCap, bool isXemToiThieu)
+        public static DataTable DemNguyenLieu(string tenNguyenLieu, string maNhaCungCap, bool isXemToiThieu)
         {
-            string query = "EXEC uspDemNguyenLieu @uspDemNguyenLieu,@maNhaCungCap,@isXemToiThieu";
+            string query = "EXEC uspDemNguyenLieu @tenNguyenLieu,@maNhaCungCap,@isXemToiThieu";
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@tenNguyenLieu",SqlDbType.NVarChar){IsNullable=true,Value=tenNguyenLieu },
@@ -274,16 +274,16 @@ namespace DAO.QuanLyHangHoa
                 new SqlParameter("@isXemToiThieu",SqlDbType.Bit){IsNullable=true,Value=isXemToiThieu },
 
             };
-            int count = 0;
+            DataTable table = null;
             try
             {
-                count = int.Parse(Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString());
+                table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
             }
             catch (Exception ex)
             {
                 Utility.Log(ex);
             }
-            return count;
+            return table;
         }
         public static int DemPhieuNhapNguyenLieu(int loai)
         {

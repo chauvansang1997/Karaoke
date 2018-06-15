@@ -24,7 +24,7 @@ namespace Karaoke
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmNguyenLieu());
+            Application.Run(new frmMonAn());
         }
     }
 }

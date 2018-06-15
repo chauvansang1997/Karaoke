@@ -36,6 +36,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMonAn));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtGiaTK = new System.Windows.Forms.TextBox();
             this.cmbLoaiMonTK = new System.Windows.Forms.ComboBox();
@@ -56,6 +57,7 @@
             this.btnThemNguyenLieu = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.dGVNguyenLieu = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnLayAnh = new System.Windows.Forms.Button();
             this.pBAnhMinhHoa = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -76,6 +78,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.btnHuy);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtGiaTK);
             this.panel1.Controls.Add(this.cmbLoaiMonTK);
@@ -92,8 +95,24 @@
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(448, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(559, 554);
+            this.panel1.Size = new System.Drawing.Size(695, 555);
             this.panel1.TabIndex = 0;
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
+            this.btnHuy.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuy.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.ForeColor = System.Drawing.Color.White;
+            this.btnHuy.Location = new System.Drawing.Point(452, 508);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(105, 36);
+            this.btnHuy.TabIndex = 193;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // label5
             // 
@@ -167,13 +186,14 @@
             this.btnSuaMonAn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaMonAn.ForeColor = System.Drawing.Color.White;
             this.btnSuaMonAn.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaMonAn.Image")));
-            this.btnSuaMonAn.Location = new System.Drawing.Point(228, 508);
+            this.btnSuaMonAn.Location = new System.Drawing.Point(231, 508);
             this.btnSuaMonAn.Name = "btnSuaMonAn";
             this.btnSuaMonAn.Size = new System.Drawing.Size(105, 36);
             this.btnSuaMonAn.TabIndex = 179;
             this.btnSuaMonAn.Text = " Sửa";
             this.btnSuaMonAn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSuaMonAn.UseVisualStyleBackColor = false;
+            this.btnSuaMonAn.Click += new System.EventHandler(this.btnSuaMonAn_Click);
             // 
             // btnLuu
             // 
@@ -183,7 +203,7 @@
             this.btnLuu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
-            this.btnLuu.Location = new System.Drawing.Point(336, 508);
+            this.btnLuu.Location = new System.Drawing.Point(342, 508);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(105, 36);
             this.btnLuu.TabIndex = 178;
@@ -200,7 +220,7 @@
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(444, 508);
+            this.btnThoat.Location = new System.Drawing.Point(563, 508);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(105, 36);
             this.btnThoat.TabIndex = 177;
@@ -232,7 +252,7 @@
             this.btnThemMonAn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemMonAn.ForeColor = System.Drawing.Color.White;
             this.btnThemMonAn.Image = ((System.Drawing.Image)(resources.GetObject("btnThemMonAn.Image")));
-            this.btnThemMonAn.Location = new System.Drawing.Point(12, 508);
+            this.btnThemMonAn.Location = new System.Drawing.Point(9, 508);
             this.btnThemMonAn.Name = "btnThemMonAn";
             this.btnThemMonAn.Size = new System.Drawing.Size(105, 36);
             this.btnThemMonAn.TabIndex = 175;
@@ -259,8 +279,9 @@
             this.dGVMonAn.Location = new System.Drawing.Point(9, 197);
             this.dGVMonAn.Name = "dGVMonAn";
             this.dGVMonAn.RowHeadersVisible = false;
-            this.dGVMonAn.Size = new System.Drawing.Size(540, 302);
+            this.dGVMonAn.Size = new System.Drawing.Size(659, 302);
             this.dGVMonAn.TabIndex = 0;
+            this.dGVMonAn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVMonAn_CellClick);
             // 
             // panel2
             // 
@@ -325,6 +346,7 @@
             this.btnXoaNguyenLieu.Text = "Xóa nguyên liệu";
             this.btnXoaNguyenLieu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoaNguyenLieu.UseVisualStyleBackColor = false;
+            this.btnXoaNguyenLieu.Click += new System.EventHandler(this.btnXoaNguyenLieu_Click);
             // 
             // btnThemNguyenLieu
             // 
@@ -356,13 +378,28 @@
             // 
             // dGVNguyenLieu
             // 
+            this.dGVNguyenLieu.AllowUserToAddRows = false;
+            this.dGVNguyenLieu.AllowUserToDeleteRows = false;
+            this.dGVNguyenLieu.AllowUserToOrderColumns = true;
+            this.dGVNguyenLieu.AllowUserToResizeColumns = false;
+            this.dGVNguyenLieu.AllowUserToResizeRows = false;
             this.dGVNguyenLieu.BackgroundColor = System.Drawing.Color.White;
             this.dGVNguyenLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVNguyenLieu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
             this.dGVNguyenLieu.Location = new System.Drawing.Point(8, 258);
             this.dGVNguyenLieu.Name = "dGVNguyenLieu";
             this.dGVNguyenLieu.RowHeadersVisible = false;
             this.dGVNguyenLieu.Size = new System.Drawing.Size(429, 241);
             this.dGVNguyenLieu.TabIndex = 176;
+            this.dGVNguyenLieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVNguyenLieu_CellClick);
+            this.dGVNguyenLieu.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVNguyenLieu_CellValueChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Xóa";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 30;
             // 
             // btnLayAnh
             // 
@@ -470,7 +507,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1008, 552);
+            this.ClientSize = new System.Drawing.Size(1155, 580);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -513,8 +550,6 @@
         private System.Windows.Forms.Button btnXoaNguyenLieu;
         private System.Windows.Forms.Button btnThemNguyenLieu;
         private System.Windows.Forms.Button btnSuaMonAn;
-        #endregion
-
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtGiaTK;
         private System.Windows.Forms.ComboBox cmbLoaiMonTK;
@@ -523,5 +558,10 @@
         private System.Windows.Forms.TextBox txtTenTK;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
+
+        #endregion
+
+        private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.DataGridViewImageColumn Column1;
     }
 }
