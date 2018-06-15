@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCaoTonKho));
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.dTPNgayBayDau = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayKetThuc = new System.Windows.Forms.DateTimePicker();
@@ -88,20 +89,18 @@
             // 
             // btnFind
             // 
-            this.btnFind.BackColor = System.Drawing.Color.LightGray;
+            this.btnFind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
             this.btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnFind.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFind.FlatAppearance.BorderSize = 0;
+            this.btnFind.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFind.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFind.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnFind.Image = global::Karaoke.Properties.Resources.loupe;
-            this.btnFind.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFind.Location = new System.Drawing.Point(26, 67);
+            this.btnFind.ForeColor = System.Drawing.Color.White;
+            this.btnFind.Image = ((System.Drawing.Image)(resources.GetObject("btnFind.Image")));
+            this.btnFind.Location = new System.Drawing.Point(26, 61);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(110, 30);
+            this.btnFind.Size = new System.Drawing.Size(110, 36);
             this.btnFind.TabIndex = 168;
-            this.btnFind.Text = "Xem";
+            this.btnFind.Text = "  Xem";
             this.btnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFind.UseVisualStyleBackColor = false;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
@@ -117,6 +116,7 @@
             this.Controls.Add(this.dtpNgayKetThuc);
             this.Controls.Add(this.dTPNgayBayDau);
             this.Controls.Add(this.crystalReportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBaoCaoTonKho";
             this.Text = "Báo cáo tồn kho";
             this.Load += new System.EventHandler(this.frmBaoCaoTonKho_Load);

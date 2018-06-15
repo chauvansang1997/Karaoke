@@ -71,21 +71,25 @@
             this.quảnLýNguyênLiệuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nhapKho,
             this.suaNguyenLieu});
+            this.quảnLýNguyênLiệuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quảnLýNguyênLiệuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quảnLýNguyênLiệuToolStripMenuItem.Image")));
             this.quảnLýNguyênLiệuToolStripMenuItem.Name = "quảnLýNguyênLiệuToolStripMenuItem";
-            this.quảnLýNguyênLiệuToolStripMenuItem.Size = new System.Drawing.Size(125, 20);
+            this.quảnLýNguyênLiệuToolStripMenuItem.Size = new System.Drawing.Size(150, 21);
             this.quảnLýNguyênLiệuToolStripMenuItem.Text = "&Quản lý nguyên liệu";
             // 
             // nhapKho
             // 
+            this.nhapKho.Image = ((System.Drawing.Image)(resources.GetObject("nhapKho.Image")));
             this.nhapKho.Name = "nhapKho";
-            this.nhapKho.Size = new System.Drawing.Size(192, 22);
+            this.nhapKho.Size = new System.Drawing.Size(203, 22);
             this.nhapKho.Text = "Nhập kho";
             this.nhapKho.Click += new System.EventHandler(this.nhapKho_Click);
             // 
             // suaNguyenLieu
             // 
+            this.suaNguyenLieu.Image = ((System.Drawing.Image)(resources.GetObject("suaNguyenLieu.Image")));
             this.suaNguyenLieu.Name = "suaNguyenLieu";
-            this.suaNguyenLieu.Size = new System.Drawing.Size(192, 22);
+            this.suaNguyenLieu.Size = new System.Drawing.Size(203, 22);
             this.suaNguyenLieu.Text = "Chỉnh sửa nguyên liệu";
             this.suaNguyenLieu.Click += new System.EventHandler(this.suaNguyenLieu_Click);
             // 
@@ -94,21 +98,25 @@
             this.quảnLýSảnPhẩmToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nhapKhoSanPham,
             this.suaSanPham});
+            this.quảnLýSảnPhẩmToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quảnLýSảnPhẩmToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quảnLýSảnPhẩmToolStripMenuItem.Image")));
             this.quảnLýSảnPhẩmToolStripMenuItem.Name = "quảnLýSảnPhẩmToolStripMenuItem";
-            this.quảnLýSảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
+            this.quảnLýSảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(141, 21);
             this.quảnLýSảnPhẩmToolStripMenuItem.Text = "Quản lý sản phẩm";
             // 
             // nhapKhoSanPham
             // 
+            this.nhapKhoSanPham.Image = ((System.Drawing.Image)(resources.GetObject("nhapKhoSanPham.Image")));
             this.nhapKhoSanPham.Name = "nhapKhoSanPham";
-            this.nhapKhoSanPham.Size = new System.Drawing.Size(182, 22);
+            this.nhapKhoSanPham.Size = new System.Drawing.Size(194, 22);
             this.nhapKhoSanPham.Text = "Nhập kho";
             this.nhapKhoSanPham.Click += new System.EventHandler(this.nhapKhoSanPham_Click);
             // 
             // suaSanPham
             // 
+            this.suaSanPham.Image = ((System.Drawing.Image)(resources.GetObject("suaSanPham.Image")));
             this.suaSanPham.Name = "suaSanPham";
-            this.suaSanPham.Size = new System.Drawing.Size(182, 22);
+            this.suaSanPham.Size = new System.Drawing.Size(194, 22);
             this.suaSanPham.Text = "Chỉnh sửa sản phẩm";
             this.suaSanPham.Click += new System.EventHandler(this.suaSanPham_Click);
             // 
@@ -117,20 +125,24 @@
             this.quảnLýThiếtBịToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nhậpKhoToolStripMenuItem,
             this.chỉnhSửaThiếtBịToolStripMenuItem});
+            this.quảnLýThiếtBịToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quảnLýThiếtBịToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quảnLýThiếtBịToolStripMenuItem.Image")));
             this.quảnLýThiếtBịToolStripMenuItem.Name = "quảnLýThiếtBịToolStripMenuItem";
-            this.quảnLýThiếtBịToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
+            this.quảnLýThiếtBịToolStripMenuItem.Size = new System.Drawing.Size(124, 21);
             this.quảnLýThiếtBịToolStripMenuItem.Text = "Quản lý thiết bị";
             // 
             // nhậpKhoToolStripMenuItem
             // 
+            this.nhậpKhoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nhậpKhoToolStripMenuItem.Image")));
             this.nhậpKhoToolStripMenuItem.Name = "nhậpKhoToolStripMenuItem";
-            this.nhậpKhoToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.nhậpKhoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nhậpKhoToolStripMenuItem.Text = "Nhập kho";
             // 
             // chỉnhSửaThiếtBịToolStripMenuItem
             // 
+            this.chỉnhSửaThiếtBịToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("chỉnhSửaThiếtBịToolStripMenuItem.Image")));
             this.chỉnhSửaThiếtBịToolStripMenuItem.Name = "chỉnhSửaThiếtBịToolStripMenuItem";
-            this.chỉnhSửaThiếtBịToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.chỉnhSửaThiếtBịToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.chỉnhSửaThiếtBịToolStripMenuItem.Text = "Chỉnh sửa thiết bị";
             // 
             // tiếpNhậnKháchHàngToolStripMenuItem
@@ -161,21 +173,23 @@
             this.baoCáoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.baoCaoTonKho,
             this.baoCaoDoanhThu});
+            this.baoCáoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.baoCáoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("baoCáoToolStripMenuItem.Image")));
             this.baoCáoToolStripMenuItem.Name = "baoCáoToolStripMenuItem";
-            this.baoCáoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.baoCáoToolStripMenuItem.Size = new System.Drawing.Size(83, 21);
             this.baoCáoToolStripMenuItem.Text = "Báo cáo";
             // 
             // baoCaoTonKho
             // 
             this.baoCaoTonKho.Name = "baoCaoTonKho";
-            this.baoCaoTonKho.Size = new System.Drawing.Size(174, 22);
+            this.baoCaoTonKho.Size = new System.Drawing.Size(186, 22);
             this.baoCaoTonKho.Text = "Báo cáo tồn kho";
             this.baoCaoTonKho.Click += new System.EventHandler(this.baoCaoTonKho_Click);
             // 
             // baoCaoDoanhThu
             // 
             this.baoCaoDoanhThu.Name = "baoCaoDoanhThu";
-            this.baoCaoDoanhThu.Size = new System.Drawing.Size(174, 22);
+            this.baoCaoDoanhThu.Size = new System.Drawing.Size(186, 22);
             this.baoCaoDoanhThu.Text = "Báo cáo doanh thu";
             this.baoCaoDoanhThu.Click += new System.EventHandler(this.baoCaoDoanhThu_Click);
             // 
