@@ -17,7 +17,7 @@ namespace DAO
         /// <returns></returns>
         public static List<KhachHang> LoadHanhKhach()
         {
-            string query = "select* from khachhang";
+            string query = "select * from khachhang";
 
             DataTable table = Dataprovider.ExcuteQuery(query);
 
@@ -71,6 +71,97 @@ namespace DAO
                 Utility.Log(ex);
             }
             return count == 0? false : true;
-        } 
+        }
+
+		public static bool ThemKhachHang(KhachHang khachHang)
+		{
+			int rowNum = 0;
+			string query = "EXEC usp_ThemKhachHang @maKH,@tenKH,@loaiKH,@sdt";
+			string maKH =khachHang.Ma= DAO.TaoMa.TaoMaKhachHang();
+			string tenKH = khachHang.Ten;
+			int loaiKH = khachHang.LoaiKH;
+			string sdt = khachHang.SDT;
+			List<SqlParameter> parameters = new List<SqlParameter>
+			{
+				new SqlParameter("@maKH",SqlDbType.NVarChar){IsNullable=false,Value=maKH },
+				new SqlParameter("@tenKH",SqlDbType.NVarChar){IsNullable=false,Value=tenKH },
+				new SqlParameter("@loaiKH",SqlDbType.Int){IsNullable=true,Value=loaiKH!=0?loaiKH:0},
+				new SqlParameter("@sdt",SqlDbType.NVarChar){IsNullable=true,Value=sdt??(Object)DBNull.Value}
+			};
+
+			try
+			{
+				rowNum=Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+			}
+			catch(SqlException ex)
+			{
+				Utility.Log(ex);
+			}
+			return rowNum > 0 ? true : false;
+		}
+
+		public static bool CapNhatKhachHang(KhachHang khachHang)
+		{
+			int rowNum = 0;
+			string query = "EXEC usp_CapNhatKhachHang @maKH,@tenKH,@loaiKH,@sdt";
+			string maKH = khachHang.Ma;
+			string tenKH = khachHang.Ten;
+			int loaiKH = khachHang.LoaiKH;
+			string sdt = khachHang.SDT;
+			List<SqlParameter> parameters = new List<SqlParameter>
+			{
+				new SqlParameter("@maKH",SqlDbType.NVarChar){IsNullable=false,Value=maKH },
+				new SqlParameter("@tenKH",SqlDbType.NVarChar){IsNullable=false,Value=tenKH },
+				new SqlParameter("@loaiKH",SqlDbType.Int){IsNullable=true,Value=loaiKH!=0?loaiKH:0},
+				new SqlParameter("@sdt",SqlDbType.NVarChar){IsNullable=true,Value=sdt??(Object)DBNull.Value}
+			};
+
+			try
+			{
+				rowNum = Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+			}
+			catch (SqlException ex)
+			{
+				Utility.Log(ex);
+			}
+			return rowNum > 0 ? true : false;
+		}
+
+		public static bool XoaKhachHang(KhachHang khachHang)
+		{
+			int rowNum = 0;
+			string query = "EXEC usp_XoaKhachHang @maKH";
+			string maKH = khachHang.Ma;
+
+			List<SqlParameter> parameters = new List<SqlParameter>
+			{
+				new SqlParameter("@maKH",SqlDbType.NVarChar){IsNullable=false,Value=maKH },
+			};
+
+			try
+			{
+				rowNum = Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+			}
+			catch (SqlException ex)
+			{
+				Utility.Log(ex);
+			}
+			return rowNum > 0 ? true : false;
+		}
+
+		public static DataTable LoadKhachHang()
+		{
+			DataTable data = new DataTable();
+			string query = "EXEC usp_LoadKhachHang";
+			try
+			{
+				data = Dataprovider.ExcuteQuery(query);
+			}
+			catch(Exception ex)
+			{
+				Utility.Log(ex);
+			}
+			return data;
+		}
     }
 }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Karaoke.QuanLyPhanCong;
 using Karaoke.NhaCungCap;
-using Karaoke.QuanLyThietBi;
+
 
 namespace Karaoke
 {
