@@ -542,5 +542,10 @@ namespace Karaoke.QuanLyThietBi
                 TongCong = TongCong + uint.Parse(thietBi.DonGia);
             }
         }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
