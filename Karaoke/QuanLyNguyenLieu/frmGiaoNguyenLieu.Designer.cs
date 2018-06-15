@@ -42,9 +42,9 @@
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(130, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 19);
+            this.label3.Size = new System.Drawing.Size(180, 19);
             this.label3.TabIndex = 168;
-            this.label3.Text = "Người giao hàng:";
+            this.label3.Text = "Người giao nguyên liệu:";
             // 
             // txtTenNguoi
             // 
@@ -112,7 +112,7 @@
             this.Controls.Add(this.txtTenNguoi);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGiaoNguyenLieu";
-            this.Text = "Người giao hàng";
+            this.Text = "Người giao nguyên liệu";
             this.ResumeLayout(false);
             this.PerformLayout();
 
