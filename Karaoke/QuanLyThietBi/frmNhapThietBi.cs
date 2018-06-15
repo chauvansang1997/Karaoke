@@ -8,15 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Karaoke.QuanLySanPham
+namespace Karaoke.QuanLyThietBi
 {
-    public partial class frmNhapSanPham : Form
+    public partial class frmNhapThietBi : Form
     {
         private const int pageSize = 5;
         private int pageNumber;
         private int totalPage;
         private BindingSource bindingSource = new BindingSource();
-        public frmNhapSanPham()
+        public frmNhapThietBi()
         {
             InitializeComponent();
             khoiTao();
@@ -37,15 +37,15 @@ namespace Karaoke.QuanLySanPham
             cmbTKNhaCC.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbTKNhaCC.AutoCompleteSource = AutoCompleteSource.ListItems;
 
-            rbChuaGiao.Checked=true;
+            rbChuaGiao.Checked = true;
             pageNumber = 1;
             txtPageNumber.Text = "1";
-            totalPage = BUS.SanPhamBUS.DemPhieuNhapSanPham(rbChuaGiao.Checked ? 0 : 1);
+            totalPage = BUS.ThietBiBUS.DemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1);
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
             txtTotalPage.Text = totalPage.ToString();
-            
-           // bindingSource.Add(new PhieuNhapHang());
-            bindingSource.DataSource = BUS.SanPhamBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
+
+            // bindingSource.Add(new PhieuNhapHang());
+            bindingSource.DataSource = BUS.ThietBiBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
             dGVPhieuNhap.DataSource = bindingSource;
             //bindingSource.Clear();
             dGVPhieuNhap.Columns["SoPhieu"].HeaderText = "Số phiếu";
@@ -64,12 +64,12 @@ namespace Karaoke.QuanLySanPham
             if (result == DialogResult.Yes)
             {
                 DTO.NhaCungCap nhaCungCap = ((DTO.NhaCungCap)cmbNhaCungCap.SelectedValue);
-                PhieuNhapHang phieuNhap = BUS.SanPhamBUS.LapPhieuNhap(nhaCungCap.MaNCC, "NV001");
+                PhieuNhapHang phieuNhap = BUS.ThietBiBUS.LapPhieuNhap(nhaCungCap.MaNCC, "NV001");
                 if (phieuNhap != null)
                 {
-                    MessageBox.Show("Lập đơn đặt hàng thành công");
-                    frmNhapChiTietSanPham chiTietSanPham = new frmNhapChiTietSanPham(nhaCungCap, phieuNhap);
-                    chiTietSanPham.ShowDialog();
+                    MessageBox.Show("Lập phiếu thành công");
+                //    frmNhapChiTietSanPham chiTietSanPham = new frmNhapChiTietSanPham(nhaCungCap, phieuNhap);
+                  //  chiTietSanPham.ShowDialog();
                 }
                 else
                 {
@@ -90,10 +90,10 @@ namespace Karaoke.QuanLySanPham
         {
             pageNumber = 1;
             txtPageNumber.Text = "1";
-            totalPage = BUS.SanPhamBUS.DemPhieuNhapSanPham(rbChuaGiao.Checked ? 0 : 1);
+            totalPage = BUS.ThietBiBUS.DemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1);
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
             txtTotalPage.Text = totalPage.ToString();
-            bindingSource.DataSource = BUS.SanPhamBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
+            bindingSource.DataSource = BUS.ThietBiBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -104,12 +104,14 @@ namespace Karaoke.QuanLySanPham
                 DTO.NhaCungCap nhaCungCap = ((DTO.NhaCungCap)cmbNhaCungCap.SelectedValue);
                 PhieuNhapHang phieuNhapHang = (PhieuNhapHang)bindingSource[index];
                 string soPhieuNhap = dGVPhieuNhap[0, index].Value.ToString();
-           
-                frmNhapChiTietSanPham chiTietSanPham = new 
-                    frmNhapChiTietSanPham(nhaCungCap, phieuNhapHang);
-                chiTietSanPham.ShowDialog();
+
+                frmNhapChiTietThietBi chiTietThietBi = new frmNhapChiTietThietBi(nhaCungCap,phieuNhapHang);
+                chiTietThietBi.ShowDialog();
+              //  frmNhapChiTietSanPham chiTietSanPham = new
+              //frmNhapChiTietSanPham(nhaCungCap, phieuNhapHang);
+              // chiTietSanPham.ShowDialog();
             }
-         
+
         }
 
         private void btnNhapHang_Click(object sender, EventArgs e)
@@ -118,9 +120,11 @@ namespace Karaoke.QuanLySanPham
             {
                 int index = dGVPhieuNhap.CurrentRow.Index;
                 string soPhieuNhap = dGVPhieuNhap[0, index].Value.ToString();
-                frmGiaoSanPham giaoSanPham = new frmGiaoSanPham(soPhieuNhap);
-                giaoSanPham.ShowDialog();
-                bindingSource.DataSource = BUS.SanPhamBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
+                frmGiaoThietBi giaoThietBi = new frmGiaoThietBi(soPhieuNhap);
+                giaoThietBi.ShowDialog();
+              //  frmGiaoSanPham giaoSanPham = new frmGiaoSanPham(soPhieuNhap);
+              //     giaoSanPham.ShowDialog();
+                bindingSource.DataSource = BUS.ThietBiBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
             }
 
         }
@@ -136,7 +140,7 @@ namespace Karaoke.QuanLySanPham
                 ++pageNumber;
             }
             txtPageNumber.Text = pageNumber.ToString();
-            bindingSource.DataSource = BUS.SanPhamBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
+            bindingSource.DataSource = BUS.ThietBiBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
         }
 
         private void btnPrevPage_Click(object sender, EventArgs e)
@@ -150,21 +154,21 @@ namespace Karaoke.QuanLySanPham
                 --pageNumber;
             }
             txtPageNumber.Text = pageNumber.ToString();
-            bindingSource.DataSource = BUS.SanPhamBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
+            bindingSource.DataSource = BUS.ThietBiBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
         }
 
         private void btnFirstPage_Click(object sender, EventArgs e)
         {
             pageNumber = 1;
             txtPageNumber.Text = pageNumber.ToString();
-            bindingSource.DataSource = BUS.SanPhamBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
+            bindingSource.DataSource = BUS.ThietBiBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
         }
 
         private void btnLastPage_Click(object sender, EventArgs e)
         {
             pageNumber = totalPage;
             txtPageNumber.Text = pageNumber.ToString();
-            bindingSource.DataSource = BUS.SanPhamBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
+            bindingSource.DataSource = BUS.ThietBiBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
         }
 
         private void txtPageNumber_TextChanged(object sender, EventArgs e)
@@ -186,7 +190,7 @@ namespace Karaoke.QuanLySanPham
 
                 txtPageNumber.Text = pageNumber.ToString();
             }
-            bindingSource.DataSource = BUS.SanPhamBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
+            bindingSource.DataSource = BUS.ThietBiBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
         }
 
         private void frmNhapSanPham_Load(object sender, EventArgs e)
@@ -196,7 +200,7 @@ namespace Karaoke.QuanLySanPham
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            bindingSource.DataSource = BUS.SanPhamBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
+            bindingSource.DataSource = BUS.ThietBiBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
         }
     }
 }

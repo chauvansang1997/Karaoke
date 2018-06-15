@@ -29,7 +29,7 @@ namespace BUS
 			return DAO.ThietBiDAO.LayMaNCC();
 		}
 
-        public static DataTable XemThietBi(string tenThietBi, string maNhaCungCap, int pageNumber, int pageSize)
+        public static DataTable XemThietBiTable(string tenThietBi, string maNhaCungCap, int pageNumber, int pageSize)
         {
 			return DAO.ThietBiDAO.LoadThietBi(tenThietBi, maNhaCungCap, pageNumber, pageSize);
 		}
@@ -39,5 +39,39 @@ namespace BUS
             return DAO.ThietBiDAO.DemThietBi(tenThietBi, maNhaCungCap);
         }
 
+        public static List<PhieuNhapHang> XemPhieuNhapHang(int loai, int pageNumber, int pageSize)
+        {
+            return DAO.ThietBiDAO.XemPhieuNhapHang(loai, pageNumber, pageSize);
+        }
+        public static int DemPhieuNhapHang(int loai)
+        {
+            return DAO.ThietBiDAO.DemPhieuNhapHang(loai);
+        }
+        public static PhieuNhapHang LapPhieuNhap(string nhaCungCap, string maNhanVien)
+        {
+            return DAO.ThietBiDAO.LapPhieuNhap(nhaCungCap,maNhanVien);
+        }
+
+        public static List<ThietBi> XemThietBi(string tenThietBi, string maNhaCungCap, int pageNumber, int pageSize)
+        {
+            return DAO.ThietBiDAO.XemThietBi(tenThietBi, maNhaCungCap, pageNumber, pageSize);
+        }
+
+        public static List<PhieuNhapHangDataSource> XemChiTietPhieuNhapThietBi(string soPhieuDat)
+        {
+            return DAO.ThietBiDAO.XemChiTietPhieuNhapThietBi(soPhieuDat);
+        }
+        public static bool NhapHang(string soPhieuNhap, List<string> listMa, List<string> listSoLuong, uint thanhTien)
+        {
+            return DAO.ThietBiDAO.NhapHang(soPhieuNhap,listMa, listSoLuong,  thanhTien);
+        }
+        public static DataTable XemChiTietPhieuNhapThietBiTable(string soPhieuDat)
+        {
+            return DAO.ThietBiDAO.XemChiTietPhieuNhapThietBiTable(soPhieuDat);
+        }
+        public static bool GiaoHang(string soPhieuNhap, string nguoiGiao)
+        {
+            return DAO.ThietBiDAO.GiaoHang(soPhieuNhap, nguoiGiao);
+        }
     }
 }

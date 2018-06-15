@@ -67,7 +67,7 @@ namespace Karaoke.QuanLyThietBi
             totalPage = BUS.ThietBiBUS.DemThietBi("", "");
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
             txtTotalPage.Text = totalPage.ToString();
-            dGVDanhSach.DataSource =BUS.ThietBiBUS.XemThietBi("", "", pageNumber, pageSize);
+            dGVDanhSach.DataSource =BUS.ThietBiBUS.XemThietBiTable("", "", pageNumber, pageSize);
             AddGridTableStyle();
         }
 
@@ -217,7 +217,7 @@ namespace Karaoke.QuanLyThietBi
             {
                 if (BUS.ThietBiBUS.ThemThietBi(new DTO.ThietBi()
                 {
-                    TenThietBi = txtTenNL.Text,
+                    Ten = txtTenNL.Text,
                     DonGia = txtDonGia.Text,
                     DVT = txtDVT.Text,
                     MaNCC = ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC
@@ -236,8 +236,8 @@ namespace Karaoke.QuanLyThietBi
             {
                 if (BUS.ThietBiBUS.ThemThietBi(new DTO.ThietBi()
                 {
-                    MaThietBi = ma,
-                    TenThietBi = txtTenNL.Text,
+                    Ma = ma,
+                    Ten = txtTenNL.Text,
                     DonGia = txtDonGia.Text,
                     DVT = txtDVT.Text,
                     MaNCC = ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC
@@ -264,14 +264,14 @@ namespace Karaoke.QuanLyThietBi
             txtTotalPage.Text = totalPage.ToString();
 
             dGVDanhSach.DataSource =
-    BUS.ThietBiBUS.XemThietBi("", "", pageNumber, pageSize);
+    BUS.ThietBiBUS.XemThietBiTable("", "", pageNumber, pageSize);
 
             AddGridTableStyle();
         }
         private void loadDanhSach()
         {
             dGVDanhSach.DataSource =
-    BUS.ThietBiBUS.XemThietBi(txtTenNguyenLieu.Text, ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC, pageNumber, pageSize);
+    BUS.ThietBiBUS.XemThietBiTable(txtTenNguyenLieu.Text, ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC, pageNumber, pageSize);
         }
         private void btnFind_Click(object sender, EventArgs e)
         {
@@ -287,8 +287,8 @@ namespace Karaoke.QuanLyThietBi
         {
             if (BUS.ThietBiBUS.XoaThietBi(new DTO.ThietBi()
             {
-                MaThietBi = ma,
-                TenThietBi = txtTenNL.Text,
+                Ma = ma,
+                Ten = txtTenNL.Text,
                 DonGia = txtDonGia.Text,
                 DVT = txtDVT.Text,
                 MaNCC = ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC

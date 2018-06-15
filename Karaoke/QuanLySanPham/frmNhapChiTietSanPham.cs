@@ -203,7 +203,7 @@ namespace Karaoke.QuanLySanPham
         {
             pageNumber = 1;
             txtPageNumber.Text = "1";
-            totalPage = BUS.HangHoaBUS.DemHangHoa(1, loaiHienTai + 1);
+            totalPage = BUS.SanPhamBUS.DemSanPham(nhaCungCap.MaNCC, loaiHienTai ,"");
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
             txtTotalPage.Text = totalPage.ToString();
 

@@ -13,9 +13,9 @@ namespace DTO
 		private string maNCC;
 		private string dvt;
 		private string donGia;
-
-
-		public string MaThietBi
+        private string tenNhaCungCap;
+    
+        public string Ma
 		{
 			get
 			{
@@ -28,7 +28,7 @@ namespace DTO
 			}
 		}
 
-		public string TenThietBi
+		public string Ten
         {
             get
             {
@@ -81,5 +81,18 @@ namespace DTO
 				dvt = value;
 			}
 		}
-	}
+
+        public string TenNhaCungCap
+        {
+            get
+            {
+                return tenNhaCungCap;
+            }
+
+            set
+            {
+                tenNhaCungCap = value;
+            }
+        }
+    }
 }

@@ -29,12 +29,16 @@ namespace Karaoke.GuiMonAn
         private void khoiTao()
         {
             enableControls(false);
-         
 
+            cmbLoaiMon.DataSource = BUS.MonAnBUS.XemLoaiMon();
+            cmbLoaiMon.DisplayMember = "Ten";
+
+            cmbLoaiMonTK.DataSource = BUS.MonAnBUS.XemLoaiMon();
+            cmbLoaiMonTK.DisplayMember = "Ten";
             dtNguyenLieu = new DataTable();
             dGVMonAn.DataSource = dtNguyenLieu;
 
-            bindingSource.Add(new NguyenLieuDataSource());
+            bindingSource.Add(new PhieuNhapHangDataSource());
             dGVNguyenLieu.DataSource = bindingSource;
             bindingSource.RemoveAt(0);
             dGVNguyenLieu.Columns["Ten"].HeaderText = "Tên";
@@ -76,7 +80,7 @@ namespace Karaoke.GuiMonAn
         }
         private void btnThemNguyenLieu_Click(object sender, EventArgs e)
         {
-            frmThemNguyenLieuMonAn nguyenLieuMonAn = new frmThemNguyenLieuMonAn(dtNguyenLieu);
+            frmThemNguyenLieuMonAn nguyenLieuMonAn = new frmThemNguyenLieuMonAn(this);
             nguyenLieuMonAn.ShowDialog();
             //if (dtNguyenLieu.Rows.Count == 0)
             //{
@@ -165,15 +169,25 @@ namespace Karaoke.GuiMonAn
                 return;
 
             }
-            if (dtNguyenLieu.Rows.Count == 0)
+            if (bindingSource.Count == 0)
             {
                 MessageBox.Show("Bạn nhập nguyên liệu cho món ăn!", "Thông báo", MessageBoxButtons.OK,
                     MessageBoxIcon.Error, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
                 return;
             }
-            BUS.MonAnBUS.ThemMonAn(new DTO.MonAn() { Ten = txtTenMonAn.Text, Loai = cmbLoaiMon.Text, Gia = donGia, TenHinhAnh = tenHinhAnh },
-                dtNguyenLieu.AsEnumerable().Select(r => r.Field<string>("manl"))
-                      .ToList());
+            List<string> monan = new List<string>();
+            for (int i = 0; i < bindingSource.Count; i++)
+            {
+                monan.Add(((PhieuNhapHangDataSource)bindingSource[i]).Ma);
+            }
+            List<string> soluong = new List<string>();
+            for (int i = 0; i < bindingSource.Count; i++)
+            {
+                soluong.Add(((PhieuNhapHangDataSource)bindingSource[i]).Soluong);
+            }
+            BUS.MonAnBUS.ThemMonAn(new DTO.MonAn() { Ten = txtTenMonAn.Text, Loai = ((LoaiMon)cmbLoaiMon.SelectedValue).Ma, Gia = donGia, TenHinhAnh = tenHinhAnh },
+               monan,
+               soluong);
             MessageBox.Show("Bạn nhập món ăn thành công", "Thông báo", MessageBoxButtons.OK,
                   MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
             tenHinhAnh = "";

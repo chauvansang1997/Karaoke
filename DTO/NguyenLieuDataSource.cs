@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DTO
 {
-    public class NguyenLieuDataSource
+    public class PhieuNhapHangDataSource
     {
         public string Ma { get; set; }
         public string Ten { get; set; }
