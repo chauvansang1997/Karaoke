@@ -33,6 +33,7 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelChoice = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvDanhSachPhanCong = new System.Windows.Forms.DataGridView();
-            this.panelChoice = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhanCong)).BeginInit();
@@ -66,7 +66,7 @@
             this.btnLastPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnLastPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLastPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLastPage.Location = new System.Drawing.Point(850, 496);
+            this.btnLastPage.Location = new System.Drawing.Point(850, 451);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(24, 24);
             this.btnLastPage.TabIndex = 206;
@@ -81,7 +81,7 @@
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThoat.Location = new System.Drawing.Point(954, 492);
+            this.btnThoat.Location = new System.Drawing.Point(954, 451);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(100, 36);
             this.btnThoat.TabIndex = 197;
@@ -116,8 +116,16 @@
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Location = new System.Drawing.Point(334, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(150, 535);
+            this.panel2.Size = new System.Drawing.Size(150, 499);
             this.panel2.TabIndex = 200;
+            // 
+            // panelChoice
+            // 
+            this.panelChoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
+            this.panelChoice.Location = new System.Drawing.Point(2, 71);
+            this.panelChoice.Name = "panelChoice";
+            this.panelChoice.Size = new System.Drawing.Size(10, 60);
+            this.panelChoice.TabIndex = 189;
             // 
             // label4
             // 
@@ -168,7 +176,7 @@
             this.btnNextPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnNextPage.Location = new System.Drawing.Point(824, 496);
+            this.btnNextPage.Location = new System.Drawing.Point(824, 451);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(24, 24);
             this.btnNextPage.TabIndex = 204;
@@ -181,7 +189,7 @@
             this.btnPrevPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnPrevPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPrevPage.Location = new System.Drawing.Point(703, 496);
+            this.btnPrevPage.Location = new System.Drawing.Point(703, 451);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(24, 24);
             this.btnPrevPage.TabIndex = 205;
@@ -192,7 +200,7 @@
             this.labelLoaiPhong.AutoSize = true;
             this.labelLoaiPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLoaiPhong.ForeColor = System.Drawing.Color.White;
-            this.labelLoaiPhong.Location = new System.Drawing.Point(10, 217);
+            this.labelLoaiPhong.Location = new System.Drawing.Point(13, 185);
             this.labelLoaiPhong.Name = "labelLoaiPhong";
             this.labelLoaiPhong.Size = new System.Drawing.Size(116, 19);
             this.labelLoaiPhong.TabIndex = 175;
@@ -203,7 +211,7 @@
             this.labelTenPhong.AutoSize = true;
             this.labelTenPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTenPhong.ForeColor = System.Drawing.Color.White;
-            this.labelTenPhong.Location = new System.Drawing.Point(10, 115);
+            this.labelTenPhong.Location = new System.Drawing.Point(13, 99);
             this.labelTenPhong.Name = "labelTenPhong";
             this.labelTenPhong.Size = new System.Drawing.Size(109, 19);
             this.labelTenPhong.TabIndex = 177;
@@ -234,14 +242,14 @@
             this.panel1.Controls.Add(this.labelLoaiPhong);
             this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(332, 535);
+            this.panel1.Size = new System.Drawing.Size(332, 499);
             this.panel1.TabIndex = 196;
             // 
             // cbTenCa
             // 
             this.cbTenCa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTenCa.FormattingEnabled = true;
-            this.cbTenCa.Location = new System.Drawing.Point(10, 341);
+            this.cbTenCa.Location = new System.Drawing.Point(13, 310);
             this.cbTenCa.Name = "cbTenCa";
             this.cbTenCa.Size = new System.Drawing.Size(309, 27);
             this.cbTenCa.TabIndex = 190;
@@ -250,7 +258,7 @@
             // 
             this.cbTenNV.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTenNV.FormattingEnabled = true;
-            this.cbTenNV.Location = new System.Drawing.Point(10, 239);
+            this.cbTenNV.Location = new System.Drawing.Point(13, 224);
             this.cbTenNV.Name = "cbTenNV";
             this.cbTenNV.Size = new System.Drawing.Size(309, 27);
             this.cbTenNV.TabIndex = 190;
@@ -259,7 +267,7 @@
             // 
             this.cbMaNV.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMaNV.FormattingEnabled = true;
-            this.cbMaNV.Location = new System.Drawing.Point(10, 137);
+            this.cbMaNV.Location = new System.Drawing.Point(13, 138);
             this.cbMaNV.Name = "cbMaNV";
             this.cbMaNV.Size = new System.Drawing.Size(309, 27);
             this.cbMaNV.TabIndex = 190;
@@ -268,9 +276,9 @@
             // 
             this.dtpNgayPhanCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayPhanCong.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayPhanCong.Location = new System.Drawing.Point(7, 443);
+            this.dtpNgayPhanCong.Location = new System.Drawing.Point(13, 396);
             this.dtpNgayPhanCong.Name = "dtpNgayPhanCong";
-            this.dtpNgayPhanCong.Size = new System.Drawing.Size(318, 26);
+            this.dtpNgayPhanCong.Size = new System.Drawing.Size(309, 26);
             this.dtpNgayPhanCong.TabIndex = 189;
             // 
             // label3
@@ -278,7 +286,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(10, 421);
+            this.label3.Location = new System.Drawing.Point(13, 357);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 19);
             this.label3.TabIndex = 188;
@@ -289,7 +297,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(10, 319);
+            this.label1.Location = new System.Drawing.Point(13, 271);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 19);
             this.label1.TabIndex = 186;
@@ -297,7 +305,7 @@
             // 
             // txtPageNumber
             // 
-            this.txtPageNumber.Location = new System.Drawing.Point(729, 496);
+            this.txtPageNumber.Location = new System.Drawing.Point(729, 451);
             this.txtPageNumber.Name = "txtPageNumber";
             this.txtPageNumber.Size = new System.Drawing.Size(37, 20);
             this.txtPageNumber.TabIndex = 202;
@@ -311,7 +319,7 @@
             this.btnFirstPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirstPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFirstPage.Location = new System.Drawing.Point(677, 496);
+            this.btnFirstPage.Location = new System.Drawing.Point(677, 451);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(24, 24);
             this.btnFirstPage.TabIndex = 207;
@@ -319,7 +327,7 @@
             // 
             // txtTotalPage
             // 
-            this.txtTotalPage.Location = new System.Drawing.Point(785, 496);
+            this.txtTotalPage.Location = new System.Drawing.Point(785, 451);
             this.txtTotalPage.Name = "txtTotalPage";
             this.txtTotalPage.ReadOnly = true;
             this.txtTotalPage.Size = new System.Drawing.Size(37, 20);
@@ -331,7 +339,7 @@
             // 
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(768, 496);
+            this.label7.Location = new System.Drawing.Point(768, 451);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(15, 20);
             this.label7.TabIndex = 201;
@@ -344,22 +352,14 @@
             this.dgvDanhSachPhanCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachPhanCong.Location = new System.Drawing.Point(493, 11);
             this.dgvDanhSachPhanCong.Name = "dgvDanhSachPhanCong";
-            this.dgvDanhSachPhanCong.Size = new System.Drawing.Size(561, 475);
+            this.dgvDanhSachPhanCong.Size = new System.Drawing.Size(561, 430);
             this.dgvDanhSachPhanCong.TabIndex = 208;
-            // 
-            // panelChoice
-            // 
-            this.panelChoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
-            this.panelChoice.Location = new System.Drawing.Point(2, 71);
-            this.panelChoice.Name = "panelChoice";
-            this.panelChoice.Size = new System.Drawing.Size(10, 60);
-            this.panelChoice.TabIndex = 189;
             // 
             // frmPhanCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 536);
+            this.ClientSize = new System.Drawing.Size(1064, 498);
             this.Controls.Add(this.dgvDanhSachPhanCong);
             this.Controls.Add(this.txtTotalPage);
             this.Controls.Add(this.btnFirstPage);
