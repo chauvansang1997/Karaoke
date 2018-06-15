@@ -50,6 +50,7 @@
     <Compile Include="HangHoaDataSource.cs" />
     <Compile Include="HangHoaNhap.cs" />
     <Compile Include="LoaiHangHoa.cs" />
+    <Compile Include="LoaiKhachHang.cs" />
     <Compile Include="LoaiMon.cs" />
     <Compile Include="LoaiPhong.cs" />
     <Compile Include="Luong.cs" />
