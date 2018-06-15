@@ -21,7 +21,9 @@ namespace DAO
             //truyền tham số vào câu truy vấn
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-               
+                new SqlParameter("@maHD",SqlDbType.NVarChar){IsNullable=false,Value=mahd },
+                new SqlParameter("@danhSachMa",SqlDbType.NVarChar){IsNullable=false,Value=danhSachMa },
+                new SqlParameter("@danhSachSoLuongMa",SqlDbType.NVarChar){IsNullable=false,Value=danhSachSoLuongMa },
                 new SqlParameter("@danhSachSp",SqlDbType.NVarChar){IsNullable=false,Value=danhSachSp },
                 new SqlParameter("@danhSachSoLuongSp",SqlDbType.NVarChar){IsNullable=false,Value=danhSachSoLuongSp },
 
@@ -261,14 +263,14 @@ namespace DAO
         public static bool ThanhToan(string soHoaDon,DateTime gioRa,int thanhTien,int giamGia)
         {
 
-            string query = "EXEC uspThanhToanPhong @soHoaDon,@thanhTien,@thanhTien";
+            string query = "EXEC uspThanhToanPhong @soHoaDon,@gioRa,@thanhTien,@giamGia";
     
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@soHoaDon",SqlDbType.VarChar){IsNullable=false,Value=soHoaDon },
-                new SqlParameter("@gioRa",SqlDbType.DateTime){IsNullable=false,Value=thanhTien },
+                new SqlParameter("@gioRa",SqlDbType.DateTime){IsNullable=false,Value=gioRa },
                 new SqlParameter("@thanhTien",SqlDbType.Int){IsNullable=false,Value=thanhTien },
-                                new SqlParameter("@thanhTien",SqlDbType.Int){IsNullable=false,Value=giamGia },
+                new SqlParameter("@giamGia",SqlDbType.Int){IsNullable=false,Value=giamGia },
             };
             try
             {
@@ -302,15 +304,15 @@ namespace DAO
             }
             return result == 0 ? false:true;
         }
-        public static bool KiemTraGoiMon(string ma,int loai)
+        public static bool KiemTraGoiMon(string ma,int soluong)
         {
-            string query = "EXEC uspKiemTraGoiMon @ma,@loai";
+            string query = "EXEC uspKiemTraGoiMon @ma,@soluong";
 
             //truyền tham số vào câu truy vấn
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@ma",SqlDbType.VarChar){IsNullable=false,Value=ma },
-                new SqlParameter("@loai",SqlDbType.Int){IsNullable=false,Value=loai },
+                new SqlParameter("@soluong",SqlDbType.Int){IsNullable=false,Value=soluong },
             };
             int result = 0;
             try

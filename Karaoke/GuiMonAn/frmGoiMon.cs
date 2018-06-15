@@ -11,15 +11,16 @@ using DTO;
 using BUS;
 using System.IO;
 using Subro.Controls;
+using Karaoke.PhongKaoraoke;
 
 namespace Karaoke.GuiMonAn
 {
     enum Loai
     {
-        ThucAn=0,
-        NuocUong=1,
-        TraiCay=2,
-        Sanham=3
+        ThucAn = 0,
+        NuocUong = 1,
+        TraiCay = 2,
+        Sanham = 3
     }
     public partial class frmGoiMon : Form
     {
@@ -44,19 +45,34 @@ namespace Karaoke.GuiMonAn
         private float giamGia;
         private string soHoaDon;
 
-  
+
         List<Dictionary<int, List<FoodLayout>>> listDictionaryHangHoa;
 
         private Dictionary<int, List<FoodLayout>> dictionaryHienTai;
 
+        private Dictionary<string, int> listCu = new Dictionary<string, int>();
+        private Dictionary<string, int> listMoi = new Dictionary<string, int>();
 
         private List<FlowLayoutPanel> listLayoutHangHoa;
         private FlowLayoutPanel flowFoodLayoutHienTai;
-
+        private int tienGiamGia;
         private List<LoaiHangHoa> listTenGroup;
-
-        public frmGoiMon(string soHD)
+        internal uint TongCong
         {
+            get { return this.tongCong; }
+            set
+            {
+                this.tongCong = value;
+                txtTongCong.Text = value.ToString();
+                txtThanhTien.Text = (value - (value * giamGia)).ToString();
+                tienGiamGia = (int)(value * giamGia);
+            }
+        }
+        private frmPhongKaraoke phongKaraoke;
+        public frmGoiMon(string soHD, frmPhongKaraoke phongKaraoke)
+        {
+
+            this.phongKaraoke = phongKaraoke;
             soHoaDon = soHD;
             InitializeComponent();
             khoiTao();
@@ -64,14 +80,14 @@ namespace Karaoke.GuiMonAn
         private void khoiTao()
         {
             dictionaryDataSource = new Dictionary<string, Dictionary<string, GoiMonDataSource>>();
-      
+
             listLayoutHangHoa = new List<FlowLayoutPanel>();
-          
+
             listDictionaryHangHoa = new List<Dictionary<int, List<FoodLayout>>>();
 
 
 
-      
+
             TongCong = 0;
             loaiHienTai = Loai.ThucAn;
             loaiThucAnHienTai = 1;
@@ -97,7 +113,7 @@ namespace Karaoke.GuiMonAn
             dGVHoaDon.Columns["MaLoaiHangHoa"].Visible = false;
             dGVHoaDon.Columns["TenLoaiHangHoa"].Visible = false;
             dGVHoaDon.Columns["IndexList"].Visible = false;
-           
+
             dGVHoaDon.Columns["Gia"].ReadOnly = true;
             dGVHoaDon.Columns["Ten"].ReadOnly = true;
             dGVHoaDon.Columns["Thanhtien"].ReadOnly = true;
@@ -105,7 +121,7 @@ namespace Karaoke.GuiMonAn
             var grouper = new Subro.Controls.DataGridViewGrouper(dGVHoaDon);
             grouper.SetGroupOn("MaLoaiHangHoa");
             //grouper.Options.GroupSortOrder = SortOrder.None;
-             grouper.DisplayGroup += grouper_DisplayGroup;
+            grouper.DisplayGroup += grouper_DisplayGroup;
 
             FlowLayoutPanel flowFoodLayout = new FlowLayoutPanel();
             flowFoodLayout.Dock = DockStyle.Fill;
@@ -128,7 +144,7 @@ namespace Karaoke.GuiMonAn
                     flowFoodLayout = new FlowLayoutPanel();
                     flowFoodLayout.Dock = DockStyle.Fill;
                     listLayoutHangHoa.Add(flowFoodLayout);
-                  
+
                     dictionary = new Dictionary<int, List<FoodLayout>>();
                     tabPage = new TabPage(listLoaiHangHoa[i].Ten);
                     tabPage.Controls.Add(flowFoodLayout);
@@ -138,8 +154,8 @@ namespace Karaoke.GuiMonAn
                 }
             }
             listTenGroup = new List<LoaiHangHoa>();
-            listTenGroup.Add(new LoaiHangHoa() { Ma = "0", Ten="Thức ăn" });
-             listTenGroup.AddRange( BUS.HangHoaBUS.XemLoaiMon(2));
+            listTenGroup.Add(new LoaiHangHoa() { Ma = "0", Ten = "Thức ăn" });
+            listTenGroup.AddRange(BUS.HangHoaBUS.XemLoaiMon(2));
             if (listTenGroup != null)
             {
 
@@ -160,7 +176,8 @@ namespace Karaoke.GuiMonAn
                         dictionaryDataSource[temp[i].TenLoaiHangHoa].Add(temp[i].Ma, temp[i]);
                         bindingSource.Add(temp[i]);
                         tongCong += uint.Parse(temp[i].Thanhtien);
-
+                        listCu.Add(temp[i].Ma, int.Parse(temp[i].Soluong));
+                        listMoi.Add(temp[i].Ma, int.Parse(temp[i].Soluong));
                     }
                     TongCong = tongCong;
 
@@ -200,16 +217,7 @@ namespace Karaoke.GuiMonAn
 
             dGVHoaDon.Columns["Ten"].HeaderText = "Tên";
         }
-        internal uint TongCong
-        {
-            get { return this.tongCong; }
-            set
-            {
-                this.tongCong = value;
-                txtTongCong.Text = value.ToString();
-                txtThanhTien.Text = (value - (value * giamGia)).ToString();
-            }
-        }
+
         private void thayDoiLoai()
         {
             pageNumber = 1;
@@ -218,9 +226,9 @@ namespace Karaoke.GuiMonAn
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
             txtTotalPage.Text = totalPage.ToString();
 
-             dictionaryHienTai = listDictionaryHangHoa[(int)loaiHienTai ];
-             flowFoodLayoutHienTai = listLayoutHangHoa[(int)loaiHienTai ];
-             indexLoaiHienTai = (int)loaiHienTai;
+            dictionaryHienTai = listDictionaryHangHoa[(int)loaiHienTai];
+            flowFoodLayoutHienTai = listLayoutHangHoa[(int)loaiHienTai];
+            indexLoaiHienTai = (int)loaiHienTai;
 
             hienThiDanhSachHangHoa();
         }
@@ -268,6 +276,7 @@ namespace Karaoke.GuiMonAn
                     {
                         string tenLoaiHangHoa = foodLayout.HangHoa.Loai == "0" ? "Thức ăn" : foodLayout.HangHoa.LoaiHangHoa.Ten;
                         string maHangHoa = foodLayout.HangHoa.Ma;
+
                         if (!HoaDonBUS.KiemTraGoiMon(maHangHoa, int.Parse(foodLayout.HangHoa.Loai)))
                         {
                             MessageBox.Show("Mặt hàng đã hết số lượng");
@@ -277,7 +286,7 @@ namespace Karaoke.GuiMonAn
                         {
                             return;
                         }
-                 
+                        listMoi.Add(maHangHoa, 1);
                         if (dictionaryDataSource.ContainsKey(tenLoaiHangHoa))
                         {
                             dictionaryDataSource[tenLoaiHangHoa].Add(maHangHoa, new GoiMonDataSource()
@@ -296,7 +305,7 @@ namespace Karaoke.GuiMonAn
                             });
                         }
 
-                
+
                         hashMaHangHoa.Add(maHangHoa);
                         sapXepLaiDanhSachHoaDon();
 
@@ -386,7 +395,7 @@ namespace Karaoke.GuiMonAn
         }
 
 
-
+        private bool bKiemTraTon;
 
         private void dGVHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -398,6 +407,10 @@ namespace Karaoke.GuiMonAn
                     int indexList = int.Parse(dGVHoaDon[8, e.RowIndex].Value.ToString());
                     string maHangHoa = dGVHoaDon[7, e.RowIndex].Value.ToString();
                     hashMaHangHoa.Remove(maHangHoa);
+                    if (listMoi.ContainsKey(maHangHoa))
+                    {
+                        listMoi.Remove(maHangHoa);
+                    }
                     dictionaryDataSource[dGVHoaDon[10, e.RowIndex].Value.ToString()].Remove(maHangHoa);
 
                     TongCong = TongCong - (uint.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString()) *
@@ -417,17 +430,23 @@ namespace Karaoke.GuiMonAn
             {
                 if (e.ColumnIndex == 3 && e.RowIndex > -1)
                 {
+                    if (!bKiemTraTon)
+                    {
+                        MessageBox.Show("Món hàng không đủ số lượng");
+                        return;
+                    }
                     dGVHoaDon[4, e.RowIndex].Value = int.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString()) *
                         int.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString());
+                    listMoi[dGVHoaDon[7, e.RowIndex].Value.ToString()] = int.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString());
 
                 }
             }
             catch (Exception)
             {
 
-
+                
             }
-
+            bKiemTraTon = false;
         }
 
         private void dGVHoaDon_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
@@ -436,8 +455,14 @@ namespace Karaoke.GuiMonAn
             {
                 if (e.ColumnIndex == 3 && e.RowIndex > -1)
                 {
+                    if (BUS.HoaDonBUS.KiemTraGoiMon(dGVHoaDon[6, e.RowIndex].Value.ToString(), int.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString())))
+                    {
+                        bKiemTraTon = true;
+                        return;
+                    }
                     uint oldValue = uint.Parse(dGVHoaDon[e.ColumnIndex, e.RowIndex].Value.ToString());
                     uint newValue = uint.Parse(e.FormattedValue.ToString());
+                 
                     TongCong = TongCong - oldValue * uint.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString())
                         + newValue * uint.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString());
                 }
@@ -452,6 +477,26 @@ namespace Karaoke.GuiMonAn
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (listCu.Count > 0)
+            {
+                foreach (KeyValuePair<string, int> itemSource in listCu)
+                {
+                    if (listMoi.ContainsKey(itemSource.Key))
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+                }
+            }
+            else
+            {
+
+            }
+          
+
             List<ChiTietHoaDon> listHoaDonMonAn = new List<ChiTietHoaDon>();
             List<ChiTietHoaDon> listHoaDonSanPham = new List<ChiTietHoaDon>();
             List<string> maMonAn = new List<string>();
@@ -491,9 +536,11 @@ namespace Karaoke.GuiMonAn
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if (BUS.HoaDonBUS.ThanhToan(soHoaDon,DateTime.Now,int.Parse(txtThanhTien.Text),int.Parse(txtGiamGia.Text)))
+            if (BUS.HoaDonBUS.ThanhToan(soHoaDon, DateTime.Now, int.Parse(txtThanhTien.Text), tienGiamGia))
             {
                 MessageBox.Show("Thanh toán thành công");
+                this.Close();
+                phongKaraoke.reset();
             }
             else
             {
@@ -506,7 +553,7 @@ namespace Karaoke.GuiMonAn
             TabPage tabPage = tabControl.SelectedTab;
             if (tabPage != null)
             {
-                loaiHienTai =(Loai) tabControl.SelectedIndex;
+                loaiHienTai = (Loai)tabControl.SelectedIndex;
 
                 thayDoiLoai();
             }
@@ -514,7 +561,7 @@ namespace Karaoke.GuiMonAn
 
         private void tabControlThucAn_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
+
         }
         private Rectangle dragBoxFromMouseDown;
 

@@ -56,9 +56,10 @@ namespace Karaoke.PhongKaoraoke
         }
 
 
-
+     
         public frmPhongKaraoke()
         {
+           
             InitializeComponent();
             khoiTao();
         }
@@ -122,6 +123,17 @@ namespace Karaoke.PhongKaoraoke
             dictionaryUnAvailableLayout = new Dictionary<int, List<PhongLayout>>();
 
             thayDoiTrangThai();
+        }
+        public void reset()
+        {
+            totalPage = Utility.TinhKichThuocTrang(BUS.PhongBUS.DemPhong((int)trangThai), pageSize);
+            txtTotalPage.Text = totalPage.ToString();
+            pageNumber = 1;
+            txtPageNumber.Text = "1";
+            indexHienTai = -1;
+
+            dictionaryHienTai = dictionaryAllLayout;
+            hienThiTatCaPhong();
         }
         private void hienThiTatCaPhong()
         {
@@ -317,14 +329,14 @@ namespace Karaoke.PhongKaoraoke
                 }
                 else
                 {
-                    frmGoiMon goiMon = new frmGoiMon(soHoaDon);
+                    frmGoiMon goiMon = new frmGoiMon(soHoaDon,this);
                     goiMon.ShowDialog();
                 }
             }
             catch (Exception)
             {
 
-                MessageBox.Show("Bạn phải chọn phòng");
+                
             }
        
      
