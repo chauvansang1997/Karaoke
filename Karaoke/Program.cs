@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using Karaoke.QuanLyPhanCong;
 using Karaoke.NhaCungCap;
 using Karaoke.ThietBi;
+using Karaoke.GUI_LoaiKH;
+using Karaoke.KhachHang;
 
 namespace Karaoke
 {
@@ -22,7 +24,7 @@ namespace Karaoke
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmThietBi());
+            Application.Run(new frmKhachHang());
         }
     }
 }

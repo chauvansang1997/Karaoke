@@ -202,7 +202,7 @@ namespace Karaoke.PhongKaoraoke
                 //{
 
                 //}
-                if (BUS.PhongBUS.GhiNhanDatPhong(new KhachHang() { Ten = txtTenKhachHang.Text, SoDT = txtSDT.Text }, PhongHienTai.Ten, "NV001"))
+                if (BUS.PhongBUS.GhiNhanDatPhong(new DTO.KhachHang() { Ten = txtTenKhachHang.Text, SoDT = txtSDT.Text }, PhongHienTai.Ten, "NV001"))
                 {
                     MessageBox.Show("Đặt phòng thành công");
                     listPhongLayout[indexHienTai].BackColor = Color.DarkRed;

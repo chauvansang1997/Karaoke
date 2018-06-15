@@ -21,9 +21,7 @@ namespace DAO
             //truyền tham số vào câu truy vấn
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@maHD",SqlDbType.NVarChar){IsNullable=false,Value=mahd },
-                new SqlParameter("@danhSachMa",SqlDbType.NVarChar){IsNullable=false,Value=danhSachMa },
-                new SqlParameter("@danhSachSoLuongMa",SqlDbType.NVarChar){IsNullable=false,Value=danhSachSoLuongMa },
+               
                 new SqlParameter("@danhSachSp",SqlDbType.NVarChar){IsNullable=false,Value=danhSachSp },
                 new SqlParameter("@danhSachSoLuongSp",SqlDbType.NVarChar){IsNullable=false,Value=danhSachSoLuongSp },
 

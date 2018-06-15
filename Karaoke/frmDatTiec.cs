@@ -227,7 +227,7 @@ namespace Karaoke
             if (BUS.PhieuDatTiecBUS.KiemTraPhieuDatTiec(PhongHienTai.Ten, dateTimeNhanPhong, dateTimeKetThuc))
             {
                // User.NhanVien.MaNV = "NV001";
-                string soHoaDon = BUS.PhieuDatTiecBUS.GhiNhanDatTiec(new KhachHang() { Ten = tenKhachHang, SoDT = soDienThoai },
+                string soHoaDon = BUS.PhieuDatTiecBUS.GhiNhanDatTiec(new DTO.KhachHang() { Ten = tenKhachHang, SoDT = soDienThoai },
                                          PhongHienTai.Ten, "NV001", dateTimeNhanPhong, dateTimeDat, dateTimeKetThuc);
                 if (soHoaDon != "")
                 {

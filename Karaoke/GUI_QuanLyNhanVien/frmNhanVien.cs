@@ -21,7 +21,7 @@ namespace Karaoke.GUI_QuanLyNhanVien
 
         public void LoadComboBox()
         {
-            cbxMaCVU.DisplayMember = "MaCV";
+            cbxMaCVU.DisplayMember = "TenCV";
             cbxMaCVU.ValueMember = "MaCV";
             cbxMaCVU.DataSource = BUS.ChucVuBUS.LoadMaChucVu();
         }

@@ -50,6 +50,7 @@
     <Compile Include="HangHoaDAO.cs" />
     <Compile Include="HoaDonDAO.cs" />
     <Compile Include="KhachHangDAO.cs" />
+    <Compile Include="LoaiKhachHangDAO.cs" />
     <Compile Include="PhanCong\PhanCongDAO.cs" />
     <Compile Include="PhieuDatTiecDAO.cs" />
     <Compile Include="PhongDAO.cs" />

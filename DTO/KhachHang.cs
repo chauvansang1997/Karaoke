@@ -12,6 +12,8 @@ namespace DTO
         private string phoneNumber;
         private string address;
         private string id;
+		private int loaiKH;
+		private string sdt;
 
         public string Ten
         {
@@ -64,6 +66,30 @@ namespace DTO
                 id = value;
             }
         }
+
+		public int LoaiKH
+		{
+			get
+			{
+				return loaiKH;
+			}
+			set
+			{
+				loaiKH = value;
+			}
+		}
+
+		public string SDT
+		{
+			get
+			{
+				return sdt;
+			}
+			set
+			{
+				sdt = value;
+			}
+		}
     }
 }
         
