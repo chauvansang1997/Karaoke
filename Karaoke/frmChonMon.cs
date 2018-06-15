@@ -21,7 +21,7 @@ namespace Karaoke
 
     public partial class frmChonMon : Form
     {
-        private const int pageSize = 1;
+        private const int pageSize = 2;
         private int pageNumber;
         private int totalPage;
         private List<FoodLayout> listFoodLayout;
@@ -109,6 +109,7 @@ namespace Karaoke
             dGVHoaDon.Columns["MaLoaiHangHoa"].Visible = false;
             dGVHoaDon.Columns["TenLoaiHangHoa"].Visible = false;
             dGVHoaDon.Columns["IndexList"].Visible = false;
+            dGVHoaDon.Columns["DonViTinh"].Visible = false;
             dGVHoaDon.Columns["Gia"].ReadOnly = true;
             dGVHoaDon.Columns["Ten"].ReadOnly = true;
             dGVHoaDon.Columns["Thanhtien"].ReadOnly = true;
@@ -267,6 +268,7 @@ namespace Karaoke
         {
 
             flowFoodLayoutHienTai.Controls.Clear();
+            flowFoodLayoutHienTai.Dock = DockStyle.Fill;
             if (dictionaryHienTai.ContainsKey(pageNumber) == false)
             {
                 listHangHoa = BUS.HangHoaBUS.XemHangHoa((int)loaiHienTai, pageNumber, pageSize, indexLoaiHienTai);
@@ -289,6 +291,10 @@ namespace Karaoke
 
 
                     FoodLayout foodLayout = new FoodLayout(image) { HangHoa = item, IndexDict = pageNumber, IndexList = i };
+                    foodLayout.AutoScaleMode = AutoScaleMode.None;
+                    foodLayout.AutoSize = false;
+                    foodLayout.AutoScaleMode = AutoScaleMode.None;
+                    
                     foodLayout.HangHoa = item;
                     foodLayout.setClick((sender, e) =>
                     {
@@ -320,20 +326,7 @@ namespace Karaoke
                      
                         hashMaHangHoa.Add(maHangHoa);
                         sapXepLaiDanhSachHoaDon();
-                        //bindingSource.Add(new GoiMonDataSource()
-                        //{
-
-                        //    Ma = foodLayout.HangHoa.Ma,
-                        //    Ten = foodLayout.HangHoa.Ten,
-                        //    Gia = foodLayout.HangHoa.Gia.ToString(),
-                        //    Soluong = "1",
-                        //    Thanhtien = foodLayout.HangHoa.Gia.ToString(),
-                        //    Loai = foodLayout.HangHoa.Loai,
-                        //    IndexDict = foodLayout.IndexDict,
-                        //    IndexList = foodLayout.IndexList,
-                        //    MaLoaiHangHoa = foodLayout.HangHoa.LoaiHangHoa.Ma,
-                        //    TenLoaiHangHoa = foodLayout.HangHoa.LoaiHangHoa.Ten,
-                        //});
+               
                         TongCong = TongCong + foodLayout.HangHoa.Gia;
 
                     });
@@ -349,7 +342,17 @@ namespace Karaoke
                 listFoodLayout = dictionaryHienTai[pageNumber];
                 for (int i = 0; i < listFoodLayout.Count; i++)
                 {
-                    flowFoodLayoutHienTai.Controls.Add(listFoodLayout[i]);
+                    FoodLayout foodLayout = listFoodLayout[i];
+                   
+                   // foodLayout.Anchor = AnchorStyles.Bottom|AnchorStyles.Left| AnchorStyles.Right| AnchorStyles.Top;
+                    //foodLayout.Size = new Size(100, 100);
+                    //foodLayout.imgFood.Size = new Size(65, 55);
+                    //foodLayout.txtPrice.Size = new System.Drawing.Size(32, 13);
+                    //foodLayout.txtName.Size = new System.Drawing.Size(32, 13);
+                    //foodLayout.imgFood.Location = new Point(16, 20);
+                    //foodLayout.txtPrice.Location = new Point(20, 4);
+                    //foodLayout.txtName.Location = new Point(24, 70);
+                    flowFoodLayoutHienTai.Controls.Add(foodLayout);
                 }
             }
 
@@ -524,7 +527,14 @@ namespace Karaoke
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-
+            if (BUS.HoaDonBUS.ThanhToan(soHoaDon, DateTime.Now, int.Parse(txtThanhTien.Text), int.Parse(txtGiamGia.Text)))
+            {
+                MessageBox.Show("Thanh toán thành công");
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi xảy ra!. Vui lòng mời nhân viên kỹ thuật kiểm tra!!!");
+            }
         }
 
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -555,6 +565,108 @@ namespace Karaoke
                 loaiThucAnHienTai = tabControlThucAn.SelectedIndex + 1;
                 thayDoiLoai();
             }
+        }
+        private Rectangle dragBoxFromMouseDown;
+
+        private int rowIndexFromMouseDown;
+
+        private int rowIndexOfItemUnderMouseToDrop;
+
+
+
+
+
+        private void dGVHoaDon_MouseMove(object sender, MouseEventArgs e)
+        {
+            if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
+
+            {
+
+                // If the mouse moves outside the rectangle, start the drag.
+
+                if (dragBoxFromMouseDown != Rectangle.Empty &&
+
+                    !dragBoxFromMouseDown.Contains(e.X, e.Y))
+
+                {
+
+
+
+                    // Proceed with the drag and drop, passing in the list item.                   
+
+                    DragDropEffects dropEffect = dGVHoaDon.DoDragDrop(
+                             dGVHoaDon.Rows[rowIndexFromMouseDown],
+                             DragDropEffects.Move);
+
+                }
+
+            }
+        }
+
+        private void dGVHoaDon_MouseDown(object sender, MouseEventArgs e)
+        {
+            //Get the index of the item the mouse is below.
+
+            rowIndexFromMouseDown = dGVHoaDon.HitTest(e.X, e.Y).RowIndex;
+
+
+
+            if (rowIndexFromMouseDown != -1)
+
+            {
+
+                // Remember the point where the mouse down occurred. 
+                // The DragSize indicates the size that the mouse can move 
+                // before a drag event should be started.               
+
+                Size dragSize = SystemInformation.DragSize;
+
+
+
+                // Create a rectangle using the DragSize, with the mouse position being
+
+                // at the center of the rectangle.
+
+                dragBoxFromMouseDown = new Rectangle(new Point(e.X - (dragSize.Width / 2),
+
+                                                               e.Y - (dragSize.Height / 2)),
+                                                        dragSize);
+
+            }
+
+            else
+
+                // Reset the rectangle if the mouse is not over an item in the ListBox.
+
+                dragBoxFromMouseDown = Rectangle.Empty;
+        }
+
+        private void dGVHoaDon_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        private void dGVHoaDon_DragDrop(object sender, DragEventArgs e)
+        {
+            Point clientPoint = dGVHoaDon.PointToClient(new Point(e.X, e.Y));
+            rowIndexOfItemUnderMouseToDrop =
+                dGVHoaDon.HitTest(clientPoint.X, clientPoint.Y).RowIndex;
+            if (e.Effect == DragDropEffects.Move)
+            {
+                DataGridViewRow rowToMove = (DataGridViewRow)e.Data.GetData(typeof(DataGridViewRow));
+                // find the row to move in the datasource:
+                bindingSource.Add(rowToMove.DataBoundItem);
+                bindingSource.RemoveAt(rowToMove.Index);
+
+            }
+
+
+
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -27,5 +28,10 @@ namespace BUS
 		{
 			return DAO.QuanLyNCC.NhaCungCapDAO.LoadNCC();
 		}
-	}
+        private NhaCungCapBUS() { }
+        public static List<NhaCungCap> XemNhaCungCap()
+        {
+            return DAO.NhaCungCapDAO.XemNhaCungCap();
+        }
+    }
 }

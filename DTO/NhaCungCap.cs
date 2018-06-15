@@ -27,7 +27,7 @@ namespace DTO
 			}
 		}
 
-		public string TenNCC
+		public string Ten
 		{
 			get
 			{

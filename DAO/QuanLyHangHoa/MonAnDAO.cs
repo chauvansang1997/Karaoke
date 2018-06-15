@@ -10,20 +10,19 @@ namespace DAO.QuanLyHangHoa
 {
     public static class MonAnDAO
     {
-        public static bool ThemMonAn(MonAn monAn,string listNguyenLieu)
+        public static bool ThemMonAn(MonAn monAn,string listNguyenLieu,string listSoLuong)
         {
            
             //Thêm món ăn
-            string query = "uspThemMonAn @listNguyenLieu,@mamon,@tenmon,@loaimon,@anhminhhoa,@dongia";
+            string query = " EXEC uspThemMonAn @listNguyenLieu,@listSoLuong,@tenmon,@loaimon,@anhminhhoa,@dongia";
 
-            //Tạo mã cho món ăn
-            string maMonAn = TaoMa.TaoMaMonAn();
 
+           
             //truyền tham số vào câu truy vấn
             List<SqlParameter> parameters = new List<SqlParameter>()
             { 
                 new SqlParameter("@listNguyenLieu", SqlDbType.VarChar) { IsNullable = false, Value = listNguyenLieu },
-                new SqlParameter("@mamon",SqlDbType.VarChar){IsNullable=false,Value=maMonAn },
+                    new SqlParameter("@listSoLuong", SqlDbType.VarChar) { IsNullable = false, Value = listSoLuong },
                 new SqlParameter("@tenmon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Ten },
                 new SqlParameter("@loaimon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Loai },
                 new SqlParameter("@anhminhhoa",SqlDbType.VarChar){IsNullable=false,Value=monAn.TenHinhAnh },
@@ -38,7 +37,37 @@ namespace DAO.QuanLyHangHoa
                 Utility.Log(ex);
                 return false;
             }
-          
+            return true;
+        }
+
+        public static bool CapNhatMonAn(MonAn monAn, string listNguyenLieu)
+        {
+
+            //Thêm món ăn
+            string query = " EXEC uspThemMonAn @maMonAn,@listNguyenLieu,@mamon,@tenmon,@loaimon,@anhminhhoa,@dongia";
+
+
+
+            //truyền tham số vào câu truy vấn
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@maMonAn", SqlDbType.VarChar) { IsNullable = false, Value = monAn.Ma },
+                new SqlParameter("@listNguyenLieu", SqlDbType.VarChar) { IsNullable = false, Value = listNguyenLieu },
+                new SqlParameter("@tenmon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Ten },
+                new SqlParameter("@loaimon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Loai },
+                new SqlParameter("@anhminhhoa",SqlDbType.VarChar){IsNullable=false,Value=monAn.TenHinhAnh },
+                new SqlParameter("@dongia",SqlDbType.Decimal){IsNullable=false,Value=monAn.Gia },
+            };
+            try
+            {
+                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+                return false;
+            }
+
 
             return true;
         }
@@ -80,6 +109,7 @@ namespace DAO.QuanLyHangHoa
         {
             string query = "EXEC uspXemMonAn @tenMonAn,@loaiMonAn,@donGia";
 
+ 
             //truyền tham số vào câu truy vấn
             List<SqlParameter> parameters = new List<SqlParameter>()
             {

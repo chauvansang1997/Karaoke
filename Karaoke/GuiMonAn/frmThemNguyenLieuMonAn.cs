@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DTO;
+using FastMember;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,34 +17,71 @@ namespace Karaoke.GuiMonAn
         private DataTable dtNguyenLieu;
         private DataTable dtNguyeLieuMonAn;
         private List<String> listMaNguyenLieu;
-
+        private const int pageSize = 10;
+        private int pageNumber;
+        private int totalPage;
+        public BindingSource bindingSource ;
+        frmMonAn monAn;
         public DataTable DtNguyeLieuMonAn
         {
             get
             {
-                return dtNguyeLieuMonAn;
+                return dtNguyenLieu;
             }
             set
             {
-                dtNguyeLieuMonAn = value;
+                dtNguyenLieu = value;
             }
         }
 
-        public frmThemNguyenLieuMonAn(DataTable dtNguyeLieuMonAn)
+        public frmThemNguyenLieuMonAn(frmMonAn monAn)
         {
             InitializeComponent();
-            this.DtNguyeLieuMonAn = dtNguyeLieuMonAn;
+            bindingSource = monAn.bindingSource;
+            this.monAn = monAn;
+            cmbNhaCungCap.DataSource = BUS.NhaCungCapBUS.XemNhaCungCap();
+            cmbNhaCungCap.DisplayMember = "Ten";
+    
+          //  IEnumerable<NguyenLieuDataSource> data = (List<NguyenLieuDataSource>)dtNguyeLieuMonAn.DataSource;
+            //using (var reader = ObjectReader.Create((List<NguyenLieuDataSource>)dtNguyeLieuMonAn.DataSource))
+            //{
+            //    DtNguyeLieuMonAn.Load(reader);
+            //}
+            listMaNguyenLieu = new List<string>();
+            for (int i = 0; i < monAn.bindingSource.Count; i++)
+            {
+                listMaNguyenLieu.Add(((PhieuNhapHangDataSource)monAn.bindingSource[i]).Ma);
+            }
 
-                listMaNguyenLieu = dtNguyeLieuMonAn.AsEnumerable().Select(r => r.Field<string>("manl"))
-                      .ToList();
 
-       
+            pageNumber = 1;
+            txtPageNumber.Text = "1";
+            totalPage = BUS.NguyenLieuBUS.DemNguyenLieu("", "", false, listMaNguyenLieu);
+            totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+            txtTotalPage.Text = totalPage.ToString();
+            dtNguyenLieu = BUS.NguyenLieuBUS.TiemKiemNguyenLieu("", "", false, pageNumber, pageSize, listMaNguyenLieu);
+            dGVNguyenLieu.DataSource = dtNguyenLieu;
         }
-
+        private void loadDanhSach()
+        {
+            if(cmbNhaCungCap.SelectedValue != null)
+            {
+                dtNguyenLieu = BUS.NguyenLieuBUS.TiemKiemNguyenLieu(txtTenNguyenLieu.Text, ((DTO.NhaCungCap)(cmbNhaCungCap.SelectedValue)).MaNCC, false, pageNumber, pageSize, listMaNguyenLieu);
+            }
+            else
+            {
+                dtNguyenLieu = BUS.NguyenLieuBUS.TiemKiemNguyenLieu(txtTenNguyenLieu.Text, "", false, pageNumber, pageSize, listMaNguyenLieu);
+            }
+        }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            pageNumber = 1;
+            txtPageNumber.Text = "1";
+            totalPage = BUS.NguyenLieuBUS.DemNguyenLieu(txtTenNguyenLieu.Text, ((DTO.NhaCungCap)(cmbNhaCungCap.SelectedValue)).MaNCC, false, listMaNguyenLieu);
+            totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+            txtTotalPage.Text = totalPage.ToString();
 
-            dtNguyenLieu = BUS.NguyenLieuBUS.TiemKiemNguyenLieu(txtTenNguyenLieu.Text, cmbNhaCungCap.Text, false, listMaNguyenLieu);
+            loadDanhSach();
            // if (this.DtNguyeLieuMonAn == null)
             //{
              this.DtNguyeLieuMonAn = dtNguyenLieu.Clone();
@@ -56,8 +95,16 @@ namespace Karaoke.GuiMonAn
         {
            if(dGVNguyenLieu.CurrentCell != null)
            {
-                DataRow row = dtNguyenLieu.Rows[dGVNguyenLieu.CurrentCell.RowIndex];
-                DtNguyeLieuMonAn.Rows.Add(row.ItemArray);
+                int index = dGVNguyenLieu.CurrentCell.RowIndex;
+                // DataRow row = dtNguyenLieu.Rows[dGVNguyenLieu.CurrentCell.RowIndex];
+                //  DtNguyeLieuMonAn.Rows.Add(row.ItemArray);
+                bindingSource.Add(new PhieuNhapHangDataSource()
+                {
+                    Ma = dGVNguyenLieu[0,index].Value.ToString(),
+                    Ten = dGVNguyenLieu[1, index].Value.ToString(),
+                    DonViTinh = dGVNguyenLieu[3, index].Value.ToString(),
+                    Soluong = "1",
+                });
                 this.Close();
            }
         }
@@ -113,6 +160,79 @@ namespace Karaoke.GuiMonAn
         private void btnThoat_MouseHover(object sender, EventArgs e)
         {
             this.btnThoat.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnNextPage_Click(object sender, EventArgs e)
+        {
+            if (pageNumber + 1 > totalPage)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                ++pageNumber;
+            }
+            txtPageNumber.Text = pageNumber.ToString();
+
+            loadDanhSach();
+        }
+
+        private void btnPrevPage_Click(object sender, EventArgs e)
+        {
+            if (pageNumber - 1 == 0)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                --pageNumber;
+            }
+            txtPageNumber.Text = pageNumber.ToString();
+            loadDanhSach();
+        }
+
+        private void btnFirstPage_Click(object sender, EventArgs e)
+        {
+            pageNumber = 1;
+            txtPageNumber.Text = pageNumber.ToString();
+            loadDanhSach();
+
+        }
+
+      
+
+        private void btnLastPage_Click(object sender, EventArgs e)
+        {
+            pageNumber = totalPage;
+            txtPageNumber.Text = pageNumber.ToString();
+            loadDanhSach();
+        }
+
+        private void txtPageNumber_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Convert.ToUInt32(txtPageNumber.Text) <= totalPage)
+                {
+                    pageNumber = (int)Convert.ToUInt32(txtPageNumber.Text);
+
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception)
+            {
+
+                txtPageNumber.Text = pageNumber.ToString();
+            }
+            loadDanhSach();
+        }
+
+        private void frmThemNguyenLieuMonAn_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

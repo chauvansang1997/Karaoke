@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,9 +30,32 @@ namespace BUS
         {
             return DAO.HoaDonDAO.XemChiTietHoaDonDatTiec(soHoaDon);
         }
+        public static List<GoiMonDataSource> XemChiTietHoaDonGoiMon(string soHoaDon)
+        {
+            return DAO.HoaDonDAO.XemChiTietHoaDonGoiMon(soHoaDon);
+        }
         public static string LayMaHoaDonDatTiec(string maPhong, string tenKhachHang, string soDienThoai, DateTime ngayNhanPhong)
         {
             return DAO.HoaDonDAO.LayMaHoaDonDatTiec(maPhong,tenKhachHang,soDienThoai,ngayNhanPhong);
+        }
+        public static bool ThanhToan(string soHoaDon, DateTime gioRa, int thanhTien, int giamGia)
+        {
+            return DAO.HoaDonDAO.ThanhToan(soHoaDon, gioRa, thanhTien, giamGia);
+        }
+        public static bool HoaDonDatTiec(string soHoaDon)
+        {
+            return DAO.HoaDonDAO.HoaDonDatTiec(soHoaDon);
+        }
+
+
+        public static DataTable XemHoaDonBaoCao(string soHoaDon)
+        {
+            return DAO.HoaDonDAO.XemHoaDonBaoCao(soHoaDon);
+        }
+
+        public static bool KiemTraGoiMon(string ma, int loai)
+        {
+            return DAO.HoaDonDAO.KiemTraGoiMon(ma, loai);
         }
     }
 }

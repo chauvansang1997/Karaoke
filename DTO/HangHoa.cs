@@ -15,8 +15,33 @@ namespace DTO
         private LoaiHangHoa loaiHangHoa;
         private string loai;
         private uint gia;
+        private string donViTinh;
+        private int donGiaNhap;
+        private int soLuongToiThieu;
+        public int SoLuongToiThieu
+        {
+            get
+            {
+                return soLuongToiThieu;
+            }
 
+            set
+            {
+                soLuongToiThieu = value;
+            }
+        }
+        public int DonGiaNhap
+        {
+            get
+            {
+                return donGiaNhap;
+            }
 
+            set
+            {
+                donGiaNhap = value;
+            }
+        }
         public string Ten
         {
             get
@@ -104,6 +129,10 @@ namespace DTO
             }
         }
 
-
+        public string DonViTinh
+        {
+            get { return donViTinh; }
+            set { donViTinh = value; }
+        }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using Karaoke.GuiMonAn;
 using Karaoke.GUI_QuanLyNhanVien;
+using Karaoke.NguyenLieu;
 using Karaoke.PhongKaoraoke;
+using Karaoke.QuanLySanPham;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Karaoke.QuanLyPhanCong;
 using Karaoke.NhaCungCap;
-using Karaoke.ThietBi;
-using Karaoke.GUI_LoaiKH;
-using Karaoke.KhachHang;
-using Karaoke.GUI_BaoCaoDoanhThu;
+
 
 namespace Karaoke
 {
@@ -25,7 +24,7 @@ namespace Karaoke
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmBaoCaoLuong());
+            Application.Run(new frmMain());
         }
     }
 }
