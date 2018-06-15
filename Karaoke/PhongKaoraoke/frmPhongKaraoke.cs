@@ -136,6 +136,7 @@ namespace Karaoke.PhongKaoraoke
                     DTO.Phong item = listAllPhong[i];
 
                     PhongLayout phongLayout = new PhongLayout() { Phong = item, IndexList = i };
+                    phongLayout.Ten = item.Ten;
                     if (item.TinhTrang == 0)
                     {
                         phongLayout.BackColor = Color.ForestGreen;

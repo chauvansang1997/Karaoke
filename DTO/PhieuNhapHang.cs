@@ -15,6 +15,10 @@ namespace DTO
         private string nguoiGiao;
         private string tenNhanVien;
         private string soDienThoai;
+
+        private string maNhaCungCap;
+        private string tenNhaCungCap;
+   
         public string SoPhieu
         {
             get
@@ -91,6 +95,29 @@ namespace DTO
             }
         }
 
-  
+        public string TenNhaCungCap
+        {
+            get
+            {
+                return tenNhaCungCap;
+            }
+
+            set
+            {
+                tenNhaCungCap = value;
+            }
+        }
+        public string MaNhaCungCap
+        {
+            get
+            {
+                return maNhaCungCap;
+            }
+
+            set
+            {
+                maNhaCungCap = value;
+            }
+        }
     }
 }

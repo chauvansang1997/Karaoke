@@ -472,14 +472,7 @@ namespace Karaoke.QuanLyHangHoa
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if (BUS.HoaDonBUS.ThanhToan(soHoaDon))
-            {
-                MessageBox.Show("Thanh toán thành công");
-            }
-            else
-            {
-                MessageBox.Show("Có lỗi xảy ra!. Vui lòng mời nhân viên kỹ thuật kiểm tra!!!");
-            }
+           
         }
 
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)

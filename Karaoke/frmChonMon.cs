@@ -527,7 +527,7 @@ namespace Karaoke
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if (BUS.HoaDonBUS.ThanhToan(soHoaDon))
+            if (BUS.HoaDonBUS.ThanhToan(soHoaDon, DateTime.Now, int.Parse(txtThanhTien.Text), int.Parse(txtGiamGia.Text)))
             {
                 MessageBox.Show("Thanh toán thành công");
             }

@@ -38,9 +38,9 @@ namespace BUS
         {
             return DAO.HoaDonDAO.LayMaHoaDonDatTiec(maPhong,tenKhachHang,soDienThoai,ngayNhanPhong);
         }
-        public static bool ThanhToan(string soHoaDon)
+        public static bool ThanhToan(string soHoaDon, DateTime gioRa, int thanhTien, int giamGia)
         {
-            return DAO.HoaDonDAO.ThanhToan(soHoaDon);
+            return DAO.HoaDonDAO.ThanhToan(soHoaDon, gioRa, thanhTien, giamGia);
         }
         public static bool HoaDonDatTiec(string soHoaDon)
         {
