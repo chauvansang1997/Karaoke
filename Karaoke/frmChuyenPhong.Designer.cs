@@ -144,6 +144,7 @@
             // 
             // txtLoaiPhong
             // 
+            this.txtLoaiPhong.BackColor = System.Drawing.Color.White;
             this.txtLoaiPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoaiPhong.Location = new System.Drawing.Point(8, 232);
             this.txtLoaiPhong.Name = "txtLoaiPhong";
@@ -177,6 +178,7 @@
             // 
             // txtTenPhong
             // 
+            this.txtTenPhong.BackColor = System.Drawing.Color.White;
             this.txtTenPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenPhong.Location = new System.Drawing.Point(8, 124);
             this.txtTenPhong.Name = "txtTenPhong";
@@ -186,6 +188,7 @@
             // 
             // txtGia
             // 
+            this.txtGia.BackColor = System.Drawing.Color.White;
             this.txtGia.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGia.Location = new System.Drawing.Point(8, 340);
             this.txtGia.Name = "txtGia";

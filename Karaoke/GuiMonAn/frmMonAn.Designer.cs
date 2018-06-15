@@ -340,7 +340,7 @@
             this.btnThemNguyenLieu.Text = "Thêm nguyên liệu";
             this.btnThemNguyenLieu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThemNguyenLieu.UseVisualStyleBackColor = false;
-            this.btnThemNguyenLieu.Click += new System.EventHandler(this.btnThemNguyenLieu_Click_1);
+            this.btnThemNguyenLieu.Click += new System.EventHandler(this.btnThemNguyenLieu_Click);
             // 
             // label6
             // 
@@ -474,7 +474,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMonAn";
-            this.Text = "Thêm món ăn";
+            this.Text = "Quản lý món ăn";
             this.Load += new System.EventHandler(this.frmMonAn_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

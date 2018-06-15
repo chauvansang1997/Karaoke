@@ -28,12 +28,8 @@ namespace Karaoke.GuiMonAn
             dGVMonAn.DataSource = dtNguyenLieu;
         }
 
+
         private void btnThemNguyenLieu_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnThemNguyenLieu_Click_1(object sender, EventArgs e)
         {
             frmThemNguyenLieuMonAn nguyenLieuMonAn = new frmThemNguyenLieuMonAn(dtNguyenLieu);
             nguyenLieuMonAn.ShowDialog();
