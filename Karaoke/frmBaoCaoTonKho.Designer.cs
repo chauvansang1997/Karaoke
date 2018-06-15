@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCaoTonKho));
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.dTPNgayBayDau = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayKetThuc = new System.Windows.Forms.DateTimePicker();
@@ -116,6 +117,7 @@
             this.Controls.Add(this.dtpNgayKetThuc);
             this.Controls.Add(this.dTPNgayBayDau);
             this.Controls.Add(this.crystalReportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBaoCaoTonKho";
             this.Text = "Báo cáo tồn kho";
             this.Load += new System.EventHandler(this.frmBaoCaoTonKho_Load);
