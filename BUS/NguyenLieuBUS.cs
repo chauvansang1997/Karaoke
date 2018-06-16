@@ -22,8 +22,7 @@ namespace BUS
         public static DataTable TiemKiemNguyenLieu(string tenNguyenLieu, string maNhaCungCap, bool isXemToiThieu,int pageNumber, int pageSize,
             List<string> exceptList = null)
         {
-            DataTable table = NguyenLieuDAO.XemNguyenLieu(tenNguyenLieu, maNhaCungCap, isXemToiThieu,pageNumber,pageSize).
-                Select("", "manl,tennl").CopyToDataTable();
+            DataTable table = NguyenLieuDAO.XemNguyenLieu(tenNguyenLieu, maNhaCungCap, isXemToiThieu, pageNumber, pageSize);
             if (exceptList != null)
             {
                 foreach (string item in exceptList)
@@ -103,8 +102,8 @@ namespace BUS
         public static int DemNguyenLieu(string tenNguyenLieu, string maNhaCungCap, bool isXemToiThieu,List<string> exceptList = null)
         {
 
-            DataTable table = NguyenLieuDAO.DemNguyenLieu(tenNguyenLieu, maNhaCungCap, isXemToiThieu).
-                Select("", "manl,tennl").CopyToDataTable();
+            DataTable table = NguyenLieuDAO.DemNguyenLieu(tenNguyenLieu, maNhaCungCap, isXemToiThieu);
+
             if (exceptList != null)
             {
                 foreach (string item in exceptList)
