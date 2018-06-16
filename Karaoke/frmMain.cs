@@ -4,6 +4,7 @@ using Karaoke.GUI_QuanLyNhanVien;
 using Karaoke.GuiMonAn;
 using Karaoke.KhachHang;
 using Karaoke.NguyenLieu;
+using Karaoke.NhaCungCap;
 using Karaoke.PhanCong;
 using Karaoke.PhongKaoraoke;
 using Karaoke.QuanLyPhanCong;
@@ -133,6 +134,12 @@ namespace Karaoke
         {
             frmThietBi thietBi = new frmThietBi();
             thietBi.ShowDialog();
+        }
+
+        private void nhaCungCapMenu_Click(object sender, EventArgs e)
+        {
+            frmNhaCungCap nhaCungCap = new frmNhaCungCap();
+            nhaCungCap.ShowDialog();
         }
     }
 }

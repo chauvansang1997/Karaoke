@@ -52,6 +52,7 @@
             this.phanCongMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.caTrucMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.khachHangMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.nhaCungCapMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,10 +66,11 @@
             this.tiếpNhậnKháchHàngToolStripMenuItem,
             this.baoCáoToolStripMenuItem,
             this.nhanVienMenu,
-            this.khachHangMenu});
+            this.khachHangMenu,
+            this.nhaCungCapMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(992, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1064, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -264,12 +266,19 @@
             this.khachHangMenu.Text = "Quản lý khách hàng";
             this.khachHangMenu.Click += new System.EventHandler(this.khachHangMenu_Click);
             // 
+            // nhaCungCapMenu
+            // 
+            this.nhaCungCapMenu.Name = "nhaCungCapMenu";
+            this.nhaCungCapMenu.Size = new System.Drawing.Size(146, 21);
+            this.nhaCungCapMenu.Text = "Quản lý nhà cung cấp";
+            this.nhaCungCapMenu.Click += new System.EventHandler(this.nhaCungCapMenu_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(216)))), ((int)(((byte)(233)))));
-            this.ClientSize = new System.Drawing.Size(992, 379);
+            this.ClientSize = new System.Drawing.Size(1064, 379);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -308,6 +317,7 @@
         private System.Windows.Forms.ToolStripMenuItem quảnLýPhânCôngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem phanCongMenu;
         private System.Windows.Forms.ToolStripMenuItem caTrucMenu;
+        private System.Windows.Forms.ToolStripMenuItem nhaCungCapMenu;
     }
 }
 
