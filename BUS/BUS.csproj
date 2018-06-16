@@ -64,6 +64,7 @@
     <Compile Include="ThietBiBUS.cs" />
     <Compile Include="SanPhamBUS.cs" />
     <Compile Include="TestBUS.cs" />
+    <Compile Include="UserBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">

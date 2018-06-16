@@ -71,6 +71,7 @@
     <Compile Include="TaoMa.cs" />
     <Compile Include="TestDAO.cs" />
     <Compile Include="QuanLyLuong\LuongDAO.cs" />
+    <Compile Include="UserDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="QuanLyPhongKaraoke\" />

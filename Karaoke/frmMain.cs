@@ -70,7 +70,8 @@ namespace Karaoke
 
         private void nhanDatTiecMenu_Click(object sender, EventArgs e)
         {
-
+			frmDatTiec datTiec = new frmDatTiec();
+			datTiec.ShowDialog();
         }
 
         private void khachHangMenu_Click(object sender, EventArgs e)
