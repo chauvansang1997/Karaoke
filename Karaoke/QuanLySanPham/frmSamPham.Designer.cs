@@ -255,7 +255,7 @@ namespace Karaoke.QuanLySanPham
             this.btnFirstPage.Size = new System.Drawing.Size(24, 24);
             this.btnFirstPage.TabIndex = 197;
             this.btnFirstPage.UseVisualStyleBackColor = false;
-            this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click_1);
+            this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
             // 
             // cmbLoaiTK
             // 
@@ -277,7 +277,7 @@ namespace Karaoke.QuanLySanPham
             this.txtPageNumber.TabIndex = 192;
             this.txtPageNumber.Text = "1";
             this.txtPageNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPageNumber.TextChanged += new System.EventHandler(this.txtPageNumber_TextChanged_1);
+            this.txtPageNumber.TextChanged += new System.EventHandler(this.txtPageNumber_TextChanged);
             // 
             // label7
             // 
@@ -305,7 +305,7 @@ namespace Karaoke.QuanLySanPham
             this.btnLastPage.Size = new System.Drawing.Size(24, 24);
             this.btnLastPage.TabIndex = 196;
             this.btnLastPage.UseVisualStyleBackColor = false;
-            this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click_1);
+            this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
             // 
             // label8
             // 
@@ -354,7 +354,7 @@ namespace Karaoke.QuanLySanPham
             this.btnPrevPage.Size = new System.Drawing.Size(24, 24);
             this.btnPrevPage.TabIndex = 195;
             this.btnPrevPage.UseVisualStyleBackColor = false;
-            this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click_1);
+            this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
             // 
             // btnNextPage
             // 
@@ -370,7 +370,7 @@ namespace Karaoke.QuanLySanPham
             this.btnNextPage.Size = new System.Drawing.Size(24, 24);
             this.btnNextPage.TabIndex = 194;
             this.btnNextPage.UseVisualStyleBackColor = false;
-            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click_1);
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
             // dGVDanhSach
             // 

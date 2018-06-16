@@ -298,6 +298,8 @@ namespace Karaoke.QuanLySanPham
             btnXoa.Enabled = enable;
 
             btnSua.Enabled = enable;
+            btnLuu.Enabled = enable;
+            btnHuy.Enabled = enable;
         }
         private void enableControls(bool enable)
         {
@@ -310,6 +312,8 @@ namespace Karaoke.QuanLySanPham
             cmbLoai.Enabled = enable;
             txtTonToiThieu.Enabled = enable;
             btnLayAnh.Enabled = enable;
+            btnLuu.Enabled = enable;
+            btnHuy.Enabled = enable;
         }
         private void txtGia_TextChanged(object sender, EventArgs e)
         {
@@ -335,6 +339,11 @@ namespace Karaoke.QuanLySanPham
                 }))
                 {
                     MessageBox.Show("Thêm sản phẩm thành công");
+                    bSua = false;
+                    enableControls(false);
+                    enableButton(true);
+                    resetDanhSach();
+                    bThem = false;
                 }
            
             }
@@ -354,15 +363,16 @@ namespace Karaoke.QuanLySanPham
                 }))
                 {
                     MessageBox.Show("Sửa sản phẩm thành công");
+                    bSua = false;
+                    enableControls(false);
+                    enableButton(true);
+                    resetDanhSach();
+                    bThem = false;
                 }
              
 
             }
-            bSua = false;
-            enableControls(false);
-            enableButton(true);
-            resetDanhSach();
-            bThem = false;
+          
         }
 
         private void resetDanhSach()
@@ -402,38 +412,20 @@ namespace Karaoke.QuanLySanPham
         {
 
         }
-
+        private void enableButton1(bool enable)
+        {
+            btnHuy.Enabled = enable;
+            btnLuu.Enabled = enable;
+        }
         private void btnHuy_Click(object sender, EventArgs e)
         {
             enableControls(false);
             enableButton(true);
+       
             bThem = false;
             bSua = false;
         }
 
-        private void btnFirstPage_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnPrevPage_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPageNumber_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnNextPage_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLastPage_Click_1(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

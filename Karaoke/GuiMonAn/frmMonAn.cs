@@ -91,6 +91,41 @@ namespace Karaoke.GuiMonAn
             txtTotalPage.Text = totalPage.ToString();
             bindingSourceMonAn.DataSource = BUS.MonAnBUS.XemMonAnDataSource("", 0, pageNumber, pageSize);
         }
+        private void resetDanhSach()
+        {
+            bSua = false;
+            bThem = false;
+            pageNumber = 1;
+
+            txtPageNumber.Text = "1";
+            totalPage = BUS.MonAnBUS.DemMonAn("", "");
+            totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+            txtTotalPage.Text = totalPage.ToString();
+            bindingSourceMonAn.DataSource = BUS.MonAnBUS.XemMonAnDataSource("", 0, pageNumber, pageSize);
+        }
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            if (cmbLoaiMonTK.SelectedValue != null)
+            {
+
+                txtPageNumber.Text = "1";
+                totalPage = BUS.MonAnBUS.DemMonAn(txtTenTK.Text, ((LoaiMon)cmbLoaiMonTK.SelectedValue).Ma);
+                totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+                txtTotalPage.Text = totalPage.ToString();
+                bindingSourceMonAn.DataSource = BUS.MonAnBUS.XemMonAnDataSource(txtTenTK.Text, int.Parse(((LoaiMon)cmbLoaiMonTK.SelectedValue).Ma),
+                               pageNumber, pageSize);
+            }
+            else
+            {
+
+                txtPageNumber.Text = "1";
+                totalPage = BUS.MonAnBUS.DemMonAn("", "");
+                totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+                txtTotalPage.Text = totalPage.ToString();
+                bindingSourceMonAn.DataSource = BUS.MonAnBUS.XemMonAnDataSource(txtTenTK.Text, 0,
+               pageNumber, pageSize);
+            }
+        }
         private void enableButton(bool enable)
         {
             btnThemMonAn.Enabled = enable;
@@ -246,9 +281,20 @@ namespace Karaoke.GuiMonAn
                 MessageBox.Show("Bạn nhập món ăn thành công", "Thông báo", MessageBoxButtons.OK,
                       MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
             }
-       
+            enableControls(false);
+            enableButton1(false);
+            enableButton(true);
             tenHinhAnh = "";
             txtTenMonAn.Text = "";
+            resetDanhSach();
+        }
+
+     
+
+        private void enableButton1(bool enable)
+        {
+            btnHuy.Enabled = enable;
+            btnLuu.Enabled = enable;
         }
 
         private void btnSuaMonAn_Click(object sender, EventArgs e)
@@ -308,6 +354,7 @@ namespace Karaoke.GuiMonAn
         private void btnHuy_Click(object sender, EventArgs e)
         {
             enableControls(false);
+            enableButton1(false);
             enableButton(true);
             bThem = false;
             bSua = false;
@@ -429,5 +476,7 @@ namespace Karaoke.GuiMonAn
             //dGVDanhSach.DataSource = BUS.NguyenLieuBUS.TiemKiemNguyenLieu(txtTenNL.Text,
             //    ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC, rbSapHet.Checked, pageNumber, pageSize);
         }
+
+      
     }
 }

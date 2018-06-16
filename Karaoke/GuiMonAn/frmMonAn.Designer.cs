@@ -72,6 +72,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtTenMonAn = new System.Windows.Forms.TextBox();
             this.oFDLayAnh = new System.Windows.Forms.OpenFileDialog();
+            this.btnFind = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVMonAn)).BeginInit();
             this.panel2.SuspendLayout();
@@ -82,6 +83,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.btnFind);
             this.panel1.Controls.Add(this.txtTotalPage);
             this.panel1.Controls.Add(this.btnFirstPage);
             this.panel1.Controls.Add(this.txtPageNumber);
@@ -567,6 +569,25 @@
             // 
             this.oFDLayAnh.FileName = "openFileDialog1";
             // 
+            // btnFind
+            // 
+            this.btnFind.BackColor = System.Drawing.Color.Transparent;
+            this.btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnFind.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFind.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFind.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnFind.Image = ((System.Drawing.Image)(resources.GetObject("btnFind.Image")));
+            this.btnFind.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnFind.Location = new System.Drawing.Point(12, 134);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(116, 30);
+            this.btnFind.TabIndex = 201;
+            this.btnFind.Text = "Tìm kiếm";
+            this.btnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFind.UseVisualStyleBackColor = false;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
             // frmMonAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -632,5 +653,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnPrevPage;
         private System.Windows.Forms.Button btnNextPage;
+        private System.Windows.Forms.Button btnFind;
     }
 }

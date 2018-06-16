@@ -16,14 +16,14 @@ namespace Karaoke.GUI_BaoCaoDoanhThu {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpBaoCaoDoanhThu : ReportClass {
+    public class rptBaoCaoDoanhThu : ReportClass {
         
-        public rpBaoCaoDoanhThu() {
+        public rptBaoCaoDoanhThu() {
         }
         
         public override string ResourceName {
             get {
-                return "rpBaoCaoDoanhThu.rpt";
+                return "rptBaoCaoDoanhThu.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Karaoke.GUI_BaoCaoDoanhThu {
         
         public override string FullResourceName {
             get {
-                return "Karaoke.GUI_BaoCaoDoanhThu.rpBaoCaoDoanhThu.rpt";
+                return "Karaoke.GUI_BaoCaoDoanhThu.rptBaoCaoDoanhThu.rpt";
             }
             set {
                 // Do nothing
@@ -154,9 +154,9 @@ namespace Karaoke.GUI_BaoCaoDoanhThu {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrpBaoCaoDoanhThu : Component, ICachedReport {
+    public class CachedrptBaoCaoDoanhThu : Component, ICachedReport {
         
-        public CachedrpBaoCaoDoanhThu() {
+        public CachedrptBaoCaoDoanhThu() {
         }
         
         [Browsable(false)]
@@ -193,7 +193,7 @@ namespace Karaoke.GUI_BaoCaoDoanhThu {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpBaoCaoDoanhThu rpt = new rpBaoCaoDoanhThu();
+            rptBaoCaoDoanhThu rpt = new rptBaoCaoDoanhThu();
             rpt.Site = this.Site;
             return rpt;
         }

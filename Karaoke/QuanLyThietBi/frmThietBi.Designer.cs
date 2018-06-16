@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThietBi));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnThoat = new System.Windows.Forms.Button();
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
@@ -43,6 +43,7 @@
             this.btnAn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbNhaCC = new System.Windows.Forms.ComboBox();
@@ -61,7 +62,6 @@
             this.btnPrevPage = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnHuy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSach)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
@@ -124,24 +124,21 @@
             // 
             this.dGVDanhSach.AllowUserToAddRows = false;
             this.dGVDanhSach.AllowUserToDeleteRows = false;
-            this.dGVDanhSach.AllowUserToResizeColumns = false;
-            this.dGVDanhSach.AllowUserToResizeRows = false;
             this.dGVDanhSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVDanhSach.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dGVDanhSach.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dGVDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVDanhSach.Enabled = false;
             this.dGVDanhSach.Location = new System.Drawing.Point(11, 107);
             this.dGVDanhSach.MultiSelect = false;
             this.dGVDanhSach.Name = "dGVDanhSach";
-            this.dGVDanhSach.ReadOnly = true;
             this.dGVDanhSach.RowHeadersVisible = false;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGVDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVDanhSach.Size = new System.Drawing.Size(611, 341);
             this.dGVDanhSach.TabIndex = 149;
             this.dGVDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVDanhSach_CellClick);
+            this.dGVDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVDanhSach_CellContentClick);
             // 
             // label11
             // 
@@ -269,6 +266,23 @@
             this.splitContainer.Size = new System.Drawing.Size(1071, 512);
             this.splitContainer.SplitterDistance = 421;
             this.splitContainer.TabIndex = 163;
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
+            this.btnHuy.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuy.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.ForeColor = System.Drawing.Color.White;
+            this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
+            this.btnHuy.Location = new System.Drawing.Point(220, 425);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(105, 36);
+            this.btnHuy.TabIndex = 193;
+            this.btnHuy.Text = " Hủy";
+            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnLuu
             // 
@@ -516,22 +530,6 @@
             this.button1.Text = " Lưu";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
-            this.btnHuy.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.ForeColor = System.Drawing.Color.White;
-            this.btnHuy.Location = new System.Drawing.Point(219, 425);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(105, 36);
-            this.btnHuy.TabIndex = 194;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHuy.UseVisualStyleBackColor = false;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // frmThietBi
             // 

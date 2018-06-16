@@ -69,6 +69,12 @@ namespace Karaoke.QuanLyThietBi
             dGVDanhSach.DataSource =BUS.ThietBiBUS.XemThietBiTable("", "", pageNumber, pageSize);
             AddGridTableStyle();
         }
+
+        private void enableButton1(bool enable)
+        {
+            btnHuy.Enabled = enable;
+            btnLuu.Enabled = enable;
+        }
         private void enableButton(bool enable)
         {
             btnThem.Enabled = enable;
@@ -81,7 +87,8 @@ namespace Karaoke.QuanLyThietBi
             txtTenNL.Enabled = enable;
             cmbNhaCC.Enabled = enable;
             txtDonGia.Enabled = enable;
-    
+            btnLuu.Enabled = enable;
+            btnHuy.Enabled = enable;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -118,6 +125,7 @@ namespace Karaoke.QuanLyThietBi
         {
             enableControls(true);
             enableButton(false);
+            enableButton1(true);
             bThem = true;
             txtDonGia.Text = "";
             txtDVT.Text = "";
@@ -193,17 +201,11 @@ namespace Karaoke.QuanLyThietBi
 
         private void dGVDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (bThem)
-            {
-                return;
-            }
-            if (bSua)
-            {
-                return;
-            }
+
             if (dGVDanhSach.CurrentCell != null)
             {
                 int index = dGVDanhSach.CurrentCell.RowIndex;
+                ma= dGVDanhSach[5, index].Value.ToString();
                 txtTenNL.Text = dGVDanhSach[0, index].Value.ToString();
                 txtDVT.Text = dGVDanhSach[1, index].Value.ToString();
                 txtDonGia.Text = dGVDanhSach[2, index].Value.ToString();
@@ -225,6 +227,7 @@ namespace Karaoke.QuanLyThietBi
             {
                 if (BUS.ThietBiBUS.ThemThietBi(new DTO.ThietBi()
                 {
+                    Ma=ma,
                     Ten = txtTenNL.Text,
                     DonGia = txtDonGia.Text,
                     DVT = txtDVT.Text,
@@ -235,6 +238,7 @@ namespace Karaoke.QuanLyThietBi
                 }
                 bThem = false;
                 enableControls(false);
+                enableButton(true);
                 resetDanhSach();
             }
             else if (bSua)
@@ -252,6 +256,7 @@ namespace Karaoke.QuanLyThietBi
                 }
                 bSua = false;
                 enableControls(false);
+                enableButton(true);
                 resetDanhSach();
             }
         }
@@ -277,12 +282,27 @@ namespace Karaoke.QuanLyThietBi
         }
         private void btnFind_Click(object sender, EventArgs e)
         {
-            pageNumber = 1;
-            txtPageNumber.Text = "1";
-            totalPage = BUS.ThietBiBUS.DemThietBi(txtTenNguyenLieu.Text,((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC);
-            totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
-            txtTotalPage.Text = totalPage.ToString();
-            loadDanhSach();
+            if (cmbNhaCC.SelectedValue != null)
+            {
+                pageNumber = 1;
+                txtPageNumber.Text = "1";
+                totalPage = BUS.ThietBiBUS.DemThietBi(txtTenNguyenLieu.Text, ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC);
+                totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+                txtTotalPage.Text = totalPage.ToString();
+                dGVDanhSach.DataSource =
+       BUS.ThietBiBUS.XemThietBiTable(txtTenNguyenLieu.Text, ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC, pageNumber, pageSize);
+            }
+            else
+            {
+                pageNumber = 1;
+                txtPageNumber.Text = "1";
+                totalPage = BUS.ThietBiBUS.DemThietBi(txtTenNguyenLieu.Text, "");
+                totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+                txtTotalPage.Text = totalPage.ToString();
+                dGVDanhSach.DataSource =
+       BUS.ThietBiBUS.XemThietBiTable(txtTenNguyenLieu.Text, "", pageNumber, pageSize);
+            }
+            
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -310,6 +330,10 @@ namespace Karaoke.QuanLyThietBi
         {
             enableControls(false);
             enableButton(true);
+        }
+
+        private void dGVDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

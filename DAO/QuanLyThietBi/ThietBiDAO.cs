@@ -12,7 +12,7 @@ namespace DAO
     {
         public static bool ThemThietBi(ThietBi thietBi)
         {
-            string query = "EXEC usp_ThemThietBi @tenTB,@maNCC,@dvt ,@donGia";
+            string query = "EXEC [usp_SuaThietBi] @ma,@tenTB,@maNCC,@dvt ,@donGia";
             string tenTB = thietBi.Ten;
             string maNCC = thietBi.MaNCC;
             string dvt = thietBi.DVT;
@@ -21,6 +21,7 @@ namespace DAO
             // Truyền tham số
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
+                  new SqlParameter("@ma", SqlDbType.NVarChar) {IsNullable = false, Value = thietBi.Ma},
                 new SqlParameter("@tenTB", SqlDbType.NVarChar) {IsNullable = false, Value = tenTB},
                 new SqlParameter("@maNCC", SqlDbType.NVarChar) {IsNullable = false, Value = maNCC},
                 new SqlParameter("@dvt", SqlDbType.NVarChar) {IsNullable = false, Value = dvt},
@@ -354,10 +355,10 @@ namespace DAO
         }
         public static int DemThietBi(string tenThietBi, string maNhaCungCap)
         {
-            string query = "EXEC uspDemThietBi @uspDemNguyenLieu,@maNhaCungCap";
+            string query = "EXEC uspDemThietBi @tenThietBi,@maNhaCungCap";
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@tenNguyenLieu",SqlDbType.NVarChar){IsNullable=true,Value=tenThietBi },
+                new SqlParameter("@tenThietBi",SqlDbType.NVarChar){IsNullable=true,Value=tenThietBi },
                 new SqlParameter("@maNhaCungCap",SqlDbType.VarChar){IsNullable=true,Value=maNhaCungCap }
 
             };

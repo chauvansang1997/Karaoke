@@ -98,8 +98,6 @@ namespace DAO.QuanLyNCC
 				Utility.Log(ex);
 				return false;
 			}
-
-			return false;
 		}
 
 		public static DataTable LoadNCC()
