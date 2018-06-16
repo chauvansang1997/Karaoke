@@ -71,7 +71,8 @@ namespace Karaoke
 
         private void nhanDatTiecMenu_Click(object sender, EventArgs e)
         {
-
+            frmDatTiec datTiec = new frmDatTiec();
+            datTiec.ShowDialog();
         }
 
         private void khachHangMenu_Click(object sender, EventArgs e)
@@ -114,5 +115,11 @@ namespace Karaoke
 				MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
-	}
+
+        private void nhapMonAnMenu_Click(object sender, EventArgs e)
+        {
+            frmMonAn monAn = new frmMonAn();
+            monAn.ShowDialog();
+        }
+    }
 }
