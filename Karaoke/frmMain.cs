@@ -91,6 +91,8 @@ namespace Karaoke
 
 		private void phanCongMenu_Click(object sender, EventArgs e)
 		{
+			frmBaoCaoLuongTong luongTong = new frmBaoCaoLuongTong();
+			luongTong.ShowDialog();
 		}
 
 		private void phanCongItem_Click(object sender, EventArgs e)
@@ -141,5 +143,23 @@ namespace Karaoke
             frmNhaCungCap nhaCungCap = new frmNhaCungCap();
             nhaCungCap.ShowDialog();
         }
-    }
+
+		private void nhanViemMenuItem_Click(object sender, EventArgs e)
+		{
+			frmNhanVien nhanVien = new frmNhanVien();
+			nhanVien.ShowDialog();
+		}
+
+		private void phanCongMenu_Click_1(object sender, EventArgs e)
+		{
+			frmPhanCong phanCong = new frmPhanCong();
+			phanCong.ShowDialog();
+		}
+
+		private void caTrucMenu_Click(object sender, EventArgs e)
+		{
+			frmCaTruc caTruc = new frmCaTruc();
+			caTruc.ShowDialog();
+		}
+	}
 }
