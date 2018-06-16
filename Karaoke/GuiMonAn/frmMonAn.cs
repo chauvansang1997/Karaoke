@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,10 +17,15 @@ namespace Karaoke.GuiMonAn
 
         private bool bSua;
         private bool bThem;
+        private const int pageSize = 10;
+        private int pageNumber;
+        private int totalPage;
+        private string ma;
         private DataTable dtNguyenLieu;
         private uint donGia;
-        private string tenHinhAnh="";
+        private string tenHinhAnh = "";
         public BindingSource bindingSource = new BindingSource();
+        private BindingSource bindingSourceMonAn = new BindingSource();
         public frmMonAn()
         {
             InitializeComponent();
@@ -37,26 +43,53 @@ namespace Karaoke.GuiMonAn
             cmbLoaiMonTK.DisplayMember = "Ten";
             dtNguyenLieu = new DataTable();
             dGVMonAn.DataSource = dtNguyenLieu;
+            bindingSourceMonAn.Add(new MonAnDataSource());
+            dGVMonAn.DataSource = bindingSourceMonAn;
+            bindingSourceMonAn.RemoveAt(0);
+            dGVMonAn.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dGVMonAn.Columns["Ten"].HeaderText = "Tên";
 
-            bindingSource.Add(new PhieuNhapHangDataSource());
+            dGVMonAn.Columns["Gia"].HeaderText = "Giá";
+
+            dGVMonAn.Columns["TenLoaiHangHoa"].HeaderText = "Loại hàng hóa";
+
+
+            dGVMonAn.Columns["Ma"].Visible = false;
+
+            dGVMonAn.Columns["MaLoaiHangHoa"].Visible = false;
+            dGVMonAn.Columns["AnhMinhHoa"].Visible = false;
+
+            // dGVMonAn.Columns["LoaiHangHoa"].
+            bindingSource.Add(new NguyenLieuMADataSource());
             dGVNguyenLieu.DataSource = bindingSource;
+
+
             bindingSource.RemoveAt(0);
             dGVNguyenLieu.Columns["Ten"].HeaderText = "Tên";
 
             dGVNguyenLieu.Columns["Gia"].HeaderText = "Giá";
 
             dGVNguyenLieu.Columns["Soluong"].HeaderText = "Số lượng";
-          //  dGVNguyenLieu.Columns["Thanhtien"].HeaderText = "Thành tiền";
+            //  dGVNguyenLieu.Columns["Thanhtien"].HeaderText = "Thành tiền";
             dGVNguyenLieu.Columns["DonViTinh"].HeaderText = "Đơn vị tính";
 
             dGVNguyenLieu.Columns["Ma"].Visible = false;
-            dGVNguyenLieu.Columns["Loai"].Visible = false;
+            // dGVNguyenLieu.Columns["Loai"].Visible = false;
 
-
-            dGVNguyenLieu.Columns["Thanhtien"].Visible = false;
+            //  dGVNguyenLieu.Columns["AnhMinhHoa"].Visible = false;
+            //     dGVNguyenLieu.Columns["Thanhtien"].Visible = false;
             dGVNguyenLieu.Columns["Gia"].ReadOnly = true;
             dGVNguyenLieu.Columns["Ten"].ReadOnly = true;
-            dGVNguyenLieu.Columns["Thanhtien"].ReadOnly = true;
+            //  dGVNguyenLieu.Columns["Thanhtien"].ReadOnly = true;
+            bSua = false;
+            bThem = false;
+            pageNumber = 1;
+
+            txtPageNumber.Text = "1";
+            totalPage = BUS.MonAnBUS.DemMonAn("", "");
+            totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+            txtTotalPage.Text = totalPage.ToString();
+            bindingSourceMonAn.DataSource = BUS.MonAnBUS.XemMonAnDataSource("", 0, pageNumber, pageSize);
         }
         private void enableButton(bool enable)
         {
@@ -67,7 +100,6 @@ namespace Karaoke.GuiMonAn
         private void enableControls(bool enable)
         {
 
-            txtAnhMinhHoa.Enabled = enable;
             pBAnhMinhHoa.Enabled = enable;
 
             pBAnhMinhHoa.Enabled = enable;
@@ -88,13 +120,13 @@ namespace Karaoke.GuiMonAn
             //    // dtNguyenLieu.AcceptChanges();
             //    //return;
             //}
-           // bindingSource.Clear();
+            // bindingSource.Clear();
             int count = nguyenLieuMonAn.bindingSource.Count;
             for (int i = 0; i < count; i++)
             {
-               // this.bindingSource.Add(nguyenLieuMonAn.bindingSource[i]);
+                // this.bindingSource.Add(nguyenLieuMonAn.bindingSource[i]);
             }
-         //   dGVNguyenLieu.DataSource = bindingSource;
+            //   dGVNguyenLieu.DataSource = bindingSource;
         }
 
         private void btnLayAnh_Click(object sender, EventArgs e)
@@ -104,10 +136,11 @@ namespace Karaoke.GuiMonAn
             oFDLayAnh.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
             if (oFDLayAnh.ShowDialog() == DialogResult.OK)
             {
-                // display image in picture box  
+
+
                 pBAnhMinhHoa.Image = new Bitmap(oFDLayAnh.FileName);
+                pBAnhMinhHoa.SizeMode = PictureBoxSizeMode.StretchImage;
                 // image file path  
-                txtAnhMinhHoa.Text = oFDLayAnh.FileName;
                 string[] temp = oFDLayAnh.FileName.Split('\\');
                 tenHinhAnh = temp[temp.Length - 1];
             }
@@ -116,6 +149,8 @@ namespace Karaoke.GuiMonAn
         private void btnThemMonAn_Click(object sender, EventArgs e)
         {
             enableControls(true);
+            enableButton(false);
+            btnSuaMonAn.Enabled = true;
             bThem = true;
         }
         /// <summary>
@@ -175,21 +210,43 @@ namespace Karaoke.GuiMonAn
                     MessageBoxIcon.Error, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
                 return;
             }
-            List<string> monan = new List<string>();
-            for (int i = 0; i < bindingSource.Count; i++)
+            if (bThem)
             {
-                monan.Add(((PhieuNhapHangDataSource)bindingSource[i]).Ma);
+                List<string> monan = new List<string>();
+                for (int i = 0; i < bindingSource.Count; i++)
+                {
+                    monan.Add(((NguyenLieuMADataSource)bindingSource[i]).Ma);
+                }
+                List<string> soluong = new List<string>();
+                for (int i = 0; i < bindingSource.Count; i++)
+                {
+                    soluong.Add(((NguyenLieuMADataSource)bindingSource[i]).SoLuong);
+                }
+                BUS.MonAnBUS.ThemMonAn(new DTO.MonAn() { Ten = txtTenMonAn.Text, Loai = ((LoaiMon)cmbLoaiMon.SelectedValue).Ma, Gia = donGia, TenHinhAnh = tenHinhAnh },
+                   monan,
+                   soluong);
+                MessageBox.Show("Bạn nhập món ăn thành công", "Thông báo", MessageBoxButtons.OK,
+                      MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
             }
-            List<string> soluong = new List<string>();
-            for (int i = 0; i < bindingSource.Count; i++)
+            else if(bSua)
             {
-                soluong.Add(((PhieuNhapHangDataSource)bindingSource[i]).Soluong);
+                List<string> monan = new List<string>();
+                for (int i = 0; i < bindingSource.Count; i++)
+                {
+                    monan.Add(((NguyenLieuMADataSource)bindingSource[i]).Ma);
+                }
+                List<string> soluong = new List<string>();
+                for (int i = 0; i < bindingSource.Count; i++)
+                {
+                    soluong.Add(((NguyenLieuMADataSource)bindingSource[i]).SoLuong);
+                }
+                BUS.MonAnBUS.SuaMonAn(new DTO.MonAn() { Ma=ma,Ten = txtTenMonAn.Text, Loai = ((LoaiMon)cmbLoaiMon.SelectedValue).Ma, Gia = donGia, TenHinhAnh = tenHinhAnh },
+                monan,
+                soluong);
+                MessageBox.Show("Bạn nhập món ăn thành công", "Thông báo", MessageBoxButtons.OK,
+                      MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
             }
-            BUS.MonAnBUS.ThemMonAn(new DTO.MonAn() { Ten = txtTenMonAn.Text, Loai = ((LoaiMon)cmbLoaiMon.SelectedValue).Ma, Gia = donGia, TenHinhAnh = tenHinhAnh },
-               monan,
-               soluong);
-            MessageBox.Show("Bạn nhập món ăn thành công", "Thông báo", MessageBoxButtons.OK,
-                  MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
+       
             tenHinhAnh = "";
             txtTenMonAn.Text = "";
         }
@@ -199,17 +256,55 @@ namespace Karaoke.GuiMonAn
             if (dGVMonAn.CurrentCell != null)
             {
                 enableControls(true);
+                enableButton(false);
+                btnSuaMonAn.Enabled = true;
                 bSua = true;
             }
 
-        
+
         }
 
         private void dGVMonAn_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dGVMonAn.CurrentCell != null)
+            {
+                pBAnhMinhHoa.Image = null;
+                int index = dGVMonAn.CurrentCell.RowIndex;
+                MonAnDataSource dataSource = ((MonAnDataSource)bindingSourceMonAn[index]);
+                ma = dataSource.Ma;
+                List<NguyenLieuMADataSource> nguyenLieuMA = BUS.MonAnBUS.XemNguyenLieuMonAn(dataSource.Ma);
+                bindingSource.DataSource = nguyenLieuMA;
+            
+                tenHinhAnh = dataSource.AnhMinhHoa;
+                // display image in picture box  
+                string path = Directory.GetCurrentDirectory();
+                path = Path.GetFullPath(Path.Combine(path, @"..\..\")) + @"\Image\" + tenHinhAnh;
 
+                txtGia.Text = dataSource.Gia;
+                txtTenMonAn.Text = dataSource.Ten;
+                for (int i = 0; i < cmbLoaiMon.Items.Count; i++)
+                {
+                    if(((LoaiMon)cmbLoaiMon.Items[i]).Ma== dataSource.MaLoaiHangHoa)
+                    {
+                        cmbLoaiMon.SelectedIndex = i;
+                        break;
+                    }
+                }
+
+                Image image = null;
+                try
+                {
+                    image = Image.FromFile(path);
+                    pBAnhMinhHoa.Image = image;
+                    pBAnhMinhHoa.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                catch (Exception)
+                {
+
+                }
+
+            }
         }
-
         private void btnHuy_Click(object sender, EventArgs e)
         {
             enableControls(false);
@@ -224,7 +319,7 @@ namespace Karaoke.GuiMonAn
             {
                 if (e.ColumnIndex == 2 && e.RowIndex > -1)
                 {
-                    
+
 
                 }
             }
@@ -239,7 +334,7 @@ namespace Karaoke.GuiMonAn
         {
             if (dGVNguyenLieu.CurrentCell != null)
             {
-                
+
             }
         }
 
@@ -249,6 +344,90 @@ namespace Karaoke.GuiMonAn
             {
 
             }
+        }
+
+        private void btnNextPage_Click(object sender, EventArgs e)
+        {
+            if (pageNumber + 1 > totalPage)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                ++pageNumber;
+            }
+            txtPageNumber.Text = pageNumber.ToString();
+
+            loadDanhSach();
+        }
+
+        private void btnPrevPage_Click(object sender, EventArgs e)
+        {
+            if (pageNumber - 1 == 0)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                --pageNumber;
+            }
+            txtPageNumber.Text = pageNumber.ToString();
+            loadDanhSach();
+        }
+
+        private void btnFirstPage_Click(object sender, EventArgs e)
+        {
+            pageNumber = 1;
+            txtPageNumber.Text = pageNumber.ToString();
+            loadDanhSach();
+
+        }
+
+        private void btnLastPage_Click(object sender, EventArgs e)
+        {
+            pageNumber = totalPage;
+            txtPageNumber.Text = pageNumber.ToString();
+            loadDanhSach();
+        }
+
+        private void txtPageNumber_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Convert.ToUInt32(txtPageNumber.Text) <= totalPage)
+                {
+                    pageNumber = (int)Convert.ToUInt32(txtPageNumber.Text);
+
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception)
+            {
+
+                txtPageNumber.Text = pageNumber.ToString();
+            }
+            loadDanhSach();
+        }
+
+
+        private void loadDanhSach()
+        {
+            if (cmbLoaiMonTK.SelectedValue != null)
+            {
+                bindingSourceMonAn.DataSource = BUS.MonAnBUS.XemMonAnDataSource(txtTenTK.Text, int.Parse(((LoaiHangHoa)cmbLoaiMonTK.SelectedValue).Ma),
+                               pageNumber, pageSize);
+            }
+            else
+            {
+                bindingSourceMonAn.DataSource = BUS.MonAnBUS.XemMonAnDataSource(txtTenTK.Text, 0,
+               pageNumber, pageSize);
+            }
+
+            //dGVDanhSach.DataSource = BUS.NguyenLieuBUS.TiemKiemNguyenLieu(txtTenNL.Text,
+            //    ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC, rbSapHet.Checked, pageNumber, pageSize);
         }
     }
 }

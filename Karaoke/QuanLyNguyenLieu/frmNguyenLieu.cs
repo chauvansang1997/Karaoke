@@ -233,7 +233,7 @@ namespace Karaoke.NguyenLieu
                     
                 }))
                 {
-                    MessageBox.Show("Thêm thiết bị thành công");
+                    MessageBox.Show("Thêm nguyên liệu thành công");
                 }
                 bThem = false;
                 txtDonGia.Enabled = false;
@@ -254,7 +254,7 @@ namespace Karaoke.NguyenLieu
                     SoLuongToiThieu = int.Parse(txtTonToiThieu.Text),
                 }))
                 {
-                    MessageBox.Show("Sửa thiết bị thành công");
+                    MessageBox.Show("Sửa nguyên liệu thành công");
                 }
                 bSua = false;
                 txtDonGia.Enabled = false;

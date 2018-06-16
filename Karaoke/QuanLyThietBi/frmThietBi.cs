@@ -53,10 +53,9 @@ namespace Karaoke.QuanLyThietBi
         private void btnSua_Click(object sender, EventArgs e)
         {
             bSua = true;
-            txtDonGia.Enabled = true;
-            txtDVT.Enabled = true;
-            txtTenNL.Enabled = true;
-            cmbNhaCC.Enabled = true;
+            enableButton(false);
+
+            enableControls(true);
         }
         private void frmThietBi_Load(object sender, EventArgs e)
         {
@@ -70,7 +69,20 @@ namespace Karaoke.QuanLyThietBi
             dGVDanhSach.DataSource =BUS.ThietBiBUS.XemThietBiTable("", "", pageNumber, pageSize);
             AddGridTableStyle();
         }
-
+        private void enableButton(bool enable)
+        {
+            btnThem.Enabled = enable;
+            btnXoa.Enabled = enable;
+            btnSua.Enabled = enable;
+        }
+        private void enableControls(bool enable)
+        {
+            txtDVT.Enabled = enable;
+            txtTenNL.Enabled = enable;
+            cmbNhaCC.Enabled = enable;
+            txtDonGia.Enabled = enable;
+    
+        }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -104,17 +116,13 @@ namespace Karaoke.QuanLyThietBi
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            txtDonGia.Enabled = true;
-            txtDVT.Enabled = true;
-            txtTenNL.Enabled = true;
-            cmbNhaCC.Enabled = true;
+            enableControls(true);
+            enableButton(false);
             bThem = true;
             txtDonGia.Text = "";
             txtDVT.Text = "";
             txtTenNL.Text = "";
-            //btnLuu.Enabled = true;
-            //btnXoa.Enabled = false;
-            //btnSua.Enabled = false;
+
         }
 
         private void btnNextPage_Click(object sender, EventArgs e)
@@ -226,10 +234,7 @@ namespace Karaoke.QuanLyThietBi
                     MessageBox.Show("Thêm nguyên liệu thành công");
                 }
                 bThem = false;
-                txtDonGia.Enabled = false;
-                txtDVT.Enabled = false;
-                txtTenNL.Enabled = false;
-                cmbNhaCC.Enabled = false;
+                enableControls(false);
                 resetDanhSach();
             }
             else if (bSua)
@@ -246,10 +251,7 @@ namespace Karaoke.QuanLyThietBi
                     MessageBox.Show("Sửa nguyên liệu thành công");
                 }
                 bSua = false;
-                txtDonGia.Enabled = false;
-                txtDVT.Enabled = false;
-                txtTenNL.Enabled = false;
-                cmbNhaCC.Enabled = false;
+                enableControls(false);
                 resetDanhSach();
             }
         }
@@ -302,6 +304,13 @@ namespace Karaoke.QuanLyThietBi
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            enableControls(false);
+            enableButton(true);
+
         }
     }
 }

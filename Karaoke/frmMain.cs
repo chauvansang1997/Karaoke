@@ -8,6 +8,7 @@ using Karaoke.PhanCong;
 using Karaoke.PhongKaoraoke;
 using Karaoke.QuanLyPhanCong;
 using Karaoke.QuanLySanPham;
+using Karaoke.QuanLyThietBi;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -120,6 +121,18 @@ namespace Karaoke
         {
             frmMonAn monAn = new frmMonAn();
             monAn.ShowDialog();
+        }
+
+        private void nhapkhoThietBi_Click(object sender, EventArgs e)
+        {
+            frmNhapThietBi thietBi = new frmNhapThietBi();
+            thietBi.ShowDialog();
+        }
+
+        private void chinhSuaTietBi_Click(object sender, EventArgs e)
+        {
+            frmThietBi thietBi = new frmThietBi();
+            thietBi.ShowDialog();
         }
     }
 }

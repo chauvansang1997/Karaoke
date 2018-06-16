@@ -17,7 +17,12 @@ namespace BUS
             string listSoLuong = String.Join("|", listSoLuongNL);
             return MonAnDAO.ThemMonAn(monAn, listNguyenLieu, listSoLuong);
         }
-
+        public static bool SuaMonAn(MonAn monAn, List<string> listMaNguyenLieu, List<string> listSoLuongNL)
+        {
+            string listNguyenLieu = String.Join("|", listMaNguyenLieu);
+            string listSoLuong = String.Join("|", listSoLuongNL);
+            return MonAnDAO.SuaMonAn(monAn, listNguyenLieu, listSoLuong);
+        }
         public static bool CapNhatMonAn(MonAn monAn, List<string> listMaNguyenLieu)
         {
             string listNguyenLieu = String.Join("|", listMaNguyenLieu);
@@ -38,6 +43,15 @@ namespace BUS
         public static List<LoaiMon> XemLoaiMon()
         {
             return MonAnDAO.XemLoaiMon();
+        }
+
+        public static List<NguyenLieuMADataSource> XemNguyenLieuMonAn(string maMonAn)
+        {
+            return MonAnDAO.XemNguyenLieuMonAn(maMonAn);
+        }
+        public static List<MonAnDataSource> XemMonAnDataSource(string tenMonAn, int loaiMonAn, int pageNumber, int pageSize)
+        {
+            return MonAnDAO.XemMonAnDataSource(tenMonAn,  loaiMonAn,  pageNumber,  pageSize);
         }
     }
 }

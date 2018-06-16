@@ -56,6 +56,8 @@
     <Compile Include="LoaiPhong.cs" />
     <Compile Include="Luong.cs" />
     <Compile Include="MonAn.cs" />
+    <Compile Include="MonAnDataSource.cs" />
+    <Compile Include="NguyenLieuMADataSource.cs" />
     <Compile Include="NguyenLieuDataSource.cs" />
     <Compile Include="NhaCungCap.cs" />
     <Compile Include="NhanVien.cs" />

@@ -50,7 +50,7 @@ namespace Karaoke.GuiMonAn
             listMaNguyenLieu = new List<string>();
             for (int i = 0; i < monAn.bindingSource.Count; i++)
             {
-                listMaNguyenLieu.Add(((PhieuNhapHangDataSource)monAn.bindingSource[i]).Ma);
+                listMaNguyenLieu.Add(((NguyenLieuMADataSource)monAn.bindingSource[i]).Ma);
             }
 
 
@@ -98,12 +98,13 @@ namespace Karaoke.GuiMonAn
                 int index = dGVNguyenLieu.CurrentCell.RowIndex;
                 // DataRow row = dtNguyenLieu.Rows[dGVNguyenLieu.CurrentCell.RowIndex];
                 //  DtNguyeLieuMonAn.Rows.Add(row.ItemArray);
-                bindingSource.Add(new PhieuNhapHangDataSource()
+                bindingSource.Add(new NguyenLieuMADataSource()
                 {
                     Ma = dGVNguyenLieu[0,index].Value.ToString(),
                     Ten = dGVNguyenLieu[1, index].Value.ToString(),
                     DonViTinh = dGVNguyenLieu[3, index].Value.ToString(),
-                    Soluong = "1",
+                    SoLuong = "1",
+                    Gia= dGVNguyenLieu[4, index].Value.ToString(),
                 });
                 this.Close();
            }

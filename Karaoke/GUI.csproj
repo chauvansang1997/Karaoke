@@ -210,11 +210,6 @@
     <Compile Include="GUI_BaoCaoDoanhThu\rpBaoCaoDoanhThu.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="GUI_BaoCaoDoanhThu\rpBaoCaoDoanhThu1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rpBaoCaoDoanhThu.rpt</DependentUpon>
-    </Compile>
     <Compile Include="GUI_KhachHang\frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
