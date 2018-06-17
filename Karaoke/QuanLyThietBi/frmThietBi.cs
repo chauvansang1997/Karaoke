@@ -243,7 +243,7 @@ namespace Karaoke.QuanLyThietBi
             }
             else if (bSua)
             {
-                if (BUS.ThietBiBUS.ThemThietBi(new DTO.ThietBi()
+                if (BUS.ThietBiBUS.SuaThietBi(new DTO.ThietBi()
                 {
                     Ma = ma,
                     Ten = txtTenNL.Text,

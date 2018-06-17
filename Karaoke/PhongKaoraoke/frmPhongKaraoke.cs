@@ -334,17 +334,27 @@ namespace Karaoke.PhongKaoraoke
                 }
             }
             catch (Exception)
-            {
-
-                
-            }
-       
-     
+            {            
+            }   
         }
 
 		private void btnThoat_Click(object sender, EventArgs e)
 		{
 			this.Dispose();
 		}
-	}
+
+        private void btnChuyenPhong_Click(object sender, EventArgs e)
+        {
+            if (PhongHienTai != null)
+            {
+                frmChuyenPhong chuyenPhong = new frmChuyenPhong(PhongHienTai.Ten);
+                chuyenPhong.ShowDialog();
+            }
+        }
+
+        private void txtPageNumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

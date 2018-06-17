@@ -91,7 +91,9 @@ namespace Karaoke
 
 		private void phanCongMenu_Click(object sender, EventArgs e)
 		{
-		}
+            frmPhanCong phanCong = new frmPhanCong();
+            phanCong.ShowDialog();
+        }
 
 		private void phanCongItem_Click(object sender, EventArgs e)
 		{

@@ -13,8 +13,12 @@ namespace BUS
 		{
 			return DAO.ThietBiDAO.ThemThietBi(thietBi);
 		}
+        public static bool SuaThietBi(ThietBi thietBi)
+        {
+            return DAO.ThietBiDAO.SuaThietBi(thietBi);
+        }
 
-		public static bool CapNhatThietBi(ThietBi thietBi)
+        public static bool CapNhatThietBi(ThietBi thietBi)
 		{
 			return DAO.ThietBiDAO.CapNhatThietBi(thietBi);
 		}

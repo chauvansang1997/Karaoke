@@ -123,7 +123,7 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(243, 452);
+            this.button2.Location = new System.Drawing.Point(15, 452);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(159, 36);
             this.button2.TabIndex = 185;
@@ -141,7 +141,7 @@
             this.btnIn.ForeColor = System.Drawing.Color.White;
             this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
             this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnIn.Location = new System.Drawing.Point(25, 452);
+            this.btnIn.Location = new System.Drawing.Point(339, 452);
             this.btnIn.Margin = new System.Windows.Forms.Padding(2);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(77, 36);
@@ -178,10 +178,10 @@
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLuu.Location = new System.Drawing.Point(121, 452);
+            this.btnLuu.Location = new System.Drawing.Point(179, 452);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(107, 36);
+            this.btnLuu.Size = new System.Drawing.Size(146, 36);
             this.btnLuu.TabIndex = 181;
             this.btnLuu.Text = " Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -407,7 +407,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1047, 498);
+            this.ClientSize = new System.Drawing.Size(1055, 498);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtTotalPage);
             this.Controls.Add(this.btnFirstPage);

@@ -147,12 +147,6 @@
     <Compile Include="frmChonMon.Designer.cs">
       <DependentUpon>frmChonMon.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChuyenPhong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmChuyenPhong.Designer.cs">
-      <DependentUpon>frmChuyenPhong.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmDatCoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +256,18 @@
     </Compile>
     <Compile Include="PhanCong\frmCaTruc.Designer.cs">
       <DependentUpon>frmCaTruc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhongKaoraoke\frmChuyenPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhongKaoraoke\frmChuyenPhong.Designer.cs">
+      <DependentUpon>frmChuyenPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhongKaoraoke\frmLichSuPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhongKaoraoke\frmLichSuPhong.Designer.cs">
+      <DependentUpon>frmLichSuPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyNguyenLieu\frmGiaoNguyenLieu.cs">
       <SubType>Form</SubType>
@@ -452,9 +458,6 @@
     <EmbeddedResource Include="frmChonMon.resx">
       <DependentUpon>frmChonMon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmChuyenPhong.resx">
-      <DependentUpon>frmChuyenPhong.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmDatCoc.resx">
       <DependentUpon>frmDatCoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -506,6 +509,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PhanCong\frmCaTruc.resx">
       <DependentUpon>frmCaTruc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhongKaoraoke\frmChuyenPhong.resx">
+      <DependentUpon>frmChuyenPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhongKaoraoke\frmLichSuPhong.resx">
+      <DependentUpon>frmLichSuPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNguyenLieu\frmGiaoNguyenLieu.resx">
       <DependentUpon>frmGiaoNguyenLieu.cs</DependentUpon>

@@ -76,6 +76,10 @@ namespace Karaoke.GuiMonAn
             soHoaDon = soHD;
             InitializeComponent();
             khoiTao();
+            if (phongKaraoke==null)
+            {
+                btnThanhToan.Visible = false;
+            }
         }
         private void khoiTao()
         {
@@ -558,9 +562,15 @@ namespace Karaoke.GuiMonAn
         {
             if (BUS.HoaDonBUS.ThanhToan(soHoaDon, DateTime.Now, int.Parse(txtThanhTien.Text), tienGiamGia))
             {
+
                 MessageBox.Show("Thanh toán thành công");
-                this.Close();
-                phongKaraoke.reset();
+                if (phongKaraoke != null)
+                {
+                    phongKaraoke.reset();
+                }
+            
+                frmReportGoiMon goiMon = new frmReportGoiMon(soHoaDon);
+                goiMon.ShowDialog();
             }
             else
             {
