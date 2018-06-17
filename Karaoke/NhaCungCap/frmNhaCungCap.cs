@@ -97,13 +97,7 @@ namespace Karaoke.NhaCungCap
 		{
             panelChoice.Height = btnXoaNCC.Height;
             panelChoice.Top = btnXoaNCC.Top;
-
             ncc.MaNCC = txtMaNCC.Text;
-			ncc.Ten = txtTenNCC.Text;
-			ncc.LoaiHangCC = txtLoaiHangCC.Text;
-			ncc.SDT = txtSDT.Text;
-			ncc.DiaChi = txtDiaChi.Text;
-
 			if (BUS.NhaCungCapBUS.XoaNCC(ncc))
 			{
 				MessageBox.Show("Xoá thành công NCC");
