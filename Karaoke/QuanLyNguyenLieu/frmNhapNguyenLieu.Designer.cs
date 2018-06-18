@@ -315,7 +315,7 @@
             this.groupBox1.Controls.Add(this.rbDaGiao);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(41, 124);
+            this.groupBox1.Location = new System.Drawing.Point(41, 113);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(252, 91);
             this.groupBox1.TabIndex = 183;
@@ -359,7 +359,7 @@
             this.btnFind.ForeColor = System.Drawing.Color.White;
             this.btnFind.Image = ((System.Drawing.Image)(resources.GetObject("btnFind.Image")));
             this.btnFind.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFind.Location = new System.Drawing.Point(106, 234);
+            this.btnFind.Location = new System.Drawing.Point(106, 223);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(120, 36);
             this.btnFind.TabIndex = 180;
@@ -374,7 +374,7 @@
             this.cmbTKNhaCC.BackColor = System.Drawing.Color.White;
             this.cmbTKNhaCC.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTKNhaCC.FormattingEnabled = true;
-            this.cmbTKNhaCC.Location = new System.Drawing.Point(41, 57);
+            this.cmbTKNhaCC.Location = new System.Drawing.Point(41, 68);
             this.cmbTKNhaCC.Name = "cmbTKNhaCC";
             this.cmbTKNhaCC.Size = new System.Drawing.Size(252, 27);
             this.cmbTKNhaCC.TabIndex = 182;
@@ -384,7 +384,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(38, 26);
+            this.label2.Location = new System.Drawing.Point(38, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(175, 22);
             this.label2.TabIndex = 181;

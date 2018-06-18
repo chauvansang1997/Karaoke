@@ -43,6 +43,7 @@
             this.btnCapNhatNCC = new System.Windows.Forms.Button();
             this.btnXoaNCC = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelChoice = new System.Windows.Forms.Panel();
             this.btnThemNCC = new System.Windows.Forms.Button();
             this.btnLastPage = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.panelChoice = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachNCC)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -107,7 +107,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(33, 267);
+            this.label1.Location = new System.Drawing.Point(37, 265);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(152, 19);
             this.label1.TabIndex = 186;
@@ -118,7 +118,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(40, 26);
+            this.label5.Location = new System.Drawing.Point(40, 49);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(298, 33);
             this.label5.TabIndex = 185;
@@ -129,7 +129,7 @@
             this.labelTenPhong.AutoSize = true;
             this.labelTenPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTenPhong.ForeColor = System.Drawing.Color.White;
-            this.labelTenPhong.Location = new System.Drawing.Point(33, 107);
+            this.labelTenPhong.Location = new System.Drawing.Point(37, 139);
             this.labelTenPhong.Name = "labelTenPhong";
             this.labelTenPhong.Size = new System.Drawing.Size(134, 19);
             this.labelTenPhong.TabIndex = 177;
@@ -140,7 +140,7 @@
             this.labelLoaiPhong.AutoSize = true;
             this.labelLoaiPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLoaiPhong.ForeColor = System.Drawing.Color.White;
-            this.labelLoaiPhong.Location = new System.Drawing.Point(33, 187);
+            this.labelLoaiPhong.Location = new System.Drawing.Point(37, 202);
             this.labelLoaiPhong.Name = "labelLoaiPhong";
             this.labelLoaiPhong.Size = new System.Drawing.Size(141, 19);
             this.labelLoaiPhong.TabIndex = 175;
@@ -227,6 +227,14 @@
             this.panel2.Size = new System.Drawing.Size(144, 511);
             this.panel2.TabIndex = 211;
             // 
+            // panelChoice
+            // 
+            this.panelChoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
+            this.panelChoice.Location = new System.Drawing.Point(1, 66);
+            this.panelChoice.Name = "panelChoice";
+            this.panelChoice.Size = new System.Drawing.Size(10, 60);
+            this.panelChoice.TabIndex = 188;
+            // 
             // btnThemNCC
             // 
             this.btnThemNCC.FlatAppearance.BorderSize = 0;
@@ -289,7 +297,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChi.Location = new System.Drawing.Point(31, 449);
+            this.txtDiaChi.Location = new System.Drawing.Point(37, 416);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(306, 27);
             this.txtDiaChi.TabIndex = 189;
@@ -297,7 +305,7 @@
             // txtSDT
             // 
             this.txtSDT.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDT.Location = new System.Drawing.Point(31, 369);
+            this.txtSDT.Location = new System.Drawing.Point(37, 353);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(306, 27);
             this.txtSDT.TabIndex = 189;
@@ -305,7 +313,7 @@
             // txtLoaiHangCC
             // 
             this.txtLoaiHangCC.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoaiHangCC.Location = new System.Drawing.Point(31, 289);
+            this.txtLoaiHangCC.Location = new System.Drawing.Point(37, 287);
             this.txtLoaiHangCC.Name = "txtLoaiHangCC";
             this.txtLoaiHangCC.Size = new System.Drawing.Size(306, 27);
             this.txtLoaiHangCC.TabIndex = 189;
@@ -313,7 +321,7 @@
             // txtTenNCC
             // 
             this.txtTenNCC.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenNCC.Location = new System.Drawing.Point(32, 209);
+            this.txtTenNCC.Location = new System.Drawing.Point(37, 224);
             this.txtTenNCC.Name = "txtTenNCC";
             this.txtTenNCC.Size = new System.Drawing.Size(306, 27);
             this.txtTenNCC.TabIndex = 189;
@@ -321,7 +329,7 @@
             // txtMaNCC
             // 
             this.txtMaNCC.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNCC.Location = new System.Drawing.Point(32, 129);
+            this.txtMaNCC.Location = new System.Drawing.Point(37, 161);
             this.txtMaNCC.Name = "txtMaNCC";
             this.txtMaNCC.Size = new System.Drawing.Size(306, 27);
             this.txtMaNCC.TabIndex = 189;
@@ -331,7 +339,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(33, 427);
+            this.label2.Location = new System.Drawing.Point(37, 394);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 19);
             this.label2.TabIndex = 188;
@@ -342,7 +350,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(33, 347);
+            this.label3.Location = new System.Drawing.Point(37, 331);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 19);
             this.label3.TabIndex = 187;
@@ -365,14 +373,6 @@
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // panelChoice
-            // 
-            this.panelChoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
-            this.panelChoice.Location = new System.Drawing.Point(1, 66);
-            this.panelChoice.Name = "panelChoice";
-            this.panelChoice.Size = new System.Drawing.Size(10, 60);
-            this.panelChoice.TabIndex = 188;
             // 
             // frmNhaCungCap
             // 

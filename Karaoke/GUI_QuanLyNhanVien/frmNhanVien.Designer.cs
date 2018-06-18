@@ -59,7 +59,7 @@
             this.lblTaiKhoan.AutoSize = true;
             this.lblTaiKhoan.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTaiKhoan.ForeColor = System.Drawing.Color.White;
-            this.lblTaiKhoan.Location = new System.Drawing.Point(11, 406);
+            this.lblTaiKhoan.Location = new System.Drawing.Point(12, 385);
             this.lblTaiKhoan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTaiKhoan.Name = "lblTaiKhoan";
             this.lblTaiKhoan.Size = new System.Drawing.Size(79, 19);
@@ -71,7 +71,7 @@
             this.lblSDT.AutoSize = true;
             this.lblSDT.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSDT.ForeColor = System.Drawing.Color.White;
-            this.lblSDT.Location = new System.Drawing.Point(11, 202);
+            this.lblSDT.Location = new System.Drawing.Point(12, 205);
             this.lblSDT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Size = new System.Drawing.Size(102, 19);
@@ -83,7 +83,7 @@
             this.lblMaCVu.AutoSize = true;
             this.lblMaCVu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaCVu.ForeColor = System.Drawing.Color.White;
-            this.lblMaCVu.Location = new System.Drawing.Point(11, 338);
+            this.lblMaCVu.Location = new System.Drawing.Point(12, 325);
             this.lblMaCVu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMaCVu.Name = "lblMaCVu";
             this.lblMaCVu.Size = new System.Drawing.Size(89, 19);
@@ -95,7 +95,7 @@
             this.lblMaNV.AutoSize = true;
             this.lblMaNV.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaNV.ForeColor = System.Drawing.Color.White;
-            this.lblMaNV.Location = new System.Drawing.Point(11, 66);
+            this.lblMaNV.Location = new System.Drawing.Point(12, 85);
             this.lblMaNV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMaNV.Name = "lblMaNV";
             this.lblMaNV.Size = new System.Drawing.Size(103, 19);
@@ -107,7 +107,7 @@
             this.lblTenNV.AutoSize = true;
             this.lblTenNV.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenNV.ForeColor = System.Drawing.Color.White;
-            this.lblTenNV.Location = new System.Drawing.Point(11, 134);
+            this.lblTenNV.Location = new System.Drawing.Point(12, 145);
             this.lblTenNV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTenNV.Name = "lblTenNV";
             this.lblTenNV.Size = new System.Drawing.Size(110, 19);
@@ -119,7 +119,7 @@
             this.lblDiaChi.AutoSize = true;
             this.lblDiaChi.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiaChi.ForeColor = System.Drawing.Color.White;
-            this.lblDiaChi.Location = new System.Drawing.Point(11, 270);
+            this.lblDiaChi.Location = new System.Drawing.Point(12, 265);
             this.lblDiaChi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(57, 19);
@@ -158,7 +158,7 @@
             this.btnTraCuu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTraCuu.ForeColor = System.Drawing.Color.White;
             this.btnTraCuu.Image = ((System.Drawing.Image)(resources.GetObject("btnTraCuu.Image")));
-            this.btnTraCuu.Location = new System.Drawing.Point(79, 470);
+            this.btnTraCuu.Location = new System.Drawing.Point(92, 460);
             this.btnTraCuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnTraCuu.Name = "btnTraCuu";
             this.btnTraCuu.Size = new System.Drawing.Size(137, 38);
@@ -173,7 +173,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Vni 13 Annabelle", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(26, 11);
+            this.label1.Location = new System.Drawing.Point(26, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(252, 38);
@@ -184,7 +184,7 @@
             // 
             this.txtTaiKhoan.BackColor = System.Drawing.Color.White;
             this.txtTaiKhoan.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaiKhoan.Location = new System.Drawing.Point(11, 427);
+            this.txtTaiKhoan.Location = new System.Drawing.Point(12, 411);
             this.txtTaiKhoan.Margin = new System.Windows.Forms.Padding(2);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(288, 27);
@@ -195,7 +195,7 @@
             this.cbxMaCVU.BackColor = System.Drawing.Color.White;
             this.cbxMaCVU.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxMaCVU.FormattingEnabled = true;
-            this.cbxMaCVU.Location = new System.Drawing.Point(11, 359);
+            this.cbxMaCVU.Location = new System.Drawing.Point(12, 351);
             this.cbxMaCVU.Margin = new System.Windows.Forms.Padding(2);
             this.cbxMaCVU.Name = "cbxMaCVU";
             this.cbxMaCVU.Size = new System.Drawing.Size(288, 27);
@@ -205,7 +205,7 @@
             // 
             this.txtDiaChi.BackColor = System.Drawing.Color.White;
             this.txtDiaChi.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChi.Location = new System.Drawing.Point(11, 291);
+            this.txtDiaChi.Location = new System.Drawing.Point(12, 291);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(288, 27);
@@ -215,7 +215,7 @@
             // 
             this.txtSDT.BackColor = System.Drawing.Color.White;
             this.txtSDT.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDT.Location = new System.Drawing.Point(11, 223);
+            this.txtSDT.Location = new System.Drawing.Point(12, 231);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(2);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(288, 27);
@@ -225,7 +225,7 @@
             // 
             this.txtTenNV.BackColor = System.Drawing.Color.White;
             this.txtTenNV.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenNV.Location = new System.Drawing.Point(11, 155);
+            this.txtTenNV.Location = new System.Drawing.Point(12, 171);
             this.txtTenNV.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(288, 27);
@@ -235,7 +235,7 @@
             // 
             this.txtMaNV.BackColor = System.Drawing.Color.White;
             this.txtMaNV.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNV.Location = new System.Drawing.Point(11, 87);
+            this.txtMaNV.Location = new System.Drawing.Point(12, 111);
             this.txtMaNV.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(288, 27);
@@ -249,7 +249,7 @@
             this.btnTaoTK.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaoTK.ForeColor = System.Drawing.Color.White;
             this.btnTaoTK.Image = ((System.Drawing.Image)(resources.GetObject("btnTaoTK.Image")));
-            this.btnTaoTK.Location = new System.Drawing.Point(325, 473);
+            this.btnTaoTK.Location = new System.Drawing.Point(325, 470);
             this.btnTaoTK.Margin = new System.Windows.Forms.Padding(2);
             this.btnTaoTK.Name = "btnTaoTK";
             this.btnTaoTK.Size = new System.Drawing.Size(162, 36);
@@ -267,7 +267,7 @@
             this.dGVDSNV.Margin = new System.Windows.Forms.Padding(2);
             this.dGVDSNV.Name = "dGVDSNV";
             this.dGVDSNV.RowTemplate.Height = 24;
-            this.dGVDSNV.Size = new System.Drawing.Size(616, 458);
+            this.dGVDSNV.Size = new System.Drawing.Size(616, 454);
             this.dGVDSNV.TabIndex = 8;
             this.dGVDSNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVDSNV_CellClick);
             // 
@@ -279,7 +279,7 @@
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(841, 473);
+            this.btnThoat.Location = new System.Drawing.Point(841, 470);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(100, 36);
@@ -297,7 +297,7 @@
             this.btnCapNhat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhat.ForeColor = System.Drawing.Color.White;
             this.btnCapNhat.Image = ((System.Drawing.Image)(resources.GetObject("btnCapNhat.Image")));
-            this.btnCapNhat.Location = new System.Drawing.Point(737, 473);
+            this.btnCapNhat.Location = new System.Drawing.Point(737, 470);
             this.btnCapNhat.Margin = new System.Windows.Forms.Padding(2);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(100, 36);
@@ -314,7 +314,7 @@
             this.btnXoa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(633, 473);
+            this.btnXoa.Location = new System.Drawing.Point(633, 470);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(100, 36);
@@ -331,7 +331,7 @@
             this.btnThem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.Location = new System.Drawing.Point(529, 473);
+            this.btnThem.Location = new System.Drawing.Point(529, 470);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(100, 36);

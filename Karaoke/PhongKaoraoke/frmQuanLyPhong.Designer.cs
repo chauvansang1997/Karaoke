@@ -66,7 +66,7 @@
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(374, 529);
+            this.panel1.Size = new System.Drawing.Size(338, 529);
             this.panel1.TabIndex = 3;
             // 
             // btnLuu
@@ -77,7 +77,7 @@
             this.btnLuu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
-            this.btnLuu.Location = new System.Drawing.Point(111, 462);
+            this.btnLuu.Location = new System.Drawing.Point(84, 393);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(113, 36);
             this.btnLuu.TabIndex = 172;
@@ -89,9 +89,9 @@
             // txtGia
             // 
             this.txtGia.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGia.Location = new System.Drawing.Point(24, 402);
+            this.txtGia.Location = new System.Drawing.Point(24, 327);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(318, 27);
+            this.txtGia.Size = new System.Drawing.Size(276, 27);
             this.txtGia.TabIndex = 182;
             // 
             // label2
@@ -99,7 +99,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(24, 376);
+            this.label2.Location = new System.Drawing.Point(24, 304);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 19);
             this.label2.TabIndex = 181;
@@ -108,9 +108,9 @@
             // txtSoNguoi
             // 
             this.txtSoNguoi.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoNguoi.Location = new System.Drawing.Point(24, 286);
+            this.txtSoNguoi.Location = new System.Drawing.Point(24, 259);
             this.txtSoNguoi.Name = "txtSoNguoi";
-            this.txtSoNguoi.Size = new System.Drawing.Size(318, 27);
+            this.txtSoNguoi.Size = new System.Drawing.Size(276, 27);
             this.txtSoNguoi.TabIndex = 180;
             // 
             // label1
@@ -118,7 +118,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(24, 260);
+            this.label1.Location = new System.Drawing.Point(24, 235);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 19);
             this.label1.TabIndex = 179;
@@ -127,9 +127,9 @@
             // txtLoaiPhong
             // 
             this.txtLoaiPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoaiPhong.Location = new System.Drawing.Point(24, 170);
+            this.txtLoaiPhong.Location = new System.Drawing.Point(24, 191);
             this.txtLoaiPhong.Name = "txtLoaiPhong";
-            this.txtLoaiPhong.Size = new System.Drawing.Size(318, 27);
+            this.txtLoaiPhong.Size = new System.Drawing.Size(276, 27);
             this.txtLoaiPhong.TabIndex = 178;
             // 
             // labelTenPhong
@@ -137,7 +137,7 @@
             this.labelTenPhong.AutoSize = true;
             this.labelTenPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTenPhong.ForeColor = System.Drawing.Color.White;
-            this.labelTenPhong.Location = new System.Drawing.Point(24, 28);
+            this.labelTenPhong.Location = new System.Drawing.Point(24, 97);
             this.labelTenPhong.Name = "labelTenPhong";
             this.labelTenPhong.Size = new System.Drawing.Size(92, 19);
             this.labelTenPhong.TabIndex = 177;
@@ -148,7 +148,7 @@
             this.labelLoaiPhong.AutoSize = true;
             this.labelLoaiPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLoaiPhong.ForeColor = System.Drawing.Color.White;
-            this.labelLoaiPhong.Location = new System.Drawing.Point(24, 144);
+            this.labelLoaiPhong.Location = new System.Drawing.Point(24, 166);
             this.labelLoaiPhong.Name = "labelLoaiPhong";
             this.labelLoaiPhong.Size = new System.Drawing.Size(94, 19);
             this.labelLoaiPhong.TabIndex = 175;
@@ -157,9 +157,9 @@
             // txtTenPhong
             // 
             this.txtTenPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenPhong.Location = new System.Drawing.Point(24, 54);
+            this.txtTenPhong.Location = new System.Drawing.Point(24, 123);
             this.txtTenPhong.Name = "txtTenPhong";
-            this.txtTenPhong.Size = new System.Drawing.Size(318, 27);
+            this.txtTenPhong.Size = new System.Drawing.Size(276, 27);
             this.txtTenPhong.TabIndex = 174;
             // 
             // panel2
@@ -171,9 +171,9 @@
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.btnThoat);
             this.panel2.Controls.Add(this.btnThem);
-            this.panel2.Location = new System.Drawing.Point(369, 0);
+            this.panel2.Location = new System.Drawing.Point(337, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(575, 526);
+            this.panel2.Size = new System.Drawing.Size(571, 526);
             this.panel2.TabIndex = 4;
             // 
             // btnXoa
@@ -266,7 +266,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 524);
+            this.ClientSize = new System.Drawing.Size(907, 524);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

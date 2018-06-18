@@ -340,7 +340,7 @@ namespace Karaoke.QuanLyThietBi
             this.btnFind.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnFind.Image = ((System.Drawing.Image)(resources.GetObject("btnFind.Image")));
             this.btnFind.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFind.Location = new System.Drawing.Point(906, 14);
+            this.btnFind.Location = new System.Drawing.Point(915, 14);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(110, 30);
             this.btnFind.TabIndex = 165;

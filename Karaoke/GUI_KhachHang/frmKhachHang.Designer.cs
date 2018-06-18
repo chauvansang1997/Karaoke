@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhachHang));
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelChoice = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.btnCapNhatKhachHang = new System.Windows.Forms.Button();
             this.btnXoaKhachHang = new System.Windows.Forms.Button();
@@ -54,7 +55,6 @@
             this.btnPrevPage = new System.Windows.Forms.Button();
             this.btnFirstPage = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
-            this.panelChoice = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachKhachHang)).BeginInit();
             this.panel1.SuspendLayout();
@@ -64,7 +64,7 @@
             // 
             this.txtTenKH.BackColor = System.Drawing.Color.White;
             this.txtTenKH.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenKH.Location = new System.Drawing.Point(22, 134);
+            this.txtTenKH.Location = new System.Drawing.Point(24, 134);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(302, 27);
             this.txtTenKH.TabIndex = 189;
@@ -81,6 +81,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(139, 525);
             this.panel2.TabIndex = 222;
+            // 
+            // panelChoice
+            // 
+            this.panelChoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
+            this.panelChoice.Location = new System.Drawing.Point(3, 91);
+            this.panelChoice.Name = "panelChoice";
+            this.panelChoice.Size = new System.Drawing.Size(10, 60);
+            this.panelChoice.TabIndex = 188;
             // 
             // label4
             // 
@@ -159,7 +167,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(22, 296);
+            this.label1.Location = new System.Drawing.Point(24, 232);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 19);
             this.label1.TabIndex = 186;
@@ -181,7 +189,7 @@
             this.labelTenPhong.AutoSize = true;
             this.labelTenPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTenPhong.ForeColor = System.Drawing.Color.White;
-            this.labelTenPhong.Location = new System.Drawing.Point(22, 112);
+            this.labelTenPhong.Location = new System.Drawing.Point(24, 112);
             this.labelTenPhong.Name = "labelTenPhong";
             this.labelTenPhong.Size = new System.Drawing.Size(148, 19);
             this.labelTenPhong.TabIndex = 177;
@@ -192,7 +200,7 @@
             this.labelLoaiPhong.AutoSize = true;
             this.labelLoaiPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLoaiPhong.ForeColor = System.Drawing.Color.White;
-            this.labelLoaiPhong.Location = new System.Drawing.Point(22, 204);
+            this.labelLoaiPhong.Location = new System.Drawing.Point(24, 172);
             this.labelLoaiPhong.Name = "labelLoaiPhong";
             this.labelLoaiPhong.Size = new System.Drawing.Size(130, 19);
             this.labelLoaiPhong.TabIndex = 175;
@@ -252,7 +260,7 @@
             this.btnThemLoaiKH.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemLoaiKH.ForeColor = System.Drawing.Color.White;
             this.btnThemLoaiKH.Image = ((System.Drawing.Image)(resources.GetObject("btnThemLoaiKH.Image")));
-            this.btnThemLoaiKH.Location = new System.Drawing.Point(110, 463);
+            this.btnThemLoaiKH.Location = new System.Drawing.Point(116, 397);
             this.btnThemLoaiKH.Name = "btnThemLoaiKH";
             this.btnThemLoaiKH.Size = new System.Drawing.Size(94, 36);
             this.btnThemLoaiKH.TabIndex = 191;
@@ -266,7 +274,7 @@
             this.cbMucKM.BackColor = System.Drawing.Color.White;
             this.cbMucKM.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMucKM.FormattingEnabled = true;
-            this.cbMucKM.Location = new System.Drawing.Point(22, 318);
+            this.cbMucKM.Location = new System.Drawing.Point(24, 254);
             this.cbMucKM.Name = "cbMucKM";
             this.cbMucKM.Size = new System.Drawing.Size(302, 27);
             this.cbMucKM.TabIndex = 190;
@@ -276,7 +284,7 @@
             this.cbLoaiKH.BackColor = System.Drawing.Color.White;
             this.cbLoaiKH.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLoaiKH.FormattingEnabled = true;
-            this.cbLoaiKH.Location = new System.Drawing.Point(22, 226);
+            this.cbLoaiKH.Location = new System.Drawing.Point(24, 194);
             this.cbLoaiKH.Name = "cbLoaiKH";
             this.cbLoaiKH.Size = new System.Drawing.Size(302, 27);
             this.cbLoaiKH.TabIndex = 190;
@@ -285,7 +293,7 @@
             // 
             this.txtSDT.BackColor = System.Drawing.Color.White;
             this.txtSDT.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDT.Location = new System.Drawing.Point(22, 410);
+            this.txtSDT.Location = new System.Drawing.Point(24, 314);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(302, 27);
             this.txtSDT.TabIndex = 189;
@@ -295,7 +303,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(22, 388);
+            this.label3.Location = new System.Drawing.Point(24, 292);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 19);
             this.label3.TabIndex = 187;
@@ -370,14 +378,6 @@
             this.btnNextPage.Size = new System.Drawing.Size(24, 24);
             this.btnNextPage.TabIndex = 226;
             this.btnNextPage.UseVisualStyleBackColor = false;
-            // 
-            // panelChoice
-            // 
-            this.panelChoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
-            this.panelChoice.Location = new System.Drawing.Point(3, 91);
-            this.panelChoice.Name = "panelChoice";
-            this.panelChoice.Size = new System.Drawing.Size(10, 60);
-            this.panelChoice.TabIndex = 188;
             // 
             // frmKhachHang
             // 
