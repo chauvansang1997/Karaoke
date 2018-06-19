@@ -30,6 +30,10 @@ namespace BUS
 			return DAO.LoaiKhachHangDAO.XoaLoaiKH(loaiKhach);
 		}
 
+        public static DataTable XemLoaiKhachHang(List<int> danhSachLoaiTru)
+        {
+            return DAO.LoaiKhachHangDAO.XemLoaiKhachHang(danhSachLoaiTru);
+        }
 
-	}
+    }
 }

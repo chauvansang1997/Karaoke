@@ -91,9 +91,29 @@ namespace DAO
 			}
 			catch(Exception ex)
 			{
-				Utility.Log(ex.Message.ToString());
+				Utility.Log(ex);
 			}
 			return data;
 		}
-	}
+
+        public static DataTable XemLoaiKhachHang(List<int> danhSachLoaiTru)
+        {
+            string query = "EXEC uspXemLoaiKhachHang @danhSachLoaiTru";
+            string danhSachLoaiKhachHang = String.Join(",", danhSachLoaiTru);
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@danhSachLoaiTru", SqlDbType.NVarChar) {IsNullable = false, Value = danhSachLoaiKhachHang},
+            };
+            DataTable data = new DataTable();
+            try
+            {
+                data = Dataprovider.ExcuteQuery(query,parameters.ToArray());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            return data;
+        }
+    }
 }

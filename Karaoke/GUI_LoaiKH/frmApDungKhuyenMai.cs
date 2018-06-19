@@ -36,6 +36,13 @@ namespace Karaoke.GUI_LoaiKH
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
             txtTotalPage.Text = totalPage.ToString();
             dGVDanhSach.DataSource = BUS.KhuyenMaiBUS.XemKhuyenMai("", -1, pageNumber, pageSize);
+            this.dGVLoaiKhachHang.DataSource = bindingSource;
+            bindingSource.Add(new LoaiKhachHang());
+            bindingSource.RemoveAt(0);
+            this.dGVLoaiKhachHang.Columns["MucKM"].HeaderText = "Mức khuyến mãi";
+            this.dGVLoaiKhachHang.Columns["TenLoaiKH"].HeaderText = "Tên loại khách hàng";
+            this.dGVLoaiKhachHang.Columns["MaLoaiKH"].Visible = false;
+            this.dGVLoaiKhachHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             AddGridTableStyle();
         }
 
@@ -60,6 +67,8 @@ namespace Karaoke.GUI_LoaiKH
             this.dGVDanhSach.Columns["NgayBatDau"].DefaultCellStyle.Format = "MM/dd/yyyy HH:mm";
             this.dGVDanhSach.Columns["NgayKetThuc"].HeaderText = "Ngày bắt kết thúc";
             this.dGVDanhSach.Columns["NgayKetThuc"].DefaultCellStyle.Format = "MM/dd/yyyy HH:mm";
+
+           
             cmbLoaiKHTK.DataSource = BUS.LoaiKhachHangBUS.LoadLoaiKH();
             cmbLoaiKHTK.DisplayMember = "TENLOAIKH";
 
@@ -73,10 +82,7 @@ namespace Karaoke.GUI_LoaiKH
 
             enableControls(true);
         }
-        private void frmThietBi_Load(object sender, EventArgs e)
-        {
-            
-        }
+
 
         private void enableButton1(bool enable)
         {
@@ -97,7 +103,6 @@ namespace Karaoke.GUI_LoaiKH
             btnLuu.Enabled = enable;
             btnHuy.Enabled = enable;
             btnThemLoaiKH.Enabled = enable;
-            btnXoaLoaiKH.Enabled = enable;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -134,7 +139,7 @@ namespace Karaoke.GUI_LoaiKH
         {
             enableControls(true);
             enableButton(false);
-            enableButton1(true);
+           // enableButton1(true);
             bThem = true;
             txtTenKM.Text = "";
 
@@ -226,9 +231,16 @@ namespace Karaoke.GUI_LoaiKH
         {
             if (bThem)
             {
-                List<LoaiKhachHang> list = (List<LoaiKhachHang>)bindingSource.DataSource;
-                List<int> listMaLoaiKhachHang = list.Select(l => l.MaLoaiKH).ToList();
-                List<float> listMucKhuyenMai = list.Select(l => l.MucKM).ToList();
+                List<int> listMaLoaiKhachHang = new List<int>();
+                List<float> listMucKhuyenMai = new List<float>();
+                List<LoaiKhachHang> list = new List<LoaiKhachHang>();
+                for (int i = 0; i < bindingSource.Count; i++)
+                {
+                    LoaiKhachHang loaiKhachHang = (LoaiKhachHang)bindingSource[i];
+                    listMaLoaiKhachHang.Add(loaiKhachHang.MaLoaiKH);
+                    listMucKhuyenMai.Add(loaiKhachHang.MucKM);
+                }
+               
                 if (BUS.KhuyenMaiBUS.ThemkhuyenMai(new DTO.KhuyenMai()
                 {
 
@@ -308,13 +320,9 @@ namespace Karaoke.GUI_LoaiKH
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (BUS.ThietBiBUS.XoaThietBi(new DTO.ThietBi()
+            if (BUS.KhuyenMaiBUS.XoaKhuyenMai(ma))
             {
-
-                Ten = txtTenKM.Text,
-            }))
-            {
-                MessageBox.Show("Xóa thiết bị thành công");
+                MessageBox.Show("Xóa khuyến mãi thành công");
                 resetDanhSach();
             }
         }
@@ -347,9 +355,14 @@ namespace Karaoke.GUI_LoaiKH
                 frmLoaiKhachHangKM loaiKhachHangKM = new frmLoaiKhachHangKM(bindingSource, ma);
                 loaiKhachHangKM.ShowDialog();
             }
-
-
         }
 
+        private void dGVLoaiKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex ==0 && e.RowIndex >= 0)
+            {
+                dGVLoaiKhachHang.Rows.RemoveAt(e.RowIndex);
+            }
+        }
     }
 }

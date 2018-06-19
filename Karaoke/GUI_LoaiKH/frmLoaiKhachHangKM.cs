@@ -12,7 +12,6 @@ namespace Karaoke.GUI_LoaiKH
 {
     public partial class frmLoaiKhachHangKM : Form
     {
-        private List<string> listLoaiKhachHang;
         private BindingSource bindingSource;
         private int maKhuyenMai;
         public frmLoaiKhachHangKM(BindingSource bindingSource,int maKhuyenMai)
@@ -25,15 +24,29 @@ namespace Karaoke.GUI_LoaiKH
 
         private void khoiTao()
         {
-            if(bindingSource.Count> 0)
+            List<int> listLoaiKhachHang = new List<int>();
+            for (int i = 0; i < bindingSource.Count; i++)
             {
-                List<int> listLoaiKhachHang = ((List<LoaiKhachHang>)bindingSource.DataSource).Select(l => l.MaLoaiKH).ToList();
-
+                LoaiKhachHang loaiKhachHang = (LoaiKhachHang)bindingSource[i];
+                listLoaiKhachHang.Add(loaiKhachHang.MaLoaiKH);
+            }
+            if (maKhuyenMai !=-1)
+            {
                 cmbLoaiKH.DataSource = BUS.KhuyenMaiBUS.XemChiTiet(maKhuyenMai, listLoaiKhachHang);
             }
             else
             {
-                cmbLoaiKH.DataSource = BUS.KhuyenMaiBUS.XemChiTiet(maKhuyenMai, null);
+                if (bindingSource.Count > 0)
+                {
+                    cmbLoaiKH.DataSource = BUS.LoaiKhachHangBUS.XemLoaiKhachHang(listLoaiKhachHang);
+                    cmbLoaiKH.DisplayMember = "TENLOAIKH";
+                }
+                else
+                {
+                    cmbLoaiKH.DataSource = BUS.LoaiKhachHangBUS.LoadLoaiKH();
+                    cmbLoaiKH.DisplayMember = "TENLOAIKH";
+                }
+       
             }
             cmbLoaiKH.DisplayMember = "TENLOAIKH";
         }
@@ -42,12 +55,12 @@ namespace Karaoke.GUI_LoaiKH
         {
             if (cmbLoaiKH.SelectedValue != null )
             {
-                DataRow row = (DataRow)cmbLoaiKH.SelectedValue;
+                DataRow row = ((DataRowView)cmbLoaiKH.SelectedValue).Row;
                 bindingSource.Add(new LoaiKhachHang()
                 {
                     MaLoaiKH =(int)row["MALOAIKH"],
                     TenLoaiKH = row["TENLOAIKH"].ToString(),
-                    MucKM = (float)row["MUCKM"],
+                    MucKM = float.Parse(txtMucKM.Text),
                 });
                 this.Close();
             }

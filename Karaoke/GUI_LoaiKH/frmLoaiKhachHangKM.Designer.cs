@@ -58,7 +58,6 @@
             // 
             this.cmbLoaiKH.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbLoaiKH.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cmbLoaiKH.Enabled = false;
             this.cmbLoaiKH.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLoaiKH.FormattingEnabled = true;
             this.cmbLoaiKH.Location = new System.Drawing.Point(12, 40);
@@ -98,7 +97,6 @@
             // 
             // txtMucKM
             // 
-            this.txtMucKM.Enabled = false;
             this.txtMucKM.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMucKM.Location = new System.Drawing.Point(12, 107);
             this.txtMucKM.Name = "txtMucKM";
@@ -117,6 +115,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnLuu);
             this.Name = "frmLoaiKhachHangKM";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm mức khuyến mãi";
             this.ResumeLayout(false);
             this.PerformLayout();

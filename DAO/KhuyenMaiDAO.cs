@@ -142,13 +142,13 @@ namespace DAO
         }
         public static DataTable XemChiTiet(int maKhuyenMai,List<int> listMaLoaiKhachHang)
         {
-            string query = "EXEC uspXemDanhSachLoaiKhachHangKM @maKhuyenMai";
+            string query = "EXEC uspXemDanhSachLoaiKhachHangKM @maKhuyenMai,@danhSachLoaiKhachHang";
             string danhSachLoaiKhachHang = listMaLoaiKhachHang == null ? "" : String.Join(",", listMaLoaiKhachHang);
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@maKhuyenMai",SqlDbType.Int){ Value=maKhuyenMai  },
-                new SqlParameter("@loaiKhachHang",SqlDbType.VarChar){IsNullable=false,Value=danhSachLoaiKhachHang },
+                new SqlParameter("@danhSachLoaiKhachHang",SqlDbType.VarChar){IsNullable=false,Value=danhSachLoaiKhachHang },
             };
             DataTable table = null;
             try
