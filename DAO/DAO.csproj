@@ -51,6 +51,7 @@
     <Compile Include="HangHoaDAO.cs" />
     <Compile Include="HoaDonDAO.cs" />
     <Compile Include="KhachHangDAO.cs" />
+    <Compile Include="KhuyenMaiDAO.cs" />
     <Compile Include="NhaCungCapDAO.cs" />
     <Compile Include="LoaiKhachHangDAO.cs" />
     <Compile Include="PhanCong\PhanCongDAO.cs" />

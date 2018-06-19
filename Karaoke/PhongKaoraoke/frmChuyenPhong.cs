@@ -35,7 +35,7 @@ namespace Karaoke.PhongKaoraoke
             {
                 phongHienTai = value;
                 txtTenPhong.Text = phongHienTai.Ten;
-                txtGia.Text = phongHienTai.Gia.ToString();              
+                txtGia.Text = phongHienTai.Gia.ToString();
                 txtLoaiPhong.Text = phongHienTai.TenLoai;
 
             }
@@ -49,14 +49,17 @@ namespace Karaoke.PhongKaoraoke
 
         private void khoiTao()
         {
+            dictionaryAvailableLayout = new Dictionary<int, List<PhongLayout>>();
             listAllPhong = new List<Phong>();
             totalPage = Utility.TinhKichThuocTrang(BUS.PhongBUS.DemPhong(0), pageSize);
             txtTotalPage.Text = totalPage.ToString();
             pageNumber = 1;
             txtPageNumber.Text = "1";
             indexHienTai = -1;
+            hienThiDanhSachPhong();
         }
-        private void hienThiTatCaPhong()
+
+        private void hienThiDanhSachPhong()
         {
             indexHienTai = -1;
             flowPhongLayout.Controls.Clear();
@@ -71,7 +74,7 @@ namespace Karaoke.PhongKaoraoke
                     PhongLayout phongLayout = new PhongLayout() { Phong = item, IndexList = i };
                     phongLayout.Ten = item.Ten;
 
-                   phongLayout.BackColor = Color.ForestGreen;
+                    phongLayout.BackColor = Color.ForestGreen;
 
                     phongLayout.setClick((sender, e) =>
                     {
@@ -119,7 +122,8 @@ namespace Karaoke.PhongKaoraoke
             {
                 if (BUS.PhongBUS.ChuyenPhong(this.maPhongHienTai, PhongHienTai.Ten))
                 {
-                    MessageBox.Show("Bạn phải chọn phòng trước");
+                    MessageBox.Show("Chuyển phòng thành công");
+                    this.Close();
                 }
                 else
                 {
@@ -132,29 +136,72 @@ namespace Karaoke.PhongKaoraoke
             }
         }
 
-        private void btnFirstPage_Click(object sender, EventArgs e)
+        private void btnNextPage_Click(object sender, EventArgs e)
         {
+            if (pageNumber + 1 > totalPage)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                ++pageNumber;
+            }
+            txtPageNumber.Text = pageNumber.ToString();
 
+            hienThiDanhSachPhong();
         }
 
         private void btnPrevPage_Click(object sender, EventArgs e)
         {
+            if (pageNumber - 1 == 0)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                --pageNumber;
+            }
+            txtPageNumber.Text = pageNumber.ToString();
+            hienThiDanhSachPhong();
+        }
 
+        private void btnFirstPage_Click(object sender, EventArgs e)
+        {
+            pageNumber = 1;
+            txtPageNumber.Text = pageNumber.ToString();
+            hienThiDanhSachPhong();
+
+        }
+
+
+        private void btnLastPage_Click(object sender, EventArgs e)
+        {
+            pageNumber = totalPage;
+            txtPageNumber.Text = pageNumber.ToString();
+            hienThiDanhSachPhong();
         }
 
         private void txtPageNumber_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                if (Convert.ToUInt32(txtPageNumber.Text) <= totalPage)
+                {
+                    pageNumber = (int)Convert.ToUInt32(txtPageNumber.Text);
 
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception)
+            {
+
+                txtPageNumber.Text = pageNumber.ToString();
+            }
+            hienThiDanhSachPhong();
         }
 
-        private void btnNextPage_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLastPage_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

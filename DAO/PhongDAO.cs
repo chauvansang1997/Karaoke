@@ -166,7 +166,7 @@ namespace DAO
             DataTable table = null;
             try
             {
-                table = Dataprovider.ExcuteQuery(query);
+                table = Dataprovider.ExcuteQuery(query,parameters.ToArray());
 
             }
             catch (Exception ex)

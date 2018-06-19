@@ -12,10 +12,10 @@ namespace BUS
 
 		public static DataTable LoadLoaiKH()
 		{
-				return DAO.LoaiKhachHangDAO.LoadLoaiKH();
+		    return DAO.LoaiKhachHangDAO.LoadLoaiKH();
 		}
 
-		public static bool ThemLoaiKH(LoaiKhachHang loaiKhach)
+        public static bool ThemLoaiKH(LoaiKhachHang loaiKhach)
 		{
 			return DAO.LoaiKhachHangDAO.ThemLoaiKH(loaiKhach);
 		}

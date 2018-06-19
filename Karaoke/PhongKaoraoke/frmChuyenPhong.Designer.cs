@@ -40,13 +40,13 @@
             this.btnChuyen = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtLoaiPhong = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnFirstPage = new System.Windows.Forms.Button();
             this.btnLastPage = new System.Windows.Forms.Button();
             this.btnPrevPage = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
-            this.txtLoaiPhong = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,6 +117,7 @@
             // txtTenPhong
             // 
             this.txtTenPhong.BackColor = System.Drawing.Color.White;
+            this.txtTenPhong.Enabled = false;
             this.txtTenPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenPhong.Location = new System.Drawing.Point(8, 124);
             this.txtTenPhong.Name = "txtTenPhong";
@@ -127,6 +128,7 @@
             // txtGia
             // 
             this.txtGia.BackColor = System.Drawing.Color.White;
+            this.txtGia.Enabled = false;
             this.txtGia.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGia.Location = new System.Drawing.Point(8, 248);
             this.txtGia.Name = "txtGia";
@@ -196,6 +198,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(273, 485);
             this.panel1.TabIndex = 218;
+            // 
+            // txtLoaiPhong
+            // 
+            this.txtLoaiPhong.Enabled = false;
+            this.txtLoaiPhong.Location = new System.Drawing.Point(8, 188);
+            this.txtLoaiPhong.Name = "txtLoaiPhong";
+            this.txtLoaiPhong.Size = new System.Drawing.Size(254, 27);
+            this.txtLoaiPhong.TabIndex = 218;
             // 
             // label2
             // 
@@ -276,13 +286,6 @@
             this.btnNextPage.TabIndex = 206;
             this.btnNextPage.UseVisualStyleBackColor = false;
             this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
-            // 
-            // txtLoaiPhong
-            // 
-            this.txtLoaiPhong.Location = new System.Drawing.Point(8, 188);
-            this.txtLoaiPhong.Name = "txtLoaiPhong";
-            this.txtLoaiPhong.Size = new System.Drawing.Size(254, 27);
-            this.txtLoaiPhong.TabIndex = 218;
             // 
             // frmChuyenPhong
             // 

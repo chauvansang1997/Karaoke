@@ -109,7 +109,7 @@ namespace Karaoke
             dGVHoaDon.Columns["MaLoaiHangHoa"].Visible = false;
             dGVHoaDon.Columns["TenLoaiHangHoa"].Visible = false;
             dGVHoaDon.Columns["IndexList"].Visible = false;
-            dGVHoaDon.Columns["DonViTinh"].Visible = false;
+          //  dGVHoaDon.Columns["DonViTinh"].Visible = false;
             dGVHoaDon.Columns["Gia"].ReadOnly = true;
             dGVHoaDon.Columns["Ten"].ReadOnly = true;
             dGVHoaDon.Columns["Thanhtien"].ReadOnly = true;
@@ -530,6 +530,8 @@ namespace Karaoke
             if (BUS.HoaDonBUS.ThanhToan(soHoaDon, DateTime.Now, int.Parse(txtThanhTien.Text), int.Parse(txtGiamGia.Text)))
             {
                 MessageBox.Show("Thanh toán thành công");
+                frmInHoaDonDatTiec datTiec = new frmInHoaDonDatTiec(soHoaDon);
+                datTiec.ShowDialog();
             }
             else
             {
@@ -666,7 +668,8 @@ namespace Karaoke
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-
+            frmInHoaDonDatTiec datTiec = new frmInHoaDonDatTiec(soHoaDon);
+            datTiec.ShowDialog();
         }
     }
 }

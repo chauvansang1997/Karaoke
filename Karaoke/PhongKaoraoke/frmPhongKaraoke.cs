@@ -34,7 +34,7 @@ namespace Karaoke.PhongKaoraoke
         private List<Phong> listAllPhong;
 
 
-
+        private Dictionary<int, int> dictionaryPage;
         private Phong phongHienTai;
         private int indexHienTai;
         private int indexTruoc;
@@ -121,7 +121,7 @@ namespace Karaoke.PhongKaoraoke
             dictionaryAvailableLayout = new Dictionary<int, List<PhongLayout>>();
 
             dictionaryUnAvailableLayout = new Dictionary<int, List<PhongLayout>>();
-
+           // dictionaryPage = new Dictionary<int, int>();
             thayDoiTrangThai();
         }
         public void reset()
@@ -349,6 +349,7 @@ namespace Karaoke.PhongKaoraoke
             {
                 frmChuyenPhong chuyenPhong = new frmChuyenPhong(PhongHienTai.Ten);
                 chuyenPhong.ShowDialog();
+                khoiTao();
             }
         }
 

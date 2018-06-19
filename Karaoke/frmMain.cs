@@ -161,5 +161,52 @@ namespace Karaoke
 			frmCaTruc caTruc = new frmCaTruc();
 			caTruc.ShowDialog();
 		}
-	}
+
+        private void NhapKhoNguyenLieuMenu_Click(object sender, EventArgs e)
+        {
+            frmNhapNguyenLieu nhapNguyenLieu = new frmNhapNguyenLieu();
+            nhapNguyenLieu.ShowDialog();
+        }
+
+        private void ChinhSuaNguyenLieuMenu_Click(object sender, EventArgs e)
+        {
+            frmNguyenLieu nguyenLieu = new frmNguyenLieu();
+            nguyenLieu.ShowDialog();
+        }
+
+        private void ChinhSuaMonAnMenu_Click(object sender, EventArgs e)
+        {
+            frmMonAn monAn = new frmMonAn();
+            monAn.ShowDialog();
+        }
+
+        private void NhapKhoSanPhamMenu_Click(object sender, EventArgs e)
+        {
+            frmNhapSanPham nhapSanPham = new frmNhapSanPham();
+            nhapSanPham.ShowDialog();
+        }
+
+        private void ChinhSuaSanPhamMenu_Click(object sender, EventArgs e)
+        {
+            frmSamPham samPham = new frmSamPham();
+            samPham.ShowDialog();
+        }
+
+        private void NhapKhoThietBiMenu_Click(object sender, EventArgs e)
+        {
+            frmNhapThietBi nhapThietBi = new frmNhapThietBi();
+            nhapThietBi.ShowDialog();
+        }
+
+        private void ChinhSuaKhoThietBiMenu_Click(object sender, EventArgs e)
+        {
+            frmThietBi thietBi = new frmThietBi();
+            thietBi.ShowDialog();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

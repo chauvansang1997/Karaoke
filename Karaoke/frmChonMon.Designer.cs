@@ -79,13 +79,18 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnDatCoc
             // 
-            this.btnDatCoc.Location = new System.Drawing.Point(0, 0);
+            this.btnDatCoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDatCoc.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatCoc.ForeColor = System.Drawing.Color.White;
+            this.btnDatCoc.Location = new System.Drawing.Point(19, 532);
             this.btnDatCoc.Name = "btnDatCoc";
-            this.btnDatCoc.Size = new System.Drawing.Size(75, 23);
+            this.btnDatCoc.Size = new System.Drawing.Size(103, 37);
             this.btnDatCoc.TabIndex = 181;
+            this.btnDatCoc.Text = "Đặt cọc";
             // 
             // btnThanhToan
             // 
@@ -222,7 +227,7 @@
             this.btnIn.ForeColor = System.Drawing.Color.White;
             this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
             this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnIn.Location = new System.Drawing.Point(135, 533);
+            this.btnIn.Location = new System.Drawing.Point(148, 533);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(100, 36);
             this.btnIn.TabIndex = 180;
