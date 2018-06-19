@@ -338,9 +338,9 @@
             this.groupBox1.Controls.Add(this.rbTatCa);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(977, 15);
+            this.groupBox1.Location = new System.Drawing.Point(910, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(184, 78);
+            this.groupBox1.Size = new System.Drawing.Size(251, 51);
             this.groupBox1.TabIndex = 168;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cách tìm kiếm";
@@ -350,7 +350,7 @@
             this.rbHetSoLuong.AutoSize = true;
             this.rbHetSoLuong.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbHetSoLuong.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.rbHetSoLuong.Location = new System.Drawing.Point(18, 48);
+            this.rbHetSoLuong.Location = new System.Drawing.Point(122, 19);
             this.rbHetSoLuong.Name = "rbHetSoLuong";
             this.rbHetSoLuong.Size = new System.Drawing.Size(123, 20);
             this.rbHetSoLuong.TabIndex = 3;

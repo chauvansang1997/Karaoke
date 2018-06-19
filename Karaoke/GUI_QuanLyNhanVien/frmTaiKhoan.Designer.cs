@@ -47,7 +47,7 @@
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Location = new System.Drawing.Point(296, 250);
+            this.btnOK.Location = new System.Drawing.Point(292, 208);
             this.btnOK.Margin = new System.Windows.Forms.Padding(2);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(100, 36);
@@ -60,7 +60,7 @@
             // 
             this.lblTenTK.AutoSize = true;
             this.lblTenTK.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenTK.Location = new System.Drawing.Point(214, 52);
+            this.lblTenTK.Location = new System.Drawing.Point(221, 76);
             this.lblTenTK.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTenTK.Name = "lblTenTK";
             this.lblTenTK.Size = new System.Drawing.Size(112, 19);
@@ -71,7 +71,7 @@
             // 
             this.lblMatKhau.AutoSize = true;
             this.lblMatKhau.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMatKhau.Location = new System.Drawing.Point(214, 154);
+            this.lblMatKhau.Location = new System.Drawing.Point(221, 140);
             this.lblMatKhau.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMatKhau.Name = "lblMatKhau";
             this.lblMatKhau.Size = new System.Drawing.Size(79, 19);
@@ -81,20 +81,20 @@
             // txtTenTK
             // 
             this.txtTenTK.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenTK.Location = new System.Drawing.Point(214, 84);
+            this.txtTenTK.Location = new System.Drawing.Point(221, 97);
             this.txtTenTK.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenTK.Name = "txtTenTK";
-            this.txtTenTK.Size = new System.Drawing.Size(269, 27);
+            this.txtTenTK.Size = new System.Drawing.Size(257, 27);
             this.txtTenTK.TabIndex = 5;
             // 
             // txtMatKhau
             // 
             this.txtMatKhau.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau.Location = new System.Drawing.Point(214, 187);
+            this.txtMatKhau.Location = new System.Drawing.Point(221, 161);
             this.txtMatKhau.Margin = new System.Windows.Forms.Padding(2);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '●';
-            this.txtMatKhau.Size = new System.Drawing.Size(269, 27);
+            this.txtMatKhau.Size = new System.Drawing.Size(257, 27);
             this.txtMatKhau.TabIndex = 6;
             // 
             // panel1

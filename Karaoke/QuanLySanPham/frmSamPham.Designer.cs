@@ -391,7 +391,7 @@ namespace Karaoke.QuanLySanPham
             this.btnLuu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
-            this.btnLuu.Location = new System.Drawing.Point(97, 478);
+            this.btnLuu.Location = new System.Drawing.Point(218, 478);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(105, 36);
             this.btnLuu.TabIndex = 178;
@@ -439,7 +439,7 @@ namespace Karaoke.QuanLySanPham
             this.btnHuy.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.White;
             this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
-            this.btnHuy.Location = new System.Drawing.Point(208, 478);
+            this.btnHuy.Location = new System.Drawing.Point(329, 478);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(105, 36);
             this.btnHuy.TabIndex = 192;
@@ -457,7 +457,7 @@ namespace Karaoke.QuanLySanPham
             this.btnLayAnh.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLayAnh.ForeColor = System.Drawing.Color.White;
             this.btnLayAnh.Image = ((System.Drawing.Image)(resources.GetObject("btnLayAnh.Image")));
-            this.btnLayAnh.Location = new System.Drawing.Point(284, 137);
+            this.btnLayAnh.Location = new System.Drawing.Point(284, 187);
             this.btnLayAnh.Name = "btnLayAnh";
             this.btnLayAnh.Size = new System.Drawing.Size(30, 25);
             this.btnLayAnh.TabIndex = 191;
@@ -469,7 +469,7 @@ namespace Karaoke.QuanLySanPham
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(12, 260);
+            this.label14.Location = new System.Drawing.Point(12, 310);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(170, 19);
             this.label14.TabIndex = 190;
@@ -478,7 +478,7 @@ namespace Karaoke.QuanLySanPham
             // txtTonToiThieu
             // 
             this.txtTonToiThieu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTonToiThieu.Location = new System.Drawing.Point(12, 290);
+            this.txtTonToiThieu.Location = new System.Drawing.Point(12, 332);
             this.txtTonToiThieu.Name = "txtTonToiThieu";
             this.txtTonToiThieu.Size = new System.Drawing.Size(203, 27);
             this.txtTonToiThieu.TabIndex = 189;
@@ -488,7 +488,7 @@ namespace Karaoke.QuanLySanPham
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(12, 328);
+            this.label13.Location = new System.Drawing.Point(230, 310);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(93, 19);
             this.label13.TabIndex = 188;
@@ -497,7 +497,7 @@ namespace Karaoke.QuanLySanPham
             // txtDVT
             // 
             this.txtDVT.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDVT.Location = new System.Drawing.Point(12, 358);
+            this.txtDVT.Location = new System.Drawing.Point(230, 332);
             this.txtDVT.Name = "txtDVT";
             this.txtDVT.Size = new System.Drawing.Size(130, 27);
             this.txtDVT.TabIndex = 187;
@@ -507,7 +507,7 @@ namespace Karaoke.QuanLySanPham
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(348, 223);
+            this.label10.Location = new System.Drawing.Point(366, 264);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(67, 22);
             this.label10.TabIndex = 186;
@@ -519,7 +519,7 @@ namespace Karaoke.QuanLySanPham
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(213, 189);
+            this.label12.Location = new System.Drawing.Point(230, 239);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(101, 22);
             this.label12.TabIndex = 184;
@@ -529,7 +529,7 @@ namespace Karaoke.QuanLySanPham
             // txtGiaNhap
             // 
             this.txtGiaNhap.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiaNhap.Location = new System.Drawing.Point(212, 222);
+            this.txtGiaNhap.Location = new System.Drawing.Point(230, 264);
             this.txtGiaNhap.Name = "txtGiaNhap";
             this.txtGiaNhap.Size = new System.Drawing.Size(130, 27);
             this.txtGiaNhap.TabIndex = 185;
@@ -540,7 +540,7 @@ namespace Karaoke.QuanLySanPham
             this.cmbNhaCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cmbNhaCC.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbNhaCC.FormattingEnabled = true;
-            this.cmbNhaCC.Location = new System.Drawing.Point(12, 426);
+            this.cmbNhaCC.Location = new System.Drawing.Point(12, 400);
             this.cmbNhaCC.Name = "cmbNhaCC";
             this.cmbNhaCC.Size = new System.Drawing.Size(203, 27);
             this.cmbNhaCC.TabIndex = 183;
@@ -550,7 +550,7 @@ namespace Karaoke.QuanLySanPham
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(12, 396);
+            this.label6.Location = new System.Drawing.Point(12, 378);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 19);
             this.label6.TabIndex = 182;
@@ -561,7 +561,7 @@ namespace Karaoke.QuanLySanPham
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(148, 223);
+            this.label9.Location = new System.Drawing.Point(144, 265);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 22);
             this.label9.TabIndex = 181;
@@ -573,7 +573,7 @@ namespace Karaoke.QuanLySanPham
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 9);
+            this.label4.Location = new System.Drawing.Point(3, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(440, 32);
             this.label4.TabIndex = 180;
@@ -584,7 +584,7 @@ namespace Karaoke.QuanLySanPham
             // 
             this.pBAnhMinhHoa.BackColor = System.Drawing.SystemColors.Control;
             this.pBAnhMinhHoa.ErrorImage = global::Karaoke.Properties.Resources.noimage;
-            this.pBAnhMinhHoa.Location = new System.Drawing.Point(284, 47);
+            this.pBAnhMinhHoa.Location = new System.Drawing.Point(284, 97);
             this.pBAnhMinhHoa.Name = "pBAnhMinhHoa";
             this.pBAnhMinhHoa.Size = new System.Drawing.Size(153, 116);
             this.pBAnhMinhHoa.TabIndex = 172;
@@ -595,7 +595,7 @@ namespace Karaoke.QuanLySanPham
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 189);
+            this.label3.Location = new System.Drawing.Point(12, 239);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 22);
             this.label3.TabIndex = 170;
@@ -605,7 +605,7 @@ namespace Karaoke.QuanLySanPham
             // txtGiaBan
             // 
             this.txtGiaBan.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiaBan.Location = new System.Drawing.Point(12, 222);
+            this.txtGiaBan.Location = new System.Drawing.Point(12, 264);
             this.txtGiaBan.Name = "txtGiaBan";
             this.txtGiaBan.Size = new System.Drawing.Size(130, 27);
             this.txtGiaBan.TabIndex = 171;
@@ -615,7 +615,7 @@ namespace Karaoke.QuanLySanPham
             // 
             this.cmbLoai.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLoai.FormattingEnabled = true;
-            this.cmbLoai.Location = new System.Drawing.Point(12, 151);
+            this.cmbLoai.Location = new System.Drawing.Point(12, 193);
             this.cmbLoai.Name = "cmbLoai";
             this.cmbLoai.Size = new System.Drawing.Size(203, 27);
             this.cmbLoai.TabIndex = 169;
@@ -625,7 +625,7 @@ namespace Karaoke.QuanLySanPham
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 118);
+            this.label2.Location = new System.Drawing.Point(12, 168);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 22);
             this.label2.TabIndex = 168;
@@ -637,7 +637,7 @@ namespace Karaoke.QuanLySanPham
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(12, 47);
+            this.label11.Location = new System.Drawing.Point(12, 97);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(270, 22);
             this.label11.TabIndex = 166;
@@ -647,7 +647,7 @@ namespace Karaoke.QuanLySanPham
             // txtTenSP
             // 
             this.txtTenSP.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenSP.Location = new System.Drawing.Point(12, 80);
+            this.txtTenSP.Location = new System.Drawing.Point(12, 122);
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(266, 27);
             this.txtTenSP.TabIndex = 167;
@@ -656,7 +656,7 @@ namespace Karaoke.QuanLySanPham
             // 
             this.txtAnhMinhHoa.BackColor = System.Drawing.Color.RoyalBlue;
             this.txtAnhMinhHoa.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnhMinhHoa.Location = new System.Drawing.Point(284, 64);
+            this.txtAnhMinhHoa.Location = new System.Drawing.Point(284, 114);
             this.txtAnhMinhHoa.Name = "txtAnhMinhHoa";
             this.txtAnhMinhHoa.Size = new System.Drawing.Size(153, 29);
             this.txtAnhMinhHoa.TabIndex = 175;
