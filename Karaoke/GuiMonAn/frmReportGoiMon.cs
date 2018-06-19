@@ -1,4 +1,5 @@
-﻿using Karaoke.DataSetContainer;
+﻿using DTO;
+using Karaoke.DataSetContainer;
 using Karaoke.report;
 using System;
 using System.Collections.Generic;
@@ -18,9 +19,9 @@ namespace Karaoke.GuiMonAn
 
         private string giamGia;
 
-        private string ngayBatDau;
+        private string gioVao;
 
-        private string ngayKetThuc;
+        private string gioRa;
 
         private string thoiGian;
         //private string soHoaDon;
@@ -30,9 +31,11 @@ namespace Karaoke.GuiMonAn
             this.giamGia = giamGia;
             InitializeComponent();
         }
-        public frmReportGoiMon(string soHoaDon, string ngayBatDau, string ngayKetThuc, string thoiGian,string phong,string giamGia = "0")
+        public frmReportGoiMon(string soHoaDon, string gioVao, string gioRa,string phong,string giamGia = "0")
         {
             this.soHoaDon = soHoaDon;
+            this.gioVao = gioVao;
+            this.gioRa = gioRa;
             this.giamGia = giamGia;
             InitializeComponent();
         }
@@ -44,11 +47,19 @@ namespace Karaoke.GuiMonAn
             //tao khung
             dataSet.Tables[0].Merge(data);
 
+            //lấy thông tin 
+            HoaDon hoaDon = BUS.HoaDonBUS.LayThongTinHoaDon(soHoaDon);
             //lấy datable ,list
-            rptHoaDon hoaDon = new rptHoaDon();
-            hoaDon.SetDataSource(dataSet);
-            hoaDon.DataDefinition.FormulaFields["GiamGia"].Text = "15000";
-            crystalReportViewer1.ReportSource = hoaDon;
+            rptHoaDon rpHoaDon = new rptHoaDon();
+            rpHoaDon.SetDataSource(dataSet);
+            rpHoaDon.DataDefinition.FormulaFields["TenKhachHang"].Text = "'" + hoaDon.TenKhachHang + "'";
+            rpHoaDon.DataDefinition.FormulaFields["SoDienThoai"].Text = "'" + hoaDon.SoDienThoai + "'";
+            rpHoaDon.DataDefinition.FormulaFields["GiamGia"].Text = "'" + hoaDon.GiamGia + "'";
+            rpHoaDon.DataDefinition.FormulaFields["TienGio"].Text = "'" + hoaDon.TienGio + "'";
+            rpHoaDon.DataDefinition.FormulaFields["GioBatDau"].Text = "'" + hoaDon.GioVao + "'";
+            rpHoaDon.DataDefinition.FormulaFields["GioKetThuc"].Text = "'" + hoaDon.GioRa + "'";
+            rpHoaDon.DataDefinition.FormulaFields["Phong"].Text = "'" + hoaDon.MaPhong + "'";
+            crystalReportViewer1.ReportSource = rpHoaDon;
             
         }
     }

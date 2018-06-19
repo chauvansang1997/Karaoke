@@ -68,15 +68,15 @@
             this.nhanVienMenu,
             this.khachHangMenu,
             this.nhaCungCapMenu});
-			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(1064, 25);
-			this.menuStrip1.TabIndex = 0;
-			this.menuStrip1.Text = "menuStrip1";
-			// 
-			// quảnLýNguyênLiệuToolStripMenuItem
-			// 
-			this.quảnLýNguyênLiệuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1064, 25);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // quảnLýNguyênLiệuToolStripMenuItem
+            // 
+            this.quảnLýNguyênLiệuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nhapKho,
             this.suaNguyenLieu,
             this.nhapMonAnMenu});
@@ -118,7 +118,7 @@
             this.suaSanPham});
 			this.quảnLýSảnPhẩmToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.quảnLýSảnPhẩmToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quảnLýSảnPhẩmToolStripMenuItem.Image")));
-			this.quảnLýSảnPhẩmToolStripMenuItem.Name = "quảnLýSảnPhẩmToolStripMenuItem";
+			this.quảnLýSảnPhẩmToolStripMenuItem.Name = "quanLySanPhamMenu";
 			this.quảnLýSảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(141, 21);
 			this.quảnLýSảnPhẩmToolStripMenuItem.Text = "Quản lý sản phẩm";
 			// 

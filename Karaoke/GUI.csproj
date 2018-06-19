@@ -147,12 +147,6 @@
     <Compile Include="frmChonMon.Designer.cs">
       <DependentUpon>frmChonMon.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChuyenPhong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmChuyenPhong.Designer.cs">
-      <DependentUpon>frmChuyenPhong.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmDatCoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -451,9 +445,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmChonMon.resx">
       <DependentUpon>frmChonMon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmChuyenPhong.resx">
-      <DependentUpon>frmChuyenPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDatCoc.resx">
       <DependentUpon>frmDatCoc.cs</DependentUpon>

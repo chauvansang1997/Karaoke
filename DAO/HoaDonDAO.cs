@@ -313,8 +313,8 @@ namespace DAO
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@soHoaDon",SqlDbType.VarChar){IsNullable=false,Value=soHoaDon },
-                new SqlParameter("@soHoaDon",SqlDbType.VarChar){IsNullable=false,Value=ma },
-                new SqlParameter("@soHoaDon",SqlDbType.Int){IsNullable=false,Value=soLuong },
+                new SqlParameter("@ma",SqlDbType.VarChar){IsNullable=false,Value=ma },
+                new SqlParameter("@soLuong",SqlDbType.Int){IsNullable=false,Value=soLuong },
 
             };
             try
@@ -336,9 +336,9 @@ namespace DAO
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@soHoaDon",SqlDbType.VarChar){IsNullable=false,Value=soHoaDon },
-                new SqlParameter("@soHoaDon",SqlDbType.VarChar){IsNullable=false,Value=ma },
-                new SqlParameter("@soHoaDon",SqlDbType.Int){IsNullable=false,Value=soLuongCu },
-                new SqlParameter("@soHoaDon",SqlDbType.Int){IsNullable=false,Value=soLuongMoi }
+                new SqlParameter("@ma",SqlDbType.VarChar){IsNullable=false,Value=ma },
+                new SqlParameter("@soLuongCu",SqlDbType.Int){IsNullable=false,Value=soLuongCu },
+                new SqlParameter("@soLuongMoi",SqlDbType.Int){IsNullable=false,Value=soLuongMoi }
 
             };
             try
@@ -372,6 +372,38 @@ namespace DAO
                 Utility.Log(ex);
             }
             return result == 0 ? false : true;
+        }
+        public static HoaDon LayThongTinHoaDon(string soHoaDon)
+        {
+            string query = "EXEC uspXemThongTinHoaDon @soHoaDon";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@soHoaDon",SqlDbType.VarChar){ Value=soHoaDon  }
+
+            };
+            HoaDon hoaDon = null;
+            try
+            {             
+                DataRow row = Dataprovider.ExcuteQuery(query, parameters.ToArray()).Select()[0];
+                hoaDon = new HoaDon()
+                {
+                    SoHoaDon= row.ItemArray[4].ToString(),
+                    GioVao= row.ItemArray[0].ToString(),
+                    GioRa = row.ItemArray[1].ToString(),
+                    GiamGia= row.ItemArray[2].ToString(),
+                    MaPhong = row.ItemArray[3].ToString(),
+                    TienGio = row.ItemArray[5].ToString(),
+                    TenKhachHang= row.ItemArray[6].ToString(),
+                    SoDienThoai= row.ItemArray[7].ToString(),
+                };
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+
+            return hoaDon;
         }
     }
 }

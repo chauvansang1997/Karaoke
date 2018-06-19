@@ -12,6 +12,36 @@ namespace DAO
     {
         public static bool ThemThietBi(ThietBi thietBi)
         {
+            string query = "EXEC [usp_ThemThietBi] @tenTB,@maNCC,@dvt ,@donGia";
+            string tenTB = thietBi.Ten;
+            string maNCC = thietBi.MaNCC;
+            string dvt = thietBi.DVT;
+            string donGia = thietBi.DonGia;
+            bool rs = false;
+            // Truyền tham số
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                
+                new SqlParameter("@tenTB", SqlDbType.NVarChar) {IsNullable = false, Value = tenTB},
+                new SqlParameter("@maNCC", SqlDbType.NVarChar) {IsNullable = false, Value = maNCC},
+                new SqlParameter("@dvt", SqlDbType.NVarChar) {IsNullable = false, Value = dvt},
+                new SqlParameter("@donGia", SqlDbType.BigInt) {IsNullable = false, Value = donGia},
+            };
+            try
+            {
+                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+                rs = true;
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+                rs = false;
+            }
+
+            return rs;
+        }
+        public static bool SuaThietBi(ThietBi thietBi)
+        {
             string query = "EXEC [usp_SuaThietBi] @ma,@tenTB,@maNCC,@dvt ,@donGia";
             string tenTB = thietBi.Ten;
             string maNCC = thietBi.MaNCC;
@@ -40,7 +70,6 @@ namespace DAO
 
             return rs;
         }
-
         public static bool CapNhatThietBi(ThietBi thietBi)
         {
             string query = "EXCUTE usp_CapNhatThietBi @maTB,@tenTB,@maNCC,@dvt ,@donGia";

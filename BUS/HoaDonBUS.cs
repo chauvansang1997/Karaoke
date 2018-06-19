@@ -66,5 +66,10 @@ namespace BUS
         {
             return DAO.HoaDonDAO.ThemHoaDonMonAn(soHoaDon, ma, soLuong);
         }
+
+        public static HoaDon LayThongTinHoaDon(string soHoaDon)
+        {
+            return DAO.HoaDonDAO.LayThongTinHoaDon(soHoaDon);
+        }
     }
 }

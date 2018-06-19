@@ -188,6 +188,15 @@
         aKevVyiW4/UAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="nhapKho.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 24</value>
+  </data>
+  <data name="nhapKho.Text" xml:space="preserve">
+    <value>Nhập kho</value>
+  </data>
+  <data name="suaNguyenLieu.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 11.25pt</value>
+  </data>
   <data name="suaNguyenLieu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAE
@@ -200,6 +209,42 @@
         LCDg3VgkTgiasHXiyEB4OF5ZfzPyHwgBWCeuDISRyakCQtAE67CfifBQNFT4BsbJutCx5ROtAAAAAElF
         TkSuQmCC
 </value>
+  </data>
+  <data name="suaNguyenLieu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 24</value>
+  </data>
+  <data name="suaNguyenLieu.Text" xml:space="preserve">
+    <value>Chỉnh sửa nguyên liệu</value>
+  </data>
+  <data name="nhapMonAnMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 24</value>
+  </data>
+  <data name="nhapMonAnMenu.Text" xml:space="preserve">
+    <value>Nhập món ăn</value>
+  </data>
+  <data name="quảnLýNguyênLiệuToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="quảnLýNguyênLiệuToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        bwAAAG8B8aLcQwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEjSURBVDhPY/j/
+        /z9FGKsgLtyxL1i773BE4LzL2T4wMQxF+HDnwVC/GedSlk07lVjXtT/UAySGVSFWXBAkebcpaNPu9fGv
+        uw6ELG7Y78ACEsdQCDRZAkgxoov/zPa/9Ds38D8If80P8oOJoygC4enrgtvXtgZ533ELFIOJ/cjydfsQ
+        7/b/W7oP2IA/uYFxMDmGL/v6bkBwf+8N52C9a55B72+6BP2H4OAKkKLfuUGbQBp/ZPmBDHj3dXfPJJg+
+        hl8nZv0H45Nzrr7prfv+prvmPzL+vrpvy98FNf9B+Oes8v8/F9ff/HVqzhWYPob/l5b9/31+yX8QTQqG
+        6QEbcHvHNAwFhDBMD8Pf84v+U4IZfgL9QQkeBGEAJG5QglFSIen4PwMABsMSwTXZnHQAAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="quảnLýNguyênLiệuToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 21</value>
+  </data>
+  <data name="quảnLýNguyênLiệuToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Quản lý nguyên liệu</value>
+  </data>
+  <data name="nhapKhoSanPham.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 11.25pt</value>
   </data>
   <data name="nhapKhoSanPham.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -215,6 +260,15 @@
         aKevVyiW4/UAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="nhapKhoSanPham.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 24</value>
+  </data>
+  <data name="nhapKhoSanPham.Text" xml:space="preserve">
+    <value>Nhập kho</value>
+  </data>
+  <data name="suaSanPham.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 11.25pt</value>
+  </data>
   <data name="suaSanPham.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAE
@@ -227,6 +281,34 @@
         LCDg3VgkTgiasHXiyEB4OF5ZfzPyHwgBWCeuDISRyakCQtAE67CfifBQNFT4BsbJutCx5ROtAAAAAElF
         TkSuQmCC
 </value>
+  </data>
+  <data name="suaSanPham.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 24</value>
+  </data>
+  <data name="suaSanPham.Text" xml:space="preserve">
+    <value>Chỉnh sửa sản phẩm</value>
+  </data>
+  <data name="quảnLýSảnPhẩmToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="quảnLýSảnPhẩmToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        bwAAAG8B8aLcQwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGXSURBVDhPhZBN
+        LwNRFIb7S1hZk+jCr7AWYS9CdCGx8JEgVpZW2ogmEmnj+zNIJSSCCvVRM6WkKhLMUDWdmqnW7XEOnWbu
+        7YjFk5lz5n2fubkuAPgT90negwAhfrNwXFpgMYDsuyOfTU7fCcelV8rWzUj6/JKcNXZiWSMey8wr1+la
+        p2zFoj9qtoxGjbzv8gNmpCxsyTpISQMe7j8KypXWIua5oTliVnecm3rfhQEoAUsSvjN+JPGrjP4op6vt
+        HU7QeJrraj3LAUpAlNBJjmI6SrQue6f8Qhdl3fi/2C61LKg/NqsGkyzReVMAD9KN9CC9yAAydJuHESL5
+        laBshYAIpZh/5ZXB3nsRjjPOHOnQbu9wgvU09M+qDA60yiLtNlMMtt9Ym73DCZZT0DD+yCCAksOSJIzP
+        0BsDOhmxq+Zq7B1OQPhQQJKJJwaLWFgtFYm1V1YU89xA+J/ZFwksJlG08PIr2EgxTcxzAzGlsJxdQHiR
+        aYXRHcTFPDcQQYUposAiqBZlMc8NxJzKxuiPYpl2c2phmM+D6xu/7yjOklyyiwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="quảnLýSảnPhẩmToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 21</value>
+  </data>
+  <data name="quảnLýSảnPhẩmToolStripMenuItem.Text" xml:space="preserve">
+    <value>Quản lý sản phẩm</value>
   </data>
   <data name="nhapkhoThietBi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -242,6 +324,12 @@
         aKevVyiW4/UAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="nhapkhoThietBi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="nhapkhoThietBi.Text" xml:space="preserve">
+    <value>Nhập kho</value>
+  </data>
   <data name="chinhSuaTietBi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAE
@@ -254,6 +342,176 @@
         LCDg3VgkTgiasHXiyEB4OF5ZfzPyHwgBWCeuDISRyakCQtAE67CfifBQNFT4BsbJutCx5ROtAAAAAElF
         TkSuQmCC
 </value>
+  </data>
+  <data name="chinhSuaTietBi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="chinhSuaTietBi.Text" xml:space="preserve">
+    <value>Chỉnh sửa thiết bị</value>
+  </data>
+  <data name="quảnLýThiếtBịToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="quảnLýThiếtBịToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        dgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGySURBVDhPlZG7
+        T8JQGMWNcdQ4kDi4Mrib6D8gtrg4OfuIiu/ZQQeiKHZVpC3SgPEx+DZGQqGkCww+UjBRgToYiSbqCKRp
+        MfHKNd56LzDo8Eu+75xzT+5t6wAAv0w6G7VR96w27Fa14eW4Mcb0EX4NiMVwMHP5/kUAKQ66QH7ABUrj
+        TCeeqcQcSo/BIeOMzRvHXoCjR/lsKRfowA/hmIP+FOjWdzyvemAN4BgnbELPBa34IRxi0R3MdKF89cLg
+        0vcTtBH3pz7BtOGZSohFVVWbms4U1du7D/Xu3simMwXcrwWxxGIxKhKJvCGi0egz7teCWMLhcLsoigDj
+        Hfd7hUwTxaccNJeaRZppQkKhkBUeXI0kwbaYgAUPyOvyXFhoXhF6+Gvig5oDRJIkCyxYOLoE66dxWHCF
+        PIpTZroFpRXPQ4hFluUGWMCfyGDvXALlJ0nIo33KCp5FVAnlgiIs+eEA6f8peMEKBKT/uYDlNmTXMvMJ
+        8Qc2J5Fu51LzeA5RJawJQqt/9/CU39rzOp3OeqjZ+OtmmlPGK7OQKgECf5ndl9yH16Z8yiLNJ6co9qal
+        OgvqvgBfa99t0dnxkgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="quảnLýThiếtBịToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 21</value>
+  </data>
+  <data name="quảnLýThiếtBịToolStripMenuItem.Text" xml:space="preserve">
+    <value>Quản lý thiết bị</value>
+  </data>
+  <data name="nhanDatTiecMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="nhanDatTiecMenu.Text" xml:space="preserve">
+    <value>Nhận đặt tiệc</value>
+  </data>
+  <data name="datPhongMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="datPhongMenu.Text" xml:space="preserve">
+    <value>Đặt phòng</value>
+  </data>
+  <data name="tiếpNhậnKháchHàngToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="tiếpNhậnKháchHàngToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 21</value>
+  </data>
+  <data name="tiếpNhậnKháchHàngToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tiếp nhận khách hàng</value>
+  </data>
+  <data name="baoCaoTonKho.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 22</value>
+  </data>
+  <data name="baoCaoTonKho.Text" xml:space="preserve">
+    <value>Báo cáo tồn kho</value>
+  </data>
+  <data name="baoCaoDoanhThu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 22</value>
+  </data>
+  <data name="baoCaoDoanhThu.Text" xml:space="preserve">
+    <value>Báo cáo doanh thu</value>
+  </data>
+  <data name="baoCaoLuongMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 22</value>
+  </data>
+  <data name="baoCaoLuongMenu.Text" xml:space="preserve">
+    <value>Báo cáo lương</value>
+  </data>
+  <data name="baoCáoToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="baoCáoToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        bwAAAG8B8aLcQwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGlSURBVDhPY/j/
+        /z9J+K20isVbGZXV72RUpoD4YEFN9ygXLffoDBDW9owOQdaAjD9LqIi+kVaOA2rueCOj0v5CXFkMLKHm
+        Ge2p4RmZC8bu0VHoGpHxRxltoXeyKm0gzW+llK3AgtpeMR6aHtFZQDpS3SNGHV0TMgY6v+G1rLoUjA8m
+        tN1BBkRmATX7wSSwYZDGt9LKTchiYELDI9JS0yMqAugFe2RJdPxWRnniJyk1EYaiPXNBGCSGVSE2/EZa
+        peqdjJIXiM1QuOcDCIPZyIpw4beyysVvZJUDYHziDdDWZnsrq1oLNCAcWZwoA17LqvgBQ3z2e2lVAxDf
+        cqvXJSCGaMJlADCVybyTVY54K6M6842McuD/G+q8/88rCAClGIGaHwAxUBkWA4BR0wzU3APEBa9llUz+
+        MziwgMR/nFe7AMT/QYbgNQAZ/95g0wLEO/5vNBcn2gCgX+cC8QdgNOmCNP/eYP3/+3oLBaINeCOjmgd0
+        /or3koryQAMqfm2wXvF/la3oj3NqHd/Pqa34f0aKy3KL92SrrV4rwJqQExIwJ3aQj6M6AK59VoV2i8UD
+        AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="baoCáoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 21</value>
+  </data>
+  <data name="baoCáoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Báo cáo</value>
+  </data>
+  <data name="phanCongMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="phanCongMenu.Text" xml:space="preserve">
+    <value>Phân công</value>
+  </data>
+  <data name="caTrucMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="caTrucMenu.Text" xml:space="preserve">
+    <value>Chỉnh sửa ca trực</value>
+  </data>
+  <data name="quảnLýPhânCôngToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 22</value>
+  </data>
+  <data name="quảnLýPhânCôngToolStripMenuItem.Text" xml:space="preserve">
+    <value>Quản lý phân công</value>
+  </data>
+  <data name="nhanVienMenu.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="nhanVienMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 21</value>
+  </data>
+  <data name="nhanVienMenu.Text" xml:space="preserve">
+    <value>Quản lý nhân viên</value>
+  </data>
+  <data name="khachHangMenu.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="khachHangMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 21</value>
+  </data>
+  <data name="khachHangMenu.Text" xml:space="preserve">
+    <value>Quản lý khách hàng</value>
+  </data>
+  <data name="nhaCungCapMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 21</value>
+  </data>
+  <data name="nhaCungCapMenu.Text" xml:space="preserve">
+    <value>Quản lý nhà cung cấp</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>955, 25</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>vi</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>955, 379</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -349,5 +607,156 @@
         gB///wAf//4AP//8AH//+AD//+AB///AAz//gAIf+AAGH+AADh/AAB+DgAA/g4AAP4MAAH//AACI/wAB
         gP8AAYD/AAGA/wAB4P+AA+D/wAPg/8AH///wD///
 </value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Hệ thống quản lý Karaoke</value>
+  </data>
+  <data name="&gt;&gt;tiếpNhậnKháchHàngToolStripMenuItem.Name" xml:space="preserve">
+    <value>tiếpNhậnKháchHàngToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;tiếpNhậnKháchHàngToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nhanDatTiecMenu.Name" xml:space="preserve">
+    <value>nhanDatTiecMenu</value>
+  </data>
+  <data name="&gt;&gt;nhanDatTiecMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;datPhongMenu.Name" xml:space="preserve">
+    <value>datPhongMenu</value>
+  </data>
+  <data name="&gt;&gt;datPhongMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nhanVienMenu.Name" xml:space="preserve">
+    <value>nhanVienMenu</value>
+  </data>
+  <data name="&gt;&gt;nhanVienMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;quảnLýPhânCôngToolStripMenuItem.Name" xml:space="preserve">
+    <value>quảnLýPhânCôngToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;quảnLýPhânCôngToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;phanCongMenu.Name" xml:space="preserve">
+    <value>phanCongMenu</value>
+  </data>
+  <data name="&gt;&gt;phanCongMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;caTrucMenu.Name" xml:space="preserve">
+    <value>caTrucMenu</value>
+  </data>
+  <data name="&gt;&gt;caTrucMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;khachHangMenu.Name" xml:space="preserve">
+    <value>khachHangMenu</value>
+  </data>
+  <data name="&gt;&gt;khachHangMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nhaCungCapMenu.Name" xml:space="preserve">
+    <value>nhaCungCapMenu</value>
+  </data>
+  <data name="&gt;&gt;nhaCungCapMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;quảnLýNguyênLiệuToolStripMenuItem.Name" xml:space="preserve">
+    <value>quảnLýNguyênLiệuToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;quảnLýNguyênLiệuToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nhapKho.Name" xml:space="preserve">
+    <value>nhapKho</value>
+  </data>
+  <data name="&gt;&gt;nhapKho.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;suaNguyenLieu.Name" xml:space="preserve">
+    <value>suaNguyenLieu</value>
+  </data>
+  <data name="&gt;&gt;suaNguyenLieu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nhapMonAnMenu.Name" xml:space="preserve">
+    <value>nhapMonAnMenu</value>
+  </data>
+  <data name="&gt;&gt;nhapMonAnMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;quảnLýSảnPhẩmToolStripMenuItem.Name" xml:space="preserve">
+    <value>quảnLýSảnPhẩmToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;quảnLýSảnPhẩmToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nhapKhoSanPham.Name" xml:space="preserve">
+    <value>nhapKhoSanPham</value>
+  </data>
+  <data name="&gt;&gt;nhapKhoSanPham.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;suaSanPham.Name" xml:space="preserve">
+    <value>suaSanPham</value>
+  </data>
+  <data name="&gt;&gt;suaSanPham.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;quảnLýThiếtBịToolStripMenuItem.Name" xml:space="preserve">
+    <value>quảnLýThiếtBịToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;quảnLýThiếtBịToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nhapkhoThietBi.Name" xml:space="preserve">
+    <value>nhapkhoThietBi</value>
+  </data>
+  <data name="&gt;&gt;nhapkhoThietBi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chinhSuaTietBi.Name" xml:space="preserve">
+    <value>chinhSuaTietBi</value>
+  </data>
+  <data name="&gt;&gt;chinhSuaTietBi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;baoCáoToolStripMenuItem.Name" xml:space="preserve">
+    <value>baoCáoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;baoCáoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;baoCaoTonKho.Name" xml:space="preserve">
+    <value>baoCaoTonKho</value>
+  </data>
+  <data name="&gt;&gt;baoCaoTonKho.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;baoCaoDoanhThu.Name" xml:space="preserve">
+    <value>baoCaoDoanhThu</value>
+  </data>
+  <data name="&gt;&gt;baoCaoDoanhThu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;baoCaoLuongMenu.Name" xml:space="preserve">
+    <value>baoCaoLuongMenu</value>
+  </data>
+  <data name="&gt;&gt;baoCaoLuongMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmMain</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

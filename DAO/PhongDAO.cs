@@ -128,5 +128,74 @@ namespace DAO
             }
             return count;
         }
+
+        public static bool ChuyenPhong(string phongHienTai,string phongChuyen)
+        {
+            string query = "EXEC uspChuyenPhong @maPhongHienTai,@maPhongChuyen ";
+
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                  new SqlParameter("@maPhongHienTai",SqlDbType.VarChar){ Value=phongHienTai  },
+                  new SqlParameter("@maPhongChuyen",SqlDbType.VarChar){ Value=phongChuyen },
+
+
+            };
+            try
+            {
+                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+                return false;
+            }
+            return true;
+        }
+
+        public static DataTable XemLichSuPhong(int pageNumber,int pageSize)
+        {
+            string query = "EXEC uspXemLichSuDatPhong @pageNumber,@pageSize";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@pageNumber",SqlDbType.Int){ Value=pageNumber  },
+                new SqlParameter("@pageSize",SqlDbType.Int){ Value=pageSize  },
+
+            };
+            DataTable table = null;
+            try
+            {
+                table = Dataprovider.ExcuteQuery(query);
+
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+
+            return table;
+        }
+        public static int DemLichSuPhong()
+        {
+            string query = "EXEC uspDemLichSuDatPhong ";
+
+            //truyền tham số vào câu truy vấn
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@trangThai",SqlDbType.Int){IsNullable=false,Value=trangThai }
+
+            //};
+            int count = 0;
+            try
+            {
+                count = int.Parse(Dataprovider.ExcuteScalar(query).ToString());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            return count;
+        }
     }
 }

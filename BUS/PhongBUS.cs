@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,20 @@ namespace BUS
         public static bool NhanPhongDatTruoc(string soHoaDon)
         {
             return DAO.PhongDAO.NhanPhongDatTruoc(soHoaDon);
+        }
+
+        public static bool ChuyenPhong(string phongHienTai, string phongChuyen)
+        {
+            return DAO.PhongDAO.ChuyenPhong(phongHienTai,  phongChuyen);
+        }
+
+        public static DataTable XemLichSuPhong(int pageNumber, int pageSize)
+        {
+            return DAO.PhongDAO.XemLichSuPhong(pageNumber,  pageSize);
+        }
+        public static int DemLichSuPhong()
+        {
+            return DAO.PhongDAO.DemLichSuPhong();
         }
     }
 }
