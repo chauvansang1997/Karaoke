@@ -34,6 +34,9 @@ namespace BUS
         {
             return DAO.LoaiKhachHangDAO.XemLoaiKhachHang(danhSachLoaiTru);
         }
-
+        public static float LayGiamGia(string soHoaDon)
+        {
+            return DAO.LoaiKhachHangDAO.LayGiamGia(soHoaDon);
+        }
     }
 }

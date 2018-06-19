@@ -322,6 +322,7 @@ namespace Karaoke.PhongKaoraoke
             try
             {
                 string soHoaDon = BUS.HoaDonBUS.LayMaHoaDon(listPhongLayout[indexHienTai].Phong.Ten);
+                
                 if (BUS.HoaDonBUS.HoaDonDatTiec(soHoaDon))
                 {
                     frmChonMon chonMon = new frmChonMon(soHoaDon);

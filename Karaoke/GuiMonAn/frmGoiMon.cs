@@ -64,7 +64,7 @@ namespace Karaoke.GuiMonAn
             {
                 this.tongCong = value;
                 txtTongCong.Text = value.ToString();
-                txtThanhTien.Text = (value - (value * giamGia)).ToString();
+                txtThanhTien.Text = (value - (value * (giamGia/100))).ToString();
                 tienGiamGia = (int)(value * giamGia);
             }
         }
@@ -97,7 +97,7 @@ namespace Karaoke.GuiMonAn
             loaiThucAnHienTai = 1;
 
 
-            giamGia = 0.5f;
+            giamGia = BUS.LoaiKhachHangBUS.LayGiamGia(soHoaDon);
             txtGiamGia.Text = giamGia.ToString() + "%";
             listFoodLayout = new List<FoodLayout>();
             hashMaHangHoa = new HashSet<string>();

@@ -33,6 +33,7 @@ namespace Karaoke.GUI_LoaiKH
             if (maKhuyenMai !=-1)
             {
                 cmbLoaiKH.DataSource = BUS.KhuyenMaiBUS.XemChiTiet(maKhuyenMai, listLoaiKhachHang);
+                cmbLoaiKH.DisplayMember = "TENLOAIKH";
             }
             else
             {

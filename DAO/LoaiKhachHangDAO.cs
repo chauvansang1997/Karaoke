@@ -99,7 +99,7 @@ namespace DAO
         public static DataTable XemLoaiKhachHang(List<int> danhSachLoaiTru)
         {
             string query = "EXEC uspXemLoaiKhachHang @danhSachLoaiTru";
-            string danhSachLoaiKhachHang = String.Join(",", danhSachLoaiTru);
+            string danhSachLoaiKhachHang = String.Join("|", danhSachLoaiTru);
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@danhSachLoaiTru", SqlDbType.NVarChar) {IsNullable = false, Value = danhSachLoaiKhachHang},
@@ -114,6 +114,27 @@ namespace DAO
                 Utility.Log(ex);
             }
             return data;
+        }
+        public static float LayGiamGia(string soHoaDon)
+        {
+            string query = "EXEC uspLayGiamGia @soHoaDon";
+
+            //truyền tham số vào câu truy vấn
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@soHoaDon",SqlDbType.VarChar){IsNullable=false,Value=soHoaDon }
+
+            };
+            float count = 0;
+            try
+            {
+                count = float.Parse(Dataprovider.ExcuteScalar(query).ToString());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            return count;
         }
     }
 }

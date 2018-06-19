@@ -139,7 +139,21 @@ namespace Karaoke.GUI_LoaiKH
         {
             enableControls(true);
             enableButton(false);
-           // enableButton1(true);
+            // enableButton1(true);
+            //for (int i = 0; i < bindingSource.Count; i++)
+            //{
+
+            //}
+            while (bindingSource.Current != null)
+            {
+                bindingSource.RemoveCurrent();
+            }
+           // bindingSource.Filter = "[MaLoaiKH] = [MaLoaiKH]";
+          
+         
+           // bindingSource.DataSource = null ;
+           // bindingSource.Add(new LoaiKhachHang());
+
             bThem = true;
             txtTenKM.Text = "";
 
@@ -243,7 +257,8 @@ namespace Karaoke.GUI_LoaiKH
                
                 if (BUS.KhuyenMaiBUS.ThemkhuyenMai(new DTO.KhuyenMai()
                 {
-
+                    NgayBatDau=dTPNgayBatDau.Value,
+                    NgayKetThuc=dTPNgayKetThuc.Value,
                     TenKhuyenMai = txtTenKM.Text,
 
                 }, listMaLoaiKhachHang, listMucKhuyenMai))
@@ -281,17 +296,19 @@ namespace Karaoke.GUI_LoaiKH
             bThem = false;
             pageNumber = 1;
             txtPageNumber.Text = "1";
-            totalPage = BUS.KhuyenMaiBUS.DemKhuyenMai("", (int)((DataRow)cmbLoaiKHTK.SelectedValue)["MALOAIKH"]);
+            DataRow row = ((DataRowView)cmbLoaiKHTK.SelectedValue).Row;
+            totalPage = BUS.KhuyenMaiBUS.DemKhuyenMai("", (int)(row)["MALOAIKH"]);
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
             txtTotalPage.Text = totalPage.ToString();
 
-            dGVDanhSach.DataSource = BUS.KhuyenMaiBUS.XemKhuyenMai(txtTenKMTK.Text, (int)((DataRow)cmbLoaiKHTK.SelectedValue)["MALOAIKH"], pageNumber, pageSize);
+            dGVDanhSach.DataSource = BUS.KhuyenMaiBUS.XemKhuyenMai(txtTenKMTK.Text, (int)(row)["MALOAIKH"], pageNumber, pageSize);
 
             AddGridTableStyle();
         }
         private void loadDanhSach()
         {
-            dGVDanhSach.DataSource = BUS.KhuyenMaiBUS.XemKhuyenMai(txtTenKMTK.Text, (int)((DataRow)cmbLoaiKHTK.SelectedValue)["MALOAIKH"], pageNumber, pageSize);
+            DataRow row = ((DataRowView)cmbLoaiKHTK.SelectedValue).Row;
+            dGVDanhSach.DataSource = BUS.KhuyenMaiBUS.XemKhuyenMai(txtTenKMTK.Text, (int)(row)["MALOAIKH"], pageNumber, pageSize);
         }
         private void btnFind_Click(object sender, EventArgs e)
         {
@@ -299,10 +316,11 @@ namespace Karaoke.GUI_LoaiKH
             {
                 pageNumber = 1;
                 txtPageNumber.Text = "1";
-                totalPage = BUS.KhuyenMaiBUS.DemKhuyenMai("", (int)((DataRow)cmbLoaiKHTK.SelectedValue)["MALOAIKH"]);
+                DataRow row = ((DataRowView)cmbLoaiKHTK.SelectedValue).Row;
+                totalPage = BUS.KhuyenMaiBUS.DemKhuyenMai("", (int)(row)["MALOAIKH"]);
                 totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
                 txtTotalPage.Text = totalPage.ToString();
-                dGVDanhSach.DataSource = BUS.KhuyenMaiBUS.XemKhuyenMai(txtTenKMTK.Text, (int)((DataRow)cmbLoaiKHTK.SelectedValue)["MALOAIKH"], pageNumber, pageSize);
+                dGVDanhSach.DataSource = BUS.KhuyenMaiBUS.XemKhuyenMai(txtTenKMTK.Text, (int)(row)["MALOAIKH"], pageNumber, pageSize);
             }
             else
             {

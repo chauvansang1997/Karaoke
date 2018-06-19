@@ -12,7 +12,8 @@ namespace DAO
     {
         public static bool ThemkhuyenMai(KhuyenMai khuyenMai,List<int> listLoaiKhachHang,List<float> listMucKhuyenMai)
         {
-            string query = "EXEC uspThemLoaiKhuyenMai @tenKhuyenMai,@danhSachmaLoaiKhachHang,@danhSachMucKhuyenMai,@NgayBatDau,@NgayKetThuc";
+            string query = "INSERT INTO uspThemLoaiKhuyenMai @tenKhuyenMai,@danhSachmaLoaiKhachHang,@danhSachMucKhuyenMai,@NgayBatDau,@NgayKetThuc";
+             query = "EXEC uspThemLoaiKhuyenMai @tenKhuyenMai,@danhSachmaLoaiKhachHang,@danhSachMucKhuyenMai,@NgayBatDau,@NgayKetThuc";
 
             string danhSachLoaiKhachHang = String.Join("|", listLoaiKhachHang);
             string danhSachMucKhuyenMai = String.Join("|", listMucKhuyenMai);
@@ -52,8 +53,8 @@ namespace DAO
                 new SqlParameter("@tenKhuyenMai", SqlDbType.NVarChar) {IsNullable = false, Value = khuyenMai.TenKhuyenMai},
                 new SqlParameter("@danhSachmaLoaiKhachHang", SqlDbType.VarChar) {IsNullable = false, Value = danhSachLoaiKhachHang},
                 new SqlParameter("@danhSachMucKhuyenMai", SqlDbType.VarChar) {IsNullable = false, Value = danhSachMucKhuyenMai},
-                new SqlParameter("@NgayBatDau", SqlDbType.DateTime) {IsNullable = false, Value = khuyenMai.NgayBatDau},
-                new SqlParameter("@NgayKetThuc", SqlDbType.DateTime) {IsNullable = false, Value = khuyenMai.NgayKetThuc},
+                new SqlParameter("@NgayBatDau", SqlDbType.DateTime2) {IsNullable = false, Value = khuyenMai.NgayBatDau},
+                new SqlParameter("@NgayKetThuc", SqlDbType.DateTime2) {IsNullable = false, Value = khuyenMai.NgayKetThuc},
             };
             try
             {
@@ -109,9 +110,9 @@ namespace DAO
                         new KhuyenMai()
                         {
                             MaKhuyenMai = x[0].ToString(),
-                            TenKhuyenMai = x[0].ToString(),
-                            NgayBatDau = (DateTime)x[0],
-                            NgayKetThuc = (DateTime)x[0],
+                            TenKhuyenMai = x[1].ToString(),
+                            NgayBatDau = (DateTime)x[2],
+                            NgayKetThuc = (DateTime)x[3],
                         });
             }
             catch (Exception ex)
