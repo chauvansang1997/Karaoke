@@ -373,7 +373,8 @@
 			// dtpGioBD
 			// 
 			this.dtpGioBD.CalendarFont = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dtpGioBD.CustomFormat = "hh:MM:ss";
+			this.dtpGioBD.Cursor = System.Windows.Forms.Cursors.No;
+			this.dtpGioBD.CustomFormat = "hh:mm:ss";
 			this.dtpGioBD.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dtpGioBD.Location = new System.Drawing.Point(26, 287);
 			this.dtpGioBD.Name = "dtpGioBD";
@@ -383,7 +384,8 @@
 			// dtpGioKT
 			// 
 			this.dtpGioKT.CalendarFont = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dtpGioKT.CustomFormat = "hh:MM:ss";
+			this.dtpGioKT.Cursor = System.Windows.Forms.Cursors.No;
+			this.dtpGioKT.CustomFormat = "hh:mm:ss";
 			this.dtpGioKT.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dtpGioKT.Location = new System.Drawing.Point(30, 361);
 			this.dtpGioKT.Name = "dtpGioKT";

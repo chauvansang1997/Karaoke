@@ -79,8 +79,8 @@ namespace Karaoke
 
         private void khachHangMenu_Click(object sender, EventArgs e)
         {
-			frmKhachHang khachHang = new frmKhachHang();
-			khachHang.ShowDialog();
+			//frmKhachHang khachHang = new frmKhachHang();
+			//khachHang.ShowDialog();
 		}
 
         private void nhanVienMenu_Click(object sender, EventArgs e)

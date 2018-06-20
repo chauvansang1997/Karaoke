@@ -17,6 +17,11 @@ namespace Karaoke.PhanCong
 		{
 			InitializeComponent();
 			ca = new CaLamViec();
+			dtpGioBD.Format = DateTimePickerFormat.Time;
+			dtpGioBD.ShowUpDown = true;
+
+			dtpGioKT.Format = DateTimePickerFormat.Time;
+			dtpGioKT.ShowUpDown = true;
 		}
 
 		private void btnThem_Click(object sender, EventArgs e)
@@ -92,7 +97,9 @@ namespace Karaoke.PhanCong
 			dgvDanhSachCaTruc.Columns[0].HeaderCell.Value = "Mã ca";
 			dgvDanhSachCaTruc.Columns[1].HeaderCell.Value = "Tên ca";
 			dgvDanhSachCaTruc.Columns[2].HeaderCell.Value = "Giờ BD";
+			dgvDanhSachCaTruc.Columns[2].DefaultCellStyle.Format = "HH:mm:ss";
 			dgvDanhSachCaTruc.Columns[3].HeaderCell.Value = "Giờ KT";
+			dgvDanhSachCaTruc.Columns[3].DefaultCellStyle.Format = "HH:mm:ss";
 			dgvDanhSachCaTruc.Columns[4].HeaderCell.Value = "Tiền lương";
 			dgvDanhSachCaTruc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 			dgvDanhSachCaTruc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
