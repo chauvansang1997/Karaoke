@@ -15,8 +15,7 @@ namespace Karaoke
 {
     public partial class frmBaoCaoTonKho : Form
     {
-        ReportDocument oRpt;
-        string reportFile;
+
         public frmBaoCaoTonKho()
         {
             InitializeComponent();

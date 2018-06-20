@@ -51,7 +51,7 @@ namespace Karaoke
         private Dictionary<int, List<FoodLayout>> dictionaryTraiCay;
         private Dictionary<int, List<FoodLayout>> dictionaryNuocUong;
         private Dictionary<int, List<HangHoa>> dictionaryMonAn;
-        private Dictionary<string, TabPage> dictionaryTabThucAn;
+
 
         private List<FlowLayoutPanel> listLayoutThucAn;
         private List<FlowLayoutPanel> listLayoutSanPham;

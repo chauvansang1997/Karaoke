@@ -335,18 +335,6 @@
     <Compile Include="QuanLyNguyenLieu\frmNhapNguyenLieu.Designer.cs">
       <DependentUpon>frmNhapNguyenLieu.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyNguyenLieu\frmSuaNguyenLieu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyNguyenLieu\frmSuaNguyenLieu.Designer.cs">
-      <DependentUpon>frmSuaNguyenLieu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyNguyenLieu\frmThemNguyenLieu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyNguyenLieu\frmThemNguyenLieu.Designer.cs">
-      <DependentUpon>frmThemNguyenLieu.cs</DependentUpon>
-    </Compile>
     <Compile Include="NhaCungCap\frmNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -593,12 +581,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNguyenLieu\frmNhapNguyenLieu.resx">
       <DependentUpon>frmNhapNguyenLieu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyNguyenLieu\frmSuaNguyenLieu.resx">
-      <DependentUpon>frmSuaNguyenLieu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyNguyenLieu\frmThemNguyenLieu.resx">
-      <DependentUpon>frmThemNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhaCungCap\frmNhaCungCap.resx">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>

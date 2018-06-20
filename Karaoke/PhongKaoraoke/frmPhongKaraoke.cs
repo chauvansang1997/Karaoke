@@ -34,7 +34,7 @@ namespace Karaoke.PhongKaoraoke
         private List<Phong> listAllPhong;
 
 
-        private Dictionary<int, int> dictionaryPage;
+
         private Phong phongHienTai;
         private int indexHienTai;
         private int indexTruoc;

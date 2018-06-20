@@ -514,7 +514,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.SplitContainer splitContainer;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button1;

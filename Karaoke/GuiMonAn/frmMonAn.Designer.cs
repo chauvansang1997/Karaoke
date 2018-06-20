@@ -59,7 +59,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnXoaNguyenLieu = new System.Windows.Forms.Button();
             this.btnThemNguyenLieu = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.dGVNguyenLieu = new System.Windows.Forms.DataGridView();
@@ -376,11 +375,18 @@
             // 
             // dGVMonAn
             // 
+            this.dGVMonAn.AllowUserToAddRows = false;
+            this.dGVMonAn.AllowUserToDeleteRows = false;
+            this.dGVMonAn.AllowUserToResizeColumns = false;
+            this.dGVMonAn.AllowUserToResizeRows = false;
             this.dGVMonAn.BackgroundColor = System.Drawing.Color.White;
             this.dGVMonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVMonAn.Location = new System.Drawing.Point(8, 87);
+            this.dGVMonAn.MultiSelect = false;
             this.dGVMonAn.Name = "dGVMonAn";
+            this.dGVMonAn.ReadOnly = true;
             this.dGVMonAn.RowHeadersVisible = false;
+            this.dGVMonAn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVMonAn.Size = new System.Drawing.Size(671, 352);
             this.dGVMonAn.TabIndex = 0;
             this.dGVMonAn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVMonAn_CellClick);
@@ -390,7 +396,6 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.btnXoaNguyenLieu);
             this.panel2.Controls.Add(this.btnThemNguyenLieu);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.dGVNguyenLieu);
@@ -432,23 +437,6 @@
             this.label4.Text = "THÊM MÓN ĂN";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnXoaNguyenLieu
-            // 
-            this.btnXoaNguyenLieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
-            this.btnXoaNguyenLieu.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnXoaNguyenLieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaNguyenLieu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaNguyenLieu.ForeColor = System.Drawing.Color.White;
-            this.btnXoaNguyenLieu.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaNguyenLieu.Image")));
-            this.btnXoaNguyenLieu.Location = new System.Drawing.Point(277, 509);
-            this.btnXoaNguyenLieu.Name = "btnXoaNguyenLieu";
-            this.btnXoaNguyenLieu.Size = new System.Drawing.Size(160, 36);
-            this.btnXoaNguyenLieu.TabIndex = 179;
-            this.btnXoaNguyenLieu.Text = "Xóa nguyên liệu";
-            this.btnXoaNguyenLieu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoaNguyenLieu.UseVisualStyleBackColor = false;
-            this.btnXoaNguyenLieu.Click += new System.EventHandler(this.btnXoaNguyenLieu_Click);
-            // 
             // btnThemNguyenLieu
             // 
             this.btnThemNguyenLieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
@@ -457,7 +445,7 @@
             this.btnThemNguyenLieu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemNguyenLieu.ForeColor = System.Drawing.Color.White;
             this.btnThemNguyenLieu.Image = ((System.Drawing.Image)(resources.GetObject("btnThemNguyenLieu.Image")));
-            this.btnThemNguyenLieu.Location = new System.Drawing.Point(93, 509);
+            this.btnThemNguyenLieu.Location = new System.Drawing.Point(12, 509);
             this.btnThemNguyenLieu.Name = "btnThemNguyenLieu";
             this.btnThemNguyenLieu.Size = new System.Drawing.Size(178, 36);
             this.btnThemNguyenLieu.TabIndex = 178;
@@ -638,7 +626,6 @@
         private System.Windows.Forms.DataGridView dGVMonAn;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dGVNguyenLieu;
-        private System.Windows.Forms.Button btnXoaNguyenLieu;
         private System.Windows.Forms.Button btnThemNguyenLieu;
         private System.Windows.Forms.Button btnSuaMonAn;
         private System.Windows.Forms.ComboBox cmbLoaiMonTK;

@@ -22,8 +22,6 @@ namespace Karaoke
         private string gioVao;
 
         private string gioRa;
-
-        private string thoiGian;
         //private string soHoaDon;
         public frmInHoaDonDatTiec(string soHoaDon, string giamGia = "0")
         {

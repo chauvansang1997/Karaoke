@@ -13,21 +13,32 @@ namespace DAO
     {
         public static bool ThemPhong(Phong phong)
         {
-            string query = "insert into PHONG(MAPHONG,MALOAIPHONG,TINHTRANG) VALUES(@maphong,@maloaiphong,@tinhtrang)";
+            string query = "insert into PHONG(MAPHONG,MALOAIPHONG,TINHTRANG) VALUES(@maphong,@maloaiphong,0)";
 
             string ma = TaoMa.TaoMaPhong();
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@maphong",SqlDbType.NVarChar){ Value=ma  },
-                new SqlParameter("@maloaiphong",SqlDbType.NVarChar){Value=phong.TenLoai },
-                new SqlParameter("@tinhtrang",SqlDbType.NVarChar){Value=phong.TinhTrang }
+                new SqlParameter("@maloaiphong",SqlDbType.NVarChar){Value=phong.TenLoai }
 
             };
 
             return Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0;
         }
+        public static bool CapNhatPhong(Phong phong)
+        {
+            string query = "EXEC uspCapNhatPhong @maphong,@maloaiphong";
 
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@maphong",SqlDbType.NVarChar){ Value=phong.Ten  },
+                new SqlParameter("@maloaiphong",SqlDbType.NVarChar){Value=phong.TenLoai }
+
+            };
+
+            return Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0;
+        }
         public static bool GhiNhanDatPhong(KhachHang khachHang, string maPhong, string maNV)
         {
             string query = "EXEC uspGhiNhanDatPhong @maPhong,@tenKhachHang,@soDienThoai,@soHoaDon,@maNV";
@@ -190,6 +201,69 @@ namespace DAO
             try
             {
                 count = int.Parse(Dataprovider.ExcuteScalar(query).ToString());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            return count;
+        }
+        public static DataTable XemLoaiPhong()
+        {
+            string query = "SELECT * FROM LOAIPHONG";
+
+
+            DataTable table = null;
+            try
+            {
+                table = Dataprovider.ExcuteQuery(query);
+
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+
+            return table;
+        }
+        public static DataTable XemPhongQuanLy(string maPhong,int loaiPhong, int pageNumber,int pageSize)
+        {
+            string query = "EXEC uspXemPhong @maPhong,@loaiPhong,@pageNumber,@pageSize";
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@maPhong",SqlDbType.VarChar){ Value=maPhong  },
+                new SqlParameter("@loaiPhong",SqlDbType.Int){ Value=loaiPhong  },
+    
+                new SqlParameter("@pageNumber",SqlDbType.Int){ Value=pageNumber  },
+                new SqlParameter("@pageSize",SqlDbType.Int){ Value=pageSize  },
+            };
+            DataTable table = null;
+            try
+            {
+                table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+
+            return table;
+        }
+        public static int DemPhongQuanLy(string maPhong, int loaiPhong)
+        {
+            string query = "EXEC uspDemPhongQuanLy @maPhong,@loaiPhong";
+
+            //truyền tham số vào câu truy vấn
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@maPhong",SqlDbType.VarChar){ Value=maPhong  },
+                new SqlParameter("@loaiPhong",SqlDbType.Int){ Value=loaiPhong  },
+            };
+            int count = 0;
+            try
+            {
+                count = int.Parse(Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString());
             }
             catch (Exception ex)
             {
