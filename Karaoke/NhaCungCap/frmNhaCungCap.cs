@@ -21,7 +21,8 @@ namespace Karaoke.NhaCungCap
 
 		private void frmNhaCungCap_Load(object sender, EventArgs e)
 		{
-			DataTable data = BUS.NhaCungCapBUS.LoadNCC();
+            int page = BUS.NhaCungCapBUS.DemNhaCungCap("");
+			DataTable data = BUS.NhaCungCapBUS.XemNhaCungCap("",1, page);
 			dgvDanhSachNCC.DataSource = data;
 			dgvDanhSachNCC.Columns[0].HeaderCell.Value = "Mã NCC";
 			dgvDanhSachNCC.Columns[1].HeaderCell.Value = "Tên NCC";
@@ -95,19 +96,19 @@ namespace Karaoke.NhaCungCap
 
 		private void btnXoaNCC_Click(object sender, EventArgs e)
 		{
-            panelChoice.Height = btnXoaNCC.Height;
-            panelChoice.Top = btnXoaNCC.Top;
-            ncc.MaNCC = txtMaNCC.Text;
-			if (BUS.NhaCungCapBUS.XoaNCC(ncc))
-			{
-				MessageBox.Show("Xoá thành công NCC");
-				frmNhaCungCap_Load(sender, e);
-			}
-			else
-			{
-				MessageBox.Show("Xoá nhà cung cấp thất bại");
-				return;
-			}
+   //         panelChoice.Height = btnXoaNCC.Height;
+   //         panelChoice.Top = btnXoaNCC.Top;
+   //         ncc.MaNCC = txtMaNCC.Text;
+			//if (BUS.NhaCungCapBUS.XoaNCC(ncc))
+			//{
+			//	MessageBox.Show("Xoá thành công NCC");
+			//	frmNhaCungCap_Load(sender, e);
+			//}
+			//else
+			//{
+			//	MessageBox.Show("Xoá nhà cung cấp thất bại");
+			//	return;
+			//}
 		}
 
 		private void btnThoat_Click(object sender, EventArgs e)

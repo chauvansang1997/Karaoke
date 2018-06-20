@@ -18,8 +18,8 @@ namespace DAO.QuanLyHangHoa
         /// <returns></returns>
         public static bool NhapNguyenLieu(NguyenLieu nguyenLieu)
         {
-            string query = "insert into NGUYENLIEU(manl,mancc,tennl,dvt,dongia,slton,sltoithieu) " +
-                "values (@manl,@mancc,@tennl,@dvt,@dongia,0,@sltoithieu)";
+            string query = "insert into NGUYENLIEU(manl,mancc,tennl,dvt,dongia,slton,sltoithieu,dongianhap) " +
+                "values (@manl,@mancc,@tennl,@dvt,@dongia,0,@sltoithieu,@donGiaNhap)";
 
             //Tạo mã cho nguyên liệu
             string manl = TaoMa.TaoMaNguyenLieu();
@@ -33,6 +33,7 @@ namespace DAO.QuanLyHangHoa
                 new SqlParameter("@dvt",SqlDbType.NVarChar){IsNullable=false,Value=nguyenLieu.DonViTinh },
                 new SqlParameter("@dongia",SqlDbType.Decimal){IsNullable=false,Value=nguyenLieu.Dongia },
                 new SqlParameter("@sltoithieu",SqlDbType.Int){IsNullable=false,Value=nguyenLieu.SoLuongToiThieu },
+                new SqlParameter("@donGiaNhap",SqlDbType.Int){IsNullable=false,Value=nguyenLieu.DonGiaNhap },
             };
             //nếu số dòng thành công trả về lớn hơn 0 thì thành công
             int num = Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
@@ -49,7 +50,7 @@ namespace DAO.QuanLyHangHoa
         /// <returns></returns>
         public static bool CapNhatNguyenLieu(NguyenLieu nguyenLieu)
         {
-            string query = "EXEC uspCapNhatNguyenLieu @maNguyenLieu,@tenNguyenLieu,@maNhaCungCap,@donViTinh,@donGia,@slToiThieu";
+            string query = "EXEC uspCapNhatNguyenLieu @maNguyenLieu,@tenNguyenLieu,@maNhaCungCap,@donViTinh,@donGia,@slToiThieu,@donGiaNhap";
 
             
 
@@ -62,6 +63,7 @@ namespace DAO.QuanLyHangHoa
                 new SqlParameter("@donViTinh",SqlDbType.NVarChar){IsNullable=false,Value=nguyenLieu.DonViTinh },
                 new SqlParameter("@donGia",SqlDbType.Int){IsNullable=false,Value=nguyenLieu.Dongia },
                 new SqlParameter("@slToiThieu",SqlDbType.Int){IsNullable=false,Value=nguyenLieu.SoLuongToiThieu },
+                new SqlParameter("@donGiaNhap",SqlDbType.Int){IsNullable=false,Value=nguyenLieu.DonGiaNhap },
             };
             //nếu số dòng thành công trả về lớn hơn 0 thì thành công
             int num = Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
@@ -113,7 +115,7 @@ namespace DAO.QuanLyHangHoa
                 new SqlParameter("@tenNguyenLieu",SqlDbType.NVarChar){IsNullable=true,Value=tenNguyenLieu },
                 new SqlParameter("@maNhaCungCap",SqlDbType.VarChar){IsNullable=true,Value=maNhaCungCap },
                 new SqlParameter("@isXemToiThieu",SqlDbType.Bit){IsNullable=true,Value=isXemToiThieu },
-                     new SqlParameter("@pageNumber",SqlDbType.Int){IsNullable=true,Value=pageNumber },
+                new SqlParameter("@pageNumber",SqlDbType.Int){IsNullable=true,Value=pageNumber },
                 new SqlParameter("@pageSize",SqlDbType.Int){IsNullable=true,Value=pageSize },
             };
 

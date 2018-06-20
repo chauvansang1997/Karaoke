@@ -12,19 +12,14 @@ namespace DAO.QuanLyNCC
 	{
 		public static bool ThemNCC(NhaCungCap ncc)
 		{
-			string query = "EXECUTE usp_ThemNCC @maNCC,@tenNCC,@loaiHangCC,@sdt,@diaChi";
-
-			string maNCC = ncc.MaNCC;
+			string query = "EXECUTE usp_ThemNCC @tenNCC,@sdt,@diaChi";
 			string tenNCC = ncc.Ten;
-			string loaiHangCC = ncc.LoaiHangCC;
 			string sdt = ncc.SDT;
 			string diaChi = ncc.DiaChi;
 			// Truyền tham số
 			List<SqlParameter> parameters = new List<SqlParameter>()
 			{
-				new SqlParameter("@maNCC", SqlDbType.Char) {IsNullable = false, Value=maNCC},
 				new SqlParameter("@tenNCC", SqlDbType.NVarChar) {IsNullable = false, Value = tenNCC},
-				new SqlParameter("@loaiHangCC", SqlDbType.NVarChar) {IsNullable = false, Value = loaiHangCC},
 				new SqlParameter("@sdt", SqlDbType.NVarChar) {IsNullable = true, Value = sdt??(Object)DBNull.Value},
 				new SqlParameter("@diaChi", SqlDbType.NVarChar) {IsNullable = true, Value = diaChi??(Object)DBNull.Value},
 			};
@@ -44,11 +39,10 @@ namespace DAO.QuanLyNCC
 
 		public static bool CapNhatNCC(NhaCungCap ncc)
 		{
-			string query = "EXEC usp_CapNhatNCC @maNCC,@tenNCC,@loaiHangCC,@sdt,@diaChi";
+			string query = "EXEC usp_CapNhatNCC @maNCC,@tenNCC,@sdt,@diaChi";
 
 			string maNCC = ncc.MaNCC;
 			string tenNCC = ncc.Ten;
-			string loaiHangCC = ncc.LoaiHangCC;
 			string sdt = ncc.SDT;
 			string diaChi = ncc.DiaChi;
 			// Truyền tham số
@@ -56,7 +50,6 @@ namespace DAO.QuanLyNCC
 			{
 				new SqlParameter("@maNCC", SqlDbType.Char) {IsNullable = false, Value=maNCC},
 				new SqlParameter("@tenNCC", SqlDbType.NVarChar) {IsNullable = false, Value = tenNCC},
-				new SqlParameter("@loaiHangCC", SqlDbType.NVarChar) {IsNullable = false, Value = loaiHangCC},
 				new SqlParameter("@sdt", SqlDbType.NVarChar) {IsNullable = true, Value = sdt??(Object)DBNull.Value},
 				new SqlParameter("@diaChi", SqlDbType.NVarChar) {IsNullable = true, Value = diaChi??(Object)DBNull.Value},
 			};
@@ -73,16 +66,16 @@ namespace DAO.QuanLyNCC
 			return false;
 		}
 
-		public static bool XoaNCC(NhaCungCap ncc)
+		public static bool XoaNCC(string maNhaCungCap)
 		{
-			bool rs = false;
+
 			string query = "EXEC usp_XoaNCC @maNCC";
 
-			string maNCC = ncc.MaNCC;
+
 			// Truyền tham số
 			List<SqlParameter> parameters = new List<SqlParameter>()
 			{
-				new SqlParameter("@maNCC", SqlDbType.Char) {IsNullable = false, Value=maNCC},
+				new SqlParameter("@maNCC", SqlDbType.VarChar) {IsNullable = false, Value=maNhaCungCap},
 			};
 			try
 			{
@@ -95,14 +88,39 @@ namespace DAO.QuanLyNCC
 				return false;
 			}
 		}
+        public static List<NhaCungCap> XemNhaCungCap()
+        {
+            string query = "SELECT * FROM NHACUNGCAP";
 
-		public static DataTable LoadNCC()
+            DataTable table = Dataprovider.ExcuteQuery(query);
+            List<NhaCungCap> list = null;
+            try
+            {
+                list = table.AsEnumerable().ToList().ConvertAll(x =>
+                new NhaCungCap() { Ten = x[1].ToString(), SDT = x[2].ToString(), DiaChi = x[3].ToString(), MaNCC = x[0].ToString() });
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            //Chuyển Table thành List tên hành khách
+            return list;
+
+        }
+        public static DataTable XemNhaCungCap(string tenNhaCungCap,int pageNumber,int pageSize)
 		{
-			DataTable data = new DataTable();
+            string query = "EXEC usp_LoadNCC @tenNhaCungCap,@pageNumber,@pageSize";
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@tenNhaCungCap",SqlDbType.NVarChar){IsNullable=false,Value=tenNhaCungCap },
+                new SqlParameter("@pageNumber",SqlDbType.Int){IsNullable=false,Value=pageNumber },
+                new SqlParameter("@pageSize",SqlDbType.Int){IsNullable=false,Value=pageSize },
+            };
+            DataTable data = new DataTable();
 			try
 			{
-				string query = "EXEC usp_LoadNCC";
-				data= Dataprovider.ExcuteQuery(query);
+				
+				data= Dataprovider.ExcuteQuery(query,parameters.ToArray());
 			}
 			catch(Exception ex)
 			{
@@ -110,5 +128,24 @@ namespace DAO.QuanLyNCC
 			}
 			return data;
 		}
-	}
+        public static int DemNhaCungCap(string tenNhaCungCap)
+        {
+            string query = "EXEC uspDemNhaCungCap @tenNhaCungCap";
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@tenNhaCungCap",SqlDbType.NVarChar){IsNullable=false,Value=tenNhaCungCap },
+
+            };
+            int count = 0;
+            try
+            {
+                count = int.Parse(Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            return count;
+        }
+    }
 }

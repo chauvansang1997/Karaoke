@@ -16,7 +16,8 @@ namespace DTO
         private uint dongia;
         private int soLuongTon;
         private int soLuongToiThieu;
-
+        private int donGiaNhap;
+  
         public string Ten
         {
             get
@@ -118,6 +119,18 @@ namespace DTO
             set
             {
                 soLuongToiThieu = value;
+            }
+        }
+        public int DonGiaNhap
+        {
+            get
+            {
+                return donGiaNhap;
+            }
+
+            set
+            {
+                donGiaNhap = value;
             }
         }
     }

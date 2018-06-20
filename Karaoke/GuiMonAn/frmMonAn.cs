@@ -185,6 +185,14 @@ namespace Karaoke.GuiMonAn
         {
             enableControls(true);
             enableButton(false);
+            txtTenMonAn.Text = "";
+            txtGia.Text = "";
+            tenHinhAnh = "";
+            pBAnhMinhHoa.Image = null;
+            while (bindingSource.Current != null)
+            {
+                bindingSource.RemoveCurrent();
+            }
             btnSuaMonAn.Enabled = true;
             bThem = true;
         }
