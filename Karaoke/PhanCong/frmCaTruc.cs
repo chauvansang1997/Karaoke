@@ -25,8 +25,8 @@ namespace Karaoke.PhanCong
 			panelChoice.Top = btnThem.Top;
 			ca.MaCa = int.Parse(txtMaCa.Text);
 			ca.TenCa = txtTenCa.Text;
-			ca.GioBD = txtGioBD.Text;
-			ca.GioKT = txtGioKT.Text;
+			ca.GioBD = dtpGioBD.Value;
+			ca.GioKT = dtpGioBD.Value;
 			ca.TienLuong = int.Parse(txtTienLuong.Text);
 			if (BUS.CaLamViecBUS.ThemCaLamViec(ca))
 			{
@@ -46,8 +46,8 @@ namespace Karaoke.PhanCong
 
 			ca.MaCa = int.Parse(txtMaCa.Text);
 			ca.TenCa = txtTenCa.Text;
-			ca.GioBD = txtGioBD.Text;
-			ca.GioKT = txtGioKT.Text;
+			ca.GioBD = dtpGioBD.Value;
+			ca.GioKT = dtpGioBD.Value;
 			ca.TienLuong = int.Parse(txtTienLuong.Text);
 			if (BUS.CaLamViecBUS.CapNhatCaLamViec(ca))
 			{
@@ -67,8 +67,8 @@ namespace Karaoke.PhanCong
 
 			ca.MaCa = int.Parse(txtMaCa.Text);
 			ca.TenCa = txtTenCa.Text;
-			ca.GioBD = txtGioBD.Text;
-			ca.GioKT =txtGioKT.Text;
+			ca.GioBD = dtpGioBD.Value;
+			ca.GioKT =dtpGioKT.Value;
 			ca.TienLuong = int.Parse(txtTienLuong.Text);
 			if (BUS.CaLamViecBUS.XoaCaLamViec(ca))
 			{
@@ -106,10 +106,10 @@ namespace Karaoke.PhanCong
 			txtMaCa.DataBindings.Add("Text", dataSource, "maCa");
 			txtTenCa.DataBindings.Clear();
 			txtTenCa.DataBindings.Add("Text", dataSource, "tenCa");
-			txtGioBD.DataBindings.Clear();
-			txtGioBD.DataBindings.Add("Text", dataSource, "gioBD");
-			txtGioKT.DataBindings.Clear();
-			txtGioKT.DataBindings.Add("Text", dataSource, "gioKT");
+			dtpGioBD.DataBindings.Clear();
+			dtpGioBD.DataBindings.Add("Text", dataSource, "gioBD");
+			dtpGioKT.DataBindings.Clear();
+			dtpGioKT.DataBindings.Add("Text", dataSource, "gioKT");
 			txtTienLuong.DataBindings.Clear();
 			txtTienLuong.DataBindings.Add("Text", dataSource, "tienLuong");
 
