@@ -45,7 +45,7 @@ namespace Karaoke.GuiMonAn
         private float giamGia;
         private string soHoaDon;
 
-
+        private Dictionary<string, int> ListSoLuongCu;
         List<Dictionary<int, List<FoodLayout>>> listDictionaryHangHoa;
 
         private Dictionary<int, List<FoodLayout>> dictionaryHienTai;
@@ -64,7 +64,7 @@ namespace Karaoke.GuiMonAn
             {
                 this.tongCong = value;
                 txtTongCong.Text = value.ToString();
-                txtThanhTien.Text = (value - (value * giamGia)).ToString();
+                txtThanhTien.Text = (value - (value * (giamGia/100))).ToString();
                 tienGiamGia = (int)(value * giamGia);
             }
         }
@@ -89,7 +89,7 @@ namespace Karaoke.GuiMonAn
 
             listDictionaryHangHoa = new List<Dictionary<int, List<FoodLayout>>>();
 
-
+            ListSoLuongCu = new Dictionary<string, int>();
 
 
             TongCong = 0;
@@ -97,7 +97,7 @@ namespace Karaoke.GuiMonAn
             loaiThucAnHienTai = 1;
 
 
-            giamGia = 0.5f;
+            giamGia = BUS.LoaiKhachHangBUS.LayGiamGia(soHoaDon);
             txtGiamGia.Text = giamGia.ToString() + "%";
             listFoodLayout = new List<FoodLayout>();
             hashMaHangHoa = new HashSet<string>();
@@ -180,6 +180,7 @@ namespace Karaoke.GuiMonAn
                         dictionaryDataSource[temp[i].TenLoaiHangHoa].Add(temp[i].Ma, temp[i]);
                         bindingSource.Add(temp[i]);
                         tongCong += uint.Parse(temp[i].Thanhtien);
+                        //ListSoLuongCu.Add()
                         listCu.Add(temp[i].Ma, int.Parse(temp[i].Soluong));
                         listMoi.Add(temp[i].Ma, int.Parse(temp[i].Soluong));
                     }
@@ -281,13 +282,14 @@ namespace Karaoke.GuiMonAn
                         string tenLoaiHangHoa = foodLayout.HangHoa.Loai == "0" ? "Thức ăn" : foodLayout.HangHoa.LoaiHangHoa.Ten;
                         string maHangHoa = foodLayout.HangHoa.Ma;
 
-                        if (!HoaDonBUS.KiemTraGoiMon(maHangHoa, int.Parse(foodLayout.HangHoa.Loai)))
-                        {
-                            MessageBox.Show("Mặt hàng đã hết số lượng");
-                            return;
-                        }
+                        
                         if (hashMaHangHoa.Contains(foodLayout.HangHoa.Ma))
                         {
+                            return;
+                        }
+                        if (!HoaDonBUS.KiemTraGoiMon(maHangHoa, 1))
+                        {
+                            MessageBox.Show("Mặt hàng đã hết số lượng");
                             return;
                         }
                         listMoi.Add(maHangHoa, 1);
@@ -435,6 +437,11 @@ namespace Karaoke.GuiMonAn
             {
                 if (e.ColumnIndex == 3 && e.RowIndex > -1)
                 {
+                    if (bChange)
+                    {
+                        return;
+                    }
+                    bChange = true;
                     if (!bKiemTraTon)
                     {
                         dGVHoaDon[3, e.RowIndex].Value = soluong;
@@ -464,15 +471,41 @@ namespace Karaoke.GuiMonAn
                
                 if (e.ColumnIndex == 3 && e.RowIndex > -1)
                 {
+                    bChange = false;
                     uint oldValue = uint.Parse(dGVHoaDon[e.ColumnIndex, e.RowIndex].Value.ToString());
                     uint newValue = uint.Parse(e.FormattedValue.ToString());
-                    if (!BUS.HoaDonBUS.KiemTraGoiMon(dGVHoaDon[7, e.RowIndex].Value.ToString(), int.Parse(e.FormattedValue.ToString())))
+                    string ma = dGVHoaDon[7, e.RowIndex].Value.ToString();
+
+                    if (listCu.ContainsKey(ma))
                     {
-                        soluong = dGVHoaDon[e.ColumnIndex, e.RowIndex].Value.ToString();
-                        bKiemTraTon = false;
-                     
-                        return;
+                        if (!BUS.HoaDonBUS.KiemTraGoiMon(dGVHoaDon[7, e.RowIndex].Value.ToString(),
+                       int.Parse(e.FormattedValue.ToString()), listCu[ma]))
+                        {
+                            soluong = dGVHoaDon[e.ColumnIndex, e.RowIndex].Value.ToString();
+                            bKiemTraTon = false;
+
+                            return;
+                        }
                     }
+                    else
+                    {
+                        if (!BUS.HoaDonBUS.KiemTraGoiMon(ma,
+                       int.Parse(e.FormattedValue.ToString()), 0))
+                        {
+                            soluong = dGVHoaDon[e.ColumnIndex, e.RowIndex].Value.ToString();
+                            bKiemTraTon = false;
+
+                            return;
+                        }
+                    }
+                    //if (!BUS.HoaDonBUS.KiemTraGoiMon(dGVHoaDon[7, e.RowIndex].Value.ToString(),
+                    //    int.Parse(e.FormattedValue.ToString()),(int)oldValue))
+                    //{
+                    //    soluong = dGVHoaDon[e.ColumnIndex, e.RowIndex].Value.ToString();
+                    //    bKiemTraTon = false;
+                     
+                    //    return;
+                    //}
                     bKiemTraTon = true;
                 
                  
@@ -551,6 +584,7 @@ namespace Karaoke.GuiMonAn
             if (BUS.HoaDonBUS.ThemChiTietHoaDon(soHoaDon, maMonAn, soluongMonAn, maSanPham, soluongSanPham))
             {
                 MessageBox.Show("Lưu thành công");
+                listCu = new Dictionary<string, int>(listMoi);
             }
             else
             {
@@ -566,7 +600,7 @@ namespace Karaoke.GuiMonAn
                 MessageBox.Show("Thanh toán thành công");
                 if (phongKaraoke != null)
                 {
-                    phongKaraoke.reset();
+                    phongKaraoke.khoiTao();
                 }
             
                 frmReportGoiMon goiMon = new frmReportGoiMon(soHoaDon);

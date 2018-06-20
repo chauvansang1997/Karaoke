@@ -51,7 +51,7 @@ namespace Karaoke
         private Dictionary<int, List<FoodLayout>> dictionaryTraiCay;
         private Dictionary<int, List<FoodLayout>> dictionaryNuocUong;
         private Dictionary<int, List<HangHoa>> dictionaryMonAn;
-        private Dictionary<string, TabPage> dictionaryTabThucAn;
+
 
         private List<FlowLayoutPanel> listLayoutThucAn;
         private List<FlowLayoutPanel> listLayoutSanPham;
@@ -89,7 +89,7 @@ namespace Karaoke
             loaiThucAnHienTai = 1;
             loaiSanPhamHienTai = 1;
 
-            giamGia = 0.5f;
+            giamGia = BUS.LoaiKhachHangBUS.LayGiamGia(soHoaDon);
             txtGiamGia.Text = giamGia.ToString() + "%";
             listFoodLayout = new List<FoodLayout>();
             hashMaHangHoa = new HashSet<string>();
@@ -109,7 +109,7 @@ namespace Karaoke
             dGVHoaDon.Columns["MaLoaiHangHoa"].Visible = false;
             dGVHoaDon.Columns["TenLoaiHangHoa"].Visible = false;
             dGVHoaDon.Columns["IndexList"].Visible = false;
-            dGVHoaDon.Columns["DonViTinh"].Visible = false;
+          //  dGVHoaDon.Columns["DonViTinh"].Visible = false;
             dGVHoaDon.Columns["Gia"].ReadOnly = true;
             dGVHoaDon.Columns["Ten"].ReadOnly = true;
             dGVHoaDon.Columns["Thanhtien"].ReadOnly = true;
@@ -229,7 +229,7 @@ namespace Karaoke
             {
                 this.tongCong = value;
                 txtTongCong.Text = value.ToString();
-                txtThanhTien.Text = (value - (value * giamGia)).ToString();
+                txtThanhTien.Text = (value - (value * (giamGia/100))).ToString();
             }
         }
         private void thayDoiLoai()
@@ -530,6 +530,8 @@ namespace Karaoke
             if (BUS.HoaDonBUS.ThanhToan(soHoaDon, DateTime.Now, int.Parse(txtThanhTien.Text), int.Parse(txtGiamGia.Text)))
             {
                 MessageBox.Show("Thanh toán thành công");
+                frmInHoaDonDatTiec datTiec = new frmInHoaDonDatTiec(soHoaDon);
+                datTiec.ShowDialog();
             }
             else
             {
@@ -666,7 +668,8 @@ namespace Karaoke
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-
+            frmInHoaDonDatTiec datTiec = new frmInHoaDonDatTiec(soHoaDon);
+            datTiec.ShowDialog();
         }
     }
 }

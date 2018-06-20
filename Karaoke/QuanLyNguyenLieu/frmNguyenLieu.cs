@@ -35,6 +35,7 @@ namespace Karaoke.NguyenLieu
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
             txtTotalPage.Text = totalPage.ToString();
             dGVDanhSach.DataSource = BUS.NguyenLieuBUS.TiemKiemNguyenLieu("", "", rbSapHet.Checked,pageNumber,pageSize);
+            enableControls(false);
             AddGridTableStyle();
         }
         private void AddGridTableStyle()
@@ -56,7 +57,8 @@ namespace Karaoke.NguyenLieu
             this.dGVDanhSach.Columns["TENNL"].HeaderText = "Tên";
             this.dGVDanhSach.Columns["TENNCC"].HeaderText = "Nhà cung cấp";
             this.dGVDanhSach.Columns["DVT"].HeaderText = "Đơn vị tính";
-            this.dGVDanhSach.Columns["DONGIA"].HeaderText = "Đơn giá";
+            this.dGVDanhSach.Columns["DONGIA"].HeaderText = "Đơn giá bán";
+            this.dGVDanhSach.Columns["DONGIANHAP"].HeaderText = "Đơn giá nhập";
             this.dGVDanhSach.Columns["SLTOITHIEU"].HeaderText = "Tồn tối thiểu";
             cmbNhaCC.DataSource = BUS.NhaCungCapBUS.XemNhaCungCap();
             cmbNhaCC.DisplayMember = "Ten";
@@ -67,10 +69,7 @@ namespace Karaoke.NguyenLieu
         private void btnSua_Click(object sender, EventArgs e)
         {
             bSua = true;
-            txtDonGia.Enabled = true;
-            txtDVT.Enabled = true;
-            txtTenNL.Enabled = true;
-            cmbNhaCC.Enabled = true;
+            enableControls(true);
         }
 
         private void frmNguyenLieu_Load_1(object sender, EventArgs e)
@@ -148,7 +147,25 @@ namespace Karaoke.NguyenLieu
             dGVDanhSach.DataSource = BUS.NguyenLieuBUS.TiemKiemNguyenLieu(txtTenNL.Text,
                 ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC, rbSapHet.Checked, pageNumber, pageSize);
         }
-
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            pageNumber = 1;
+            txtPageNumber.Text = "1";
+            if (cmbNhaCCTK.SelectedValue == null)
+            {
+                totalPage = BUS.NguyenLieuBUS.DemNguyenLieu(txtTenNguyenLieu.Text, "", rbSapHet.Checked);
+                totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+                dGVDanhSach.DataSource = BUS.NguyenLieuBUS.TiemKiemNguyenLieu(txtTenNL.Text,"", rbSapHet.Checked, pageNumber, pageSize);
+            }
+            else
+            {
+                totalPage = BUS.NguyenLieuBUS.DemNguyenLieu(txtTenNguyenLieu.Text, ((DTO.NhaCungCap)cmbNhaCCTK.SelectedValue).MaNCC, rbSapHet.Checked);
+                totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+                dGVDanhSach.DataSource = BUS.NguyenLieuBUS.TiemKiemNguyenLieu(txtTenNL.Text, ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC, rbSapHet.Checked, pageNumber, pageSize);
+            }
+         
+            txtTotalPage.Text = totalPage.ToString();
+        }
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -184,15 +201,16 @@ namespace Karaoke.NguyenLieu
                 txtTenNL.Text = dGVDanhSach[1, index].Value.ToString();
                 txtDVT.Text = dGVDanhSach[3, index].Value.ToString();
                 txtDonGia.Text = dGVDanhSach[4, index].Value.ToString();
-              //  cmbNhaCC.SelectedValue = dGVDanhSach[6, index].Value.ToString();
+                txtDonGiaNhap.Text= dGVDanhSach[5, index].Value.ToString();
+                //  cmbNhaCC.SelectedValue = dGVDanhSach[6, index].Value.ToString();
                 for (int i = 0; i < cmbNhaCC.Items.Count; i++)
                 {
-                    if(((DTO.NhaCungCap)cmbNhaCC.Items[i]).MaNCC== dGVDanhSach[6, index].Value.ToString())
+                    if(((DTO.NhaCungCap)cmbNhaCC.Items[i]).MaNCC== dGVDanhSach[7, index].Value.ToString())
                     {
                         cmbNhaCC.SelectedIndex = i;
                     }
                 }
-                txtTonToiThieu.Text= dGVDanhSach[5, index].Value.ToString();
+                txtTonToiThieu.Text= dGVDanhSach[6, index].Value.ToString();
                 ma = dGVDanhSach[0, index].Value.ToString();
             }
 
@@ -206,13 +224,26 @@ namespace Karaoke.NguyenLieu
         {
             this.btnThoat.FlatAppearance.BorderSize = 2;
         }
-
+        private void enableButton(bool enable)
+        {
+            btnThem.Enabled = enable;
+            btnXoa.Enabled = enable;
+            btnSua.Enabled = enable;
+        }
+        private void enableControls(bool enable)
+        {
+            txtDVT.Enabled = enable;
+            txtTenNL.Enabled = enable;
+            cmbNhaCC.Enabled = enable;
+            txtDonGia.Enabled = enable;
+            txtDonGiaNhap.Enabled = enable;
+            btnLuu.Enabled = enable;
+            btnHuy.Enabled = enable;
+            txtTonToiThieu.Enabled = enable;
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            txtDonGia.Enabled = true;
-            txtDVT.Enabled = true;
-            txtTenNL.Enabled = true;
-            cmbNhaCC.Enabled = true;
+            enableControls(true);
             bThem = true;
             txtDonGia.Text = "";
             txtDVT.Text = "";
@@ -227,6 +258,7 @@ namespace Karaoke.NguyenLieu
                 {
                     Ten = txtTenNL.Text,
                     Dongia = uint.Parse(txtDonGia.Text),
+                    DonGiaNhap=int.Parse(txtDonGiaNhap.Text),
                     DonViTinh = txtDVT.Text,
                     NhaCungCap = ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC,
                     SoLuongToiThieu=int.Parse(txtTonToiThieu.Text),
@@ -236,10 +268,7 @@ namespace Karaoke.NguyenLieu
                     MessageBox.Show("Thêm nguyên liệu thành công");
                 }
                 bThem = false;
-                txtDonGia.Enabled = false;
-                txtDVT.Enabled = false;
-                txtTenNL.Enabled = false;
-                cmbNhaCC.Enabled = false;
+                enableControls(false);
                 resetDanhSach();
             }
             else if (bSua)
@@ -249,6 +278,7 @@ namespace Karaoke.NguyenLieu
                     Ma=ma,
                     Ten = txtTenNL.Text,
                     Dongia = uint.Parse(txtDonGia.Text),
+                    DonGiaNhap = int.Parse(txtDonGiaNhap.Text),
                     DonViTinh = txtDVT.Text,
                     NhaCungCap = ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC,
                     SoLuongToiThieu = int.Parse(txtTonToiThieu.Text),
@@ -257,10 +287,7 @@ namespace Karaoke.NguyenLieu
                     MessageBox.Show("Sửa nguyên liệu thành công");
                 }
                 bSua = false;
-                txtDonGia.Enabled = false;
-                txtDVT.Enabled = false;
-                txtTenNL.Enabled = false;
-                cmbNhaCC.Enabled = false;
+                enableControls(false);
                 resetDanhSach();
             }
         }
@@ -297,14 +324,14 @@ namespace Karaoke.NguyenLieu
             this.Close();
         }
 
-        private void btnFind_Click(object sender, EventArgs e)
+     
+
+        private void btnHuy_Click(object sender, EventArgs e)
         {
-            pageNumber = 1;
-            txtPageNumber.Text = "1";
-            totalPage = BUS.NguyenLieuBUS.DemNguyenLieu(txtTenNguyenLieu.Text, ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC,rbSapHet.Checked);
-            totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
-            txtTotalPage.Text = totalPage.ToString();
-            loadDanhSach();
+            bThem = false;
+            bSua = false;
+            enableControls(false);
+            enableButton(true);
         }
     }
 }

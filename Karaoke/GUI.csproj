@@ -165,11 +165,23 @@
     <Compile Include="frmBaoCaoLuongTong.Designer.cs">
       <DependentUpon>frmBaoCaoLuongTong.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInHoaDonDatTiec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInHoaDonDatTiec.Designer.cs">
+      <DependentUpon>frmInHoaDonDatTiec.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyNhaCungCap.Designer.cs">
+      <DependentUpon>frmQuanLyNhaCungCap.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThoiGianTonKho.cs">
       <SubType>Form</SubType>
@@ -188,6 +200,12 @@
     </Compile>
     <Compile Include="GuiMonAn\frmMonAn.Designer.cs">
       <DependentUpon>frmMonAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GuiMonAn\frmSoLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuiMonAn\frmSoLuong.Designer.cs">
+      <DependentUpon>frmSoLuong.cs</DependentUpon>
     </Compile>
     <Compile Include="GuiMonAn\frmThemNguyenLieuMonAn.cs">
       <SubType>Form</SubType>
@@ -219,11 +237,29 @@
     <Compile Include="GUI_KhachHang\frmKhachHang.designer.cs">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_LoaiKH\frmApDungKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_LoaiKH\frmApDungKhuyenMai.Designer.cs">
+      <DependentUpon>frmApDungKhuyenMai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_LoaiKH\frmKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_LoaiKH\frmKhuyenMai.Designer.cs">
+      <DependentUpon>frmKhuyenMai.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_LoaiKH\frmLoaiKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI_LoaiKH\frmLoaiKhachHang.designer.cs">
       <DependentUpon>frmLoaiKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_LoaiKH\frmLoaiKhachHangKM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_LoaiKH\frmLoaiKhachHangKM.Designer.cs">
+      <DependentUpon>frmLoaiKhachHangKM.cs</DependentUpon>
     </Compile>
     <Compile Include="LuongDataSet.cs">
       <DependentUpon>LuongDataSet.xsd</DependentUpon>
@@ -257,6 +293,18 @@
     <Compile Include="PhanCong\frmCaTruc.Designer.cs">
       <DependentUpon>frmCaTruc.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhongKaoraoke\frmChuyenPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhongKaoraoke\frmChuyenPhong.Designer.cs">
+      <DependentUpon>frmChuyenPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhongKaoraoke\frmLichSuPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhongKaoraoke\frmLichSuPhong.Designer.cs">
+      <DependentUpon>frmLichSuPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyNguyenLieu\frmGiaoNguyenLieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,18 +334,6 @@
     </Compile>
     <Compile Include="QuanLyNguyenLieu\frmNhapNguyenLieu.Designer.cs">
       <DependentUpon>frmNhapNguyenLieu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyNguyenLieu\frmSuaNguyenLieu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyNguyenLieu\frmSuaNguyenLieu.Designer.cs">
-      <DependentUpon>frmSuaNguyenLieu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyNguyenLieu\frmThemNguyenLieu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyNguyenLieu\frmThemNguyenLieu.Designer.cs">
-      <DependentUpon>frmThemNguyenLieu.cs</DependentUpon>
     </Compile>
     <Compile Include="NhaCungCap\frmNhaCungCap.cs">
       <SubType>Form</SubType>
@@ -403,6 +439,18 @@
       <DependentUpon>rptDonDatHang.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="report\rptHoaDonDatCoc.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHoaDonDatCoc.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\rptHoaDonDatTiec.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHoaDonDatTiec.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="report\rptPhieuNhapHang.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -458,6 +506,9 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyNhaCungCap.resx">
+      <DependentUpon>frmQuanLyNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThoiGianTonKho.resx">
       <DependentUpon>frmThoiGianTonKho.cs</DependentUpon>
     </EmbeddedResource>
@@ -466,6 +517,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GuiMonAn\frmMonAn.resx">
       <DependentUpon>frmMonAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuiMonAn\frmSoLuong.resx">
+      <DependentUpon>frmSoLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuiMonAn\frmThemNguyenLieuMonAn.resx">
       <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
@@ -483,8 +537,17 @@
     <EmbeddedResource Include="GUI_KhachHang\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_LoaiKH\frmApDungKhuyenMai.resx">
+      <DependentUpon>frmApDungKhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_LoaiKH\frmKhuyenMai.resx">
+      <DependentUpon>frmKhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_LoaiKH\frmLoaiKhachHang.resx">
       <DependentUpon>frmLoaiKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_LoaiKH\frmLoaiKhachHangKM.resx">
+      <DependentUpon>frmLoaiKhachHangKM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_QuanLyNhanVien\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
@@ -497,6 +560,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PhanCong\frmCaTruc.resx">
       <DependentUpon>frmCaTruc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhongKaoraoke\frmChuyenPhong.resx">
+      <DependentUpon>frmChuyenPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhongKaoraoke\frmLichSuPhong.resx">
+      <DependentUpon>frmLichSuPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNguyenLieu\frmGiaoNguyenLieu.resx">
       <DependentUpon>frmGiaoNguyenLieu.cs</DependentUpon>
@@ -512,12 +581,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNguyenLieu\frmNhapNguyenLieu.resx">
       <DependentUpon>frmNhapNguyenLieu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyNguyenLieu\frmSuaNguyenLieu.resx">
-      <DependentUpon>frmSuaNguyenLieu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyNguyenLieu\frmThemNguyenLieu.resx">
-      <DependentUpon>frmThemNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhaCungCap\frmNhaCungCap.resx">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>
@@ -581,6 +644,14 @@
     <EmbeddedResource Include="report\rptDonDatHang.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptDonDatHang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\rptHoaDonDatCoc.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHoaDonDatCoc.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\rptHoaDonDatTiec.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHoaDonDatTiec.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="report\rptPhieuNhapHang.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

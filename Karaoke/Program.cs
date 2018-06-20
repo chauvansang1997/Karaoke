@@ -12,6 +12,7 @@ using Karaoke.QuanLyPhanCong;
 using Karaoke.NhaCungCap;
 using Karaoke.QuanLyThietBi;
 using Karaoke.GUI_DangNhap;
+using Karaoke.GUI_LoaiKH;
 
 namespace Karaoke
 {
@@ -25,7 +26,7 @@ namespace Karaoke
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDangNhap());
+            Application.Run(new frmQuanLyPhong());
         }
     }
 }

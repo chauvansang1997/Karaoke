@@ -10,6 +10,14 @@ namespace BUS
 {
     public static class PhongBUS
     {
+        public static bool ThemPhong(Phong phong)
+        {
+            return DAO.PhongDAO.ThemPhong(phong);
+        }
+        public static bool CapNhatPhong(Phong phong)
+        {
+            return DAO.PhongDAO.CapNhatPhong(phong);
+        }
         public static List<Phong> XemPhong(int trangThai,int pageSize,int pageNumber)
         {
             return DAO.PhongDAO.XemPhong(trangThai, pageSize, pageNumber);
@@ -40,6 +48,18 @@ namespace BUS
         public static int DemLichSuPhong()
         {
             return DAO.PhongDAO.DemLichSuPhong();
+        }
+        public static DataTable XemLoaiPhong()
+        {
+            return DAO.PhongDAO.XemLoaiPhong();
+        }
+        public static DataTable XemPhongQuanLy(string maPhong, int loaiPhong, int pageNumber, int pageSize)
+        {
+            return DAO.PhongDAO.XemPhongQuanLy(maPhong,  loaiPhong, pageNumber, pageSize);
+        }
+        public static int DemPhongQuanLy(string maPhong, int loaiPhong)
+        {
+            return DAO.PhongDAO.DemPhongQuanLy(maPhong,  loaiPhong);
         }
     }
 }

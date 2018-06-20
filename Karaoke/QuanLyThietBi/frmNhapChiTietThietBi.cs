@@ -44,7 +44,6 @@ namespace Karaoke.QuanLyThietBi
 
 
 
-        private List<LoaiHangHoa> listTenGroup;
 
 
         private void khoiTao()
@@ -158,14 +157,14 @@ namespace Karaoke.QuanLyThietBi
                 }
             }
         }
-        void grouper_DisplayGroup(object sender, GroupDisplayEventArgs e)
-        {
-            e.BackColor = (e.Group.GroupIndex % 2) == 0 ? Color.Orange : Color.LightBlue;
-            e.Header = listTenGroup[int.Parse(e.DisplayValue) - 1].Ten;
-            e.DisplayValue = "";
-            e.ForeColor = (e.Group.GroupIndex % 2) == 0 ? Color.White : Color.Black;
-            // e.Summary = "contains " + e.Group.Count + " rows";
-        }
+        //void grouper_DisplayGroup(object sender, GroupDisplayEventArgs e)
+        //{
+        //    e.BackColor = (e.Group.GroupIndex % 2) == 0 ? Color.Orange : Color.LightBlue;
+        //    e.Header = listTenGroup[int.Parse(e.DisplayValue) - 1].Ten;
+        //    e.DisplayValue = "";
+        //    e.ForeColor = (e.Group.GroupIndex % 2) == 0 ? Color.White : Color.Black;
+        //    // e.Summary = "contains " + e.Group.Count + " rows";
+        //}
         private void themCotHoaDon()
         {
             dtHoaDon = new DataTable();

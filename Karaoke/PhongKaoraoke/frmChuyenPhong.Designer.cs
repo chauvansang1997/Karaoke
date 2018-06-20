@@ -38,12 +38,12 @@
             this.txtTenPhong = new System.Windows.Forms.TextBox();
             this.txtGia = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnChuyen = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtLoaiPhong = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnChuyen = new System.Windows.Forms.Button();
             this.btnFirstPage = new System.Windows.Forms.Button();
             this.btnLastPage = new System.Windows.Forms.Button();
             this.btnPrevPage = new System.Windows.Forms.Button();
@@ -118,6 +118,7 @@
             // txtTenPhong
             // 
             this.txtTenPhong.BackColor = System.Drawing.Color.White;
+            this.txtTenPhong.Enabled = false;
             this.txtTenPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenPhong.Location = new System.Drawing.Point(8, 139);
             this.txtTenPhong.Name = "txtTenPhong";
@@ -128,6 +129,7 @@
             // txtGia
             // 
             this.txtGia.BackColor = System.Drawing.Color.White;
+            this.txtGia.Enabled = false;
             this.txtGia.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGia.Location = new System.Drawing.Point(8, 263);
             this.txtGia.Name = "txtGia";
@@ -146,42 +148,6 @@
             this.label4.Size = new System.Drawing.Size(38, 19);
             this.label4.TabIndex = 214;
             this.label4.Text = "Giá:";
-            // 
-            // btnChuyen
-            // 
-            this.btnChuyen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
-            this.btnChuyen.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnChuyen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChuyen.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChuyen.ForeColor = System.Drawing.Color.White;
-            this.btnChuyen.Image = ((System.Drawing.Image)(resources.GetObject("btnChuyen.Image")));
-            this.btnChuyen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChuyen.Location = new System.Drawing.Point(349, 440);
-            this.btnChuyen.Name = "btnChuyen";
-            this.btnChuyen.Size = new System.Drawing.Size(169, 36);
-            this.btnChuyen.TabIndex = 216;
-            this.btnChuyen.Text = " Chuyển phòng";
-            this.btnChuyen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChuyen.UseVisualStyleBackColor = false;
-            this.btnChuyen.Click += new System.EventHandler(this.btnChuyen_Click);
-            this.btnChuyen.MouseHover += new System.EventHandler(this.btnLuu_MouseHover);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
-            this.btnThoat.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThoat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(524, 440);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(114, 36);
-            this.btnThoat.TabIndex = 217;
-            this.btnThoat.Text = " Thoát";
-            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThoat.UseVisualStyleBackColor = false;
-            this.btnThoat.MouseHover += new System.EventHandler(this.btnThoat_MouseHover);
             // 
             // panel1
             // 
@@ -202,7 +168,8 @@
             // 
             // txtLoaiPhong
             // 
-            this.txtLoaiPhong.Location = new System.Drawing.Point(8, 203);
+            this.txtLoaiPhong.Enabled = false;
+            this.txtLoaiPhong.Location = new System.Drawing.Point(8, 208);
             this.txtLoaiPhong.Name = "txtLoaiPhong";
             this.txtLoaiPhong.Size = new System.Drawing.Size(254, 27);
             this.txtLoaiPhong.TabIndex = 218;
@@ -230,6 +197,42 @@
             this.label1.Size = new System.Drawing.Size(149, 23);
             this.label1.TabIndex = 216;
             this.label1.Text = "CHUYỂN PHÒNG";
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
+            this.btnThoat.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.Location = new System.Drawing.Point(524, 440);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(114, 36);
+            this.btnThoat.TabIndex = 217;
+            this.btnThoat.Text = " Thoát";
+            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.MouseHover += new System.EventHandler(this.btnThoat_MouseHover);
+            // 
+            // btnChuyen
+            // 
+            this.btnChuyen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
+            this.btnChuyen.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnChuyen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChuyen.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChuyen.ForeColor = System.Drawing.Color.White;
+            this.btnChuyen.Image = ((System.Drawing.Image)(resources.GetObject("btnChuyen.Image")));
+            this.btnChuyen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChuyen.Location = new System.Drawing.Point(349, 440);
+            this.btnChuyen.Name = "btnChuyen";
+            this.btnChuyen.Size = new System.Drawing.Size(169, 36);
+            this.btnChuyen.TabIndex = 216;
+            this.btnChuyen.Text = " Chuyển phòng";
+            this.btnChuyen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnChuyen.UseVisualStyleBackColor = false;
+            this.btnChuyen.Click += new System.EventHandler(this.btnChuyen_Click);
+            this.btnChuyen.MouseHover += new System.EventHandler(this.btnLuu_MouseHover);
             // 
             // btnFirstPage
             // 

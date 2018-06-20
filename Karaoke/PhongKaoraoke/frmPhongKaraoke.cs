@@ -121,7 +121,7 @@ namespace Karaoke.PhongKaoraoke
             dictionaryAvailableLayout = new Dictionary<int, List<PhongLayout>>();
 
             dictionaryUnAvailableLayout = new Dictionary<int, List<PhongLayout>>();
-
+           // dictionaryPage = new Dictionary<int, int>();
             thayDoiTrangThai();
         }
         public void reset()
@@ -322,6 +322,7 @@ namespace Karaoke.PhongKaoraoke
             try
             {
                 string soHoaDon = BUS.HoaDonBUS.LayMaHoaDon(listPhongLayout[indexHienTai].Phong.Ten);
+                
                 if (BUS.HoaDonBUS.HoaDonDatTiec(soHoaDon))
                 {
                     frmChonMon chonMon = new frmChonMon(soHoaDon);
@@ -345,6 +346,12 @@ namespace Karaoke.PhongKaoraoke
 
         private void btnChuyenPhong_Click(object sender, EventArgs e)
         {
+            if (PhongHienTai != null)
+            {
+                frmChuyenPhong chuyenPhong = new frmChuyenPhong(PhongHienTai.Ten);
+                chuyenPhong.ShowDialog();
+                khoiTao();
+            }
         }
 
         private void txtPageNumber_TextChanged(object sender, EventArgs e)

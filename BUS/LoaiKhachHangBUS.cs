@@ -12,10 +12,10 @@ namespace BUS
 
 		public static DataTable LoadLoaiKH()
 		{
-				return DAO.LoaiKhachHangDAO.LoadLoaiKH();
+		    return DAO.LoaiKhachHangDAO.LoadLoaiKH();
 		}
 
-		public static bool ThemLoaiKH(LoaiKhachHang loaiKhach)
+        public static bool ThemLoaiKH(LoaiKhachHang loaiKhach)
 		{
 			return DAO.LoaiKhachHangDAO.ThemLoaiKH(loaiKhach);
 		}
@@ -30,6 +30,13 @@ namespace BUS
 			return DAO.LoaiKhachHangDAO.XoaLoaiKH(loaiKhach);
 		}
 
-
-	}
+        public static DataTable XemLoaiKhachHang(List<int> danhSachLoaiTru)
+        {
+            return DAO.LoaiKhachHangDAO.XemLoaiKhachHang(danhSachLoaiTru);
+        }
+        public static float LayGiamGia(string soHoaDon)
+        {
+            return DAO.LoaiKhachHangDAO.LayGiamGia(soHoaDon);
+        }
+    }
 }

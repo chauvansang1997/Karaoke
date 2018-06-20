@@ -352,15 +352,16 @@ namespace DAO
             }
             return true;
         }
-        public static bool KiemTraGoiMon(string ma, int soluong)
+        public static bool KiemTraGoiMon(string ma, int soLuong,int soLuongCu)
         {
-            string query = "EXEC uspKiemTraGoiMon @ma,@soluong";
+            string query = "EXEC uspKiemTraGoiMon @ma,@soLuong,@soLuongCu";
 
             //truyền tham số vào câu truy vấn
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@ma",SqlDbType.VarChar){IsNullable=false,Value=ma },
-                new SqlParameter("@soluong",SqlDbType.Int){IsNullable=false,Value=soluong },
+                new SqlParameter("@soLuong",SqlDbType.Int){IsNullable=false,Value=soLuong },
+                 new SqlParameter("@soLuongCu",SqlDbType.Int){IsNullable=false,Value=soLuongCu },
             };
             int result = 0;
             try
@@ -396,6 +397,8 @@ namespace DAO
                     TienGio = row.ItemArray[5].ToString(),
                     TenKhachHang= row.ItemArray[6].ToString(),
                     SoDienThoai= row.ItemArray[7].ToString(),
+                    TienDatCoc= row.ItemArray[8].ToString(),
+                    TinhTrang= row.ItemArray[9].ToString(),
                 };
             }
             catch (Exception ex)

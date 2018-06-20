@@ -23,7 +23,6 @@ namespace Karaoke.GuiMonAn
 
         private string gioRa;
 
-        private string thoiGian;
         //private string soHoaDon;
         public frmReportGoiMon(string soHoaDon,string giamGia="0")
         {

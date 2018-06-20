@@ -31,6 +31,29 @@ namespace Karaoke.GuiMonAn
             InitializeComponent();
             khoiTao();
         }
+        private void AddGridTableStyle()
+        {
+            DataGridViewCellStyle cell = new DataGridViewCellStyle
+            {
+                BackColor = Color.Bisque,
+                //  SelectionBackColor = Color.Teal,
+                //   SelectionForeColor = Color.PaleGreen,
+            };
+            this.dGVMonAn.BackColor = Color.GhostWhite;
+            this.dGVMonAn.ForeColor = Color.MidnightBlue;
+            this.dGVMonAn.BackgroundColor = Color.GhostWhite;
+            this.dGVMonAn.GridColor = Color.RoyalBlue;
+            this.dGVMonAn.AlternatingRowsDefaultCellStyle = cell;
+            this.dGVMonAn.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSteelBlue;
+            //this.dGVNguyenLieu.ColumnHeadersDefaultCellStyle.ForeColor = Color.Lavender;
+
+            dGVMonAn.EnableHeadersVisualStyles = false;
+
+
+
+            this.dGVNguyenLieu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+        }
 
         private void khoiTao()
         {
@@ -90,6 +113,7 @@ namespace Karaoke.GuiMonAn
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
             txtTotalPage.Text = totalPage.ToString();
             bindingSourceMonAn.DataSource = BUS.MonAnBUS.XemMonAnDataSource("", 0, pageNumber, pageSize);
+            AddGridTableStyle();
         }
         private void resetDanhSach()
         {
@@ -142,7 +166,6 @@ namespace Karaoke.GuiMonAn
             cmbLoaiMon.Enabled = enable;
             txtGia.Enabled = enable;
             btnThemNguyenLieu.Enabled = enable;
-            btnXoaNguyenLieu.Enabled = enable;
             btnLayAnh.Enabled = enable;
         }
         private void btnThemNguyenLieu_Click(object sender, EventArgs e)
@@ -185,6 +208,14 @@ namespace Karaoke.GuiMonAn
         {
             enableControls(true);
             enableButton(false);
+            txtTenMonAn.Text = "";
+            txtGia.Text = "";
+            tenHinhAnh = "";
+            pBAnhMinhHoa.Image = null;
+            while (bindingSource.Current != null)
+            {
+                bindingSource.RemoveCurrent();
+            }
             btnSuaMonAn.Enabled = true;
             bThem = true;
         }

@@ -15,12 +15,11 @@ namespace Karaoke.GuiMonAn
     public partial class frmThemNguyenLieuMonAn : Form
     {
         private DataTable dtNguyenLieu;
-        private DataTable dtNguyeLieuMonAn;
         private List<String> listMaNguyenLieu;
         private const int pageSize = 10;
         private int pageNumber;
         private int totalPage;
-        public BindingSource bindingSource ;
+        public BindingSource bindingSource;
         frmMonAn monAn;
         public DataTable DtNguyeLieuMonAn
         {
@@ -41,8 +40,8 @@ namespace Karaoke.GuiMonAn
             this.monAn = monAn;
             cmbNhaCungCap.DataSource = BUS.NhaCungCapBUS.XemNhaCungCap();
             cmbNhaCungCap.DisplayMember = "Ten";
-    
-          //  IEnumerable<NguyenLieuDataSource> data = (List<NguyenLieuDataSource>)dtNguyeLieuMonAn.DataSource;
+
+            //  IEnumerable<NguyenLieuDataSource> data = (List<NguyenLieuDataSource>)dtNguyeLieuMonAn.DataSource;
             //using (var reader = ObjectReader.Create((List<NguyenLieuDataSource>)dtNguyeLieuMonAn.DataSource))
             //{
             //    DtNguyeLieuMonAn.Load(reader);
@@ -61,10 +60,11 @@ namespace Karaoke.GuiMonAn
             txtTotalPage.Text = totalPage.ToString();
             dtNguyenLieu = BUS.NguyenLieuBUS.TiemKiemNguyenLieu("", "", false, pageNumber, pageSize, listMaNguyenLieu);
             dGVNguyenLieu.DataSource = dtNguyenLieu;
+            AddGridTableStyle();
         }
         private void loadDanhSach()
         {
-            if(cmbNhaCungCap.SelectedValue != null)
+            if (cmbNhaCungCap.SelectedValue != null)
             {
                 dtNguyenLieu = BUS.NguyenLieuBUS.TiemKiemNguyenLieu(txtTenNguyenLieu.Text, ((DTO.NhaCungCap)(cmbNhaCungCap.SelectedValue)).MaNCC, false, pageNumber, pageSize, listMaNguyenLieu);
             }
@@ -77,37 +77,45 @@ namespace Karaoke.GuiMonAn
         {
             pageNumber = 1;
             txtPageNumber.Text = "1";
-            totalPage = BUS.NguyenLieuBUS.DemNguyenLieu(txtTenNguyenLieu.Text, ((DTO.NhaCungCap)(cmbNhaCungCap.SelectedValue)).MaNCC, false, listMaNguyenLieu);
+            if (cmbNhaCungCap.SelectedValue != null)
+            {
+                totalPage = BUS.NguyenLieuBUS.DemNguyenLieu(txtTenNguyenLieu.Text, ((DTO.NhaCungCap)(cmbNhaCungCap.SelectedValue)).MaNCC, false, listMaNguyenLieu);
+            }
+            else
+            {
+                totalPage = BUS.NguyenLieuBUS.DemNguyenLieu(txtTenNguyenLieu.Text, "", false, listMaNguyenLieu);
+            }
+            
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
             txtTotalPage.Text = totalPage.ToString();
 
             loadDanhSach();
-           // if (this.DtNguyeLieuMonAn == null)
+            // if (this.DtNguyeLieuMonAn == null)
             //{
-             this.DtNguyeLieuMonAn = dtNguyenLieu.Clone();
-             this.DtNguyeLieuMonAn.Clear();
-           // }
+       //     this.DtNguyeLieuMonAn = dtNguyenLieu.Clone();
+        //    this.DtNguyeLieuMonAn.Clear();
+            // }
             dGVNguyenLieu.DataSource = dtNguyenLieu;
             AddGridTableStyle();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-           if(dGVNguyenLieu.CurrentCell != null)
-           {
+            if (dGVNguyenLieu.CurrentCell != null)
+            {
                 int index = dGVNguyenLieu.CurrentCell.RowIndex;
                 // DataRow row = dtNguyenLieu.Rows[dGVNguyenLieu.CurrentCell.RowIndex];
                 //  DtNguyeLieuMonAn.Rows.Add(row.ItemArray);
                 bindingSource.Add(new NguyenLieuMADataSource()
                 {
-                    Ma = dGVNguyenLieu[0,index].Value.ToString(),
+                    Ma = dGVNguyenLieu[0, index].Value.ToString(),
                     Ten = dGVNguyenLieu[1, index].Value.ToString(),
                     DonViTinh = dGVNguyenLieu[3, index].Value.ToString(),
                     SoLuong = "1",
-                    Gia= dGVNguyenLieu[4, index].Value.ToString(),
+                    Gia = dGVNguyenLieu[4, index].Value.ToString(),
                 });
                 this.Close();
-           }
+            }
         }
         private void AddGridTableStyle()
         {
@@ -127,29 +135,32 @@ namespace Karaoke.GuiMonAn
 
             dGVNguyenLieu.EnableHeadersVisualStyles = false;
 
-            this.dGVNguyenLieu.Columns["manl"].HeaderText = "Mã nguyên liệu";
-            this.dGVNguyenLieu.Columns["manl"].Width = 50;
+            this.dGVNguyenLieu.Columns["MANCC"].Visible = false;
+
+            this.dGVNguyenLieu.Columns["manl"].Visible = false;
+            //this.dGVNguyenLieu.Columns["manl"].HeaderText = "Mã nguyên liệu";
+         //   this.dGVNguyenLieu.Columns["manl"].Width = 50;
 
 
             this.dGVNguyenLieu.Columns["tennl"].HeaderText = "Tên nguyên liệu";
-            this.dGVNguyenLieu.Columns["tennl"].Width = 50;
+            //this.dGVNguyenLieu.Columns["tennl"].Width = 50;
 
             this.dGVNguyenLieu.Columns["TENNCC"].HeaderText = "Nhà cung cấp";
-            this.dGVNguyenLieu.Columns["TENNCC"].Width = 50;
+            this.dGVNguyenLieu.Columns["TENNCC"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            //  this.dGVNguyenLieu.Columns["TENNCC"].Width = 50;
 
             this.dGVNguyenLieu.Columns["DVT"].HeaderText = "Đơn vị tính";
-            this.dGVNguyenLieu.Columns["DVT"].Width = 50;
+          //  this.dGVNguyenLieu.Columns["DVT"].Width = 50;
 
-            this.dGVNguyenLieu.Columns["DONGIA"].HeaderText = "Đơn giá";
-            this.dGVNguyenLieu.Columns["DONGIA"].Width = 50;
+            this.dGVNguyenLieu.Columns["DONGIA"].HeaderText = "Đơn giá bán";
+         //   this.dGVNguyenLieu.Columns["DONGIA"].Width = 50;
 
-
-            this.dGVNguyenLieu.Columns["SLTON"].HeaderText = "Số lượng";
-            this.dGVNguyenLieu.Columns["SLTON"].Width = 50;
+            this.dGVNguyenLieu.Columns["DONGIANHAP"].HeaderText = "Đơn giá nhập";
+         //   this.dGVNguyenLieu.Columns["DONGIANHAP"].Width = 50;
 
             this.dGVNguyenLieu.Columns["SLTOITHIEU"].HeaderText = "Số lượng tối thiểu";
-            this.dGVNguyenLieu.Columns["SLTOITHIEU"].Width = 50;
-
+            // this.dGVNguyenLieu.Columns["SLTOITHIEU"].Width = 50;
+            this.dGVNguyenLieu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
 
@@ -200,7 +211,7 @@ namespace Karaoke.GuiMonAn
 
         }
 
-      
+
 
         private void btnLastPage_Click(object sender, EventArgs e)
         {

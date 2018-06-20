@@ -195,19 +195,6 @@
         2l2ZA0hsd+lfgqI//rbMZr8gbrF7KTxPeAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnXoaNguyenLieu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
-        TUUH4gYGEDkjjbbl7QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFASURBVEhL
-        7ZW/SkJxHMWvOCko6Oiim0IEvYGP4Ca9QbgEQgRKYI/SVoNDT9EmtTg0NRTi7BDacvscOHETvPD73bbw
-        wAe//875gVAmIUrTtAIjWBjVFa//LsJmsIYbo3rmdZwwlqENHXMCG7j8NVOtmXY/M3nKjjksDibwDkUl
-        78Rx+2LRhx1cwFlB5FVG37GZGN7Bo9vCUoay3GZiOIUPaHgULXmdMfUoE8MWLOETXuA5EnnkVUbLsfti
-        UYMvmMNtJPLIW3PcYXGwhXO3wZJHXrf5+n8PUA+h5PpUuC5pp1qijn+AT/35S13398J1VwvUdl/oAf2P
-        kXruH4Trnhao4/74wPEBS0c6dl2HJ2i6vxaum97V3Qc/8ApXboMlj7xu88XRGFag391BILqVZ+yYfHFU
-        BX0VbxAq3cpTdYyVJN8eCLQszQaiAwAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="btnThemNguyenLieu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -221,6 +208,9 @@
         2l2ZA0hsd+lfgqI//rbMZr8gbrF7KTxPeAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -239,9 +229,6 @@
         27+oVOoFFFw9H7DAWQIAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="oFDLayAnh.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
