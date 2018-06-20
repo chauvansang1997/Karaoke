@@ -1,5 +1,6 @@
 ﻿
 using Karaoke.GUI_BaoCaoDoanhThu;
+using Karaoke.GUI_LoaiKH;
 using Karaoke.GUI_QuanLyNhanVien;
 using Karaoke.GuiMonAn;
 using Karaoke.KhachHang;
@@ -209,6 +210,22 @@ namespace Karaoke
 
         }
 
-      
+        private void quanLyKhuyenMaiMenu_Click(object sender, EventArgs e)
+        {
+            frmApDungKhuyenMai apDungKhuyenMai = new frmApDungKhuyenMai();
+            apDungKhuyenMai.ShowDialog();
+        }
+
+        private void xemLịchSửĐặtPhòngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLichSuPhong lichSuPhong = new frmLichSuPhong();
+            lichSuPhong.ShowDialog();
+        }
+
+        private void sửDụngThiếtBịToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSuDungThietBi suDungThietBi = new frmSuDungThietBi();
+            suDungThietBi.ShowDialog();
+        }
     }
 }

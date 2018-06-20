@@ -128,7 +128,7 @@ namespace DAO
             float count = 0;
             try
             {
-                count = float.Parse(Dataprovider.ExcuteScalar(query).ToString());
+                count = float.Parse(Dataprovider.ExcuteScalar(query,parameters.ToArray()).ToString());
             }
             catch (Exception ex)
             {
