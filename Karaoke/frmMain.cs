@@ -140,7 +140,7 @@ namespace Karaoke
 
         private void nhaCungCapMenu_Click(object sender, EventArgs e)
         {
-            frmNhaCungCap nhaCungCap = new frmNhaCungCap();
+            frmQuanLyNhaCungCap nhaCungCap = new frmQuanLyNhaCungCap();
             nhaCungCap.ShowDialog();
         }
 
