@@ -58,14 +58,14 @@ namespace Karaoke.NguyenLieu
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn lập phiếu không?", "Xác nhận", MessageBoxButtons.YesNoCancel);
+            DialogResult result = MessageBox.Show("Bạn có muốn lập phiếu không?", "Xác nhận", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 DTO.NhaCungCap nhaCungCap = ((DTO.NhaCungCap)cmbNhaCungCap.SelectedValue);
                 PhieuNhapHang soPhieuNhap = BUS.NguyenLieuBUS.LapPhieuNhap(nhaCungCap.MaNCC, "NV001");
                 if (soPhieuNhap != null)
                 {
-                    MessageBox.Show("Đặt phòng thành công");
+                    MessageBox.Show("Lập phiếu thành công");
                     frmNhapCTNguyenLieu nhapCTNguyenLieu = new frmNhapCTNguyenLieu(nhaCungCap, soPhieuNhap);
                     nhapCTNguyenLieu.ShowDialog();
                 }

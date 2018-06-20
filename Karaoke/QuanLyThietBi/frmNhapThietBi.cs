@@ -50,14 +50,29 @@ namespace Karaoke.QuanLyThietBi
             //bindingSource.Clear();
             dGVPhieuNhap.Columns["SoPhieu"].HeaderText = "Số phiếu";
             dGVPhieuNhap.Columns["MaNhanVien"].Visible = false;
+            dGVPhieuNhap.Columns["MaNhaCungCap"].Visible = false;
+            dGVPhieuNhap.Columns["ThanhTien"].Visible = false;
             dGVPhieuNhap.Columns["NgayDat"].HeaderText = "Ngày đặt";
+            dGVPhieuNhap.Columns["TenNhaCungCap"].HeaderText = "Tên nhà cung cấp";
             dGVPhieuNhap.Columns["NgayGiao"].HeaderText = "Ngày giao";
             dGVPhieuNhap.Columns["ThanhTien"].HeaderText = "Thành tiền";
             dGVPhieuNhap.Columns["NguoiGiao"].HeaderText = "Người giao hàng";
             dGVPhieuNhap.Columns["TenNhanVien"].HeaderText = "Tên nhân viên";
             dGVPhieuNhap.Columns["SoDienThoai"].HeaderText = "Số điện thoại";
+            dGVPhieuNhap.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+        private void reset()
+        {
+            rbChuaGiao.Checked = true;
+            pageNumber = 1;
+            txtPageNumber.Text = "1";
+            totalPage = BUS.ThietBiBUS.DemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1);
+            totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+            txtTotalPage.Text = totalPage.ToString();
 
+            // bindingSource.Add(new PhieuNhapHang());
+            bindingSource.DataSource = BUS.ThietBiBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có muốn lập đơn đặt hàng không không?", "Xác nhận", MessageBoxButtons.YesNoCancel);
@@ -122,9 +137,9 @@ namespace Karaoke.QuanLyThietBi
                 string soPhieuNhap = dGVPhieuNhap[0, index].Value.ToString();
                 frmGiaoThietBi giaoThietBi = new frmGiaoThietBi(soPhieuNhap);
                 giaoThietBi.ShowDialog();
-              //  frmGiaoSanPham giaoSanPham = new frmGiaoSanPham(soPhieuNhap);
-              //     giaoSanPham.ShowDialog();
-                bindingSource.DataSource = BUS.ThietBiBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
+                //  frmGiaoSanPham giaoSanPham = new frmGiaoSanPham(soPhieuNhap);
+                //     giaoSanPham.ShowDialog();
+                reset();
             }
 
         }
