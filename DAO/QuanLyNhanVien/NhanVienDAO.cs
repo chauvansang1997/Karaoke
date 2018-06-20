@@ -45,9 +45,9 @@ namespace DAO.QuanLyNhanVien
         }
 
         // Cập nhật thông tin nhân viên
-        public static bool CapNhatNhanVien(NhanVien nv, string maCV)
+        public static bool CapNhatNhanVien(NhanVien nv, string maCV, string tenTK)
         {
-            string query = "EXEC usp_CapNhatNhanVien @MANV, @MACV, @TENNV, @SDT, @DIACHI";
+            string query = "EXEC usp_CapNhatNhanVien @MANV, @TENTK, @MACV, @TENNV, @SDT, @DIACHI";
 
             string maNV = nv.MaNV;
             string tenNV = nv.HoTen;
@@ -57,12 +57,13 @@ namespace DAO.QuanLyNhanVien
             // Truyền tham số
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@MANV", SqlDbType.Char) {IsNullable = false, Value = maNV},
-                new SqlParameter("@MACV", SqlDbType.Char) {IsNullable = false, Value = maCV},
-                new SqlParameter("@TENNV", SqlDbType.NVarChar) {IsNullable = false, Value = tenNV},
-                new SqlParameter("@SDT", SqlDbType.NVarChar) {IsNullable = false, Value = sdt},
-                new SqlParameter("@DIACHI", SqlDbType.NVarChar) {IsNullable = false, Value = diaChi},
-            };
+				new SqlParameter("@MANV", SqlDbType.Char) {IsNullable = false, Value = maNV},
+				new SqlParameter("@TENTK", SqlDbType.VarChar) {IsNullable = false, Value = tenTK},
+				new SqlParameter("@MACV", SqlDbType.Char) {IsNullable = false, Value = maCV},
+				new SqlParameter("@TENNV", SqlDbType.NVarChar) {IsNullable = false, Value = tenNV},
+				new SqlParameter("@SDT", SqlDbType.NVarChar) {IsNullable = false, Value = sdt},
+				new SqlParameter("@DIACHI", SqlDbType.NVarChar) {IsNullable = false, Value = diaChi},
+			};
             try
             {
                 Dataprovider.ExcuteQuery(query, parameters.ToArray());
@@ -126,7 +127,8 @@ namespace DAO.QuanLyNhanVien
         // Load thông tin nhân viên
         public static DataTable LoadNhanVien()
         {
-            string query = "SELECT * FROM NHANVIEN WHERE TENTK IS NOT NULL";
+			// string query = "SELECT * FROM NHANVIEN WHERE TENTK IS NOT NULL";
+			string query = "EXEC usp_LoadNhanVien";
             return Dataprovider.ExcuteQuery(query);
         }
 

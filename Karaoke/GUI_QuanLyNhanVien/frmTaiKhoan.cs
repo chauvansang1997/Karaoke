@@ -13,6 +13,7 @@ namespace Karaoke.GUI_QuanLyNhanVien
 {
     public partial class frmTaiKhoan : Form
     {
+		TaiKhoan taiKhoan = new TaiKhoan();
         public frmTaiKhoan()
         {
             InitializeComponent();
@@ -25,44 +26,20 @@ namespace Karaoke.GUI_QuanLyNhanVien
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (txtTenTK.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập tên tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            else if (txtTenTK.Text.Length > 20)
-            {
-                MessageBox.Show("Tên tài khoản đã vượt quá 20 ký tự, vui lòng nhập lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            else if (BUS.TaiKhoanBUS.KiemTraTaiKhoan(txtTenTK.Text ))
-            {
-                MessageBox.Show("Tên tài khoản đã tồn tại, vui lòng chọn tên khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            if (txtMatKhau.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            else if (txtMatKhau.Text.Length > 20)
-            {
-                MessageBox.Show("Mật khẩu đã vượt quá 20 ký tự, vui lòng nhập lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            if (!BUS.TaiKhoanBUS.TaoTaiKhoan(new DTO.TaiKhoan() { TenTaiKhoan = txtTenTK.Text, MatKhau = txtMatKhau.Text }))
-            {
-                MessageBox.Show("Tạo tài khoản thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            else
-            {
-                MessageBox.Show("Tạo tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                this.Close();
-                return;
-            }
+			if(txtTenTK.Text.Length!=0 && txtMatKhau.Text.Length != 0) {
+				taiKhoan.TenTaiKhoan = txtTenTK.Text;
+				taiKhoan.MatKhau = txtMatKhau.Text;
+				if (BUS.TaiKhoanBUS.TaoTaiKhoan(taiKhoan))
+				{
+					MessageBox.Show("Tạo tài khoản thành công", "Tạo tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					this.Dispose();
+				}
+				else
+				{
+					MessageBox.Show("Tạo tài khoản thất bại", "Tạo tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
+				}
+			}
         }
     }
 }

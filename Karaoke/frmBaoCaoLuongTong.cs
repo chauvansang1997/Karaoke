@@ -1,4 +1,5 @@
 ﻿using CrystalDecisions.Shared;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,11 +22,32 @@ namespace Karaoke
 
 		private void frmBaoCaoLuongTong_Load(object sender, EventArgs e)
 		{
-			cbThangLuong.DataSource = BUS.LuongBUS.LoadThangLuongDesc();
-			cbThangLuong.DisplayMember = "thangLuong";
-			cbThangLuong.ValueMember = "thangLuong";
-			dataTable = BUS.LuongBUS.XemLuongTong(null, cbThangLuong.SelectedValue.ToString());
-			loadRepport(dataTable);
+			try
+			{
+				DataTable data = BUS.LuongBUS.LoadThangLuongDesc();
+				cbThangLuong.DataSource = data;
+				cbThangLuong.DisplayMember = "thangLuong";
+				cbThangLuong.ValueMember = "thangLuong";
+				
+				if (data.Rows.Count!=0)
+				{
+					dataTable = BUS.LuongBUS.XemLuongTong(null, cbThangLuong.SelectedValue.ToString());
+					loadRepport(dataTable);
+				}
+				else
+				{
+					MessageBox.Show("Tháng lương chưa có", "Báo cáo lương", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
+				}
+				
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show("Có lỗi xảy ra", "Báo cáo lương", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				Utility.Log(ex);
+				return;
+			}
+
 
 		}
 

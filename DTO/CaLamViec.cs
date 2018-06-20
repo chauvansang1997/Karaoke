@@ -9,8 +9,8 @@ namespace DTO
 	{
 		int maCa;
 		string tenCa;
-		string gioBD;
-		string gioKT;
+		DateTime gioBD;
+		DateTime gioKT;
 		int tienLuong;
 		public int MaCa
 		{
@@ -38,7 +38,7 @@ namespace DTO
 			}
 		}
 
-		public string GioBD
+		public DateTime GioBD
 		{
 			get
 			{
@@ -51,7 +51,7 @@ namespace DTO
 			}
 		}
 
-		public string GioKT
+		public DateTime GioKT
 		{
 			get
 			{

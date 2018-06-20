@@ -28,223 +28,223 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.quảnLýHàngHóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýSảnPhẩmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nhapKhoSanPham = new System.Windows.Forms.ToolStripMenuItem();
-            this.chinhSuaSanPham = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýNguyênLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nhapKhoNguyenLieu = new System.Windows.Forms.ToolStripMenuItem();
-            this.chinhSuaNguyenLieu = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýThiếtBịToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nhapKhoThietBi = new System.Windows.Forms.ToolStripMenuItem();
-            this.chinhSuaThietBi = new System.Windows.Forms.ToolStripMenuItem();
-            this.tiếpNhậnKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nhanDatTiecMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.datPhongMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.baoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.baoCaoTonKho = new System.Windows.Forms.ToolStripMenuItem();
-            this.baoCaoDoanhThu = new System.Windows.Forms.ToolStripMenuItem();
-            this.baoCaoLuongMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.nhanVienMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.nhanViemMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.phanCongMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.caTrucMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.khachHangMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.nhaCungCapMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.mónĂnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.quảnLýHàngHóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.quảnLýSảnPhẩmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.nhapKhoSanPham = new System.Windows.Forms.ToolStripMenuItem();
+			this.chinhSuaSanPham = new System.Windows.Forms.ToolStripMenuItem();
+			this.quảnLýNguyênLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.nhapKhoNguyenLieu = new System.Windows.Forms.ToolStripMenuItem();
+			this.chinhSuaNguyenLieu = new System.Windows.Forms.ToolStripMenuItem();
+			this.mónĂnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.quảnLýThiếtBịToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.nhapKhoThietBi = new System.Windows.Forms.ToolStripMenuItem();
+			this.chinhSuaThietBi = new System.Windows.Forms.ToolStripMenuItem();
+			this.tiếpNhậnKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.nhanDatTiecMenu = new System.Windows.Forms.ToolStripMenuItem();
+			this.datPhongMenu = new System.Windows.Forms.ToolStripMenuItem();
+			this.baoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.baoCaoTonKho = new System.Windows.Forms.ToolStripMenuItem();
+			this.baoCaoDoanhThu = new System.Windows.Forms.ToolStripMenuItem();
+			this.baoCaoLuongMenu = new System.Windows.Forms.ToolStripMenuItem();
+			this.nhanVienMenu = new System.Windows.Forms.ToolStripMenuItem();
+			this.nhanViemMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.phanCongMenu = new System.Windows.Forms.ToolStripMenuItem();
+			this.caTrucMenu = new System.Windows.Forms.ToolStripMenuItem();
+			this.khachHangMenu = new System.Windows.Forms.ToolStripMenuItem();
+			this.nhaCungCapMenu = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuStrip1.SuspendLayout();
+			this.SuspendLayout();
+			// 
+			// menuStrip1
+			// 
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quảnLýHàngHóaToolStripMenuItem,
             this.tiếpNhậnKháchHàngToolStripMenuItem,
             this.baoCáoToolStripMenuItem,
             this.nhanVienMenu,
             this.khachHangMenu,
             this.nhaCungCapMenu});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
-            this.menuStrip1.Name = "menuStrip1";
-            // 
-            // quảnLýHàngHóaToolStripMenuItem
-            // 
-            this.quảnLýHàngHóaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			resources.ApplyResources(this.menuStrip1, "menuStrip1");
+			this.menuStrip1.Name = "menuStrip1";
+			// 
+			// quảnLýHàngHóaToolStripMenuItem
+			// 
+			this.quảnLýHàngHóaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quảnLýSảnPhẩmToolStripMenuItem,
             this.quảnLýNguyênLiệuToolStripMenuItem,
             this.quảnLýThiếtBịToolStripMenuItem});
-            resources.ApplyResources(this.quảnLýHàngHóaToolStripMenuItem, "quảnLýHàngHóaToolStripMenuItem");
-            this.quảnLýHàngHóaToolStripMenuItem.Name = "quảnLýHàngHóaToolStripMenuItem";
-            // 
-            // quảnLýSảnPhẩmToolStripMenuItem
-            // 
-            this.quảnLýSảnPhẩmToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			resources.ApplyResources(this.quảnLýHàngHóaToolStripMenuItem, "quảnLýHàngHóaToolStripMenuItem");
+			this.quảnLýHàngHóaToolStripMenuItem.Name = "quảnLýHàngHóaToolStripMenuItem";
+			// 
+			// quảnLýSảnPhẩmToolStripMenuItem
+			// 
+			this.quảnLýSảnPhẩmToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nhapKhoSanPham,
             this.chinhSuaSanPham});
-            this.quảnLýSảnPhẩmToolStripMenuItem.Name = "quảnLýSảnPhẩmToolStripMenuItem";
-            resources.ApplyResources(this.quảnLýSảnPhẩmToolStripMenuItem, "quảnLýSảnPhẩmToolStripMenuItem");
-            // 
-            // nhapKhoSanPham
-            // 
-            this.nhapKhoSanPham.Name = "nhapKhoSanPham";
-            resources.ApplyResources(this.nhapKhoSanPham, "nhapKhoSanPham");
-            this.nhapKhoSanPham.Click += new System.EventHandler(this.nhapKhoSanPham_Click);
-            // 
-            // chinhSuaSanPham
-            // 
-            this.chinhSuaSanPham.Name = "chinhSuaSanPham";
-            resources.ApplyResources(this.chinhSuaSanPham, "chinhSuaSanPham");
-            this.chinhSuaSanPham.Click += new System.EventHandler(this.suaSanPham_Click);
-            // 
-            // quảnLýNguyênLiệuToolStripMenuItem
-            // 
-            this.quảnLýNguyênLiệuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.quảnLýSảnPhẩmToolStripMenuItem.Name = "quảnLýSảnPhẩmToolStripMenuItem";
+			resources.ApplyResources(this.quảnLýSảnPhẩmToolStripMenuItem, "quảnLýSảnPhẩmToolStripMenuItem");
+			// 
+			// nhapKhoSanPham
+			// 
+			this.nhapKhoSanPham.Name = "nhapKhoSanPham";
+			resources.ApplyResources(this.nhapKhoSanPham, "nhapKhoSanPham");
+			this.nhapKhoSanPham.Click += new System.EventHandler(this.nhapKhoSanPham_Click);
+			// 
+			// chinhSuaSanPham
+			// 
+			this.chinhSuaSanPham.Name = "chinhSuaSanPham";
+			resources.ApplyResources(this.chinhSuaSanPham, "chinhSuaSanPham");
+			this.chinhSuaSanPham.Click += new System.EventHandler(this.suaSanPham_Click);
+			// 
+			// quảnLýNguyênLiệuToolStripMenuItem
+			// 
+			this.quảnLýNguyênLiệuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nhapKhoNguyenLieu,
             this.chinhSuaNguyenLieu,
             this.mónĂnToolStripMenuItem});
-            this.quảnLýNguyênLiệuToolStripMenuItem.Name = "quảnLýNguyênLiệuToolStripMenuItem";
-            resources.ApplyResources(this.quảnLýNguyênLiệuToolStripMenuItem, "quảnLýNguyênLiệuToolStripMenuItem");
-            // 
-            // nhapKhoNguyenLieu
-            // 
-            this.nhapKhoNguyenLieu.Name = "nhapKhoNguyenLieu";
-            resources.ApplyResources(this.nhapKhoNguyenLieu, "nhapKhoNguyenLieu");
-            this.nhapKhoNguyenLieu.Click += new System.EventHandler(this.NhapKhoNguyenLieuMenu_Click);
-            // 
-            // chinhSuaNguyenLieu
-            // 
-            this.chinhSuaNguyenLieu.Name = "chinhSuaNguyenLieu";
-            resources.ApplyResources(this.chinhSuaNguyenLieu, "chinhSuaNguyenLieu");
-            this.chinhSuaNguyenLieu.Click += new System.EventHandler(this.suaNguyenLieu_Click);
-            // 
-            // quảnLýThiếtBịToolStripMenuItem
-            // 
-            this.quảnLýThiếtBịToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.quảnLýNguyênLiệuToolStripMenuItem.Name = "quảnLýNguyênLiệuToolStripMenuItem";
+			resources.ApplyResources(this.quảnLýNguyênLiệuToolStripMenuItem, "quảnLýNguyênLiệuToolStripMenuItem");
+			// 
+			// nhapKhoNguyenLieu
+			// 
+			this.nhapKhoNguyenLieu.Name = "nhapKhoNguyenLieu";
+			resources.ApplyResources(this.nhapKhoNguyenLieu, "nhapKhoNguyenLieu");
+			this.nhapKhoNguyenLieu.Click += new System.EventHandler(this.NhapKhoNguyenLieuMenu_Click);
+			// 
+			// chinhSuaNguyenLieu
+			// 
+			this.chinhSuaNguyenLieu.Name = "chinhSuaNguyenLieu";
+			resources.ApplyResources(this.chinhSuaNguyenLieu, "chinhSuaNguyenLieu");
+			this.chinhSuaNguyenLieu.Click += new System.EventHandler(this.suaNguyenLieu_Click);
+			// 
+			// mónĂnToolStripMenuItem
+			// 
+			this.mónĂnToolStripMenuItem.Name = "mónĂnToolStripMenuItem";
+			resources.ApplyResources(this.mónĂnToolStripMenuItem, "mónĂnToolStripMenuItem");
+			this.mónĂnToolStripMenuItem.Click += new System.EventHandler(this.nhapMonAnMenu_Click);
+			// 
+			// quảnLýThiếtBịToolStripMenuItem
+			// 
+			this.quảnLýThiếtBịToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nhapKhoThietBi,
             this.chinhSuaThietBi});
-            this.quảnLýThiếtBịToolStripMenuItem.Name = "quảnLýThiếtBịToolStripMenuItem";
-            resources.ApplyResources(this.quảnLýThiếtBịToolStripMenuItem, "quảnLýThiếtBịToolStripMenuItem");
-            // 
-            // nhapKhoThietBi
-            // 
-            this.nhapKhoThietBi.Name = "nhapKhoThietBi";
-            resources.ApplyResources(this.nhapKhoThietBi, "nhapKhoThietBi");
-            this.nhapKhoThietBi.Click += new System.EventHandler(this.nhapkhoThietBi_Click);
-            // 
-            // chinhSuaThietBi
-            // 
-            this.chinhSuaThietBi.Name = "chinhSuaThietBi";
-            resources.ApplyResources(this.chinhSuaThietBi, "chinhSuaThietBi");
-            this.chinhSuaThietBi.Click += new System.EventHandler(this.ChinhSuaKhoThietBiMenu_Click);
-            // 
-            // tiếpNhậnKháchHàngToolStripMenuItem
-            // 
-            this.tiếpNhậnKháchHàngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.quảnLýThiếtBịToolStripMenuItem.Name = "quảnLýThiếtBịToolStripMenuItem";
+			resources.ApplyResources(this.quảnLýThiếtBịToolStripMenuItem, "quảnLýThiếtBịToolStripMenuItem");
+			// 
+			// nhapKhoThietBi
+			// 
+			this.nhapKhoThietBi.Name = "nhapKhoThietBi";
+			resources.ApplyResources(this.nhapKhoThietBi, "nhapKhoThietBi");
+			this.nhapKhoThietBi.Click += new System.EventHandler(this.nhapkhoThietBi_Click);
+			// 
+			// chinhSuaThietBi
+			// 
+			this.chinhSuaThietBi.Name = "chinhSuaThietBi";
+			resources.ApplyResources(this.chinhSuaThietBi, "chinhSuaThietBi");
+			this.chinhSuaThietBi.Click += new System.EventHandler(this.ChinhSuaKhoThietBiMenu_Click);
+			// 
+			// tiếpNhậnKháchHàngToolStripMenuItem
+			// 
+			this.tiếpNhậnKháchHàngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nhanDatTiecMenu,
             this.datPhongMenu});
-            resources.ApplyResources(this.tiếpNhậnKháchHàngToolStripMenuItem, "tiếpNhậnKháchHàngToolStripMenuItem");
-            this.tiếpNhậnKháchHàngToolStripMenuItem.Name = "tiếpNhậnKháchHàngToolStripMenuItem";
-            // 
-            // nhanDatTiecMenu
-            // 
-            this.nhanDatTiecMenu.Name = "nhanDatTiecMenu";
-            resources.ApplyResources(this.nhanDatTiecMenu, "nhanDatTiecMenu");
-            this.nhanDatTiecMenu.Click += new System.EventHandler(this.nhanDatTiecMenu_Click);
-            // 
-            // datPhongMenu
-            // 
-            this.datPhongMenu.Name = "datPhongMenu";
-            resources.ApplyResources(this.datPhongMenu, "datPhongMenu");
-            this.datPhongMenu.Click += new System.EventHandler(this.datPhongMenu_Click);
-            // 
-            // baoCáoToolStripMenuItem
-            // 
-            this.baoCáoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			resources.ApplyResources(this.tiếpNhậnKháchHàngToolStripMenuItem, "tiếpNhậnKháchHàngToolStripMenuItem");
+			this.tiếpNhậnKháchHàngToolStripMenuItem.Name = "tiếpNhậnKháchHàngToolStripMenuItem";
+			// 
+			// nhanDatTiecMenu
+			// 
+			this.nhanDatTiecMenu.Name = "nhanDatTiecMenu";
+			resources.ApplyResources(this.nhanDatTiecMenu, "nhanDatTiecMenu");
+			this.nhanDatTiecMenu.Click += new System.EventHandler(this.nhanDatTiecMenu_Click);
+			// 
+			// datPhongMenu
+			// 
+			this.datPhongMenu.Name = "datPhongMenu";
+			resources.ApplyResources(this.datPhongMenu, "datPhongMenu");
+			this.datPhongMenu.Click += new System.EventHandler(this.datPhongMenu_Click);
+			// 
+			// baoCáoToolStripMenuItem
+			// 
+			this.baoCáoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.baoCaoTonKho,
             this.baoCaoDoanhThu,
             this.baoCaoLuongMenu});
-            resources.ApplyResources(this.baoCáoToolStripMenuItem, "baoCáoToolStripMenuItem");
-            this.baoCáoToolStripMenuItem.Name = "baoCáoToolStripMenuItem";
-            // 
-            // baoCaoTonKho
-            // 
-            this.baoCaoTonKho.Name = "baoCaoTonKho";
-            resources.ApplyResources(this.baoCaoTonKho, "baoCaoTonKho");
-            this.baoCaoTonKho.Click += new System.EventHandler(this.baoCaoTonKho_Click);
-            // 
-            // baoCaoDoanhThu
-            // 
-            this.baoCaoDoanhThu.Name = "baoCaoDoanhThu";
-            resources.ApplyResources(this.baoCaoDoanhThu, "baoCaoDoanhThu");
-            this.baoCaoDoanhThu.Click += new System.EventHandler(this.baoCaoDoanhThu_Click);
-            // 
-            // baoCaoLuongMenu
-            // 
-            this.baoCaoLuongMenu.Image = global::Karaoke.Properties.Resources.salary;
-            this.baoCaoLuongMenu.Name = "baoCaoLuongMenu";
-            resources.ApplyResources(this.baoCaoLuongMenu, "baoCaoLuongMenu");
-            this.baoCaoLuongMenu.Click += new System.EventHandler(this.baoCaoLuongMenu_Click);
-            // 
-            // nhanVienMenu
-            // 
-            this.nhanVienMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			resources.ApplyResources(this.baoCáoToolStripMenuItem, "baoCáoToolStripMenuItem");
+			this.baoCáoToolStripMenuItem.Name = "baoCáoToolStripMenuItem";
+			// 
+			// baoCaoTonKho
+			// 
+			this.baoCaoTonKho.Name = "baoCaoTonKho";
+			resources.ApplyResources(this.baoCaoTonKho, "baoCaoTonKho");
+			this.baoCaoTonKho.Click += new System.EventHandler(this.baoCaoTonKho_Click);
+			// 
+			// baoCaoDoanhThu
+			// 
+			this.baoCaoDoanhThu.Name = "baoCaoDoanhThu";
+			resources.ApplyResources(this.baoCaoDoanhThu, "baoCaoDoanhThu");
+			this.baoCaoDoanhThu.Click += new System.EventHandler(this.baoCaoDoanhThu_Click);
+			// 
+			// baoCaoLuongMenu
+			// 
+			this.baoCaoLuongMenu.Image = global::Karaoke.Properties.Resources.salary;
+			this.baoCaoLuongMenu.Name = "baoCaoLuongMenu";
+			resources.ApplyResources(this.baoCaoLuongMenu, "baoCaoLuongMenu");
+			this.baoCaoLuongMenu.Click += new System.EventHandler(this.baoCaoLuongMenu_Click);
+			// 
+			// nhanVienMenu
+			// 
+			this.nhanVienMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nhanViemMenuItem,
             this.phanCongMenu,
             this.caTrucMenu});
-            resources.ApplyResources(this.nhanVienMenu, "nhanVienMenu");
-            this.nhanVienMenu.Name = "nhanVienMenu";
-            // 
-            // nhanViemMenuItem
-            // 
-            this.nhanViemMenuItem.Name = "nhanViemMenuItem";
-            resources.ApplyResources(this.nhanViemMenuItem, "nhanViemMenuItem");
-            this.nhanViemMenuItem.Click += new System.EventHandler(this.nhanViemMenuItem_Click);
-            // 
-            // phanCongMenu
-            // 
-            this.phanCongMenu.Name = "phanCongMenu";
-            resources.ApplyResources(this.phanCongMenu, "phanCongMenu");
-            this.phanCongMenu.Click += new System.EventHandler(this.phanCongMenu_Click_1);
-            // 
-            // caTrucMenu
-            // 
-            this.caTrucMenu.Name = "caTrucMenu";
-            resources.ApplyResources(this.caTrucMenu, "caTrucMenu");
-            this.caTrucMenu.Click += new System.EventHandler(this.caTrucMenu_Click);
-            // 
-            // khachHangMenu
-            // 
-            resources.ApplyResources(this.khachHangMenu, "khachHangMenu");
-            this.khachHangMenu.Name = "khachHangMenu";
-            this.khachHangMenu.Click += new System.EventHandler(this.khachHangMenu_Click);
-            // 
-            // nhaCungCapMenu
-            // 
-            this.nhaCungCapMenu.Name = "nhaCungCapMenu";
-            resources.ApplyResources(this.nhaCungCapMenu, "nhaCungCapMenu");
-            this.nhaCungCapMenu.Click += new System.EventHandler(this.nhaCungCapMenu_Click);
-            // 
-            // mónĂnToolStripMenuItem
-            // 
-            this.mónĂnToolStripMenuItem.Name = "mónĂnToolStripMenuItem";
-            resources.ApplyResources(this.mónĂnToolStripMenuItem, "mónĂnToolStripMenuItem");
-            this.mónĂnToolStripMenuItem.Click += new System.EventHandler(this.nhapMonAnMenu_Click);
-            // 
-            // frmMain
-            // 
-            resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(216)))), ((int)(((byte)(233)))));
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "frmMain";
-            this.Load += new System.EventHandler(this.frmMain_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			resources.ApplyResources(this.nhanVienMenu, "nhanVienMenu");
+			this.nhanVienMenu.Name = "nhanVienMenu";
+			// 
+			// nhanViemMenuItem
+			// 
+			this.nhanViemMenuItem.Name = "nhanViemMenuItem";
+			resources.ApplyResources(this.nhanViemMenuItem, "nhanViemMenuItem");
+			this.nhanViemMenuItem.Click += new System.EventHandler(this.nhanViemMenuItem_Click);
+			// 
+			// phanCongMenu
+			// 
+			this.phanCongMenu.Name = "phanCongMenu";
+			resources.ApplyResources(this.phanCongMenu, "phanCongMenu");
+			this.phanCongMenu.Click += new System.EventHandler(this.phanCongMenu_Click_1);
+			// 
+			// caTrucMenu
+			// 
+			this.caTrucMenu.Name = "caTrucMenu";
+			resources.ApplyResources(this.caTrucMenu, "caTrucMenu");
+			this.caTrucMenu.Click += new System.EventHandler(this.caTrucMenu_Click);
+			// 
+			// khachHangMenu
+			// 
+			resources.ApplyResources(this.khachHangMenu, "khachHangMenu");
+			this.khachHangMenu.Name = "khachHangMenu";
+			this.khachHangMenu.Click += new System.EventHandler(this.khachHangMenu_Click);
+			// 
+			// nhaCungCapMenu
+			// 
+			this.nhaCungCapMenu.Name = "nhaCungCapMenu";
+			resources.ApplyResources(this.nhaCungCapMenu, "nhaCungCapMenu");
+			this.nhaCungCapMenu.Click += new System.EventHandler(this.nhaCungCapMenu_Click);
+			// 
+			// frmMain
+			// 
+			resources.ApplyResources(this, "$this");
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(216)))), ((int)(((byte)(233)))));
+			this.Controls.Add(this.menuStrip1);
+			this.MainMenuStrip = this.menuStrip1;
+			this.Name = "frmMain";
+			this.Load += new System.EventHandler(this.frmMain_Load);
+			this.menuStrip1.ResumeLayout(false);
+			this.menuStrip1.PerformLayout();
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
         }
 
