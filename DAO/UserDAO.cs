@@ -33,10 +33,9 @@ namespace DAO
 			if (data.Rows.Count > 0)
 			{
 				User.NhanVien = new NhanVien();
-				User.NhanVien.MaNV = data.Rows[0].ItemArray[0].ToString();
-				User.NhanVien.HoTen = data.Rows[0].ItemArray[1].ToString();
-				User.UserName = data.Rows[0].ItemArray[2].ToString();
-				User.Password = data.Rows[0].ItemArray[3].ToString();
+				User.NhanVien.HoTen = data.Rows[0].ItemArray[0].ToString();
+				User.UserName = data.Rows[0].ItemArray[1].ToString();
+				User.Password = data.Rows[0].ItemArray[2].ToString();
 				return true;
 			}
 			else
