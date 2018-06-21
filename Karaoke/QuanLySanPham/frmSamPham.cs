@@ -86,7 +86,32 @@ namespace Karaoke.QuanLySanPham
             dGVDanhSach.DataSource = BUS.SanPhamBUS.XemSanPhamTable("", 0, "", pageNumber, pageSize);
             AddGridTableStyle();
         }
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            if(cmbNhaCCTK.SelectedValue != null)
+            {
+                DTO.NhaCungCap nhaCungCap = (DTO.NhaCungCap)cmbNhaCCTK.SelectedValue;
+                LoaiHangHoa loaiHangHoa= (DTO.LoaiHangHoa)cmbLoaiTK.SelectedValue;
+                pageNumber = 1;
+                txtPageNumber.Text = "1";
+                totalPage = BUS.SanPhamBUS.DemSanPham(nhaCungCap.MaNCC, int.Parse(loaiHangHoa.Ma),txtTenTK.Text);
+                totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+                txtTotalPage.Text = totalPage.ToString();
+                dGVDanhSach.DataSource = BUS.SanPhamBUS.XemSanPhamTable(nhaCungCap.MaNCC, int.Parse(loaiHangHoa.Ma), 
+                    txtTenTK.Text, pageNumber, pageSize);
 
+            }
+            else
+            {
+                pageNumber = 1;
+                txtPageNumber.Text = "1";
+                totalPage = BUS.SanPhamBUS.DemSanPham("", 0,  txtTenTK.Text);
+                totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+                txtTotalPage.Text = totalPage.ToString();
+                dGVDanhSach.DataSource = BUS.SanPhamBUS.XemSanPhamTable("", 0, txtTenTK.Text, pageNumber, pageSize);
+                AddGridTableStyle();
+            }
+        }
         private void btnNextPage_Click(object sender, EventArgs e)
         {
             if (pageNumber + 1 > totalPage)
@@ -262,6 +287,7 @@ namespace Karaoke.QuanLySanPham
             txtDVT.Text = "";
             txtTenSP.Text = "";
             tenHinhAnh = "";
+            pBAnhMinhHoa.Image = null;
         }
 
         private void btnLayAnh_Click(object sender, EventArgs e)
@@ -298,8 +324,7 @@ namespace Karaoke.QuanLySanPham
             btnXoa.Enabled = enable;
 
             btnSua.Enabled = enable;
-            btnLuu.Enabled = enable;
-            btnHuy.Enabled = enable;
+
         }
         private void enableControls(bool enable)
         {
@@ -408,10 +433,7 @@ namespace Karaoke.QuanLySanPham
             this.Close();
         }
 
-        private void btnFind_Click(object sender, EventArgs e)
-        {
-
-        }
+ 
         private void enableButton1(bool enable)
         {
             btnHuy.Enabled = enable;
