@@ -476,7 +476,7 @@ namespace Karaoke.NguyenLieu
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            frmInDonDatNguyenLieu   inDonDatNguyenLieu = new frmInDonDatNguyenLieu(nhaCungCap, phieuNhapHang);
+            frmInDonDatNguyenLieu inDonDatNguyenLieu = new frmInDonDatNguyenLieu(nhaCungCap, phieuNhapHang);
             inDonDatNguyenLieu.ShowDialog();
         }
 
@@ -515,6 +515,9 @@ namespace Karaoke.NguyenLieu
                     }
                
                     dGVHoaDon[4, index].Value = int.Parse(dGVHoaDon[4, index].Value.ToString()) + 1;
+                    dGVHoaDon[5, index].Value = int.Parse(dGVHoaDon[3, index].Value.ToString()) *
+                       int.Parse(dGVHoaDon[4, index].Value.ToString());
+                    TongCong = TongCong + nguyenLieu.Dongia;
                     return;
                 }
      

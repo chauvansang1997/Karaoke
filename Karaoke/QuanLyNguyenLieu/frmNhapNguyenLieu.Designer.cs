@@ -62,6 +62,10 @@
             // 
             // dGVPhieuNhap
             // 
+            this.dGVPhieuNhap.AllowUserToAddRows = false;
+            this.dGVPhieuNhap.AllowUserToDeleteRows = false;
+            this.dGVPhieuNhap.AllowUserToResizeColumns = false;
+            this.dGVPhieuNhap.AllowUserToResizeRows = false;
             this.dGVPhieuNhap.BackgroundColor = System.Drawing.Color.White;
             this.dGVPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVPhieuNhap.Location = new System.Drawing.Point(353, 37);
@@ -69,7 +73,7 @@
             this.dGVPhieuNhap.Name = "dGVPhieuNhap";
             this.dGVPhieuNhap.RowHeadersVisible = false;
             this.dGVPhieuNhap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGVPhieuNhap.Size = new System.Drawing.Size(558, 287);
+            this.dGVPhieuNhap.Size = new System.Drawing.Size(649, 287);
             this.dGVPhieuNhap.TabIndex = 163;
             // 
             // label1
@@ -85,7 +89,7 @@
             // txtTotalPage
             // 
             this.txtTotalPage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalPage.Location = new System.Drawing.Point(660, 330);
+            this.txtTotalPage.Location = new System.Drawing.Point(738, 330);
             this.txtTotalPage.Name = "txtTotalPage";
             this.txtTotalPage.ReadOnly = true;
             this.txtTotalPage.Size = new System.Drawing.Size(37, 27);
@@ -96,7 +100,7 @@
             // txtPageNumber
             // 
             this.txtPageNumber.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPageNumber.Location = new System.Drawing.Point(604, 330);
+            this.txtPageNumber.Location = new System.Drawing.Point(682, 330);
             this.txtPageNumber.Name = "txtPageNumber";
             this.txtPageNumber.Size = new System.Drawing.Size(37, 27);
             this.txtPageNumber.TabIndex = 170;
@@ -108,7 +112,7 @@
             // 
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(643, 330);
+            this.label6.Location = new System.Drawing.Point(721, 330);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(15, 28);
             this.label6.TabIndex = 169;
@@ -123,7 +127,7 @@
             this.btnNhapHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhapHang.ForeColor = System.Drawing.Color.White;
             this.btnNhapHang.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapHang.Image")));
-            this.btnNhapHang.Location = new System.Drawing.Point(435, 380);
+            this.btnNhapHang.Location = new System.Drawing.Point(472, 365);
             this.btnNhapHang.Name = "btnNhapHang";
             this.btnNhapHang.Size = new System.Drawing.Size(128, 36);
             this.btnNhapHang.TabIndex = 180;
@@ -140,7 +144,7 @@
             this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirstPage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFirstPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFirstPage.Location = new System.Drawing.Point(552, 330);
+            this.btnFirstPage.Location = new System.Drawing.Point(630, 330);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(24, 24);
             this.btnFirstPage.TabIndex = 175;
@@ -155,7 +159,7 @@
             this.btnLastPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLastPage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLastPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLastPage.Location = new System.Drawing.Point(725, 330);
+            this.btnLastPage.Location = new System.Drawing.Point(803, 330);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(24, 24);
             this.btnLastPage.TabIndex = 174;
@@ -170,7 +174,7 @@
             this.btnPrevPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevPage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPrevPage.Location = new System.Drawing.Point(578, 330);
+            this.btnPrevPage.Location = new System.Drawing.Point(656, 330);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(24, 24);
             this.btnPrevPage.TabIndex = 173;
@@ -185,7 +189,7 @@
             this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextPage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnNextPage.Location = new System.Drawing.Point(699, 330);
+            this.btnNextPage.Location = new System.Drawing.Point(777, 330);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(24, 24);
             this.btnNextPage.TabIndex = 172;
@@ -200,7 +204,7 @@
             this.btnXoa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(569, 380);
+            this.btnXoa.Location = new System.Drawing.Point(606, 365);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(110, 36);
             this.btnXoa.TabIndex = 168;
@@ -216,7 +220,7 @@
             this.btnSua.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.Location = new System.Drawing.Point(685, 380);
+            this.btnSua.Location = new System.Drawing.Point(722, 365);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(110, 36);
             this.btnSua.TabIndex = 167;
@@ -233,7 +237,7 @@
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(801, 380);
+            this.btnThoat.Location = new System.Drawing.Point(838, 365);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(110, 36);
             this.btnThoat.TabIndex = 165;
@@ -412,7 +416,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 421);
+            this.ClientSize = new System.Drawing.Size(1023, 421);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNhapHang);

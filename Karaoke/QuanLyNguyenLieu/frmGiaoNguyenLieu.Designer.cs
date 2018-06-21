@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGiaoNguyenLieu));
             this.label3 = new System.Windows.Forms.Label();
             this.txtTenNguoi = new System.Windows.Forms.TextBox();
-            this.btnIn = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -54,23 +53,6 @@
             this.txtTenNguoi.Size = new System.Drawing.Size(175, 27);
             this.txtTenNguoi.TabIndex = 167;
             // 
-            // btnIn
-            // 
-            this.btnIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
-            this.btnIn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIn.ForeColor = System.Drawing.Color.White;
-            this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
-            this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnIn.Location = new System.Drawing.Point(78, 115);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(100, 36);
-            this.btnIn.TabIndex = 186;
-            this.btnIn.Text = " In";
-            this.btnIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnIn.UseVisualStyleBackColor = false;
-            // 
             // btnLuu
             // 
             this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
@@ -80,7 +62,7 @@
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLuu.Location = new System.Drawing.Point(184, 115);
+            this.btnLuu.Location = new System.Drawing.Point(149, 112);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(100, 36);
             this.btnLuu.TabIndex = 185;
@@ -106,7 +88,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 176);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnIn);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTenNguoi);
@@ -122,7 +103,6 @@
 
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTenNguoi;
-        private System.Windows.Forms.Button btnIn;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Label label1;
     }

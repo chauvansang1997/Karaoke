@@ -66,9 +66,18 @@ namespace Karaoke.GuiMonAn
             cmbLoaiMonTK.DisplayMember = "Ten";
             dtNguyenLieu = new DataTable();
             dGVMonAn.DataSource = dtNguyenLieu;
-            bindingSourceMonAn.Add(new MonAnDataSource());
+
+            pageNumber = 1;
+
+            txtPageNumber.Text = "1";
+            totalPage = BUS.MonAnBUS.DemMonAn("", "");
+            totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+            txtTotalPage.Text = totalPage.ToString();
+           
+            bindingSourceMonAn.DataSource = BUS.MonAnBUS.XemMonAnDataSource("", 0, pageNumber, pageSize);
+
             dGVMonAn.DataSource = bindingSourceMonAn;
-            bindingSourceMonAn.RemoveAt(0);
+            AddGridTableStyle();
             dGVMonAn.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dGVMonAn.Columns["Ten"].HeaderText = "Tên";
 
@@ -106,14 +115,9 @@ namespace Karaoke.GuiMonAn
             //  dGVNguyenLieu.Columns["Thanhtien"].ReadOnly = true;
             bSua = false;
             bThem = false;
-            pageNumber = 1;
-
-            txtPageNumber.Text = "1";
-            totalPage = BUS.MonAnBUS.DemMonAn("", "");
-            totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
-            txtTotalPage.Text = totalPage.ToString();
-            bindingSourceMonAn.DataSource = BUS.MonAnBUS.XemMonAnDataSource("", 0, pageNumber, pageSize);
-            AddGridTableStyle();
+         
+           
+           
         }
         private void resetDanhSach()
         {
@@ -155,18 +159,20 @@ namespace Karaoke.GuiMonAn
             btnThemMonAn.Enabled = enable;
             btnXoaMonAn.Enabled = enable;
             btnSuaMonAn.Enabled = enable;
+
         }
         private void enableControls(bool enable)
         {
 
             pBAnhMinhHoa.Enabled = enable;
-
             pBAnhMinhHoa.Enabled = enable;
             txtTenMonAn.Enabled = enable;
             cmbLoaiMon.Enabled = enable;
             txtGia.Enabled = enable;
             btnThemNguyenLieu.Enabled = enable;
             btnLayAnh.Enabled = enable;
+            btnLuu.Enabled = enable;
+            btnHuy.Enabled = enable;
         }
         private void btnThemNguyenLieu_Click(object sender, EventArgs e)
         {
@@ -216,7 +222,7 @@ namespace Karaoke.GuiMonAn
             {
                 bindingSource.RemoveCurrent();
             }
-            btnSuaMonAn.Enabled = true;
+           // btnSuaMonAn.Enabled = true;
             bThem = true;
         }
         /// <summary>
@@ -313,7 +319,7 @@ namespace Karaoke.GuiMonAn
                       MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
             }
             enableControls(false);
-            enableButton1(false);
+            //enableButton1(false);
             enableButton(true);
             tenHinhAnh = "";
             txtTenMonAn.Text = "";
@@ -334,7 +340,7 @@ namespace Karaoke.GuiMonAn
             {
                 enableControls(true);
                 enableButton(false);
-                btnSuaMonAn.Enabled = true;
+               // btnSuaMonAn.Enabled = true;
                 bSua = true;
             }
 
@@ -385,7 +391,7 @@ namespace Karaoke.GuiMonAn
         private void btnHuy_Click(object sender, EventArgs e)
         {
             enableControls(false);
-            enableButton1(false);
+            //enableButton1(false);
             enableButton(true);
             bThem = false;
             bSua = false;

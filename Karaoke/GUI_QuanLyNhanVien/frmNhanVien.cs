@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,10 @@ namespace Karaoke.GUI_QuanLyNhanVien
 {
     public partial class frmNhanVien : Form
     {
-
+		NhanVien nhanVien;
         private void LoadDataTable()
         {
             dGVDSNV.DataSource = BUS.NhanVienBUS.LoadNhanVien();
-
         }
 
         public void LoadComboBox()
@@ -29,14 +29,12 @@ namespace Karaoke.GUI_QuanLyNhanVien
         public frmNhanVien()
         {
             InitializeComponent();
-            LoadDataTable();
-            LoadComboBox();
+			nhanVien = new NhanVien();
         }
 
         private void btnTaoTK_Click(object sender, EventArgs e)
         {
             frmTaiKhoan TaoTaiKhoan = new frmTaiKhoan();
-            TaoTaiKhoan.ShowDialog();
             if (TaoTaiKhoan.ShowDialog() != DialogResult.OK)
             {
                 txtTaiKhoan.Text = TaoTaiKhoan.TheValue;
@@ -48,93 +46,112 @@ namespace Karaoke.GUI_QuanLyNhanVien
             dGVDSNV.DataSource = BUS.NhanVienBUS.TraCuuNhanVien(new DTO.NhanVien() { MaNV = txtMaNV.Text, HoTen = txtTenNV.Text, SoDienThoai = txtSDT.Text, DiaChi = txtDiaChi.Text }, cbxMaCVU.Text, txtTaiKhoan.Text);
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            if (txtMaNV.Text == "" || txtTaiKhoan.Text == "" || cbxMaCVU.Text == "" || txtTenNV.Text == "" || txtSDT.Text == "" || txtDiaChi.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập đủ thông tin nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            if (BUS.NhanVienBUS.KiemTraNhanVien(txtMaNV.Text))
-            {
-                MessageBox.Show("Mã nhân viên đã tồn tại, vui lòng chọn lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            if (!BUS.TaiKhoanBUS.KiemTraTaiKhoan(txtTaiKhoan.Text))
-            {
-                MessageBox.Show("Tài khoản đăng nhập không chính xác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            if (!BUS.NhanVienBUS.ThemNhanVien(new DTO.NhanVien() { MaNV = txtMaNV.Text, HoTen = txtTenNV.Text, SoDienThoai = txtSDT.Text, DiaChi = txtDiaChi.Text }, cbxMaCVU.Text, txtTaiKhoan.Text))
-            {
-                MessageBox.Show("Thêm nhân viên thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            else
-            {
-                MessageBox.Show("Thêm nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                LoadDataTable();
-                return;
-            }
-        }
-
-        private void btnCapNhat_Click(object sender, EventArgs e)
-        {
-            if (txtMaNV.Text == "" || txtTaiKhoan.Text == "" || cbxMaCVU.Text == "" || txtTenNV.Text == "" || txtSDT.Text == "" || txtDiaChi.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập đủ thông tin nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            if (!BUS.NhanVienBUS.CapNhatNhanVien(new DTO.NhanVien() { MaNV = txtMaNV.Text, HoTen = txtTenNV.Text, SoDienThoai = txtSDT.Text, DiaChi = txtDiaChi.Text }, cbxMaCVU.Text))
-            {
-                MessageBox.Show("Cập nhật nhân viên thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                LoadDataTable();
-                return;
-            }
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (!BUS.NhanVienBUS.XoaNhanVien(txtMaNV.Text, txtTaiKhoan.Text))
-            {
-                MessageBox.Show("Xóa nhân viên thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            else
-            {
-                MessageBox.Show("Xóa nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                LoadDataTable();
-                return;
-            }
-        }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void dGVDSNV_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = this.dGVDSNV.Rows[e.RowIndex];
+		private void frmNhanVien_Load(object sender, EventArgs e)
+		{
+			LoadDataTable();
+			dGVDSNV.DataSource = BUS.NhanVienBUS.LoadNhanVien();
+			bindingData();
+			dGVDSNV.Columns[0].HeaderCell.Value = "Mã NV";
+			dGVDSNV.Columns[1].HeaderCell.Value = "Họ tên";
+			dGVDSNV.Columns[2].HeaderCell.Value = "SĐT";
+			dGVDSNV.Columns[3].HeaderCell.Value = "Địa chỉ";
+			dGVDSNV.Columns[4].HeaderCell.Value = "Mã CV";
+			dGVDSNV.Columns[4].Visible = false;
+			dGVDSNV.Columns[5].HeaderCell.Value = "Tên CV";
+			dGVDSNV.Columns[6].HeaderCell.Value = "Tên TK";
+			dGVDSNV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			dGVDSNV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			dGVDSNV.ReadOnly = true;
+			bindingToCombox(dGVDSNV.DataSource);
+		}
 
-                txtMaNV.Text = row.Cells[0].Value.ToString();
-                txtTaiKhoan.Text = row.Cells[1].Value.ToString();
-                cbxMaCVU.Text = row.Cells[2].Value.ToString();
-                txtTenNV.Text = row.Cells[3].Value.ToString();
-                txtSDT.Text = row.Cells[4].Value.ToString();
-                txtDiaChi.Text = row.Cells[5].Value.ToString();
-            }
-        }
-    }
+		private void bindingToCombox(object dataSource)
+		{
+			txtMaNV.DataBindings.Clear();
+			txtMaNV.DataBindings.Add("Text", dataSource, "maNV");
+			txtTenNV.DataBindings.Clear();
+			txtTenNV.DataBindings.Add("Text", dataSource, "tenNV");
+			txtSDT.DataBindings.Clear();
+			txtSDT.DataBindings.Add("Text", dataSource, "sdt");
+			txtDiaChi.DataBindings.Clear();
+			txtDiaChi.DataBindings.Add("Text", dataSource, "diaChi");
+			txtTaiKhoan.DataBindings.Clear();
+			txtTaiKhoan.DataBindings.Add("Text", dataSource, "tenTK");
+			cbxMaCVU.DataBindings.Clear();
+			cbxMaCVU.DataBindings.Add("Text", dataSource, "tenCV");
+		}
+
+		private void bindingData()
+		{
+			DataTable tableChucVu = BUS.ChucVuBUS.LoadMaChucVu();
+			cbxMaCVU.DropDownStyle = ComboBoxStyle.DropDownList;
+			cbxMaCVU.DisplayMember = "tenCV";
+			cbxMaCVU.ValueMember = "maCV";
+			cbxMaCVU.DataSource = tableChucVu;
+
+		}
+
+		private void btnThem_Click(object sender, EventArgs e)
+		{
+			nhanVien.MaNV = txtMaNV.Text;
+			nhanVien.HoTen = txtTenNV.Text;
+			nhanVien.SoDienThoai = txtSDT.Text;
+			nhanVien.DiaChi = txtDiaChi.Text;
+			string maCV = cbxMaCVU.SelectedValue.ToString();
+			string tenTK = txtTaiKhoan.Text.Trim();
+			if (BUS.NhanVienBUS.ThemNhanVien(nhanVien, maCV, tenTK))
+			{
+				MessageBox.Show("Thêm nhân viên thành công", "Thêm nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				frmNhanVien_Load(sender, e);
+			}
+			else
+			{
+				MessageBox.Show("Thêm nhân viên thất bại", "Thêm nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void btnCapNhat_Click(object sender, EventArgs e)
+		{
+			nhanVien.MaNV = txtMaNV.Text;
+			nhanVien.HoTen = txtTenNV.Text;
+			nhanVien.SoDienThoai = txtSDT.Text;
+			nhanVien.DiaChi = txtDiaChi.Text;
+			string maCV = cbxMaCVU.SelectedValue.ToString();
+			string tenTK = txtTaiKhoan.Text.Trim();
+			if (BUS.NhanVienBUS.CapNhatNhanVien(nhanVien, maCV, tenTK))
+			{
+				MessageBox.Show("Cập nhật nhân viên thành công", "Cập nhật nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				frmNhanVien_Load(sender, e);
+			}
+			else
+			{
+				MessageBox.Show("Cập nhật nhân viên thất bại", "Cập nhật nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void btnXoa_Click(object sender, EventArgs e)
+		{
+			nhanVien.MaNV = txtMaNV.Text;
+			nhanVien.HoTen = txtTenNV.Text;
+			nhanVien.SoDienThoai = txtSDT.Text;
+			nhanVien.DiaChi = txtDiaChi.Text;
+			string maCV = cbxMaCVU.SelectedValue.ToString();
+			string tenTK = txtTaiKhoan.Text.Trim();
+			if (BUS.NhanVienBUS.XoaNhanVien(nhanVien.MaNV,tenTK))
+			{
+				MessageBox.Show("Xoá viên thành công", "Xoá nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				frmNhanVien_Load(sender, e);
+			}
+			else
+			{
+				MessageBox.Show("Xoá nhân viên thất bại", "Xoá nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+	}
 }

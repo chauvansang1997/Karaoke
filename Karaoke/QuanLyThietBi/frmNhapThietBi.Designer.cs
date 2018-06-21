@@ -62,6 +62,10 @@
             // 
             // dGVPhieuNhap
             // 
+            this.dGVPhieuNhap.AllowUserToAddRows = false;
+            this.dGVPhieuNhap.AllowUserToDeleteRows = false;
+            this.dGVPhieuNhap.AllowUserToResizeColumns = false;
+            this.dGVPhieuNhap.AllowUserToResizeRows = false;
             this.dGVPhieuNhap.BackgroundColor = System.Drawing.Color.White;
             this.dGVPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVPhieuNhap.Location = new System.Drawing.Point(354, 36);
@@ -69,7 +73,7 @@
             this.dGVPhieuNhap.Name = "dGVPhieuNhap";
             this.dGVPhieuNhap.RowHeadersVisible = false;
             this.dGVPhieuNhap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGVPhieuNhap.Size = new System.Drawing.Size(558, 301);
+            this.dGVPhieuNhap.Size = new System.Drawing.Size(664, 301);
             this.dGVPhieuNhap.TabIndex = 163;
             // 
             // label1
@@ -85,7 +89,7 @@
             // txtTotalPage
             // 
             this.txtTotalPage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalPage.Location = new System.Drawing.Point(646, 343);
+            this.txtTotalPage.Location = new System.Drawing.Point(713, 343);
             this.txtTotalPage.Name = "txtTotalPage";
             this.txtTotalPage.ReadOnly = true;
             this.txtTotalPage.Size = new System.Drawing.Size(37, 27);
@@ -96,7 +100,7 @@
             // txtPageNumber
             // 
             this.txtPageNumber.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPageNumber.Location = new System.Drawing.Point(590, 343);
+            this.txtPageNumber.Location = new System.Drawing.Point(657, 343);
             this.txtPageNumber.Name = "txtPageNumber";
             this.txtPageNumber.Size = new System.Drawing.Size(37, 27);
             this.txtPageNumber.TabIndex = 170;
@@ -108,7 +112,7 @@
             // 
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(629, 343);
+            this.label6.Location = new System.Drawing.Point(696, 343);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(15, 28);
             this.label6.TabIndex = 169;
@@ -308,7 +312,7 @@
             this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirstPage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFirstPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFirstPage.Location = new System.Drawing.Point(538, 343);
+            this.btnFirstPage.Location = new System.Drawing.Point(605, 343);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(24, 24);
             this.btnFirstPage.TabIndex = 175;
@@ -323,7 +327,7 @@
             this.btnLastPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLastPage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLastPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLastPage.Location = new System.Drawing.Point(711, 343);
+            this.btnLastPage.Location = new System.Drawing.Point(778, 343);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(24, 24);
             this.btnLastPage.TabIndex = 174;
@@ -338,7 +342,7 @@
             this.btnPrevPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevPage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPrevPage.Location = new System.Drawing.Point(564, 343);
+            this.btnPrevPage.Location = new System.Drawing.Point(631, 343);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(24, 24);
             this.btnPrevPage.TabIndex = 173;
@@ -353,7 +357,7 @@
             this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextPage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnNextPage.Location = new System.Drawing.Point(685, 343);
+            this.btnNextPage.Location = new System.Drawing.Point(752, 343);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(24, 24);
             this.btnNextPage.TabIndex = 172;
@@ -389,7 +393,7 @@
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(110, 36);
             this.btnSua.TabIndex = 167;
-            this.btnSua.Text = " Xem";
+            this.btnSua.Text = " Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -414,7 +418,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 422);
+            this.ClientSize = new System.Drawing.Size(1030, 422);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNhapHang);

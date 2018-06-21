@@ -21,7 +21,7 @@ namespace DAO
             // Truyền tham số
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                
+
                 new SqlParameter("@tenTB", SqlDbType.NVarChar) {IsNullable = false, Value = tenTB},
                 new SqlParameter("@maNCC", SqlDbType.NVarChar) {IsNullable = false, Value = maNCC},
                 new SqlParameter("@dvt", SqlDbType.NVarChar) {IsNullable = false, Value = dvt},
@@ -51,7 +51,7 @@ namespace DAO
             // Truyền tham số
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                  new SqlParameter("@ma", SqlDbType.NVarChar) {IsNullable = false, Value = thietBi.Ma},
+                new SqlParameter("@ma", SqlDbType.NVarChar) {IsNullable = false, Value = thietBi.Ma},
                 new SqlParameter("@tenTB", SqlDbType.NVarChar) {IsNullable = false, Value = tenTB},
                 new SqlParameter("@maNCC", SqlDbType.NVarChar) {IsNullable = false, Value = maNCC},
                 new SqlParameter("@dvt", SqlDbType.NVarChar) {IsNullable = false, Value = dvt},
@@ -210,6 +210,7 @@ namespace DAO
                     NguoiGiao = x[5].ToString(),
                     TenNhanVien = x[6].ToString(),
                     SoDienThoai = x[7].ToString(),
+                    TenNhaCungCap= x[8].ToString(),
                 });
             }
             catch (Exception ex)
@@ -275,6 +276,51 @@ namespace DAO
             }
             return data;
         }
+        public static int DemThietBiSuDung(string tenThietBi, string maNhaCungCap, List<string> exceptList)
+        {
+            string query = "EXEC uspDemThietBiExcepList @tenThietBi,@maNhaCungCap,@danhSachLoaiTru";
+            string danhSachLoaiTru= exceptList==null?"": String.Join("|", exceptList);
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@tenThietBi",SqlDbType.NVarChar){IsNullable=true,Value=tenThietBi },
+                new SqlParameter("@maNhaCungCap",SqlDbType.VarChar){IsNullable=true,Value=maNhaCungCap },
+                new SqlParameter("@danhSachLoaiTru",SqlDbType.VarChar){IsNullable=true,Value=danhSachLoaiTru }
+
+            };
+            int count = 0;
+            try
+            {
+                count = int.Parse(Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            return count;
+        }
+        public static DataTable XemThietBiSuDung(string tenThietBi, string maNhaCungCap, int pageNumber, int pageSize, List<string> exceptList)
+        {
+            string query = "EXEC uspXemThietBiExcepList @tenThietBi,@maNhaCungCap,@danhSachLoaiTru,@pageNumber,@pageSize";
+            string danhSachLoaiTru = exceptList == null ? "" : String.Join("|", exceptList);
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                    new SqlParameter("@tenThietBi",SqlDbType.NVarChar){IsNullable=false,Value=tenThietBi },
+                    new SqlParameter("@maNhaCungCap",SqlDbType.NVarChar){IsNullable=false,Value=maNhaCungCap },
+                    new SqlParameter("@danhSachLoaiTru",SqlDbType.VarChar){IsNullable=true,Value=danhSachLoaiTru },
+                    new SqlParameter("@pageNumber",SqlDbType.Int){IsNullable=false,Value=pageNumber },
+                    new SqlParameter("@pageSize",SqlDbType.Int){IsNullable=false,Value=pageSize },
+            };
+            DataTable data = new DataTable();
+            try
+            {
+                data = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            return data;
+        }
         public static List<ThietBi> XemThietBi(string tenThietBi, string maNhaCungCap, int pageNumber, int pageSize)
         {
             string query = "EXEC usp_LoadThietBi @tenThietBi,@maNhaCungCap,@pageNumber,@pageSize";
@@ -287,10 +333,10 @@ namespace DAO
                     new SqlParameter("@pageSize",SqlDbType.Int){IsNullable=false,Value=pageSize },
                 };
             DataTable data = new DataTable();
-            List<ThietBi> list=null;
+            List<ThietBi> list = null;
             try
             {
-                
+
 
                 list = Dataprovider.ExcuteQuery(query, parameters.ToArray()).AsEnumerable().ToList().ConvertAll(x =>
                 new ThietBi()
@@ -347,7 +393,7 @@ namespace DAO
                 new SqlParameter("@soPhieuDat",SqlDbType.VarChar){IsNullable=false,Value=soPhieuDat },
 
             };
-            DataTable table= null;
+            DataTable table = null;
             try
             {
                 table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
@@ -359,7 +405,7 @@ namespace DAO
             return table;
 
         }
-        public static DataTable LoadThietBi(string tenThietBi,string maNhaCungCap,int pageNumber, int pageSize)
+        public static DataTable LoadThietBi(string tenThietBi, string maNhaCungCap, int pageNumber, int pageSize)
         {
             DataTable data = new DataTable();
             try
@@ -374,7 +420,7 @@ namespace DAO
                     new SqlParameter("@pageNumber",SqlDbType.Int){IsNullable=false,Value=pageNumber },
                     new SqlParameter("@pageSize",SqlDbType.Int){IsNullable=false,Value=pageSize },
                 };
-                data = Dataprovider.ExcuteQuery(query,parameters.ToArray());
+                data = Dataprovider.ExcuteQuery(query, parameters.ToArray());
             }
             catch (Exception ex)
             {
@@ -401,6 +447,162 @@ namespace DAO
                 Utility.Log(ex);
             }
             return count;
+        }
+        public static bool ThemSuDungThietBi(string lyDo, List<string> listMa, List<string> listSoLuong)
+        {
+            string query = "EXEC uspThemSuDungThietBi @lyDo,@danhSachThietBi,@danhSachSoLuong";
+
+            string danhSachMa = String.Join("|", listMa);
+            string danhSachSoLuong = String.Join("|", listSoLuong);
+
+            //truyền tham số vào câu truy vấn
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@lyDo",SqlDbType.NVarChar){IsNullable=false,Value=lyDo },
+                new SqlParameter("@danhSachThietBi",SqlDbType.NVarChar){IsNullable=false,Value=danhSachMa },
+                new SqlParameter("@danhSachSoLuong",SqlDbType.NVarChar){IsNullable=false,Value=danhSachSoLuong },
+
+            };
+            try
+            {
+                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+                return false;
+            }
+
+            return true;
+        }
+        public static bool CapNhatSuDungThietBi(string maSuDung,string lyDo, List<string> listMa, List<string> listSoLuong)
+        {
+            string query = "EXEC uspCapNhatSuDungThietBi @maSuDung,@lyDo,@danhSachThietBi,@danhSachSoLuong";
+
+            string danhSachMa = String.Join("|", listMa);
+            string danhSachSoLuong = String.Join("|", listSoLuong);
+
+            //truyền tham số vào câu truy vấn
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                 new SqlParameter("@maSuDung",SqlDbType.NVarChar){IsNullable=false,Value=maSuDung },
+                new SqlParameter("@lyDo",SqlDbType.NVarChar){IsNullable=false,Value=lyDo },
+                new SqlParameter("@danhSachThietBi",SqlDbType.NVarChar){IsNullable=false,Value=danhSachMa },
+                new SqlParameter("@danhSachSoLuong",SqlDbType.NVarChar){IsNullable=false,Value=danhSachSoLuong },
+
+            };
+            try
+            {
+                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+                return false;
+            }
+
+            return true;
+        }
+        public static DataTable XemSuDungThietBi(string lyDo,string tenThietBi, int pageNumber, int pageSize)
+        {
+            string query = "EXEC uspXemSuDungThietBi @lyDo,@tenThietBi,@pageNumber,@pageSize";
+
+
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+                {
+                      new SqlParameter("@lyDo",SqlDbType.NVarChar){IsNullable=false,Value=lyDo },
+                     new SqlParameter("@tenThietBi",SqlDbType.NVarChar){IsNullable=false,Value=tenThietBi },
+                    new SqlParameter("@pageNumber",SqlDbType.Int){IsNullable=false,Value=pageNumber },
+                    new SqlParameter("@pageSize",SqlDbType.Int){IsNullable=false,Value=pageSize },
+                };
+            DataTable data = null;
+            try
+            {
+
+                data = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            return data;
+        }
+        public static int DemSuDungThietBi(string lyDo, string tenThietBi)
+        {
+            string query = "EXEC uspDemSuDungThietBi @lyDo,@tenThietBi";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+                {
+                     new SqlParameter("@lyDo",SqlDbType.NVarChar){IsNullable=false,Value=lyDo },
+                     new SqlParameter("@tenThietBi",SqlDbType.NVarChar){IsNullable=false,Value=tenThietBi },
+                };
+            int count = 0;
+            try
+            {
+                count = int.Parse(Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            return count;
+        }
+
+        public static List<ThietBiDataSource> XemChiTietSuDungThietBi(string maSuDung)
+        {
+            string query = "EXEC uspXemChiTietSuDungThietBi @maSuDung";
+
+
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+                {
+                     new SqlParameter("@maSuDung",SqlDbType.NVarChar){IsNullable=false,Value=maSuDung },
+                };
+            List<ThietBiDataSource> list = null;
+            try
+            {
+                list = Dataprovider.ExcuteQuery(query, parameters.ToArray()).AsEnumerable().ToList().ConvertAll(x =>
+                  new ThietBiDataSource()
+                  {
+                      MaThietBi = x[0].ToString(),
+                      TenThietBi = x[1].ToString(),
+                      SoLuong = x[3].ToString(),
+                      DonGia = x[2].ToString(),
+                      TenNhaCungCap = x[4].ToString(),
+                  });
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            return list;
+        }
+        public static bool KiemTraTonThietBi(string maThietBi, int soLuong,int soLuongCu)
+        {
+            string query = "EXEC uspKiemTraTon @maThietBi,@soLuong,@soLuongCu";
+
+
+            //truyền tham số vào câu truy vấn
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@maThietBi",SqlDbType.NVarChar){IsNullable=false,Value=maThietBi },
+                new SqlParameter("@soLuong",SqlDbType.Int){IsNullable=false,Value=soLuong },
+                new SqlParameter("@soLuongCu",SqlDbType.Int){IsNullable=false,Value=soLuongCu },
+
+            };
+            int num = 0;
+            try
+            {
+                num= int.Parse(Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+                return false;
+            }
+
+            return num > 0? true : false;
         }
     }
 }

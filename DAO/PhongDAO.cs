@@ -13,13 +13,12 @@ namespace DAO
     {
         public static bool ThemPhong(Phong phong)
         {
-            string query = "insert into PHONG(MAPHONG,MALOAIPHONG,TINHTRANG) VALUES(@maphong,@maloaiphong,0)";
+            string query = "EXEC uspTaoPhong @maloaiphong";
 
             string ma = TaoMa.TaoMaPhong();
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@maphong",SqlDbType.NVarChar){ Value=ma  },
                 new SqlParameter("@maloaiphong",SqlDbType.NVarChar){Value=phong.TenLoai }
 
             };

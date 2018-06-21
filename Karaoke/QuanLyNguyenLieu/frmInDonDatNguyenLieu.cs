@@ -38,7 +38,7 @@ namespace Karaoke.QuanLyNguyenLieu
                 phieuNhapHang.DataDefinition.FormulaFields["NhaCungCap"].Text = "'" + nhaCungCap.Ten + "'";
                 phieuNhapHang.DataDefinition.FormulaFields["DiaChi"].Text = "'" + nhaCungCap.DiaChi + "'";
                 phieuNhapHang.DataDefinition.FormulaFields["SoDienThoai"].Text = "'" + nhaCungCap.SDT + "'";
-                phieuNhapHang.DataDefinition.FormulaFields["NguoiDat"].Text = "'" + phieuNhap.SoPhieu + "'";
+                phieuNhapHang.DataDefinition.FormulaFields["NguoiDat"].Text = "'" + phieuNhap.TenNhanVien + "'";
                 phieuNhapHang.DataDefinition.FormulaFields["NgayDat"].Text = "'" + phieuNhap.NgayDat + "'";
                 crystalReportViewer1.ReportSource = phieuNhapHang;
             }

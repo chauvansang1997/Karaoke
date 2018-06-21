@@ -474,15 +474,12 @@ namespace Karaoke.QuanLyThietBi
                 bindingSource.RemoveAt(rowToMove.Index);
 
             }
-
-
-
         }
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            frmInDonDatNguyenLieu inDonDatNguyenLieu = new frmInDonDatNguyenLieu(nhaCungCap, phieuNhapHang);
-            inDonDatNguyenLieu.ShowDialog();
+            frmInDonNhapThietBi inDonNhapThietBi = new frmInDonNhapThietBi(nhaCungCap, phieuNhapHang);
+            inDonNhapThietBi.ShowDialog();
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)

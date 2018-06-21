@@ -24,7 +24,7 @@ namespace Karaoke.GuiMonAn
     }
     public partial class frmGoiMon : Form
     {
-        private const int pageSize = 2;
+        private const int pageSize = 5;
         private int pageNumber;
         private int totalPage;
         private List<FoodLayout> listFoodLayout;
@@ -65,7 +65,7 @@ namespace Karaoke.GuiMonAn
                 this.tongCong = value;
                 txtTongCong.Text = value.ToString();
                 txtThanhTien.Text = (value - (value * (giamGia/100))).ToString();
-                tienGiamGia = (int)(value * giamGia);
+                tienGiamGia = (int)(value * giamGia / 100);
             }
         }
         private frmPhongKaraoke phongKaraoke;

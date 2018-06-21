@@ -106,7 +106,7 @@ namespace Karaoke.QuanLySanPham
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(448, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(491, 526);
+            this.panel1.Size = new System.Drawing.Size(558, 526);
             this.panel1.TabIndex = 0;
             // 
             // cmbNhaCCTK
@@ -143,7 +143,7 @@ namespace Karaoke.QuanLySanPham
             this.btnXoa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(137, 479);
+            this.btnXoa.Location = new System.Drawing.Point(169, 479);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(110, 36);
             this.btnXoa.TabIndex = 202;
@@ -162,7 +162,7 @@ namespace Karaoke.QuanLySanPham
             this.btnSua.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.Location = new System.Drawing.Point(253, 479);
+            this.btnSua.Location = new System.Drawing.Point(285, 479);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(110, 36);
             this.btnSua.TabIndex = 201;
@@ -181,7 +181,7 @@ namespace Karaoke.QuanLySanPham
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(369, 479);
+            this.btnThoat.Location = new System.Drawing.Point(401, 479);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(110, 36);
             this.btnThoat.TabIndex = 199;
@@ -200,7 +200,7 @@ namespace Karaoke.QuanLySanPham
             this.btnThem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.Location = new System.Drawing.Point(21, 479);
+            this.btnThem.Location = new System.Drawing.Point(53, 479);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(110, 36);
             this.btnThem.TabIndex = 200;
@@ -233,7 +233,7 @@ namespace Karaoke.QuanLySanPham
             // txtTotalPage
             // 
             this.txtTotalPage.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalPage.Location = new System.Drawing.Point(250, 444);
+            this.txtTotalPage.Location = new System.Drawing.Point(307, 442);
             this.txtTotalPage.Name = "txtTotalPage";
             this.txtTotalPage.ReadOnly = true;
             this.txtTotalPage.Size = new System.Drawing.Size(37, 23);
@@ -250,7 +250,7 @@ namespace Karaoke.QuanLySanPham
             this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirstPage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFirstPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFirstPage.Location = new System.Drawing.Point(142, 444);
+            this.btnFirstPage.Location = new System.Drawing.Point(199, 442);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(24, 24);
             this.btnFirstPage.TabIndex = 197;
@@ -271,7 +271,7 @@ namespace Karaoke.QuanLySanPham
             // txtPageNumber
             // 
             this.txtPageNumber.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPageNumber.Location = new System.Drawing.Point(194, 444);
+            this.txtPageNumber.Location = new System.Drawing.Point(251, 442);
             this.txtPageNumber.Name = "txtPageNumber";
             this.txtPageNumber.Size = new System.Drawing.Size(37, 23);
             this.txtPageNumber.TabIndex = 192;
@@ -288,7 +288,7 @@ namespace Karaoke.QuanLySanPham
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 22);
             this.label7.TabIndex = 182;
-            this.label7.Text = "Loại món:";
+            this.label7.Text = "Loại:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnLastPage
@@ -300,7 +300,7 @@ namespace Karaoke.QuanLySanPham
             this.btnLastPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLastPage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLastPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLastPage.Location = new System.Drawing.Point(315, 444);
+            this.btnLastPage.Location = new System.Drawing.Point(372, 442);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(24, 24);
             this.btnLastPage.TabIndex = 196;
@@ -323,7 +323,7 @@ namespace Karaoke.QuanLySanPham
             // 
             this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(233, 444);
+            this.label5.Location = new System.Drawing.Point(290, 442);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(15, 28);
             this.label5.TabIndex = 191;
@@ -349,7 +349,7 @@ namespace Karaoke.QuanLySanPham
             this.btnPrevPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevPage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPrevPage.Location = new System.Drawing.Point(168, 444);
+            this.btnPrevPage.Location = new System.Drawing.Point(225, 442);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(24, 24);
             this.btnPrevPage.TabIndex = 195;
@@ -365,7 +365,7 @@ namespace Karaoke.QuanLySanPham
             this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextPage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextPage.ForeColor = System.Drawing.Color.Transparent;
-            this.btnNextPage.Location = new System.Drawing.Point(289, 444);
+            this.btnNextPage.Location = new System.Drawing.Point(346, 442);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(24, 24);
             this.btnNextPage.TabIndex = 194;
@@ -374,12 +374,19 @@ namespace Karaoke.QuanLySanPham
             // 
             // dGVDanhSach
             // 
+            this.dGVDanhSach.AllowUserToAddRows = false;
+            this.dGVDanhSach.AllowUserToDeleteRows = false;
+            this.dGVDanhSach.AllowUserToResizeColumns = false;
+            this.dGVDanhSach.AllowUserToResizeRows = false;
             this.dGVDanhSach.BackgroundColor = System.Drawing.Color.White;
             this.dGVDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVDanhSach.Location = new System.Drawing.Point(9, 102);
+            this.dGVDanhSach.MultiSelect = false;
             this.dGVDanhSach.Name = "dGVDanhSach";
+            this.dGVDanhSach.ReadOnly = true;
             this.dGVDanhSach.RowHeadersVisible = false;
-            this.dGVDanhSach.Size = new System.Drawing.Size(470, 334);
+            this.dGVDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGVDanhSach.Size = new System.Drawing.Size(521, 334);
             this.dGVDanhSach.TabIndex = 0;
             this.dGVDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVDanhSach_CellClick);
             // 
@@ -670,7 +677,7 @@ namespace Karaoke.QuanLySanPham
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(939, 526);
+            this.ClientSize = new System.Drawing.Size(1018, 526);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

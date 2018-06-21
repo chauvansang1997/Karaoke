@@ -49,6 +49,8 @@ namespace Karaoke.NguyenLieu
             dGVPhieuNhap.Columns["SoPhieu"].HeaderText = "Số phiếu";
             dGVPhieuNhap.Columns["MaNhanVien"].Visible = false;
             dGVPhieuNhap.Columns["NgayDat"].HeaderText = "Ngày đặt";
+            dGVPhieuNhap.Columns["TenNhaCungCap"].HeaderText = "Tên nhà cung cấp";
+            dGVPhieuNhap.Columns["MaNhaCungCap"].Visible = false;
             dGVPhieuNhap.Columns["NgayGiao"].HeaderText = "Ngày giao";
             dGVPhieuNhap.Columns["ThanhTien"].HeaderText = "Thành tiền";
             dGVPhieuNhap.Columns["NguoiGiao"].HeaderText = "Người giao hàng";
@@ -58,16 +60,22 @@ namespace Karaoke.NguyenLieu
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn lập phiếu không?", "Xác nhận", MessageBoxButtons.YesNoCancel);
+            DialogResult result = MessageBox.Show("Bạn có muốn lập phiếu không?", "Xác nhận", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 DTO.NhaCungCap nhaCungCap = ((DTO.NhaCungCap)cmbNhaCungCap.SelectedValue);
-                PhieuNhapHang soPhieuNhap = BUS.NguyenLieuBUS.LapPhieuNhap(nhaCungCap.MaNCC, "NV001");
+                PhieuNhapHang soPhieuNhap = BUS.NguyenLieuBUS.LapPhieuNhap(nhaCungCap.MaNCC, User.NhanVien.MaNV);
                 if (soPhieuNhap != null)
                 {
-                    MessageBox.Show("Đặt phòng thành công");
+                    MessageBox.Show("Lập phiếu thành công");
                     frmNhapCTNguyenLieu nhapCTNguyenLieu = new frmNhapCTNguyenLieu(nhaCungCap, soPhieuNhap);
                     nhapCTNguyenLieu.ShowDialog();
+                    pageNumber = 1;
+                    txtPageNumber.Text = "1";
+                    totalPage = BUS.NguyenLieuBUS.DemPhieuNhapNguyenLieu(rbChuaGiao.Checked ? 0 : 1);
+                    totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+                    txtTotalPage.Text = totalPage.ToString();
+                    bindingSource.DataSource = BUS.NguyenLieuBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
                 }
                 else
                 {

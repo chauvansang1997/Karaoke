@@ -246,7 +246,7 @@ namespace Karaoke.PhongKaoraoke
         }
         private void enableControls(bool enable)
         {
-            txtTenNL.Enabled = enable;
+            //txtTenNL.Enabled = enable;
             cmbNhaCC.Enabled = enable;
             btnLuu.Enabled = enable;
             btnHuy.Enabled = enable;
@@ -255,7 +255,7 @@ namespace Karaoke.PhongKaoraoke
         {
             enableControls(true);
             bThem = true;
-            txtTenNL.Text = "";
+            //txtTenNL.Text = "";
         }
 
         private void btnLuu_Click(object sender, EventArgs e)

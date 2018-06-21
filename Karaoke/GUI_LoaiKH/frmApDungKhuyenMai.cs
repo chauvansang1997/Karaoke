@@ -380,6 +380,7 @@ namespace Karaoke.GUI_LoaiKH
             if(e.ColumnIndex ==0 && e.RowIndex >= 0)
             {
                 dGVLoaiKhachHang.Rows.RemoveAt(e.RowIndex);
+
             }
         }
     }
