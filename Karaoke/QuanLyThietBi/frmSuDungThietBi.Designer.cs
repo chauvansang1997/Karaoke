@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSuDungThietBi));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnThoat = new System.Windows.Forms.Button();
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
@@ -37,7 +37,7 @@
             this.dGVDanhSach = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtTenKMTK = new System.Windows.Forms.TextBox();
+            this.txtTenLyDoTK = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtLyDoSuDung = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTenThietBi = new System.Windows.Forms.TextBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
             this.btnFirstPage = new System.Windows.Forms.Button();
@@ -134,8 +134,8 @@
             this.dGVDanhSach.Name = "dGVDanhSach";
             this.dGVDanhSach.ReadOnly = true;
             this.dGVDanhSach.RowHeadersVisible = false;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.dGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGVDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVDanhSach.Size = new System.Drawing.Size(638, 341);
             this.dGVDanhSach.TabIndex = 149;
@@ -166,14 +166,14 @@
             this.label7.Text = "Tên thiết bị:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtTenKMTK
+            // txtTenLyDoTK
             // 
-            this.txtTenKMTK.BackColor = System.Drawing.Color.White;
-            this.txtTenKMTK.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenKMTK.Location = new System.Drawing.Point(76, 24);
-            this.txtTenKMTK.Name = "txtTenKMTK";
-            this.txtTenKMTK.Size = new System.Drawing.Size(235, 27);
-            this.txtTenKMTK.TabIndex = 161;
+            this.txtTenLyDoTK.BackColor = System.Drawing.Color.White;
+            this.txtTenLyDoTK.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenLyDoTK.Location = new System.Drawing.Point(76, 24);
+            this.txtTenLyDoTK.Name = "txtTenLyDoTK";
+            this.txtTenLyDoTK.Size = new System.Drawing.Size(235, 27);
+            this.txtTenLyDoTK.TabIndex = 161;
             // 
             // panel1
             // 
@@ -228,7 +228,7 @@
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.splitContainer.Panel2.Controls.Add(this.textBox1);
+            this.splitContainer.Panel2.Controls.Add(this.txtTenThietBi);
             this.splitContainer.Panel2.Controls.Add(this.btnXoa);
             this.splitContainer.Panel2.Controls.Add(this.btnFind);
             this.splitContainer.Panel2.Controls.Add(this.txtTotalPage);
@@ -238,7 +238,7 @@
             this.splitContainer.Panel2.Controls.Add(this.btnHuy);
             this.splitContainer.Panel2.Controls.Add(this.btnThoat);
             this.splitContainer.Panel2.Controls.Add(this.btnLuu);
-            this.splitContainer.Panel2.Controls.Add(this.txtTenKMTK);
+            this.splitContainer.Panel2.Controls.Add(this.txtTenLyDoTK);
             this.splitContainer.Panel2.Controls.Add(this.label11);
             this.splitContainer.Panel2.Controls.Add(this.txtPageNumber);
             this.splitContainer.Panel2.Controls.Add(this.btnThem);
@@ -263,6 +263,7 @@
             this.dGVThietBi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVThietBi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1});
+            this.dGVThietBi.Enabled = false;
             this.dGVThietBi.Location = new System.Drawing.Point(52, 155);
             this.dGVThietBi.Name = "dGVThietBi";
             this.dGVThietBi.RowHeadersVisible = false;
@@ -322,14 +323,14 @@
             this.txtLyDoSuDung.Size = new System.Drawing.Size(368, 27);
             this.txtLyDoSuDung.TabIndex = 162;
             // 
-            // textBox1
+            // txtTenThietBi
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(414, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(235, 27);
-            this.textBox1.TabIndex = 194;
+            this.txtTenThietBi.BackColor = System.Drawing.Color.White;
+            this.txtTenThietBi.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenThietBi.Location = new System.Drawing.Point(414, 24);
+            this.txtTenThietBi.Name = "txtTenThietBi";
+            this.txtTenThietBi.Size = new System.Drawing.Size(235, 27);
+            this.txtTenThietBi.TabIndex = 194;
             // 
             // btnXoa
             // 
@@ -555,7 +556,7 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtTenKMTK;
+        private System.Windows.Forms.TextBox txtTenLyDoTK;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.SplitContainer splitContainer;
@@ -567,7 +568,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtLyDoSuDung;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTenThietBi;
         private System.Windows.Forms.Button btnThemThietBi;
         private System.Windows.Forms.DataGridView dGVThietBi;
         private System.Windows.Forms.DataGridViewImageColumn Column1;

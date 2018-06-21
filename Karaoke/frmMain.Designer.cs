@@ -41,9 +41,11 @@
             this.quảnLýThiếtBịToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nhapKhoThietBi = new System.Windows.Forms.ToolStripMenuItem();
             this.chinhSuaThietBi = new System.Windows.Forms.ToolStripMenuItem();
+            this.sửDụngThiếtBịToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tiếpNhậnKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nhanDatTiecMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.datPhongMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.xemLịchSửĐặtPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.baoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.baoCaoTonKho = new System.Windows.Forms.ToolStripMenuItem();
             this.baoCaoDoanhThu = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,8 +57,6 @@
             this.khachHangMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.nhaCungCapMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.quanLyKhuyenMaiMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.xemLịchSửĐặtPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sửDụngThiếtBịToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,6 +150,12 @@
             resources.ApplyResources(this.chinhSuaThietBi, "chinhSuaThietBi");
             this.chinhSuaThietBi.Click += new System.EventHandler(this.ChinhSuaKhoThietBiMenu_Click);
             // 
+            // sửDụngThiếtBịToolStripMenuItem
+            // 
+            this.sửDụngThiếtBịToolStripMenuItem.Name = "sửDụngThiếtBịToolStripMenuItem";
+            resources.ApplyResources(this.sửDụngThiếtBịToolStripMenuItem, "sửDụngThiếtBịToolStripMenuItem");
+            this.sửDụngThiếtBịToolStripMenuItem.Click += new System.EventHandler(this.sửDụngThiếtBịToolStripMenuItem_Click);
+            // 
             // tiếpNhậnKháchHàngToolStripMenuItem
             // 
             this.tiếpNhậnKháchHàngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -170,6 +176,12 @@
             this.datPhongMenu.Name = "datPhongMenu";
             resources.ApplyResources(this.datPhongMenu, "datPhongMenu");
             this.datPhongMenu.Click += new System.EventHandler(this.datPhongMenu_Click);
+            // 
+            // xemLịchSửĐặtPhòngToolStripMenuItem
+            // 
+            this.xemLịchSửĐặtPhòngToolStripMenuItem.Name = "xemLịchSửĐặtPhòngToolStripMenuItem";
+            resources.ApplyResources(this.xemLịchSửĐặtPhòngToolStripMenuItem, "xemLịchSửĐặtPhòngToolStripMenuItem");
+            this.xemLịchSửĐặtPhòngToolStripMenuItem.Click += new System.EventHandler(this.xemLịchSửĐặtPhòngToolStripMenuItem_Click);
             // 
             // baoCáoToolStripMenuItem
             // 
@@ -243,18 +255,6 @@
             this.quanLyKhuyenMaiMenu.Name = "quanLyKhuyenMaiMenu";
             resources.ApplyResources(this.quanLyKhuyenMaiMenu, "quanLyKhuyenMaiMenu");
             this.quanLyKhuyenMaiMenu.Click += new System.EventHandler(this.quanLyKhuyenMaiMenu_Click);
-            // 
-            // xemLịchSửĐặtPhòngToolStripMenuItem
-            // 
-            this.xemLịchSửĐặtPhòngToolStripMenuItem.Name = "xemLịchSửĐặtPhòngToolStripMenuItem";
-            resources.ApplyResources(this.xemLịchSửĐặtPhòngToolStripMenuItem, "xemLịchSửĐặtPhòngToolStripMenuItem");
-            this.xemLịchSửĐặtPhòngToolStripMenuItem.Click += new System.EventHandler(this.xemLịchSửĐặtPhòngToolStripMenuItem_Click);
-            // 
-            // sửDụngThiếtBịToolStripMenuItem
-            // 
-            this.sửDụngThiếtBịToolStripMenuItem.Name = "sửDụngThiếtBịToolStripMenuItem";
-            resources.ApplyResources(this.sửDụngThiếtBịToolStripMenuItem, "sửDụngThiếtBịToolStripMenuItem");
-            this.sửDụngThiếtBịToolStripMenuItem.Click += new System.EventHandler(this.sửDụngThiếtBịToolStripMenuItem_Click);
             // 
             // frmMain
             // 

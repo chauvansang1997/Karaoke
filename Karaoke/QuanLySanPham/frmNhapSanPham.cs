@@ -72,6 +72,12 @@ namespace Karaoke.QuanLySanPham
                     MessageBox.Show("Lập đơn đặt hàng thành công");
                     frmNhapChiTietSanPham chiTietSanPham = new frmNhapChiTietSanPham(nhaCungCap, phieuNhap);
                     chiTietSanPham.ShowDialog();
+                    rbChuaGiao.Checked = true;
+                    pageNumber = 1;
+                    txtPageNumber.Text = "1";
+                    totalPage = BUS.SanPhamBUS.DemPhieuNhapSanPham(rbChuaGiao.Checked ? 0 : 1);
+                    totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+                    txtTotalPage.Text = totalPage.ToString();
                     bindingSource.DataSource = BUS.SanPhamBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
                 }
                 else

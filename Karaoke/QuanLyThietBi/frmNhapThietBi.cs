@@ -83,8 +83,15 @@ namespace Karaoke.QuanLyThietBi
                 if (phieuNhap != null)
                 {
                     MessageBox.Show("Lập phiếu thành công");
-                //    frmNhapChiTietSanPham chiTietSanPham = new frmNhapChiTietSanPham(nhaCungCap, phieuNhap);
-                  //  chiTietSanPham.ShowDialog();
+                    rbChuaGiao.Checked = true;
+                    pageNumber = 1;
+                    txtPageNumber.Text = "1";
+                    totalPage = BUS.ThietBiBUS.DemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1);
+                    totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+                    txtTotalPage.Text = totalPage.ToString();
+
+                    // bindingSource.Add(new PhieuNhapHang());
+                    bindingSource.DataSource = BUS.ThietBiBUS.XemPhieuNhapHang(rbChuaGiao.Checked ? 0 : 1, pageNumber, pageSize);
                 }
                 else
                 {

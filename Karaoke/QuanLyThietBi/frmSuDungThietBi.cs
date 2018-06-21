@@ -86,18 +86,31 @@ namespace Karaoke.QuanLyThietBi
             bThem = false;
             pageNumber = 1;
             txtPageNumber.Text = "1";
-            totalPage = BUS.ThietBiBUS.DemSuDungThietBi(txtLyDoSuDung.Text, txtTenKMTK.Text);
+            totalPage = BUS.ThietBiBUS.DemSuDungThietBi(txtTenLyDoTK.Text, txtTenThietBi.Text);
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
             txtTotalPage.Text = totalPage.ToString();
 
-            dGVDanhSach.DataSource = BUS.ThietBiBUS.XemSuDungThietBi(txtLyDoSuDung.Text, txtTenKMTK.Text, pageNumber, pageSize);
+            dGVDanhSach.DataSource = BUS.ThietBiBUS.XemSuDungThietBi(txtLyDoSuDung.Text, txtTenThietBi.Text, pageNumber, pageSize);
 
             AddGridTableStyle();
         }
         private void loadDanhSach()
         {
             dGVDanhSach.DataSource =
-                BUS.ThietBiBUS.XemSuDungThietBi(txtLyDoSuDung.Text, txtTenKMTK.Text, pageNumber, pageSize);
+                BUS.ThietBiBUS.XemSuDungThietBi(txtTenLyDoTK.Text, txtTenThietBi.Text, pageNumber, pageSize);
+        }
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+
+            pageNumber = 1;
+            txtPageNumber.Text = "1";
+            totalPage = BUS.ThietBiBUS.DemSuDungThietBi(txtTenLyDoTK.Text, txtTenThietBi.Text);
+            totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+            txtTotalPage.Text = totalPage.ToString();
+
+            dGVDanhSach.DataSource = BUS.ThietBiBUS.XemSuDungThietBi(txtTenLyDoTK.Text, txtTenThietBi.Text, pageNumber, pageSize);
+            AddGridTableStyle();
+
         }
         private void enableButton1(bool enable)
         {
@@ -114,6 +127,7 @@ namespace Karaoke.QuanLyThietBi
             btnLuu.Enabled = enable;
             btnHuy.Enabled = enable;
             txtLyDoSuDung.Enabled = enable;
+            dGVThietBi.Enabled = enable;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -145,7 +159,7 @@ namespace Karaoke.QuanLyThietBi
             {
                 bindingSourceTemp.RemoveCurrent();
             }
-            
+
 
         }
 
@@ -225,7 +239,19 @@ namespace Karaoke.QuanLyThietBi
                 txtLyDoSuDung.Text = dGVDanhSach[1, index].Value.ToString();
                 List<ThietBiDataSource> list = BUS.ThietBiBUS.XemChiTietSuDungThietBi(ma);
                 bindingSource.DataSource = list;
-                bindingSourceTemp.DataSource = new List<ThietBiDataSource>(list);
+                for (int i = 0; i < list.Count; i++)
+                {
+                    ThietBiDataSource thietBiDataSource = list[i];
+                    bindingSourceTemp.Add(new ThietBiDataSource()
+                    {
+                        MaThietBi = thietBiDataSource.MaThietBi,
+                        DonGia = thietBiDataSource.DonGia,
+                        SoLuong = thietBiDataSource.SoLuong,
+                        TenNhaCungCap = thietBiDataSource.TenNhaCungCap,
+                        TenThietBi = thietBiDataSource.TenThietBi,
+                    });
+                }
+                // bindingSourceTemp.DataSource = new List<ThietBiDataSource>(list);
             }
 
         }
@@ -267,30 +293,7 @@ namespace Karaoke.QuanLyThietBi
             }
         }
 
-        private void btnFind_Click(object sender, EventArgs e)
-        {
-            //     if (cmbNhaCC.SelectedValue != null)
-            //     {
-            //         pageNumber = 1;
-            //         txtPageNumber.Text = "1";
-            //         totalPage = BUS.ThietBiBUS.DemThietBi(txtTenNguyenLieu.Text, ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC);
-            //         totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
-            //         txtTotalPage.Text = totalPage.ToString();
-            //         dGVDanhSach.DataSource =
-            //BUS.ThietBiBUS.XemThietBiTable(txtTenNguyenLieu.Text, ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC, pageNumber, pageSize);
-            //     }
-            //     else
-            //     {
-            //         pageNumber = 1;
-            //         txtPageNumber.Text = "1";
-            //         totalPage = BUS.ThietBiBUS.DemThietBi(txtTenNguyenLieu.Text, "");
-            //         totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
-            //         txtTotalPage.Text = totalPage.ToString();
-            //         dGVDanhSach.DataSource =
-            //BUS.ThietBiBUS.XemThietBiTable(txtTenNguyenLieu.Text, "", pageNumber, pageSize);
-            //     }
 
-        }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -323,13 +326,13 @@ namespace Karaoke.QuanLyThietBi
 
         private void btnThemThietBi_Click(object sender, EventArgs e)
         {
-            frmThemThietBiSuDung themThietBiSuDung = new frmThemThietBiSuDung(bindingSource,bindingSourceTemp);
+            frmThemThietBiSuDung themThietBiSuDung = new frmThemThietBiSuDung(bindingSource, bindingSourceTemp);
             themThietBiSuDung.ShowDialog();
         }
 
         private void dGVThietBi_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex  > 0 && e.ColumnIndex == 3)
+            if (e.RowIndex >= 0 && e.ColumnIndex == 3)
             {
                 int soLuongCu = 0;
                 if (bindingSourceTemp.Count > 0)
