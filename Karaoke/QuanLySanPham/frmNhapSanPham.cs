@@ -66,7 +66,7 @@ namespace Karaoke.QuanLySanPham
             if (result == DialogResult.Yes)
             {
                 DTO.NhaCungCap nhaCungCap = ((DTO.NhaCungCap)cmbNhaCungCap.SelectedValue);
-                PhieuNhapHang phieuNhap = BUS.SanPhamBUS.LapPhieuNhap(nhaCungCap.MaNCC, "NV001");
+                PhieuNhapHang phieuNhap = BUS.SanPhamBUS.LapPhieuNhap(nhaCungCap.MaNCC, User.NhanVien.MaNV);
                 if (phieuNhap != null)
                 {
                     MessageBox.Show("Lập đơn đặt hàng thành công");

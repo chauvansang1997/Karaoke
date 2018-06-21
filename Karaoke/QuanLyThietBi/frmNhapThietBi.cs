@@ -79,7 +79,7 @@ namespace Karaoke.QuanLyThietBi
             if (result == DialogResult.Yes)
             {
                 DTO.NhaCungCap nhaCungCap = ((DTO.NhaCungCap)cmbNhaCungCap.SelectedValue);
-                PhieuNhapHang phieuNhap = BUS.ThietBiBUS.LapPhieuNhap(nhaCungCap.MaNCC, "NV001");
+                PhieuNhapHang phieuNhap = BUS.ThietBiBUS.LapPhieuNhap(nhaCungCap.MaNCC, User.NhanVien.MaNV);
                 if (phieuNhap != null)
                 {
                     MessageBox.Show("Lập phiếu thành công");
