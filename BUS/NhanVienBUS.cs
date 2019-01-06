@@ -39,5 +39,9 @@ namespace BUS
         {
             return DAO.QuanLyNhanVien.NhanVienDAO.TraCuuNhanVien(nv, macv, tentk);
         }
+        public static DataTable TimNhanVien(string tuKhoa)
+        {
+            return DAO.QuanLyNhanVien.NhanVienDAO.TimNhanVien(tuKhoa);
+        }
     }
 }
