@@ -157,7 +157,14 @@ namespace Karaoke.GUI_QuanLyNhanVien
         private void txtTuKhoa_TextChanged(object sender, EventArgs e)
         {
             string tuKhoa = txtTuKhoa.Text;
-            dGVDSNV.DataSource = BUS.NhanVienBUS.TimNhanVien(tuKhoa);
+            if (tuKhoa.Length <1)
+            {
+                frmNhanVien_Load(sender, e);
+            }
+            else
+            {
+                dGVDSNV.DataSource = BUS.NhanVienBUS.TimNhanVien(tuKhoa);
+            }
         }
     }
 }
