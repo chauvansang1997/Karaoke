@@ -72,5 +72,11 @@ namespace Karaoke.GUI_BaoCaoDoanhThu
 
             dataSet.Tables[0].Reset();
         }
-	}
+
+        private void btnThucThi_Click(object sender, EventArgs e)
+        {
+            dataTable = BUS.DoanhThuBUS.XemDoanhThu(cbThang.SelectedValue.ToString());
+            loadRepport(dataTable);
+        }
+    }
 }

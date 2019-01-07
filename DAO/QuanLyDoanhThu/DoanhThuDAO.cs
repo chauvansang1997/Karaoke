@@ -44,5 +44,27 @@ namespace DAO.QuanLyDoanhThu
 
 			return data;
 		}
-	}
+
+        public static DataTable XemDoanhThu(String thangHD)
+        {
+            string query = "EXECUTE usp_LoadDoanhThu @thangHD";
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+       
+                 new SqlParameter("@thangHD",SqlDbType.NVarChar){IsNullable=true,Value=thangHD??(Object)DBNull.Value}
+            };
+            DataTable table = null;
+            try
+            {
+                table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+
+            return table;
+        }
+    }
 }
