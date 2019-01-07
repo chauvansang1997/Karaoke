@@ -728,6 +728,7 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpLuongTong2.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="DataSetContainer\HoaDonDataSet.xsc">
       <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
     </None>

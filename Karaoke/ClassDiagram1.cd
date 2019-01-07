@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Karaoke.frmBaoCaoLuong" Collapsed="true">
+    <Position X="5.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAgQAAIABCAAAAAAAACAAAACAAAAAACAACAACCAAAAY=</HashCode>
+      <FileName>frmBaoCaoLuong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.frmBaoCaoLuongTong" Collapsed="true">
+    <Position X="7" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAUEABCAAABACAACAAAACAAgAAAAAAAAACAAAIAY=</HashCode>
+      <FileName>frmBaoCaoLuongTong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.frmBaoCaoTonKho" Collapsed="true">
+    <Position X="8.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACABACAABhEgAACAAAACAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>frmBaoCaoTonKho.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.frmChonMon" Collapsed="true">
+    <Position X="12.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAIEBiWgCAgTZAGwACCWkwDw+9uzDJEgBAGSQSBFBQ=</HashCode>
+      <FileName>frmChonMon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.frmDatCoc" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACAAABAAAACAAAACAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>frmDatCoc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.frmDatTiec" Collapsed="true">
+    <Position X="7" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EiBEkkgsoCjgKDAAQgCUAAEDUmAAACAAABAAWQAJAjA=</HashCode>
+      <FileName>frmDatTiec.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.frmInHoaDonDatTiec" Collapsed="true">
+    <Position X="7" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAAAACAAAAEAAACCCAACAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>frmInHoaDonDatTiec.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.frmMain" Collapsed="true">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iQgxhiBqYGwQAAgCOgGANGAKRAogpAMAAWLACRAgiCc=</HashCode>
+      <FileName>frmMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.frmPhanQuyen" Collapsed="true">
+    <Position X="14" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAUAGAEABFAQgCAEgACQBAAAAIAAAACCAEgAAA=</HashCode>
+      <FileName>frmPhanQuyen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.frmQuanLyNhaCungCap" Collapsed="true">
+    <Position X="3.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAUACHgCQgGDSocACQwgADQlBIAUAAADASVQChADE=</HashCode>
+      <FileName>frmQuanLyNhaCungCap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.frmThoiGianTonKho" Collapsed="true">
+    <Position X="7" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABACAACAAAACACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>frmThoiGianTonKho.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.frmChonThanhVien" Collapsed="true">
+    <Position X="14" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KhAAAAAFACEAGBAgAACAAABCAhKAAAAAoBCAQAAgAAA=</HashCode>
+      <FileName>QuanLyNguyenLieu\frmChonThanhVien.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.GUI_BaoCaoDoanhThu.frmBaoCaoDoanhThu" Collapsed="true">
+    <Position X="3.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAkAABCQAAAAAAACAAAACAAgAAAAABAAACAAAAAI=</HashCode>
+      <FileName>GUI_BaoCaoDoanhThu\frmBaoCaoDoanhThu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.GUI_DangNhap.frmDangNhap" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAQACAAIACAAIAAEAAAABAAQEEAAA=</HashCode>
+      <FileName>GUI_DangNhap\frmDangNhap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.KhachHang.frmKhachHang" Collapsed="true">
+    <Position X="8.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ChABgAAkACgACBAEAACACQBCIlAAAAAggRCATQAgAEA=</HashCode>
+      <FileName>GUI_KhachHang\frmKhachHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.GUI_LoaiKH.frmApDungKhuyenMai" Collapsed="true">
+    <Position X="1.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YgAAEACHwCQgCDSoMACQggADwtDoAUAAADASXYChBHU=</HashCode>
+      <FileName>GUI_LoaiKH\frmApDungKhuyenMai.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.GUI_LoaiKH.frmKhuyenMai" Collapsed="true">
+    <Position X="10.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>cwAAEAiHwCQgCDWoMACQggAD01DIAUAAADAS1YChBHE=</HashCode>
+      <FileName>GUI_LoaiKH\frmKhuyenMai.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.GUI_LoaiKH.frmLoaiKhachHang" Collapsed="true">
+    <Position X="14" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAIBEBCgAGDABAACAAAIDAhAIAAEAgBAAUQAgAEA=</HashCode>
+      <FileName>GUI_LoaiKH\frmLoaiKhachHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.GUI_LoaiKH.frmLoaiKhachHangKM" Collapsed="true">
+    <Position X="1.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAAAAAAACAAABEAAECAAAACAAAAAAAAAAACiAABAAA=</HashCode>
+      <FileName>GUI_LoaiKH\frmLoaiKhachHangKM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.GUI_QuanLyNhanVien.frmNhanVien" Collapsed="true">
+    <Position X="12.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAhACAkSAAFjJAMECRwAAGCBAAAQAQAADAQQAgQAA=</HashCode>
+      <FileName>GUI_QuanLyNhanVien\frmNhanVien.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.GUI_QuanLyNhanVien.frmTaiKhoan" Collapsed="true">
+    <Position X="14" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAACAAABAAQACAAIACAAAAAEAAAgBBAQEAAAA=</HashCode>
+      <FileName>GUI_QuanLyNhanVien\frmTaiKhoan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.GuiMonAn.frmGoiMon" Collapsed="true">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GgAIEBiWoCggTJACwACCWkADQ+dejDJGgBAGSQCBFBQ=</HashCode>
+      <FileName>GuiMonAn\frmGoiMon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.GuiMonAn.frmMonAn" Collapsed="true">
+    <Position X="7" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>OgEEECCFwWQhCB6oQACAAgEDZsAgAABAGLATWQCjBDA=</HashCode>
+      <FileName>GuiMonAn\frmMonAn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.GuiMonAn.frmReportGoiMon" Collapsed="true">
+    <Position X="7" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAAAACAAAAEAAACCCAACAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GuiMonAn\frmReportGoiMon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.GuiMonAn.frmSoLuong" Collapsed="true">
+    <Position X="10.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAEAAAgACEAAAAAAACAAAACAAIAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>GuiMonAn\frmSoLuong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.GuiMonAn.frmThemNguyenLieuMonAn" Collapsed="true">
+    <Position X="1.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAEACEgCAgCBCAMACCAAAHYkAAAQAAEBQAXAAhADQ=</HashCode>
+      <FileName>GuiMonAn\frmThemNguyenLieuMonAn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.NhaCungCap.frmNhaCungCap" Collapsed="true">
+    <Position X="10.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhCAgAAkAShACBAAAAyARAACAhAAAAAAgBAASQAghME=</HashCode>
+      <FileName>NhaCungCap\frmNhaCungCap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.PhanCong.frmCaTruc" Collapsed="true">
+    <Position X="10.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAhAAkACgACDAAMACAgUACghAAAgQAiBAASQAgQQA=</HashCode>
+      <FileName>PhanCong\frmCaTruc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.QuanLyPhanCong.frmPhanCong" Collapsed="true">
+    <Position X="12.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAABAAkACgCCDAAMhCBgAACAlAAAAEAQBAQWQAgxCQ=</HashCode>
+      <FileName>PhanCong\frmPhanCong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.PhongKaoraoke.frmChuyenPhong" Collapsed="true">
+    <Position X="1.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgBEEgCkgCigCBAAQAiQAAAjUkAAAAAAABCATQCiAjA=</HashCode>
+      <FileName>PhongKaoraoke\frmChuyenPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.PhongKaoraoke.frmLichSuPhong" Collapsed="true">
+    <Position X="12.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IiAEkACkgChgCBAAQACCAgADQnBAAAAAABAASQAgABA=</HashCode>
+      <FileName>PhongKaoraoke\frmLichSuPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.PhongKaoraoke.frmLoaiPhong" Collapsed="true">
+    <Position X="3.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAEACHgCQgCDSocACQgiAD0lBIAUAAADASVQChADE=</HashCode>
+      <FileName>PhongKaoraoke\frmLoaiPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.PhongKaoraoke.frmPhongKaraoke" Collapsed="true">
+    <Position X="1.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgBEkiClwDjgCDDsQwiQQkEDUnAGgBAAAJAASQA0AjA=</HashCode>
+      <FileName>PhongKaoraoke\frmPhongKaraoke.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.PhongKaoraoke.frmQuanLyPhong" Collapsed="true">
+    <Position X="5.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAEACHgCQgSDSoMACQogADVlBIAcAAADASVQChADE=</HashCode>
+      <FileName>PhongKaoraoke\frmQuanLyPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.QuanLyHangHoa.frmNhapHangHoa" Collapsed="true">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAIEBiWgCQgTJAAwACCHkADY+dOjDJEgBAGSQCBFBQ=</HashCode>
+      <FileName>QuanLyHangHoa\frmNhapHangHoa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.QuanLyNguyenLieu.frmGiaoNguyenLieu" Collapsed="true">
+    <Position X="8.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACQAABAAAACAAAACAAQAQAAAAAACAAAAAAA=</HashCode>
+      <FileName>QuanLyNguyenLieu\frmGiaoNguyenLieu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.QuanLyNguyenLieu.frmInDonDatNguyenLieu" Collapsed="true">
+    <Position X="1.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAICAAAAEAAACABAACAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>QuanLyNguyenLieu\frmInDonDatNguyenLieu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.NguyenLieu.frmNguyenLieu" Collapsed="true">
+    <Position X="8.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MwAAFACH4CQgCDSqMACQggADUlBIEUAAADASVQShADE=</HashCode>
+      <FileName>QuanLyNguyenLieu\frmNguyenLieu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.NguyenLieu.frmNhapCTNguyenLieu" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAYEFCH4CEgSJAgwAKADgBDYsdshDJAkDAGSQChEBQ=</HashCode>
+      <FileName>QuanLyNguyenLieu\frmNhapCTNguyenLieu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.NguyenLieu.frmNhapNguyenLieu" Collapsed="true">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAUACEgCAoCDQgMACASAATQkAAAEEAADQASQAhABE=</HashCode>
+      <FileName>QuanLyNguyenLieu\frmNhapNguyenLieu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.QuanLySanPham.frmGiaoSanPham" Collapsed="true">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACQAABAAAACAAAACAAQAQAAAAAACAAAAAAA=</HashCode>
+      <FileName>QuanLySanPham\frmGiaoSanPham.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.QuanLySanPham.frmInDonNhapSanPham" Collapsed="true">
+    <Position X="3.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAICAAAAEAAACABAACAAIAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>QuanLySanPham\frmInDonNhapSanPham.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.QuanLySanPham.frmNhapChiTietSanPham" Collapsed="true">
+    <Position X="14" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAIEBiWgCAgTJAAwACAHkADY+dOjDJEABAGSQCBFBQ=</HashCode>
+      <FileName>QuanLySanPham\frmNhapChiTietSanPham.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.QuanLySanPham.frmNhapSanPham" Collapsed="true">
+    <Position X="8.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAUACFgCAoCDQgMACByAATQlAAAEEAADQASQAhABE=</HashCode>
+      <FileName>QuanLySanPham\frmNhapSanPham.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.QuanLySanPham.frmSamPham" Collapsed="true">
+    <Position X="8.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>+0AEFACHwCRhCDQoMACQwgEDQtBEEFAAADATdQChBDE=</HashCode>
+      <FileName>QuanLySanPham\frmSamPham.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.QuanLyThietBi.frmGiaoThietBi" Collapsed="true">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACQAABAAAACAAAACAAQAQAAAAAACAAAAAAA=</HashCode>
+      <FileName>QuanLyThietBi\frmGiaoThietBi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.QuanLyThietBi.frmInDonNhapThietBi" Collapsed="true">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAICAAAAEAAACABAACAAIAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>QuanLyThietBi\frmInDonNhapThietBi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.QuanLyThietBi.frmNhapChiTietThietBi" Collapsed="true">
+    <Position X="1.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAYEFCHoCEgSJAgwAKADgBDYsdshDJAEBAGSQChEBQ=</HashCode>
+      <FileName>QuanLyThietBi\frmNhapChiTietThietBi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.QuanLyThietBi.frmNhapThietBi" Collapsed="true">
+    <Position X="10.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAUACEgCAoCDQgMACByAATQkAAAEEAADQASQAhABE=</HashCode>
+      <FileName>QuanLyThietBi\frmNhapThietBi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.QuanLyThietBi.frmSuDungThietBi" Collapsed="true">
+    <Position X="12.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YgAAHACFwCQgiTSoMACSggADSlDogUIAADASVwChADE=</HashCode>
+      <FileName>QuanLyThietBi\frmSuDungThietBi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.QuanLyThietBi.frmThemThietBiSuDung" Collapsed="true">
+    <Position X="3.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAEACEgCAgCBCAMACCAAAHYkAgAQAAEBQAXgAhABA=</HashCode>
+      <FileName>QuanLyThietBi\frmThemThietBiSuDung.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karaoke.QuanLyThietBi.frmThietBi" Collapsed="true">
+    <Position X="5.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAFAiHwCQgCDSqMACQggADUlDIEUAAADASVQChADE=</HashCode>
+      <FileName>QuanLyThietBi\frmThietBi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
