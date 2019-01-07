@@ -13,15 +13,16 @@ namespace Karaoke.PhanCong
 	public partial class frmCaTruc : Form
 	{
 		CaLamViec ca;
+        TimeSpan GioBD, GioKT;
 		public frmCaTruc()
 		{
 			InitializeComponent();
 			ca = new CaLamViec();
-			dtpGioBD.Format = DateTimePickerFormat.Time;
-			dtpGioBD.ShowUpDown = true;
+            dtpGioBD.Format = DateTimePickerFormat.Time;
+            dtpGioBD.ShowUpDown = true;
 
 			dtpGioKT.Format = DateTimePickerFormat.Time;
-			dtpGioKT.ShowUpDown = true;
+            dtpGioKT.ShowUpDown = true;
 		}
 
 		private void btnThem_Click(object sender, EventArgs e)
@@ -50,18 +51,20 @@ namespace Karaoke.PhanCong
 			panelChoice.Top = btnCapNhat.Top;
 
 			ca.MaCa = int.Parse(txtMaCa.Text);
-			ca.TenCa = txtTenCa.Text;
-			ca.GioBD = dtpGioBD.Value;
-			ca.GioKT = dtpGioBD.Value;
+            ca.TenCa = txtTenCa.Text;
+            ca.GioBD = dtpGioBD.Value;
+            ca.GioKT = dtpGioKT.Value;
 			ca.TienLuong = int.Parse(txtTienLuong.Text);
 			if (BUS.CaLamViecBUS.CapNhatCaLamViec(ca))
 			{
 				MessageBox.Show("Cập nhật ca thành công", "Cập nhật ca", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				frmCatTruc_Load(sender, e);
+
 			}
 			else
 			{
 				MessageBox.Show("Cập nhật ca thất bại", "Cập nhật ca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 			}
 		}
 
