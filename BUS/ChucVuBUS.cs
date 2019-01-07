@@ -14,5 +14,9 @@ namespace BUS
         {
             return DAO.QuanLyNhanVien.ChucVuDAO.LoadMaChucVu();
         }
+        public static List<ChucVu> XemChucVu()
+        {
+            return DAO.QuanLyNhanVien.ChucVuDAO.XemChucVu();
+        }
     }
 }

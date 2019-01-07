@@ -1,4 +1,5 @@
 ﻿
+using DTO;
 using Karaoke.GUI_BaoCaoDoanhThu;
 using Karaoke.GUI_LoaiKH;
 using Karaoke.GUI_QuanLyNhanVien;
@@ -25,9 +26,38 @@ namespace Karaoke
 {
     public partial class frmMain : Form
     {
+        private List<ToolStripMenuItem> listChucNang;
+        private List<int> listQuyen;
         public frmMain()
         {
+            
             InitializeComponent();
+            khoiTao();
+        }
+
+        private void khoiTao()
+        {
+            listChucNang = new List<ToolStripMenuItem>()
+            {
+                khachHang,
+                phong,
+                thanhVien,
+                nhanVien,
+                khuyenMai,
+                hangHoa,
+                baoCao,
+                phanQuyen,
+                nhaCungCap
+            };
+            listQuyen = BUS.PhanQuyenBUS.LayQuyen(User.NhanVien);
+
+            for (int i = 0; i < listChucNang.Count; i++)
+            {
+                if (!listQuyen.Contains(int.Parse(listChucNang[i].Tag.ToString())))
+                {
+                    listChucNang[i].Visible = false;
+                }
+            }
         }
 
         private void suaSanPham_Click(object sender, EventArgs e)
@@ -250,6 +280,12 @@ namespace Karaoke
         {
             frmMonAn monAn = new frmMonAn();
             monAn.ShowDialog();
+        }
+
+        private void phânQuyềnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPhanQuyen phanQuyen = new frmPhanQuyen();
+            phanQuyen.ShowDialog();
         }
     }
 }

@@ -7,6 +7,10 @@ namespace DTO
 {
     public class ChiTietKhuyenMai
     {
-        
+
+
+        public int MaLoaiKH { get; set; }
+        public string TenLoaiKH { get; set; }
+        public int MucKhuyenMai { get; set; }
     }
 }

@@ -141,7 +141,7 @@ namespace DAO
             }
             return count;
         }
-        public static List<LoaiKhachHang> XemChiTiet(int maKhuyenMai,List<int> listMaLoaiKhachHang)
+        public static List<ChiTietKhuyenMai> XemChiTiet(int maKhuyenMai,List<int> listMaLoaiKhachHang)
         {
             string query = "EXEC uspXemDanhSachLoaiKhachHangKM @maKhuyenMai,@danhSachLoaiKhachHang";
             string danhSachLoaiKhachHang = listMaLoaiKhachHang == null ? "" : String.Join("|", listMaLoaiKhachHang);
@@ -151,16 +151,16 @@ namespace DAO
                 new SqlParameter("@maKhuyenMai",SqlDbType.Int){ Value=maKhuyenMai  },
                 new SqlParameter("@danhSachLoaiKhachHang",SqlDbType.VarChar){IsNullable=false,Value=danhSachLoaiKhachHang },
             };
-            List<LoaiKhachHang> list = null;
+            List<ChiTietKhuyenMai> list = null;
             DataTable table = null;
             try
             {
                 table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
                 list = table.AsEnumerable().ToList().ConvertAll(x =>
-                new LoaiKhachHang()
+                new ChiTietKhuyenMai()
                 {
                     MaLoaiKH = int.Parse(x[0].ToString()),
-                    SoTienTichLuy = int.Parse(x[2].ToString()),
+                    MucKhuyenMai = int.Parse(x[2].ToString()),
                     TenLoaiKH = x[1].ToString(),
 
                 });

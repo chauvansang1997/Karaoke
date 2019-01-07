@@ -37,9 +37,9 @@ namespace Karaoke.GUI_LoaiKH
             txtTotalPage.Text = totalPage.ToString();
             dGVDanhSach.DataSource = BUS.KhuyenMaiBUS.XemKhuyenMai("", -1, pageNumber, pageSize);
             this.dGVLoaiKhachHang.DataSource = bindingSource;
-            bindingSource.Add(new LoaiKhachHang());
+            bindingSource.Add(new ChiTietKhuyenMai());
             bindingSource.RemoveAt(0);
-            this.dGVLoaiKhachHang.Columns["MucKM"].HeaderText = "Mức khuyến mãi";
+            this.dGVLoaiKhachHang.Columns["MucKhuyenMai"].HeaderText = "Mức khuyến mãi";
             this.dGVLoaiKhachHang.Columns["TenLoaiKH"].HeaderText = "Tên loại khách hàng";
             this.dGVLoaiKhachHang.Columns["MaLoaiKH"].Visible = false;
             this.dGVLoaiKhachHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
