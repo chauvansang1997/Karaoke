@@ -153,5 +153,18 @@ namespace Karaoke.GUI_QuanLyNhanVien
 				MessageBox.Show("Xoá nhân viên thất bại", "Xoá nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
-	}
+
+        private void txtTuKhoa_TextChanged(object sender, EventArgs e)
+        {
+            string tuKhoa = txtTuKhoa.Text;
+            if (tuKhoa.Length <1)
+            {
+                frmNhanVien_Load(sender, e);
+            }
+            else
+            {
+                dGVDSNV.DataSource = BUS.NhanVienBUS.TimNhanVien(tuKhoa);
+            }
+        }
+    }
 }

@@ -26,7 +26,7 @@ namespace BUS
         {
             return DAO.KhuyenMaiDAO.DemKhuyenMai(tenKhuyenMai, loaiKhachHang);
         }
-        public static List<LoaiKhachHang> XemChiTiet(int maKhuyenMai, List<int> listMaLoaiKhachHang)
+        public static List<ChiTietKhuyenMai> XemChiTiet(int maKhuyenMai, List<int> listMaLoaiKhachHang)
         {
             return DAO.KhuyenMaiDAO.XemChiTiet(maKhuyenMai, listMaLoaiKhachHang);
         }

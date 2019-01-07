@@ -154,5 +154,17 @@ namespace DAO.QuanLyNhanVien
             };
             return Dataprovider.ExcuteQuery(query, parameters.ToArray());
         }
+
+        public static DataTable TimNhanVien(string tuKhoa)
+        {
+            string query = "EXEC usp_TimNhanVien @TUKHOA";
+
+            // Truyền tham số
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@TUKHOA", SqlDbType.Char) {IsNullable = true, Value = tuKhoa},
+            };
+            return Dataprovider.ExcuteQuery(query, parameters.ToArray());
+        }
     }
 }

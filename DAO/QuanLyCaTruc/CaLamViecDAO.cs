@@ -74,12 +74,12 @@ namespace DAO.QuanLyCaTruc
 			{
 				new SqlParameter("@maCa",SqlDbType.Int){IsNullable= false,Value=maCa},
 				new SqlParameter("@tenCa",SqlDbType.NVarChar){IsNullable= false,Value=tenCa},
-				new SqlParameter("@gioBD",SqlDbType.Time){IsNullable= false,Value=gioBD},
-				new SqlParameter("@gioKT",SqlDbType.Time){IsNullable= false,Value=gioKT},
+				new SqlParameter("@gioBD",SqlDbType.DateTime){IsNullable= false,Value=gioBD},
+				new SqlParameter("@gioKT",SqlDbType.DateTime){IsNullable= false,Value=gioKT},
 				new SqlParameter("@tienLuong",SqlDbType.Int){IsNullable= false,Value=tienLuong },
 
 			};
-
+            
 			try
 			{
 				rowCount = Dataprovider.ExcuteNonQuery(query, parameters.ToArray());

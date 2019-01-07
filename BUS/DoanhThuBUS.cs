@@ -17,5 +17,9 @@ namespace BUS
 		{
 			return DAO.QuanLyDoanhThu.DoanhThuDAO.LoadDoanhThu(thangHD);
 		}
-	}
+        public static DataTable XemDoanhThu(String thangHD)
+        {
+            return DAO.QuanLyDoanhThu.DoanhThuDAO.XemDoanhThu(thangHD);
+        }
+    }
 }

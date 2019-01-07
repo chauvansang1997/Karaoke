@@ -35,7 +35,7 @@
             // lbTenQuyen
             // 
             this.lbTenQuyen.AutoSize = true;
-            this.lbTenQuyen.Location = new System.Drawing.Point(53, 55);
+            this.lbTenQuyen.Location = new System.Drawing.Point(24, 16);
             this.lbTenQuyen.Name = "lbTenQuyen";
             this.lbTenQuyen.Size = new System.Drawing.Size(51, 20);
             this.lbTenQuyen.TabIndex = 0;
@@ -44,11 +44,10 @@
             // chkQuyen
             // 
             this.chkQuyen.AutoSize = true;
-            this.chkQuyen.Location = new System.Drawing.Point(231, 54);
+            this.chkQuyen.Location = new System.Drawing.Point(225, 17);
             this.chkQuyen.Name = "chkQuyen";
-            this.chkQuyen.Size = new System.Drawing.Size(113, 24);
+            this.chkQuyen.Size = new System.Drawing.Size(22, 21);
             this.chkQuyen.TabIndex = 1;
-            this.chkQuyen.Text = "checkBox1";
             this.chkQuyen.UseVisualStyleBackColor = true;
             // 
             // QuyenLayout
@@ -58,14 +57,13 @@
             this.Controls.Add(this.chkQuyen);
             this.Controls.Add(this.lbTenQuyen);
             this.Name = "QuyenLayout";
-            this.Size = new System.Drawing.Size(433, 109);
+            this.Size = new System.Drawing.Size(333, 52);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
         public System.Windows.Forms.Label lbTenQuyen;
         public System.Windows.Forms.CheckBox chkQuyen;
     }

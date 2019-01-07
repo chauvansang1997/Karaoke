@@ -64,6 +64,7 @@
     <Compile Include="NguyenLieuDataSource.cs" />
     <Compile Include="NhaCungCap.cs" />
     <Compile Include="NhanVien.cs" />
+    <Compile Include="PhanQuyen.cs" />
     <Compile Include="PhieuDatTiec.cs" />
     <Compile Include="PhieuNhapDataSource.cs" />
     <Compile Include="PhieuNhapHang.cs" />

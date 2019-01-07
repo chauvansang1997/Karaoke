@@ -31,5 +31,13 @@ namespace Karaoke.GUI_DangNhap
 				MessageBox.Show("Đăng nhập thất bại. Xin kiểm tra lại", "Đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
+
+		private void txtMatKhau_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (e.KeyChar.Equals(Convert.ToChar(13)))
+			{
+				btnOK_Click(sender, e);
+			}
+		}
 	}
 }
