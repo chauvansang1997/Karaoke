@@ -13,15 +13,13 @@ namespace DAO
         public static bool ThemLoaiKH(LoaiKhachHang loaiKhach)
         {
             int rowNum = 0;
-            int maLoaiKH = loaiKhach.MaLoaiKH;
+
             string tenLoaiKH = loaiKhach.TenLoaiKH;
-            int soTienTichLuy = loaiKhach.SoTienTichLuy;
-            string query = "EXEC usp_ThemLoaiKH @maLoaiKH,@tenLoaiKH,@mucKM";
+            string query = "EXEC uspThemLoaiKH @tenLoaiKH,@soDiemTichLuy";
             List<SqlParameter> parameters = new List<SqlParameter>
             {
-                new SqlParameter("@maLoaiKH",SqlDbType.Int){Value=maLoaiKH},
-                new SqlParameter("@tenLoaiKH",SqlDbType.VarChar){Value=tenLoaiKH},
-                new SqlParameter("@mucKM",SqlDbType.Int){Value=soTienTichLuy},
+                new SqlParameter("@tenLoaiKH",SqlDbType.VarChar){ Value = tenLoaiKH },
+                new SqlParameter("@soDiemTichLuy",SqlDbType.Int){ Value = loaiKhach.SoTienTichLuy }
             };
 
             try
@@ -40,13 +38,13 @@ namespace DAO
             int rowNum = 0;
             int maLoaiKH = loaiKhach.MaLoaiKH;
             string tenLoaiKH = loaiKhach.TenLoaiKH;
-            float mucKM = loaiKhach.SoTienTichLuy;
-            string query = "EXEC usp_CapNhatLoaiKH @maLoaiKH,@tenLoaiKH,@mucKM";
+
+            string query = "EXEC usp_CapNhatLoaiKH @maLoaiKH,@tenLoaiKH,@soDiemTichLuy";
             List<SqlParameter> parameters = new List<SqlParameter>
             {
                 new SqlParameter("@maLoaiKH",SqlDbType.Int){Value=maLoaiKH  },
                 new SqlParameter("@tenLoaiKH",SqlDbType.VarChar){Value=tenLoaiKH  },
-                new SqlParameter("@mucKM",SqlDbType.Float){Value=mucKM  },
+                new SqlParameter("@soDiemTichLuy",SqlDbType.Int){Value=loaiKhach.SoTienTichLuy  },
             };
 
             try

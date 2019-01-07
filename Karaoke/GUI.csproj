@@ -85,6 +85,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -176,6 +177,12 @@
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhanQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhanQuyen.Designer.cs">
+      <DependentUpon>frmPhanQuyen.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQuanLyNhaCungCap.cs">
       <SubType>Form</SubType>
@@ -451,6 +458,12 @@
     <Compile Include="QuanLyThietBi\frmThietBi.Designer.cs">
       <DependentUpon>frmThietBi.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuyenLayout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuyenLayout.Designer.cs">
+      <DependentUpon>QuyenLayout.cs</DependentUpon>
+    </Compile>
     <Compile Include="report\rptHoaDon.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -529,6 +542,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhanQuyen.resx">
+      <DependentUpon>frmPhanQuyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyNhaCungCap.resx">
       <DependentUpon>frmQuanLyNhaCungCap.cs</DependentUpon>
@@ -672,6 +688,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyThietBi\frmThietBi.resx">
       <DependentUpon>frmThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuyenLayout.resx">
+      <DependentUpon>QuyenLayout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="report\rptHoaDon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -818,6 +837,7 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="PhanQuyen\" />
     <Folder Include="ThietBi\" />
   </ItemGroup>
   <ItemGroup />
