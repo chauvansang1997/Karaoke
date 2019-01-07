@@ -259,22 +259,22 @@
     <value>Báo cáo</value>
   </data>
   <data name="nhanViemMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>252, 32</value>
+    <value>177, 22</value>
   </data>
   <data name="nhanViemMenuItem.Text" xml:space="preserve">
     <value>Nhân viên</value>
   </data>
   <data name="phanCongMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>252, 32</value>
+    <value>177, 22</value>
   </data>
   <data name="phanCongMenu.Text" xml:space="preserve">
     <value>Phân công</value>
   </data>
   <data name="caTrucMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>252, 32</value>
+    <value>177, 22</value>
   </data>
   <data name="caTrucMenu.Text" xml:space="preserve">
-    <value>Chỉnh sửa ca trực</value>
+    <value>Ca làm việc</value>
   </data>
   <data name="nhanVienMenu.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
