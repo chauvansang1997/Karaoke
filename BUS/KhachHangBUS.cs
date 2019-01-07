@@ -15,9 +15,9 @@ namespace BUS
             return DAO.KhachHangDAO.KiemTraKhachHang(tenKhachHang, soDienThoai);
         }
 
-		public static bool ThemKhachHang(KhachHang khachHang)
+		public static bool ThemKhachHangThanhVien(KhachHang khachHang)
 		{
-			return DAO.KhachHangDAO.ThemKhachHang(khachHang);
+			return DAO.KhachHangDAO.ThemKhachHangThanhVien(khachHang);
 		}
 
 		public static bool CapNhatKhachHang(KhachHang khachHang)
@@ -30,10 +30,12 @@ namespace BUS
 			return DAO.KhachHangDAO.XoaKhachHang(khachHang);
 		}
 
-		public static DataTable LoadKhachHang()
+		public static DataTable XemThongTinKhachHang(KhachHang khachHang)
 		{
-			return DAO.KhachHangDAO.LoadKhachHang();
+			return DAO.KhachHangDAO.XemThongTinKhachHang(khachHang);
 		}
+
+
     }
 
 }

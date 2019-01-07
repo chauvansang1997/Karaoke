@@ -14,6 +14,7 @@ namespace DTO
         private string id;
 		private int loaiKH;
 		private string sdt;
+        private int tienTichLuy;
 
         public string Ten
         {
@@ -90,6 +91,17 @@ namespace DTO
 				sdt = value;
 			}
 		}
+
+        public int TienTichLuy { 
+            get
+            {
+                return tienTichLuy;
+            }
+            set
+            {
+                tienTichLuy = value;
+            }
+        }
     }
 }
         

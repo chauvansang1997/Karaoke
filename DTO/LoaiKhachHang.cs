@@ -9,7 +9,7 @@ namespace DTO
 	{
 		private int maLoaiKH;
 		private string tenLoaiKH;
-		private float mucKM;
+		private int soTienTichLuy;
 
 		public int MaLoaiKH
 		{
@@ -35,15 +35,15 @@ namespace DTO
 			}
 		}
 
-		public float MucKM
+		public int SoTienTichLuy
 		{
 			get
 			{
-				return mucKM;
+				return soTienTichLuy;
 			}
 			set
 			{
-				mucKM = value;
+				soTienTichLuy = value;
 			}
 		}
 	}

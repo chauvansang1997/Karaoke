@@ -26,28 +26,33 @@ namespace Karaoke.KhachHang
 
 		private void btnThemLoaiKH_Click(object sender, EventArgs e)
 		{
-			frmLoaiKhachHang loaiKhachHang = new frmLoaiKhachHang();
-			loaiKhachHang.Visible = true;
+			if(txtTenKH.Text == "")
+            {
+                MessageBox.Show("Bạn phải nhập tên khách hàng");
+                return;
+            }
+            if (DTO.Utility.IsContainsText(txtSDT.Text) || txtSDT.Text != "")
+            {
+                MessageBox.Show("Bạn phải nhập sai định dạng số điện thoại");
+                return;
+            }
+            
 		}
 
-		private void frmKhachHang_Load(object sender, EventArgs e)
-		{
-			DataTable comboData = BUS.LoaiKhachHangBUS.LoadLoaiKH();
-			cbLoaiKH.DisplayMember = "tenLoaiKH";
-			cbLoaiKH.ValueMember = "maLoaiKH";
-			cbLoaiKH.DataSource = comboData;
+        private void frmKhachHang_Load(object sender, EventArgs e)
+        {
+            DataTable comboData = BUS.LoaiKhachHangBUS.LoadLoaiKH();
+            cbLoaiKH.DisplayMember = "tenLoaiKH";
+            cbLoaiKH.ValueMember = "maLoaiKH";
+            cbLoaiKH.DataSource = comboData;
 
-			cbMucKM.DisplayMember = "mucKM";
-			cbMucKM.ValueMember = "mucKM";
-			cbMucKM.DataSource = comboData;
-
-			dgvDanhSachKhachHang.DataSource = BUS.KhachHangBUS.LoadKhachHang();
+            dgvDanhSachKhachHang.DataSource = BUS.KhachHangBUS.XemThongTinKhachHang(new DTO.KhachHang() { Ten = "",SoDT =""});
 			dgvDanhSachKhachHang.Columns[0].HeaderCell.Value = "Mã khách hàng";
 			dgvDanhSachKhachHang.Columns[1].HeaderCell.Value = "Họ tên khách hàng";
 			dgvDanhSachKhachHang.Columns[2].HeaderCell.Value = "Mã loại";
 			dgvDanhSachKhachHang.Columns[2].Visible= false;
 			dgvDanhSachKhachHang.Columns[3].HeaderCell.Value = "Loại khách hàng";
-			dgvDanhSachKhachHang.Columns[4].HeaderCell.Value = "Mức KM";
+			dgvDanhSachKhachHang.Columns[4].HeaderCell.Value = "Số điểm tích lũy";
 			dgvDanhSachKhachHang.Columns[5].HeaderCell.Value = "Số ĐT";
 			dgvDanhSachKhachHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 			dgvDanhSachKhachHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -61,8 +66,7 @@ namespace Karaoke.KhachHang
 			txtTenKH.DataBindings.Add("Text", dataSource, "tenKH");
 			cbLoaiKH.DataBindings.Clear();
 			cbLoaiKH.DataBindings.Add("Text", dataSource, "tenLoaiKH");
-			cbMucKM.DataBindings.Clear();
-			cbMucKM.DataBindings.Add("Text", dataSource, "mucKM");
+
 			txtSDT.DataBindings.Clear();
 			txtSDT.DataBindings.Add("Text", dataSource, "sdt");
 		}
@@ -73,16 +77,16 @@ namespace Karaoke.KhachHang
             panelChoice.Top = btnThemKhachHang.Top;
 
             khachHang.Ten = txtTenKH.Text;
-			khachHang.LoaiKH = Convert.ToInt16(cbLoaiKH.SelectedValue.ToString());
+		
 			khachHang.SDT = txtSDT.Text;
-			if (BUS.KhachHangBUS.ThemKhachHang(khachHang))
+			if (BUS.KhachHangBUS.ThemKhachHangThanhVien(khachHang))
 			{
 				MessageBox.Show("Thêm khách hàng thành công", "Thêm khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				frmKhachHang_Load(sender, e);
 			}
 			else
 			{
-				MessageBox.Show("Thêm khách hàng thất bại", "Thêm khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Thêm khách hàng đã tồn tại!!!", "Thêm khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 		}
@@ -94,7 +98,7 @@ namespace Karaoke.KhachHang
 
             khachHang.Ma = dgvDanhSachKhachHang.CurrentRow.Cells[0].Value.ToString();
 			khachHang.Ten = txtTenKH.Text;
-			khachHang.LoaiKH = Convert.ToInt16(cbLoaiKH.SelectedValue.ToString());
+
 			khachHang.SDT = txtSDT.Text;
 			if (BUS.KhachHangBUS.CapNhatKhachHang(khachHang))
 			{
@@ -125,5 +129,10 @@ namespace Karaoke.KhachHang
 				return;
 			}
 		}
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

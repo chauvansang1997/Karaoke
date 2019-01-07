@@ -55,8 +55,9 @@ namespace BUS
 
         public static bool KiemTraGoiMon(string ma, int soLuong, int soLuongCu=0)
         {
-            return DAO.HoaDonDAO.KiemTraGoiMon(ma, soLuong, soLuongCu);
+            return DAO.HoaDonDAO.KiemTraMonAn(ma, soLuong, soLuongCu);
         }
+
         public static bool CapNhatTon(string soHoaDon, string ma, int soLuongCu, int soLuongMoi)
         {
             return DAO.HoaDonDAO.CapNhatTon(soHoaDon,  ma,  soLuongCu,  soLuongMoi);

@@ -67,6 +67,7 @@
     <Compile Include="PhieuDatTiec.cs" />
     <Compile Include="PhieuNhapDataSource.cs" />
     <Compile Include="PhieuNhapHang.cs" />
+    <Compile Include="Quyen.cs" />
     <Compile Include="SanPham.cs" />
     <Compile Include="TaiKhoan.cs" />
     <Compile Include="ThietBi.cs" />

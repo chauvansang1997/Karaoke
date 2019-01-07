@@ -40,14 +40,14 @@ namespace Karaoke.PhongKaoraoke
         }
         private void loadDanhSach()
         {
-            DataRow row = ((DataRowView)cmbNhaCC.SelectedValue).Row;
-            dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongQuanLy(txtTenNguyenLieu.Text,(int)row["MALOAIPHONG"], pageNumber, pageSize);
+            DataRow row = ((DataRowView)cmbLoaiPhong.SelectedValue).Row;
+            dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongQuanLy(txtTenPhongTK.Text,(int)row["MALOAIPHONG"], pageNumber, pageSize);
         }
         private void btnFind_Click(object sender, EventArgs e)
         {
             pageNumber = 1;
             txtPageNumber.Text = "1";
-            if (cmbNhaCCTK.SelectedValue == null)
+            if (cmbLoaiPhongTK.SelectedValue == null)
             {
                 totalPage = BUS.PhongBUS.DemPhongQuanLy("", -1);
                 totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
@@ -55,11 +55,11 @@ namespace Karaoke.PhongKaoraoke
             }
             else
             {
-                DataRow row = ((DataRowView)cmbNhaCC.SelectedValue).Row;
-                totalPage = BUS.PhongBUS.DemPhongQuanLy(txtTenNguyenLieu.Text, (int)row["MALOAIPHONG"]);
+                DataRow row = ((DataRowView)cmbLoaiPhong.SelectedValue).Row;
+                totalPage = BUS.PhongBUS.DemPhongQuanLy(txtTenPhongTK.Text, (int)row["MALOAIPHONG"]);
                 totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
               
-                dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongQuanLy(txtTenNguyenLieu.Text, (int)row["MALOAIPHONG"], pageNumber, pageSize);
+                dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongQuanLy(txtTenPhongTK.Text, (int)row["MALOAIPHONG"], pageNumber, pageSize);
             }
 
             txtTotalPage.Text = totalPage.ToString();
@@ -98,10 +98,10 @@ namespace Karaoke.PhongKaoraoke
             this.dGVDanhSach.Columns["TENLOAIPHONG"].HeaderText = "Tên loại phòng";
             this.dGVDanhSach.Columns["GIA"].HeaderText = "Giá";
 
-            cmbNhaCC.DataSource = BUS.PhongBUS.XemLoaiPhong();
-            cmbNhaCC.DisplayMember = "TENLOAIPHONG";
-            cmbNhaCCTK.DataSource = BUS.PhongBUS.XemLoaiPhong();
-            cmbNhaCCTK.DisplayMember = "TENLOAIPHONG";
+            cmbLoaiPhong.DataSource = BUS.PhongBUS.XemLoaiPhong();
+            cmbLoaiPhong.DisplayMember = "TENLOAIPHONG";
+            cmbLoaiPhongTK.DataSource = BUS.PhongBUS.XemLoaiPhong();
+            cmbLoaiPhongTK.DisplayMember = "TENLOAIPHONG";
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -213,15 +213,15 @@ namespace Karaoke.PhongKaoraoke
             if (dGVDanhSach.CurrentCell != null)
             {
                 int index = dGVDanhSach.CurrentCell.RowIndex;
-                txtTenNL.Text = dGVDanhSach[0, index].Value.ToString();
+                txtMaPhong.Text = dGVDanhSach[0, index].Value.ToString();
             
                 //  cmbNhaCC.SelectedValue = dGVDanhSach[6, index].Value.ToString();
-                for (int i = 0; i < cmbNhaCC.Items.Count; i++)
+                for (int i = 0; i < cmbLoaiPhong.Items.Count; i++)
                 {
-                    DataRow row = ((DataRowView)cmbNhaCC.Items[i]).Row;
+                    DataRow row = ((DataRowView)cmbLoaiPhong.Items[i]).Row;
                     if (row["MALOAIPHONG"].ToString() == dGVDanhSach[1, index].Value.ToString())
                     {
-                        cmbNhaCC.SelectedIndex = i;
+                        cmbLoaiPhong.SelectedIndex = i;
                     }
                 }
               
@@ -247,28 +247,31 @@ namespace Karaoke.PhongKaoraoke
         private void enableControls(bool enable)
         {
             //txtTenNL.Enabled = enable;
-            cmbNhaCC.Enabled = enable;
+            cmbLoaiPhong.Enabled = enable;
             btnLuu.Enabled = enable;
             btnHuy.Enabled = enable;
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            txtMaPhong.Text = "";
             enableControls(true);
+            enableButton(false);
             bThem = true;
+            btnThem.Enabled = true;
             //txtTenNL.Text = "";
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (cmbNhaCC.SelectedValue != null)
+            if (cmbLoaiPhong.SelectedValue != null)
             {
-                DataRow row = ((DataRowView)cmbNhaCC.SelectedValue).Row;
+                DataRow row = ((DataRowView)cmbLoaiPhong.SelectedValue).Row;
                 if (bThem)
                 {
 
                     if (BUS.PhongBUS.ThemPhong(new DTO.Phong()
                     {
-                        Ten = txtTenNL.Text,
+                        Ten = txtMaPhong.Text,
                         TenLoai = row["MALOAIPHONG"].ToString()
 
                     }))
@@ -283,7 +286,7 @@ namespace Karaoke.PhongKaoraoke
                 {
                     if (BUS.PhongBUS.CapNhatPhong(new DTO.Phong()
                     {
-                        Ten = txtTenNL.Text,
+                        Ten = txtMaPhong.Text,
                         TenLoai = row["MALOAIPHONG"].ToString()
 
                     }))

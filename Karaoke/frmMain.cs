@@ -80,9 +80,9 @@ namespace Karaoke
 
         private void khachHangMenu_Click(object sender, EventArgs e)
         {
-			//frmKhachHang khachHang = new frmKhachHang();
-			//khachHang.ShowDialog();
-		}
+            frmKhachHang khachHang = new frmKhachHang();
+            khachHang.ShowDialog();
+        }
 
         private void nhanVienMenu_Click(object sender, EventArgs e)
         {
@@ -226,6 +226,30 @@ namespace Karaoke
         {
             frmSuDungThietBi suDungThietBi = new frmSuDungThietBi();
             suDungThietBi.ShowDialog();
+        }
+
+        private void quanLyThongTinPhong_Click(object sender, EventArgs e)
+        {
+            frmQuanLyPhong quanLyPhong = new frmQuanLyPhong();
+            quanLyPhong.ShowDialog();
+        }
+
+        private void quanLyLoaiPhong_Click(object sender, EventArgs e)
+        {
+            frmLoaiPhong loaiPhong = new frmLoaiPhong();
+            loaiPhong.ShowDialog();
+        }
+
+        private void quanLyLoaiKhachHang_Click(object sender, EventArgs e)
+        {
+            frmLoaiKhachHang loaiKhachHang = new frmLoaiKhachHang();
+            loaiKhachHang.ShowDialog();
+        }
+
+        private void quảnLýMónĂnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMonAn monAn = new frmMonAn();
+            monAn.ShowDialog();
         }
     }
 }

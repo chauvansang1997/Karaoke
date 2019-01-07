@@ -252,7 +252,7 @@ namespace Karaoke.GUI_LoaiKH
                 {
                     LoaiKhachHang loaiKhachHang = (LoaiKhachHang)bindingSource[i];
                     listMaLoaiKhachHang.Add(loaiKhachHang.MaLoaiKH);
-                    listMucKhuyenMai.Add(loaiKhachHang.MucKM);
+                    listMucKhuyenMai.Add(loaiKhachHang.SoTienTichLuy);
                 }
                
                 if (BUS.KhuyenMaiBUS.ThemkhuyenMai(new DTO.KhuyenMai()
@@ -274,7 +274,7 @@ namespace Karaoke.GUI_LoaiKH
             {
                 List<LoaiKhachHang> list = (List<LoaiKhachHang>)bindingSource.DataSource;
                 List<int> listMaLoaiKhachHang = list.Select(l => l.MaLoaiKH).ToList();
-                List<float> listMucKhuyenMai = list.Select(l => l.MucKM).ToList();
+                List<int> listMucKhuyenMai = list.Select(l => l.SoTienTichLuy).ToList();
                 if (BUS.KhuyenMaiBUS.CapNhatkhuyenMai(new DTO.KhuyenMai()
                 {
 

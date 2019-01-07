@@ -52,11 +52,13 @@
     <Compile Include="KhachHangBUS.cs" />
     <Compile Include="KhuyenMaiBUS.cs" />
     <Compile Include="LoaiKhachHangBUS.cs" />
+    <Compile Include="LoaiPhongBUS.cs" />
     <Compile Include="LuongBUS.cs" />
     <Compile Include="MonAnBUS.cs" />
     <Compile Include="NguyenLieuBUS.cs" />
     <Compile Include="NhaCungCapBUS.cs" />
     <Compile Include="PhanCongBUS.cs" />
+    <Compile Include="PhanQuyenBUS.cs" />
     <Compile Include="PhieuDatTiecBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="PhongBUS.cs" />

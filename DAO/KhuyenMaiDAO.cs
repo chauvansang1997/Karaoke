@@ -40,7 +40,7 @@ namespace DAO
 
             return true;
         }
-        public static bool CapNhatkhuyenMai(KhuyenMai khuyenMai, List<int> listLoaiKhachHang, List<float> listMucKhuyenMai)
+        public static bool CapNhatkhuyenMai(KhuyenMai khuyenMai, List<int> listLoaiKhachHang, List<int> listMucKhuyenMai)
         {
             string query = "EXEC uspCapNhatKhuyenMai @maKhuyenMai,@tenKhuyenMai,@danhSachmaLoaiKhachHang,@danhSachMucKhuyenMai,@NgayBatDau,@NgayKetThuc";
 
@@ -160,7 +160,7 @@ namespace DAO
                 new LoaiKhachHang()
                 {
                     MaLoaiKH = int.Parse(x[0].ToString()),
-                    MucKM = float.Parse(x[2].ToString()),
+                    SoTienTichLuy = int.Parse(x[2].ToString()),
                     TenLoaiKH = x[1].ToString(),
 
                 });
