@@ -122,13 +122,13 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="nhapKhoSanPham.Size" type="System.Drawing.Size, System.Drawing">
-    <value>252, 32</value>
+    <value>182, 32</value>
   </data>
   <data name="nhapKhoSanPham.Text" xml:space="preserve">
     <value>Nhập kho</value>
   </data>
   <data name="chinhSuaSanPham.Size" type="System.Drawing.Size, System.Drawing">
-    <value>252, 32</value>
+    <value>182, 32</value>
   </data>
   <data name="chinhSuaSanPham.Text" xml:space="preserve">
     <value>Chỉnh sửa</value>
@@ -259,19 +259,19 @@
     <value>Báo cáo</value>
   </data>
   <data name="nhanViemMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
+    <value>194, 32</value>
   </data>
   <data name="nhanViemMenuItem.Text" xml:space="preserve">
     <value>Nhân viên</value>
   </data>
   <data name="phanCongMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
+    <value>194, 32</value>
   </data>
   <data name="phanCongMenu.Text" xml:space="preserve">
     <value>Phân công</value>
   </data>
   <data name="caTrucMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
+    <value>194, 32</value>
   </data>
   <data name="caTrucMenu.Text" xml:space="preserve">
     <value>Ca làm việc</value>
@@ -390,7 +390,7 @@
     <value>9, 20</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1751, 744</value>
+    <value>1751, 731</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
