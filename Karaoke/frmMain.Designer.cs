@@ -57,11 +57,15 @@
             this.khachHangMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.nhaCungCapMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.quanLyKhuyenMaiMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.quảnLýPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quanLyThongTinPhong = new System.Windows.Forms.ToolStripMenuItem();
+            this.quanLyLoaiPhong = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quảnLýHàngHóaToolStripMenuItem,
             this.tiếpNhậnKháchHàngToolStripMenuItem,
@@ -69,7 +73,8 @@
             this.nhanVienMenu,
             this.khachHangMenu,
             this.nhaCungCapMenu,
-            this.quanLyKhuyenMaiMenu});
+            this.quanLyKhuyenMaiMenu,
+            this.quảnLýPhòngToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
@@ -256,12 +261,33 @@
             resources.ApplyResources(this.quanLyKhuyenMaiMenu, "quanLyKhuyenMaiMenu");
             this.quanLyKhuyenMaiMenu.Click += new System.EventHandler(this.quanLyKhuyenMaiMenu_Click);
             // 
+            // quảnLýPhòngToolStripMenuItem
+            // 
+            this.quảnLýPhòngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.quanLyThongTinPhong,
+            this.quanLyLoaiPhong});
+            this.quảnLýPhòngToolStripMenuItem.Name = "quảnLýPhòngToolStripMenuItem";
+            resources.ApplyResources(this.quảnLýPhòngToolStripMenuItem, "quảnLýPhòngToolStripMenuItem");
+            // 
+            // quanLyThongTinPhong
+            // 
+            this.quanLyThongTinPhong.Name = "quanLyThongTinPhong";
+            resources.ApplyResources(this.quanLyThongTinPhong, "quanLyThongTinPhong");
+            this.quanLyThongTinPhong.Click += new System.EventHandler(this.quanLyThongTinPhong_Click);
+            // 
+            // quanLyLoaiPhong
+            // 
+            this.quanLyLoaiPhong.Name = "quanLyLoaiPhong";
+            resources.ApplyResources(this.quanLyLoaiPhong, "quanLyLoaiPhong");
+            this.quanLyLoaiPhong.Click += new System.EventHandler(this.quanLyLoaiPhong_Click);
+            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(216)))), ((int)(((byte)(233)))));
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.Load += new System.EventHandler(this.frmMain_Load);
@@ -302,6 +328,9 @@
         private System.Windows.Forms.ToolStripMenuItem xemLịchSửĐặtPhòngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quanLyKhuyenMaiMenu;
         private System.Windows.Forms.ToolStripMenuItem sửDụngThiếtBịToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quảnLýPhòngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quanLyThongTinPhong;
+        private System.Windows.Forms.ToolStripMenuItem quanLyLoaiPhong;
     }
 }
 

@@ -61,7 +61,7 @@ namespace Karaoke.GUI_LoaiKH
                 {
                     MaLoaiKH =(int)row["MALOAIKH"],
                     TenLoaiKH = row["TENLOAIKH"].ToString(),
-                    MucKM = float.Parse(txtMucKM.Text),
+                    SoTienTichLuy = int.Parse(txtMucKM.Text),
                 });
                 this.Close();
             }

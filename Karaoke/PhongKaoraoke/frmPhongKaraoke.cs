@@ -211,7 +211,8 @@ namespace Karaoke.PhongKaoraoke
             DialogResult result = MessageBox.Show("Bạn có muốn đặt phòng không?", "Xác nhận", MessageBoxButtons.YesNoCancel);
             if (result == DialogResult.Yes)
             {
-                if (BUS.PhongBUS.GhiNhanDatPhong(new DTO.KhachHang() { Ten = txtTenKhachHang.Text, SoDT = txtSDT.Text }, PhongHienTai.Ten, User.NhanVien.MaNV))
+                if (BUS.PhongBUS.GhiNhanDatPhong(new DTO.KhachHang() { Ten =  txtTenKhachHang.Text == "" ? "Vẫn lai" : txtTenKhachHang.Text,
+                    SoDT = txtSDT.Text }, PhongHienTai.Ten, User.NhanVien.MaNV))
                 {
                     MessageBox.Show("Đặt phòng thành công");
                     listPhongLayout[indexHienTai].BackColor = Color.DarkRed;
@@ -221,7 +222,7 @@ namespace Karaoke.PhongKaoraoke
                 }
                 else
                 {
-                    MessageBox.Show("Có lỗi xảy ra. Hãy báo cho nhà cung cấp phần mềm để biết thêm chi tiết");
+                    MessageBox.Show("Phòng đã được đặt");
                 }
             }
             else if (result == DialogResult.No)
@@ -357,6 +358,14 @@ namespace Karaoke.PhongKaoraoke
         private void txtPageNumber_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            frmChonThanhVien chonThanhVien = new frmChonThanhVien();
+            chonThanhVien.ShowDialog();
+            txtTenKhachHang.Text = chonThanhVien.khachHang.Ten;
+            txtSDT.Text = chonThanhVien.khachHang.SDT;
         }
     }
 }

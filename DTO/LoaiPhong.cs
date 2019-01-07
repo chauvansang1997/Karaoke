@@ -8,31 +8,10 @@ namespace DTO
 {
     public class LoaiPhong
     {
-        private string ten;
-        private string ma;
-        public string Ma
-        {
-            get
-            {
-                return ma;
-            }
 
-            set
-            {
-                ma = value;
-            }
-        }
-        public string Ten
-        {
-            get
-            {
-                return ten;
-            }
+        public string Ma { get; set; }
+        public string Ten { get; set; }
 
-            set
-            {
-                ten = value;
-            }
-        }
+        public int Gia { get;set; }
     }
 }

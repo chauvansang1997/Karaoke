@@ -35,7 +35,7 @@ namespace Karaoke.GUI_LoaiKH
 			loaiKhach.TenLoaiKH = txtTenLoaiKH.Text;
 			try
 			{
-				loaiKhach.MucKM = float.Parse(txtMucKM.Text);
+				loaiKhach.SoTienTichLuy = int.Parse(txtMucKM.Text);
 
 			}
 			catch (Exception ex)
@@ -60,7 +60,7 @@ namespace Karaoke.GUI_LoaiKH
 		{
 			loaiKhach.MaLoaiKH = int.Parse(txtMaLoaiKH.Text);
 			loaiKhach.TenLoaiKH = txtTenLoaiKH.Text;
-			loaiKhach.MucKM = float.Parse(txtMucKM.Text);
+			loaiKhach.SoTienTichLuy = int.Parse(txtMucKM.Text);
 			if (BUS.LoaiKhachHangBUS.CapNhatLoaiKH(loaiKhach))
 			{
 				frmLoaiKhachHang_Load(sender, e);

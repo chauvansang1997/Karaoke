@@ -352,9 +352,31 @@ namespace DAO
             }
             return true;
         }
-        public static bool KiemTraGoiMon(string ma, int soLuong,int soLuongCu)
+        public static bool KiemTraMonAn(string ma, int soLuong, int soLuongCu)
         {
             string query = "EXEC uspKiemTraGoiMon @ma,@soLuong,@soLuongCu";
+
+            //truyền tham số vào câu truy vấn
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@ma",SqlDbType.VarChar){IsNullable=false,Value=ma },
+                new SqlParameter("@soLuong",SqlDbType.Int){IsNullable=false,Value=soLuong },
+                 new SqlParameter("@soLuongCu",SqlDbType.Int){IsNullable=false,Value=soLuongCu },
+            };
+            int result = 0;
+            try
+            {
+                result = (int)Dataprovider.ExcuteScalar(query, parameters.ToArray());
+            }
+            catch (Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            return result == 0 ? false : true;
+        }
+        public static bool KiemTraSanPham(string ma, int soLuong, int soLuongCu)
+        {
+            string query = "EXEC uspKiemTraSanPham @ma,@soLuong,@soLuongCu";
 
             //truyền tham số vào câu truy vấn
             List<SqlParameter> parameters = new List<SqlParameter>()
@@ -385,20 +407,20 @@ namespace DAO
             };
             HoaDon hoaDon = null;
             try
-            {             
+            {
                 DataRow row = Dataprovider.ExcuteQuery(query, parameters.ToArray()).Select()[0];
                 hoaDon = new HoaDon()
                 {
-                    SoHoaDon= row.ItemArray[4].ToString(),
-                    GioVao= row.ItemArray[0].ToString(),
+                    SoHoaDon = row.ItemArray[4].ToString(),
+                    GioVao = row.ItemArray[0].ToString(),
                     GioRa = row.ItemArray[1].ToString(),
-                    GiamGia= row.ItemArray[2].ToString(),
+                    GiamGia = row.ItemArray[2].ToString(),
                     MaPhong = row.ItemArray[3].ToString(),
                     TienGio = row.ItemArray[5].ToString(),
-                    TenKhachHang= row.ItemArray[6].ToString(),
-                    SoDienThoai= row.ItemArray[7].ToString(),
-                    TienDatCoc= row.ItemArray[8].ToString(),
-                    TinhTrang= row.ItemArray[9].ToString(),
+                    TenKhachHang = row.ItemArray[6].ToString(),
+                    SoDienThoai = row.ItemArray[7].ToString(),
+                    TienDatCoc = row.ItemArray[8].ToString(),
+                    TinhTrang = row.ItemArray[9].ToString(),
                 };
             }
             catch (Exception ex)

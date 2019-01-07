@@ -305,6 +305,18 @@
     <Compile Include="PhongKaoraoke\frmLichSuPhong.Designer.cs">
       <DependentUpon>frmLichSuPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhongKaoraoke\frmLoaiPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhongKaoraoke\frmLoaiPhong.Designer.cs">
+      <DependentUpon>frmLoaiPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyNguyenLieu\frmChonThanhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyNguyenLieu\frmChonThanhVien.Designer.cs">
+      <DependentUpon>frmChonThanhVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyNguyenLieu\frmGiaoNguyenLieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -578,6 +590,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PhongKaoraoke\frmLichSuPhong.resx">
       <DependentUpon>frmLichSuPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhongKaoraoke\frmLoaiPhong.resx">
+      <DependentUpon>frmLoaiPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyNguyenLieu\frmChonThanhVien.resx">
+      <DependentUpon>frmChonThanhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNguyenLieu\frmGiaoNguyenLieu.resx">
       <DependentUpon>frmGiaoNguyenLieu.cs</DependentUpon>

@@ -11,7 +11,7 @@ namespace DAO
     {
         public static string TaoMaNguyenLieu()
         {
-            string query = "select macuoi,soma,tiento from taoma where id=1";
+            string query = "select macuoi,soma,tiento from taoma where id=2";
             DataTable table = Dataprovider.ExcuteQuery(query);
             DataRow row = table.Rows[0];
 
@@ -20,7 +20,7 @@ namespace DAO
             string tienTo = row["tiento"].ToString();
             string maMoi = tienTo + maCuoi.ToString().PadLeft(soMa, '0');
 
-            query = "update taoma set macuoi=macuoi+1 where id=1";
+            query = "update taoma set macuoi=macuoi+1 where id=2";
             int num = Dataprovider.ExcuteNonQuery(query);
             if (num == 0)
             {

@@ -6,12 +6,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Karaoke.PhongKaoraoke
 {
-    public partial class frmQuanLyPhong : Form
+    public partial class frmLoaiPhong : Form
     {
         private bool bSua;
         private bool bThem;
@@ -19,7 +18,7 @@ namespace Karaoke.PhongKaoraoke
         private int pageNumber;
         private int totalPage;
         private string ma;
-        public frmQuanLyPhong()
+        public frmLoaiPhong()
         {
             InitializeComponent();
         }
@@ -31,7 +30,7 @@ namespace Karaoke.PhongKaoraoke
             pageNumber = 1;
 
             txtPageNumber.Text = "1";
-            totalPage = BUS.PhongBUS.DemPhongQuanLy("",-1);
+            totalPage = BUS.PhongBUS.DemPhongQuanLy("", -1);
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
             txtTotalPage.Text = totalPage.ToString();
             dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongQuanLy("", -1, pageNumber, pageSize);
@@ -40,27 +39,13 @@ namespace Karaoke.PhongKaoraoke
         }
         private void loadDanhSach()
         {
-            DataRow row = ((DataRowView)cmbLoaiPhong.SelectedValue).Row;
-            dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongQuanLy(txtTenPhongTK.Text,(int)row["MALOAIPHONG"], pageNumber, pageSize);
+
+            //dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongQuanLy(txtTenPhongTK.Text, (int)row["MALOAIPHONG"], pageNumber, pageSize);
         }
         private void btnFind_Click(object sender, EventArgs e)
         {
             pageNumber = 1;
             txtPageNumber.Text = "1";
-            if (cmbLoaiPhongTK.SelectedValue == null)
-            {
-                totalPage = BUS.PhongBUS.DemPhongQuanLy("", -1);
-                totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
-                dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongQuanLy("", -1, pageNumber, pageSize);
-            }
-            else
-            {
-                DataRow row = ((DataRowView)cmbLoaiPhong.SelectedValue).Row;
-                totalPage = BUS.PhongBUS.DemPhongQuanLy(txtTenPhongTK.Text, (int)row["MALOAIPHONG"]);
-                totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
-              
-                dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongQuanLy(txtTenPhongTK.Text, (int)row["MALOAIPHONG"], pageNumber, pageSize);
-            }
 
             txtTotalPage.Text = totalPage.ToString();
         }
@@ -94,14 +79,10 @@ namespace Karaoke.PhongKaoraoke
             this.dGVDanhSach.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSteelBlue;
 
             this.dGVDanhSach.Columns["MALOAIPHONG"].Visible = false;
-            this.dGVDanhSach.Columns["MAPHONG"].HeaderText = "Tên";
-            this.dGVDanhSach.Columns["TENLOAIPHONG"].HeaderText = "Tên loại phòng";
+            this.dGVDanhSach.Columns["TENLOAIPHONG"].HeaderText = "Tên";
             this.dGVDanhSach.Columns["GIA"].HeaderText = "Giá";
 
-            cmbLoaiPhong.DataSource = BUS.PhongBUS.XemLoaiPhong();
-            cmbLoaiPhong.DisplayMember = "TENLOAIPHONG";
-            cmbLoaiPhongTK.DataSource = BUS.PhongBUS.XemLoaiPhong();
-            cmbLoaiPhongTK.DisplayMember = "TENLOAIPHONG";
+
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -213,18 +194,8 @@ namespace Karaoke.PhongKaoraoke
             if (dGVDanhSach.CurrentCell != null)
             {
                 int index = dGVDanhSach.CurrentCell.RowIndex;
-                txtMaPhong.Text = dGVDanhSach[0, index].Value.ToString();
-            
-                //  cmbNhaCC.SelectedValue = dGVDanhSach[6, index].Value.ToString();
-                for (int i = 0; i < cmbLoaiPhong.Items.Count; i++)
-                {
-                    DataRow row = ((DataRowView)cmbLoaiPhong.Items[i]).Row;
-                    if (row["MALOAIPHONG"].ToString() == dGVDanhSach[1, index].Value.ToString())
-                    {
-                        cmbLoaiPhong.SelectedIndex = i;
-                    }
-                }
-              
+                txtLoaiphong.Text = dGVDanhSach[0, index].Value.ToString();
+
                 ma = dGVDanhSach[0, index].Value.ToString();
             }
 
@@ -247,13 +218,16 @@ namespace Karaoke.PhongKaoraoke
         private void enableControls(bool enable)
         {
             //txtTenNL.Enabled = enable;
-            cmbLoaiPhong.Enabled = enable;
+         
             btnLuu.Enabled = enable;
             btnHuy.Enabled = enable;
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            txtMaPhong.Text = "";
+            txtLoaiphong.Text = "";
+            txtGia.Text = "";
+
+
             enableControls(true);
             enableButton(false);
             bThem = true;
@@ -263,57 +237,109 @@ namespace Karaoke.PhongKaoraoke
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (cmbLoaiPhong.SelectedValue != null)
+            if (bThem)
             {
-                DataRow row = ((DataRowView)cmbLoaiPhong.SelectedValue).Row;
-                if (bThem)
+                if(txtLoaiphong.Text != "" )
                 {
-
-                    if (BUS.PhongBUS.ThemPhong(new DTO.Phong()
-                    {
-                        Ten = txtMaPhong.Text,
-                        TenLoai = row["MALOAIPHONG"].ToString()
-
-                    }))
-                    {
-                        MessageBox.Show("Thêm phòng thành công");
-                    }
-                    bThem = false;
-                    enableControls(false);
-                    resetDanhSach();
+                    MessageBox.Show("Bạn chưa nhập tên phòng");
+                    return;
                 }
-                else if (bSua)
+                if (Utility.IsContainsText(txtGia.Text) || txtGia.Text == "")
                 {
-                    if (BUS.PhongBUS.CapNhatPhong(new DTO.Phong()
-                    {
-                        Ten = txtMaPhong.Text,
-                        TenLoai = row["MALOAIPHONG"].ToString()
-
-                    }))
-                    {
-                        MessageBox.Show("Sửa phòng thành công");
-                    }
-                    bSua = false;
-                    enableControls(false);
-                    resetDanhSach();
+                    MessageBox.Show("Giá không hợp lệ!!!");
+                    return;
                 }
+
+                if (BUS.LoaiPhongBUS.KiemTraLoaiPhong(txtLoaiphong.Text))
+                {
+                    MessageBox.Show("Tên phòng đã tồn tại!!!");
+                    return;
+                }
+
+                if(BUS.LoaiPhongBUS.ThemLoaiPhong(new LoaiPhong() { Ten = txtLoaiphong.Text,Gia = int.Parse(txtGia.Text) }))
+                {
+                    MessageBox.Show("Thêm loại phòng thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Đã có lỗi xảy ra. Liên hệ lập trình viên để kiểm tra!!!");
+                }
+                
             }
-        
+            else if (bSua)
+            {
+                if (txtLoaiphong.Text != "")
+                {
+                    MessageBox.Show("Bạn chưa nhập tên phòng");
+                    return;
+                }
+                if (Utility.IsContainsText(txtGia.Text) || txtGia.Text == "")
+                {
+                    MessageBox.Show("Giá không hợp lệ!!!");
+                    return;
+                }
+                if (BUS.LoaiPhongBUS.KiemTraLoaiPhong(txtLoaiphong.Text))
+                {
+                    MessageBox.Show("Tên phòng đã tồn tại!!!");
+                    return;
+                }
+
+                if (BUS.LoaiPhongBUS.CapNhatLoaiPhong(new LoaiPhong() { Ten = txtLoaiphong.Text, Gia = int.Parse(txtGia.Text) }))
+                {
+                    MessageBox.Show("Thêm loại phòng thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Đã có lỗi xảy ra. Liên hệ lập trình viên để kiểm tra!!!");
+                }
+
+                bSua = false;
+                enableControls(false);
+                resetDanhSach();
+            }
+            //if (cmbLoaiPhong.SelectedValue != null)
+            //{
+            //    DataRow row = ((DataRowView)cmbLoaiPhong.SelectedValue).Row;
+            //    if (bThem)
+            //    {
+
+            //        if (BUS.PhongBUS.ThemPhong(new DTO.Phong()
+            //        {
+            //            Ten = txtMaPhong.Text,
+            //            TenLoai = row["MALOAIPHONG"].ToString()
+
+            //        }))
+            //        {
+            //            MessageBox.Show("Thêm phòng thành công");
+            //        }
+            //        bThem = false;
+            //        enableControls(false);
+            //        resetDanhSach();
+            //    }
+            //    else if (bSua)
+            //    {
+            //        if (BUS.PhongBUS.CapNhatPhong(new DTO.Phong()
+            //        {
+            //            Ten = txtMaPhong.Text,
+            //            TenLoai = row["MALOAIPHONG"].ToString()
+
+            //        }))
+            //        {
+            //            MessageBox.Show("Sửa phòng thành công");
+            //        }
+            //        bSua = false;
+            //        enableControls(false);
+            //        resetDanhSach();
+            //    }
+            //}
+
         }
 
-  
+
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (BUS.NguyenLieuBUS.XoaNguyenLieu(ma))
-            {
-                MessageBox.Show("Xóa phòng thành công");
-                resetDanhSach();
-            }
-            else
-            {
-                MessageBox.Show("Không thể xóa phòng");
-            }
+            MessageBox.Show("Thêm loại phòng thành công");
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -331,5 +357,5 @@ namespace Karaoke.PhongKaoraoke
             enableButton(true);
         }
     }
-    
 }
+

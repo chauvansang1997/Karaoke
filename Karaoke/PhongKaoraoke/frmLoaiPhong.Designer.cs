@@ -1,6 +1,6 @@
 ﻿namespace Karaoke.PhongKaoraoke
 {
-    partial class frmQuanLyPhong
+    partial class frmLoaiPhong
     {
         /// <summary>
         /// Required designer variable.
@@ -28,28 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLyPhong));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnThoat = new System.Windows.Forms.Button();
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dGVDanhSach = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cmbLoaiPhongTK = new System.Windows.Forms.ComboBox();
-            this.txtTenPhongTK = new System.Windows.Forms.TextBox();
+            this.txtTenLoaiPhongTK = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtGia = new System.Windows.Forms.TextBox();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.cmbLoaiPhong = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtMaPhong = new System.Windows.Forms.TextBox();
-            this.btnXoa = new System.Windows.Forms.Button();
+            this.txtLoaiphong = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
             this.btnFirstPage = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -58,6 +54,7 @@
             this.btnPrevPage = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSach)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
@@ -74,7 +71,6 @@
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.Location = new System.Drawing.Point(664, 712);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThoat.Name = "btnThoat";
@@ -135,8 +131,8 @@
             this.dGVDanhSach.Name = "dGVDanhSach";
             this.dGVDanhSach.ReadOnly = true;
             this.dGVDanhSach.RowHeadersVisible = false;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dGVDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVDanhSach.Size = new System.Drawing.Size(864, 429);
             this.dGVDanhSach.TabIndex = 149;
@@ -152,44 +148,18 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(180, 34);
             this.label11.TabIndex = 158;
-            this.label11.Text = "Tên phòng:";
+            this.label11.Text = "Tên loại phòng:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label7
+            // txtTenLoaiPhongTK
             // 
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(10, 94);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(166, 34);
-            this.label7.TabIndex = 156;
-            this.label7.Text = "Loại phòng:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cmbLoaiPhongTK
-            // 
-            this.cmbLoaiPhongTK.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbLoaiPhongTK.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cmbLoaiPhongTK.BackColor = System.Drawing.Color.White;
-            this.cmbLoaiPhongTK.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbLoaiPhongTK.FormattingEnabled = true;
-            this.cmbLoaiPhongTK.Location = new System.Drawing.Point(201, 91);
-            this.cmbLoaiPhongTK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cmbLoaiPhongTK.Name = "cmbLoaiPhongTK";
-            this.cmbLoaiPhongTK.Size = new System.Drawing.Size(360, 37);
-            this.cmbLoaiPhongTK.TabIndex = 160;
-            // 
-            // txtTenPhongTK
-            // 
-            this.txtTenPhongTK.BackColor = System.Drawing.Color.White;
-            this.txtTenPhongTK.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenPhongTK.Location = new System.Drawing.Point(200, 37);
-            this.txtTenPhongTK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTenPhongTK.Name = "txtTenPhongTK";
-            this.txtTenPhongTK.Size = new System.Drawing.Size(361, 36);
-            this.txtTenPhongTK.TabIndex = 161;
+            this.txtTenLoaiPhongTK.BackColor = System.Drawing.Color.White;
+            this.txtTenLoaiPhongTK.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenLoaiPhongTK.Location = new System.Drawing.Point(200, 37);
+            this.txtTenLoaiPhongTK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTenLoaiPhongTK.Name = "txtTenLoaiPhongTK";
+            this.txtTenLoaiPhongTK.Size = new System.Drawing.Size(361, 36);
+            this.txtTenLoaiPhongTK.TabIndex = 161;
             // 
             // panel1
             // 
@@ -229,7 +199,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(1491, 69);
             this.label4.TabIndex = 1;
-            this.label4.Text = "      QUẢN LÝ PHÒNG";
+            this.label4.Text = "      QUẢN LÝ LOẠI PHÒNG";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // splitContainer
@@ -242,12 +212,12 @@
             // splitContainer.Panel1
             // 
             this.splitContainer.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
+            this.splitContainer.Panel1.Controls.Add(this.label1);
+            this.splitContainer.Panel1.Controls.Add(this.txtGia);
             this.splitContainer.Panel1.Controls.Add(this.btnHuy);
             this.splitContainer.Panel1.Controls.Add(this.btnLuu);
             this.splitContainer.Panel1.Controls.Add(this.label9);
-            this.splitContainer.Panel1.Controls.Add(this.cmbLoaiPhong);
-            this.splitContainer.Panel1.Controls.Add(this.label8);
-            this.splitContainer.Panel1.Controls.Add(this.txtMaPhong);
+            this.splitContainer.Panel1.Controls.Add(this.txtLoaiphong);
             // 
             // splitContainer.Panel2
             // 
@@ -255,12 +225,10 @@
             this.splitContainer.Panel2.Controls.Add(this.btnXoa);
             this.splitContainer.Panel2.Controls.Add(this.btnFind);
             this.splitContainer.Panel2.Controls.Add(this.txtTotalPage);
-            this.splitContainer.Panel2.Controls.Add(this.cmbLoaiPhongTK);
-            this.splitContainer.Panel2.Controls.Add(this.label7);
             this.splitContainer.Panel2.Controls.Add(this.btnFirstPage);
             this.splitContainer.Panel2.Controls.Add(this.btnSua);
             this.splitContainer.Panel2.Controls.Add(this.btnThoat);
-            this.splitContainer.Panel2.Controls.Add(this.txtTenPhongTK);
+            this.splitContainer.Panel2.Controls.Add(this.txtTenLoaiPhongTK);
             this.splitContainer.Panel2.Controls.Add(this.label11);
             this.splitContainer.Panel2.Controls.Add(this.txtPageNumber);
             this.splitContainer.Panel2.Controls.Add(this.btnThem);
@@ -274,6 +242,27 @@
             this.splitContainer.SplitterDistance = 588;
             this.splitContainer.SplitterWidth = 6;
             this.splitContainer.TabIndex = 163;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(54, 227);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 29);
+            this.label1.TabIndex = 196;
+            this.label1.Text = "Giá:";
+            // 
+            // txtGia
+            // 
+            this.txtGia.Enabled = false;
+            this.txtGia.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGia.Location = new System.Drawing.Point(54, 261);
+            this.txtGia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtGia.Name = "txtGia";
+            this.txtGia.Size = new System.Drawing.Size(475, 36);
+            this.txtGia.TabIndex = 195;
             // 
             // btnHuy
             // 
@@ -299,7 +288,6 @@
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.Location = new System.Drawing.Point(102, 712);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLuu.Name = "btnLuu";
@@ -317,61 +305,19 @@
             this.label9.Location = new System.Drawing.Point(54, 118);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(134, 29);
+            this.label9.Size = new System.Drawing.Size(178, 29);
             this.label9.TabIndex = 173;
-            this.label9.Text = "Tên phòng:";
+            this.label9.Text = "Tên loại phòng:";
             // 
-            // cmbLoaiPhong
+            // txtLoaiphong
             // 
-            this.cmbLoaiPhong.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbLoaiPhong.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cmbLoaiPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbLoaiPhong.FormattingEnabled = true;
-            this.cmbLoaiPhong.Location = new System.Drawing.Point(54, 248);
-            this.cmbLoaiPhong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cmbLoaiPhong.Name = "cmbLoaiPhong";
-            this.cmbLoaiPhong.Size = new System.Drawing.Size(475, 37);
-            this.cmbLoaiPhong.TabIndex = 172;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(54, 214);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(137, 29);
-            this.label8.TabIndex = 163;
-            this.label8.Text = "Loại phòng:";
-            // 
-            // txtMaPhong
-            // 
-            this.txtMaPhong.Enabled = false;
-            this.txtMaPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaPhong.Location = new System.Drawing.Point(54, 152);
-            this.txtMaPhong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtMaPhong.Name = "txtMaPhong";
-            this.txtMaPhong.Size = new System.Drawing.Size(475, 36);
-            this.txtMaPhong.TabIndex = 162;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
-            this.btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnXoa.FlatAppearance.BorderSize = 0;
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(316, 712);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(165, 55);
-            this.btnXoa.TabIndex = 156;
-            this.btnXoa.Text = " Xóa";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            this.txtLoaiphong.Enabled = false;
+            this.txtLoaiphong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLoaiphong.Location = new System.Drawing.Point(54, 152);
+            this.txtLoaiphong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLoaiphong.Name = "txtLoaiphong";
+            this.txtLoaiphong.Size = new System.Drawing.Size(475, 36);
+            this.txtLoaiphong.TabIndex = 162;
             // 
             // btnFind
             // 
@@ -416,7 +362,6 @@
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.Location = new System.Drawing.Point(490, 712);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSua.Name = "btnSua";
@@ -435,7 +380,6 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.Location = new System.Drawing.Point(142, 712);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThem.Name = "btnThem";
@@ -511,7 +455,25 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // frmQuanLyPhong
+            // btnXoa
+            // 
+            this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
+            this.btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnXoa.FlatAppearance.BorderSize = 0;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Location = new System.Drawing.Point(316, 712);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(165, 55);
+            this.btnXoa.TabIndex = 156;
+            this.btnXoa.Text = " Xóa";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // frmLoaiPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -525,7 +487,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmQuanLyPhong";
+            this.Name = "frmLoaiPhong";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -556,20 +518,18 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cmbLoaiPhongTK;
-        private System.Windows.Forms.TextBox txtTenPhongTK;
+        private System.Windows.Forms.TextBox txtTenLoaiPhongTK;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.SplitContainer splitContainer;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.ComboBox cmbLoaiPhong;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAn;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtMaPhong;
+        private System.Windows.Forms.TextBox txtLoaiphong;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtGia;
+        private System.Windows.Forms.Button btnXoa;
     }
 }
