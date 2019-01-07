@@ -410,7 +410,7 @@
             this.Controls.Add(this.dgvDanhSachCaTruc);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCaTruc";
-            this.Text = "Quản lý ca trực";
+            this.Text = "Quản lý ca làm việc";
             this.Load += new System.EventHandler(this.frmCatTruc_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
