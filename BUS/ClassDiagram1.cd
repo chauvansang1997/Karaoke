@@ -147,25 +147,11 @@
       <FileName>TaiKhoanBUS.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BUS.TestBUS" Collapsed="true">
-    <Position X="4" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
-      <FileName>TestBUS.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="BUS.ThietBiBUS" Collapsed="true">
-    <Position X="5.75" Y="5.75" Width="1.5" />
+    <Position X="4" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAOgQgEAAAAQMAAACAFACAAUAAAAIAAgCABUAAQ=</HashCode>
       <FileName>ThietBiBUS.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="BUS.UserBUS" Collapsed="true">
-    <Position X="7.5" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>UserBUS.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

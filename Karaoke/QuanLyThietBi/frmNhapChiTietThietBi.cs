@@ -333,7 +333,7 @@ namespace Karaoke.QuanLyThietBi
                     uint oldValue = uint.Parse(dGVHoaDon[e.ColumnIndex, e.RowIndex].Value.ToString());
                     uint newValue = uint.Parse(e.FormattedValue.ToString());
                     TongCong = TongCong - oldValue * uint.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString())
-                        + newValue * uint.Parse(dGVHoaDon[4, e.RowIndex].Value.ToString());
+                        + newValue * uint.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString());
                 }
             }
             catch (Exception)

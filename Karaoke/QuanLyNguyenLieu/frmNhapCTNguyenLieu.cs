@@ -328,7 +328,7 @@ namespace Karaoke.NguyenLieu
                     uint oldValue = uint.Parse(dGVHoaDon[e.ColumnIndex, e.RowIndex].Value.ToString());
                     uint newValue = uint.Parse(e.FormattedValue.ToString());
                     TongCong = TongCong - oldValue * uint.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString())
-                        + newValue * uint.Parse(dGVHoaDon[4, e.RowIndex].Value.ToString());
+                        + newValue * uint.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString());
                 }
             }
             catch (Exception)
@@ -385,33 +385,6 @@ namespace Karaoke.NguyenLieu
 
 
 
-
-        private void dGVHoaDon_MouseMove(object sender, MouseEventArgs e)
-        {
-            if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
-
-            {
-
-                // If the mouse moves outside the rectangle, start the drag.
-
-                if (dragBoxFromMouseDown != Rectangle.Empty &&
-
-                    !dragBoxFromMouseDown.Contains(e.X, e.Y))
-
-                {
-
-
-
-                    // Proceed with the drag and drop, passing in the list item.                   
-
-                    DragDropEffects dropEffect = dGVHoaDon.DoDragDrop(
-                             dGVHoaDon.Rows[rowIndexFromMouseDown],
-                             DragDropEffects.Move);
-
-                }
-
-            }
-        }
 
         private void dGVHoaDon_MouseDown(object sender, MouseEventArgs e)
         {

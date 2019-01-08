@@ -78,7 +78,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="DAO.ThietBiDAO" Collapsed="true">
-    <Position X="7" Y="5.75" Width="1.5" />
+    <Position X="5.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAOgQgEAAAAQMAAACAFACAAUAAAAIAAgAAFUAAQ=</HashCode>
       <FileName>QuanLyThietBi\ThietBiDAO.cs</FileName>
@@ -89,20 +89,6 @@
     <TypeIdentifier>
       <HashCode>AAAEUEMAAAEAAAAAAABAAAAAQCAZAAAAAAAAAABQAAA=</HashCode>
       <FileName>SanPhamDAO.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="DAO.TestDAO" Collapsed="true">
-    <Position X="5.25" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
-      <FileName>TestDAO.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="DAO.UserDAO" Collapsed="true">
-    <Position X="8.75" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>UserDAO.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DAO.PhanCong.PhanCongDAO" Collapsed="true">
