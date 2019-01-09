@@ -347,8 +347,6 @@ namespace Karaoke.PhongKaoraoke
             this.Close();
         }
 
-
-
         private void btnHuy_Click(object sender, EventArgs e)
         {
             bThem = false;
@@ -356,6 +354,8 @@ namespace Karaoke.PhongKaoraoke
             enableControls(false);
             enableButton(true);
         }
+
+
     }
 }
 

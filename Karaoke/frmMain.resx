@@ -121,15 +121,106 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="hangHoa.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="hangHoa.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 28</value>
+  </data>
+  <data name="hangHoa.Text" xml:space="preserve">
+    <value>Quản lý hàng hóa</value>
+  </data>
+  <data name="khachHang.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="khachHang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 28</value>
+  </data>
+  <data name="khachHang.Text" xml:space="preserve">
+    <value>Tiếp nhận khách hàng</value>
+  </data>
+  <data name="baoCao.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="baoCao.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        bwAAAG8B8aLcQwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGlSURBVDhPY/j/
+        /z9J+K20isVbGZXV72RUpoD4YEFN9ygXLffoDBDW9owOQdaAjD9LqIi+kVaOA2rueCOj0v5CXFkMLKHm
+        Ge2p4RmZC8bu0VHoGpHxRxltoXeyKm0gzW+llK3AgtpeMR6aHtFZQDpS3SNGHV0TMgY6v+G1rLoUjA8m
+        tN1BBkRmATX7wSSwYZDGt9LKTchiYELDI9JS0yMqAugFe2RJdPxWRnniJyk1EYaiPXNBGCSGVSE2/EZa
+        peqdjJIXiM1QuOcDCIPZyIpw4beyysVvZJUDYHziDdDWZnsrq1oLNCAcWZwoA17LqvgBQ3z2e2lVAxDf
+        cqvXJSCGaMJlADCVybyTVY54K6M6842McuD/G+q8/88rCAClGIGaHwAxUBkWA4BR0wzU3APEBa9llUz+
+        MziwgMR/nFe7AMT/QYbgNQAZ/95g0wLEO/5vNBcn2gCgX+cC8QdgNOmCNP/eYP3/+3oLBaINeCOjmgd0
+        /or3koryQAMqfm2wXvF/la3oj3NqHd/Pqa34f0aKy3KL92SrrV4rwJqQExIwJ3aQj6M6AK59VoV2i8UD
+        AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="baoCao.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 28</value>
+  </data>
+  <data name="baoCao.Text" xml:space="preserve">
+    <value>Báo cáo</value>
+  </data>
+  <data name="nhanVien.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="nhanVien.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 28</value>
+  </data>
+  <data name="nhanVien.Text" xml:space="preserve">
+    <value>Quản lý nhân viên</value>
+  </data>
+  <data name="thanhVien.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="thanhVien.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 28</value>
+  </data>
+  <data name="thanhVien.Text" xml:space="preserve">
+    <value>Quản lý khách hàng</value>
+  </data>
+  <data name="nhaCungCap.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="nhaCungCap.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 28</value>
+  </data>
+  <data name="nhaCungCap.Text" xml:space="preserve">
+    <value>Quản lý nhà cung cấp</value>
+  </data>
+  <data name="khuyenMai.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="khuyenMai.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 28</value>
+  </data>
+  <data name="khuyenMai.Text" xml:space="preserve">
+    <value>Quản lý khuyến mãi</value>
+  </data>
+  <data name="phong.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="phong.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 28</value>
+  </data>
+  <data name="phong.Text" xml:space="preserve">
+    <value>Quản lý phòng</value>
+  </data>
+  <data name="phanQuyen.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="phanQuyen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 28</value>
+  </data>
+  <data name="phanQuyen.Text" xml:space="preserve">
+    <value>Phân quyền</value>
+  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="menuStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>9, 3, 0, 3</value>
-  </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1751, 38</value>
+    <value>1100, 32</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
@@ -150,247 +241,152 @@
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="hangHoa.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="hangHoa.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 32</value>
-  </data>
-  <data name="hangHoa.Text" xml:space="preserve">
-    <value>Quản lý hàng hóa</value>
-  </data>
   <data name="quảnLýSảnPhẩmToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 32</value>
+    <value>255, 22</value>
   </data>
   <data name="quảnLýSảnPhẩmToolStripMenuItem.Text" xml:space="preserve">
     <value>Quản lý sản phẩm</value>
   </data>
   <data name="nhapKhoSanPham.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 32</value>
+    <value>133, 22</value>
   </data>
   <data name="nhapKhoSanPham.Text" xml:space="preserve">
     <value>Nhập kho</value>
   </data>
   <data name="chinhSuaSanPham.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 32</value>
+    <value>133, 22</value>
   </data>
   <data name="chinhSuaSanPham.Text" xml:space="preserve">
     <value>Chỉnh sửa</value>
   </data>
   <data name="quảnLýNguyênLiệuToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 32</value>
+    <value>255, 22</value>
   </data>
   <data name="quảnLýNguyênLiệuToolStripMenuItem.Text" xml:space="preserve">
     <value>Quản lý nguyên liệu và món ăn</value>
   </data>
   <data name="nhapKhoNguyenLieu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 32</value>
+    <value>203, 22</value>
   </data>
   <data name="nhapKhoNguyenLieu.Text" xml:space="preserve">
     <value>Nhập kho nguyên liệu</value>
   </data>
   <data name="chinhSuaNguyenLieu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 32</value>
+    <value>203, 22</value>
   </data>
   <data name="chinhSuaNguyenLieu.Text" xml:space="preserve">
     <value>Chỉnh sửa nguyên liệu</value>
   </data>
   <data name="quảnLýThiếtBịToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 32</value>
+    <value>255, 22</value>
   </data>
   <data name="quảnLýThiếtBịToolStripMenuItem.Text" xml:space="preserve">
     <value>Quản lý thiết bị</value>
   </data>
   <data name="nhapKhoThietBi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 32</value>
+    <value>169, 22</value>
   </data>
   <data name="nhapKhoThietBi.Text" xml:space="preserve">
     <value>Nhập kho</value>
   </data>
   <data name="chinhSuaThietBi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 32</value>
+    <value>169, 22</value>
   </data>
   <data name="chinhSuaThietBi.Text" xml:space="preserve">
     <value>Chỉnh sửa</value>
   </data>
   <data name="sửDụngThiếtBịToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 32</value>
+    <value>169, 22</value>
   </data>
   <data name="sửDụngThiếtBịToolStripMenuItem.Text" xml:space="preserve">
     <value>Sử dụng thiết bị</value>
   </data>
   <data name="quảnLýMónĂnToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 32</value>
+    <value>255, 22</value>
   </data>
   <data name="quảnLýMónĂnToolStripMenuItem.Text" xml:space="preserve">
     <value>Quản lý món ăn</value>
   </data>
-  <data name="khachHang.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="khachHang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 32</value>
-  </data>
-  <data name="khachHang.Text" xml:space="preserve">
-    <value>Tiếp nhận khách hàng</value>
-  </data>
   <data name="datPhongMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>292, 32</value>
+    <value>208, 22</value>
   </data>
   <data name="datPhongMenu.Text" xml:space="preserve">
     <value>Đặt phòng</value>
   </data>
   <data name="xemLịchSửĐặtPhòngToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>292, 32</value>
+    <value>208, 22</value>
   </data>
   <data name="xemLịchSửĐặtPhòngToolStripMenuItem.Text" xml:space="preserve">
     <value>Xem lịch sử đặt phòng</value>
   </data>
-  <data name="baoCao.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="baoCao.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        bwAAAG8B8aLcQwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGlSURBVDhPY/j/
-        /z9J+K20isVbGZXV72RUpoD4YEFN9ygXLffoDBDW9owOQdaAjD9LqIi+kVaOA2rueCOj0v5CXFkMLKHm
-        Ge2p4RmZC8bu0VHoGpHxRxltoXeyKm0gzW+llK3AgtpeMR6aHtFZQDpS3SNGHV0TMgY6v+G1rLoUjA8m
-        tN1BBkRmATX7wSSwYZDGt9LKTchiYELDI9JS0yMqAugFe2RJdPxWRnniJyk1EYaiPXNBGCSGVSE2/EZa
-        peqdjJIXiM1QuOcDCIPZyIpw4beyysVvZJUDYHziDdDWZnsrq1oLNCAcWZwoA17LqvgBQ3z2e2lVAxDf
-        cqvXJSCGaMJlADCVybyTVY54K6M6842McuD/G+q8/88rCAClGIGaHwAxUBkWA4BR0wzU3APEBa9llUz+
-        MziwgMR/nFe7AMT/QYbgNQAZ/95g0wLEO/5vNBcn2gCgX+cC8QdgNOmCNP/eYP3/+3oLBaINeCOjmgd0
-        /or3koryQAMqfm2wXvF/la3oj3NqHd/Pqa34f0aKy3KL92SrrV4rwJqQExIwJ3aQj6M6AK59VoV2i8UD
-        AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="baoCao.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 32</value>
-  </data>
-  <data name="baoCao.Text" xml:space="preserve">
-    <value>Báo cáo</value>
-  </data>
   <data name="baoCaoTonKho.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 32</value>
+    <value>186, 22</value>
   </data>
   <data name="baoCaoTonKho.Text" xml:space="preserve">
     <value>Báo cáo tồn kho</value>
   </data>
   <data name="baoCaoDoanhThu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 32</value>
+    <value>186, 22</value>
   </data>
   <data name="baoCaoDoanhThu.Text" xml:space="preserve">
     <value>Báo cáo doanh thu</value>
   </data>
   <data name="baoCaoLuongMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 32</value>
+    <value>186, 22</value>
   </data>
   <data name="baoCaoLuongMenu.Text" xml:space="preserve">
     <value>Báo cáo lương</value>
   </data>
-  <data name="nhanVien.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="nhanVien.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 32</value>
-  </data>
-  <data name="nhanVien.Text" xml:space="preserve">
-    <value>Quản lý nhân viên</value>
-  </data>
   <data name="nhanViemMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 32</value>
+    <value>142, 22</value>
   </data>
   <data name="nhanViemMenuItem.Text" xml:space="preserve">
     <value>Nhân viên</value>
   </data>
   <data name="phanCongMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 32</value>
+    <value>142, 22</value>
   </data>
   <data name="phanCongMenu.Text" xml:space="preserve">
     <value>Phân công</value>
   </data>
   <data name="caTrucMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 32</value>
+    <value>142, 22</value>
   </data>
   <data name="caTrucMenu.Text" xml:space="preserve">
     <value>Ca làm việc</value>
   </data>
-  <data name="thanhVien.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="thanhVien.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 32</value>
-  </data>
-  <data name="thanhVien.Text" xml:space="preserve">
-    <value>Quản lý khách hàng</value>
-  </data>
   <data name="quanLyLoaiKhachHang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>354, 32</value>
+    <value>246, 22</value>
   </data>
   <data name="quanLyLoaiKhachHang.Text" xml:space="preserve">
     <value>Quản lý loại khách hàng</value>
   </data>
   <data name="quanLyThongTinKhachHang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>354, 32</value>
+    <value>246, 22</value>
   </data>
   <data name="quanLyThongTinKhachHang.Text" xml:space="preserve">
     <value>Quản lý thông tin khách hàng</value>
   </data>
-  <data name="nhaCungCap.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="nhaCungCap.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 32</value>
-  </data>
-  <data name="nhaCungCap.Text" xml:space="preserve">
-    <value>Quản lý nhà cung cấp</value>
-  </data>
-  <data name="khuyenMai.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="khuyenMai.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 32</value>
-  </data>
-  <data name="khuyenMai.Text" xml:space="preserve">
-    <value>Quản lý khuyến mãi</value>
-  </data>
-  <data name="phong.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="phong.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 32</value>
-  </data>
-  <data name="phong.Text" xml:space="preserve">
-    <value>Quản lý phòng</value>
-  </data>
   <data name="quanLyThongTinPhong.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 32</value>
+    <value>218, 22</value>
   </data>
   <data name="quanLyThongTinPhong.Text" xml:space="preserve">
     <value>Quản lý thông tin phòng</value>
   </data>
   <data name="quanLyLoaiPhong.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 32</value>
+    <value>218, 22</value>
   </data>
   <data name="quanLyLoaiPhong.Text" xml:space="preserve">
     <value>Quản lý loại phòng</value>
-  </data>
-  <data name="phanQuyen.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="phanQuyen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 32</value>
-  </data>
-  <data name="phanQuyen.Text" xml:space="preserve">
-    <value>Phân quyền</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>9, 20</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1751, 756</value>
+    <value>1100, 487</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -487,9 +483,7 @@
         gP8AAYD/AAGA/wAB4P+AA+D/wAPg/8AH///wD///
 </value>
   </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
-  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
