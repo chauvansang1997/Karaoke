@@ -12,6 +12,7 @@ namespace DAO
 	{
 		public static bool DangNhap()
 		{
+			int row = 0;
 			string username = User.UserName;
 			string password = User.Password;
 			string query = "EXEC usp_DangNhap @username,@password";
@@ -32,12 +33,12 @@ namespace DAO
 			if (data.Rows.Count > 0)
 			{
 				User.NhanVien = new NhanVien();
-			
-				User.NhanVien.HoTen = data.Rows[0].ItemArray[0].ToString();
+            
+                User.NhanVien.HoTen = data.Rows[0].ItemArray[0].ToString();
 				User.UserName = data.Rows[0].ItemArray[1].ToString();
 				User.Password = data.Rows[0].ItemArray[2].ToString();
-				User.NhanVien.MaNV = data.Rows[0].ItemArray[3].ToString();
-				return true;
+                User.NhanVien.MaNV = data.Rows[0].ItemArray[3].ToString();
+                return true;
 			}
 			else
 			{
