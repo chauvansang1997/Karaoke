@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class LoaiPhong
+    public class LoaiHangHoa
     {
-
         public string Ma { get; set; }
         public string Ten { get; set; }
 
-        public int Gia { get;set; }
+        public override string ToString()
+        {
+            return Ten;
+        }
     }
 }

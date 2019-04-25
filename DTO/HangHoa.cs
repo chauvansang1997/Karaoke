@@ -6,109 +6,18 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class NguyenLieu
+    public class HangHoa
     {
         private string ten;
         private string ma;
-        private string nhaCungCap;
+        private string tenHinhAnh;
+        private string loaiChiTiet;
+        private LoaiHangHoa loaiHangHoa;
         private string loai;
+        private uint gia;
         private string donViTinh;
-        private uint dongia;
-        private int soLuongTon;
-        private int soLuongToiThieu;
         private int donGiaNhap;
-  
-        public string Ten
-        {
-            get
-            {
-                return ten;
-            }
-
-            set
-            {
-                ten = value;
-            }
-        }
-
-        public string Ma
-        {
-            get
-            {
-                return ma;
-            }
-
-            set
-            {
-                ma = value;
-            }
-        }
-
-        public string NhaCungCap
-        {
-            get
-            {
-                return nhaCungCap;
-            }
-
-            set
-            {
-                nhaCungCap = value;
-            }
-        }
-
-        public string Loai
-        {
-            get
-            {
-                return loai;
-            }
-
-            set
-            {
-                loai = value;
-            }
-        }
-
-        public string DonViTinh
-        {
-            get
-            {
-                return donViTinh;
-            }
-
-            set
-            {
-                donViTinh = value;
-            }
-        }
-
-        public uint Dongia
-        {
-            get
-            {
-                return dongia;
-            }
-
-            set
-            {
-                dongia = value;
-            }
-        }
-
-        public int SoLuongTon
-        {
-            get
-            {
-                return soLuongTon;
-            }
-
-            set
-            {
-                soLuongTon = value;
-            }
-        }
-
+        private int soLuongToiThieu;
         public int SoLuongToiThieu
         {
             get
@@ -132,6 +41,98 @@ namespace DTO
             {
                 donGiaNhap = value;
             }
+        }
+        public string Ten
+        {
+            get
+            {
+                return ten;
+            }
+
+            set
+            {
+                ten = value;
+            }
+        }
+        public string Ma
+        {
+            get
+            {
+                return ma;
+            }
+
+            set
+            {
+                ma = value;
+            }
+        }
+        public string Loai
+        {
+            get
+            {
+                return loai;
+            }
+
+            set
+            {
+                loai = value;
+            }
+        }
+        public uint Gia
+        {
+            get
+            {
+                return gia;
+            }
+
+            set
+            {
+                gia = value;
+            }
+        }
+        public string TenHinhAnh
+        {
+            get
+            {
+                return tenHinhAnh;
+            }
+
+            set
+            {
+                tenHinhAnh = value;
+            }
+        }
+
+        public string LoaiChiTiet
+        {
+            get
+            {
+                return loaiChiTiet;
+            }
+
+            set
+            {
+                loaiChiTiet = value;
+            }
+        }
+
+        public LoaiHangHoa LoaiHangHoa
+        {
+            get
+            {
+                return loaiHangHoa;
+            }
+
+            set
+            {
+                loaiHangHoa = value;
+            }
+        }
+
+        public string DonViTinh
+        {
+            get { return donViTinh; }
+            set { donViTinh = value; }
         }
     }
 }

@@ -12,8 +12,11 @@ namespace DTO
         private string phoneNumber;
         private string address;
         private string id;
+		private int loaiKH;
+		private string sdt;
+        private int tienTichLuy;
 
-        public string Name
+        public string Ten
         {
             get
             {
@@ -26,7 +29,7 @@ namespace DTO
             }
         }
 
-        public string PhoneNumber
+        public string SoDT
         {
             get
             {
@@ -52,7 +55,7 @@ namespace DTO
             }
         }
 
-        public string Id
+        public string Ma
         {
             get
             {
@@ -62,6 +65,41 @@ namespace DTO
             set
             {
                 id = value;
+            }
+        }
+
+		public int LoaiKH
+		{
+			get
+			{
+				return loaiKH;
+			}
+			set
+			{
+				loaiKH = value;
+			}
+		}
+
+		public string SDT
+		{
+			get
+			{
+				return sdt;
+			}
+			set
+			{
+				sdt = value;
+			}
+		}
+
+        public int TienTichLuy { 
+            get
+            {
+                return tienTichLuy;
+            }
+            set
+            {
+                tienTichLuy = value;
             }
         }
     }

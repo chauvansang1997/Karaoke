@@ -69,26 +69,29 @@ namespace DTO
         /// <summary>
         /// Tính thổng số trang
         /// </summary>
-        /// <param name="totalPage">tổng cộng số dòng</param>
+        /// <param name="rowCount">tổng cộng số dòng</param>
         /// <param name="pageSize">kích thước từng trang </param>
         /// <returns></returns>
-        public static int TinhKichThuocTrang(int totalPage, int pageSize)
+        public static int TinhKichThuocTrang(int rowCount, int pageSize)
         {
-
-            if (totalPage * 1.0 % pageSize > 1)
+            if (rowCount == 0)
             {
-                totalPage = (totalPage / pageSize) + 1;
+                return 1;
+            }
+            if (rowCount * 1.0 % pageSize > 1)
+            {
+                rowCount = (rowCount / pageSize) + 1;
             }
             else
             {
-                totalPage = totalPage / pageSize;
+                rowCount = rowCount / pageSize;
             }
-            if (totalPage == 0)
+            if (rowCount == 0)
             {
-                totalPage = 1;
+                rowCount = 1;
             }
 
-            return totalPage;
+            return rowCount;
         }
         /// <summary>
         /// Kiểm tra xem chuỗi có chứa số
@@ -105,7 +108,7 @@ namespace DTO
         /// <param name="e"> Ngoại lệ</param>
         public static void Log(Exception e)
         {
-            File.WriteAllText("crashlog.txt", DateTime.Now.ToString(@"dd\/MM\/yyyy HH:mm") + Environment.NewLine + e.Message
+            File.WriteAllText("crashlog"+ DateTime.Now.ToString(@"dd_MM_yyyy_HH_mm") + ".txt",  e.Message
                 + Environment.NewLine + e.StackTrace + Environment.NewLine + e.TargetSite + Environment.NewLine + e.GetType());
         }
         /// <summary>
@@ -114,7 +117,7 @@ namespace DTO
         /// <param name="msg">error message</param>
         public static void Log(string msg)
         {
-            File.WriteAllText("crashlog.txt", DateTime.Now.ToString(@"dd\/MM\/yyyy HH:mm") + Environment.NewLine + msg);
+            File.WriteAllText("crashlog" + DateTime.Now.ToString(@"dd\/MM\/yyyy HH:mm") + ".txt",  msg);
         }
     }
 }

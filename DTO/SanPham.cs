@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class MonAn : HangHoa
+    public class SanPham : HangHoa
     {
-    }
+        public string NhaCungCap { get; set; }
 
+    }
 }
