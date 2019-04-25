@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DAO.BaoCaoDAO" Collapsed="true">
+    <Position X="1.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>BaoCaoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.Dataprovider" Collapsed="true">
+    <Position X="7" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAoAAAAAAAAAAAAAAAAAACQAAAAAAIA=</HashCode>
+      <FileName>DataProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.HangHoaDAO" Collapsed="true">
+    <Position X="1.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAEAAAAAAgAAAQAAAAgAAAA=</HashCode>
+      <FileName>HangHoaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.HoaDonDAO" Collapsed="true">
+    <Position X="3.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBABAAQAAAAABAAAAAAAEAAAQEIgACgAAAAAAAAABAA=</HashCode>
+      <FileName>HoaDonDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.KhachHangDAO" Collapsed="true">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAgAAAIAAAACAAAAAAAAAAAAEAAgAAFAAAAAAAAAA=</HashCode>
+      <FileName>KhachHangDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.KhuyenMaiDAO" Collapsed="true">
+    <Position X="7" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAABAAAAAAAAAAAJAAAABAAAAAAgAAA=</HashCode>
+      <FileName>KhuyenMaiDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.LoaiKhachHangDAO" Collapsed="true">
+    <Position X="8.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAABBAAIAAAAAAAEAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>LoaiKhachHangDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.LoaiPhongDAO" Collapsed="true">
+    <Position X="1.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAEAAAAAAAAIQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoaiPhongDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.PhanQuyenDAO" Collapsed="true">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAABACQ=</HashCode>
+      <FileName>PhanQuyenDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.PhieuDatTiecDAO" Collapsed="true">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAgAAAAAAIAACAAAAAAAAAAAE=</HashCode>
+      <FileName>PhieuDatTiecDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.PhongDAO" Collapsed="true">
+    <Position X="8.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAABAAEAAAAAAgEBAAQAAQAEQBAAAACAA=</HashCode>
+      <FileName>PhongDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.ThietBiDAO" Collapsed="true">
+    <Position X="5.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAOgQgEAAAAQMAAACAFACAAUAAAAIAAgAAFUAAQ=</HashCode>
+      <FileName>QuanLyThietBi\ThietBiDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.SanPhamDAO" Collapsed="true">
+    <Position X="1.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEUEMAAAEAAAAAAABAAAAAQCAZAAAAAAAAAABQAAA=</HashCode>
+      <FileName>SanPhamDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.PhanCong.PhanCongDAO" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAGgACAAgAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>PhanCong\PhanCongDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.QuanLyCaTruc.CaLamViecDAO" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACggAAAAAAAAAAAEAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>QuanLyCaTruc\CaLamViecDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.QuanLyDoanhThu.DoanhThuDAO" Collapsed="true">
+    <Position X="8.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>QuanLyDoanhThu\DoanhThuDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.QuanLyHangHoa.MonAnDAO" Collapsed="true">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACCAAEAQEQAAAAAAAEAAAABAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>QuanLyHangHoa\MonAnDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.QuanLyHangHoa.NguyenLieuDAO" Collapsed="true">
+    <Position X="7" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAMAAAEAAAABAABQBACAAAAAAAAAAAAAAABQAAA=</HashCode>
+      <FileName>QuanLyHangHoa\NguyenLieuDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.TinhLuong.LuongDAO" Collapsed="true">
+    <Position X="3.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAEAAACAAAAAAEAAEBAAAAA=</HashCode>
+      <FileName>QuanLyLuong\LuongDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.QuanLyNCC.NhaCungCapDAO" Collapsed="true">
+    <Position X="8.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAEAAACAAABAAAAAAAAAAAAACA=</HashCode>
+      <FileName>QuanLyNCC\NhaCungCapDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.QuanLyNhanVien.ChucVuDAO" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAECAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>QuanLyNhanVien\ChucVuDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.QuanLyNhanVien.NhanVienDAO" Collapsed="true">
+    <Position X="1.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABABAAAAAAAAAAIQAAAAAAAAAAAAAAAIAAhAAAAAA=</HashCode>
+      <FileName>QuanLyNhanVien\NhanVienDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.QuanLyNhanVien.TaiKhoanDAO" Collapsed="true">
+    <Position X="3.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAEAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>QuanLyNhanVien\TaiKhoanDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

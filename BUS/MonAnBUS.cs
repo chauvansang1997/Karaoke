@@ -11,14 +11,47 @@ namespace BUS
 {
     public static class MonAnBUS
     {
-        public static bool ThemMonAn(MonAn monAn,List<string> listMaNguyenLieu)
+        public static bool ThemMonAn(MonAn monAn,List<string> listMaNguyenLieu, List<string> listSoLuongNL)
         {
             string listNguyenLieu = String.Join("|", listMaNguyenLieu);
-            return MonAnDAO.ThemMonAn(monAn, listNguyenLieu);
+            string listSoLuong = String.Join("|", listSoLuongNL);
+            return MonAnDAO.ThemMonAn(monAn, listNguyenLieu, listSoLuong);
         }
-        public static DataTable XemMonAn(string tenMonAn,string loaiMonAn,uint donGia=0)
+        public static bool SuaMonAn(MonAn monAn, List<string> listMaNguyenLieu, List<string> listSoLuongNL)
+        {
+            string listNguyenLieu = String.Join("|", listMaNguyenLieu);
+            string listSoLuong = String.Join("|", listSoLuongNL);
+            return MonAnDAO.SuaMonAn(monAn, listNguyenLieu, listSoLuong);
+        }
+        public static bool CapNhatMonAn(MonAn monAn, List<string> listMaNguyenLieu)
+        {
+            string listNguyenLieu = String.Join("|", listMaNguyenLieu);
+            return MonAnDAO.CapNhatMonAn(monAn, listNguyenLieu);
+        }
+        public static List<MonAn> XemMonAn(string tenMonAn,int loaiMonAn,uint donGia=0)
         {
             return MonAnDAO.XemMonAn(tenMonAn, loaiMonAn, donGia);
+        }
+        public static List<MonAn> XemMonAn(string tenMonAn, int loaiMonAn, int pageNumber,int pageSize,uint donGia = 0)
+        {
+            return MonAnDAO.XemMonAn(tenMonAn, loaiMonAn,pageNumber,pageSize, donGia);
+        }
+        public static int DemMonAn(string tenMonAn, string loaiMonAn, uint donGia = 0)
+        {
+            return MonAnDAO.DemMonAn(tenMonAn, loaiMonAn, donGia);
+        }
+        public static List<LoaiMon> XemLoaiMon()
+        {
+            return MonAnDAO.XemLoaiMon();
+        }
+
+        public static List<NguyenLieuMADataSource> XemNguyenLieuMonAn(string maMonAn)
+        {
+            return MonAnDAO.XemNguyenLieuMonAn(maMonAn);
+        }
+        public static List<MonAnDataSource> XemMonAnDataSource(string tenMonAn, int loaiMonAn, int pageNumber, int pageSize)
+        {
+            return MonAnDAO.XemMonAnDataSource(tenMonAn,  loaiMonAn,  pageNumber,  pageSize);
         }
     }
 }
