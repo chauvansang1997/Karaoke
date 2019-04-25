@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CaLamViec.cs" />
+    <Compile Include="ChiTietHangHoa.cs" />
     <Compile Include="ChiTietHoaDon.cs" />
     <Compile Include="DatTiecDataSource.cs" />
     <Compile Include="ChucVu.cs" />

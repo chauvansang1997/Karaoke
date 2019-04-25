@@ -36,6 +36,7 @@
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +51,11 @@
     <Compile Include="DataProvider.cs" />
     <Compile Include="HangHoaDAO.cs" />
     <Compile Include="HoaDonDAO.cs" />
+    <Compile Include="Karaoke.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Karaoke.dbml</DependentUpon>
+    </Compile>
     <Compile Include="KhachHangDAO.cs" />
     <Compile Include="KhuyenMaiDAO.cs" />
     <Compile Include="LoaiKhachHangDAO.cs" />
@@ -59,6 +65,11 @@
     <Compile Include="PhieuDatTiecDAO.cs" />
     <Compile Include="PhongDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyCaTruc\CaLamViecDAO.cs" />
     <Compile Include="QuanLyDoanhThu\DoanhThuDAO.cs" />
     <Compile Include="QuanLyHangHoa\MonAnDAO.cs" />
@@ -79,6 +90,7 @@
     <Folder Include="QuanLyPhongKaraoke\" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
@@ -91,7 +103,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="Karaoke.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Karaoke.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Karaoke.dbml.layout">
+      <DependentUpon>Karaoke.dbml</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
