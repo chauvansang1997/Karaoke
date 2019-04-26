@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Linq;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,52 @@ namespace DAO
 {
     public static class HoaDonDAO
     {
-        public static bool ThemChiTietHoaDon(string mahd, List<string> listMa, List<string> listSoLuongMa, List<string> listSp, List<string> listSoLuongSp)
+        public static bool ThemChiTietHoaDon(string mahd, List<string> listMa, List<string> listSoLuongMa,
+            List<string> listSp, List<string> listSoLuongSp)
         {
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
+            //karaokeDataContext.Connection.BeginTransaction();
+            //karaokeDataContext.CTHDMAs.
             string query = "EXEC uspThemChiTietHoaDon @maHD,@danhSachMa,@danhSachSoLuongMa,@danhSachSp,@danhSachSoLuongSp";
+            List<CTHDMA> ctHoaDonMonAn;
+            List<CTHDSP> ctHoaDonSanPham;
+            //xóa dữ liệu cũ trong bảng hóa đơn cập nhật dữ liệu mới
+            var deleteMonAn = from cthdma in karaokeDataContext.CTHDMAs
+                              where cthdma.MAMON == mahd
+                              select cthdma;
+
+            karaokeDataContext.CTHDMAs.DeleteAllOnSubmit(deleteMonAn);
+            ChangeSet cs = karaokeDataContext.GetChangeSet();
+            
+            if (cs.Deletes.Count != listMa.Count)
+            {
+                //karaokeDataContext.Transaction.Rollback();
+                return false;
+            }
+            var deleteSanPham = from cthdsp in karaokeDataContext.CTHDSPs
+                              where cthdsp.MASP == mahd
+                              select cthdsp;
+
+            karaokeDataContext.CTHDSPs.DeleteAllOnSubmit(deleteSanPham);
+            //thêm dữ liệu mới
+
+            //List<CTHDMA> 
+            ctHoaDonMonAn = new List<CTHDMA>();
+            listMa.ForEach(idMonAn =>
+            {
+                //ctHoaDonMonAn.Add()
+                //karaokeDataContext.CTHDMAs.InsertAllOnSubmit(insertMonAn);
+            });
+
+
+            listSp.ForEach(idSanPham =>
+            {
+                var s = from cthdma in karaokeDataContext.CTHDMAs
+                        where cthdma.MAMON == idSanPham
+                        select cthdma;
+                karaokeDataContext.CTHDMAs.DeleteOnSubmit(s.FirstOrDefault());
+            });
+
 
             string danhSachMa = String.Join("|", listMa);
             string danhSachSoLuongMa = String.Join("|", listSoLuongMa);
@@ -37,6 +81,73 @@ namespace DAO
                 Utility.Log(ex);
                 return false;
             }
+
+            
+            return true;
+        }
+
+        public static bool ThemChiTietHoaDon(string mahd, List<ChiTietHoaDon> chiTietHoaDons)
+        {
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
+            karaokeDataContext.Connection.BeginTransaction();
+            //karaokeDataContext.CTHDMAs.
+            string query = "EXEC uspThemChiTietHoaDon @maHD,@danhSachMa,@danhSachSoLuongMa,@danhSachSp,@danhSachSoLuongSp";
+            List<CTHDMA> ctHoaDonMonAn;
+            List<CTHDSP> ctHoaDonSanPham;
+            //xóa dữ liệu cũ trong bảng hóa đơn cập nhật dữ liệu mới
+            var deleteMonAn = from cthdma in karaokeDataContext.CTHDMAs
+                              where cthdma.MAMON == mahd
+                              select cthdma;
+
+            karaokeDataContext.CTHDMAs.DeleteAllOnSubmit(deleteMonAn);
+            ChangeSet cs = karaokeDataContext.GetChangeSet();
+
+            //if (cs.Deletes.Count != deleteMonAn.Count())
+            //{
+            //    return false;
+            //}
+            var deleteSanPham = from cthdsp in karaokeDataContext.CTHDSPs
+                                where cthdsp.MASP == mahd
+                                select cthdsp;
+
+            karaokeDataContext.CTHDSPs.DeleteAllOnSubmit(deleteSanPham);
+            //thêm dữ liệu mới
+
+            //List<CTHDMA> 
+            ctHoaDonMonAn = new List<CTHDMA>();
+            chiTietHoaDons.ForEach(chiTietHoaDon =>
+            {
+                var test = from hoaDon in karaokeDataContext.HOADONs
+                           where hoaDon.SOHD == mahd
+                           select hoaDon;
+               
+                if (chiTietHoaDon.LoaiHangHoa == ChiTietHoaDon.Loai.MonAn)
+                {
+                    karaokeDataContext.CTHDMAs.InsertOnSubmit(new CTHDMA()
+                    {
+                        SOHD = mahd,
+                        MAMON = chiTietHoaDon.Ma,
+                        SOLUONG = chiTietHoaDon.Soluong,
+
+                    });
+                }
+                else
+                {
+                    karaokeDataContext.CTHDSPs.InsertOnSubmit(new CTHDSP()
+                    {
+                        SOHD = mahd,
+                        MASP = chiTietHoaDon.Ma,
+                        SOLUONG = chiTietHoaDon.Soluong,
+
+                    });
+                }
+               
+            });
+            karaokeDataContext.SubmitChanges();
+            karaokeDataContext.Transaction.Commit();
+
+
+
 
             return true;
         }

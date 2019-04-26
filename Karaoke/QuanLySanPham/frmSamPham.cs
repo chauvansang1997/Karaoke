@@ -91,7 +91,7 @@ namespace Karaoke.QuanLySanPham
             if(cmbNhaCCTK.SelectedValue != null)
             {
                 DTO.NhaCungCap nhaCungCap = (DTO.NhaCungCap)cmbNhaCCTK.SelectedValue;
-                LoaiHangHoa loaiHangHoa= (DTO.LoaiHangHoa)cmbLoaiTK.SelectedValue;
+                DTO.LoaiHangHoa loaiHangHoa= (DTO.LoaiHangHoa)cmbLoaiTK.SelectedValue;
                 pageNumber = 1;
                 txtPageNumber.Text = "1";
                 totalPage = BUS.SanPhamBUS.DemSanPham(nhaCungCap.MaNCC, int.Parse(loaiHangHoa.Ma),txtTenTK.Text);

@@ -14,6 +14,11 @@ namespace BUS
         {
             return DAO.HoaDonDAO.ThemChiTietHoaDon(maHD, listMa, listSoLuongMa, listSp, listSoLuongSp);
         }
+
+        public static bool ThemChiTietHoaDon(string maHD, List<ChiTietHoaDon> chiTietHoaDons)
+        {
+            return DAO.HoaDonDAO.ThemChiTietHoaDon(maHD, chiTietHoaDons);
+        }
         public static string LayMaHoaDon(string maPhong)
         {
             return DAO.HoaDonDAO.LayMaHoaDon(maPhong);

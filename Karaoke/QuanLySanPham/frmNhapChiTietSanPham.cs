@@ -55,7 +55,7 @@ namespace Karaoke.QuanLySanPham
         private List<FlowLayoutPanel> listLayoutHangHoa;
         private FlowLayoutPanel flowFoodLayoutHienTai;
 
-        private List<LoaiHangHoa> listTenGroup;
+        private List<DTO.LoaiHangHoa> listTenGroup;
 
 
         private void khoiTao()
@@ -109,7 +109,7 @@ namespace Karaoke.QuanLySanPham
 
 
             //lấy danh sách loại sản phẩm đưa vào tabcontrol lớn
-            List<LoaiHangHoa> listLoaiHangHoa = BUS.HangHoaBUS.XemLoaiMon(1);
+            List<DTO.LoaiHangHoa> listLoaiHangHoa = BUS.HangHoaBUS.XemLoaiMon(1);
             if (listLoaiHangHoa != null)
             {
 
@@ -128,7 +128,7 @@ namespace Karaoke.QuanLySanPham
                     listDictionaryHangHoa.Add(dictionary);
                 }
             }
-            listTenGroup = new List<LoaiHangHoa>();
+            listTenGroup = new List<DTO.LoaiHangHoa>();
             listTenGroup.AddRange(BUS.HangHoaBUS.XemLoaiMon(2));
             if (listTenGroup != null)
             {
