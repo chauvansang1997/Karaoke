@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Linq;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -13,30 +14,75 @@ namespace DAO
     {
         public static bool ThemPhong(Phong phong)
         {
-            string query = "EXEC uspTaoPhong @maloaiphong";
-
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
             string ma = TaoMa.TaoMaPhong();
+            //Truy vấn thêm phòng
 
-            List<SqlParameter> parameters = new List<SqlParameter>()
+            try
             {
-                new SqlParameter("@maloaiphong",SqlDbType.NVarChar){Value=phong.TenLoai }
+                karaokeDataContext.PHONGs.InsertOnSubmit(new PHONG()
+                {
+                    MAPHONG = ma,
+                    MALOAIPHONG = Int32.Parse(phong.TenLoai),
+                    TINHTRANG ="1"
+                });
+                ChangeSet cs = karaokeDataContext.GetChangeSet();
+                if (cs.Inserts.Count() == 1)
+                {
+                    karaokeDataContext.SubmitChanges();
+                    return true;
+                }
+               
+            }
+            catch(Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            return false;
+            //string query = "EXEC uspTaoPhong @maloaiphong";
 
-            };
+            //string ma = TaoMa.TaoMaPhong();
 
-            return Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0;
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@maloaiphong",SqlDbType.NVarChar){Value=phong.TenLoai }
+
+            //};
+
+            //return Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0;
+
         }
+
         public static bool CapNhatPhong(Phong phong)
         {
-            string query = "EXEC uspCapNhatPhong @maphong,@maloaiphong";
+            //string query = "EXEC uspCapNhatPhong @maphong,@maloaiphong";
 
-            List<SqlParameter> parameters = new List<SqlParameter>()
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@maphong",SqlDbType.NVarChar){ Value=phong.Ten  },
+            //    new SqlParameter("@maloaiphong",SqlDbType.NVarChar){Value=phong.TenLoai }
+
+            //};
+            //return Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0;
+            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
             {
-                new SqlParameter("@maphong",SqlDbType.NVarChar){ Value=phong.Ten  },
-                new SqlParameter("@maloaiphong",SqlDbType.NVarChar){Value=phong.TenLoai }
+                try
+                {
+                    karaokeDataContext.PHONGs.Single(phg => phg.MAPHONG == phong.Ten).MALOAIPHONG= Int32.Parse(phong.TenLoai);
 
-            };
-
-            return Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0;
+                    ChangeSet cs = karaokeDataContext.GetChangeSet();
+                    if (cs.Updates.Count() == 1)
+                    {
+                        karaokeDataContext.SubmitChanges();
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Utility.Log(ex);
+                }
+                return false;
+            }
         }
         public static bool GhiNhanDatPhong(KhachHang khachHang, string maPhong, string maNV)
         {
@@ -209,21 +255,24 @@ namespace DAO
         }
         public static DataTable XemLoaiPhong()
         {
-            string query = "SELECT * FROM LOAIPHONG";
-
-
-            DataTable table = null;
-            try
+            //string query = "SELECT * FROM LOAIPHONG";
+            using( KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
             {
-                table = Dataprovider.ExcuteQuery(query);
+                //DataTable table = null;
+                //try
+                //{
+                //    table = Dataprovider.ExcuteQuery(query);
 
+                //}
+                //catch (Exception ex)
+                //{
+                //    Utility.Log(ex);
+                //}
+                var select = from loaiPhong in karaokeDataContext.LOAIPHONGs
+                             select loaiPhong;
+                DataTable table = Utility.ConvertToDataTable(select.ToList());
+                return table;
             }
-            catch (Exception ex)
-            {
-                Utility.Log(ex);
-            }
-
-            return table;
         }
         public static DataTable XemPhongQuanLy(string maPhong,int loaiPhong, int pageNumber,int pageSize)
         {
