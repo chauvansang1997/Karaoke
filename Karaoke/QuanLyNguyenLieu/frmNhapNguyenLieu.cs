@@ -125,6 +125,7 @@ namespace Karaoke.NguyenLieu
                 frmGiaoNguyenLieu giaoNguyenLieu = new frmGiaoNguyenLieu(soPhieuNhap);
                 //  frmGiaoSanPham giaoSanPham = new frmGiaoSanPham(soPhieuNhap);
                 giaoNguyenLieu.ShowDialog();
+                khoiTao();
             }
 
         }

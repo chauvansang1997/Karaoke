@@ -23,11 +23,13 @@ namespace Karaoke.QuanLyNguyenLieu
             if (BUS.NguyenLieuBUS.GiaoHang(phieuDatHang, txtTenNguoi.Text))
             {
                 MessageBox.Show("Lưu thành công");
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Có lỗi xảy ra!. Vui lòng mời nhân viên kỹ thuật kiểm tra!!!");
             }
+           
         }
 
         private void btnIn_Click(object sender, EventArgs e)

@@ -12,7 +12,7 @@ namespace DTO
         public enum Loai
         {
             MonAn = 0,
-            Sanham = 1
+            Sanpham = 1
         }
         public string Ma { get ; set ; }
         public int Soluong { get; set; }

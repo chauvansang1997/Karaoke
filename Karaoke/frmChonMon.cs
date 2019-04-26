@@ -137,7 +137,7 @@ namespace Karaoke
                 }
             }
             //lấy danh sách loại sản phẩm đưa vào tabcontrol lớn
-            List<DTO.LoaiHangHoa> listLoaiHangHoa = BUS.HangHoaBUS.XemLoaiMon((int)Loai.Sanham);
+            List<DTO.LoaiHangHoa> listLoaiHangHoa = BUS.HangHoaBUS.XemLoaiMon((int)Loai.Sanpham);
             if (listLoaiHangHoa != null)
             {
                 //tabControl.TabPages.Clear();
@@ -511,7 +511,7 @@ namespace Karaoke
                         {
                             Ma = ma,
                             Soluong = Int32.Parse(soluong),
-                            LoaiHangHoa = Loai.Sanham
+                            LoaiHangHoa = Loai.Sanpham
                         });
                     }
                     else
@@ -559,7 +559,7 @@ namespace Karaoke
                 if (tabControl.SelectedIndex > 0)
                 {
                     loaiSanPhamHienTai = tabControl.SelectedIndex;
-                    loaiHienTai = Loai.Sanham;
+                    loaiHienTai = Loai.Sanpham;
                 }
                 else
                 {

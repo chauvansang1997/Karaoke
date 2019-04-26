@@ -74,11 +74,11 @@ namespace DTO
         /// <returns></returns>
         public static int TinhKichThuocTrang(int rowCount, int pageSize)
         {
-            if (rowCount == 0)
+            if (rowCount <= pageSize)
             {
                 return 1;
             }
-            if (rowCount * 1.0 % pageSize > 1)
+            if (rowCount * 1.0 % pageSize != 0   )
             {
                 rowCount = (rowCount / pageSize) + 1;
             }
@@ -86,10 +86,7 @@ namespace DTO
             {
                 rowCount = rowCount / pageSize;
             }
-            if (rowCount == 0)
-            {
-                rowCount = 1;
-            }
+       
 
             return rowCount;
         }
