@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Linq;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -12,19 +13,42 @@ namespace DAO
     {
         public static bool ThemLoaiPhong(LoaiPhong loaiPhong)
         {
-            string query = "EXEC uspThemLoaiPhong  @tenLoaiPhong,@gia";
+            //string query = "EXEC uspThemLoaiPhong  @tenLoaiPhong,@gia";
 
-            string ma = TaoMa.TaoMaPhong();
+            //string ma = TaoMa.TaoMaPhong();
 
-            List<SqlParameter> parameters = new List<SqlParameter>()
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@tenLoaiPhong",SqlDbType.NVarChar){Value=loaiPhong.Ten },
+
+            //    new SqlParameter("@gia",SqlDbType.Int){Value=loaiPhong.Gia }
+
+            //};
+
+            //return Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0;
+            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
             {
-                new SqlParameter("@tenLoaiPhong",SqlDbType.NVarChar){Value=loaiPhong.Ten },
-
-                new SqlParameter("@gia",SqlDbType.Int){Value=loaiPhong.Gia }
-
-            };
-
-            return Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0;
+                try
+                {
+                    string ma = TaoMa.TaoMaPhong();
+                    karaokeDataContext.LOAIPHONGs.InsertOnSubmit(new LOAIPHONG()
+                    {
+                        TENLOAIPHONG = loaiPhong.Ten,
+                        GIA = loaiPhong.Gia
+                    });
+                    ChangeSet cs = karaokeDataContext.GetChangeSet();
+                    if (cs.Inserts.Count() == 1)
+                    {
+                        karaokeDataContext.SubmitChanges();
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Utility.Log(ex);
+                }
+                return false;
+            }
         }
 
         public static bool CapNhatLoaiPhong(LoaiPhong loaiPhong)
