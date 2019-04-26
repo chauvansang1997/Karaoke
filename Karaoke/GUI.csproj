@@ -83,8 +83,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.DirectoryServices" /
+    <Reference Include="System.Core" />s
+    <Reference Include="System.DirectoryServices"/>
     <Reference Include="System.IO, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
     </Reference>
@@ -230,7 +230,6 @@
       <DependentUpon>frmMonAn.cs</DependentUpon>
     </Compile>
     <Compile Include="GuiMonAn\frmSoLuong.cs">
-<<<<<<< HEAD
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GuiMonAn\frmSoLuong.Designer.cs">
@@ -239,16 +238,6 @@
     <Compile Include="GuiMonAn\frmThemNguyenLieuMonAn.cs">
       <SubType>Form</SubType>
     </Compile>
-=======
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GuiMonAn\frmSoLuong.Designer.cs">
-      <DependentUpon>frmSoLuong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GuiMonAn\frmThemNguyenLieuMonAn.cs">
-      <SubType>Form</SubType>
-    </Compile>
->>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
     <Compile Include="GuiMonAn\frmThemNguyenLieuMonAn.designer.cs">
       <DependentUpon>frmThemNguyenLieuMonAn.cs</DependentUpon>
     </Compile>
@@ -271,7 +260,6 @@
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI_KhachHang\frmKhachHang.cs">
-<<<<<<< HEAD
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI_KhachHang\frmKhachHang.designer.cs">
@@ -286,22 +274,6 @@
     <Compile Include="GUI_LoaiKH\frmKhuyenMai.cs">
       <SubType>Form</SubType>
     </Compile>
-=======
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI_KhachHang\frmKhachHang.designer.cs">
-      <DependentUpon>frmKhachHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI_LoaiKH\frmApDungKhuyenMai.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI_LoaiKH\frmApDungKhuyenMai.Designer.cs">
-      <DependentUpon>frmApDungKhuyenMai.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI_LoaiKH\frmKhuyenMai.cs">
-      <SubType>Form</SubType>
-    </Compile>
->>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
     <Compile Include="GUI_LoaiKH\frmKhuyenMai.Designer.cs">
       <DependentUpon>frmKhuyenMai.cs</DependentUpon>
     </Compile>
@@ -392,7 +364,6 @@
       <DependentUpon>frmNguyenLieu.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyNguyenLieu\frmNhapCTNguyenLieu.cs">
-<<<<<<< HEAD
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuanLyNguyenLieu\frmNhapCTNguyenLieu.Designer.cs">
@@ -407,22 +378,6 @@
     <Compile Include="NhaCungCap\frmNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
-=======
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyNguyenLieu\frmNhapCTNguyenLieu.Designer.cs">
-      <DependentUpon>frmNhapCTNguyenLieu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyNguyenLieu\frmNhapNguyenLieu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyNguyenLieu\frmNhapNguyenLieu.Designer.cs">
-      <DependentUpon>frmNhapNguyenLieu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NhaCungCap\frmNhaCungCap.cs">
-      <SubType>Form</SubType>
-    </Compile>
->>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
     <Compile Include="NhaCungCap\frmNhaCungCap.Designer.cs">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>
     </Compile>
@@ -690,17 +645,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNguyenLieu\frmNhapCTNguyenLieu.resx">
       <DependentUpon>frmNhapCTNguyenLieu.cs</DependentUpon>
-<<<<<<< HEAD
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNguyenLieu\frmNhapNguyenLieu.resx">
       <DependentUpon>frmNhapNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
-=======
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyNguyenLieu\frmNhapNguyenLieu.resx">
-      <DependentUpon>frmNhapNguyenLieu.cs</DependentUpon>
-    </EmbeddedResource>
->>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
     <EmbeddedResource Include="NhaCungCap\frmNhaCungCap.resx">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>

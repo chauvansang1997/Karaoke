@@ -80,13 +80,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
-    <None Include="packages.config" />
-=======
-    <None Include="ClassDiagram1.cd" />
->>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
