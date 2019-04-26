@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+<<<<<<< HEAD
+=======
+using System.Data.Linq;
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,6 +14,7 @@ namespace DAO
 {
     public static class HoaDonDAO
     {
+<<<<<<< HEAD
         public static bool ThemChiTietHoaDon(string mahd, List<string> listMa, List<string> listSoLuongMa, List<string> listSp, List<string> listSoLuongSp)
         {
             string query = "EXEC uspThemChiTietHoaDon @maHD,@danhSachMa,@danhSachSoLuongMa,@danhSachSp,@danhSachSoLuongSp";
@@ -39,6 +44,90 @@ namespace DAO
             }
 
             return true;
+=======
+     
+        public static bool ThemChiTietHoaDon(string mahd, List<ChiTietHoaDon> chiTietHoaDons)
+        {
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
+
+
+            //xóa dữ liệu cũ trong bảng hóa đơn cập nhật dữ liệu mới
+            var deleteMonAn = from cthdma in karaokeDataContext.CTHDMAs
+                              where cthdma.SOHD == mahd
+                              select cthdma;
+
+            if(deleteMonAn.Count() != 0)
+            {
+                karaokeDataContext.CTHDMAs.DeleteAllOnSubmit(deleteMonAn);
+            }
+         
+            
+            var deleteSanPham = from cthdsp in karaokeDataContext.CTHDSPs
+                                where cthdsp.SOHD == mahd
+                                select cthdsp;
+
+            karaokeDataContext.CTHDSPs.DeleteAllOnSubmit(deleteSanPham);
+            //thêm dữ liệu mới
+
+            //List<CTHDMA> 
+
+            chiTietHoaDons.ForEach(chiTietHoaDon =>
+            {
+                var test = from hoaDon in karaokeDataContext.HOADONs
+                           where hoaDon.SOHD == mahd
+                           select hoaDon;
+               
+                if (chiTietHoaDon.LoaiHangHoa == ChiTietHoaDon.Loai.MonAn)
+                {
+                    karaokeDataContext.CTHDMAs.InsertOnSubmit(new CTHDMA()
+                    {
+                        HOADON = (from hoaDon in karaokeDataContext.HOADONs
+                                 where hoaDon.SOHD == mahd
+                                 select hoaDon).First(),
+                        SOHD = mahd,
+                        MAMON = chiTietHoaDon.Ma,
+                        SOLUONG = chiTietHoaDon.Soluong,
+                        MONAN = (from monAn in karaokeDataContext.MONANs
+                                 where monAn.MAMON == chiTietHoaDon.Ma
+                                 select monAn).First(),
+                        
+
+                    });
+                }
+                else
+                {
+                    karaokeDataContext.CTHDSPs.InsertOnSubmit(new CTHDSP()
+                    {
+                        HOADON = (from hoaDon in karaokeDataContext.HOADONs
+                                  where hoaDon.SOHD == mahd
+                                  select hoaDon).First(),
+                        SOHD = mahd,
+                        MASP = chiTietHoaDon.Ma,
+                        SOLUONG = chiTietHoaDon.Soluong,
+                        SANPHAM = (from sanPham in karaokeDataContext.SANPHAMs
+                                 where sanPham.MASP == chiTietHoaDon.Ma
+                                 select sanPham).First(),
+                    });
+                }
+               
+            });
+
+
+            ChangeSet cs = karaokeDataContext.GetChangeSet();
+            if(cs.Deletes.Count() == (deleteMonAn.Count() + deleteSanPham.Count())
+
+                )
+            {
+                karaokeDataContext.SubmitChanges();
+                return true;
+            }
+           
+
+
+
+
+            return false;
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
         }
         public static string LayMaHoaDon(string maPhong)
         {

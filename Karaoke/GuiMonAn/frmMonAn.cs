@@ -501,7 +501,11 @@ namespace Karaoke.GuiMonAn
         {
             if (cmbLoaiMonTK.SelectedValue != null)
             {
+<<<<<<< HEAD
                 bindingSourceMonAn.DataSource = BUS.MonAnBUS.XemMonAnDataSource(txtTenTK.Text, int.Parse(((LoaiHangHoa)cmbLoaiMonTK.SelectedValue).Ma),
+=======
+                bindingSourceMonAn.DataSource = BUS.MonAnBUS.XemMonAnDataSource(txtTenTK.Text, int.Parse(((DTO.LoaiHangHoa)cmbLoaiMonTK.SelectedValue).Ma),
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
                                pageNumber, pageSize);
             }
             else

@@ -320,6 +320,7 @@ namespace Karaoke.PhongKaoraoke
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             try
             {
                 string soHoaDon = BUS.HoaDonBUS.LayMaHoaDon(listPhongLayout[indexHienTai].Phong.Ten);
@@ -338,6 +339,20 @@ namespace Karaoke.PhongKaoraoke
             catch (Exception)
             {            
             }   
+=======
+            string soHoaDon = BUS.HoaDonBUS.LayMaHoaDon(listPhongLayout[indexHienTai].Phong.Ten);
+
+            if (BUS.HoaDonBUS.HoaDonDatTiec(soHoaDon))
+            {
+                frmChonMon chonMon = new frmChonMon(soHoaDon);
+                chonMon.ShowDialog();
+            }
+            else
+            {
+                frmGoiMon goiMon = new frmGoiMon(soHoaDon, this);
+                goiMon.ShowDialog();
+            }
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
         }
 
 		private void btnThoat_Click(object sender, EventArgs e)

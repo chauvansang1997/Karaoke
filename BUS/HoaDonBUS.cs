@@ -10,9 +10,17 @@ namespace BUS
 {
     public static class HoaDonBUS
     {
+<<<<<<< HEAD
         public static bool ThemChiTietHoaDon(string maHD, List<string> listMa, List<string> listSoLuongMa, List<string> listSp, List<string> listSoLuongSp)
         {
             return DAO.HoaDonDAO.ThemChiTietHoaDon(maHD, listMa, listSoLuongMa, listSp, listSoLuongSp);
+=======
+
+
+        public static bool ThemChiTietHoaDon(string maHD, List<ChiTietHoaDon> chiTietHoaDons)
+        {
+            return DAO.HoaDonDAO.ThemChiTietHoaDon(maHD, chiTietHoaDons);
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
         }
         public static string LayMaHoaDon(string maPhong)
         {

@@ -347,6 +347,11 @@ namespace Karaoke.PhongKaoraoke
             this.Close();
         }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
         private void btnHuy_Click(object sender, EventArgs e)
         {
             bThem = false;
@@ -354,8 +359,11 @@ namespace Karaoke.PhongKaoraoke
             enableControls(false);
             enableButton(true);
         }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
     }
 }
 

@@ -121,6 +121,7 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+<<<<<<< HEAD
   <data name="hangHoa.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
@@ -216,6 +217,8 @@
   <data name="phanQuyen.Text" xml:space="preserve">
     <value>Phân quyền</value>
   </data>
+=======
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>

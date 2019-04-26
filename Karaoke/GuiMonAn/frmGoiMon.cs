@@ -56,7 +56,11 @@ namespace Karaoke.GuiMonAn
         private List<FlowLayoutPanel> listLayoutHangHoa;
         private FlowLayoutPanel flowFoodLayoutHienTai;
         private int tienGiamGia;
+<<<<<<< HEAD
         private List<LoaiHangHoa> listTenGroup;
+=======
+        private List<DTO.LoaiHangHoa> listTenGroup;
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
         internal uint TongCong
         {
             get { return this.tongCong; }
@@ -138,7 +142,11 @@ namespace Karaoke.GuiMonAn
             tabControl.TabPages.Add(tabPage);
             listDictionaryHangHoa.Add(dictionary);
             //lấy danh sách loại sản phẩm đưa vào tabcontrol lớn
+<<<<<<< HEAD
             List<LoaiHangHoa> listLoaiHangHoa = BUS.HangHoaBUS.XemLoaiMon(1);
+=======
+            List<DTO.LoaiHangHoa> listLoaiHangHoa = BUS.HangHoaBUS.XemLoaiMon(1);
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
             if (listLoaiHangHoa != null)
             {
 
@@ -157,8 +165,13 @@ namespace Karaoke.GuiMonAn
                     listDictionaryHangHoa.Add(dictionary);
                 }
             }
+<<<<<<< HEAD
             listTenGroup = new List<LoaiHangHoa>();
             listTenGroup.Add(new LoaiHangHoa() { Ma = "0", Ten = "Thức ăn" });
+=======
+            listTenGroup = new List<DTO.LoaiHangHoa>();
+            listTenGroup.Add(new DTO.LoaiHangHoa() { Ma = "0", Ten = "Thức ăn" });
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
             listTenGroup.AddRange(BUS.HangHoaBUS.XemLoaiMon(2));
             if (listTenGroup != null)
             {
@@ -554,8 +567,13 @@ namespace Karaoke.GuiMonAn
             }
           
 
+<<<<<<< HEAD
             List<ChiTietHoaDon> listHoaDonMonAn = new List<ChiTietHoaDon>();
             List<ChiTietHoaDon> listHoaDonSanPham = new List<ChiTietHoaDon>();
+=======
+            List<ChiTietHoaDon> chiTietHoaDons = new List<ChiTietHoaDon>();
+
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
             List<string> maMonAn = new List<string>();
             List<string> soluongMonAn = new List<string>();
             List<string> maSanPham = new List<string>();
@@ -570,6 +588,7 @@ namespace Karaoke.GuiMonAn
 
                     if (loai == "1")
                     {
+<<<<<<< HEAD
                         maSanPham.Add(ma);
                         soluongSanPham.Add(soluong);
 
@@ -582,6 +601,31 @@ namespace Karaoke.GuiMonAn
                 }
             }
             if (BUS.HoaDonBUS.ThemChiTietHoaDon(soHoaDon, maMonAn, soluongMonAn, maSanPham, soluongSanPham))
+=======
+
+                        chiTietHoaDons.Add(new ChiTietHoaDon()
+                        {
+                            Ma = ma,
+                            LoaiHangHoa = ChiTietHoaDon.Loai.Sanham,
+                            Soluong =Int32.Parse( soluong)
+                        
+                        });
+                    }
+                    else
+                    {
+
+                        chiTietHoaDons.Add(new ChiTietHoaDon()
+                        {
+                            Ma = ma,
+                            LoaiHangHoa = ChiTietHoaDon.Loai.MonAn,
+                            Soluong = Int32.Parse(soluong)
+
+                        });
+                    }
+                }
+            }
+            if (BUS.HoaDonBUS.ThemChiTietHoaDon(soHoaDon, chiTietHoaDons))
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
             {
                 MessageBox.Show("Lưu thành công");
                 listCu = new Dictionary<string, int>(listMoi);

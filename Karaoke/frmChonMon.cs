@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+<<<<<<< HEAD
 
 namespace Karaoke
 {
@@ -18,6 +19,13 @@ namespace Karaoke
         ThucAn = 0,
         Sanham = 1
     }
+=======
+using static DTO.ChiTietHoaDon;
+
+namespace Karaoke
+{
+   
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
 
     public partial class frmChonMon : Form
     {
@@ -57,7 +65,11 @@ namespace Karaoke
         private List<FlowLayoutPanel> listLayoutSanPham;
         private FlowLayoutPanel flowFoodLayoutHienTai;
 
+<<<<<<< HEAD
         private List<LoaiHangHoa> listTenGroup;
+=======
+        private List<DTO.LoaiHangHoa> listTenGroup;
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
         public frmChonMon()
         {
             soHoaDon = "";
@@ -85,7 +97,11 @@ namespace Karaoke
             dictionaryTraiCay = new Dictionary<int, List<FoodLayout>>();
             dictionaryNuocUong = new Dictionary<int, List<FoodLayout>>();
             TongCong = 0;
+<<<<<<< HEAD
             loaiHienTai = Loai.ThucAn;
+=======
+            loaiHienTai = Loai.MonAn;
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
             loaiThucAnHienTai = 1;
             loaiSanPhamHienTai = 1;
 
@@ -109,7 +125,11 @@ namespace Karaoke
             dGVHoaDon.Columns["MaLoaiHangHoa"].Visible = false;
             dGVHoaDon.Columns["TenLoaiHangHoa"].Visible = false;
             dGVHoaDon.Columns["IndexList"].Visible = false;
+<<<<<<< HEAD
           //  dGVHoaDon.Columns["DonViTinh"].Visible = false;
+=======
+            //  dGVHoaDon.Columns["DonViTinh"].Visible = false;
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
             dGVHoaDon.Columns["Gia"].ReadOnly = true;
             dGVHoaDon.Columns["Ten"].ReadOnly = true;
             dGVHoaDon.Columns["Thanhtien"].ReadOnly = true;
@@ -118,7 +138,11 @@ namespace Karaoke
             grouper.SetGroupOn("MaLoaiHangHoa");
             //grouper.Options.GroupSortOrder = SortOrder.None;
             grouper.DisplayGroup += grouper_DisplayGroup;
+<<<<<<< HEAD
            
+=======
+
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
             //lấy danh sách loại thức ăn ra đưa vào tabcontrol nhỏ
             List<LoaiMon> listLoaiMon = BUS.MonAnBUS.XemLoaiMon();
             if (listLoaiMon != null)
@@ -140,7 +164,11 @@ namespace Karaoke
                 }
             }
             //lấy danh sách loại sản phẩm đưa vào tabcontrol lớn
+<<<<<<< HEAD
             List<LoaiHangHoa> listLoaiHangHoa = BUS.HangHoaBUS.XemLoaiMon((int)Loai.Sanham);
+=======
+            List<DTO.LoaiHangHoa> listLoaiHangHoa = BUS.HangHoaBUS.XemLoaiMon((int)Loai.Sanham);
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
             if (listLoaiHangHoa != null)
             {
                 //tabControl.TabPages.Clear();
@@ -174,7 +202,11 @@ namespace Karaoke
                 if (temp != null)
                 {
                     uint tongCong = 0;
+<<<<<<< HEAD
                   //  bindingSource.DataSource = BUS.HoaDonBUS.XemChiTietHoaDon(soHoaDon);
+=======
+                    //  bindingSource.DataSource = BUS.HoaDonBUS.XemChiTietHoaDon(soHoaDon);
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
                     for (int i = 0; i < temp.Count; i++)
                     {
                         hashMaHangHoa.Add(temp[i].Ma);
@@ -187,17 +219,28 @@ namespace Karaoke
 
                 }
             }
+<<<<<<< HEAD
           
             thayDoiLoai();
 
            
+=======
+
+            thayDoiLoai();
+
+
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
         }
         private void sapXepLaiDanhSachHoaDon()
         {
             bindingSource.Clear();
             //List<string> temp = dictionaryDataSource.Keys.ToList();
             foreach (KeyValuePair<string, Dictionary<string, GoiMonDataSource>> itemSource in dictionaryDataSource)
+<<<<<<< HEAD
             {              
+=======
+            {
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
                 foreach (KeyValuePair<string, GoiMonDataSource> item in itemSource.Value)
                 {
                     bindingSource.Add(item.Value);
@@ -207,7 +250,11 @@ namespace Karaoke
         void grouper_DisplayGroup(object sender, GroupDisplayEventArgs e)
         {
             e.BackColor = (e.Group.GroupIndex % 2) == 0 ? Color.Orange : Color.LightBlue;
+<<<<<<< HEAD
             e.Header = listTenGroup[int.Parse(e.DisplayValue)-1].Ten;
+=======
+            e.Header = listTenGroup[int.Parse(e.DisplayValue) - 1].Ten;
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
             e.DisplayValue = "";
             e.ForeColor = (e.Group.GroupIndex % 2) == 0 ? Color.White : Color.Black;
             // e.Summary = "contains " + e.Group.Count + " rows";
@@ -229,18 +276,30 @@ namespace Karaoke
             {
                 this.tongCong = value;
                 txtTongCong.Text = value.ToString();
+<<<<<<< HEAD
                 txtThanhTien.Text = (value - (value * (giamGia/100))).ToString();
+=======
+                txtThanhTien.Text = (value - (value * (giamGia / 100))).ToString();
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
             }
         }
         private void thayDoiLoai()
         {
             pageNumber = 1;
             txtPageNumber.Text = "1";
+<<<<<<< HEAD
             if (loaiHienTai == Loai.ThucAn)
             {
                 totalPage = BUS.HangHoaBUS.DemHangHoa((int)loaiHienTai, loaiThucAnHienTai);
                 totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
                 txtTotalPage.Text = totalPage.ToString();        
+=======
+            if (loaiHienTai == Loai.MonAn)
+            {
+                totalPage = BUS.HangHoaBUS.DemHangHoa((int)loaiHienTai, loaiThucAnHienTai);
+                totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+                txtTotalPage.Text = totalPage.ToString();
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
                 dictionaryHienTai = listDictionaryThucAn[loaiThucAnHienTai - 1];
                 flowFoodLayoutHienTai = listLayoutThucAn[loaiThucAnHienTai - 1];
                 indexLoaiHienTai = loaiThucAnHienTai;
@@ -294,7 +353,11 @@ namespace Karaoke
                     foodLayout.AutoScaleMode = AutoScaleMode.None;
                     foodLayout.AutoSize = false;
                     foodLayout.AutoScaleMode = AutoScaleMode.None;
+<<<<<<< HEAD
                     
+=======
+
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
                     foodLayout.HangHoa = item;
                     foodLayout.setClick((sender, e) =>
                     {
@@ -323,10 +386,17 @@ namespace Karaoke
                             });
                         }
 
+<<<<<<< HEAD
                      
                         hashMaHangHoa.Add(maHangHoa);
                         sapXepLaiDanhSachHoaDon();
                
+=======
+
+                        hashMaHangHoa.Add(maHangHoa);
+                        sapXepLaiDanhSachHoaDon();
+
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
                         TongCong = TongCong + foodLayout.HangHoa.Gia;
 
                     });
@@ -343,8 +413,13 @@ namespace Karaoke
                 for (int i = 0; i < listFoodLayout.Count; i++)
                 {
                     FoodLayout foodLayout = listFoodLayout[i];
+<<<<<<< HEAD
                    
                    // foodLayout.Anchor = AnchorStyles.Bottom|AnchorStyles.Left| AnchorStyles.Right| AnchorStyles.Top;
+=======
+
+                    // foodLayout.Anchor = AnchorStyles.Bottom|AnchorStyles.Left| AnchorStyles.Right| AnchorStyles.Top;
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
                     //foodLayout.Size = new Size(100, 100);
                     //foodLayout.imgFood.Size = new Size(65, 55);
                     //foodLayout.txtPrice.Size = new System.Drawing.Size(32, 13);
@@ -461,9 +536,15 @@ namespace Karaoke
             catch (Exception)
             {
 
+<<<<<<< HEAD
                
             }
    
+=======
+
+            }
+
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
         }
 
         private void dGVHoaDon_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
@@ -481,19 +562,36 @@ namespace Karaoke
             catch (Exception)
             {
 
+<<<<<<< HEAD
                 
             }
         
+=======
+
+            }
+
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             List<ChiTietHoaDon> listHoaDonMonAn = new List<ChiTietHoaDon>();
             List<ChiTietHoaDon> listHoaDonSanPham = new List<ChiTietHoaDon>();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
             List<string> maMonAn = new List<string>();
             List<string> soluongMonAn = new List<string>();
             List<string> maSanPham = new List<string>();
             List<string> soluongSanPham = new List<string>();
+<<<<<<< HEAD
+=======
+
+            List<ChiTietHoaDon> chiTietHoaDon = new List<ChiTietHoaDon>();
+
+
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
             foreach (KeyValuePair<string, Dictionary<string, GoiMonDataSource>> itemSource in dictionaryDataSource)
             {
                 foreach (KeyValuePair<string, GoiMonDataSource> item in itemSource.Value)
@@ -504,6 +602,7 @@ namespace Karaoke
 
                     if (loai == "1")
                     {
+<<<<<<< HEAD
                         maSanPham.Add(ma);
                         soluongSanPham.Add(soluong);
 
@@ -516,6 +615,28 @@ namespace Karaoke
                 }
             }
             if (BUS.HoaDonBUS.ThemChiTietHoaDon(soHoaDon, maMonAn, soluongMonAn, maSanPham, soluongSanPham))
+=======
+
+                        chiTietHoaDon.Add(new ChiTietHoaDon()
+                        {
+                            Ma = ma,
+                            Soluong = Int32.Parse(soluong),
+                            LoaiHangHoa = Loai.Sanham
+                        });
+                    }
+                    else
+                    {
+
+                        chiTietHoaDon.Add(new ChiTietHoaDon() {
+                            Ma = ma,
+                            Soluong = Int32.Parse(soluong),
+                            LoaiHangHoa = Loai.MonAn
+                        });
+                    }
+                }
+            }
+            if (BUS.HoaDonBUS.ThemChiTietHoaDon(soHoaDon, chiTietHoaDon))
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
             {
                 MessageBox.Show("Lưu thành công");
             }
@@ -553,7 +674,11 @@ namespace Karaoke
                 }
                 else
                 {
+<<<<<<< HEAD
                     loaiHienTai = Loai.ThucAn;
+=======
+                    loaiHienTai = Loai.MonAn;
+>>>>>>> 684ccd889c3e5ec955668cac43100cb4812b2990
                 }
                 thayDoiLoai();
             }
