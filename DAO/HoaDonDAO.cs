@@ -11,139 +11,139 @@ namespace DAO
 {
     public static class HoaDonDAO
     {
-
+        /// <summary>
+        /// Thêm chi tiết hóa đơn:
+        /// B1: Xóa dữ liệu cũ trong chi tiết hóa đơn,
+        /// B2: Cập nhật số lượng tồn khi xóa dữ liệu cũ
+        /// B3: Thêm dữ liệu mới vào chi tiết hóa đơn, đồng thời
+        ///         cập nhật dữ liệu tồn khi thêm dữ liệu mới
+        /// </summary>
+        /// <param name="mahd"></param>
+        /// <param name="chiTietHoaDons"></param>
+        /// <returns></returns>
         public static bool ThemChiTietHoaDon(string mahd, List<ChiTietHoaDon> chiTietHoaDons)
         {
             KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
 
+            #region B1: xóa dữ liệu cũ trong chi tiết hóa đơn
+            //xóa dữ liệu món ăn cũ trong bảng hóa đơn cập nhật dữ liệu mới
+            var deleteMonAns = from cthdma in karaokeDataContext.CTHDMAs
+                               where cthdma.SOHD == mahd
+                               select cthdma;
 
-            //xóa dữ liệu cũ trong bảng hóa đơn cập nhật dữ liệu mới
-            var deleteMonAn = from cthdma in karaokeDataContext.CTHDMAs
-                              where cthdma.SOHD == mahd
-                              select cthdma;
-
-            if (deleteMonAn.Count() != 0)
+            if (deleteMonAns.Count() != 0)
             {
-                karaokeDataContext.CTHDMAs.DeleteAllOnSubmit(deleteMonAn);
+                karaokeDataContext.CTHDMAs.DeleteAllOnSubmit(deleteMonAns);
             }
 
-            chiTietHoaDons.ForEach(
-                chiTietHoaDon =>
-                {
-
-                }
-            );
+            //xóa dữ liệu sản phẩm cũ trong bảng hóa đơn cập nhật dữ liệu mới
             var deleteSanPhams = from cthdsp in karaokeDataContext.CTHDSPs
+
                                  where cthdsp.SOHD == mahd
                                  select cthdsp;
+            if (deleteSanPhams.Count() != 0)
+            {
+                karaokeDataContext.CTHDSPs.DeleteAllOnSubmit(deleteSanPhams);
+            }
+            #endregion
 
+            #region B2: cập nhật số lượng tồn khi xóa dữ liệu cũ
 
+            //cập nhật lại số lượng tồn của sản phẩm
+            deleteSanPhams.ToList().ForEach(s => s.SANPHAM.SLTON += s.SOLUONG);
 
-            var updateSanPhams = (from cthdsp in karaokeDataContext.CTHDSPs
-                                  join chiTietHoaDon in chiTietHoaDons
-                                  on cthdsp.SANPHAM.MASP equals chiTietHoaDon.Ma
+            //cập nhật lại số lượng tồn của nguyên liệu
+            deleteMonAns.ToList().ForEach(s => s.MONAN.TPMONANs.ToList().ForEach(
+                tpMonAn => tpMonAn.NGUYENLIEU.SLTON += s.SOLUONG * tpMonAn.SOLUONG
+                ));
 
-                                  where chiTietHoaDon.LoaiHangHoa == ChiTietHoaDon.Loai.Sanpham
-                                  && cthdsp.SOHD == mahd
-                                  select new
-                                  {
-                                      SoLuong = cthdsp.SOLUONG - chiTietHoaDon.Soluong
-                                  });
+            #endregion
 
-            updateSanPhams.ToList().ForEach(s => /*s.sanPham.SLTON +=*/  { });
-
-
-            //cập nhật lại số lượng tồn của 
-            List<CTHDSP> cTHDSPs = new List<CTHDSP>();
-            List<CTHDMA> cTHDMAs = new List<CTHDMA>();
-
-            karaokeDataContext.CTHDSPs.DeleteAllOnSubmit(deleteSanPhams);
+            #region B3: Thêm dữ liệu mới vào chi tiết hóa đơn, đồng thời cập nhật dữ liệu tồn khi thêm dữ liệu mới
 
             //thêm dữ liệu mới
             chiTietHoaDons.ForEach(chiTietHoaDon =>
             {
-
                 //nếu là món ăn thì thêm vào bảng CTHDMA
                 if (chiTietHoaDon.LoaiHangHoa == ChiTietHoaDon.Loai.MonAn)
                 {
-                    karaokeDataContext.CTHDMAs.Where(s => s.MAMON == chiTietHoaDon.Ma).
-                    First().MONAN.TPMONANs.ToList().ForEach(t => t.NGUYENLIEU.SLTON -=
-                    chiTietHoaDon.Soluong * t.SOLUONG
+                    //cập nhật số lượng tồn nguyên liệu
+                    var cthdma = karaokeDataContext.CTHDMAs.Where(s => s.MAMON == chiTietHoaDon.Ma).
+                    First();
+                    cthdma.MONAN.TPMONANs.ToList().ForEach(t => t.NGUYENLIEU.SLTON -=
+                     (chiTietHoaDon.Soluong) * t.SOLUONG
                     );
-
-
 
                     karaokeDataContext.CTHDMAs.InsertOnSubmit(new CTHDMA()
                     {
-                        //HOADON = (from hoaDon in karaokeDataContext.HOADONs
-                        //         where hoaDon.SOHD == mahd
-                        //         select hoaDon).First(),
+
                         SOHD = mahd,
                         MAMON = chiTietHoaDon.Ma,
                         SOLUONG = chiTietHoaDon.Soluong,
-                        //MONAN = (from monAn in karaokeDataContext.MONANs
-                        //         where monAn.MAMON == chiTietHoaDon.Ma
-                        //         select monAn).First(),
-
 
                     });
                 }
                 else
                 {
+                    //cập nhật số lượng tồn sản phẩm
                     karaokeDataContext.CTHDSPs.Where(s => s.MASP == chiTietHoaDon.Ma).
                     First().SANPHAM.SLTON -= chiTietHoaDon.Soluong;
                     //nếu là sản phẩm thì thêm vào bảng CTHDMA
                     karaokeDataContext.CTHDSPs.InsertOnSubmit(new CTHDSP()
                     {
-                        //HOADON = (from hoaDon in karaokeDataContext.HOADONs
-                        //          where hoaDon.SOHD == mahd
-                        //          select hoaDon).First(),
+
                         SOHD = mahd,
                         MASP = chiTietHoaDon.Ma,
                         SOLUONG = chiTietHoaDon.Soluong,
-                        //SANPHAM = (from sanPham in karaokeDataContext.SANPHAMs
-                        //         where sanPham.MASP == chiTietHoaDon.Ma
-                        //         select sanPham).First(),
+
                     });
                 }
 
             });
+            #endregion
 
             // kiểm tra dữ liệu có xóa hết không
             ChangeSet cs = karaokeDataContext.GetChangeSet();
-            if (cs.Deletes.Count == (deleteMonAn.Count() + deleteSanPhams.Count())
+            if (cs.Deletes.Count == (deleteMonAns.Count() + deleteSanPhams.Count())
                && cs.Inserts.Count == chiTietHoaDons.Count
                 )
             {
                 karaokeDataContext.SubmitChanges();
                 return true;
             }
-            //karaokeDataContext.
-
-
-
-
             return false;
         }
         public static string LayMaHoaDon(string maPhong)
         {
-            string query = "EXEC uspLayHoaDon @maPhong";
+
+            //string query = "EXEC uspLayHoaDon @maPhong";
 
             //truyền tham số vào câu truy vấn
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@maPhong",SqlDbType.VarChar){IsNullable=false,Value=maPhong }
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@maPhong",SqlDbType.VarChar){IsNullable=false,Value=maPhong }
 
-            };
+            //};
             string result = "";
             try
             {
-                result = Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString();
+                //result = Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString();
+                using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+                {
+                    result = (from hoaDon in karaokeDataContext.HOADONs
+                              where hoaDon.MAPHONG == maPhong &&
+                              hoaDon.PHONG.TINHTRANG == "1"
+
+                              select hoaDon.SOHD).First();
+                }
             }
             catch (Exception ex)
             {
                 Utility.Log(ex);
             }
+
+
+
             return result;
         }
 
@@ -159,18 +159,66 @@ namespace DAO
             List<GoiMonDataSource> list = null;
             try
             {
-                DataTable table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
-                list = table.AsEnumerable().ToList().ConvertAll(x =>
-                        new GoiMonDataSource()
-                        {
-                            Ma = x[0].ToString(),
-                            Ten = x[1].ToString(),
-                            Soluong = x[2].ToString(),
-                            Loai = x[3].ToString(),
-                            Gia = x[4].ToString(),
-                            Thanhtien = (int.Parse(x[2].ToString()) * int.Parse(x[4].ToString())).ToString()
-                        }
-                        );
+
+                //DataTable table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+                //list = table.AsEnumerable().ToList().ConvertAll(x =>
+                //        new GoiMonDataSource()
+                //        {
+                //            Ma = x[0].ToString(),
+                //            Ten = x[1].ToString(),
+                //            Soluong = int.Parse( x[2].ToString()),
+                //            Loai = x[3].ToString(),
+                //            Gia = int.Parse(x[4].ToString()),
+                //            Thanhtien = (int.Parse(x[2].ToString()) * 
+                //            int.Parse(x[4].ToString())).ToString()
+                //        }
+                //        );
+
+                using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+                {
+                    list = (from cthdma in karaokeDataContext.CTHDMAs
+
+                            join monAn in karaokeDataContext.MONANs
+                            on cthdma.MAMON equals monAn.MAMON
+                            where cthdma.SOHD == soHoaDon
+
+                            select new GoiMonDataSource
+                            {
+                                Ma = cthdma.MAMON,
+                                Ten = monAn.TENMON,
+                                Soluong = cthdma.SOLUONG.HasValue ? cthdma.SOLUONG.Value.ToString()
+                                : "0",
+                                Loai = monAn.LOAIMON.ToString(),
+                                Gia = monAn.DONGIA.HasValue ? monAn.DONGIA.Value.ToString()
+                                : "0",
+                                Thanhtien = (cthdma.SOLUONG.Value * monAn.DONGIA.Value).ToString(),
+                                MaLoaiHangHoa = "0",
+                                TenLoaiHangHoa = "Thức ăn"
+
+                            }).Concat(from cthdsp in karaokeDataContext.CTHDSPs
+                                      join sanPham in karaokeDataContext.SANPHAMs
+                                      on cthdsp.MASP equals sanPham.MASP
+                                      where cthdsp.SOHD == soHoaDon
+
+                                      select new GoiMonDataSource
+                                      {
+                                          Ma = cthdsp.MASP,
+                                          Ten = sanPham.TENSP,
+                                          Soluong = cthdsp.SOLUONG.HasValue ? cthdsp.SOLUONG.Value.ToString()
+                                            : "0",
+                                          Loai = sanPham.LOAISP.ToString(),
+                                          Gia = sanPham.DONGIA.HasValue ? sanPham.DONGIA.Value.ToString()
+                                          : "0",
+                                          Thanhtien = (cthdsp.SOLUONG.Value * sanPham.DONGIA.Value).ToString(),
+                                          MaLoaiHangHoa = "0",
+                                          TenLoaiHangHoa = "Thức ăn"
+
+                                      }
+                                      )
+
+
+                            .ToList();
+                }
             }
             catch (Exception ex)
             {

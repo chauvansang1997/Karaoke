@@ -422,7 +422,7 @@ namespace Karaoke.GuiMonAn
                     TongCong = TongCong - (uint.Parse(dGVHoaDon[2, e.RowIndex].Value.ToString()) *
                         uint.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString()));
                     dGVHoaDon.Rows.RemoveAt(e.RowIndex);
-                    UpdateChiTietHoaDon();
+                    //UpdateChiTietHoaDon();
                 }
             }
             catch (Exception)
@@ -498,14 +498,7 @@ namespace Karaoke.GuiMonAn
                             return;
                         }
                     }
-                    //if (!BUS.HoaDonBUS.KiemTraGoiMon(dGVHoaDon[7, e.RowIndex].Value.ToString(),
-                    //    int.Parse(e.FormattedValue.ToString()),(int)oldValue))
-                    //{
-                    //    soluong = dGVHoaDon[e.ColumnIndex, e.RowIndex].Value.ToString();
-                    //    bKiemTraTon = false;
-                     
-                    //    return;
-                    //}
+
                     bKiemTraTon = true;
                 
                  
@@ -520,78 +513,9 @@ namespace Karaoke.GuiMonAn
             }
 
         }
-        private void UpdateChiTietHoaDon()
-        {
-            //if (listMoi.Count > 0)
-            //{
-            //    foreach (KeyValuePair<string, int> itemSource in listMoi)
-            //    {
-            //        if (listCu.ContainsKey(itemSource.Key))
-            //        {
-            //            BUS.HoaDonBUS.CapNhatTon(soHoaDon, itemSource.Key, listCu[itemSource.Key], itemSource.Value);
-            //        }
-            //        else
-            //        {
-            //            BUS.HoaDonBUS.ThemHoaDonMonAn(soHoaDon, itemSource.Key, itemSource.Value);
-            //        }
-            //    }
-            //}
 
-
-
-            List<ChiTietHoaDon> chiTietHoaDons = new List<ChiTietHoaDon>();
-
-            foreach (KeyValuePair<string, Dictionary<string, GoiMonDataSource>> itemSource in dictionaryDataSource)
-            {
-                foreach (KeyValuePair<string, GoiMonDataSource> item in itemSource.Value)
-                {
-                    string ma = item.Value.Ma;
-                    string soluong = item.Value.Soluong;
-                    string loai = item.Value.Loai;
-
-                    if (loai == "1")
-                    {
-
-                        chiTietHoaDons.Add(new ChiTietHoaDon()
-                        {
-                            Ma = ma,
-                            LoaiHangHoa = ChiTietHoaDon.Loai.Sanpham,
-                            Soluong = Int32.Parse(soluong)
-
-                        });
-                    }
-                    else
-                    {
-
-                        chiTietHoaDons.Add(new ChiTietHoaDon()
-                        {
-                            Ma = ma,
-                            LoaiHangHoa = ChiTietHoaDon.Loai.MonAn,
-                            Soluong = Int32.Parse(soluong)
-
-                        });
-                    }
-                }
-            }
-            BUS.HoaDonBUS.ThemChiTietHoaDon(soHoaDon, chiTietHoaDons);
-        }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            //if (listMoi.Count > 0)
-            //{
-            //    foreach (KeyValuePair<string, int> itemSource in listMoi)
-            //    {
-            //        if (listCu.ContainsKey(itemSource.Key))
-            //        {
-            //            BUS.HoaDonBUS.CapNhatTon(soHoaDon, itemSource.Key, listCu[itemSource.Key], itemSource.Value);
-            //        }
-            //        else
-            //        {
-            //            BUS.HoaDonBUS.ThemHoaDonMonAn(soHoaDon, itemSource.Key, itemSource.Value);
-            //        }
-            //    }
-            //}
-          
             List<ChiTietHoaDon> chiTietHoaDons = new List<ChiTietHoaDon>();
 
             foreach (KeyValuePair<string, Dictionary<string, GoiMonDataSource>> itemSource in dictionaryDataSource)

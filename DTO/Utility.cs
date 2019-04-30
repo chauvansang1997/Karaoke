@@ -9,7 +9,8 @@ using System.Windows.Forms;
 
 namespace DTO
 {
-    public enum State{
+    public enum State
+    {
         Add,
         Fix
     }
@@ -78,7 +79,7 @@ namespace DTO
             {
                 return 1;
             }
-            if (rowCount * 1.0 % pageSize != 0   )
+            if (rowCount * 1.0 % pageSize != 0)
             {
                 rowCount = (rowCount / pageSize) + 1;
             }
@@ -86,7 +87,7 @@ namespace DTO
             {
                 rowCount = rowCount / pageSize;
             }
-       
+
 
             return rowCount;
         }
@@ -105,7 +106,7 @@ namespace DTO
         /// <param name="e"> Ngoại lệ</param>
         public static void Log(Exception e)
         {
-            File.WriteAllText("crashlog"+ DateTime.Now.ToString(@"dd_MM_yyyy_HH_mm") + ".txt",  e.Message
+            File.WriteAllText("crashlog" + DateTime.Now.ToString(@"dd_MM_yyyy_HH_mm") + ".txt", e.Message
                 + Environment.NewLine + e.StackTrace + Environment.NewLine + e.TargetSite + Environment.NewLine + e.GetType());
         }
         /// <summary>
@@ -114,7 +115,51 @@ namespace DTO
         /// <param name="msg">error message</param>
         public static void Log(string msg)
         {
-            File.WriteAllText("crashlog" + DateTime.Now.ToString(@"dd\/MM\/yyyy HH:mm") + ".txt",  msg);
+            File.WriteAllText("crashlog" + DateTime.Now.ToString(@"dd\/MM\/yyyy HH:mm") + ".txt", msg);
+        }
+
+        private static readonly string[] VietnameseSigns = new string[]
+        {
+
+            "aAeEoOuUiIdDyY",
+
+            "áàạảãâấầậẩẫăắằặẳẵ",
+
+            "ÁÀẠẢÃÂẤẦẬẨẪĂẮẰẶẲẴ",
+
+            "éèẹẻẽêếềệểễ",
+
+            "ÉÈẸẺẼÊẾỀỆỂỄ",
+
+            "óòọỏõôốồộổỗơớờợởỡ",
+
+            "ÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠ",
+
+            "úùụủũưứừựửữ",
+
+            "ÚÙỤỦŨƯỨỪỰỬỮ",
+
+            "íìịỉĩ",
+
+            "ÍÌỊỈĨ",
+
+            "đ",
+
+            "Đ",
+
+            "ýỳỵỷỹ",
+
+            "ÝỲỴỶỸ"
+        };
+
+        public static string convertUnsign(string str)
+        {
+            for (int i = 1; i < VietnameseSigns.Length; i++)
+            {
+                for (int j = 0; j < VietnameseSigns[i].Length; j++)
+                    str = str.Replace(VietnameseSigns[i][j], VietnameseSigns[0][i - 1]);
+            }
+            return str;
         }
     }
 }
