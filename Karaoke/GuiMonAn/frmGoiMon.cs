@@ -24,6 +24,7 @@ namespace Karaoke.GuiMonAn
     }
     public partial class frmGoiMon : Form
     {
+        #region variable
         private const int pageSize = 5;
         private int pageNumber;
         private int totalPage;
@@ -69,6 +70,8 @@ namespace Karaoke.GuiMonAn
             }
         }
         private frmPhongKaraoke phongKaraoke;
+        #endregion
+
         public frmGoiMon(string soHD, frmPhongKaraoke phongKaraoke)
         {
 
@@ -133,8 +136,14 @@ namespace Karaoke.GuiMonAn
 
             Dictionary<int, List<FoodLayout>> dictionary = new Dictionary<int, List<FoodLayout>>();
             TabPage tabPage = new TabPage("Thức ăn");
+            tabPage.AutoScroll = true;
+            tabPage.AutoScrollMargin = new System.Drawing.Size(20, 20);
+            tabPage.AutoScrollMinSize = new System.Drawing.Size(tabPage.Width, tabPage.Height);
             tabPage.Controls.Add(flowFoodLayout);
             tabPage.Name = "1";
+          
+            //tabPage.sc
+   
             tabControl.TabPages.Add(tabPage);
             listDictionaryHangHoa.Add(dictionary);
             //lấy danh sách loại sản phẩm đưa vào tabcontrol lớn
@@ -157,6 +166,8 @@ namespace Karaoke.GuiMonAn
                     listDictionaryHangHoa.Add(dictionary);
                 }
             }
+
+
             listTenGroup = new List<DTO.LoaiHangHoa>();
             listTenGroup.Add(new DTO.LoaiHangHoa() { Ma = "0", Ten = "Thức ăn" });
             listTenGroup.AddRange(BUS.HangHoaBUS.XemLoaiMon(1));
@@ -180,7 +191,6 @@ namespace Karaoke.GuiMonAn
                         dictionaryDataSource[temp[i].TenLoaiHangHoa].Add(temp[i].Ma, temp[i]);
                         bindingSource.Add(temp[i]);
                         tongCong += uint.Parse(temp[i].Thanhtien);
-                        //ListSoLuongCu.Add()
                         listCu.Add(temp[i].Ma, int.Parse(temp[i].Soluong));
                         listMoi.Add(temp[i].Ma, int.Parse(temp[i].Soluong));
                     }
@@ -207,7 +217,7 @@ namespace Karaoke.GuiMonAn
         void grouper_DisplayGroup(object sender, GroupDisplayEventArgs e)
         {
             e.BackColor = (e.Group.GroupIndex % 2) == 0 ? Color.Orange : Color.LightBlue;
-            e.Header = listTenGroup[int.Parse(e.DisplayValue) - 1].Ten;
+            e.Header = listTenGroup[int.Parse(e.DisplayValue)].Ten;
             e.DisplayValue = "";
             e.ForeColor = (e.Group.GroupIndex % 2) == 0 ? Color.White : Color.Black;
             // e.Summary = "contains " + e.Group.Count + " rows";

@@ -149,13 +149,13 @@ namespace DAO
 
         public static List<GoiMonDataSource> XemChiTietHoaDon(string soHoaDon)
         {
-            string query = "EXEC uspXemChiTietHoaDon @soHoaDon";
+            //string query = "EXEC uspXemChiTietHoaDon @soHoaDon";
 
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@soHoaDon",SqlDbType.VarChar){ Value=soHoaDon  }
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@soHoaDon",SqlDbType.VarChar){ Value=soHoaDon  }
 
-            };
+            //};
             List<GoiMonDataSource> list = null;
             try
             {
@@ -198,6 +198,8 @@ namespace DAO
                             }).Concat(from cthdsp in karaokeDataContext.CTHDSPs
                                       join sanPham in karaokeDataContext.SANPHAMs
                                       on cthdsp.MASP equals sanPham.MASP
+                                      join loai in karaokeDataContext.LOAISANPHAMs
+                                      on sanPham.LOAISP equals loai.MA
                                       where cthdsp.SOHD == soHoaDon
 
                                       select new GoiMonDataSource
@@ -210,8 +212,8 @@ namespace DAO
                                           Gia = sanPham.DONGIA.HasValue ? sanPham.DONGIA.Value.ToString()
                                           : "0",
                                           Thanhtien = (cthdsp.SOLUONG.Value * sanPham.DONGIA.Value).ToString(),
-                                          MaLoaiHangHoa = "0",
-                                          TenLoaiHangHoa = "Thức ăn"
+                                          MaLoaiHangHoa = loai.MA.ToString(),
+                                          TenLoaiHangHoa = loai.TENLOAI
 
                                       }
                                       )
@@ -312,7 +314,7 @@ namespace DAO
                             Loai = x[5].ToString(),
                             Gia = x[4].ToString(),
                             Thanhtien = (int.Parse(x[2].ToString()) * int.Parse(x[4].ToString())).ToString(),
-                            MaLoaiHangHoa = x[5].ToString() == "0" ? "1" : x[3].ToString(),
+                            MaLoaiHangHoa = x[5].ToString(),
                             TenLoaiHangHoa = x[5].ToString() == "0" ? "Thức ăn" : x[6].ToString()
 
                         }
@@ -485,21 +487,43 @@ namespace DAO
             }
             return true;
         }
-        public static bool KiemTraMonAn(string ma, int soLuong, int soLuongCu)
+        public static bool KiemTraSoLuongHangHoa(string ma, int soLuong, int soLuongCu)
         {
-            string query = "EXEC uspKiemTraGoiMon @ma,@soLuong,@soLuongCu";
+            //string query = "EXEC uspKiemTraGoiMon @ma,@soLuong,@soLuongCu";
 
-            //truyền tham số vào câu truy vấn
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@ma",SqlDbType.VarChar){IsNullable=false,Value=ma },
-                new SqlParameter("@soLuong",SqlDbType.Int){IsNullable=false,Value=soLuong },
-                 new SqlParameter("@soLuongCu",SqlDbType.Int){IsNullable=false,Value=soLuongCu },
-            };
+            ////truyền tham số vào câu truy vấn
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@ma",SqlDbType.VarChar){IsNullable=false,Value=ma },
+            //    new SqlParameter("@soLuong",SqlDbType.Int){IsNullable=false,Value=soLuong },
+            //     new SqlParameter("@soLuongCu",SqlDbType.Int){IsNullable=false,Value=soLuongCu },
+            //};
             int result = 0;
             try
             {
-                result = (int)Dataprovider.ExcuteScalar(query, parameters.ToArray());
+                //result = (int)Dataprovider.ExcuteScalar(query, parameters.ToArray());
+                using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+                {
+                    int checkMonAn = karaokeDataContext.MONANs.Where(s => s.MAMON == ma).Count();
+
+                    result = 
+                        checkMonAn == 0 ?
+                        //nếu mã là sản phẩm
+                        karaokeDataContext.SANPHAMs.Where(s => s.MASP == ma &&
+                         s.SLTON  >= soLuong).Count()
+                         :
+                        //nếu là mã là món ăn
+
+                        //chọn ra món cần tìm bằng mã
+                        karaokeDataContext.TPMONANs.Where(s => s.MAMON == ma).
+                        // kết nguyên liệu và thành phần món ăn
+                        Join(karaokeDataContext.NGUYENLIEUs, tpMonAn => tpMonAn.MANL, nguyenLieu => nguyenLieu.MANL,
+                        (tpMonan, nguyenLieu) => new { tpMonan, nguyenLieu }).
+                        //kiểm tra có còn đủ số lượng
+                        Where(
+                            s => (s.nguyenLieu.SLTON >= soLuong * s.tpMonan.SOLUONG)
+                        ).Count();
+                }
             }
             catch (Exception ex)
             {

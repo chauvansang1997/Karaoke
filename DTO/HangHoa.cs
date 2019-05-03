@@ -103,19 +103,6 @@ namespace DTO
             }
         }
 
-        public string LoaiChiTiet
-        {
-            get
-            {
-                return loaiChiTiet;
-            }
-
-            set
-            {
-                loaiChiTiet = value;
-            }
-        }
-
         public LoaiHangHoa LoaiHangHoa
         {
             get
