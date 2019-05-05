@@ -40,9 +40,9 @@ namespace BUS
         {
             return MonAnDAO.DemMonAn(tenMonAn, loaiMonAn, donGia);
         }
-        public static List<LoaiMon> XemLoaiMon()
+        public static List<LoaiMon> XemLoaiMon(string type)
         {
-            return MonAnDAO.XemLoaiMon();
+            return MonAnDAO.XemLoaiMon(type);
         }
 
         public static List<NguyenLieuMADataSource> XemNguyenLieuMonAn(string maMonAn)

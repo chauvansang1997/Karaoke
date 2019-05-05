@@ -139,11 +139,10 @@ namespace DAO.QuanLyHangHoa
         {
             KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
 
-            var listMonAn = from monan in karaokeDataContext.MONANs
+            var listMonAn = from monan in karaokeDataContext.MONANs.AsEnumerable()
                             join loaimon in karaokeDataContext.LOAIMONANs
                                 on monan.LOAIMON equals loaimon.MA
-                            let temp1 = Utility.convertUnsign(monan.TENMON)
-                            where (temp1.Contains(Utility.convertUnsign(tenMonAn)) && (loaiMonAn == 0 ? monan.LOAIMON == monan.LOAIMON : monan.LOAIMON == loaiMonAn))
+                            where (Utility.convertUnsign(monan.TENMON).Contains(Utility.convertUnsign(tenMonAn)) && (loaiMonAn == 0 ? monan.LOAIMON == monan.LOAIMON : monan.LOAIMON == loaiMonAn))
                             select new MonAnDataSource()
                             {
                                 Ma = monan.MAMON,
@@ -154,8 +153,8 @@ namespace DAO.QuanLyHangHoa
                                 AnhMinhHoa = monan.ANHMINHHOA
                             };
 
-            var listMonAn2 = karaokeDataContext.MONANs.AsEnumerable().Where(s =>
-            Utility.convertUnsign(s.TENMON).Contains(Utility.convertUnsign(tenMonAn))
+            var listMonAn2 = (karaokeDataContext.MONANs.AsEnumerable().Where(s =>
+            Utility.convertUnsign(s.TENMON.ToLower()).Contains(Utility.convertUnsign(tenMonAn).ToLower())
 
             && (loaiMonAn == 0 ? s.LOAIMON == s.LOAIMON : s.LOAIMON == loaiMonAn)).Select(
 
@@ -167,9 +166,8 @@ namespace DAO.QuanLyHangHoa
                     TenLoaiHangHoa = t.LOAIMONAN.TENLOAI.ToString(),
                     Gia = t.DONGIA.ToString(),
                     AnhMinhHoa = t.ANHMINHHOA
-                });
-            var temp = listMonAn2.ToList();
-            return temp;
+                }).Skip((pageNumber-1)*pageSize).Take(pageSize)).ToList();
+            return listMonAn2;
         }
 
         public static List<MonAn> XemMonAn(string tenMonAn, int loaiMonAn, uint donGia = 0)
@@ -249,19 +247,30 @@ namespace DAO.QuanLyHangHoa
             }
             return count;
         }
-        public static List<LoaiMon> XemLoaiMon()
+        public static List<LoaiMon> XemLoaiMon(string type)
         {
-            string query = "SELECT * FROM LOAIMONAN";
+            // string query = "SELECT * FROM LOAIMONAN";
             List<LoaiMon> list = null;
             try
             {
-                DataTable table = Dataprovider.ExcuteQuery(query);
-                list = table.AsEnumerable().ToList().ConvertAll(x =>
-                        new LoaiMon()
-                        {
-                            Ma = x[0].ToString(),
-                            Ten = x[1].ToString()
-                        });
+                //DataTable table = Dataprovider.ExcuteQuery(query);
+                //list = table.AsEnumerable().ToList().ConvertAll(x =>
+                //        new LoaiMon()
+                //        {
+                //            Ma = x[0].ToString(),
+                //            Ten = x[1].ToString()
+                //        });
+                using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+                {
+                    list = (from loaimon in karaokeDataContext.LOAIMONANs
+                            select new LoaiMon()
+                            {
+                                Ma = loaimon.MA.ToString(),
+                                Ten = loaimon.TENLOAI
+                            }).ToList();
+                }
+                if (type == "view")
+                    list.Add(new LoaiMon() { Ma = "0", Ten = "Tất cả" });
             }
             catch (Exception ex)
             {
