@@ -259,3 +259,7 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+DAO/app.config
+DAO/DataProvider.cs
+DAO/Properties/Settings.settings
+DAO/Properties/Settings.Designer.cs
