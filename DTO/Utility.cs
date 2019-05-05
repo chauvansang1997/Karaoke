@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -9,7 +12,8 @@ using System.Windows.Forms;
 
 namespace DTO
 {
-    public enum State{
+    public enum State
+    {
         Add,
         Fix
     }
@@ -74,11 +78,11 @@ namespace DTO
         /// <returns></returns>
         public static int TinhKichThuocTrang(int rowCount, int pageSize)
         {
-            if (rowCount == 0)
+            if (rowCount <= pageSize)
             {
                 return 1;
             }
-            if (rowCount * 1.0 % pageSize > 1)
+            if (rowCount * 1.0 % pageSize != 0)
             {
                 rowCount = (rowCount / pageSize) + 1;
             }
@@ -86,10 +90,7 @@ namespace DTO
             {
                 rowCount = rowCount / pageSize;
             }
-            if (rowCount == 0)
-            {
-                rowCount = 1;
-            }
+
 
             return rowCount;
         }
@@ -108,7 +109,7 @@ namespace DTO
         /// <param name="e"> Ngoại lệ</param>
         public static void Log(Exception e)
         {
-            File.WriteAllText("crashlog"+ DateTime.Now.ToString(@"dd_MM_yyyy_HH_mm") + ".txt",  e.Message
+            File.WriteAllText("crashlog" + DateTime.Now.ToString(@"dd_MM_yyyy_HH_mm") + ".txt", e.Message
                 + Environment.NewLine + e.StackTrace + Environment.NewLine + e.TargetSite + Environment.NewLine + e.GetType());
         }
         /// <summary>
@@ -117,7 +118,75 @@ namespace DTO
         /// <param name="msg">error message</param>
         public static void Log(string msg)
         {
-            File.WriteAllText("crashlog" + DateTime.Now.ToString(@"dd\/MM\/yyyy HH:mm") + ".txt",  msg);
+            File.WriteAllText("crashlog" + DateTime.Now.ToString(@"dd\/MM\/yyyy HH:mm") + ".txt", msg);
+        }
+        /// <summary>
+        /// Chuyển list thành datatable
+        /// </summary>
+        /// <param name="msg">error message</param>
+        public static DataTable ConvertToDataTable<T>(IList<T> data)
+        {
+            PropertyDescriptorCollection properties =
+               TypeDescriptor.GetProperties(typeof(T));
+            DataTable table = new DataTable();
+            foreach (PropertyDescriptor prop in properties)
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            foreach (T item in data)
+            {
+                DataRow row = table.NewRow();
+                foreach (PropertyDescriptor prop in properties)
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                table.Rows.Add(row);
+            }
+            return table;
+
+        }
+        private static readonly string[] VietnameseSigns = new string[]
+        {
+
+            "aAeEoOuUiIdDyY",
+
+            "áàạảãâấầậẩẫăắằặẳẵ",
+
+            "ÁÀẠẢÃÂẤẦẬẨẪĂẮẰẶẲẴ",
+
+            "éèẹẻẽêếềệểễ",
+
+            "ÉÈẸẺẼÊẾỀỆỂỄ",
+
+            "óòọỏõôốồộổỗơớờợởỡ",
+
+            "ÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠ",
+
+            "úùụủũưứừựửữ",
+
+            "ÚÙỤỦŨƯỨỪỰỬỮ",
+
+            "íìịỉĩ",
+
+            "ÍÌỊỈĨ",
+
+            "đ",
+
+            "Đ",
+
+            "ýỳỵỷỹ",
+
+            "ÝỲỴỶỸ"
+        };
+        /// <summary>
+        /// chuyển tiếng việt thành không dấu
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string convertUnsign(string str)
+        {
+            for (int i = 1; i < VietnameseSigns.Length; i++)
+            {
+                for (int j = 0; j < VietnameseSigns[i].Length; j++)
+                    str = str.Replace(VietnameseSigns[i][j], VietnameseSigns[0][i - 1]);
+            }
+            return str;
         }
     }
 }

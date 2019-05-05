@@ -18,6 +18,7 @@ namespace DTO
         private string donViTinh;
         private int donGiaNhap;
         private int soLuongToiThieu;
+
         public int SoLuongToiThieu
         {
             get
