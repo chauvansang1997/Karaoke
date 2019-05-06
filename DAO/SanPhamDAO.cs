@@ -36,7 +36,6 @@ namespace DAO
                     objSP.DVT = sanPham.DonViTinh;
                     objSP.DONGIA = (int)sanPham.Gia;
                     objSP.SLTOITHIEU = sanPham.SoLuongToiThieu;
-                    objSP.SLTON = 0;
                     objSP.ANHMINHHOA = sanPham.TenHinhAnh;
                     objSP.DONGIANHAP = sanPham.DonGiaNhap;
                     karaokeDataContext.SANPHAMs.InsertOnSubmit(objSP);
@@ -53,34 +52,50 @@ namespace DAO
         }
         public static bool CapNhatSanPham(SanPham sanPham)
         {
-            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+            try
             {
-                
+                using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+                {
+                    var sp = karaokeDataContext.SANPHAMs.Where(p => p.MASP.Equals(sanPham.Ma)).SingleOrDefault();
+                    sp.TENSP = sanPham.Ten;
+                    sp.MANCC = sanPham.NhaCungCap;
+                    sp.LOAISP = Convert.ToInt32(sanPham.Loai);
+                    sp.DVT = sanPham.DonViTinh;
+                    sp.DONGIA = (int)sanPham.Gia;
+                    sp.DONGIANHAP = sanPham.DonGiaNhap;
+                    sp.SLTOITHIEU = sanPham.SoLuongToiThieu;
+                    sp.ANHMINHHOA = sanPham.TenHinhAnh;
+                    karaokeDataContext.SubmitChanges();
 
-            }
-            string query = "EXEC uspCapNhatSanPham @ma,@ten,@maNhaCungCap,@maLoai,@donViTinh,@donGia,@soLuongToiThieu,@anhMinhHoa,@donGiaNhap";
-
-
-            //truyền tham số vào câu truy vấn
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@ma",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.Ma },
-                new SqlParameter("@ten",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.Ten },
-                new SqlParameter("@maNhaCungCap",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.NhaCungCap },
-                new SqlParameter("@maLoai",SqlDbType.VarChar){IsNullable=false,Value=sanPham.Loai },
-                new SqlParameter("@donViTinh",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.DonViTinh },
-                new SqlParameter("@donGia",SqlDbType.Int){IsNullable=false,Value=sanPham.Gia },
-                new SqlParameter("@soLuongToiThieu",SqlDbType.Int){IsNullable=false,Value=sanPham.SoLuongToiThieu },
-                new SqlParameter("@anhMinhHoa",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.TenHinhAnh },
-                new SqlParameter("@donGiaNhap",SqlDbType.Int){IsNullable=false,Value=sanPham.DonGiaNhap },
-            };
-            //nếu số dòng thành công trả về lớn hơn 0 thì thành công
-            int num = Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
-            if (num == 0)
+                }
+                return true;
+            }catch(Exception ex)
             {
                 return false;
             }
-            return true;
+            //string query = "EXEC uspCapNhatSanPham @ma,@ten,@maNhaCungCap,@maLoai,@donViTinh,@donGia,@soLuongToiThieu,@anhMinhHoa,@donGiaNhap";
+
+
+            ////truyền tham số vào câu truy vấn
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@ma",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.Ma },
+            //    new SqlParameter("@ten",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.Ten },
+            //    new SqlParameter("@maNhaCungCap",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.NhaCungCap },
+            //    new SqlParameter("@maLoai",SqlDbType.VarChar){IsNullable=false,Value=sanPham.Loai },
+            //    new SqlParameter("@donViTinh",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.DonViTinh },
+            //    new SqlParameter("@donGia",SqlDbType.Int){IsNullable=false,Value=sanPham.Gia },
+            //    new SqlParameter("@soLuongToiThieu",SqlDbType.Int){IsNullable=false,Value=sanPham.SoLuongToiThieu },
+            //    new SqlParameter("@anhMinhHoa",SqlDbType.NVarChar){IsNullable=false,Value=sanPham.TenHinhAnh },
+            //    new SqlParameter("@donGiaNhap",SqlDbType.Int){IsNullable=false,Value=sanPham.DonGiaNhap },
+            //};
+            ////nếu số dòng thành công trả về lớn hơn 0 thì thành công
+            //int num = Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+            //if (num == 0)
+            //{
+            //    return false;
+            //}
+            //return true;
         }
         public static bool XoaMonAn(string ma)
         {
