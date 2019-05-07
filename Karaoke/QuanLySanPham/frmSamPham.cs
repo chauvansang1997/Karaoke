@@ -417,15 +417,15 @@ namespace Karaoke.QuanLySanPham
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (BUS.NguyenLieuBUS.XoaNguyenLieu(ma))
-            {
-                MessageBox.Show("Xóa sản phẩm thành công");
-                resetDanhSach();
-            }
-            else
-            {
-                MessageBox.Show("Nguyên liệu nằm trong món ăn");
-            }
+            //if (BUS.NguyenLieuBUS.XoaNguyenLieu(ma))
+            //{
+            //    MessageBox.Show("Xóa sản phẩm thành công");
+            //    resetDanhSach();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Nguyên liệu nằm trong món ăn");
+            //}
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

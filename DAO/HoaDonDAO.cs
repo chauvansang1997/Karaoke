@@ -68,7 +68,7 @@ namespace DAO
                 if (chiTietHoaDon.LoaiHangHoa == ChiTietHoaDon.Loai.MonAn)
                 {
                     //cập nhật số lượng tồn nguyên liệu
-                    var cthdma = karaokeDataContext.CTHDMAs.Where(s => s.MAMON == chiTietHoaDon.Ma).
+                    var cthdma = karaokeDataContext.TPMONANs.Where(s => s.MAMON == chiTietHoaDon.Ma).
                     First();
                     cthdma.MONAN.TPMONANs.ToList().ForEach(t => t.NGUYENLIEU.SLTON -=
                      (chiTietHoaDon.Soluong) * t.SOLUONG
@@ -86,8 +86,7 @@ namespace DAO
                 else
                 {
                     //cập nhật số lượng tồn sản phẩm
-                    karaokeDataContext.CTHDSPs.Where(s => s.MASP == chiTietHoaDon.Ma).
-                    First().SANPHAM.SLTON -= chiTietHoaDon.Soluong;
+                    karaokeDataContext.SANPHAMs.Where(s => s.MASP == chiTietHoaDon.Ma).First().SLTON -= chiTietHoaDon.Soluong;
                     //nếu là sản phẩm thì thêm vào bảng CTHDMA
                     karaokeDataContext.CTHDSPs.InsertOnSubmit(new CTHDSP()
                     {
@@ -216,10 +215,7 @@ namespace DAO
                                           TenLoaiHangHoa = loai.TENLOAI
 
                                       }
-                                      )
-
-
-                            .ToList();
+                                      ).ToList();
                 }
             }
             catch (Exception ex)
@@ -506,11 +502,11 @@ namespace DAO
                 {
                     int checkMonAn = karaokeDataContext.MONANs.Where(s => s.MAMON == ma).Count();
 
-                    result = 
+                    result =
                         checkMonAn == 0 ?
                         //nếu mã là sản phẩm
                         karaokeDataContext.SANPHAMs.Where(s => s.MASP == ma &&
-                         s.SLTON  >= soLuong).Count()
+                         s.SLTON >= soLuong).Count()
                          :
                         //nếu là mã là món ăn
 

@@ -62,18 +62,7 @@ namespace DAO
             List<HangHoa> list = new List<HangHoa>();
             try
             {
-                //DataTable table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
-                //list = table.AsEnumerable().ToList().ConvertAll(x =>
-                //        new HangHoa()
-                //        {
-                //            Ma = x[0].ToString(),
-                //            Ten = x[1].ToString(),
-                //            Loai = loai.ToString(),
-                //            Gia = uint.Parse(x[3].ToString()),
-                //            TenHinhAnh = x[4].ToString(),
-                //            LoaiHangHoa = new LoaiHangHoa() { Ma = x[2].ToString(), Ten = x[5].ToString() },
 
-                //        });
                 using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
                 {
                     list = loai == 0 ? (from monAn in karaokeDataContext.MONANs
