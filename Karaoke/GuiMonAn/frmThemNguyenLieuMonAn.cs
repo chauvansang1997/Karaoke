@@ -38,9 +38,10 @@ namespace Karaoke.GuiMonAn
             InitializeComponent();
             bindingSource = monAn.bindingSource;
             this.monAn = monAn;
-            cmbNhaCungCap.DataSource = BUS.NhaCungCapBUS.XemNhaCungCap();
+            List<DTO.NhaCungCap> NCCs = BUS.NhaCungCapBUS.XemNhaCungCap();
+            cmbNhaCungCap.DataSource = NCCs;
             cmbNhaCungCap.DisplayMember = "Ten";
-
+            cmbNhaCungCap.SelectedIndex = NCCs.Count - 1; 
             //  IEnumerable<NguyenLieuDataSource> data = (List<NguyenLieuDataSource>)dtNguyeLieuMonAn.DataSource;
             //using (var reader = ObjectReader.Create((List<NguyenLieuDataSource>)dtNguyeLieuMonAn.DataSource))
             //{

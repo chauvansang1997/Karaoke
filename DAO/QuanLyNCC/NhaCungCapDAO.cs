@@ -90,20 +90,33 @@ namespace DAO.QuanLyNCC
 		}
         public static List<NhaCungCap> XemNhaCungCap()
         {
-            string query = "SELECT * FROM NHACUNGCAP";
+            //string query = "SELECT * FROM NHACUNGCAP";
 
-            DataTable table = Dataprovider.ExcuteQuery(query);
+            //DataTable table = Dataprovider.ExcuteQuery(query);
+
             List<NhaCungCap> list = null;
             try
             {
-                list = table.AsEnumerable().ToList().ConvertAll(x =>
-                new NhaCungCap() { Ten = x[1].ToString(), SDT = x[2].ToString(), DiaChi = x[3].ToString(), MaNCC = x[0].ToString() });
+                //list = table.AsEnumerable().ToList().ConvertAll(x =>
+                //new NhaCungCap() { Ten = x[1].ToString(), SDT = x[2].ToString(), DiaChi = x[3].ToString(), MaNCC = x[0].ToString() });
+                using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+                {
+                    var listNCC = (from ncc in karaokeDataContext.NHACUNGCAPs
+                                   select new NhaCungCap()
+                                   {
+                                       MaNCC = ncc.MANCC,
+                                       Ten = ncc.TENNCC,
+                                       SDT = ncc.SDT,
+                                       DiaChi = ncc.DIACHI,
+                                   }).ToList();
+                    listNCC.Add(new NhaCungCap() { MaNCC = "", Ten = "Tất cả" });
+                    list = listNCC;
+                }
             }
             catch (Exception ex)
             {
                 Utility.Log(ex);
             }
-            //Chuyển Table thành List tên hành khách
             return list;
 
         }
