@@ -130,7 +130,6 @@ namespace DAO.QuanLyHangHoa
                                           join ncc in karaokeDataContext.NHACUNGCAPs on nl.MANCC equals ncc.MANCC
                                           where ((Utility.convertUnsign(nl.TENNL).ToLower().Contains(Utility.convertUnsign(tenNguyenLieu).ToLower()) || tenNguyenLieu == "")
                                           && (nl.MANCC == maNhaCungCap || maNhaCungCap==""))
-                                          orderby nl.TENNL
                                           select new 
                                           {
                                               MANL = nl.MANL,

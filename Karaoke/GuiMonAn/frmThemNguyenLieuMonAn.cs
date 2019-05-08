@@ -73,6 +73,7 @@ namespace Karaoke.GuiMonAn
             {
                 dtNguyenLieu = BUS.NguyenLieuBUS.TiemKiemNguyenLieu(txtTenNguyenLieu.Text, "", false, pageNumber, pageSize, listMaNguyenLieu);
             }
+            dGVNguyenLieu.DataSource = dtNguyenLieu;
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
@@ -96,7 +97,6 @@ namespace Karaoke.GuiMonAn
        //     this.DtNguyeLieuMonAn = dtNguyenLieu.Clone();
         //    this.DtNguyeLieuMonAn.Clear();
             // }
-            dGVNguyenLieu.DataSource = dtNguyenLieu;
             AddGridTableStyle();
         }
 
@@ -111,9 +111,9 @@ namespace Karaoke.GuiMonAn
                 {
                     Ma = dGVNguyenLieu[0, index].Value.ToString(),
                     Ten = dGVNguyenLieu[1, index].Value.ToString(),
-                    DonViTinh = dGVNguyenLieu[3, index].Value.ToString(),
+                    DonViTinh = dGVNguyenLieu[4, index].Value.ToString(),
                     SoLuong = "1",
-                    Gia = dGVNguyenLieu[4, index].Value.ToString(),
+                    Gia = dGVNguyenLieu[5, index].Value.ToString(),
                 });
                 this.Close();
             }
@@ -240,7 +240,7 @@ namespace Karaoke.GuiMonAn
 
                 txtPageNumber.Text = pageNumber.ToString();
             }
-            loadDanhSach();
+            // loadDanhSach();
         }
 
         private void frmThemNguyenLieuMonAn_Load(object sender, EventArgs e)
