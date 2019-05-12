@@ -29,7 +29,8 @@ namespace DAO
                 {
                     SANPHAM objSP = new SANPHAM();
                     // fields to be insert
-                    objSP.MASP = sanPham.Ma;
+                    string ma = TaoMa.TaoMaSanPham();
+                    objSP.MASP = ma;
                     objSP.TENSP = sanPham.Ten;
                     objSP.MANCC = sanPham.NhaCungCap;
                     objSP.LOAISP = Convert.ToInt32(sanPham.Loai);
