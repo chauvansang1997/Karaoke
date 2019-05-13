@@ -318,7 +318,7 @@ namespace Karaoke.GuiMonAn
                 BUS.MonAnBUS.SuaMonAn(new DTO.MonAn() { Ma=ma,Ten = txtTenMonAn.Text, Loai = ((LoaiMon)cmbLoaiMon.SelectedValue).Ma, Gia = donGia, TenHinhAnh = tenHinhAnh },
                 monan,
                 soluong);
-                MessageBox.Show("Bạn nhập món ăn thành công", "Thông báo", MessageBoxButtons.OK,
+                MessageBox.Show("Cập nhật món ăn thành công", "Thông báo", MessageBoxButtons.OK,
                       MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
             }
             enableControls(false);

@@ -10,64 +10,126 @@ namespace DAO.QuanLyHangHoa
 {
     public static class MonAnDAO
     {
-        public static bool ThemMonAn(MonAn monAn, string listNguyenLieu, string listSoLuong)
+        public static bool ThemMonAn(MonAn monAn, List<string> listNguyenLieu, List<string> listSoLuong)
         {
 
-            //Thêm món ăn
-            string query = " EXEC uspThemMonAn @listNguyenLieu,@listSoLuong,@tenmon,@loaimon,@anhminhhoa,@dongia";
+            ////Thêm món ăn
+            //string query = " EXEC uspThemMonAn @listNguyenLieu,@listSoLuong,@tenmon,@loaimon,@anhminhhoa,@dongia";
 
 
 
-            //truyền tham số vào câu truy vấn
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@listNguyenLieu", SqlDbType.VarChar) { IsNullable = false, Value = listNguyenLieu },
-                new SqlParameter("@listSoLuong", SqlDbType.VarChar) { IsNullable = false, Value = listSoLuong },
-                new SqlParameter("@tenmon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Ten },
-                new SqlParameter("@loaimon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Loai },
-                new SqlParameter("@anhminhhoa",SqlDbType.VarChar){IsNullable=false,Value=monAn.TenHinhAnh },
-                new SqlParameter("@dongia",SqlDbType.Decimal){IsNullable=false,Value=monAn.Gia },
-            };
+            ////truyền tham số vào câu truy vấn
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@listNguyenLieu", SqlDbType.VarChar) { IsNullable = false, Value = listNguyenLieu },
+            //    new SqlParameter("@listSoLuong", SqlDbType.VarChar) { IsNullable = false, Value = listSoLuong },
+            //    new SqlParameter("@tenmon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Ten },
+            //    new SqlParameter("@loaimon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Loai },
+            //    new SqlParameter("@anhminhhoa",SqlDbType.VarChar){IsNullable=false,Value=monAn.TenHinhAnh },
+            //    new SqlParameter("@dongia",SqlDbType.Decimal){IsNullable=false,Value=monAn.Gia },
+            //};
             try
             {
-                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+                //Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+
+                using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+                {
+                    // Thêm món ăn
+                    var Ma = TaoMa.TaoMaMonAn();
+                    MONAN monan = new MONAN()
+                    {
+                        MAMON = Ma,
+                        TENMON = monAn.Ten,
+                        LOAIMON = Convert.ToInt32(monAn.Loai),
+                        ANHMINHHOA = monAn.TenHinhAnh,
+                        DONGIA = monAn.Gia
+                    };
+                    karaokeDataContext.MONANs.InsertOnSubmit(monan);
+
+                    // Thêm thành phần món ăn 
+                    for (int i = 0; i < listNguyenLieu.Count(); i++)
+                    {
+                        TPMONAN m = new TPMONAN()
+                        {
+                            MAMON = Ma,
+                            MANL = listNguyenLieu[i],
+                            SOLUONG = Convert.ToInt32(listSoLuong[i])
+                        };
+                        karaokeDataContext.TPMONANs.InsertOnSubmit(m);
+                    }
+
+                    karaokeDataContext.SubmitChanges();
+                }
+
+                return true;
             }
             catch (Exception ex)
             {
                 Utility.Log(ex);
                 return false;
             }
-            return true;
         }
-        public static bool SuaMonAn(MonAn monAn, string listNguyenLieu, string listSoLuong)
+        public static bool SuaMonAn(MonAn monAn, List<string> listNguyenLieu, List<string> listSoLuong)
         {
 
-            //Thêm món ăn
-            string query = " EXEC uspSuaMonAn @maMonAn,@listNguyenLieu,@listSoLuong,@tenmon,@loaimon,@anhminhhoa,@dongia";
+            ////Thêm món ăn
+            //string query = " EXEC uspSuaMonAn @maMonAn,@listNguyenLieu,@listSoLuong,@tenmon,@loaimon,@anhminhhoa,@dongia";
 
 
 
-            //truyền tham số vào câu truy vấn
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@maMonAn", SqlDbType.VarChar) { IsNullable = false, Value = monAn.Ma },
-                new SqlParameter("@listNguyenLieu", SqlDbType.VarChar) { IsNullable = false, Value = listNguyenLieu },
-                new SqlParameter("@listSoLuong", SqlDbType.VarChar) { IsNullable = false, Value = listSoLuong },
-                new SqlParameter("@tenmon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Ten },
-                new SqlParameter("@loaimon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Loai },
-                new SqlParameter("@anhminhhoa",SqlDbType.VarChar){IsNullable=false,Value=monAn.TenHinhAnh },
-                new SqlParameter("@dongia",SqlDbType.Decimal){IsNullable=false,Value=monAn.Gia },
-            };
+            ////truyền tham số vào câu truy vấn
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@maMonAn", SqlDbType.VarChar) { IsNullable = false, Value = monAn.Ma },
+            //    new SqlParameter("@listNguyenLieu", SqlDbType.VarChar) { IsNullable = false, Value = listNguyenLieu },
+            //    new SqlParameter("@listSoLuong", SqlDbType.VarChar) { IsNullable = false, Value = listSoLuong },
+            //    new SqlParameter("@tenmon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Ten },
+            //    new SqlParameter("@loaimon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Loai },
+            //    new SqlParameter("@anhminhhoa",SqlDbType.VarChar){IsNullable=false,Value=monAn.TenHinhAnh },
+            //    new SqlParameter("@dongia",SqlDbType.Decimal){IsNullable=false,Value=monAn.Gia },
+            //};
             try
             {
-                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+                //Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+
+                using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+                {
+                    // Cập nhật thông tin món ăn
+                    var monan = karaokeDataContext.MONANs.Where(m => m.MAMON.Equals(monAn.Ma)).SingleOrDefault();
+                    monan.TENMON = monAn.Ten;
+                    monan.LOAIMON = Convert.ToInt32(monAn.Loai);
+                    monan.ANHMINHHOA = monAn.TenHinhAnh;
+                    monan.DONGIA = monAn.Gia;
+
+                    // Xóa tất cả thành phần món ăn
+                    var tpmonan = karaokeDataContext.TPMONANs.Where(t => t.MAMON.Equals(monAn.Ma));
+                    foreach (var tp in tpmonan)
+                    {
+                        karaokeDataContext.TPMONANs.DeleteOnSubmit(tp);
+                    }
+
+                    // Thêm lại thành phần món ăn 
+                    for (int i = 0; i < listNguyenLieu.Count(); i++)
+                    {
+                        TPMONAN m = new TPMONAN()
+                        {
+                            MAMON = monAn.Ma,
+                            MANL = listNguyenLieu[i],
+                            SOLUONG = Convert.ToInt32(listSoLuong[i])
+                        };
+                        karaokeDataContext.TPMONANs.InsertOnSubmit(m);
+                    }
+
+                    karaokeDataContext.SubmitChanges();
+                }
+
+                return true;
             }
             catch (Exception ex)
             {
                 Utility.Log(ex);
                 return false;
             }
-            return true;
         }
         public static bool CapNhatMonAn(MonAn monAn, string listNguyenLieu)
         {
