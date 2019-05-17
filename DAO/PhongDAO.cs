@@ -84,6 +84,28 @@ namespace DAO
                 return false;
             }
         }
+
+        public static bool XoaPhong(Phong phong)
+        {
+            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+            {
+                try
+                {
+                    var phg = (from phongCT in karaokeDataContext.PHONGs
+                                 where (phongCT.MAPHONG == phong.Ten)
+                                 select phongCT).SingleOrDefault();
+                    karaokeDataContext.PHONGs.DeleteOnSubmit(phg);
+                    karaokeDataContext.SubmitChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Utility.Log(ex);
+                }
+                return false;
+            }
+        }
+
         public static bool GhiNhanDatPhong(KhachHang khachHang, string maPhong, string maNV)
         {
             string query = "EXEC uspGhiNhanDatPhong @maPhong,@tenKhachHang,@soDienThoai,@soHoaDon,@maNV";

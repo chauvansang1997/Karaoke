@@ -61,5 +61,10 @@ namespace BUS
         {
             return DAO.PhongDAO.DemPhongQuanLy(maPhong,  loaiPhong);
         }
+
+        public static bool XoaPhong(Phong phong)
+        {
+            return DAO.PhongDAO.XoaPhong(phong);
+        }
     }
 }

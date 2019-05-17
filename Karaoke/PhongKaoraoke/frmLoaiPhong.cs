@@ -195,6 +195,7 @@ namespace Karaoke.PhongKaoraoke
             {
                 int index = dGVDanhSach.CurrentCell.RowIndex;
                 txtLoaiphong.Text = dGVDanhSach[0, index].Value.ToString();
+                txtGia.Text = dGVDanhSach[3, index].Value.ToString();
 
                 ma = dGVDanhSach[0, index].Value.ToString();
             }
@@ -239,7 +240,7 @@ namespace Karaoke.PhongKaoraoke
         {
             if (bThem)
             {
-                if(txtLoaiphong.Text != "" )
+                if(txtLoaiphong.Text == "" )
                 {
                     MessageBox.Show("Bạn chưa nhập tên phòng");
                     return;
@@ -268,7 +269,7 @@ namespace Karaoke.PhongKaoraoke
             }
             else if (bSua)
             {
-                if (txtLoaiphong.Text != "")
+                if (txtLoaiphong.Text == "")
                 {
                     MessageBox.Show("Bạn chưa nhập tên phòng");
                     return;
@@ -339,7 +340,7 @@ namespace Karaoke.PhongKaoraoke
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Thêm loại phòng thành công");
+            MessageBox.Show("Xóa loại phòng thành công");
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

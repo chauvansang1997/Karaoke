@@ -305,7 +305,13 @@ namespace Karaoke.PhongKaoraoke
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (BUS.NguyenLieuBUS.XoaNguyenLieu(ma))
+            DataRow row = ((DataRowView)cmbLoaiPhong.SelectedValue).Row;
+            if (BUS.PhongBUS.XoaPhong((new DTO.Phong()
+            {
+                Ten = txtMaPhong.Text,
+                TenLoai = row["MALOAIPHONG"].ToString()
+
+            })))
             {
                 MessageBox.Show("Xóa phòng thành công");
                 resetDanhSach();
