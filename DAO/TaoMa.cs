@@ -61,11 +61,11 @@ namespace DAO
             string maMoi = "";
             using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
             {
-                var taoMaHoaDon = karaokeDataContext.TAOMAs.Where(s => s.ID == 4).First();
+                var taoMaKhachHang = karaokeDataContext.TAOMAs.Where(s => s.ID == 4).First();
 
-                int maCuoi = taoMaHoaDon.MACUOI.Value + 1;
-                int soMa = taoMaHoaDon.SOMA.Value;
-                string tienTo = taoMaHoaDon.TIENTO;
+                int maCuoi = taoMaKhachHang.MACUOI.Value + 1;
+                int soMa = taoMaKhachHang.SOMA.Value;
+                string tienTo = taoMaKhachHang.TIENTO;
                 maMoi = tienTo + maCuoi.ToString().PadLeft(soMa, '0');
             }
 
@@ -92,11 +92,11 @@ namespace DAO
             string maMoi = "";
             using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
             {
-                var taoMaHoaDon = karaokeDataContext.TAOMAs.Where(s => s.ID == 1).First();
+                var taoMaMonAn = karaokeDataContext.TAOMAs.Where(s => s.ID == 1).First();
 
-                int maCuoi = taoMaHoaDon.MACUOI.Value + 1;
-                int soMa = taoMaHoaDon.SOMA.Value;
-                string tienTo = taoMaHoaDon.TIENTO;
+                int maCuoi = taoMaMonAn.MACUOI.Value + 1;
+                int soMa = taoMaMonAn.SOMA.Value;
+                string tienTo = taoMaMonAn.TIENTO;
                 maMoi = tienTo + maCuoi.ToString().PadLeft(soMa, '0');
             }
 
@@ -105,21 +105,17 @@ namespace DAO
 
         public static string TaoMaPhong()
         {
-            string query = "select macuoi,soma,tiento from taoma where id=2";
-            DataTable table = Dataprovider.ExcuteQuery(query);
-            DataRow row = table.Rows[0];
-
-            int maCuoi = int.Parse(row["macuoi"].ToString()) + 1;
-            int soMa = int.Parse(row["soma"].ToString());
-            string tienTo = row["tiento"].ToString();
-            string maMoi = tienTo + maCuoi.ToString().PadLeft(soMa, '0');
-
-            query = "update taoma set macuoi=macuoi+1 where id=2";
-            int num = Dataprovider.ExcuteNonQuery(query);
-            if (num == 0)
+            string maMoi = "";
+            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
             {
-                maMoi = "";
+                var taoMaPhong = karaokeDataContext.TAOMAs.Where(s => s.ID == 12).First();
+
+                int maCuoi = taoMaPhong.MACUOI.Value + 1;
+                int soMa = taoMaPhong.SOMA.Value;
+                string tienTo = taoMaPhong.TIENTO;
+                maMoi = tienTo + maCuoi.ToString().PadLeft(soMa, '0');
             }
+
             return maMoi;
         }
         public static string TaoHoaDon()

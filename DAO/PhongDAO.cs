@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Linq;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -41,7 +42,41 @@ namespace DAO
         public static bool GhiNhanDatPhong(KhachHang khachHang, string maPhong, string maNV)
         {
             string query = "EXEC uspGhiNhanDatPhong @maPhong,@tenKhachHang,@soDienThoai,@soHoaDon,@maNV";
+            string maKhachHang = "";
+            string maHoaDon = "";
+            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+            {
+                //kiểm tra xem đã có khách hàng trùng tên và số điện thoại không
+                var khachHangKaraoke = (from kh in karaokeDataContext.KHACHHANGs
+                                        where kh.TENKH == khachHang.Ten && kh.SDT == khachHang.SoDT
+                                        select kh).FirstOrDefault();
 
+                //nếu trùng thì ta lấy mã khách hàng ra
+                if (khachHangKaraoke == null)
+                {
+                    //tạo mã khách hàng
+                    maKhachHang = TaoMa.TaoMaKhachHang();
+                    //cập nhật bảng tạo mã
+                    karaokeDataContext.TAOMAs.Where(s => s.ID == 4).First().MACUOI += 1;
+
+
+                }
+                else
+                {
+                    maKhachHang = khachHangKaraoke.MAKH;
+                }
+                //tạo mã hóa đơn
+                maHoaDon = TaoMa.TaoHoaDon();
+                //cập nhật bảng tạo mã
+                karaokeDataContext.TAOMAs.Where(s => s.ID == 3).First().MACUOI += 1;
+
+                //bool checkDangSuDung
+                ////cập nhật bảng đang sử dụng
+                //karaokeDataContext.DANGSUDUNGs.Where(s => )
+
+                ChangeSet cs = karaokeDataContext.GetChangeSet();
+                query = "EXEC uspGhiNhanDatPhong @maPhong,@tenKhachHang,@soDienThoai,@soHoaDon,@maNV";
+            }
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
@@ -56,7 +91,7 @@ namespace DAO
             {
                 Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
 
-                using(KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+                using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
                 {
 
                 }
@@ -113,26 +148,28 @@ namespace DAO
                 //            TinhTrang = int.Parse(x[3].ToString()),
                 //            GetKhachHang = new KhachHang() { Ma = x[4].ToString(), Ten = x[5].ToString(), SoDT = x[6].ToString() }
                 //        });
-                using(KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+                using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
                 {
-                    
-                    if(trangThai == -1)
+
+                    if (trangThai == -1)
                     {
                         list = (from phong in karaokeDataContext.PHONGs
                                 join loaiPhong in karaokeDataContext.LOAIPHONGs
                                 on phong.MALOAIPHONG equals loaiPhong.MALOAIPHONG
-                                join dangSuDung in karaokeDataContext.DANGSUDUNGs
-                                on phong.MAPHONG equals dangSuDung.MAPHONG into ps
-                                from p in ps.DefaultIfEmpty()
-                                join hoaDon in karaokeDataContext.HOADONs
-                                on p.SOHD equals hoaDon.SOHD into hs
+                                join hoaDon in (
+                                from temp in karaokeDataContext.HOADONs
+                                where temp.TRANGTHAI.Value == 0
+                                select temp)
+
+                                on phong.MAPHONG equals hoaDon.MAPHONG into hs
                                 from h in hs.DefaultIfEmpty()
+
                                 join khachHang in karaokeDataContext.KHACHHANGs
                                 on h.MAKH equals khachHang.MAKH into ks
                                 from k in ks.DefaultIfEmpty()
                                 select new Phong()
                                 {
-                                    Ten = phong.MAPHONG,    
+                                    Ten = phong.MAPHONG,
                                     Gia = (uint)loaiPhong.GIA,
                                     TenLoai = loaiPhong.TENLOAIPHONG,
                                     TinhTrang = Int32.Parse(phong.TINHTRANG),
@@ -144,10 +181,13 @@ namespace DAO
                         list = (from phong in karaokeDataContext.PHONGs
                                 join loaiPhong in karaokeDataContext.LOAIPHONGs
                                 on phong.MALOAIPHONG equals loaiPhong.MALOAIPHONG
-                                join dangSuDung in karaokeDataContext.DANGSUDUNGs
-                                on phong.MAPHONG equals dangSuDung.MAPHONG 
-                                join hoaDon in karaokeDataContext.HOADONs
-                                on dangSuDung.SOHD equals hoaDon.SOHD
+
+                                join hoaDon in (
+                                from temp in karaokeDataContext.HOADONs
+                                where temp.TRANGTHAI.Value == 0
+                                select temp
+                                )
+                                on phong.MAPHONG equals hoaDon.MAPHONG 
                                 join khachHang in karaokeDataContext.KHACHHANGs
                                 on hoaDon.MAKH equals khachHang.MAKH
                                 where phong.TINHTRANG == "1"
@@ -203,7 +243,7 @@ namespace DAO
                 using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
                 {
                     count = trangThai == -1 ? karaokeDataContext.PHONGs.Count() :
-                        karaokeDataContext.PHONGs.Where(s=> s.TINHTRANG == trangThai.ToString()).Count();
+                        karaokeDataContext.PHONGs.Where(s => s.TINHTRANG == trangThai.ToString()).Count();
                 }
             }
             catch (Exception ex)
