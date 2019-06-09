@@ -85,8 +85,6 @@ namespace DAO
                 }
                 else
                 {
-                    var ti = karaokeDataContext.PHONGs.Join(karaokeDataContext.LOAIPHONGs, s => s.MALOAIPHONG, t => t.MALOAIPHONG,
-                        (s ,t) =>new { s, t });
                     //cập nhật số lượng tồn sản phẩm
                     karaokeDataContext.SANPHAMs.Where(s => s.MASP == chiTietHoaDon.Ma).First().SLTON -= chiTietHoaDon.Soluong;
                     //nếu là sản phẩm thì thêm vào bảng CTHDMA
@@ -408,53 +406,6 @@ namespace DAO
             try
             {
                 Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
-
-                using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
-                {
-                    //lấy bảng hóa đơn
-                    var thongTinHoaDonthongTinHoaDon = (from hoaDon in karaokeDataContext.HOADONs
-                                                        where hoaDon.SOHD == soHoaDon
-                                                        select hoaDon).First();
-                    var thongtinPhong = (from loaiPhong in karaokeDataContext.LOAIPHONGs
-                                         join phong in karaokeDataContext.PHONGs on loaiPhong.MALOAIPHONG equals phong.MALOAIPHONG
-                                         where phong.MAPHONG == thongTinHoaDonthongTinHoaDon.MAPHONG
-                                         select new { phong, loaiPhong }).First();
-                    //lấy giờ vào
-                    DateTime gioVao = thongTinHoaDonthongTinHoaDon.GIOVAO.Value;
-                    //lấy số phút để tính tiền phòng
-                    float minute = (gioRa - gioVao).Minutes;
-
-                    int tienGio = (int)((thongtinPhong.loaiPhong.GIA.Value * minute) / 60.0);
-                    //cập nhật thông tin hóa đơn
-                    thongTinHoaDonthongTinHoaDon.GIORA = gioRa;
-                    thongTinHoaDonthongTinHoaDon.TRANGTHAI = 1;
-                    thongTinHoaDonthongTinHoaDon.THANHTIEN += tienGio;
-                    thongTinHoaDonthongTinHoaDon.TIENGIO = tienGio;
-                    thongTinHoaDonthongTinHoaDon.GIAMGIA = giamGia;
-
-
-                    thongtinPhong.phong.TINHTRANG = "0";
-                    //cập nhật tồn kho
-
-                    karaokeDataContext.CTHDSPs.ToList().ForEach(s =>
-                    {
-                        bool checkTonKho = false;
-                        var thongTinTonkho = from tonkho in karaokeDataContext.TONKHOCTs
-                                             where tonkho.NGAY == DateTime.Now.Date && tonkho.MA == s.MASP
-                                             select tonkho;
-                        checkTonKho = thongTinTonkho.Count() == 0 ? false : true;
-                        if (checkTonKho)
-                        {
-
-                        }
-                        else
-                        {
-
-                        }
-                    });
-                    
-
-                }
             }
             catch (Exception ex)
             {
