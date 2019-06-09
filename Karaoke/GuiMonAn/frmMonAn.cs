@@ -59,11 +59,12 @@ namespace Karaoke.GuiMonAn
         {
             enableControls(false);
 
-            cmbLoaiMon.DataSource = BUS.MonAnBUS.XemLoaiMon();
+            cmbLoaiMon.DataSource = BUS.MonAnBUS.XemLoaiMon("edit");
             cmbLoaiMon.DisplayMember = "Ten";
-
-            cmbLoaiMonTK.DataSource = BUS.MonAnBUS.XemLoaiMon();
+            List<LoaiMon> loaiMons = BUS.MonAnBUS.XemLoaiMon("view");
+            cmbLoaiMonTK.DataSource = loaiMons;
             cmbLoaiMonTK.DisplayMember = "Ten";
+            cmbLoaiMonTK.SelectedIndex = loaiMons.Count - 1;
             dtNguyenLieu = new DataTable();
             dGVMonAn.DataSource = dtNguyenLieu;
 
@@ -74,7 +75,8 @@ namespace Karaoke.GuiMonAn
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
             txtTotalPage.Text = totalPage.ToString();
            
-            bindingSourceMonAn.DataSource = BUS.MonAnBUS.XemMonAnDataSource("", 0, pageNumber, pageSize);
+            bindingSourceMonAn.DataSource = BUS.MonAnBUS.XemMonAnDataSource(
+                txtTenTK.Text, int.Parse(((LoaiMon)cmbLoaiMonTK.SelectedValue).Ma), pageNumber, pageSize);
 
             dGVMonAn.DataSource = bindingSourceMonAn;
             AddGridTableStyle();
@@ -137,7 +139,8 @@ namespace Karaoke.GuiMonAn
             {
 
                 txtPageNumber.Text = "1";
-                totalPage = BUS.MonAnBUS.DemMonAn(txtTenTK.Text, ((LoaiMon)cmbLoaiMonTK.SelectedValue).Ma);
+                totalPage = BUS.MonAnBUS.DemMonAn(txtTenTK.Text, 
+                    ((LoaiMon)cmbLoaiMonTK.SelectedValue).Ma == "0" ? "" : ((LoaiMon)cmbLoaiMonTK.SelectedValue).Ma);
                 totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
                 txtTotalPage.Text = totalPage.ToString();
                 bindingSourceMonAn.DataSource = BUS.MonAnBUS.XemMonAnDataSource(txtTenTK.Text, int.Parse(((LoaiMon)cmbLoaiMonTK.SelectedValue).Ma),
@@ -315,7 +318,7 @@ namespace Karaoke.GuiMonAn
                 BUS.MonAnBUS.SuaMonAn(new DTO.MonAn() { Ma=ma,Ten = txtTenMonAn.Text, Loai = ((LoaiMon)cmbLoaiMon.SelectedValue).Ma, Gia = donGia, TenHinhAnh = tenHinhAnh },
                 monan,
                 soluong);
-                MessageBox.Show("Bạn nhập món ăn thành công", "Thông báo", MessageBoxButtons.OK,
+                MessageBox.Show("Cập nhật món ăn thành công", "Thông báo", MessageBoxButtons.OK,
                       MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
             }
             enableControls(false);
@@ -501,7 +504,7 @@ namespace Karaoke.GuiMonAn
         {
             if (cmbLoaiMonTK.SelectedValue != null)
             {
-                bindingSourceMonAn.DataSource = BUS.MonAnBUS.XemMonAnDataSource(txtTenTK.Text, int.Parse(((DTO.LoaiHangHoa)cmbLoaiMonTK.SelectedValue).Ma),
+                bindingSourceMonAn.DataSource = BUS.MonAnBUS.XemMonAnDataSource(txtTenTK.Text, int.Parse(((DTO.LoaiMon)cmbLoaiMonTK.SelectedValue).Ma),
                                pageNumber, pageSize);
             }
             else

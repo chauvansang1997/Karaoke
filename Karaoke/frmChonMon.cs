@@ -117,7 +117,7 @@ namespace Karaoke
             grouper.DisplayGroup += grouper_DisplayGroup;
 
             //lấy danh sách loại thức ăn ra đưa vào tabcontrol nhỏ
-            List<LoaiMon> listLoaiMon = BUS.MonAnBUS.XemLoaiMon();
+            List<LoaiMon> listLoaiMon = BUS.MonAnBUS.XemLoaiMon("view");
             if (listLoaiMon != null)
             {
                 tabControlThucAn.TabPages.Clear();
