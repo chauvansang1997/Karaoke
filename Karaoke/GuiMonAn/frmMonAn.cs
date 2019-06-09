@@ -259,13 +259,13 @@ namespace Karaoke.GuiMonAn
             if (txtTenMonAn.Text == "")
             {
                 MessageBox.Show("Bạn chưa nhập tên món ăn!", "Thông báo", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
+                    MessageBoxIcon.Error);
                 return;
             }
             if (cmbLoaiMon.Text == "")
             {
                 MessageBox.Show("Bạn chưa chọn loại món ăn!", "Thông báo", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
+                    MessageBoxIcon.Information);
                 return;
             }
             try
@@ -275,14 +275,14 @@ namespace Karaoke.GuiMonAn
             catch (Exception)
             {
                 MessageBox.Show("Bạn chưa nhập giá !", "Thông báo", MessageBoxButtons.OK,
-                 MessageBoxIcon.Error, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
+                 MessageBoxIcon.Error);
                 return;
 
             }
             if (bindingSource.Count == 0)
             {
                 MessageBox.Show("Bạn nhập nguyên liệu cho món ăn!", "Thông báo", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
+                    MessageBoxIcon.Error);
                 return;
             }
             if (bThem)
@@ -301,7 +301,7 @@ namespace Karaoke.GuiMonAn
                    monan,
                    soluong);
                 MessageBox.Show("Bạn nhập món ăn thành công", "Thông báo", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
+                      MessageBoxIcon.Information);
             }
             else if(bSua)
             {
@@ -319,7 +319,7 @@ namespace Karaoke.GuiMonAn
                 monan,
                 soluong);
                 MessageBox.Show("Cập nhật món ăn thành công", "Thông báo", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
+                      MessageBoxIcon.Information);
             }
             enableControls(false);
             //enableButton1(false);
