@@ -76,7 +76,7 @@ namespace Karaoke.PhongKaoraoke
 
             //this.dGVDanhSach.Columns["MALOAIPHONG"].Visible = false;
             this.dGVDanhSach.Columns["MALOAIPHONG"].HeaderText = "Mã";
-            this.dGVDanhSach.Columns["TENLOAIPHONG"].HeaderText = "Tên Phòng";
+            this.dGVDanhSach.Columns["TENLOAIPHONG"].HeaderText = "Tên Loại Phòng";
             this.dGVDanhSach.Columns["GIA"].HeaderText = "Giá";
         }
 

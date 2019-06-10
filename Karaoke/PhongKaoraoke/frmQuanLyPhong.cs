@@ -94,8 +94,8 @@ namespace Karaoke.PhongKaoraoke
             this.dGVDanhSach.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSteelBlue;
 
             this.dGVDanhSach.Columns["MALOAIPHONG"].Visible = false;
-            this.dGVDanhSach.Columns["MAPHONG"].HeaderText = "Tên";
-            this.dGVDanhSach.Columns["TENLOAIPHONG"].HeaderText = "Tên loại phòng";
+            this.dGVDanhSach.Columns["MAPHONG"].HeaderText = "Tên phòng";
+            this.dGVDanhSach.Columns["TENLOAIPHONG"].HeaderText = "Loại phòng";
             this.dGVDanhSach.Columns["GIA"].HeaderText = "Giá";
 
             cmbLoaiPhong.DataSource = BUS.PhongBUS.XemLoaiPhong();
