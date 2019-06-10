@@ -27,13 +27,14 @@ namespace Karaoke.PhongKaoraoke
         {
             bSua = false;
             bThem = false;
-            pageNumber = 1;
+            //pageNumber = 1;
 
-            txtPageNumber.Text = "1";
-            totalPage = BUS.PhongBUS.DemPhongQuanLy("", -1);
-            totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
-            txtTotalPage.Text = totalPage.ToString();
-            dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongQuanLy("", -1, pageNumber, pageSize);
+            //txtPageNumber.Text = "1";
+            //totalPage = BUS.PhongBUS.DemPhongQuanLy("", -1);
+            //totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
+            //txtTotalPage.Text = totalPage.ToString();
+            //dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongQuanLy("", -1, pageNumber, pageSize);
+            dGVDanhSach.DataSource = BUS.LoaiPhongBUS.XemLoaiPhong();
             enableControls(false);
             AddGridTableStyle();
         }
@@ -41,27 +42,22 @@ namespace Karaoke.PhongKaoraoke
         {
 
             //dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongQuanLy(txtTenPhongTK.Text, (int)row["MALOAIPHONG"], pageNumber, pageSize);
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = BUS.LoaiPhongBUS.XemLoaiPhong();
+            dGVDanhSach.DataSource = bindingSource;
+            dGVDanhSach.Refresh();
+            bSua = false;
+            bThem = false;
+            enableControls(false);
+            AddGridTableStyle();
         }
         private void btnFind_Click(object sender, EventArgs e)
         {
             pageNumber = 1;
             txtPageNumber.Text = "1";
-
             txtTotalPage.Text = totalPage.ToString();
-        }
-        private void resetDanhSach()
-        {
-            bSua = false;
-            bThem = false;
-            pageNumber = 1;
-
-            txtPageNumber.Text = "1";
-            totalPage = BUS.PhongBUS.DemPhongQuanLy("", -1);
-            totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
-            txtTotalPage.Text = totalPage.ToString();
-            dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongQuanLy("", -1, pageNumber, pageSize);
-            enableControls(false);
-            AddGridTableStyle();
+            var res = BUS.LoaiPhongBUS.TraCuuLoaiPhong(txtTenLoaiPhongTK.Text);
+            dGVDanhSach.DataSource = res;
         }
         private void AddGridTableStyle()
         {
@@ -78,22 +74,16 @@ namespace Karaoke.PhongKaoraoke
             this.dGVDanhSach.AlternatingRowsDefaultCellStyle = cell;
             this.dGVDanhSach.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSteelBlue;
 
-            this.dGVDanhSach.Columns["MALOAIPHONG"].Visible = false;
-            this.dGVDanhSach.Columns["TENLOAIPHONG"].HeaderText = "Tên";
+            //this.dGVDanhSach.Columns["MALOAIPHONG"].Visible = false;
+            this.dGVDanhSach.Columns["MALOAIPHONG"].HeaderText = "Mã";
+            this.dGVDanhSach.Columns["TENLOAIPHONG"].HeaderText = "Tên Phòng";
             this.dGVDanhSach.Columns["GIA"].HeaderText = "Giá";
-
-
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             bSua = true;
             enableControls(true);
-        }
-
-        private void frmNguyenLieu_Load_1(object sender, EventArgs e)
-        {
-
         }
         private void btnNextPage_Click(object sender, EventArgs e)
         {
@@ -161,12 +151,6 @@ namespace Karaoke.PhongKaoraoke
             loadDanhSach();
         }
 
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnFind_MouseHover(object sender, EventArgs e)
         {
             this.btnFind.FlatAppearance.BorderSize = 2;
@@ -194,8 +178,8 @@ namespace Karaoke.PhongKaoraoke
             if (dGVDanhSach.CurrentCell != null)
             {
                 int index = dGVDanhSach.CurrentCell.RowIndex;
-                txtLoaiphong.Text = dGVDanhSach[0, index].Value.ToString();
-                txtGia.Text = dGVDanhSach[3, index].Value.ToString();
+                txtLoaiphong.Text = dGVDanhSach[1, index].Value.ToString();
+                txtGia.Text = dGVDanhSach[2, index].Value.ToString();
 
                 ma = dGVDanhSach[0, index].Value.ToString();
             }
@@ -215,6 +199,7 @@ namespace Karaoke.PhongKaoraoke
             btnThem.Enabled = enable;
             btnXoa.Enabled = enable;
             btnSua.Enabled = enable;
+            txtLoaiphong.Focus();
         }
         private void enableControls(bool enable)
         {
@@ -222,6 +207,7 @@ namespace Karaoke.PhongKaoraoke
          
             btnLuu.Enabled = enable;
             btnHuy.Enabled = enable;
+            txtLoaiphong.Focus();
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -257,9 +243,12 @@ namespace Karaoke.PhongKaoraoke
                     return;
                 }
 
-                if(BUS.LoaiPhongBUS.ThemLoaiPhong(new LoaiPhong() { Ten = txtLoaiphong.Text,Gia = int.Parse(txtGia.Text) }))
+                if(BUS.LoaiPhongBUS.ThemLoaiPhong(new LoaiPhong() { Ten = txtLoaiphong.Text,Gia = Int32.Parse(txtGia.Text) }))
                 {
                     MessageBox.Show("Thêm loại phòng thành công");
+                    bThem = false;
+                    enableControls(false);
+                    loadDanhSach();
                 }
                 else
                 {
@@ -274,20 +263,16 @@ namespace Karaoke.PhongKaoraoke
                     MessageBox.Show("Bạn chưa nhập tên phòng");
                     return;
                 }
-                if (Utility.IsContainsText(txtGia.Text) || txtGia.Text == "")
+                if (txtGia.Text == "")
                 {
                     MessageBox.Show("Giá không hợp lệ!!!");
                     return;
                 }
-                if (BUS.LoaiPhongBUS.KiemTraLoaiPhong(txtLoaiphong.Text))
-                {
-                    MessageBox.Show("Tên phòng đã tồn tại!!!");
-                    return;
-                }
 
-                if (BUS.LoaiPhongBUS.CapNhatLoaiPhong(new LoaiPhong() { Ten = txtLoaiphong.Text, Gia = int.Parse(txtGia.Text) }))
+                if (BUS.LoaiPhongBUS.CapNhatLoaiPhong(new LoaiPhong() { Ten = txtLoaiphong.Text, Gia = Int32.Parse(txtGia.Text),Ma=ma }))
                 {
-                    MessageBox.Show("Thêm loại phòng thành công");
+                    MessageBox.Show("Cập nhật loại phòng phòng thành công");
+                    loadDanhSach();
                 }
                 else
                 {
@@ -296,7 +281,6 @@ namespace Karaoke.PhongKaoraoke
 
                 bSua = false;
                 enableControls(false);
-                resetDanhSach();
             }
             //if (cmbLoaiPhong.SelectedValue != null)
             //{
@@ -340,7 +324,14 @@ namespace Karaoke.PhongKaoraoke
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Xóa loại phòng thành công");
+            if (BUS.LoaiPhongBUS.XoaLoaiPhong(ma))
+            {
+                MessageBox.Show("Xóa loại phòng thành công","Xóa loại phòng",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                loadDanhSach();
+            }else
+            {
+                MessageBox.Show("Xóa loại phòng thất bại", "Xóa loại phòng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -356,6 +347,21 @@ namespace Karaoke.PhongKaoraoke
             bSua = false;
             enableControls(false);
             enableButton(true);
+        }
+
+        private void txtTenLoaiPhongTK_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTenLoaiPhongTK.Text.Length > 0)
+            {
+                var query = BUS.LoaiPhongBUS.TraCuuLoaiPhong(txtTenLoaiPhongTK.Text);
+                dGVDanhSach.DataSource = query;
+                dGVDanhSach.Refresh();
+            }else
+            {
+                var query = BUS.LoaiPhongBUS.XemLoaiPhong();
+                dGVDanhSach.DataSource = query;
+                dGVDanhSach.Refresh();
+            }
         }
     }
 }

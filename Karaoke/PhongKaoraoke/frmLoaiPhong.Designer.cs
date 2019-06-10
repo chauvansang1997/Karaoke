@@ -138,7 +138,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label11.Location = new System.Drawing.Point(7, 26);
+            this.label11.Location = new System.Drawing.Point(46, 62);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(120, 22);
             this.label11.TabIndex = 158;
@@ -149,10 +149,11 @@
             // 
             this.txtTenLoaiPhongTK.BackColor = System.Drawing.Color.White;
             this.txtTenLoaiPhongTK.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenLoaiPhongTK.Location = new System.Drawing.Point(133, 24);
+            this.txtTenLoaiPhongTK.Location = new System.Drawing.Point(184, 60);
             this.txtTenLoaiPhongTK.Name = "txtTenLoaiPhongTK";
             this.txtTenLoaiPhongTK.Size = new System.Drawing.Size(242, 27);
             this.txtTenLoaiPhongTK.TabIndex = 161;
+            this.txtTenLoaiPhongTK.TextChanged += new System.EventHandler(this.txtTenLoaiPhongTK_TextChanged);
             // 
             // panel1
             // 
@@ -325,7 +326,7 @@
             this.btnFind.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFind.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnFind.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFind.Location = new System.Drawing.Point(11, 103);
+            this.btnFind.Location = new System.Drawing.Point(184, 93);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(110, 30);
             this.btnFind.TabIndex = 67;
@@ -476,7 +477,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.TextBox txtTotalPage;
         private System.Windows.Forms.TextBox txtPageNumber;
@@ -499,8 +499,9 @@
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtLoaiphong;
+        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtGia;
-        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnFind;
     }
 }
