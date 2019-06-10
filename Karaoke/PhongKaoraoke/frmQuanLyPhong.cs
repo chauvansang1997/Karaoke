@@ -29,7 +29,7 @@ namespace Karaoke.PhongKaoraoke
             bSua = false;
             bThem = false;
             pageNumber = 1;
-
+            btnFind.Visible = false;
             txtPageNumber.Text = "1";
             totalPage = BUS.PhongBUS.DemPhongQuanLy("",-1);
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
@@ -41,7 +41,7 @@ namespace Karaoke.PhongKaoraoke
         private void loadDanhSach()
         {
             DataRow row = ((DataRowView)cmbLoaiPhong.SelectedValue).Row;
-            dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongQuanLy(txtTenPhongTK.Text,(int)row["MALOAIPHONG"], pageNumber, pageSize);
+            dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongQuanLy(txtTenPhongTK.Text,(int)row["TENLOAIP"], pageNumber, pageSize);
         }
         private void btnFind_Click(object sender, EventArgs e)
         {
@@ -335,6 +335,18 @@ namespace Karaoke.PhongKaoraoke
             bSua = false;
             enableControls(false);
             enableButton(true);
+        }
+
+        private void cmbLoaiPhongTK_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongTheoLoai(cmbLoaiPhongTK.Text,txtTenPhongTK.Text);
+            dGVDanhSach.Refresh();
+        }
+
+        private void txtTenPhongTK_TextChanged(object sender, EventArgs e)
+        {
+            dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongTheoLoai(cmbLoaiPhongTK.Text, txtTenPhongTK.Text);
+            dGVDanhSach.Refresh();
         }
     }
     

@@ -85,6 +85,46 @@ namespace DAO
             }
         }
 
+        public static object XemPhongTheoLoai(string loaiPhong,string tuKhoa)
+        {
+            object result=null;
+
+            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+            {
+                
+                try
+                {
+                    if (tuKhoa.Length > 0)
+                    {
+                        tuKhoa = tuKhoa.ToLower();
+                        var query = (from phongTheoLoai in karaokeDataContext.PHONGs
+                                     where (phongTheoLoai.LOAIPHONG.TENLOAIPHONG == loaiPhong && 
+                                     (  phongTheoLoai.MAPHONG.ToLower().Contains(tuKhoa) ||
+                                        phongTheoLoai.TINHTRANG.ToLower().ToLower().Contains(tuKhoa)||
+                                        phongTheoLoai.LOAIPHONG.TENLOAIPHONG.ToLower().Contains(tuKhoa)||
+                                        phongTheoLoai.LOAIPHONG.GIA.ToString().ToLower().Contains(tuKhoa)
+                                     ))
+                                     select new { phongTheoLoai.MAPHONG, phongTheoLoai.LOAIPHONG.TENLOAIPHONG, phongTheoLoai.LOAIPHONG.GIA });
+                         result = Utility.ConvertToDataTable(query.ToList());
+                    }
+                    else
+                    {
+                        var query = (from phongTheoLoai in karaokeDataContext.PHONGs
+                                     where (phongTheoLoai.LOAIPHONG.TENLOAIPHONG == loaiPhong)
+                                     select new { phongTheoLoai.MAPHONG, phongTheoLoai.LOAIPHONG.TENLOAIPHONG, phongTheoLoai.LOAIPHONG.GIA });
+                        result = Utility.ConvertToDataTable(query.ToList());
+                    }
+                    return result;
+                  
+                }
+                catch (Exception ex)
+                {
+                    Utility.Log(ex);
+                }
+                return result;
+            }
+        }
+
         public static bool XoaPhong(Phong phong)
         {
             using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLyPhong));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnThoat = new System.Windows.Forms.Button();
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
@@ -130,8 +130,8 @@
             this.dGVDanhSach.Name = "dGVDanhSach";
             this.dGVDanhSach.ReadOnly = true;
             this.dGVDanhSach.RowHeadersVisible = false;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGVDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVDanhSach.Size = new System.Drawing.Size(576, 279);
             this.dGVDanhSach.TabIndex = 149;
@@ -172,6 +172,7 @@
             this.cmbLoaiPhongTK.Name = "cmbLoaiPhongTK";
             this.cmbLoaiPhongTK.Size = new System.Drawing.Size(241, 27);
             this.cmbLoaiPhongTK.TabIndex = 160;
+            this.cmbLoaiPhongTK.SelectedIndexChanged += new System.EventHandler(this.cmbLoaiPhongTK_SelectedIndexChanged);
             // 
             // txtTenPhongTK
             // 
@@ -181,6 +182,7 @@
             this.txtTenPhongTK.Name = "txtTenPhongTK";
             this.txtTenPhongTK.Size = new System.Drawing.Size(242, 27);
             this.txtTenPhongTK.TabIndex = 161;
+            this.txtTenPhongTK.TextChanged += new System.EventHandler(this.txtTenPhongTK_TextChanged);
             // 
             // panel1
             // 

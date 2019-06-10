@@ -66,5 +66,10 @@ namespace BUS
         {
             return DAO.PhongDAO.XoaPhong(phong);
         }
+
+        public static object XemPhongTheoLoai(string loaiPhong,string tuKhoa)
+        {
+            return DAO.PhongDAO.XemPhongTheoLoai(loaiPhong, tuKhoa);
+        }
     }
 }
