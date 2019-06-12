@@ -19,6 +19,7 @@ namespace Karaoke.PhongKaoraoke
         private int pageNumber;
         private int totalPage;
         private string ma;
+        
         public frmQuanLyPhong()
         {
             InitializeComponent();
@@ -110,10 +111,6 @@ namespace Karaoke.PhongKaoraoke
             enableControls(true);
         }
 
-        private void frmNguyenLieu_Load_1(object sender, EventArgs e)
-        {
-
-        }
         private void btnNextPage_Click(object sender, EventArgs e)
         {
             if (pageNumber + 1 > totalPage)
@@ -339,13 +336,13 @@ namespace Karaoke.PhongKaoraoke
 
         private void cmbLoaiPhongTK_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongTheoLoai(cmbLoaiPhongTK.Text,txtTenPhongTK.Text);
+            dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongTheoLoai(cmbLoaiPhongTK.Text,txtTenPhongTK.Text, pageNumber, pageSize);
             dGVDanhSach.Refresh();
         }
 
         private void txtTenPhongTK_TextChanged(object sender, EventArgs e)
         {
-            dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongTheoLoai(cmbLoaiPhongTK.Text, txtTenPhongTK.Text);
+            dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongTheoLoai(cmbLoaiPhongTK.Text, txtTenPhongTK.Text, pageNumber, pageSize);
             dGVDanhSach.Refresh();
         }
     }

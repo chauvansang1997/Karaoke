@@ -67,9 +67,9 @@ namespace BUS
             return DAO.PhongDAO.XoaPhong(phong);
         }
 
-        public static object XemPhongTheoLoai(string loaiPhong,string tuKhoa)
+        public static object XemPhongTheoLoai(string loaiPhong,string tuKhoa, int pageNumber, int pageSize)
         {
-            return DAO.PhongDAO.XemPhongTheoLoai(loaiPhong, tuKhoa);
+            return DAO.PhongDAO.XemPhongTheoLoai(loaiPhong, tuKhoa, pageNumber, pageSize);
         }
     }
 }
