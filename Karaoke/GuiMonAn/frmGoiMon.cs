@@ -72,6 +72,7 @@ namespace Karaoke.GuiMonAn
         private frmPhongKaraoke phongKaraoke;
         #endregion
 
+
         public frmGoiMon(string soHD, frmPhongKaraoke phongKaraoke)
         {
 
@@ -144,6 +145,7 @@ namespace Karaoke.GuiMonAn
           
             //tabPage.sc
    
+
             tabControl.TabPages.Add(tabPage);
             listDictionaryHangHoa.Add(dictionary);
             //lấy danh sách loại sản phẩm đưa vào tabcontrol lớn
@@ -166,11 +168,10 @@ namespace Karaoke.GuiMonAn
                     listDictionaryHangHoa.Add(dictionary);
                 }
             }
-
-
             listTenGroup = new List<DTO.LoaiHangHoa>();
             listTenGroup.Add(new DTO.LoaiHangHoa() { Ma = "0", Ten = "Thức ăn" });
             listTenGroup.AddRange(BUS.HangHoaBUS.XemLoaiMon(1));
+
             if (listTenGroup != null)
             {
 
@@ -191,6 +192,7 @@ namespace Karaoke.GuiMonAn
                         dictionaryDataSource[temp[i].TenLoaiHangHoa].Add(temp[i].Ma, temp[i]);
                         bindingSource.Add(temp[i]);
                         tongCong += uint.Parse(temp[i].Thanhtien);
+
                         listCu.Add(temp[i].Ma, int.Parse(temp[i].Soluong));
                         listMoi.Add(temp[i].Ma, int.Parse(temp[i].Soluong));
                     }
@@ -218,6 +220,7 @@ namespace Karaoke.GuiMonAn
         {
             e.BackColor = (e.Group.GroupIndex % 2) == 0 ? Color.Orange : Color.LightBlue;
             e.Header = listTenGroup[int.Parse(e.DisplayValue)].Ten;
+
             e.DisplayValue = "";
             e.ForeColor = (e.Group.GroupIndex % 2) == 0 ? Color.White : Color.Black;
             // e.Summary = "contains " + e.Group.Count + " rows";
@@ -433,6 +436,7 @@ namespace Karaoke.GuiMonAn
                         uint.Parse(dGVHoaDon[3, e.RowIndex].Value.ToString()));
                     dGVHoaDon.Rows.RemoveAt(e.RowIndex);
                     //UpdateChiTietHoaDon();
+
                 }
             }
             catch (Exception)
@@ -508,7 +512,6 @@ namespace Karaoke.GuiMonAn
                             return;
                         }
                     }
-
                     bKiemTraTon = true;
                 
                  
@@ -528,6 +531,7 @@ namespace Karaoke.GuiMonAn
         {
             List<ChiTietHoaDon> chiTietHoaDons = new List<ChiTietHoaDon>();
 
+
             foreach (KeyValuePair<string, Dictionary<string, GoiMonDataSource>> itemSource in dictionaryDataSource)
             {
                 foreach (KeyValuePair<string, GoiMonDataSource> item in itemSource.Value)
@@ -543,6 +547,7 @@ namespace Karaoke.GuiMonAn
                         {
                             Ma = ma,
                             LoaiHangHoa = ChiTietHoaDon.Loai.Sanpham,
+
                             Soluong =Int32.Parse( soluong)
                         
                         });

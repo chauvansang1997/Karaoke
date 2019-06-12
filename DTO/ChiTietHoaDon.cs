@@ -13,6 +13,7 @@ namespace DTO
         {
             MonAn = 0,
             Sanpham = 1
+
         }
         public string Ma { get ; set ; }
         public int Soluong { get; set; }

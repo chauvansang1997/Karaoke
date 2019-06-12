@@ -12,6 +12,7 @@ namespace DAO
     public static class HangHoaDAO
     {
         public static List<HangHoa> XemHangHoa(int loai, int pageNumber, int pageSize, int loaiChiTiet)
+
         {
             string query = "EXEC uspXemHangHoa @loai,@pageNumber,@pageSize,@loaiChiTiet";
 
@@ -38,6 +39,7 @@ namespace DAO
                             TenHinhAnh = x[4].ToString(),
                             LoaiHangHoa = new LoaiHangHoa() { Ma = x[2].ToString(), Ten = x[5].ToString() },
 
+                         
                         });
             }
             catch (Exception ex)
@@ -49,6 +51,7 @@ namespace DAO
         }
         public static List<HangHoa> XemHangHoaGoiMon(int loai, int pageNumber, int pageSize)
         {
+
             //string query = "EXEC uspXemHangHoaGoiMon @loai,@pageNumber,@pageSize";
 
             ////truyền tham số vào câu truy vấn
@@ -96,6 +99,7 @@ namespace DAO
                              }).Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
                 }
 
+
             }
             catch (Exception ex)
             {
@@ -105,6 +109,7 @@ namespace DAO
             return list;
         }
         public static int DemHangHoa(int loai, int loaiChiTiet)
+
         {
             string query = "EXEC uspDemHangHoa @loai,@loaiChiTiet";
 
@@ -157,7 +162,6 @@ namespace DAO
             try
             {
                 DataTable table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
-                list = table.AsEnumerable().ToList().ConvertAll(x =>
                         new LoaiHangHoa()
                         {
                             Ma = x[0].ToString(),

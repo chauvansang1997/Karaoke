@@ -176,6 +176,7 @@ namespace DAO
                                 }).Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
                     }
                 }
+
             }
             catch (Exception ex)
             {
@@ -205,6 +206,7 @@ namespace DAO
                     count = trangThai == -1 ? karaokeDataContext.PHONGs.Count() :
                         karaokeDataContext.PHONGs.Where(s=> s.TINHTRANG == trangThai.ToString()).Count();
                 }
+           
             }
             catch (Exception ex)
             {
@@ -224,6 +226,7 @@ namespace DAO
                   new SqlParameter("@maPhongChuyen",SqlDbType.VarChar){ Value=phongChuyen },
 
 
+
             };
             try
             {
@@ -238,6 +241,7 @@ namespace DAO
         }
 
         public static DataTable XemLichSuPhong(int pageNumber, int pageSize)
+
         {
             string query = "EXEC uspXemLichSuDatPhong @pageNumber,@pageSize";
 
@@ -251,6 +255,7 @@ namespace DAO
             try
             {
                 table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+
 
             }
             catch (Exception ex)
@@ -300,13 +305,13 @@ namespace DAO
             return table;
         }
         public static DataTable XemPhongQuanLy(string maPhong, int loaiPhong, int pageNumber, int pageSize)
+
         {
             string query = "EXEC uspXemPhong @maPhong,@loaiPhong,@pageNumber,@pageSize";
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@maPhong",SqlDbType.VarChar){ Value=maPhong  },
                 new SqlParameter("@loaiPhong",SqlDbType.Int){ Value=loaiPhong  },
-
                 new SqlParameter("@pageNumber",SqlDbType.Int){ Value=pageNumber  },
                 new SqlParameter("@pageSize",SqlDbType.Int){ Value=pageSize  },
             };

@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 ﻿using DTO;
+=======
+﻿using DAO;
+using DTO;
+>>>>>>> trungnghia
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +20,11 @@ namespace Karaoke.QuanLySanPham
     {
         private bool bSua;
         private bool bThem;
+<<<<<<< HEAD
         private const int pageSize = 10;
+=======
+        private const int pageSize = 5;
+>>>>>>> trungnghia
         private int pageNumber;
         private int totalPage;
         private string ma;
@@ -40,6 +49,24 @@ namespace Karaoke.QuanLySanPham
             this.dGVDanhSach.GridColor = Color.RoyalBlue;
             this.dGVDanhSach.AlternatingRowsDefaultCellStyle = cell;
             this.dGVDanhSach.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSteelBlue;
+<<<<<<< HEAD
+=======
+            //this.dGVDanhSach.Columns["Ma"].Visible = false;
+            //this.dGVDanhSach.Columns["LOAISP"].Visible = false;
+            ////this.dGVDanhSach.Columns["TenHinhAnh"].Visible = false;
+            ////this.dGVDanhSach.Columns["LoaiChiTiet"].Visible = false;
+            ////this.dGVDanhSach.Columns["LoaiHangHoa"].Visible = false;
+            //this.dGVDanhSach.Columns["MA"].Visible = false;
+            //this.dGVDanhSach.Columns["MANCC"].Visible = false;
+
+            //this.dGVDanhSach.Columns["Ten"].HeaderText = "Tên";
+            //this.dGVDanhSach.Columns["Loai"].HeaderText = "Loại";
+            //this.dGVDanhSach.Columns["NhaCungCap"].HeaderText = "Nhà cung cấp";
+            //this.dGVDanhSach.Columns["DonViTinh"].HeaderText = "Đơn vị tính";
+            //this.dGVDanhSach.Columns["Gia"].HeaderText = "Đơn giá bán";
+            //this.dGVDanhSach.Columns["DonGiaNhap"].HeaderText = "Đơn giá nhập";
+            //this.dGVDanhSach.Columns["SoLuongToiThieu"].HeaderText = "Tồn tối thiểu";
+>>>>>>> trungnghia
             this.dGVDanhSach.Columns["MASP"].Visible = false;
             this.dGVDanhSach.Columns["LOAISP"].Visible = false;
             this.dGVDanhSach.Columns["ANHMINHHOA"].Visible = false;
@@ -53,7 +80,12 @@ namespace Karaoke.QuanLySanPham
             this.dGVDanhSach.Columns["DONGIA"].HeaderText = "Đơn giá bán";
             this.dGVDanhSach.Columns["DONGIANHAP"].HeaderText = "Đơn giá nhập";
             this.dGVDanhSach.Columns["SLTOITHIEU"].HeaderText = "Tồn tối thiểu";
+<<<<<<< HEAD
  
+=======
+
+
+>>>>>>> trungnghia
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -70,6 +102,10 @@ namespace Karaoke.QuanLySanPham
             cmbNhaCCTK.DataSource = BUS.NhaCungCapBUS.XemNhaCungCap();
             cmbNhaCCTK.DisplayMember = "Ten";
 
+<<<<<<< HEAD
+=======
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
+>>>>>>> trungnghia
 
             cmbLoai.DataSource = BUS.SanPhamBUS.XemLoai();
             cmbLoai.DisplayMember = "Ten";
@@ -177,6 +213,7 @@ namespace Karaoke.QuanLySanPham
             }
             loadDanhSach();
         }
+<<<<<<< HEAD
 
         private void loadDanhSach()
         {
@@ -189,6 +226,23 @@ namespace Karaoke.QuanLySanPham
             {
                 dGVDanhSach.DataSource = BUS.SanPhamBUS.XemSanPhamTable("", 0, txtTenTK.Text, pageNumber, pageSize);
 
+=======
+        
+        private void loadDanhSach()
+        {
+            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+            {
+                if (cmbNhaCC.SelectedValue != null)
+                {
+                    dGVDanhSach.DataSource = BUS.SanPhamBUS.XemSanPhamTable(((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC, 0, txtTenTK.Text, pageNumber, pageSize);
+
+                }
+                else
+                {
+                    dGVDanhSach.DataSource = BUS.SanPhamBUS.XemSanPhamTable("", 0, txtTenTK.Text, pageNumber, pageSize);
+
+                }
+>>>>>>> trungnghia
             }
 
         }
@@ -417,6 +471,7 @@ namespace Karaoke.QuanLySanPham
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             //if (BUS.NguyenLieuBUS.XoaNguyenLieu(ma))
             //{
             //    MessageBox.Show("Xóa sản phẩm thành công");
@@ -426,6 +481,17 @@ namespace Karaoke.QuanLySanPham
             //{
             //    MessageBox.Show("Nguyên liệu nằm trong món ăn");
             //}
+=======
+            if (BUS.NguyenLieuBUS.XoaNguyenLieu(ma))
+            {
+                MessageBox.Show("Xóa sản phẩm thành công");
+                resetDanhSach();
+            }
+            else
+            {
+                MessageBox.Show("Nguyên liệu nằm trong món ăn");
+            }
+>>>>>>> trungnghia
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

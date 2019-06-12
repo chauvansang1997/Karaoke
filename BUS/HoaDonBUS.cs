@@ -11,7 +11,6 @@ namespace BUS
     public static class HoaDonBUS
     {
 
-
         public static bool ThemChiTietHoaDon(string maHD, List<ChiTietHoaDon> chiTietHoaDons)
         {
             return DAO.HoaDonDAO.ThemChiTietHoaDon(maHD, chiTietHoaDons);

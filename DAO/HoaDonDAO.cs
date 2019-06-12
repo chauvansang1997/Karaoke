@@ -76,7 +76,6 @@ namespace DAO
 
                     karaokeDataContext.CTHDMAs.InsertOnSubmit(new CTHDMA()
                     {
-
                         SOHD = mahd,
                         MAMON = chiTietHoaDon.Ma,
                         SOLUONG = chiTietHoaDon.Soluong,
@@ -97,8 +96,6 @@ namespace DAO
 
                     });
                 }
-
-            });
             #endregion
 
             // kiểm tra dữ liệu có xóa hết không
@@ -136,55 +133,7 @@ namespace DAO
                               select hoaDon.SOHD).First();
                 }
             }
-            catch (Exception ex)
-            {
-                Utility.Log(ex);
-            }
 
-
-
-            return result;
-        }
-
-        public static List<GoiMonDataSource> XemChiTietHoaDon(string soHoaDon)
-        {
-            //string query = "EXEC uspXemChiTietHoaDon @soHoaDon";
-
-            //List<SqlParameter> parameters = new List<SqlParameter>()
-            //{
-            //    new SqlParameter("@soHoaDon",SqlDbType.VarChar){ Value=soHoaDon  }
-
-            //};
-            List<GoiMonDataSource> list = null;
-            try
-            {
-
-                //DataTable table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
-                //list = table.AsEnumerable().ToList().ConvertAll(x =>
-                //        new GoiMonDataSource()
-                //        {
-                //            Ma = x[0].ToString(),
-                //            Ten = x[1].ToString(),
-                //            Soluong = int.Parse( x[2].ToString()),
-                //            Loai = x[3].ToString(),
-                //            Gia = int.Parse(x[4].ToString()),
-                //            Thanhtien = (int.Parse(x[2].ToString()) * 
-                //            int.Parse(x[4].ToString())).ToString()
-                //        }
-                //        );
-
-                using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
-                {
-                    list = (from cthdma in karaokeDataContext.CTHDMAs
-
-                            join monAn in karaokeDataContext.MONANs
-                            on cthdma.MAMON equals monAn.MAMON
-                            where cthdma.SOHD == soHoaDon
-
-                            select new GoiMonDataSource
-                            {
-                                Ma = cthdma.MAMON,
-                                Ten = monAn.TENMON,
                                 Soluong = cthdma.SOLUONG.HasValue ? cthdma.SOLUONG.Value.ToString()
                                 : "0",
                                 Loai = monAn.LOAIMON.ToString(),
@@ -217,6 +166,30 @@ namespace DAO
                                       }
                                       ).ToList();
                 }
+=======
+            string query = "EXEC uspXemChiTietHoaDon @soHoaDon";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@soHoaDon",SqlDbType.VarChar){ Value=soHoaDon  }
+
+            };
+            List<GoiMonDataSource> list = null;
+            try
+            {
+                DataTable table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+                list = table.AsEnumerable().ToList().ConvertAll(x =>
+                        new GoiMonDataSource()
+                        {
+                            Ma = x[0].ToString(),
+                            Ten = x[1].ToString(),
+                            Soluong = x[2].ToString(),
+                            Loai = x[3].ToString(),
+                            Gia = x[4].ToString(),
+                            Thanhtien = (int.Parse(x[2].ToString()) * int.Parse(x[4].ToString())).ToString()
+                        }
+                        );
+>>>>>>> trungnghia
             }
             catch (Exception ex)
             {
@@ -310,7 +283,11 @@ namespace DAO
                             Loai = x[5].ToString(),
                             Gia = x[4].ToString(),
                             Thanhtien = (int.Parse(x[2].ToString()) * int.Parse(x[4].ToString())).ToString(),
+<<<<<<< HEAD
                             MaLoaiHangHoa = x[5].ToString(),
+=======
+                            MaLoaiHangHoa = x[5].ToString() == "0" ? "1" : x[3].ToString(),
+>>>>>>> trungnghia
                             TenLoaiHangHoa = x[5].ToString() == "0" ? "Thức ăn" : x[6].ToString()
 
                         }
@@ -520,6 +497,7 @@ namespace DAO
                             s => (s.nguyenLieu.SLTON >= soLuong * s.tpMonan.SOLUONG)
                         ).Count();
                 }
+
             }
             catch (Exception ex)
             {
