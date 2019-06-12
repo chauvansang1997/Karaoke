@@ -13,15 +13,15 @@ namespace BUS
     {
         public static bool ThemMonAn(MonAn monAn,List<string> listMaNguyenLieu, List<string> listSoLuongNL)
         {
-            string listNguyenLieu = String.Join("|", listMaNguyenLieu);
-            string listSoLuong = String.Join("|", listSoLuongNL);
-            return MonAnDAO.ThemMonAn(monAn, listNguyenLieu, listSoLuong);
+            //string listNguyenLieu = String.Join("|", listMaNguyenLieu);
+            //string listSoLuong = String.Join("|", listSoLuongNL);
+            return MonAnDAO.ThemMonAn(monAn, listMaNguyenLieu, listSoLuongNL);
         }
         public static bool SuaMonAn(MonAn monAn, List<string> listMaNguyenLieu, List<string> listSoLuongNL)
         {
-            string listNguyenLieu = String.Join("|", listMaNguyenLieu);
-            string listSoLuong = String.Join("|", listSoLuongNL);
-            return MonAnDAO.SuaMonAn(monAn, listNguyenLieu, listSoLuong);
+            //string listNguyenLieu = String.Join("|", listMaNguyenLieu);
+            //string listSoLuong = String.Join("|", listSoLuongNL);
+            return MonAnDAO.SuaMonAn(monAn, listMaNguyenLieu, listSoLuongNL);
         }
         public static bool CapNhatMonAn(MonAn monAn, List<string> listMaNguyenLieu)
         {
@@ -40,9 +40,9 @@ namespace BUS
         {
             return MonAnDAO.DemMonAn(tenMonAn, loaiMonAn, donGia);
         }
-        public static List<LoaiMon> XemLoaiMon()
+        public static List<LoaiMon> XemLoaiMon(string type)
         {
-            return MonAnDAO.XemLoaiMon();
+            return MonAnDAO.XemLoaiMon(type);
         }
 
         public static List<NguyenLieuMADataSource> XemNguyenLieuMonAn(string maMonAn)

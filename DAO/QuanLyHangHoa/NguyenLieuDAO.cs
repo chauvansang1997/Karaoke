@@ -109,17 +109,48 @@ namespace DAO.QuanLyHangHoa
         /// <returns></returns>
         public static DataTable XemNguyenLieu(string tenNguyenLieu, string maNhaCungCap, bool isXemToiThieu, int pageNumber, int pageSize)
         {
-            string query = "EXEC uspXemNguyenLieu @tenNguyenLieu,@maNhaCungCap,@isXemToiThieu,@pageNumber,@pageSize";
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@tenNguyenLieu",SqlDbType.NVarChar){IsNullable=true,Value=tenNguyenLieu },
-                new SqlParameter("@maNhaCungCap",SqlDbType.VarChar){IsNullable=true,Value=maNhaCungCap },
-                new SqlParameter("@isXemToiThieu",SqlDbType.Bit){IsNullable=true,Value=isXemToiThieu },
-                new SqlParameter("@pageNumber",SqlDbType.Int){IsNullable=true,Value=pageNumber },
-                new SqlParameter("@pageSize",SqlDbType.Int){IsNullable=true,Value=pageSize },
-            };
+            //string query = "EXEC uspXemNguyenLieu @tenNguyenLieu,@maNhaCungCap,@isXemToiThieu,@pageNumber,@pageSize";
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@tenNguyenLieu",SqlDbType.NVarChar){IsNullable=true,Value=tenNguyenLieu },
+            //    new SqlParameter("@maNhaCungCap",SqlDbType.VarChar){IsNullable=true,Value=maNhaCungCap },
+            //    new SqlParameter("@isXemToiThieu",SqlDbType.Bit){IsNullable=true,Value=isXemToiThieu },
+            //    new SqlParameter("@pageNumber",SqlDbType.Int){IsNullable=true,Value=pageNumber },
+            //    new SqlParameter("@pageSize",SqlDbType.Int){IsNullable=true,Value=pageSize },
+            //};
 
-            return Dataprovider.ExcuteQuery(query, parameters.ToArray());
+            //return Dataprovider.ExcuteQuery(query, parameters.ToArray());
+
+            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+            {
+                DataTable table = new DataTable();
+                try
+                {
+                    var listNguyenLieu = (from nl in karaokeDataContext.NGUYENLIEUs.AsEnumerable()
+                                          join ncc in karaokeDataContext.NHACUNGCAPs on nl.MANCC equals ncc.MANCC
+                                          where ((Utility.convertUnsign(nl.TENNL).ToLower().Contains(Utility.convertUnsign(tenNguyenLieu).ToLower()) || tenNguyenLieu == "")
+                                          && (nl.MANCC == maNhaCungCap || maNhaCungCap==""))
+                                          orderby nl.TENNL
+                                          select new 
+                                          {
+                                              MANL = nl.MANL,
+                                              TENNL = nl.TENNL,
+                                              MANCC = ncc.MANCC,
+                                              TENNCC = ncc.TENNCC,
+                                              DVT = nl.DVT,
+                                              DONGIA = Convert.ToUInt32(nl.DONGIA),
+                                              DONGIANHAP = Convert.ToInt32(nl.DONGIANHAP),
+                                              SLTOITHIEU = Convert.ToInt32(nl.SLTOITHIEU)
+                                          }).Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+                   
+                    table = Utility.ConvertToDataTable(listNguyenLieu);
+                }
+                catch (Exception ex)
+                {
+                    Utility.Log(ex);
+                }
+                return table;
+            }
         }
 
         public static PhieuNhapHang LapPhieuNhap(string nhaCungCap, string maNhanVien)
