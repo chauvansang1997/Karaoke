@@ -218,6 +218,7 @@ namespace Karaoke.PhongKaoraoke
                     if (row["MALOAIPHONG"].ToString() == dGVDanhSach[1, index].Value.ToString())
                     {
                         cmbLoaiPhong.SelectedIndex = i;
+                        cmbLoaiPhong.Text = dGVDanhSach[2, index].Value.ToString();
                     }
                 }
               
