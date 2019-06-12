@@ -18,7 +18,7 @@ namespace DAO
 
         //private static string connectionString = "Data Source=DESKTOP-NP59ULF;Initial Catalog=dbQuanLyKaraoke;Integrated Security=True";
 
-        public static string ConnectionString { get ; set ; }
+        public static string ConnectionString { get => connectionString; set => connectionString = value; }
 
 
         public static string ConnectionString { get ; set ; }
