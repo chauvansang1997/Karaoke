@@ -211,7 +211,6 @@ namespace Karaoke.PhongKaoraoke
             {
                 int index = dGVDanhSach.CurrentCell.RowIndex;
                 txtMaPhong.Text = dGVDanhSach[0, index].Value.ToString();
-            
                 //  cmbNhaCC.SelectedValue = dGVDanhSach[6, index].Value.ToString();
                 for (int i = 0; i < cmbLoaiPhong.Items.Count; i++)
                 {
@@ -336,6 +335,7 @@ namespace Karaoke.PhongKaoraoke
 
         private void cmbLoaiPhongTK_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cmbLoaiPhong.Text = cmbLoaiPhongTK.Text;
             dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongTheoLoai(cmbLoaiPhongTK.Text,txtTenPhongTK.Text, pageNumber, pageSize);
             dGVDanhSach.Refresh();
         }
