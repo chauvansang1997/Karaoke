@@ -1,9 +1,7 @@
-<<<<<<< HEAD
-﻿using DTO;
-=======
+﻿
 ﻿using DAO;
 using DTO;
->>>>>>> trungnghia
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
