@@ -12,22 +12,6 @@ namespace DAO.QuanLyHangHoa
     {
         public static bool ThemMonAn(MonAn monAn, List<string> listNguyenLieu, List<string> listSoLuong)
         {
-
-            ////Thêm món ăn
-            //string query = " EXEC uspThemMonAn @listNguyenLieu,@listSoLuong,@tenmon,@loaimon,@anhminhhoa,@dongia";
-
-
-
-            ////truyền tham số vào câu truy vấn
-            //List<SqlParameter> parameters = new List<SqlParameter>()
-            //{
-            //    new SqlParameter("@listNguyenLieu", SqlDbType.VarChar) { IsNullable = false, Value = listNguyenLieu },
-            //    new SqlParameter("@listSoLuong", SqlDbType.VarChar) { IsNullable = false, Value = listSoLuong },
-            //    new SqlParameter("@tenmon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Ten },
-            //    new SqlParameter("@loaimon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Loai },
-            //    new SqlParameter("@anhminhhoa",SqlDbType.VarChar){IsNullable=false,Value=monAn.TenHinhAnh },
-            //    new SqlParameter("@dongia",SqlDbType.Decimal){IsNullable=false,Value=monAn.Gia },
-            //};
             try
             {
                 //Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
@@ -71,23 +55,6 @@ namespace DAO.QuanLyHangHoa
         }
         public static bool SuaMonAn(MonAn monAn, List<string> listNguyenLieu, List<string> listSoLuong)
         {
-
-            ////Thêm món ăn
-            //string query = " EXEC uspSuaMonAn @maMonAn,@listNguyenLieu,@listSoLuong,@tenmon,@loaimon,@anhminhhoa,@dongia";
-
-
-
-            ////truyền tham số vào câu truy vấn
-            //List<SqlParameter> parameters = new List<SqlParameter>()
-            //{
-            //    new SqlParameter("@maMonAn", SqlDbType.VarChar) { IsNullable = false, Value = monAn.Ma },
-            //    new SqlParameter("@listNguyenLieu", SqlDbType.VarChar) { IsNullable = false, Value = listNguyenLieu },
-            //    new SqlParameter("@listSoLuong", SqlDbType.VarChar) { IsNullable = false, Value = listSoLuong },
-            //    new SqlParameter("@tenmon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Ten },
-            //    new SqlParameter("@loaimon",SqlDbType.NVarChar){IsNullable=false,Value=monAn.Loai },
-            //    new SqlParameter("@anhminhhoa",SqlDbType.VarChar){IsNullable=false,Value=monAn.TenHinhAnh },
-            //    new SqlParameter("@dongia",SqlDbType.Decimal){IsNullable=false,Value=monAn.Gia },
-            //};
             try
             {
                 //Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
