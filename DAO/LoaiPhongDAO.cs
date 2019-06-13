@@ -75,14 +75,15 @@ namespace DAO
             }
         }
 
-        public static object XemLoaiPhong()
+        public static DataTable XemLoaiPhong()
         {
+            DataTable dtLoaiPhong = null;
             using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
             {
                 var loaiPhongs = from loaiPhong in karaokeDataContext.LOAIPHONGs
                              select loaiPhong;
-                DataTable table = Utility.ConvertToDataTable(loaiPhongs.ToList());
-                return table;
+                dtLoaiPhong = Utility.ConvertToDataTable(loaiPhongs.ToList());
+                return dtLoaiPhong;
             }
         }
 
@@ -152,7 +153,7 @@ namespace DAO
 
 
 
-        public static object TraCuuLoaiPhong(string tuKhoa)
+        public static DataTable TraCuuLoaiPhong(string tuKhoa)
         {
             //string query = "EXEC uspXemLoaiPhong  @tenLoaiPhong,@gia";
 
