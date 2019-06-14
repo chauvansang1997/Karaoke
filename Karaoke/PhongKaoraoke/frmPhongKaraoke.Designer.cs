@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhongKaraoke));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnFind = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtGia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.labelTenPhong = new System.Windows.Forms.Label();
             this.labelLoaiPhong = new System.Windows.Forms.Label();
             this.txtTenPhong = new System.Windows.Forms.TextBox();
+            this.btnFind = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.flowPhongLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.txtTotalPage = new System.Windows.Forms.TextBox();
@@ -59,16 +59,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panelChoice = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnChuyenPhong = new System.Windows.Forms.Button();
-            this.phongKaraoke1 = new Karaoke.PhongLayout();
-            this.phongKaraoke2 = new Karaoke.PhongLayout();
-            this.phongKaraoke3 = new Karaoke.PhongLayout();
-            this.phongKaraoke4 = new Karaoke.PhongLayout();
-            this.phongKaraoke5 = new Karaoke.PhongLayout();
-            this.phongKaraoke6 = new Karaoke.PhongLayout();
-            this.phongKaraoke7 = new Karaoke.PhongLayout();
             this.panel1.SuspendLayout();
-            this.flowPhongLayout.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,26 +82,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(531, 715);
             this.panel1.TabIndex = 1;
-            // 
-            // btnFind
-            // 
-            this.btnFind.BackColor = System.Drawing.Color.White;
-            this.btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnFind.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFind.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFind.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnFind.Image = ((System.Drawing.Image)(resources.GetObject("btnFind.Image")));
-            this.btnFind.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFind.Location = new System.Drawing.Point(337, 486);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(143, 46);
-            this.btnFind.TabIndex = 188;
-            this.btnFind.Text = "Tìm kiếm";
-            this.btnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFind.UseVisualStyleBackColor = false;
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // label5
             // 
@@ -244,6 +215,26 @@
             this.txtTenPhong.Size = new System.Drawing.Size(440, 36);
             this.txtTenPhong.TabIndex = 174;
             // 
+            // btnFind
+            // 
+            this.btnFind.BackColor = System.Drawing.Color.White;
+            this.btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnFind.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFind.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFind.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnFind.Image = ((System.Drawing.Image)(resources.GetObject("btnFind.Image")));
+            this.btnFind.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnFind.Location = new System.Drawing.Point(337, 486);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(143, 46);
+            this.btnFind.TabIndex = 188;
+            this.btnFind.Text = "Tìm kiếm";
+            this.btnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFind.UseVisualStyleBackColor = false;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
             // btnThoat
             // 
             this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
@@ -253,10 +244,10 @@
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThoat.Location = new System.Drawing.Point(1407, 638);
+            this.btnThoat.Location = new System.Drawing.Point(1357, 638);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(150, 55);
+            this.btnThoat.Size = new System.Drawing.Size(200, 55);
             this.btnThoat.TabIndex = 183;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -266,13 +257,6 @@
             // flowPhongLayout
             // 
             this.flowPhongLayout.BackColor = System.Drawing.Color.White;
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke1);
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke2);
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke3);
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke4);
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke5);
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke6);
-            this.flowPhongLayout.Controls.Add(this.phongKaraoke7);
             this.flowPhongLayout.Location = new System.Drawing.Point(768, 12);
             this.flowPhongLayout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flowPhongLayout.Name = "flowPhongLayout";
@@ -382,10 +366,10 @@
             this.btnThanhToan.ForeColor = System.Drawing.Color.White;
             this.btnThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.Image")));
             this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThanhToan.Location = new System.Drawing.Point(1203, 638);
+            this.btnThanhToan.Location = new System.Drawing.Point(1066, 638);
             this.btnThanhToan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(195, 55);
+            this.btnThanhToan.Size = new System.Drawing.Size(256, 55);
             this.btnThanhToan.TabIndex = 186;
             this.btnThanhToan.Text = " Gọi món";
             this.btnThanhToan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -403,7 +387,7 @@
             this.btnDatPhong.Location = new System.Drawing.Point(768, 638);
             this.btnDatPhong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDatPhong.Name = "btnDatPhong";
-            this.btnDatPhong.Size = new System.Drawing.Size(192, 55);
+            this.btnDatPhong.Size = new System.Drawing.Size(262, 55);
             this.btnDatPhong.TabIndex = 184;
             this.btnDatPhong.Text = " Đặt phòng";
             this.btnDatPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -495,122 +479,6 @@
             this.panel2.Size = new System.Drawing.Size(225, 715);
             this.panel2.TabIndex = 187;
             // 
-            // btnChuyenPhong
-            // 
-            this.btnChuyenPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
-            this.btnChuyenPhong.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnChuyenPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChuyenPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChuyenPhong.ForeColor = System.Drawing.Color.White;
-            this.btnChuyenPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnChuyenPhong.Image")));
-            this.btnChuyenPhong.Location = new System.Drawing.Point(969, 638);
-            this.btnChuyenPhong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnChuyenPhong.Name = "btnChuyenPhong";
-            this.btnChuyenPhong.Size = new System.Drawing.Size(225, 55);
-            this.btnChuyenPhong.TabIndex = 195;
-            this.btnChuyenPhong.Text = "Chuyển phòng";
-            this.btnChuyenPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChuyenPhong.UseVisualStyleBackColor = false;
-            this.btnChuyenPhong.Click += new System.EventHandler(this.btnChuyenPhong_Click);
-            // 
-            // phongKaraoke1
-            // 
-            this.phongKaraoke1.IndexDict = 0;
-            this.phongKaraoke1.IndexList = 0;
-            this.phongKaraoke1.KhachHang = null;
-            this.phongKaraoke1.Loai = null;
-            this.phongKaraoke1.Location = new System.Drawing.Point(6, 8);
-            this.phongKaraoke1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.phongKaraoke1.Name = "phongKaraoke1";
-            this.phongKaraoke1.Phong = null;
-            this.phongKaraoke1.Size = new System.Drawing.Size(150, 154);
-            this.phongKaraoke1.TabIndex = 0;
-            this.phongKaraoke1.Ten = null;
-            // 
-            // phongKaraoke2
-            // 
-            this.phongKaraoke2.IndexDict = 0;
-            this.phongKaraoke2.IndexList = 0;
-            this.phongKaraoke2.KhachHang = null;
-            this.phongKaraoke2.Loai = null;
-            this.phongKaraoke2.Location = new System.Drawing.Point(168, 8);
-            this.phongKaraoke2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.phongKaraoke2.Name = "phongKaraoke2";
-            this.phongKaraoke2.Phong = null;
-            this.phongKaraoke2.Size = new System.Drawing.Size(150, 154);
-            this.phongKaraoke2.TabIndex = 1;
-            this.phongKaraoke2.Ten = null;
-            // 
-            // phongKaraoke3
-            // 
-            this.phongKaraoke3.IndexDict = 0;
-            this.phongKaraoke3.IndexList = 0;
-            this.phongKaraoke3.KhachHang = null;
-            this.phongKaraoke3.Loai = null;
-            this.phongKaraoke3.Location = new System.Drawing.Point(330, 8);
-            this.phongKaraoke3.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.phongKaraoke3.Name = "phongKaraoke3";
-            this.phongKaraoke3.Phong = null;
-            this.phongKaraoke3.Size = new System.Drawing.Size(150, 154);
-            this.phongKaraoke3.TabIndex = 2;
-            this.phongKaraoke3.Ten = null;
-            // 
-            // phongKaraoke4
-            // 
-            this.phongKaraoke4.IndexDict = 0;
-            this.phongKaraoke4.IndexList = 0;
-            this.phongKaraoke4.KhachHang = null;
-            this.phongKaraoke4.Loai = null;
-            this.phongKaraoke4.Location = new System.Drawing.Point(492, 8);
-            this.phongKaraoke4.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.phongKaraoke4.Name = "phongKaraoke4";
-            this.phongKaraoke4.Phong = null;
-            this.phongKaraoke4.Size = new System.Drawing.Size(150, 154);
-            this.phongKaraoke4.TabIndex = 3;
-            this.phongKaraoke4.Ten = null;
-            // 
-            // phongKaraoke5
-            // 
-            this.phongKaraoke5.IndexDict = 0;
-            this.phongKaraoke5.IndexList = 0;
-            this.phongKaraoke5.KhachHang = null;
-            this.phongKaraoke5.Loai = null;
-            this.phongKaraoke5.Location = new System.Drawing.Point(6, 178);
-            this.phongKaraoke5.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.phongKaraoke5.Name = "phongKaraoke5";
-            this.phongKaraoke5.Phong = null;
-            this.phongKaraoke5.Size = new System.Drawing.Size(150, 154);
-            this.phongKaraoke5.TabIndex = 4;
-            this.phongKaraoke5.Ten = null;
-            // 
-            // phongKaraoke6
-            // 
-            this.phongKaraoke6.IndexDict = 0;
-            this.phongKaraoke6.IndexList = 0;
-            this.phongKaraoke6.KhachHang = null;
-            this.phongKaraoke6.Loai = null;
-            this.phongKaraoke6.Location = new System.Drawing.Point(168, 178);
-            this.phongKaraoke6.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.phongKaraoke6.Name = "phongKaraoke6";
-            this.phongKaraoke6.Phong = null;
-            this.phongKaraoke6.Size = new System.Drawing.Size(150, 154);
-            this.phongKaraoke6.TabIndex = 5;
-            this.phongKaraoke6.Ten = null;
-            // 
-            // phongKaraoke7
-            // 
-            this.phongKaraoke7.IndexDict = 0;
-            this.phongKaraoke7.IndexList = 0;
-            this.phongKaraoke7.KhachHang = null;
-            this.phongKaraoke7.Loai = null;
-            this.phongKaraoke7.Location = new System.Drawing.Point(330, 178);
-            this.phongKaraoke7.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.phongKaraoke7.Name = "phongKaraoke7";
-            this.phongKaraoke7.Phong = null;
-            this.phongKaraoke7.Size = new System.Drawing.Size(150, 154);
-            this.phongKaraoke7.TabIndex = 6;
-            this.phongKaraoke7.Ten = null;
-            // 
             // frmPhongKaraoke
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -618,7 +486,6 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1581, 712);
             this.Controls.Add(this.btnFind);
-            this.Controls.Add(this.btnChuyenPhong);
             this.Controls.Add(this.txtTotalPage);
             this.Controls.Add(this.btnFirstPage);
             this.Controls.Add(this.txtPageNumber);
@@ -639,7 +506,6 @@
             this.Load += new System.EventHandler(this.frmPhongKaraoke_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.flowPhongLayout.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -684,7 +550,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panelChoice;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnChuyenPhong;
         private System.Windows.Forms.Button btnFind;
     }
 }
