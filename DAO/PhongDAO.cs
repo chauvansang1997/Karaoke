@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Linq;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,33 +12,161 @@ namespace DAO
 {
     public class PhongDAO
     {
+        /// <summary>
+        /// Hàm thêm phòng
+        /// </summary>
+        /// <param name="phong"></param>
+        /// <returns>bool</returns>
         public static bool ThemPhong(Phong phong)
         {
-            string query = "EXEC uspTaoPhong @maloaiphong";
-
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
             string ma = TaoMa.TaoMaPhong();
-
-            List<SqlParameter> parameters = new List<SqlParameter>()
+            //Truy vấn thêm phòng
+            try
             {
-                new SqlParameter("@maloaiphong",SqlDbType.NVarChar){Value=phong.TenLoai }
+                karaokeDataContext.PHONGs.InsertOnSubmit(new PHONG()
+                {
+                    MAPHONG = ma,
+                    MALOAIPHONG = Int32.Parse(phong.TenLoai),
+                    TINHTRANG ="1"
+                });
+                ChangeSet cs = karaokeDataContext.GetChangeSet();
+                if (cs.Inserts.Count() == 1)
+                {
+                    karaokeDataContext.SubmitChanges();
+                    return true;
+                }
+               
+            }
+            catch(Exception ex)
+            {
+                Utility.Log(ex);
+            }
+            return false;
+            //string query = "EXEC uspTaoPhong @maloaiphong";
 
-            };
+            //string ma = TaoMa.TaoMaPhong();
 
-            return Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0;
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@maloaiphong",SqlDbType.NVarChar){Value=phong.TenLoai }
+
+            //};
+
+            //return Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0;
+
         }
+        /// <summary>
+        /// Hàm cập nhật phòng
+        /// </summary>
+        /// <param name="phong"></param>
+        /// <returns>bool</returns>
         public static bool CapNhatPhong(Phong phong)
         {
-            string query = "EXEC uspCapNhatPhong @maphong,@maloaiphong";
+            //string query = "EXEC uspCapNhatPhong @maphong,@maloaiphong";
 
-            List<SqlParameter> parameters = new List<SqlParameter>()
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@maphong",SqlDbType.NVarChar){ Value=phong.Ten  },
+            //    new SqlParameter("@maloaiphong",SqlDbType.NVarChar){Value=phong.TenLoai }
+
+            //};
+            //return Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0;
+            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
             {
-                new SqlParameter("@maphong",SqlDbType.NVarChar){ Value=phong.Ten  },
-                new SqlParameter("@maloaiphong",SqlDbType.NVarChar){Value=phong.TenLoai }
+                try
+                {
+                    karaokeDataContext.PHONGs.Single(phg => phg.MAPHONG == phong.Ten).MALOAIPHONG= Int32.Parse(phong.TenLoai);
 
-            };
-
-            return Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0;
+                    ChangeSet cs = karaokeDataContext.GetChangeSet();
+                    if (cs.Updates.Count() == 1)
+                    {
+                        karaokeDataContext.SubmitChanges();
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Utility.Log(ex);
+                }
+                return false;
+            }
         }
+        /// <summary>
+        /// Hàm xem phòng theo loại phong
+        /// </summary>
+        /// <param name="loaiPhong"></param>
+        /// <param name="tuKhoa"></param>
+        /// <returns>DataTable phong</returns>
+        public static DataTable XemPhongTheoLoai(string loaiPhong,string tuKhoa, int pageNumber, int pageSize)
+        {
+            DataTable dtXemPhongTheoLoai = null;
+
+            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+            {
+                
+                try
+                {
+                    if (tuKhoa.Length > 0)
+                    {
+                        tuKhoa = tuKhoa.ToLower();
+                        var query = (from phongTheoLoai in karaokeDataContext.PHONGs
+                                     where (phongTheoLoai.LOAIPHONG.TENLOAIPHONG == loaiPhong && 
+                                     (  phongTheoLoai.MAPHONG.ToLower().Contains(tuKhoa) ||
+                                        phongTheoLoai.TINHTRANG.ToLower().ToLower().Contains(tuKhoa)||
+                                        phongTheoLoai.LOAIPHONG.TENLOAIPHONG.ToLower().Contains(tuKhoa)||
+                                        phongTheoLoai.LOAIPHONG.GIA.ToString().ToLower().Contains(tuKhoa)
+                                     ))
+                                     select new { phongTheoLoai.MAPHONG, phongTheoLoai.LOAIPHONG.TENLOAIPHONG, phongTheoLoai.LOAIPHONG.GIA })
+                                     .Skip((pageNumber-1)*pageSize)
+                                     .Take(pageSize);
+                        dtXemPhongTheoLoai = Utility.ConvertToDataTable(query.ToList());
+                    }
+                    else
+                    {
+                        var query = (from phongTheoLoai in karaokeDataContext.PHONGs
+                                     where (phongTheoLoai.LOAIPHONG.TENLOAIPHONG == loaiPhong)
+                                     select new { phongTheoLoai.MAPHONG, phongTheoLoai.LOAIPHONG.TENLOAIPHONG, phongTheoLoai.LOAIPHONG.GIA })
+                                     .Skip((pageNumber - 1) * pageSize)
+                                     .Take(pageSize);
+                        dtXemPhongTheoLoai = Utility.ConvertToDataTable(query.ToList());
+                    }
+                    return dtXemPhongTheoLoai;
+                  
+                }
+                catch (Exception ex)
+                {
+                    Utility.Log(ex);
+                }
+                return dtXemPhongTheoLoai;
+            }
+        }
+        /// <summary>
+        /// Hàm xóa phòng
+        /// </summary>
+        /// <param name="phong"></param>
+        /// <returns>bool</returns>
+        public static bool XoaPhong(Phong phong)
+        {
+            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+            {
+                try
+                {
+                    var phg = (from phongCT in karaokeDataContext.PHONGs
+                                 where (phongCT.MAPHONG == phong.Ten)
+                                 select phongCT).SingleOrDefault();
+                    karaokeDataContext.PHONGs.DeleteOnSubmit(phg);
+                    karaokeDataContext.SubmitChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Utility.Log(ex);
+                }
+                return false;
+            }
+        }
+
         public static bool GhiNhanDatPhong(KhachHang khachHang, string maPhong, string maNV)
         {
             try
@@ -348,45 +477,66 @@ namespace DAO
         }
         public static DataTable XemLoaiPhong()
         {
-            string query = "SELECT * FROM LOAIPHONG";
-
-
-            DataTable table = null;
-            try
+            //string query = "SELECT * FROM LOAIPHONG";
+            using( KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
             {
-                table = Dataprovider.ExcuteQuery(query);
-
+                DataTable dtXemLoaiPhong = null;
+                var select = from loaiPhong in karaokeDataContext.LOAIPHONGs
+                             select loaiPhong;
+                dtXemLoaiPhong = Utility.ConvertToDataTable(select.ToList());
+                return dtXemLoaiPhong;
             }
-            catch (Exception ex)
-            {
-                Utility.Log(ex);
-            }
-
-            return table;
         }
         public static DataTable XemPhongQuanLy(string maPhong, int loaiPhong, int pageNumber, int pageSize)
         {
-            string query = "EXEC uspXemPhong @maPhong,@loaiPhong,@pageNumber,@pageSize";
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@maPhong",SqlDbType.VarChar){ Value=maPhong  },
-                new SqlParameter("@loaiPhong",SqlDbType.Int){ Value=loaiPhong  },
 
-                new SqlParameter("@pageNumber",SqlDbType.Int){ Value=pageNumber  },
-                new SqlParameter("@pageSize",SqlDbType.Int){ Value=pageSize  },
-            };
-            DataTable table = null;
-            try
-            {
-                table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+            //string query = "EXEC uspXemPhong @maPhong,@loaiPhong,@pageNumber,@pageSize";
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@maPhong",SqlDbType.VarChar){ Value=maPhong  },
+            //    new SqlParameter("@loaiPhong",SqlDbType.Int){ Value=loaiPhong  },
 
+
+            //    new SqlParameter("@pageNumber",SqlDbType.Int){ Value=pageNumber  },
+            //    new SqlParameter("@pageSize",SqlDbType.Int){ Value=pageSize  },
+            //};
+            //DataTable table = null;
+            //try
+            //{
+            //    table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    Utility.Log(ex);
+            //}
+
+            //return table;
+            DataTable tbPhong = new DataTable();
+            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+            {
+                try{
+                    var xemPhongQuanLyQuery = (from phong in karaokeDataContext.PHONGs
+                                               join loaiPhongTable in karaokeDataContext.LOAIPHONGs
+                                               on phong.MALOAIPHONG equals loaiPhongTable.MALOAIPHONG
+                                               where (phong.MAPHONG.ToString().ToLower().Contains(maPhong.ToString().ToLower()) ||
+                                                     loaiPhongTable.MALOAIPHONG.ToString().ToLower().Contains(loaiPhong.ToString().ToLower())
+                                               )
+                                               select new 
+                                              {
+                                                  phong.MAPHONG,
+                                                   loaiPhongTable.MALOAIPHONG,
+                                                   loaiPhongTable.TENLOAIPHONG,
+                                                   loaiPhongTable.GIA
+                                               }).Skip(pageSize*(pageNumber-1)).Take(pageSize);
+                    tbPhong = Utility.ConvertToDataTable(xemPhongQuanLyQuery.ToList());
+                }
+                catch (Exception ex)
+                {
+                    Utility.Log(ex);
+                }
             }
-            catch (Exception ex)
-            {
-                Utility.Log(ex);
-            }
-
-            return table;
+            return tbPhong;
         }
         public static int DemPhongQuanLy(string maPhong, int loaiPhong)
         {

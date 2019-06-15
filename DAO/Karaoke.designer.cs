@@ -150,7 +150,7 @@ namespace DAO
     #endregion
 		
 		public KaraokeDataContext() : 
-				base(global::DAO.Properties.Settings.Default.dbQuanLyKaraokeConnectionString1, mappingSource)
+				base(global::DAO.Properties.Settings.Default.dbQuanLyKaraokeConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

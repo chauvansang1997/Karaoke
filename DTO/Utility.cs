@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -165,6 +167,11 @@ namespace DTO
             return str.ToLower();
         }
 
+
+        /// <summary>
+        /// Chuyển list thành datatable
+        /// </summary>
+        /// <param name="msg">error message</param>
         public static DataTable ConvertToDataTable<T>(IList<T> data)
         {
             PropertyDescriptorCollection properties =

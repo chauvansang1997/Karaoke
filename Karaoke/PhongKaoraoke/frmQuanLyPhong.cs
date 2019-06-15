@@ -19,6 +19,7 @@ namespace Karaoke.PhongKaoraoke
         private int pageNumber;
         private int totalPage;
         private string ma;
+        
         public frmQuanLyPhong()
         {
             InitializeComponent();
@@ -29,19 +30,19 @@ namespace Karaoke.PhongKaoraoke
             bSua = false;
             bThem = false;
             pageNumber = 1;
-
+            btnFind.Visible = false;
             txtPageNumber.Text = "1";
             totalPage = BUS.PhongBUS.DemPhongQuanLy("",-1);
             totalPage = Utility.TinhKichThuocTrang(totalPage, pageSize);
             txtTotalPage.Text = totalPage.ToString();
             dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongQuanLy("", -1, pageNumber, pageSize);
             enableControls(false);
-            AddGridTableStyle();
+           AddGridTableStyle();
         }
         private void loadDanhSach()
         {
             DataRow row = ((DataRowView)cmbLoaiPhong.SelectedValue).Row;
-            dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongQuanLy(txtTenPhongTK.Text,(int)row["MALOAIPHONG"], pageNumber, pageSize);
+            dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongQuanLy(txtTenPhongTK.Text,(int)row["TENLOAIP"], pageNumber, pageSize);
         }
         private void btnFind_Click(object sender, EventArgs e)
         {
@@ -94,8 +95,8 @@ namespace Karaoke.PhongKaoraoke
             this.dGVDanhSach.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSteelBlue;
 
             this.dGVDanhSach.Columns["MALOAIPHONG"].Visible = false;
-            this.dGVDanhSach.Columns["MAPHONG"].HeaderText = "Tên";
-            this.dGVDanhSach.Columns["TENLOAIPHONG"].HeaderText = "Tên loại phòng";
+            this.dGVDanhSach.Columns["MAPHONG"].HeaderText = "Tên phòng";
+            this.dGVDanhSach.Columns["TENLOAIPHONG"].HeaderText = "Loại phòng";
             this.dGVDanhSach.Columns["GIA"].HeaderText = "Giá";
 
             cmbLoaiPhong.DataSource = BUS.PhongBUS.XemLoaiPhong();
@@ -110,10 +111,6 @@ namespace Karaoke.PhongKaoraoke
             enableControls(true);
         }
 
-        private void frmNguyenLieu_Load_1(object sender, EventArgs e)
-        {
-
-        }
         private void btnNextPage_Click(object sender, EventArgs e)
         {
             if (pageNumber + 1 > totalPage)
@@ -214,7 +211,6 @@ namespace Karaoke.PhongKaoraoke
             {
                 int index = dGVDanhSach.CurrentCell.RowIndex;
                 txtMaPhong.Text = dGVDanhSach[0, index].Value.ToString();
-            
                 //  cmbNhaCC.SelectedValue = dGVDanhSach[6, index].Value.ToString();
                 for (int i = 0; i < cmbLoaiPhong.Items.Count; i++)
                 {
@@ -222,6 +218,7 @@ namespace Karaoke.PhongKaoraoke
                     if (row["MALOAIPHONG"].ToString() == dGVDanhSach[1, index].Value.ToString())
                     {
                         cmbLoaiPhong.SelectedIndex = i;
+                        cmbLoaiPhong.Text = dGVDanhSach[2, index].Value.ToString();
                     }
                 }
               
@@ -280,6 +277,7 @@ namespace Karaoke.PhongKaoraoke
                     }
                     bThem = false;
                     enableControls(false);
+                    enableButton(true);
                     resetDanhSach();
                 }
                 else if (bSua)
@@ -295,6 +293,7 @@ namespace Karaoke.PhongKaoraoke
                     }
                     bSua = false;
                     enableControls(false);
+                    enableButton(true);
                     resetDanhSach();
                 }
             }
@@ -305,7 +304,13 @@ namespace Karaoke.PhongKaoraoke
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (BUS.NguyenLieuBUS.XoaNguyenLieu(ma))
+            DataRow row = ((DataRowView)cmbLoaiPhong.SelectedValue).Row;
+            if (BUS.PhongBUS.XoaPhong((new DTO.Phong()
+            {
+                Ten = txtMaPhong.Text,
+                TenLoai = row["MALOAIPHONG"].ToString()
+
+            })))
             {
                 MessageBox.Show("Xóa phòng thành công");
                 resetDanhSach();
@@ -329,6 +334,19 @@ namespace Karaoke.PhongKaoraoke
             bSua = false;
             enableControls(false);
             enableButton(true);
+        }
+
+        private void cmbLoaiPhongTK_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbLoaiPhong.Text = cmbLoaiPhongTK.Text;
+            dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongTheoLoai(cmbLoaiPhongTK.Text,txtTenPhongTK.Text, pageNumber, pageSize);
+            //dGVDanhSach.Refresh();
+        }
+
+        private void txtTenPhongTK_TextChanged(object sender, EventArgs e)
+        {
+            dGVDanhSach.DataSource = BUS.PhongBUS.XemPhongTheoLoai(cmbLoaiPhongTK.Text, txtTenPhongTK.Text, pageNumber, pageSize);
+            //dGVDanhSach.Refresh();
         }
     }
     
