@@ -40,24 +40,88 @@ namespace DAO
         }
         public static bool GhiNhanDatPhong(KhachHang khachHang, string maPhong, string maNV)
         {
-            string query = "EXEC uspGhiNhanDatPhong @maPhong,@tenKhachHang,@soDienThoai,@soHoaDon,@maNV";
-
-
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@maPhong",SqlDbType.VarChar){ Value=maPhong  },
-                 new SqlParameter("@tenKhachHang",SqlDbType.NVarChar){ Value=khachHang.Ten  },
-                  new SqlParameter("@soDienThoai",SqlDbType.VarChar){ Value=khachHang.SoDT  },
-                  new SqlParameter("@soHoaDon",SqlDbType.VarChar){ Value=""  },
-                  new SqlParameter("@maNV",SqlDbType.VarChar){ Value=maNV  },
-
-            };
             try
             {
-                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
-
-                using(KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+                using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
                 {
+                    var thongTinKhachHang = (from kh in karaokeDataContext.KHACHHANGs
+                                             where kh.TENKH == khachHang.Ten && kh.SDT == khachHang.SoDT
+                                             select kh).First();
+                    bool checkKhachHang = thongTinKhachHang != null;
+
+                    string maHoaDon = TaoMa.TaoHoaDon();
+                    var checkDangSuDung = karaokeDataContext.DANGSUDUNGs.Where(s => s.MAPHONG == maPhong).Count();
+                    // .FirstOrDefault().SOHD = maHoaDon;
+                    if (checkDangSuDung == 0)
+                    {
+                        karaokeDataContext.DANGSUDUNGs.InsertOnSubmit(new DANGSUDUNG()
+                        {
+                            MAPHONG = maPhong,
+                            SOHD = maHoaDon
+                        });
+                    }
+
+                    string maKhachHang = "";
+                    karaokeDataContext.DANGSUDUNGs.Where(t => t.MAPHONG == maPhong).First().SOHD = maHoaDon;
+                    karaokeDataContext.TAOMAs.Where(s => s.ID == 3).First().MACUOI += 1;
+                    if (!checkKhachHang)
+                    {
+                        maKhachHang = TaoMa.TaoMaKhachHang();
+                        karaokeDataContext.KHACHHANGs.InsertOnSubmit(new KHACHHANG()
+                        {
+                            MAKH = maKhachHang,
+                            TENKH = khachHang.Ten,
+                            MALOAIKH = 1,
+                            SDT = khachHang.SoDT
+                        });
+                        karaokeDataContext.TAOMAs.Where(s => s.ID == 4).First().MACUOI += 1;
+                    }
+                    else
+                    {
+                        maKhachHang = thongTinKhachHang.MAKH;
+                    }
+
+                    bool checkKhuyenMai = (from kh in karaokeDataContext.KHACHHANGs
+                                           join loaiKh in karaokeDataContext.LOAIKHACHHANGs
+                                           on kh.MALOAIKH equals loaiKh.MALOAIKH
+                                           join km in karaokeDataContext.CHITIETKMs
+                                           on loaiKh.MALOAIKH equals km.MALOAIKH
+                                           select kh).Count() > 0;
+                    double giamGia = 0;
+                    if (checkKhuyenMai)
+                    {
+                        var thongTinKhuyenMain = from kh in karaokeDataContext.KHACHHANGs
+                                                 join loaiKh in karaokeDataContext.LOAIKHACHHANGs
+                                                  on kh.MALOAIKH equals loaiKh.MALOAIKH
+                                                 join ctkm in karaokeDataContext.CHITIETKMs
+                                                 on loaiKh.MALOAIKH equals ctkm.MALOAIKH
+                                                 join km in karaokeDataContext.KHUYENMAIs
+                                                 on ctkm.MAKM equals km.MAKM
+                                                 where km.NGAYBD <= DateTime.Now && km.NGAYKT >= DateTime.Now
+                                                 select ctkm.MUCKM;
+                        if (thongTinKhuyenMain.Count() > 0)
+                        {
+                            var maxValue = thongTinKhuyenMain.Max(x => x.Value);
+                            giamGia = thongTinKhuyenMain.First(x => x.Value == maxValue).Value;
+                        }
+                    }
+                    karaokeDataContext.PHONGs.Where(s => s.MAPHONG == maPhong).FirstOrDefault().TINHTRANG = "1";
+                    karaokeDataContext.HOADONs.InsertOnSubmit(new HOADON()
+                    {
+                        SOHD = maHoaDon,
+                        MAKH = maKhachHang,
+                        MANV = maNV,
+                        MAPHONG = maPhong,
+                        GIOVAO = DateTime.Now,
+                        TRANGTHAI = 0,
+                        GIAMGIA = (int)giamGia,
+                        THANHTIEN = 0,
+                        TIENGIO = 0,
+                        TIENDATCOC = 0,
+                        NGAYLAP = DateTime.Now
+                    });
+
+                    karaokeDataContext.SubmitChanges();
 
                 }
             }
@@ -68,6 +132,7 @@ namespace DAO
             }
             return true;
         }
+
         public static bool NhanPhongDatTruoc(string soHoaDon)
         {
             string query = "EXEC uspNhanPhong @soHoaDon,@NgayNhan";

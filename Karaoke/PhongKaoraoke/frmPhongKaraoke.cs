@@ -327,18 +327,30 @@ namespace Karaoke.PhongKaoraoke
 
 		private void btnThanhToan_Click(object sender, EventArgs e)
 		{
-			string soHoaDon = BUS.HoaDonBUS.LayMaHoaDon(listPhongLayout[indexHienTai].Phong.Ten);
+            if (PhongHienTai != null)
+            {
+                if(PhongHienTai.TinhTrang != 0)
+                {
+                    string soHoaDon = BUS.HoaDonBUS.LayMaHoaDon(listPhongLayout[indexHienTai].Phong.Ten);
 
-			if (BUS.HoaDonBUS.HoaDonDatTiec(soHoaDon))
-			{
-				frmChonMon chonMon = new frmChonMon(soHoaDon);
-				chonMon.ShowDialog();
-			}
-			else
-			{
-				frmGoiMon goiMon = new frmGoiMon(soHoaDon, this);
-				goiMon.ShowDialog();
-			}
+                    if (BUS.HoaDonBUS.HoaDonDatTiec(soHoaDon))
+                    {
+                        frmChonMon chonMon = new frmChonMon(soHoaDon);
+                        chonMon.ShowDialog();
+                    }
+                    else
+                    {
+                        frmGoiMon goiMon = new frmGoiMon(soHoaDon, this);
+                        goiMon.ShowDialog();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Phòng chưa đặt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+               
+            }
+         
 		}
 
 		private void btnThoat_Click(object sender, EventArgs e)

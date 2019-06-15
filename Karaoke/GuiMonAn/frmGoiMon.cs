@@ -534,22 +534,10 @@ namespace Karaoke.GuiMonAn
                 {
                     string ma = item.Value.Ma;
                     string soluong = item.Value.Soluong;
-                    string loai = item.Value.Loai;
+                    string loai = item.Value.MaLoaiHangHoa;
 
-                    if (loai == "1")
+                    if (loai == "0")
                     {
-
-                        chiTietHoaDons.Add(new ChiTietHoaDon()
-                        {
-                            Ma = ma,
-                            LoaiHangHoa = ChiTietHoaDon.Loai.Sanpham,
-                            Soluong =Int32.Parse( soluong)
-                        
-                        });
-                    }
-                    else
-                    {
-
                         chiTietHoaDons.Add(new ChiTietHoaDon()
                         {
                             Ma = ma,
@@ -557,6 +545,18 @@ namespace Karaoke.GuiMonAn
                             Soluong = Int32.Parse(soluong)
 
                         });
+                    
+                    }
+                    else
+                    {
+                        chiTietHoaDons.Add(new ChiTietHoaDon()
+                        {
+                            Ma = ma,
+                            LoaiHangHoa = ChiTietHoaDon.Loai.Sanpham,
+                            Soluong = Int32.Parse(soluong)
+
+                        });
+
                     }
                 }
             }

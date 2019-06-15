@@ -144,10 +144,13 @@ namespace DAO
     partial void InsertTHIETBI(THIETBI instance);
     partial void UpdateTHIETBI(THIETBI instance);
     partial void DeleteTHIETBI(THIETBI instance);
+    partial void InsertDANGSUDUNG(DANGSUDUNG instance);
+    partial void UpdateDANGSUDUNG(DANGSUDUNG instance);
+    partial void DeleteDANGSUDUNG(DANGSUDUNG instance);
     #endregion
 		
 		public KaraokeDataContext() : 
-				base(global::DAO.Properties.Settings.Default.dbQuanLyKaraokeConnectionString, mappingSource)
+				base(global::DAO.Properties.Settings.Default.dbQuanLyKaraokeConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -253,14 +256,6 @@ namespace DAO
 			get
 			{
 				return this.GetTable<CTPNTB>();
-			}
-		}
-		
-		public System.Data.Linq.Table<DANGSUDUNG> DANGSUDUNGs
-		{
-			get
-			{
-				return this.GetTable<DANGSUDUNG>();
 			}
 		}
 		
@@ -501,6 +496,14 @@ namespace DAO
 			get
 			{
 				return this.GetTable<TONKHOCT>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DANGSUDUNG> DANGSUDUNGs
+		{
+			get
+			{
+				return this.GetTable<DANGSUDUNG>();
 			}
 		}
 	}
@@ -2389,51 +2392,6 @@ namespace DAO
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DANGSUDUNG")]
-	public partial class DANGSUDUNG
-	{
-		
-		private string _MAPHONG;
-		
-		private string _SOHD;
-		
-		public DANGSUDUNG()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAPHONG", DbType="VarChar(5)")]
-		public string MAPHONG
-		{
-			get
-			{
-				return this._MAPHONG;
-			}
-			set
-			{
-				if ((this._MAPHONG != value))
-				{
-					this._MAPHONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHD", DbType="VarChar(5)")]
-		public string SOHD
-		{
-			get
-			{
-				return this._SOHD;
-			}
-			set
-			{
-				if ((this._SOHD != value))
-				{
-					this._SOHD = value;
-				}
 			}
 		}
 	}
@@ -8525,6 +8483,92 @@ namespace DAO
 				{
 					this._NGAY = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DANGSUDUNG")]
+	public partial class DANGSUDUNG : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MAPHONG;
+		
+		private string _SOHD;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMAPHONGChanging(string value);
+    partial void OnMAPHONGChanged();
+    partial void OnSOHDChanging(string value);
+    partial void OnSOHDChanged();
+    #endregion
+		
+		public DANGSUDUNG()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAPHONG", DbType="VarChar(5) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MAPHONG
+		{
+			get
+			{
+				return this._MAPHONG;
+			}
+			set
+			{
+				if ((this._MAPHONG != value))
+				{
+					this.OnMAPHONGChanging(value);
+					this.SendPropertyChanging();
+					this._MAPHONG = value;
+					this.SendPropertyChanged("MAPHONG");
+					this.OnMAPHONGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHD", DbType="VarChar(5)")]
+		public string SOHD
+		{
+			get
+			{
+				return this._SOHD;
+			}
+			set
+			{
+				if ((this._SOHD != value))
+				{
+					this.OnSOHDChanging(value);
+					this.SendPropertyChanging();
+					this._SOHD = value;
+					this.SendPropertyChanged("SOHD");
+					this.OnSOHDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

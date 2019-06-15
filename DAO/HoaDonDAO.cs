@@ -129,11 +129,9 @@ namespace DAO
                 //result = Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString();
                 using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
                 {
-                    result = (from hoaDon in karaokeDataContext.HOADONs
-                              where hoaDon.MAPHONG == maPhong &&
-                              hoaDon.PHONG.TINHTRANG == "1"
-
-                              select hoaDon.SOHD).First();
+                    result = (from k in karaokeDataContext.DANGSUDUNGs
+                              where k.MAPHONG == maPhong
+                              select k.SOHD).FirstOrDefault();
                 }
             }
             catch (Exception ex)

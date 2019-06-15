@@ -39,6 +39,8 @@ namespace DAO
                     objSP.SLTOITHIEU = sanPham.SoLuongToiThieu;
                     objSP.ANHMINHHOA = sanPham.TenHinhAnh;
                     objSP.DONGIANHAP = sanPham.DonGiaNhap;
+                    objSP.SLTON = 0;
+
                     karaokeDataContext.SANPHAMs.InsertOnSubmit(objSP);
                     // executes the commands to implement the changes to the database
                     karaokeDataContext.SubmitChanges();

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbQuanLyKaraoke" Class="KaraokeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=127.0.0.1;Initial Catalog=dbQuanLyKaraoke;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="dbQuanLyKaraokeConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.56.1;Initial Catalog=dbQuanLyKaraoke;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="dbQuanLyKaraokeConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CALAMVIEC" Member="CALAMVIECs">
     <Type Name="CALAMVIEC">
       <Column Name="MACA" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -89,12 +89,6 @@
       <Column Name="SOLUONGNHAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="PHIEUNHAPTHIETBI_CTPNTB" Member="PHIEUNHAPTHIETBI" ThisKey="SOPNTB" OtherKey="SOPNTB" Type="PHIEUNHAPTHIETBI" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="THIETBI_CTPNTB" Member="THIETBI" ThisKey="MATB" OtherKey="MATB" Type="THIETBI" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DANGSUDUNG" Member="DANGSUDUNGs">
-    <Type Name="DANGSUDUNG">
-      <Column Name="MAPHONG" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
-      <Column Name="SOHD" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.DOANHTHU" Member="DOANHTHUs">
@@ -405,6 +399,12 @@
       <Column Name="SOLUONGNHAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SOLUONGXUAT" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NGAY" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DANGSUDUNG" Member="DANGSUDUNGs">
+    <Type Name="DANGSUDUNG">
+      <Column Name="MAPHONG" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SOHD" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
