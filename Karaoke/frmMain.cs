@@ -147,7 +147,7 @@ namespace Karaoke
 			}
 			catch(Exception ex)
 			{
-				MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Có lỗi xảy ra" + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 

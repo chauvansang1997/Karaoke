@@ -6,7 +6,7 @@ namespace Karaoke
 {
 
 
-	public partial class LuongDataSet
-	{
-	}
+    public partial class LuongDataSet
+    {
+    }
 }
