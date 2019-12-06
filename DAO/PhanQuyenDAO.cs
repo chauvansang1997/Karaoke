@@ -59,17 +59,25 @@ namespace DAO
             List<int> list = null;
 
             string query = "EXEC [uspLayQuyen] @maNhanVien";
-
+            string sql = "SELECT C.MAQUYEN FROM NHANVIEN A,CHUCVU B, PHANQUYEN C WHERE A.MACV=B.MACV AND B.MACV = C.MACV AND A.MANV = @maNhanVien";
             //truyền tham số vào câu truy vấn
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@maNhanVien",SqlDbType.VarChar){IsNullable=false,Value=nhanVien.MaNV }
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@maNhanVien",SqlDbType.VarChar){IsNullable=false,Value=nhanVien.MaNV }
 
-            };
+            //};
             try
             {
-                list = Dataprovider.ExcuteQuery(query, parameters.ToArray()).AsEnumerable().ToList().ConvertAll(x =>
-                  int.Parse(x[0].ToString()));
+                using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+                {
+                    list = (from phanQuyen in karaokeDataContext.PHANQUYENs
+                            from nv in karaokeDataContext.NHANVIENs
+                            from cv in karaokeDataContext.CHUCVUs
+                            where nv.MACV == cv.MACV && phanQuyen.MACV == cv.MACV && nv.MANV == nhanVien.MaNV
+                            select phanQuyen.MAQUYEN).ToList();
+                }
+                //list = Dataprovider.ExcuteQuery(query, parameters.ToArray()).AsEnumerable().ToList().ConvertAll(x =>
+                //  int.Parse(x[0].ToString()));
             }
             catch (Exception ex)
             {
