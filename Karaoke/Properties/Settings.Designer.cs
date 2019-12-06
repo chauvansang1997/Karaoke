@@ -32,5 +32,11 @@ namespace Karaoke.Properties {
                 return ((string)(this["dbQuanLyKaraokeConnectionString"]));
             }
         }
+
+        public string UserName { get => userName; set => userName = value; }
+        public string PassWord { get => passWord; set => passWord = value; }
+
+        string userName;
+        string passWord;
     }
 }

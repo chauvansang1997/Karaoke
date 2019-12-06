@@ -41,7 +41,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtGia = new System.Windows.Forms.TextBox();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.btnPrevPage = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtGia = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSach)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
@@ -224,14 +224,6 @@
             this.label1.Size = new System.Drawing.Size(38, 19);
             this.label1.TabIndex = 196;
             this.label1.Text = "Giá:";
-            // 
-            // txtGia
-            // 
-            this.txtGia.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGia.Location = new System.Drawing.Point(36, 170);
-            this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(318, 27);
-            this.txtGia.TabIndex = 195;
             // 
             // btnHuy
             // 
@@ -447,6 +439,14 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // txtGia
+            // 
+            this.txtGia.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGia.Location = new System.Drawing.Point(36, 170);
+            this.txtGia.Name = "txtGia";
+            this.txtGia.Size = new System.Drawing.Size(318, 27);
+            this.txtGia.TabIndex = 195;
+            // 
             // frmLoaiPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -501,8 +501,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtLoaiphong;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtGia;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.TextBox txtGia;
     }
 }

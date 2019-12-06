@@ -90,11 +90,6 @@ namespace Karaoke.PhongKaoraoke
             bSua = true;
             enableControls(true);
         }
-
-        private void frmNguyenLieu_Load_1(object sender, EventArgs e)
-        {
-
-        }
         private void btnNextPage_Click(object sender, EventArgs e)
         {
             if (pageNumber + 1 > totalPage)

@@ -1,4 +1,5 @@
 ﻿using DTO;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,5 +40,40 @@ namespace Karaoke.GUI_DangNhap
 				btnOK_Click(sender, e);
 			}
 		}
-	}
+
+        private void chkRememberMe_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkRememberMe.Checked)
+            {
+                Properties.Settings.Default.UserName = txtTenDangNhap.Text;
+                Properties.Settings.Default.PassWord = txtMatKhau.Text;
+                Properties.Settings.Default.Save();
+                //Remember password to registry
+                RegistryKey key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\Karaoke");
+                key.SetValue("UserName", Properties.Settings.Default.UserName);
+                key.SetValue("PassWord", Properties.Settings.Default.PassWord);
+                key.Close();
+            }
+        }
+
+        private void frmDangNhap_Load(object sender, EventArgs e)
+        {
+            //using Registry
+            RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Karaoke");
+
+            //if it does exist, retrieve the stored values  
+            if (key != null)
+            {
+                txtTenDangNhap.Text = (string) key.GetValue("UserName");
+                txtMatKhau.Text = (string)key.GetValue("PassWord");
+                key.Close();
+            }
+            ////Using default setting
+            //if (Properties.Settings.Default.UserName != string.Empty)
+            //{
+            //    txtTenDangNhap.Text = Properties.Settings.Default.UserName;
+            //    txtMatKhau.Text = Properties.Settings.Default.PassWord;
+            //}
+        }
+    }
 }
