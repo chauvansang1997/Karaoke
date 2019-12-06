@@ -22,6 +22,7 @@ namespace DAO
 				new SqlParameter("@username",System.Data.SqlDbType.VarChar){IsNullable=false,Value=username},
 				new  SqlParameter("@password",System.Data.SqlDbType.VarChar){IsNullable=false,Value=password},
 			};
+            Console.Write(parameters);
 			try
 			{
 				data = Dataprovider.ExcuteQuery(query, parameters.ToArray());
