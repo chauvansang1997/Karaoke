@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Karaoke {
+namespace Karaoke.report {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace Karaoke {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpBangLuongChiTietNhanVien : ReportClass {
+    public class rptBaoCaoDoanhThu : ReportClass {
         
-        public rpBangLuongChiTietNhanVien() {
+        public rptBaoCaoDoanhThu() {
         }
         
         public override string ResourceName {
             get {
-                return "rpBangLuongChiTietNhanVien.rpt";
+                return "rptBaoCaoDoanhThu.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Karaoke {
         
         public override string FullResourceName {
             get {
-                return "Karaoke.rpBangLuongChiTietNhanVien.rpt";
+                return "Karaoke.report.rptBaoCaoDoanhThu.rpt";
             }
             set {
                 // Do nothing
@@ -74,7 +74,7 @@ namespace Karaoke {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace Karaoke {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,7 +90,7 @@ namespace Karaoke {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[5];
             }
@@ -98,7 +98,7 @@ namespace Karaoke {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
                 return this.ReportDefinition.Sections[6];
             }
@@ -106,23 +106,7 @@ namespace Karaoke {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[7];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
-            get {
-                return this.ReportDefinition.Sections[8];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_TruongKeToan {
+        public CrystalDecisions.Shared.IParameterField Parameter_TuNgay {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -130,7 +114,7 @@ namespace Karaoke {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_TenQuan {
+        public CrystalDecisions.Shared.IParameterField Parameter_TuNgayValue {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -138,17 +122,41 @@ namespace Karaoke {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_DiaChiQuan {
+        public CrystalDecisions.Shared.IParameterField Parameter_DenNgay {
             get {
                 return this.DataDefinition.ParameterFields[2];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_TenQuan {
+            get {
+                return this.DataDefinition.ParameterFields[3];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_DiaChiQuan {
+            get {
+                return this.DataDefinition.ParameterFields[4];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_TruongKeToan {
+            get {
+                return this.DataDefinition.ParameterFields[5];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrpBangLuongChiTietNhanVien : Component, ICachedReport {
+    public class CachedrptBaoCaoDoanhThu : Component, ICachedReport {
         
-        public CachedrpBangLuongChiTietNhanVien() {
+        public CachedrptBaoCaoDoanhThu() {
         }
         
         [Browsable(false)]
@@ -185,7 +193,7 @@ namespace Karaoke {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpBangLuongChiTietNhanVien rpt = new rpBangLuongChiTietNhanVien();
+            rptBaoCaoDoanhThu rpt = new rptBaoCaoDoanhThu();
             rpt.Site = this.Site;
             return rpt;
         }

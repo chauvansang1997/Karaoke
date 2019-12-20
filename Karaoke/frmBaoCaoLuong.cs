@@ -1,4 +1,5 @@
 ﻿using CrystalDecisions.Shared;
+using Karaoke.report;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,7 +43,7 @@ namespace Karaoke
 		public void loadRepport(DataTable dataTable)
 		{
 			dataSet.Tables[0].Merge(dataTable);
-			rpBangLuongChiTietNhanVien rpLuong = new rpBangLuongChiTietNhanVien();
+			rptBangLuongChiTietNhanVien rpLuong = new rptBangLuongChiTietNhanVien();
 
 			ParameterFields pField = new ParameterFields();
 			ParameterField pTruongKeToan = new ParameterField();

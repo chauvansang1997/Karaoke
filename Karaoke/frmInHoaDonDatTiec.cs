@@ -1,6 +1,5 @@
 ﻿using DTO;
 using Karaoke.DataSetContainer;
-using Karaoke.report;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,33 +48,33 @@ namespace Karaoke
             HoaDon hoaDon = BUS.HoaDonBUS.LayThongTinHoaDon(soHoaDon);
             if (hoaDon.TinhTrang == "0")
             {
-                rptHoaDonDatCoc rpHoaDon = new rptHoaDonDatCoc();
-                rpHoaDon.SetDataSource(dataSet);
-                rpHoaDon.DataDefinition.FormulaFields["TenKhachHang"].Text = "'" + hoaDon.TenKhachHang + "'";
-                rpHoaDon.DataDefinition.FormulaFields["SoDienThoai"].Text = "'" + hoaDon.SoDienThoai + "'";
-                rpHoaDon.DataDefinition.FormulaFields["GiamGia"].Text = "'" + hoaDon.GiamGia + "'";
-                rpHoaDon.DataDefinition.FormulaFields["TienGio"].Text = "'" + hoaDon.TienGio + "'";
-                rpHoaDon.DataDefinition.FormulaFields["GioBatDau"].Text = "'" + hoaDon.GioVao + "'";
-                rpHoaDon.DataDefinition.FormulaFields["GioKetThuc"].Text = "'" + hoaDon.GioRa + "'";
-                rpHoaDon.DataDefinition.FormulaFields["Phong"].Text = "'" + hoaDon.MaPhong + "'";
-                rpHoaDon.DataDefinition.FormulaFields["TienDatCoc"].Text = "'" + hoaDon.TienDatCoc + "'";
+                //rptHoaDonDatCoc rpHoaDon = new rptHoaDonDatCoc();
+                //rpHoaDon.SetDataSource(dataSet);
+                //rpHoaDon.DataDefinition.FormulaFields["TenKhachHang"].Text = "'" + hoaDon.TenKhachHang + "'";
+                //rpHoaDon.DataDefinition.FormulaFields["SoDienThoai"].Text = "'" + hoaDon.SoDienThoai + "'";
+                //rpHoaDon.DataDefinition.FormulaFields["GiamGia"].Text = "'" + hoaDon.GiamGia + "'";
+                //rpHoaDon.DataDefinition.FormulaFields["TienGio"].Text = "'" + hoaDon.TienGio + "'";
+                //rpHoaDon.DataDefinition.FormulaFields["GioBatDau"].Text = "'" + hoaDon.GioVao + "'";
+                //rpHoaDon.DataDefinition.FormulaFields["GioKetThuc"].Text = "'" + hoaDon.GioRa + "'";
+                //rpHoaDon.DataDefinition.FormulaFields["Phong"].Text = "'" + hoaDon.MaPhong + "'";
+                //rpHoaDon.DataDefinition.FormulaFields["TienDatCoc"].Text = "'" + hoaDon.TienDatCoc + "'";
 
-                crystalReportViewer1.ReportSource = rpHoaDon;
+                //crystalReportViewer1.ReportSource = rpHoaDon;
             }
             else
             {
-                rptHoaDonDatTiec rpHoaDon = new rptHoaDonDatTiec();
-                rpHoaDon.SetDataSource(dataSet);
-                rpHoaDon.DataDefinition.FormulaFields["TenKhachHang"].Text = "'" + hoaDon.TenKhachHang + "'";
-                rpHoaDon.DataDefinition.FormulaFields["SoDienThoai"].Text = "'" + hoaDon.SoDienThoai + "'";
-                rpHoaDon.DataDefinition.FormulaFields["GiamGia"].Text = "'" + hoaDon.GiamGia + "'";
-                rpHoaDon.DataDefinition.FormulaFields["TienGio"].Text = "'" + hoaDon.TienGio + "'";
-                rpHoaDon.DataDefinition.FormulaFields["GioBatDau"].Text = "'" + hoaDon.GioVao + "'";
-                rpHoaDon.DataDefinition.FormulaFields["GioKetThuc"].Text = "'" + hoaDon.GioRa + "'";
-                rpHoaDon.DataDefinition.FormulaFields["Phong"].Text = "'" + hoaDon.MaPhong + "'";
-                rpHoaDon.DataDefinition.FormulaFields["TienDatCoc"].Text = "'" + hoaDon.TienDatCoc + "'";
+                //rptHoaDonDatTiec rpHoaDon = new rptHoaDonDatTiec();
+                //rpHoaDon.SetDataSource(dataSet);
+                //rpHoaDon.DataDefinition.FormulaFields["TenKhachHang"].Text = "'" + hoaDon.TenKhachHang + "'";
+                //rpHoaDon.DataDefinition.FormulaFields["SoDienThoai"].Text = "'" + hoaDon.SoDienThoai + "'";
+                //rpHoaDon.DataDefinition.FormulaFields["GiamGia"].Text = "'" + hoaDon.GiamGia + "'";
+                //rpHoaDon.DataDefinition.FormulaFields["TienGio"].Text = "'" + hoaDon.TienGio + "'";
+                //rpHoaDon.DataDefinition.FormulaFields["GioBatDau"].Text = "'" + hoaDon.GioVao + "'";
+                //rpHoaDon.DataDefinition.FormulaFields["GioKetThuc"].Text = "'" + hoaDon.GioRa + "'";
+                //rpHoaDon.DataDefinition.FormulaFields["Phong"].Text = "'" + hoaDon.MaPhong + "'";
+                //rpHoaDon.DataDefinition.FormulaFields["TienDatCoc"].Text = "'" + hoaDon.TienDatCoc + "'";
 
-                crystalReportViewer1.ReportSource = rpHoaDon;
+                //crystalReportViewer1.ReportSource = rpHoaDon;
             }
         
 

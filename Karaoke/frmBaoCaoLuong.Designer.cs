@@ -1,4 +1,6 @@
-﻿namespace Karaoke
+﻿using Karaoke.report;
+
+namespace Karaoke
 {
 	partial class frmBaoCaoLuong
 	{
@@ -33,7 +35,7 @@
 			this.cbDanhSachNhanVien = new System.Windows.Forms.ComboBox();
 			this.cbThangLuong = new System.Windows.Forms.ComboBox();
 			this.btnThucThiBCCTL = new System.Windows.Forms.Button();
-			this.rpBangLuong1 = new Karaoke.rpBangLuongChiTietNhanVien();
+			this.rpBangLuong1 = new Karaoke.report.rptBangLuongChiTietNhanVien();
 			this.SuspendLayout();
 			// 
 			// crBaoCaoLuong
@@ -102,7 +104,7 @@
 		#endregion
 
 		private CrystalDecisions.Windows.Forms.CrystalReportViewer crBaoCaoLuong;
-		private rpBangLuongChiTietNhanVien rpBangLuong1;
+		private rptBangLuongChiTietNhanVien rpBangLuong1;
 		private System.Windows.Forms.ComboBox cbDanhSachNhanVien;
 		private System.Windows.Forms.ComboBox cbThangLuong;
 		private System.Windows.Forms.Button btnThucThiBCCTL;

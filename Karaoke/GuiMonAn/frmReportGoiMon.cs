@@ -1,6 +1,5 @@
 ﻿using DTO;
 using Karaoke.DataSetContainer;
-using Karaoke.report;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,16 +48,16 @@ namespace Karaoke.GuiMonAn
             //lấy thông tin 
             HoaDon hoaDon = BUS.HoaDonBUS.LayThongTinHoaDon(soHoaDon);
             //lấy datable ,list
-            rptHoaDon rpHoaDon = new rptHoaDon();
-            rpHoaDon.SetDataSource(dataSet);
-            rpHoaDon.DataDefinition.FormulaFields["TenKhachHang"].Text = "'" + hoaDon.TenKhachHang + "'";
-            rpHoaDon.DataDefinition.FormulaFields["SoDienThoai"].Text = "'" + hoaDon.SoDienThoai + "'";
-            rpHoaDon.DataDefinition.FormulaFields["GiamGia"].Text = "'" + hoaDon.GiamGia + "'";
-            rpHoaDon.DataDefinition.FormulaFields["TienGio"].Text = "'" + hoaDon.TienGio + "'";
-            rpHoaDon.DataDefinition.FormulaFields["GioBatDau"].Text = "'" + hoaDon.GioVao + "'";
-            rpHoaDon.DataDefinition.FormulaFields["GioKetThuc"].Text = "'" + hoaDon.GioRa + "'";
-            rpHoaDon.DataDefinition.FormulaFields["Phong"].Text = "'" + hoaDon.MaPhong + "'";
-            crystalReportViewer1.ReportSource = rpHoaDon;
+            //rptHoaDon rpHoaDon = new rptHoaDon();
+            //rpHoaDon.SetDataSource(dataSet);
+            //rpHoaDon.DataDefinition.FormulaFields["TenKhachHang"].Text = "'" + hoaDon.TenKhachHang + "'";
+            //rpHoaDon.DataDefinition.FormulaFields["SoDienThoai"].Text = "'" + hoaDon.SoDienThoai + "'";
+            //rpHoaDon.DataDefinition.FormulaFields["GiamGia"].Text = "'" + hoaDon.GiamGia + "'";
+            //rpHoaDon.DataDefinition.FormulaFields["TienGio"].Text = "'" + hoaDon.TienGio + "'";
+            //rpHoaDon.DataDefinition.FormulaFields["GioBatDau"].Text = "'" + hoaDon.GioVao + "'";
+            //rpHoaDon.DataDefinition.FormulaFields["GioKetThuc"].Text = "'" + hoaDon.GioRa + "'";
+            //rpHoaDon.DataDefinition.FormulaFields["Phong"].Text = "'" + hoaDon.MaPhong + "'";
+            //crystalReportViewer1.ReportSource = rpHoaDon;
             
         }
     }

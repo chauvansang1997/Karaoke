@@ -1,6 +1,5 @@
 ﻿using DTO;
 using Karaoke.DataSetContainer;
-using Karaoke.report;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,24 +33,24 @@ namespace Karaoke.QuanLyThietBi
             if (phieuNhap.NgayGiao == "" || phieuNhap.NgayGiao == null)
             {
                 //lấy datable ,list
-                rptDonDatHang phieuNhapHang = new rptDonDatHang();
-                phieuNhapHang.SetDataSource(dataSet);
-                phieuNhapHang.DataDefinition.FormulaFields["NhaCungCap"].Text = "'" + nhaCungCap.Ten + "'";
-                phieuNhapHang.DataDefinition.FormulaFields["DiaChi"].Text = "'" + nhaCungCap.DiaChi + "'";
-                phieuNhapHang.DataDefinition.FormulaFields["SoDienThoai"].Text = "'" + nhaCungCap.SDT + "'";
-                phieuNhapHang.DataDefinition.FormulaFields["NguoiDat"].Text = "'" + phieuNhap.TenNhanVien + "'";
-                phieuNhapHang.DataDefinition.FormulaFields["NgayDat"].Text = "'" + phieuNhap.NgayDat + "'";
-                crystalReportViewer1.ReportSource = phieuNhapHang;
+                //rptDonDatHang phieuNhapHang = new rptDonDatHang();
+                //phieuNhapHang.SetDataSource(dataSet);
+                //phieuNhapHang.DataDefinition.FormulaFields["NhaCungCap"].Text = "'" + nhaCungCap.Ten + "'";
+                //phieuNhapHang.DataDefinition.FormulaFields["DiaChi"].Text = "'" + nhaCungCap.DiaChi + "'";
+                //phieuNhapHang.DataDefinition.FormulaFields["SoDienThoai"].Text = "'" + nhaCungCap.SDT + "'";
+                //phieuNhapHang.DataDefinition.FormulaFields["NguoiDat"].Text = "'" + phieuNhap.TenNhanVien + "'";
+                //phieuNhapHang.DataDefinition.FormulaFields["NgayDat"].Text = "'" + phieuNhap.NgayDat + "'";
+                //crystalReportViewer1.ReportSource = phieuNhapHang;
             }
             else
             {
-                //lấy datable ,list
-                rptPhieuNhapHang phieuNhapHang = new rptPhieuNhapHang();
-                phieuNhapHang.SetDataSource(dataSet);
-                phieuNhapHang.DataDefinition.FormulaFields["NguoiGiaoHang"].Text = "'" + phieuNhap.NguoiGiao + "'";
-                phieuNhapHang.DataDefinition.FormulaFields["NgayGiaoHang"].Text = "'" + phieuNhap.NgayGiao + "'";
+                ////lấy datable ,list
+                //rptPhieuNhapHang phieuNhapHang = new rptPhieuNhapHang();
+                //phieuNhapHang.SetDataSource(dataSet);
+                //phieuNhapHang.DataDefinition.FormulaFields["NguoiGiaoHang"].Text = "'" + phieuNhap.NguoiGiao + "'";
+                //phieuNhapHang.DataDefinition.FormulaFields["NgayGiaoHang"].Text = "'" + phieuNhap.NgayGiao + "'";
 
-                crystalReportViewer1.ReportSource = phieuNhapHang;
+                //crystalReportViewer1.ReportSource = phieuNhapHang;
             }
 
         }

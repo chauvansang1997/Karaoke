@@ -47,7 +47,7 @@ namespace Karaoke.GUI_BaoCaoDoanhThu
             {
                 dataSet.Tables[0].Merge(dataTable);
             }
-			
+
 
 
             rptBaoCaoDoanhThu rpDoanhThu = new rptBaoCaoDoanhThu();

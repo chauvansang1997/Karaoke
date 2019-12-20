@@ -464,16 +464,40 @@
     <Compile Include="QuyenLayout.Designer.cs">
       <DependentUpon>QuyenLayout.cs</DependentUpon>
     </Compile>
-    <Compile Include="report\rptHoaDon.cs">
+    <Compile Include="PhanCong\frmPhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanCong\frmPhanCong.Designer.cs">
+      <DependentUpon>frmPhanCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\rptLuongTong.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rptHoaDon.rpt</DependentUpon>
+      <DependentUpon>rptLuongTong.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\rptBangLuongChiTietNhanVien.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBangLuongChiTietNhanVien.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\rptBaoCaoDoanhThu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBaoCaoDoanhThu.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="report\rptDonDatHang.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptDonDatHang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\rptHoaDon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHoaDon.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="report\rptHoaDonDatCoc.cs">
@@ -494,29 +518,16 @@
       <DependentUpon>rptPhieuNhapHang.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="PhanCong\frmPhanCong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PhanCong\frmPhanCong.Designer.cs">
-      <DependentUpon>frmPhanCong.cs</DependentUpon>
-    </Compile>
     <Compile Include="report\rptTonKhoTheoNgay.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptTonKhoTheoNgay.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="rpBangLuongChiTietNhanVien.cs">
+    <Compile Include="report\rpLuongTong.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rptTonKhoTheoNgay.rpt</DependentUpon>
-      <DependentUpon>rpBangLuongChiTietNhanVien.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="rpLuongTong.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rpLuongTong.rpt</DependentUpon>
+      <DependentUpon>rptLuongTong.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="FoodLayout.resx">
@@ -692,13 +703,24 @@
     <EmbeddedResource Include="QuyenLayout.resx">
       <DependentUpon>QuyenLayout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="report\rptHoaDon.rpt">
+    <EmbeddedResource Include="PhanCong\frmPhanCong.resx">
+      <DependentUpon>frmPhanCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\rptBangLuongChiTietNhanVien.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptHoaDon.cs</LastGenOutput>
+      <LastGenOutput>rptBangLuongChiTietNhanVien.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\rptBaoCaoDoanhThu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBaoCaoDoanhThu.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="report\rptDonDatHang.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptDonDatHang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\rptHoaDon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHoaDon.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="report\rptHoaDonDatCoc.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -712,21 +734,13 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptPhieuNhapHang.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="PhanCong\frmPhanCong.resx">
-      <DependentUpon>frmPhanCong.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="report\rptTonKhoTheoNgay.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptTonKhoTheoNgay.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="rpBangLuongChiTietNhanVien.rpt">
+    <EmbeddedResource Include="report\rptLuongTong.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptTonKhoTheoNgay.cs</LastGenOutput>
-      <LastGenOutput>rpBangLuongChiTietNhanVien.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="rpLuongTong.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpLuongTong2.cs</LastGenOutput>
+      <LastGenOutput>rptLuongTong.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="DataSetContainer\HoaDonDataSet.xsc">

@@ -53,10 +53,10 @@ namespace Karaoke
             dataSet.Tables[0].Merge(data);
 
             //lấy datable ,list
-            rptTonKhoTheoNgay tonKhoTheoNgay = new rptTonKhoTheoNgay();
-            tonKhoTheoNgay.SetDataSource(dataSet);
+            //rptTonKhoTheoNgay tonKhoTheoNgay = new rptTonKhoTheoNgay();
+           // tonKhoTheoNgay.SetDataSource(dataSet);
 
-            crystalReportViewer1.ReportSource = tonKhoTheoNgay;
+            //crystalReportViewer1.ReportSource = tonKhoTheoNgay;
         }
     }
 }
