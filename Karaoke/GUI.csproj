@@ -226,12 +226,6 @@
     <Compile Include="GUI_BaoCaoDoanhThu\frmBaoCaoDoanhThu.Designer.cs">
       <DependentUpon>frmBaoCaoDoanhThu.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI_BaoCaoDoanhThu\rptBaoCaoDoanhThu.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptBaoCaoDoanhThu.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="GUI_DangNhap\frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -577,10 +571,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_BaoCaoDoanhThu\frmBaoCaoDoanhThu.resx">
       <DependentUpon>frmBaoCaoDoanhThu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI_BaoCaoDoanhThu\rptBaoCaoDoanhThu.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptBaoCaoDoanhThu.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_DangNhap\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
