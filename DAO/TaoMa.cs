@@ -39,6 +39,24 @@ namespace DAO
 
             return maMoi;
         }
+
+
+        internal static string TaoMaLoaiPhong()
+        {
+            string maMoi = "";
+            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+            {
+                var taoMaLoaiPhong = karaokeDataContext.TAOMAs.Where(s => s.ID == 14).First();
+                taoMaLoaiPhong.MACUOI += 1;
+                int maCuoi = taoMaLoaiPhong.MACUOI.Value;
+                int soMa = taoMaLoaiPhong.SOMA.Value;
+                maMoi = maCuoi.ToString().PadLeft(soMa, '0');
+                karaokeDataContext.SubmitChanges();
+            }
+
+            return maMoi;
+        }
+
         public static string TaoMaMonAn()
         {
             string maMoi = "";

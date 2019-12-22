@@ -18,7 +18,7 @@ namespace BUS
         {
             return DAO.PhongDAO.CapNhatPhong(phong);
         }
-        public static List<Phong> XemPhong(int trangThai,int pageSize,int pageNumber)
+        public static List<Phong> XemPhong(int trangThai, int pageSize, int pageNumber)
         {
             return DAO.PhongDAO.XemPhong(trangThai, pageSize, pageNumber);
         }
@@ -38,12 +38,12 @@ namespace BUS
 
         public static bool ChuyenPhong(string phongHienTai, string phongChuyen)
         {
-            return DAO.PhongDAO.ChuyenPhong(phongHienTai,  phongChuyen);
+            return DAO.PhongDAO.ChuyenPhong(phongHienTai, phongChuyen);
         }
 
         public static DataTable XemLichSuPhong(int pageNumber, int pageSize)
         {
-            return DAO.PhongDAO.XemLichSuPhong(pageNumber,  pageSize);
+            return DAO.PhongDAO.XemLichSuPhong(pageNumber, pageSize);
         }
         public static int DemLichSuPhong()
         {
@@ -55,11 +55,21 @@ namespace BUS
         }
         public static DataTable XemPhongQuanLy(string maPhong, int loaiPhong, int pageNumber, int pageSize)
         {
-            return DAO.PhongDAO.XemPhongQuanLy(maPhong,  loaiPhong, pageNumber, pageSize);
+            return DAO.PhongDAO.XemPhongQuanLy(maPhong, loaiPhong, pageNumber, pageSize);
         }
         public static int DemPhongQuanLy(string maPhong, int loaiPhong)
         {
-            return DAO.PhongDAO.DemPhongQuanLy(maPhong,  loaiPhong);
+            return DAO.PhongDAO.DemPhongQuanLy(maPhong, loaiPhong);
+        }
+
+        public static bool XoaPhong(Phong phong)
+        {
+            return DAO.PhongDAO.XoaPhong(phong);
+        }
+
+        public static object XemPhongTheoLoai(string loaiPhong, string tuKhoa, int pageNumber, int pageSize)
+        {
+            return DAO.PhongDAO.XemPhongTheoLoai(loaiPhong, tuKhoa, pageNumber, pageSize);
         }
     }
 }
