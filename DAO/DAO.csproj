@@ -60,6 +60,7 @@
     <Compile Include="KhuyenMaiDAO.cs" />
     <Compile Include="LoaiKhachHangDAO.cs" />
     <Compile Include="LoaiPhongDAO.cs" />
+    <Compile Include="MaHoaMatKhau.cs" />
     <Compile Include="PhanCong\PhanCongDAO.cs" />
     <Compile Include="PhanQuyenDAO.cs" />
     <Compile Include="PhieuDatTiecDAO.cs" />

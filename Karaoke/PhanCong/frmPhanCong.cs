@@ -43,7 +43,6 @@ namespace Karaoke.QuanLyPhanCong
 			cbTenCa.DisplayMember = "tenCa";
 			cbTenCa.ValueMember = "maCa";
 			cbTenCa.DataSource = BUS.PhanCongBUS.LayMaCa();
-			
 		}
 
 		private void frmPhanCong_Load(object sender, EventArgs e)
@@ -59,8 +58,9 @@ namespace Karaoke.QuanLyPhanCong
 			dgvDanhSachPhanCong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dgvDanhSachPhanCong.ReadOnly = true;
 			bindingToCombox(dgvDanhSachPhanCong.DataSource);
+            dtpNgayPhanCong.Value = DateTime.Now.AddDays(3);
 
-		}
+        }
 
 		private void bindingToCombox(object dataSource)
 		{
@@ -89,14 +89,19 @@ namespace Karaoke.QuanLyPhanCong
 			ngay = dtpNgayPhanCong.Value;
 				if(BUS.PhanCongBUS.ThemPhanCong(maNV, maCa, ngay))
 				{
-					MessageBox.Show("Thêm nhân viên thành công", "Thêm phân công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					MessageBox.Show("Đã thêm phân công", "Thêm phân công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					frmPhanCong_Load(sender, e);
 				}
 				else
 				{
-					MessageBox.Show("Thêm nhân viên thất bại xin kiểm tra lại!", "Thêm phân công", MessageBoxButtons.OK, MessageBoxIcon.Error);
-					return;
-				}
+					if(dtpNgayPhanCong.Value < DateTime.Now)
+                    {
+                        MessageBox.Show("Ngày phân công không được nhỏ hơn ngày hiện tại", "Thêm phân công", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    MessageBox.Show("Thêm phân công thất bại", "Thêm phân công", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+            }
 		}
 
 		private void btnCapNhat_Click(object sender, EventArgs e)

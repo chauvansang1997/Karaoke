@@ -21,7 +21,7 @@ namespace DAO.QuanLyNhanVien
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@TENTK", SqlDbType.VarChar) {IsNullable = false, Value = tenTaiKhoan},
-                new SqlParameter("@MATKHAU", SqlDbType.VarChar) {IsNullable = false, Value = matKhau }
+                new SqlParameter("@MATKHAU", SqlDbType.VarChar) {IsNullable = false, Value = MaHoaMatKhau.maHoa(matKhau) }
             };
             try
             {

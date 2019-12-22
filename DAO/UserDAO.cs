@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace DAO
@@ -15,12 +16,11 @@ namespace DAO
             string username = User.UserName;
             string password = User.Password;
 
-
             KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
 
             var user = from tk in karaokeDataContext.TAIKHOANs
                        join nv in karaokeDataContext.NHANVIENs on tk.TENTK equals nv.TENTK
-                       where tk.TENTK == username && tk.MATKHAU == password
+                       where tk.TENTK == username && tk.MATKHAU == MaHoaMatKhau.maHoa(password)
                        select new User2()
                        {
                            Password = tk.MATKHAU,
