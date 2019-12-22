@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Linq;
 using System.Data.SqlClient;
 using System.Linq;
 
@@ -12,74 +13,68 @@ namespace DAO.QuanLyNhanVien
         // Tạo tài khoản mới
         public static bool TaoTaiKhoan(TaiKhoan taiKhoan)
         {
-            string query = "EXEC usp_TaoTaiKhoan @TENTK, @MATKHAU";
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
 
-            string tenTaiKhoan = taiKhoan.TenTaiKhoan;
-            string matKhau = taiKhoan.MatKhau;
-
-            // Truyền tham số
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@TENTK", SqlDbType.VarChar) {IsNullable = false, Value = tenTaiKhoan},
-                new SqlParameter("@MATKHAU", SqlDbType.VarChar) {IsNullable = false, Value = MaHoaMatKhau.maHoa(matKhau) }
-            };
             try
             {
-                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+                karaokeDataContext.TAIKHOANs.InsertOnSubmit(new TAIKHOAN()
+                {
+                    TENTK = taiKhoan.TenTaiKhoan,
+                    MATKHAU = MaHoaMatKhau.maHoa(taiKhoan.MatKhau)
+                });
+                ChangeSet cs = karaokeDataContext.GetChangeSet();
+                if (cs.Inserts.Count() == 1)
+                {
+                    karaokeDataContext.SubmitChanges();
+                    return true;
+                }
             }
             catch (Exception ex)
             {
                 Utility.Log(ex);
-                return false;
             }
-
-            return true;
+            return false;
         }
 
         // Kiểm tra tài khoản
         public static bool KiemTraTaiKhoan(string tenTaiKhoan)
         {
-            string query = "select COUNT(*) from TAIKHOAN where TENTK = @TENTK";
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@TENTK",SqlDbType.VarChar){Value = tenTaiKhoan },
-            };
-            int count = 0;
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
             try
             {
-                count = int.Parse(Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString());
+                return karaokeDataContext.TAIKHOANs.Select(tk => tk).Count() > 0;
             }
             catch (Exception ex)
             {
-                Utility.Log(ex);
+                Utility.Log(ex.Message);
             }
-            if (count == 0)
-                return false;
-            else
-                return true;
+            return false;
         }
 
 
         // Xóa tài khoản
         public static bool XoaTaiKhoan(string tentk)
         {
-            string query = "EXEC usp_XoaTaiKhoan @TENTK";
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
 
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@TENTK", SqlDbType.VarChar) {IsNullable = false, Value = tentk}
-            };
             try
             {
-                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+                karaokeDataContext.TAIKHOANs.DeleteOnSubmit(new TAIKHOAN()
+                {
+                    TENTK = tentk
+                });
+                ChangeSet cs = karaokeDataContext.GetChangeSet();
+                if (cs.Deletes.Count() == 1)
+                {
+                    karaokeDataContext.SubmitChanges();
+                    return true;
+                }
             }
             catch (Exception ex)
             {
                 Utility.Log(ex);
-                return false;
             }
-
-            return true;
+            return false;
         }
 
 
