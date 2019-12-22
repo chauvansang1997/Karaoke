@@ -77,6 +77,26 @@ namespace DAO.QuanLyNhanVien
             return false;
         }
 
-
+        public static bool CapNhatTaiKhoan(TaiKhoan taiKhoan)
+        {
+            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+            {
+                try
+                {
+                    karaokeDataContext.TAIKHOANs.FirstOrDefault(tk => tk.TENTK == taiKhoan.TenTaiKhoan).MATKHAU = MaHoaMatKhau.maHoa(taiKhoan.MatKhau);
+                    ChangeSet cs = karaokeDataContext.GetChangeSet();
+                    if (cs.Updates.Count() == 1)
+                    {
+                        karaokeDataContext.SubmitChanges();
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Utility.Log(ex);
+                }
+                return false;
+            }
+        }
     }
 }
