@@ -84,6 +84,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.Web" />
@@ -293,6 +294,12 @@
     </Compile>
     <Compile Include="PhanCong\frmCaTruc.Designer.cs">
       <DependentUpon>frmCaTruc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhongKaoraoke\frmChonPhongKaraoke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhongKaoraoke\frmChonPhongKaraoke.Designer.cs">
+      <DependentUpon>frmChonPhongKaraoke.cs</DependentUpon>
     </Compile>
     <Compile Include="PhongKaoraoke\frmChuyenPhong.cs">
       <SubType>Form</SubType>
@@ -602,6 +609,9 @@
     <EmbeddedResource Include="PhanCong\frmCaTruc.resx">
       <DependentUpon>frmCaTruc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PhongKaoraoke\frmChonPhongKaraoke.resx">
+      <DependentUpon>frmChonPhongKaraoke.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PhongKaoraoke\frmChuyenPhong.resx">
       <DependentUpon>frmChuyenPhong.cs</DependentUpon>
     </EmbeddedResource>
@@ -839,6 +849,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>

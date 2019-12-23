@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbQuanLyKaraoke" Class="KaraokeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=127.0.0.1;Initial Catalog=dbQuanLyKaraoke;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="dbQuanLyKaraokeConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=dbQuanLyKaraoke;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="dbQuanLyKaraokeConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TPMONAN" Member="TPMONANs">
+    <Type Name="TPMONAN">
+      <Column Name="MAMON" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MANL" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SOLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="MONAN_TPMONAN" Member="MONAN" ThisKey="MAMON" OtherKey="MAMON" Type="MONAN" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="NGUYENLIEU_TPMONAN" Member="NGUYENLIEU" ThisKey="MANL" OtherKey="MANL" Type="NGUYENLIEU" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.CALAMVIEC" Member="CALAMVIECs">
     <Type Name="CALAMVIEC">
       <Column Name="MACA" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -10,13 +19,27 @@
       <Association Name="CALAMVIEC_PHANCONG" Member="PHANCONGs" ThisKey="MACA" OtherKey="MACA" Type="PHANCONG" />
     </Type>
   </Table>
-  <Table Name="dbo.TPMONAN" Member="TPMONANs">
-    <Type Name="TPMONAN">
-      <Column Name="MAMON" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MANL" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+  <Table Name="dbo.CHITIETDATPHONG" Member="CHITIETDATPHONGs">
+    <Type Name="CHITIETDATPHONG">
+      <Column Name="MADATPHONG" Type="System.String" DbType="Char(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAPHONG" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GIOVAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GIORA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="CHITIETDATPHONG_CHITIETGOIMON" Member="CHITIETGOIMONs" ThisKey="MADATPHONG,MAPHONG" OtherKey="MADATPHONG,MAPHONG" Type="CHITIETGOIMON" />
+      <Association Name="PHONG_CHITIETDATPHONG" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
+      <Association Name="THONGTINDATPHONG_CHITIETDATPHONG" Member="THONGTINDATPHONG" ThisKey="MADATPHONG" OtherKey="MADATPHONG" Type="THONGTINDATPHONG" IsForeignKey="true" />
+      <Association Name="THONGTINDATPHONG_CHITIETDATPHONG1" Member="THONGTINDATPHONG1" ThisKey="MADATPHONG" OtherKey="MADATPHONG" Type="THONGTINDATPHONG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CHITIETGOIMON" Member="CHITIETGOIMONs">
+    <Type Name="CHITIETGOIMON">
+      <Column Name="MADATPHONG" Type="System.String" DbType="Char(7) NOT NULL" CanBeNull="false" />
+      <Column Name="MAPHONG" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="MASP" Type="System.String" DbType="Char(5)" CanBeNull="true" />
       <Column Name="SOLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="MONAN_TPMONAN" Member="MONAN" ThisKey="MAMON" OtherKey="MAMON" Type="MONAN" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="NGUYENLIEU_TPMONAN" Member="NGUYENLIEU" ThisKey="MANL" OtherKey="MANL" Type="NGUYENLIEU" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Column Name="GIA" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="CHITIETDATPHONG_CHITIETGOIMON" Member="CHITIETDATPHONG" ThisKey="MADATPHONG,MAPHONG" OtherKey="MADATPHONG,MAPHONG" Type="CHITIETDATPHONG" IsForeignKey="true" />
+      <Association Name="SANPHAM_CHITIETGOIMON" Member="SANPHAM" ThisKey="MASP" OtherKey="MASP" Type="SANPHAM" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CHITIETKM" Member="CHITIETKMs">
@@ -126,6 +149,15 @@
       <Association Name="PHONG_HOADON" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.HOADON2" Member="HOADON2s">
+    <Type Name="HOADON2">
+      <Column Name="MAHD" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MADATPHONG" Type="System.String" DbType="Char(7) NOT NULL" CanBeNull="false" />
+      <Column Name="NGAYGIOLAP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="THANHTIEN" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="THONGTINDATPHONG_HOADON2" Member="THONGTINDATPHONG" ThisKey="MADATPHONG" OtherKey="MADATPHONG" Type="THONGTINDATPHONG" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.KHACHHANG" Member="KHACHHANGs">
     <Type Name="KHACHHANG">
       <Column Name="MAKH" Type="System.String" DbType="Char(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -133,6 +165,7 @@
       <Column Name="TENKH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="SDT" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
       <Association Name="KHACHHANG_HOADON" Member="HOADONs" ThisKey="MAKH" OtherKey="MAKH" Type="HOADON" />
+      <Association Name="KHACHHANG_THONGTINDATPHONG" Member="THONGTINDATPHONGs" ThisKey="MAKH" OtherKey="MAKH" Type="THONGTINDATPHONG" />
       <Association Name="LOAIKHACHHANG_KHACHHANG" Member="LOAIKHACHHANG" ThisKey="MALOAIKH" OtherKey="MALOAIKH" Type="LOAIKHACHHANG" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
@@ -243,6 +276,7 @@
       <Association Name="NHANVIEN_PHANCONG" Member="PHANCONGs" ThisKey="MANV" OtherKey="MANV" Type="PHANCONG" />
       <Association Name="NHANVIEN_PHIEUNHAPNGUYENLIEU" Member="PHIEUNHAPNGUYENLIEUs" ThisKey="MANV" OtherKey="MANV" Type="PHIEUNHAPNGUYENLIEU" />
       <Association Name="NHANVIEN_PHIEUNHAPSANPHAM" Member="PHIEUNHAPSANPHAMs" ThisKey="MANV" OtherKey="MANV" Type="PHIEUNHAPSANPHAM" />
+      <Association Name="NHANVIEN_THONGTINDATPHONG" Member="THONGTINDATPHONGs" ThisKey="MANV" OtherKey="MANV" Type="THONGTINDATPHONG" />
       <Association Name="CHUCVU_NHANVIEN" Member="CHUCVU" ThisKey="MACV" OtherKey="MACV" Type="CHUCVU" IsForeignKey="true" />
       <Association Name="TAIKHOAN_NHANVIEN" Member="TAIKHOAN" ThisKey="TENTK" OtherKey="TENTK" Type="TAIKHOAN" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
@@ -317,6 +351,7 @@
       <Column Name="MAPHONG" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MALOAIPHONG" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TINHTRANG" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="PHONG_CHITIETDATPHONG" Member="CHITIETDATPHONGs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="CHITIETDATPHONG" />
       <Association Name="PHONG_HOADON" Member="HOADONs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="HOADON" />
       <Association Name="LOAIPHONG_PHONG" Member="LOAIPHONG" ThisKey="MALOAIPHONG" OtherKey="MALOAIPHONG" Type="LOAIPHONG" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
@@ -346,6 +381,7 @@
       <Column Name="SLTON" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SLTOITHIEU" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DONGIANHAP" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="SANPHAM_CHITIETGOIMON" Member="CHITIETGOIMONs" ThisKey="MASP" OtherKey="MASP" Type="CHITIETGOIMON" />
       <Association Name="SANPHAM_CTHDSP" Member="CTHDSPs" ThisKey="MASP" OtherKey="MASP" Type="CTHDSP" />
       <Association Name="SANPHAM_CTPNSP" Member="CTPNSPs" ThisKey="MASP" OtherKey="MASP" Type="CTPNSP" />
       <Association Name="LOAISANPHAM_SANPHAM" Member="LOAISANPHAM" ThisKey="LOAISP" OtherKey="MA" Type="LOAISANPHAM" IsForeignKey="true" />
@@ -396,6 +432,24 @@
       <Association Name="THIETBI_CHITIETSUDUNGTHIETBI" Member="CHITIETSUDUNGTHIETBIs" ThisKey="MATB" OtherKey="MATB" Type="CHITIETSUDUNGTHIETBI" />
       <Association Name="THIETBI_CTPNTB" Member="CTPNTBs" ThisKey="MATB" OtherKey="MATB" Type="CTPNTB" />
       <Association Name="NHACUNGCAP_THIETBI" Member="NHACUNGCAP" ThisKey="MANCC" OtherKey="MANCC" Type="NHACUNGCAP" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.THONGTINDATPHONG" Member="THONGTINDATPHONGs">
+    <Type Name="THONGTINDATPHONG">
+      <Column Name="MADATPHONG" Type="System.String" DbType="Char(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAKH" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="NGAYDAT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGAYNHAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MANV" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="MAPHONG" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="MASP" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="SOLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIENCOC" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="THONGTINDATPHONG_CHITIETDATPHONG" Member="CHITIETDATPHONGs" ThisKey="MADATPHONG" OtherKey="MADATPHONG" Type="CHITIETDATPHONG" />
+      <Association Name="THONGTINDATPHONG_CHITIETDATPHONG1" Member="CHITIETDATPHONGs1" ThisKey="MADATPHONG" OtherKey="MADATPHONG" Type="CHITIETDATPHONG" />
+      <Association Name="THONGTINDATPHONG_HOADON2" Member="HOADON2s" ThisKey="MADATPHONG" OtherKey="MADATPHONG" Type="HOADON2" />
+      <Association Name="KHACHHANG_THONGTINDATPHONG" Member="KHACHHANG" ThisKey="MAKH" OtherKey="MAKH" Type="KHACHHANG" IsForeignKey="true" />
+      <Association Name="NHANVIEN_THONGTINDATPHONG" Member="NHANVIEN" ThisKey="MANV" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TONKHOCT" Member="TONKHOCTs">
