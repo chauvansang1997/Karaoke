@@ -9,6 +9,8 @@ namespace DAO
 {
     public static class TaoMa
     {
+        public static string TaoMaNhanVien { get; internal set; }
+
         public static string TaoMaNguyenLieu()
         {
             string maMoi = "";

@@ -20,9 +20,9 @@ namespace BUS
             return DAO.QuanLyNhanVien.NhanVienDAO.CapNhatNhanVien(nv, macv,tenTK);
         }
 
-        public static bool XoaNhanVien(string manv, string tentk)
+        public static bool XoaNhanVien(string manv, string tentk,string maCV)
         {
-            return DAO.QuanLyNhanVien.NhanVienDAO.XoaNhanVien(manv, tentk);
+            return DAO.QuanLyNhanVien.NhanVienDAO.XoaNhanVien(manv, tentk, maCV);
         }
 
         public static bool KiemTraNhanVien(string manv)

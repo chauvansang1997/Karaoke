@@ -143,7 +143,7 @@ namespace Karaoke.GUI_QuanLyNhanVien
 			nhanVien.DiaChi = txtDiaChi.Text;
 			string maCV = cbxMaCVU.SelectedValue.ToString();
 			string tenTK = txtTaiKhoan.Text.Trim();
-			if (BUS.NhanVienBUS.XoaNhanVien(nhanVien.MaNV,tenTK))
+            if (BUS.NhanVienBUS.XoaNhanVien(nhanVien.MaNV,tenTK,maCV))
 			{
 				MessageBox.Show("Xoá viên thành công", "Xoá nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				frmNhanVien_Load(sender, e);

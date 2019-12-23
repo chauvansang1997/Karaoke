@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.Linq;
 
 namespace DAO.QuanLyNhanVien
 {
@@ -14,91 +15,173 @@ namespace DAO.QuanLyNhanVien
         // Thêm nhân viên mới
         public static bool ThemNhanVien(NhanVien nv, string maCV, string tenTK)
         {
-            string query = "EXEC usp_ThemNhanVien @MANV, @TENTK, @MACV, @TENNV, @SDT, @DIACHI";
+            //string query = "EXEC usp_ThemNhanVien @MANV, @TENTK, @MACV, @TENNV, @SDT, @DIACHI";
 
-            string maNV = nv.MaNV;
-            string tenNV = nv.HoTen;
-            string sdt = nv.SoDienThoai;
-            string diaChi = nv.DiaChi;
+            //string maNV = nv.MaNV;
+            //string tenNV = nv.HoTen;
+            //string sdt = nv.SoDienThoai;
+            //string diaChi = nv.DiaChi;
 
-            // Truyền tham số
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@MANV", SqlDbType.Char) {IsNullable = false, Value = maNV},
-                new SqlParameter("@TENTK", SqlDbType.VarChar) {IsNullable = false, Value = tenTK},
-                new SqlParameter("@MACV", SqlDbType.Char) {IsNullable = false, Value = maCV},
-                new SqlParameter("@TENNV", SqlDbType.NVarChar) {IsNullable = false, Value = tenNV},
-                new SqlParameter("@SDT", SqlDbType.NVarChar) {IsNullable = false, Value = sdt},
-                new SqlParameter("@DIACHI", SqlDbType.NVarChar) {IsNullable = false, Value = diaChi},
-            };
+            //// Truyền tham số
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@MANV", SqlDbType.Char) {IsNullable = false, Value = maNV},
+            //    new SqlParameter("@TENTK", SqlDbType.VarChar) {IsNullable = false, Value = tenTK},
+            //    new SqlParameter("@MACV", SqlDbType.Char) {IsNullable = false, Value = maCV},
+            //    new SqlParameter("@TENNV", SqlDbType.NVarChar) {IsNullable = false, Value = tenNV},
+            //    new SqlParameter("@SDT", SqlDbType.NVarChar) {IsNullable = false, Value = sdt},
+            //    new SqlParameter("@DIACHI", SqlDbType.NVarChar) {IsNullable = false, Value = diaChi},
+            //};
+            //try
+            //{
+            //    Dataprovider.ExcuteQuery(query, parameters.ToArray());
+            //}
+            //catch (Exception ex)
+            //{
+            //    Utility.Log(ex);
+            //    return false;
+            //}
+
+            //return true;
+
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
             try
             {
-                Dataprovider.ExcuteQuery(query, parameters.ToArray());
+                karaokeDataContext.NHANVIENs.InsertOnSubmit(new NHANVIEN()
+                {
+                    MANV = nv.MaNV,
+                    TENNV = nv.HoTen,
+                    SDT = nv.SoDienThoai,
+                    DIACHI = nv.DiaChi,
+                    MACV = maCV,
+                    TENTK = tenTK
+                });
+                ChangeSet cs = karaokeDataContext.GetChangeSet();
+                if (cs.Inserts.Count() > 0)
+                {
+                    karaokeDataContext.SubmitChanges();
+                    return true;
+                }
             }
             catch (Exception ex)
             {
-                Utility.Log(ex);
-                return false;
+                Utility.Log(ex.Message);
             }
-
-            return true;
+            return false;
         }
 
-        // Cập nhật thông tin nhân viên
+        /// <summary>
+        /// Cập nhật thông tin nhân viên
+        /// </summary>
+        /// <param name="nv"></param>
+        /// <param name="maCV"></param>
+        /// <param name="tenTK"></param>
+        /// <returns></returns>
         public static bool CapNhatNhanVien(NhanVien nv, string maCV, string tenTK)
         {
-            string query = "EXEC usp_CapNhatNhanVien @MANV, @TENTK, @MACV, @TENNV, @SDT, @DIACHI";
+            //         string query = "EXEC usp_CapNhatNhanVien @MANV, @TENTK, @MACV, @TENNV, @SDT, @DIACHI";
 
-            string maNV = nv.MaNV;
-            string tenNV = nv.HoTen;
-            string sdt = nv.SoDienThoai;
-            string diaChi = nv.DiaChi;
+            //         string maNV = nv.MaNV;
+            //         string tenNV = nv.HoTen;
+            //         string sdt = nv.SoDienThoai;
+            //         string diaChi = nv.DiaChi;
 
-            // Truyền tham số
-            List<SqlParameter> parameters = new List<SqlParameter>()
+            //         // Truyền tham số
+            //         List<SqlParameter> parameters = new List<SqlParameter>()
+            //         {
+            //	new SqlParameter("@MANV", SqlDbType.Char) {IsNullable = false, Value = maNV},
+            //	new SqlParameter("@TENTK", SqlDbType.VarChar) {IsNullable = false, Value = tenTK},
+            //	new SqlParameter("@MACV", SqlDbType.Char) {IsNullable = false, Value = maCV},
+            //	new SqlParameter("@TENNV", SqlDbType.NVarChar) {IsNullable = false, Value = tenNV},
+            //	new SqlParameter("@SDT", SqlDbType.NVarChar) {IsNullable = false, Value = sdt},
+            //	new SqlParameter("@DIACHI", SqlDbType.NVarChar) {IsNullable = false, Value = diaChi},
+            //};
+            //         try
+            //         {
+            //             Dataprovider.ExcuteQuery(query, parameters.ToArray());
+            //         }
+            //         catch (Exception ex)
+            //         {
+            //             Utility.Log(ex);
+            //             return false;
+            //         }
+
+            //         return true;
+
+
+            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
             {
-				new SqlParameter("@MANV", SqlDbType.Char) {IsNullable = false, Value = maNV},
-				new SqlParameter("@TENTK", SqlDbType.VarChar) {IsNullable = false, Value = tenTK},
-				new SqlParameter("@MACV", SqlDbType.Char) {IsNullable = false, Value = maCV},
-				new SqlParameter("@TENNV", SqlDbType.NVarChar) {IsNullable = false, Value = tenNV},
-				new SqlParameter("@SDT", SqlDbType.NVarChar) {IsNullable = false, Value = sdt},
-				new SqlParameter("@DIACHI", SqlDbType.NVarChar) {IsNullable = false, Value = diaChi},
-			};
-            try
-            {
-                Dataprovider.ExcuteQuery(query, parameters.ToArray());
-            }
-            catch (Exception ex)
-            {
-                Utility.Log(ex);
+                try
+                {
+                    var data = karaokeDataContext.NHANVIENs.FirstOrDefault(nhanVien => nhanVien.MANV == nv.MaNV);
+                    if (data != null)
+                    {
+                        data.TENNV = nv.HoTen;
+                        data.DIACHI = nv.DiaChi;
+                        data.MACV = maCV;
+                        data.TENTK = tenTK;
+                        data.SDT = nv.SoDienThoai;
+                    }
+                    ChangeSet cs = karaokeDataContext.GetChangeSet();
+                    if (cs.Updates.Count() == 1)
+                    {
+                        karaokeDataContext.SubmitChanges();
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Utility.Log(ex);
+                }
                 return false;
             }
-
-            return true;
         }
 
-        // Xóa nhân viên
-        public static bool XoaNhanVien(string maNV, string tenTK)
+        /// <summary>
+        /// Xoá nhân viên
+        /// </summary>
+        /// <param name="maNV"></param>
+        /// <param name="tenTK"></param>
+        /// <returns></returns>
+        public static bool XoaNhanVien(string maNV, string tenTK, string maCV)
         {
-            string query = "EXEC usp_XoaNhanVien @MANV, @TENTK";
+            //string query = "EXEC usp_XoaNhanVien @MANV, @TENTK";
 
-            // Truyền tham số
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@MANV", SqlDbType.Char) {IsNullable = false, Value = maNV},
-                new SqlParameter("@TENTK", SqlDbType.VarChar) {IsNullable = false, Value = tenTK},
-            };
+            //// Truyền tham số
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@MANV", SqlDbType.Char) {IsNullable = false, Value = maNV},
+            //    new SqlParameter("@TENTK", SqlDbType.VarChar) {IsNullable = false, Value = tenTK},
+            //};
+            //try
+            //{
+            //    Dataprovider.ExcuteQuery(query, parameters.ToArray());
+            //}
+            //catch (Exception ex)
+            //{
+            //    Utility.Log(ex);
+            //    return false;
+            //}
+
+            //return true;
+
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
             try
             {
-                Dataprovider.ExcuteQuery(query, parameters.ToArray());
+                var isExist = karaokeDataContext.NHANVIENs.FirstOrDefault(nhanVien => nhanVien.MANV == maNV);
+                karaokeDataContext.NHANVIENs.DeleteOnSubmit(isExist);
+                ChangeSet cs = karaokeDataContext.GetChangeSet();
+                if (cs.Deletes.Count() > 0)
+                {
+                    karaokeDataContext.SubmitChanges();
+                    return true;
+                }
             }
             catch (Exception ex)
             {
-                Utility.Log(ex);
-                return false;
+                Utility.Log(ex.Message);
             }
-
-            return true;
+            return false;
         }
 
         // Kiểm tra nhân viên
@@ -127,8 +210,8 @@ namespace DAO.QuanLyNhanVien
         // Load thông tin nhân viên
         public static DataTable LoadNhanVien()
         {
-			// string query = "SELECT * FROM NHANVIEN WHERE TENTK IS NOT NULL";
-			string query = "EXEC usp_LoadNhanVien";
+            // string query = "SELECT * FROM NHANVIEN WHERE TENTK IS NOT NULL";
+            string query = "EXEC usp_LoadNhanVien";
             return Dataprovider.ExcuteQuery(query);
         }
 
