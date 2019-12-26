@@ -113,17 +113,20 @@ namespace DAO
 
             //tính thành tiền
             long thanhTien = 0;
+            DateTime now = DateTime.Now;
             //lấy danh sách phòng
             karaokeDataContext.CHITIETDATPHONGs.Where(ctdp => ctdp.MADATPHONG == maDatPhong).ToList().ForEach(
                     ctdp =>
                     {
                         karaokeDataContext.PHONGs.Where(p => p.MAPHONG == ctdp.MAPHONG).First().TINHTRANG = "0";
+                        ctdp.GIORA = now;
                         karaokeDataContext.CHITIETGOIMONs.Where(ctgm => ctgm.MADATPHONG == maDatPhong
                         && ctgm.MAPHONG == ctdp.MAPHONG).ToList().ForEach(
                                 ctgm =>
                                 {
                                     ctgm.GIA = ctgm.SANPHAM.DONGIA;
                                     thanhTien += (ctgm.GIA * ctgm.SOLUONG).Value;
+                                    
                                 }
                             );
 

@@ -28,14 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChonPhongKaraoke));
             this.dGVDanhSachPhong = new System.Windows.Forms.DataGridView();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dGVDanhSachChonPhong = new System.Windows.Forms.DataGridView();
             this.btnDatPhong = new System.Windows.Forms.Button();
-            this.btnGoiMon = new System.Windows.Forms.Button();
-            this.btnThanhToan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachChonPhong)).BeginInit();
             this.SuspendLayout();
@@ -44,6 +41,7 @@
             // 
             this.dGVDanhSachPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVDanhSachPhong.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dGVDanhSachPhong.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dGVDanhSachPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVDanhSachPhong.Location = new System.Drawing.Point(18, 42);
             this.dGVDanhSachPhong.Margin = new System.Windows.Forms.Padding(2);
@@ -94,6 +92,7 @@
             // 
             this.dGVDanhSachChonPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVDanhSachChonPhong.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dGVDanhSachChonPhong.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dGVDanhSachChonPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVDanhSachChonPhong.Location = new System.Drawing.Point(534, 42);
             this.dGVDanhSachChonPhong.Margin = new System.Windows.Forms.Padding(2);
@@ -114,7 +113,7 @@
             this.btnDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatPhong.ForeColor = System.Drawing.Color.White;
-            this.btnDatPhong.Location = new System.Drawing.Point(548, 430);
+            this.btnDatPhong.Location = new System.Drawing.Point(726, 430);
             this.btnDatPhong.Name = "btnDatPhong";
             this.btnDatPhong.Size = new System.Drawing.Size(110, 36);
             this.btnDatPhong.TabIndex = 160;
@@ -123,50 +122,12 @@
             this.btnDatPhong.UseVisualStyleBackColor = false;
             this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
             // 
-            // btnGoiMon
-            // 
-            this.btnGoiMon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
-            this.btnGoiMon.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnGoiMon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGoiMon.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGoiMon.ForeColor = System.Drawing.Color.White;
-            this.btnGoiMon.Image = ((System.Drawing.Image)(resources.GetObject("btnGoiMon.Image")));
-            this.btnGoiMon.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGoiMon.Location = new System.Drawing.Point(678, 430);
-            this.btnGoiMon.Name = "btnGoiMon";
-            this.btnGoiMon.Size = new System.Drawing.Size(130, 36);
-            this.btnGoiMon.TabIndex = 187;
-            this.btnGoiMon.Text = " Gọi món";
-            this.btnGoiMon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGoiMon.UseVisualStyleBackColor = false;
-            this.btnGoiMon.Click += new System.EventHandler(this.btnGoiMon_Click);
-            // 
-            // btnThanhToan
-            // 
-            this.btnThanhToan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(140)))), ((int)(((byte)(174)))));
-            this.btnThanhToan.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThanhToan.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThanhToan.ForeColor = System.Drawing.Color.White;
-            this.btnThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.Image")));
-            this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThanhToan.Location = new System.Drawing.Point(830, 430);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(159, 36);
-            this.btnThanhToan.TabIndex = 197;
-            this.btnThanhToan.Text = " Thanh toán";
-            this.btnThanhToan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThanhToan.UseVisualStyleBackColor = false;
-            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
-            // 
             // frmChonPhongKaraoke
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1059, 489);
-            this.Controls.Add(this.btnThanhToan);
             this.Controls.Add(this.dGVDanhSachPhong);
-            this.Controls.Add(this.btnGoiMon);
             this.Controls.Add(this.btnDatPhong);
             this.Controls.Add(this.dGVDanhSachChonPhong);
             this.Controls.Add(this.btnXoa);
@@ -187,7 +148,5 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dGVDanhSachChonPhong;
         private System.Windows.Forms.Button btnDatPhong;
-        private System.Windows.Forms.Button btnGoiMon;
-        private System.Windows.Forms.Button btnThanhToan;
     }
 }

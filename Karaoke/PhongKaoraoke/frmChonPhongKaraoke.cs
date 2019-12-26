@@ -20,10 +20,13 @@ namespace Karaoke.PhongKaoraoke
         List<Phong> phongsDat = new List<Phong>();
         DTO.KhachHang khachHang;
         string maDatPhong;
-        public frmChonPhongKaraoke(DTO.KhachHang khachHang)
+        bool datPhongTruoc;
+        frmPhongKaraoke phongKaraoke;
+        public frmChonPhongKaraoke(DTO.KhachHang khachHang, frmPhongKaraoke phongKaraoke)
         {
             InitializeComponent();
             this.khachHang = khachHang;
+            this.phongKaraoke = phongKaraoke;
             Init();
         }
         void LayoutDanhSachPhong() {
@@ -82,6 +85,8 @@ namespace Karaoke.PhongKaoraoke
                 nhanVien = User.NhanVien,            
             });
             MessageBox.Show("Đặt phong thành công");
+            phongKaraoke.
+            this.Close();
         }
 
         private void btnGoiMon_Click(object sender, EventArgs e)

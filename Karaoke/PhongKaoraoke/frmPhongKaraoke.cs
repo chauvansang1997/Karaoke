@@ -338,7 +338,7 @@ namespace Karaoke.PhongKaoraoke
                 Ten = txtTenKhachHang.Text,
                 SoDT = txtSDT.Text,
                 Ma = maKhachHang
-            });
+            }, this);
             chonPhongKaraoke.ShowDialog();
         }
 
