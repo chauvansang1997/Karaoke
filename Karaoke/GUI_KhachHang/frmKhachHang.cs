@@ -78,8 +78,8 @@ namespace Karaoke.KhachHang
 
             khachHang.Ten = txtTenKH.Text;
 		
-			khachHang.SDT = txtSDT.Text;
-			if (BUS.KhachHangBUS.ThemKhachHangThanhVien(khachHang))
+			khachHang.SoDT = txtSDT.Text;
+			if (BUS.KhachHangBUS.ThemKhachHangThanhVien(khachHang) != "")
 			{
 				MessageBox.Show("Thêm khách hàng thành công", "Thêm khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				frmKhachHang_Load(sender, e);
@@ -99,7 +99,7 @@ namespace Karaoke.KhachHang
             khachHang.Ma = dgvDanhSachKhachHang.CurrentRow.Cells[0].Value.ToString();
 			khachHang.Ten = txtTenKH.Text;
 
-			khachHang.SDT = txtSDT.Text;
+			khachHang.SoDT = txtSDT.Text;
 			if (BUS.KhachHangBUS.CapNhatKhachHang(khachHang))
 			{
 				MessageBox.Show("Cập nhật khách hàng thành công", "Cập nhật khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -80,17 +80,6 @@ namespace DTO
 			}
 		}
 
-		public string SDT
-		{
-			get
-			{
-				return sdt;
-			}
-			set
-			{
-				sdt = value;
-			}
-		}
 
         public int TienTichLuy { 
             get

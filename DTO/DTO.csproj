@@ -74,6 +74,7 @@
     <Compile Include="TaiKhoan.cs" />
     <Compile Include="ThietBi.cs" />
     <Compile Include="ThietBiDataSource.cs" />
+    <Compile Include="ThongTinDatPhong.cs" />
     <Compile Include="ThucAn.cs" />
     <Compile Include="NguyenLieu.cs" />
     <Compile Include="KhachHang.cs" />

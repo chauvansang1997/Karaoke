@@ -15,7 +15,7 @@ namespace BUS
             return DAO.KhachHangDAO.KiemTraKhachHang(tenKhachHang, soDienThoai);
         }
 
-		public static bool ThemKhachHangThanhVien(KhachHang khachHang)
+		public static string ThemKhachHangThanhVien(KhachHang khachHang)
 		{
 			return DAO.KhachHangDAO.ThemKhachHangThanhVien(khachHang);
 		}

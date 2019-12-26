@@ -12,9 +12,9 @@ namespace BUS
     {
 
 
-        public static bool ThemChiTietHoaDon(string maHD, List<ChiTietHoaDon> chiTietHoaDons)
+        public static bool ThemChiTietHoaDon(string maDatPhong,string maPhong, List<ChiTietHoaDon> chiTietHoaDons)
         {
-            return DAO.HoaDonDAO.ThemChiTietHoaDon(maHD, chiTietHoaDons);
+            return DAO.HoaDonDAO.ThemChiTietHoaDon(maDatPhong, maPhong, chiTietHoaDons);
         }
         public static string LayMaHoaDon(string maPhong)
         {
@@ -22,7 +22,8 @@ namespace BUS
         }
         public static List<GoiMonDataSource> XemChiTietHoaDon(string soHoaDon)
         {
-            return DAO.HoaDonDAO.XemChiTietHoaDon(soHoaDon);
+            // return DAO.HoaDonDAO.XemChiTietHoaDon(soHoaDon);
+            return null;
         }
         public static bool DatCocTien(uint tienDatCoc, string soHD)
         {
@@ -30,11 +31,13 @@ namespace BUS
         }
         public static List<GoiMonDataSource> XemChiTietHoaDonDatTiec(string soHoaDon)
         {
-            return DAO.HoaDonDAO.XemChiTietHoaDon(soHoaDon);
+            //  return DAO.HoaDonDAO.XemChiTietHoaDon(soHoaDon);
+            return null ;
         }
-        public static List<GoiMonDataSource> XemChiTietHoaDonGoiMon(string soHoaDon)
+        public static List<GoiMonDataSource> XemChiTietHoaDonGoiMon(string soHoaDon, string maPhong)
         {
-            return DAO.HoaDonDAO.XemChiTietHoaDon(soHoaDon);
+           return DAO.HoaDonDAO.XemChiTietHoaDon(soHoaDon, maPhong);
+           
         }
         public static string LayMaHoaDonDatTiec(string maPhong, string tenKhachHang, string soDienThoai, DateTime ngayNhanPhong)
         {

@@ -525,14 +525,14 @@ namespace Karaoke
                     }
                 }
             }
-            if (BUS.HoaDonBUS.ThemChiTietHoaDon(soHoaDon, chiTietHoaDon))
-            {
-                MessageBox.Show("Lưu thành công");
-            }
-            else
-            {
-                MessageBox.Show("Có lỗi xảy ra!. Vui lòng mời nhân viên kỹ thuật kiểm tra!!!");
-            }
+            //if (BUS.HoaDonBUS.ThemChiTietHoaDon(soHoaDon, chiTietHoaDon))
+            //{
+            //    MessageBox.Show("Lưu thành công");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Có lỗi xảy ra!. Vui lòng mời nhân viên kỹ thuật kiểm tra!!!");
+            //}
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)

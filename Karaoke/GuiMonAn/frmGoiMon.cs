@@ -17,10 +17,12 @@ namespace Karaoke.GuiMonAn
 {
     enum Loai
     {
-        ThucAn = 0,
+      
         NuocUong = 1,
-        TraiCay = 2,
-        Sanpham = 3
+        Bia = 2,
+        TraiCay = 3,
+        Sanpham = 4,
+        ThucAn = 5,
     }
     public partial class frmGoiMon : Form
     {
@@ -30,10 +32,8 @@ namespace Karaoke.GuiMonAn
         private int totalPage;
         private List<FoodLayout> listFoodLayout;
         private Loai loaiHienTai;
-        //loại thức ăn hiện tại (món khai vi, món chính,món la séc)
-        private int loaiThucAnHienTai;
         //loại sản phẩm hiện tại(nước uống,trái cây)
-
+        private string maPhong;
 
         private int indexLoaiHienTai;
 
@@ -44,7 +44,7 @@ namespace Karaoke.GuiMonAn
         private BindingSource bindingSource = new BindingSource();
         private uint tongCong;
         private float giamGia;
-        private string soHoaDon;
+        private string maDatPhong;
 
         private Dictionary<string, int> ListSoLuongCu;
         List<Dictionary<int, List<FoodLayout>>> listDictionaryHangHoa;
@@ -71,12 +71,18 @@ namespace Karaoke.GuiMonAn
         }
         private frmPhongKaraoke phongKaraoke;
         #endregion
-
+        public frmGoiMon(string soHD, string maPhong, frmPhongKaraoke phongKaraoke) {
+            InitializeComponent();
+            this.phongKaraoke = phongKaraoke;
+            maDatPhong = soHD;
+            this.maPhong = maPhong;
+            khoiTao();
+        }
         public frmGoiMon(string soHD, frmPhongKaraoke phongKaraoke)
         {
 
             this.phongKaraoke = phongKaraoke;
-            soHoaDon = soHD;
+            maDatPhong = soHD;
             InitializeComponent();
             khoiTao();
             if (phongKaraoke==null)
@@ -96,11 +102,11 @@ namespace Karaoke.GuiMonAn
 
 
             TongCong = 0;
-            loaiHienTai = Loai.ThucAn;
-            loaiThucAnHienTai = 1;
+            loaiHienTai = Loai.NuocUong;
+   
 
 
-            giamGia = BUS.LoaiKhachHangBUS.LayGiamGia(soHoaDon);
+            giamGia = BUS.LoaiKhachHangBUS.LayGiamGia(maDatPhong);
             txtGiamGia.Text = giamGia.ToString() + "%";
             listFoodLayout = new List<FoodLayout>();
             hashMaHangHoa = new HashSet<string>();
@@ -109,9 +115,7 @@ namespace Karaoke.GuiMonAn
             dGVHoaDon.DataSource = bindingSource;
             bindingSource.RemoveAt(0);
             dGVHoaDon.Columns["Ten"].HeaderText = "Tên";
-
             dGVHoaDon.Columns["Gia"].HeaderText = "Giá";
-
             dGVHoaDon.Columns["Soluong"].HeaderText = "Số lượng";
             dGVHoaDon.Columns["Thanhtien"].HeaderText = "Thành tiền";
             dGVHoaDon.Columns["Ma"].Visible = false;
@@ -135,16 +139,7 @@ namespace Karaoke.GuiMonAn
             listLayoutHangHoa.Add(flowFoodLayout);
 
             Dictionary<int, List<FoodLayout>> dictionary = new Dictionary<int, List<FoodLayout>>();
-            TabPage tabPage = new TabPage("Thức ăn");
-            tabPage.AutoScroll = true;
-            tabPage.AutoScrollMargin = new System.Drawing.Size(20, 20);
-            tabPage.AutoScrollMinSize = new System.Drawing.Size(tabPage.Width, tabPage.Height);
-            tabPage.Controls.Add(flowFoodLayout);
-            tabPage.Name = "1";
-          
-            //tabPage.sc
    
-            tabControl.TabPages.Add(tabPage);
             listDictionaryHangHoa.Add(dictionary);
             //lấy danh sách loại sản phẩm đưa vào tabcontrol lớn
             List<DTO.LoaiHangHoa> listLoaiHangHoa = BUS.HangHoaBUS.XemLoaiMon(1);
@@ -159,7 +154,7 @@ namespace Karaoke.GuiMonAn
                     listLayoutHangHoa.Add(flowFoodLayout);
 
                     dictionary = new Dictionary<int, List<FoodLayout>>();
-                    tabPage = new TabPage(listLoaiHangHoa[i].Ten);
+                    TabPage tabPage = new TabPage(listLoaiHangHoa[i].Ten);
                     tabPage.Controls.Add(flowFoodLayout);
                     tabPage.Name = listLoaiHangHoa[i].Ma;
                     tabControl.TabPages.Add(tabPage);
@@ -169,8 +164,8 @@ namespace Karaoke.GuiMonAn
 
 
             listTenGroup = new List<DTO.LoaiHangHoa>();
-            listTenGroup.Add(new DTO.LoaiHangHoa() { Ma = "0", Ten = "Thức ăn" });
-            listTenGroup.AddRange(BUS.HangHoaBUS.XemLoaiMon(1));
+           // listTenGroup.Add(new DTO.LoaiHangHoa() { Ma = "0", Ten = "Thức ăn" });
+            listTenGroup.AddRange(listLoaiHangHoa);
             if (listTenGroup != null)
             {
 
@@ -179,9 +174,9 @@ namespace Karaoke.GuiMonAn
                     dictionaryDataSource.Add(listTenGroup[i].Ten, new Dictionary<string, GoiMonDataSource>());
                 }
             }
-            if (soHoaDon != "")
+            if (maDatPhong != "")
             {
-                List<GoiMonDataSource> temp = BUS.HoaDonBUS.XemChiTietHoaDonGoiMon(soHoaDon);
+                List<GoiMonDataSource> temp = BUS.HoaDonBUS.XemChiTietHoaDonGoiMon(maDatPhong,maPhong);
                 if (temp != null)
                 {
                     uint tongCong = 0;
@@ -535,32 +530,32 @@ namespace Karaoke.GuiMonAn
                     string ma = item.Value.Ma;
                     string soluong = item.Value.Soluong;
                     string loai = item.Value.Loai;
-
-                    if (loai == "1")
+                    chiTietHoaDons.Add(new ChiTietHoaDon()
                     {
+                        Ma = ma,
+                       // LoaiHangHoa = ChiTietHoaDon.Loai.Sanpham,
+                        Soluong = Int32.Parse(soluong)
 
-                        chiTietHoaDons.Add(new ChiTietHoaDon()
-                        {
-                            Ma = ma,
-                            LoaiHangHoa = ChiTietHoaDon.Loai.Sanpham,
-                            Soluong =Int32.Parse( soluong)
-                        
-                        });
-                    }
-                    else
-                    {
+                    });
+                    //if (loai == "1")
+                    //{
 
-                        chiTietHoaDons.Add(new ChiTietHoaDon()
-                        {
-                            Ma = ma,
-                            LoaiHangHoa = ChiTietHoaDon.Loai.MonAn,
-                            Soluong = Int32.Parse(soluong)
+                       
+                    //}
+                    //else
+                    //{
 
-                        });
-                    }
+                    //    chiTietHoaDons.Add(new ChiTietHoaDon()
+                    //    {
+                    //        Ma = ma,
+                    //        LoaiHangHoa = ChiTietHoaDon.Loai.MonAn,
+                    //        Soluong = Int32.Parse(soluong)
+
+                    //    });
+                    //}
                 }
             }
-            if (BUS.HoaDonBUS.ThemChiTietHoaDon(soHoaDon, chiTietHoaDons))
+            if (BUS.HoaDonBUS.ThemChiTietHoaDon(maDatPhong, maPhong ,chiTietHoaDons))
             {
                 MessageBox.Show("Lưu thành công");
                 listCu = new Dictionary<string, int>(listMoi);
@@ -573,7 +568,7 @@ namespace Karaoke.GuiMonAn
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if (BUS.HoaDonBUS.ThanhToan(soHoaDon, DateTime.Now, int.Parse(txtThanhTien.Text), tienGiamGia))
+            if (BUS.HoaDonBUS.ThanhToan(maDatPhong, DateTime.Now, int.Parse(txtThanhTien.Text), tienGiamGia))
             {
 
                 MessageBox.Show("Thanh toán thành công");
@@ -582,7 +577,7 @@ namespace Karaoke.GuiMonAn
                     phongKaraoke.khoiTao();
                 }
             
-                frmReportGoiMon goiMon = new frmReportGoiMon(soHoaDon);
+                frmReportGoiMon goiMon = new frmReportGoiMon(maDatPhong);
                 goiMon.ShowDialog();
             }
             else
@@ -703,7 +698,7 @@ namespace Karaoke.GuiMonAn
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            frmReportGoiMon reportGoiMon = new frmReportGoiMon(soHoaDon);
+            frmReportGoiMon reportGoiMon = new frmReportGoiMon(maDatPhong);
             reportGoiMon.ShowDialog();
         }
     }

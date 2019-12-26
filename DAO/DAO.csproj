@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="BaoCaoDAO.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="DatPhongDao.cs" />
     <Compile Include="HangHoaDAO.cs" />
     <Compile Include="HoaDonDAO.cs" />
     <Compile Include="Karaoke.designer.cs">

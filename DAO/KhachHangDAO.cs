@@ -73,28 +73,28 @@ namespace DAO
             return count == 0 ? false : true;
         }
 
-        public static bool ThemKhachHangThanhVien(KhachHang khachHang)
+        public static string ThemKhachHangThanhVien(KhachHang khachHang)
         {
-            int rowNum = 0;
-            string query = "EXEC usp_ThemKhachHangThanhVien @tenKH,@sdt";
-            string tenKH = khachHang.Ten;
-            int loaiKH = khachHang.LoaiKH;
-            string sdt = khachHang.SDT;
-            List<SqlParameter> parameters = new List<SqlParameter>
-            {
-                new SqlParameter("@tenKH",SqlDbType.NVarChar){IsNullable=false,Value=tenKH },
-                new SqlParameter("@sdt",SqlDbType.NVarChar){IsNullable=true,Value=sdt??(Object)DBNull.Value}
-            };
 
-            try
-            {
-                rowNum = Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
+
+            if (khachHang.Ten == "" && khachHang.SoDT == "") {
+                return "KH001";
             }
-            catch (SqlException ex)
-            {
-                Utility.Log(ex);
-            }
-            return rowNum > 0 ? true : false;
+            string maKhachHang = TaoMa.TaoMaKhachHang();
+
+            int maLoaiKhachHang = 1;
+
+            karaokeDataContext.TAOMAs.Where(taoMa => taoMa.ID == 4).First().MACUOI += 1;
+
+            karaokeDataContext.KHACHHANGs.InsertOnSubmit(new KHACHHANG() {
+                TENKH = khachHang.Ten,
+                SDT = khachHang.SoDT,
+                MAKH = maKhachHang,
+                MALOAIKH = maLoaiKhachHang
+            });
+
+            return maKhachHang;
         }
 
         public static bool CapNhatKhachHang(KhachHang khachHang)
@@ -104,7 +104,7 @@ namespace DAO
             string maKH = khachHang.Ma;
             string tenKH = khachHang.Ten;
             int loaiKH = khachHang.LoaiKH;
-            string sdt = khachHang.SDT;
+            string sdt = khachHang.SoDT;
             List<SqlParameter> parameters = new List<SqlParameter>
             {
                 new SqlParameter("@maKH",SqlDbType.NVarChar){IsNullable=false,Value=maKH },

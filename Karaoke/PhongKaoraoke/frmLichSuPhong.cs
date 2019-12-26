@@ -135,11 +135,11 @@ namespace Karaoke.PhongKaoraoke
 
         private void btnXem_Click(object sender, EventArgs e)
         {
-            if (soHoaDon != "")
-            {
-                frmGoiMon goiMon = new frmGoiMon(soHoaDon,null);
-                goiMon.ShowDialog();
-            }
+        //    if (soHoaDon != "")
+        //    {
+        //        frmGoiMon goiMon = new frmGoiMon(soHoaDon,null);
+        //        goiMon.ShowDialog();
+        //    }
         }
     }
 }

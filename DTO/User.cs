@@ -8,79 +8,16 @@ namespace DTO
 {
     public static class User
     {
-        private static NhanVien nhanVien;
-        private static string userName;
-        private static string password;
-        private static string tenNhanVien;
-        private static string cMND;
-
-        private static string soDienThoai;
-
         private static string diaChi;
-        public static string UserName
-        {
-            get
-            {
-                return userName;
-            }
+        public static string UserName { get; set; }
 
-            set
-            {
-                userName = value;
-            }
-        }
+        public static string Password { get; set; }
 
-        public static string Password
-        {
-            get
-            {
-                return password;
-            }
+        public static string TenNhanVien { get; set; }
 
-            set
-            {
-                password = value;
-            }
-        }
+        public static string CMND { get; set; }
 
-        public static string TenNhanVien
-        {
-            get
-            {
-                return tenNhanVien;
-            }
-
-            set
-            {
-                tenNhanVien = value;
-            }
-        }
-
-        public static string CMND
-        {
-            get
-            {
-                return cMND;
-            }
-
-            set
-            {
-                cMND = value;
-            }
-        }
-
-        public static string SoDienThoai
-        {
-            get
-            {
-                return soDienThoai;
-            }
-
-            set
-            {
-                soDienThoai = value;
-            }
-        }
+        public static string SoDienThoai { get; set; }
 
         public static string DiaChi
         {
@@ -95,18 +32,6 @@ namespace DTO
             }
         }
 
-        public static NhanVien NhanVien
-        {
-            get
-            {
-                return nhanVien;
-            }
-
-
-            set
-            {
-                nhanVien = value;
-            }
-        }
+        public static NhanVien NhanVien { get; set; }
     }
 }

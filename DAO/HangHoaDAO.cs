@@ -65,21 +65,24 @@ namespace DAO
 
                 using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
                 {
-                    list = loai == 0 ? (from monAn in karaokeDataContext.MONANs
-                                        join loaiMonAn in karaokeDataContext.LOAIMONANs
-                                        on monAn.LOAIMON equals loaiMonAn.MA
-                                        select new HangHoa()
-                                        {
-                                            Ma = monAn.MAMON,
-                                            Ten = monAn.TENMON,
-                                            Loai = loai.ToString(),
-                                            Gia = (uint)monAn.DONGIA,
-                                            TenHinhAnh = monAn.ANHMINHHOA,
-                                            LoaiHangHoa = new LoaiHangHoa() { Ma = "0", Ten = "Thức ăn" }
+                    list = 
+                        
+                        
+                        //loai == 0 ? (from monAn in karaokeDataContext.MONANs
+                        //                join loaiMonAn in karaokeDataContext.LOAIMONANs
+                        //                on monAn.LOAIMON equals loaiMonAn.MA
+                        //                select new HangHoa()
+                        //                {
+                        //                    Ma = monAn.MAMON,
+                        //                    Ten = monAn.TENMON,
+                        //                    Loai = loai.ToString(),
+                        //                    Gia = (uint)monAn.DONGIA,
+                        //                    TenHinhAnh = monAn.ANHMINHHOA,
+                        //                    LoaiHangHoa = new LoaiHangHoa() { Ma = "0", Ten = "Thức ăn" }
 
-                                        }).Skip((pageNumber - 1)*pageSize).Take(pageSize).ToList()
+                        //                }).Skip((pageNumber - 1)*pageSize).Take(pageSize).ToList()
 
-                            :
+                        //    :
                             (from sanPham in karaokeDataContext.SANPHAMs
                              join loaiSanPham in karaokeDataContext.LOAISANPHAMs
                              on sanPham.LOAISP equals loaiSanPham.MA
@@ -127,49 +130,60 @@ namespace DAO
         }
         public static int DemHangHoaGoiMon(int loai)
         {
-            string query = "EXEC uspDemHangHoaGoiMon @loai";
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
+            return karaokeDataContext.SANPHAMs.Where(sp => sp.LOAISP == loai).Count();
 
-            //truyền tham số vào câu truy vấn
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@loai",SqlDbType.Int){IsNullable=false,Value=loai },
-            };
-            int count = 0;
-            try
-            {
-                count = int.Parse(Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString());
-            }
-            catch (Exception ex)
-            {
-                Utility.Log(ex);
-            }
-            return count;
+            //string query = "EXEC uspDemHangHoaGoiMon @loai";
+
+            ////truyền tham số vào câu truy vấn
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@loai",SqlDbType.Int){IsNullable=false,Value=loai },
+            //};
+            //int count = 0;
+            //try
+            //{
+            //    count = int.Parse(Dataprovider.ExcuteScalar(query, parameters.ToArray()).ToString());
+            //}
+            //catch (Exception ex)
+            //{
+            //    Utility.Log(ex);
+            //}
+            //return count;
         }
         public static List<LoaiHangHoa> XemLoaiMon(int loai)
         {
-            string query = "EXEC uspXemLoaiHangHoa @loai";
 
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@loai",SqlDbType.Int){IsNullable=false,Value=loai }
-            };
-            List<LoaiHangHoa> list = null;
-            try
-            {
-                DataTable table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
-                list = table.AsEnumerable().ToList().ConvertAll(x =>
-                        new LoaiHangHoa()
-                        {
-                            Ma = x[0].ToString(),
-                            Ten = x[1].ToString()
-                        });
-            }
-            catch (Exception ex)
-            {
-                Utility.Log(ex);
-            }
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
+         
+            //string query = "EXEC uspXemLoaiHangHoa @loai";
 
-            return list;
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@loai",SqlDbType.Int){IsNullable=false,Value=loai }
+            //};
+            //List<LoaiHangHoa> list = null;
+            //try
+            //{
+            //    DataTable table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+            //    list = table.AsEnumerable().ToList().ConvertAll(x =>
+            //            new LoaiHangHoa()
+            //            {
+            //                Ma = x[0].ToString(),
+            //                Ten = x[1].ToString()
+            //            });
+            //}
+            //catch (Exception ex)
+            //{
+            //    Utility.Log(ex);
+            //}
+
+            return (from loaiSanPham in karaokeDataContext.LOAISANPHAMs
+                    select new LoaiHangHoa()
+                    {
+                        Ma = loaiSanPham.MA.ToString(),
+                        Ten = loaiSanPham.TENLOAI,
+                    }).ToList();
         }
     }
 }

@@ -26,7 +26,10 @@ namespace BUS
         {
             return DAO.PhongDAO.DemPhong(trangThai);
         }
-
+        public static string GhiNhanDatPhong(List<Phong> phongs, ThongTinDatPhong thongTinDatPhong)
+        {
+            return DAO.PhongDAO.GhiNhanDatPhong(phongs, thongTinDatPhong);
+        }
         public static bool GhiNhanDatPhong(KhachHang khachHang, string maPhong, string maNV)
         {
             return DAO.PhongDAO.GhiNhanDatPhong(khachHang, maPhong, maNV);

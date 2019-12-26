@@ -97,7 +97,7 @@ namespace DAO
                                         phongTheoLoai.LOAIPHONG.GIA.ToString().ToLower().Contains(tuKhoa)
                                      ))
                                      select new { phongTheoLoai.MAPHONG, phongTheoLoai.LOAIPHONG.TENLOAIPHONG, phongTheoLoai.LOAIPHONG.GIA })
-                                     .Skip(pageNumber)
+                                     .Skip((pageNumber - 1) * pageSize)
                                      .Take(pageSize);
                         dtXemPhongTheoLoai = Utility.ConvertToDataTable(query.ToList());
                     }
@@ -106,7 +106,7 @@ namespace DAO
                         var query = (from phongTheoLoai in karaokeDataContext.PHONGs
                                      where (phongTheoLoai.LOAIPHONG.TENLOAIPHONG == loaiPhong)
                                      select new { phongTheoLoai.MAPHONG, phongTheoLoai.LOAIPHONG.TENLOAIPHONG, phongTheoLoai.LOAIPHONG.GIA })
-                                      .Skip(pageNumber)
+                                      .Skip((pageNumber - 1) * pageSize)
                                      .Take(pageSize);
                         dtXemPhongTheoLoai = Utility.ConvertToDataTable(query.ToList());
                     }
@@ -200,35 +200,181 @@ namespace DAO
             }
             return true;
         }
-        public static List<Phong> XemPhong(int trangThai, int pageSize, int pageNumber)
+
+        public static bool NhanPhongDatTruoc(ThongTinDatPhong thongTinDatPhong)
         {
-            string query = "EXEC uspTraCuuPhong @trangThai,@pageSize,@pageNumber";
-            List<SqlParameter> parameters = new List<SqlParameter>()
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
+
+            string maDatPhong = TaoMa.TaoMaDatPhong();
+            karaokeDataContext.TAOMAs.Where(taoMa => taoMa.ID == 16).First().MACUOI += 1;
+            karaokeDataContext.THONGTINDATPHONGs.InsertOnSubmit(new THONGTINDATPHONG()
             {
-                new SqlParameter("@trangThai",SqlDbType.Int){ Value = trangThai  },
-                 new SqlParameter("@pageSize",SqlDbType.Int){ Value = pageSize  },
-                  new SqlParameter("@pageNumber",SqlDbType.Int){ Value=pageNumber  }
-            };
-            List<Phong> list = new List<Phong>();
-            try
+                MADATPHONG = maDatPhong,
+                GIAMGIA = thongTinDatPhong.giamGia,
+                MAKH = thongTinDatPhong.khachHang.Ma,
+                MANV = thongTinDatPhong.nhanVien.MaNV,
+                NGAYDAT = thongTinDatPhong.ngayDat,
+                NGAYNHAN = thongTinDatPhong.ngayNhan,
+                TIENCOC = thongTinDatPhong.tienCoc,
+            });
+
+            var phongs = karaokeDataContext.CHITIETDATPHONGs.Where(ctdp => ctdp.MADATPHONG == thongTinDatPhong.maDatPhong);
+            //thêm chi tiết đặt phòng
+            foreach (var phong in phongs)
             {
-                DataTable table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
-                list = table.AsEnumerable().ToList().ConvertAll(x =>
-                        new Phong()
-                        {
-                            Ten = x[0].ToString(),
-                            TenLoai = x[1].ToString(),
-                            Gia = uint.Parse(x[2].ToString()),
-                            TinhTrang = int.Parse(x[3].ToString()),
-                            GetKhachHang = new KhachHang() { Ma = x[4].ToString(), Ten = x[5].ToString(), SoDT = x[6].ToString() }
-                        });
+                karaokeDataContext.PHONGs.Where(p => p.MAPHONG == phong.MAPHONG).First().TINHTRANG = "1";
+                karaokeDataContext.CHITIETDATPHONGs.Where(ctdp => (ctdp.MAPHONG == phong.MAPHONG &&
+                ctdp.MADATPHONG == thongTinDatPhong.maDatPhong)).First().GIOVAO = DateTime.Now;
             }
-            catch (Exception ex)
+            karaokeDataContext.SubmitChanges();
+
+            return true;
+        }
+        public static bool DatPhongTruoc(List<Phong> phongs, ThongTinDatPhong thongTinDatPhong)
+        {
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
+
+            string maDatPhong = TaoMa.TaoMaDatPhong();
+            karaokeDataContext.TAOMAs.Where(taoMa => taoMa.ID == 16).First().MACUOI += 1;
+            karaokeDataContext.THONGTINDATPHONGs.InsertOnSubmit(
+                new THONGTINDATPHONG()
+                {
+                    MADATPHONG = maDatPhong,
+                    GIAMGIA = thongTinDatPhong.giamGia,
+                    MAKH = thongTinDatPhong.khachHang.Ma,
+                    MANV = thongTinDatPhong.nhanVien.MaNV,
+                    NGAYDAT = thongTinDatPhong.ngayDat,
+                    NGAYNHAN = thongTinDatPhong.ngayNhan,
+                    TIENCOC = thongTinDatPhong.tienCoc,
+                }
+            );
+
+            //thêm chi tiết đặt phòng
+            foreach (var phong in phongs)
             {
-                Utility.Log(ex);
+                karaokeDataContext.PHONGs.Where(p => p.MAPHONG == phong.Ten).First().TINHTRANG = "1";
+                karaokeDataContext.CHITIETDATPHONGs.InsertOnSubmit(new CHITIETDATPHONG()
+                {
+                    MADATPHONG = maDatPhong,
+                    GIOVAO = DateTime.Now,
+                    MAPHONG = phong.Ten,
+                });
             }
 
-            return list;
+
+            return true;
+        }
+        public static string GhiNhanDatPhong(List<Phong> phongs, ThongTinDatPhong thongTinDatPhong) {
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
+            DateTime now = DateTime.Now;
+            string maDatPhong = TaoMa.TaoMaDatPhong();
+            karaokeDataContext.TAOMAs.Where(taoMa => taoMa.ID == 16).First().MACUOI += 1;
+            karaokeDataContext.THONGTINDATPHONGs.InsertOnSubmit(new THONGTINDATPHONG() {
+                MADATPHONG = maDatPhong,
+                GIAMGIA = thongTinDatPhong.giamGia,
+                MAKH = thongTinDatPhong.khachHang.Ma,
+                MANV = thongTinDatPhong.nhanVien.MaNV,
+                NGAYDAT = now,
+                NGAYNHAN = now,
+                TIENCOC = thongTinDatPhong.tienCoc,
+                DATHANHTOAN  = 0
+            });
+
+            //Thêm chi tiết đặt phòng
+            foreach (var phong in phongs)
+            {
+                karaokeDataContext.PHONGs.Where(p => p.MAPHONG == phong.Ten).First().TINHTRANG = "1";
+                karaokeDataContext.CHITIETDATPHONGs.InsertOnSubmit(new CHITIETDATPHONG() {
+                    MADATPHONG = maDatPhong,
+                    GIOVAO = now,
+                    MAPHONG = phong.Ten,
+                });
+            }
+           
+            karaokeDataContext.SubmitChanges();
+
+            return maDatPhong;
+        }
+        public static List<Phong> XemPhong(int trangThai, int pageSize, int pageNumber)
+        {
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
+            if(trangThai == -1)
+            {
+                var phongDaDat = (from ctdp in karaokeDataContext.CHITIETDATPHONGs
+                                  join ttdp in karaokeDataContext.THONGTINDATPHONGs
+                                  on ctdp.MADATPHONG equals ttdp.MADATPHONG
+                                  where ttdp.DATHANHTOAN == 0
+                                  select new Phong()
+                                  {
+                                      Ten = ctdp.PHONG.MAPHONG,
+                                      Gia = (uint)ctdp.PHONG.LOAIPHONG.GIA,
+                                      TenLoai = ctdp.PHONG.LOAIPHONG.TENLOAIPHONG,
+                                      TinhTrang = int.Parse(ctdp.PHONG.TINHTRANG),
+                                      GetKhachHang = new KhachHang()
+                                      {
+                                          Ma = ttdp.KHACHHANG.MAKH,
+                                          Ten = ttdp.KHACHHANG.TENKH == "" ? "Vãn lai": ttdp.KHACHHANG.TENKH,
+                                          SoDT = ttdp.KHACHHANG.SDT,
+                                          LoaiKH = ttdp.KHACHHANG.LOAIKHACHHANG.MALOAIKH,
+
+                                      }
+                                  }).ToList();
+                phongDaDat.AddRange((
+                    from phong in karaokeDataContext.PHONGs
+                    where phong.TINHTRANG == "0"
+                    select new Phong()
+                    {
+                        Gia = (uint)phong.LOAIPHONG.GIA,
+                        Ten = phong.MAPHONG,
+                        TenLoai = phong.LOAIPHONG.TENLOAIPHONG,
+                        TinhTrang = int.Parse(phong.TINHTRANG),
+                        GetKhachHang = new KhachHang()
+                        {
+                            Ma = "",
+                            Ten = "",
+                            SoDT = "",
+                            LoaiKH = 1,
+
+                        }
+                    })
+                    );
+                return phongDaDat.OrderBy(p=> p.Ten).Skip((pageNumber - 1)* pageSize).Take(pageSize).ToList();
+            }
+            else if(trangThai == 1)
+            {
+                return (from ctdp in karaokeDataContext.CHITIETDATPHONGs
+                         join ttdp in karaokeDataContext.THONGTINDATPHONGs
+                         on ctdp.MADATPHONG equals ttdp.MADATPHONG
+                         where ttdp.DATHANHTOAN == 0
+                         select new Phong()
+                         {
+                             Ten = ctdp.PHONG.MAPHONG,
+                             Gia = (uint)ctdp.PHONG.LOAIPHONG.GIA,
+                             TenLoai = ctdp.PHONG.LOAIPHONG.TENLOAIPHONG,
+                             TinhTrang = int.Parse(ctdp.PHONG.TINHTRANG),
+                             GetKhachHang = new KhachHang()
+                             {
+                                 Ma = ttdp.KHACHHANG.MAKH,
+                                 Ten = ttdp.KHACHHANG.TENKH == "" ? "Vãn lai" : ttdp.KHACHHANG.TENKH,
+                                 SoDT = ttdp.KHACHHANG.SDT,
+                                 LoaiKH = ttdp.KHACHHANG.LOAIKHACHHANG.MALOAIKH,
+
+                             }
+                         }).OrderBy(p => p.Ten).Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+            }
+            else
+            {
+                return (from phong in karaokeDataContext.PHONGs
+                        where phong.TINHTRANG == "0"
+                        select new Phong()
+                        {
+                            Gia = (uint)phong.LOAIPHONG.GIA,
+                            Ten = phong.MAPHONG,
+                            TenLoai = phong.LOAIPHONG.TENLOAIPHONG,
+                            TinhTrang = int.Parse(phong.TINHTRANG)
+                        }).OrderBy(p => p.Ten).Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+            }
+
         }
 
         public static int DemPhong(int trangThai)
@@ -344,7 +490,7 @@ namespace DAO
                                                    loaiPhongTable.MALOAIPHONG,
                                                    loaiPhongTable.TENLOAIPHONG,
                                                    loaiPhongTable.GIA
-                                               }).Skip(pageNumber).Take(pageSize);
+                                               }).Skip((pageNumber - 1) * pageSize).Take(pageSize);
                     tbPhong = Utility.ConvertToDataTable(xemPhongQuanLyQuery.ToList());
                 }
                 catch (Exception ex)

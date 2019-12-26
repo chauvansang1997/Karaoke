@@ -319,6 +319,12 @@
     <Compile Include="PhongKaoraoke\frmLoaiPhong.Designer.cs">
       <DependentUpon>frmLoaiPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThongTinDatPhongLayout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThongTinDatPhongLayout.Designer.cs">
+      <DependentUpon>ThongTinDatPhongLayout.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyNguyenLieu\frmChonThanhVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -620,6 +626,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PhongKaoraoke\frmLoaiPhong.resx">
       <DependentUpon>frmLoaiPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinDatPhongLayout.resx">
+      <DependentUpon>ThongTinDatPhongLayout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNguyenLieu\frmChonThanhVien.resx">
       <DependentUpon>frmChonThanhVien.cs</DependentUpon>

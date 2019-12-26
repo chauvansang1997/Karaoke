@@ -96,10 +96,27 @@ namespace DAO
         {
 
             string maMoi = "";
-         
+
             using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
             {
                 var taoMaHoaDon = karaokeDataContext.TAOMAs.Where(s => s.ID == 3).First();
+
+                int maCuoi = taoMaHoaDon.MACUOI.Value + 1;
+                int soMa = taoMaHoaDon.SOMA.Value;
+                string tienTo = taoMaHoaDon.TIENTO;
+                maMoi = tienTo + maCuoi.ToString().PadLeft(soMa, '0');
+            }
+
+            return maMoi;
+        }
+        public static string TaoMaDatPhong()
+        {
+
+            string maMoi = "";
+         
+            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+            {
+                var taoMaHoaDon = karaokeDataContext.TAOMAs.Where(s => s.ID == 16).First();
 
                 int maCuoi = taoMaHoaDon.MACUOI.Value + 1;
                 int soMa = taoMaHoaDon.SOMA.Value;
