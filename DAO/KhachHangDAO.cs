@@ -93,7 +93,7 @@ namespace DAO
                 MAKH = maKhachHang,
                 MALOAIKH = maLoaiKhachHang
             });
-
+            karaokeDataContext.SubmitChanges();
             return maKhachHang;
         }
 

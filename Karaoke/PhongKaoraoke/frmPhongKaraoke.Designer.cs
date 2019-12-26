@@ -123,7 +123,6 @@
             this.txtSDT.ForeColor = System.Drawing.Color.Black;
             this.txtSDT.Location = new System.Drawing.Point(27, 183);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.ReadOnly = true;
             this.txtSDT.Size = new System.Drawing.Size(295, 27);
             this.txtSDT.TabIndex = 182;
             // 
@@ -145,7 +144,6 @@
             this.txtTenKhachHang.ForeColor = System.Drawing.Color.Black;
             this.txtTenKhachHang.Location = new System.Drawing.Point(27, 116);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.ReadOnly = true;
             this.txtTenKhachHang.Size = new System.Drawing.Size(194, 27);
             this.txtTenKhachHang.TabIndex = 180;
             // 

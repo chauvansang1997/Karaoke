@@ -135,6 +135,8 @@ namespace Karaoke.PhongKaoraoke
         }
         public void khoiTao()
         {
+            txtTenKhachHang.Enabled = true;
+            txtSDT.Enabled = true;
             btnThanhToan.Enabled = false;
             settingsXemPhong.Checked = true;
             trangThai = TrangThai.TatCa;
@@ -209,16 +211,16 @@ namespace Karaoke.PhongKaoraoke
 
                             phongLayout.BackColor = Color.Blue;
 
-                            if (PhongHienTai.TinhTrang == 0)
-                            {
-                                txtTenKhachHang.ReadOnly = false;
-                                txtSDT.ReadOnly = false;
-                            }
-                            else
-                            {
-                                txtTenKhachHang.ReadOnly = true;
-                                txtSDT.ReadOnly = true;
-                            }
+                            //if (PhongHienTai.TinhTrang == 0)
+                            //{
+                            //    //txtTenKhachHang.ReadOnly = false;
+                            //    txtSDT.ReadOnly = false;
+                            //}
+                            //else
+                            //{
+                            //    txtTenKhachHang.ReadOnly = true;
+                            //    txtSDT.ReadOnly = true;
+                            //}
                         });
                         flowPhongLayout.Controls.Add(phongLayout);
 

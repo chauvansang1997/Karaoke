@@ -265,6 +265,8 @@ namespace DAO
             return true;
         }
         public static string GhiNhanDatPhong(List<Phong> phongs, ThongTinDatPhong thongTinDatPhong) {
+
+
             KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
             DateTime now = DateTime.Now;
             string maDatPhong = TaoMa.TaoMaDatPhong();
