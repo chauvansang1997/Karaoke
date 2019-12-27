@@ -29,6 +29,10 @@ namespace BUS
         {
             return DAO.DatPhongDao.LayMaDatPhong(maPhong);
         }
+        public static bool ThanhToanPhong(string maPhong)
+        {
+            return DAO.DatPhongDao.ThanhToanPhong(maPhong);
+        }
         public static bool ThanhToanHoaDon(string maDatPhong)
         {
             return DAO.DatPhongDao.ThanhToanHoaDon(maDatPhong);

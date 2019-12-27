@@ -52,7 +52,7 @@
             this.txtTenPhong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenPhong.AutoSize = true;
-            this.txtTenPhong.Location = new System.Drawing.Point(31, 84);
+            this.txtTenPhong.Location = new System.Drawing.Point(10, 83);
             this.txtTenPhong.Name = "txtTenPhong";
             this.txtTenPhong.Size = new System.Drawing.Size(35, 13);
             this.txtTenPhong.TabIndex = 2;
