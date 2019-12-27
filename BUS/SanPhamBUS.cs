@@ -43,6 +43,10 @@ namespace BUS
         {
             return DAO.SanPhamDAO.XemChiTietPhieuNhapSanPham(soPhieuDat);
         }
+        public static List<DonViTinh> XemDonViTinh()
+        {
+            return DAO.SanPhamDAO.XemDonViTinh();
+        }
         public static DataTable XemSanPhamTable(string nhaCungCap, int loai,string ten, int pageNumber, int pageSize)
         {
             return DAO.SanPhamDAO.XemSanPhamTable(nhaCungCap, loai, ten,pageNumber, pageSize);

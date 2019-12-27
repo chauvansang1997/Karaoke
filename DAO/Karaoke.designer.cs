@@ -1180,6 +1180,8 @@ namespace DAO
 		
 		private System.Nullable<long> _GIA;
 		
+		private System.Nullable<long> _GIANHAP;
+		
 		private EntityRef<CHITIETDATPHONG> _CHITIETDATPHONG;
 		
 		private EntityRef<SANPHAM> _SANPHAM;
@@ -1198,6 +1200,8 @@ namespace DAO
     partial void OnSOLUONGChanged();
     partial void OnGIAChanging(System.Nullable<long> value);
     partial void OnGIAChanged();
+    partial void OnGIANHAPChanging(System.Nullable<long> value);
+    partial void OnGIANHAPChanged();
     #endregion
 		
 		public CHITIETGOIMON()
@@ -1315,6 +1319,26 @@ namespace DAO
 					this._GIA = value;
 					this.SendPropertyChanged("GIA");
 					this.OnGIAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIANHAP", DbType="BigInt")]
+		public System.Nullable<long> GIANHAP
+		{
+			get
+			{
+				return this._GIANHAP;
+			}
+			set
+			{
+				if ((this._GIANHAP != value))
+				{
+					this.OnGIANHAPChanging(value);
+					this.SendPropertyChanging();
+					this._GIANHAP = value;
+					this.SendPropertyChanged("GIANHAP");
+					this.OnGIANHAPChanged();
 				}
 			}
 		}

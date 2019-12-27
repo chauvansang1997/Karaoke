@@ -142,5 +142,22 @@ namespace DAO
 
             return maMoi;
         }
+        public static string TaoMaSanPham()
+        {
+
+            string maMoi = "";
+
+            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+            {
+                var taoMaHoaDon = karaokeDataContext.TAOMAs.Where(s => s.ID == 5).First();
+
+                int maCuoi = taoMaHoaDon.MACUOI.Value + 1;
+                int soMa = taoMaHoaDon.SOMA.Value;
+                string tienTo = taoMaHoaDon.TIENTO;
+                maMoi = tienTo + maCuoi.ToString().PadLeft(soMa, '0');
+            }
+
+            return maMoi;
+        }
     }
 }

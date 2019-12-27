@@ -78,10 +78,12 @@ namespace DAO.QuanLyDoanhThu
 							ctgm.GIA,
 							ctgm.SOLUONG,
 							TONG = ctgm.GIA*ctgm.SOLUONG,
-							ctgm.SANPHAM
+							ctgm.SANPHAM,
+                            ctgm.GIANHAP
+
 
 						}
-						).GroupBy( t=> new { t.MASP, t.GIA }).Join(
+						).GroupBy( t=> new { t.MASP, t.GIA,t.GIANHAP }).Join(
 							karaokeDataContext.SANPHAMs, gr=>gr.Key.MASP,
 							sp =>sp.MASP, (gr,sp) => new
 							{
@@ -90,7 +92,7 @@ namespace DAO.QuanLyDoanhThu
 								GIA = (int)gr.Key.GIA* gr.Sum(t => t.SOLUONG),
 								sp.TENSP,
 								DONGIA = (int)gr.Key.GIA,
-								DONGIANHAP = (int)sp.DONGIANHAP ,
+								DONGIANHAP = (int)gr.Key.GIANHAP,
 							}
 						).ToList());
 

@@ -38,6 +38,7 @@
       <Column Name="MASP" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="SOLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="GIA" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="GIANHAP" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Association Name="CHITIETDATPHONG_CHITIETGOIMON" Member="CHITIETDATPHONG" ThisKey="MADATPHONG,MAPHONG" OtherKey="MADATPHONG,MAPHONG" Type="CHITIETDATPHONG" IsForeignKey="true" />
       <Association Name="SANPHAM_CHITIETGOIMON" Member="SANPHAM" ThisKey="MASP" OtherKey="MASP" Type="SANPHAM" IsForeignKey="true" />
     </Type>

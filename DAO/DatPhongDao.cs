@@ -147,9 +147,10 @@ namespace DAO
 
                         karaokeDataContext.CHITIETGOIMONs.Where(ctgm => ctgm.MADATPHONG == maDatPhong
                         && ctgm.MAPHONG == ctdp.MAPHONG).ToList().ForEach(
-                                ctgm =>
+                                ctgm => 
                                 {
                                     ctgm.GIA = ctgm.SANPHAM.DONGIA;
+                                    ctgm.GIANHAP = ctgm.SANPHAM.DONGIANHAP;
                                     thanhTien += (ctgm.GIA * ctgm.SOLUONG).Value;
                                     
                                 }

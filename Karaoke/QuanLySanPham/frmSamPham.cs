@@ -75,6 +75,9 @@ namespace Karaoke.QuanLySanPham
             cmbLoai.DisplayMember = "Ten";
             cmbLoaiTK.DataSource = BUS.SanPhamBUS.XemLoai();
             cmbLoaiTK.DisplayMember = "Ten";
+
+            cmbDVT.DataSource = BUS.SanPhamBUS.XemDonViTinh();
+            cmbDVT.DisplayMember = "Ten";
             bSua = false;
             bThem = false;
             pageNumber = 1;
@@ -226,10 +229,19 @@ namespace Karaoke.QuanLySanPham
             {
                 int index = dGVDanhSach.CurrentCell.RowIndex;
                 txtTenSP.Text = dGVDanhSach[1, index].Value.ToString();
-                txtDVT.Text = dGVDanhSach[3, index].Value.ToString();
+                //txtDVT.Text = dGVDanhSach[3, index].Value.ToString();
                 
                 txtGiaBan.Text = dGVDanhSach[4, index].Value.ToString();
-                txtGiaNhap.Text = dGVDanhSach[4, index].Value.ToString();
+                txtGiaNhap.Text = dGVDanhSach[10, index].Value.ToString();
+
+                for (int i = 0; i < cmbDVT.Items.Count; i++)
+                {
+                    if (((DTO.DonViTinh)cmbDVT.Items[i]).Ma.ToString() == dGVDanhSach[3, index].Value.ToString())
+                    {
+                        cmbDVT.SelectedIndex = i;
+                    }
+                }
+
                 for (int i = 0; i < cmbLoai.Items.Count; i++)
                 {
                     if (((DTO.LoaiHangHoa)cmbLoai.Items[i]).Ma == dGVDanhSach[2, index].Value.ToString())
@@ -284,7 +296,7 @@ namespace Karaoke.QuanLySanPham
             txtTonToiThieu.Text = "";
             txtGiaBan.Text = "";
             txtGiaNhap.Text = "";
-            txtDVT.Text = "";
+          //  txtDVT.Text = "";
             txtTenSP.Text = "";
             tenHinhAnh = "";
             pBAnhMinhHoa.Image = null;
@@ -331,7 +343,7 @@ namespace Karaoke.QuanLySanPham
             
             txtGiaBan.Enabled = enable;
             txtGiaNhap.Enabled = enable;
-            txtDVT.Enabled = enable;
+          //  txtDVT.Enabled = enable;
             txtTenSP.Enabled = enable;
             cmbNhaCC.Enabled = enable;
             cmbLoai.Enabled = enable;
@@ -339,6 +351,7 @@ namespace Karaoke.QuanLySanPham
             btnLayAnh.Enabled = enable;
             btnLuu.Enabled = enable;
             btnHuy.Enabled = enable;
+            cmbDVT.Enabled = enable;
         }
         private void txtGia_TextChanged(object sender, EventArgs e)
         {
@@ -357,9 +370,11 @@ namespace Karaoke.QuanLySanPham
                     DonGiaNhap=int.Parse(txtGiaNhap.Text),
                     Loai=((DTO.LoaiHangHoa)cmbLoai.SelectedValue).Ma,
                     TenHinhAnh=tenHinhAnh,
-                    DonViTinh = txtDVT.Text,
+                    DonViTinh = ((DTO.DonViTinh)cmbDVT.SelectedValue).Ma.ToString(),
+  
                     NhaCungCap = ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC,
                     SoLuongToiThieu = int.Parse(txtTonToiThieu.Text),
+                    
 
                 }))
                 {
@@ -382,9 +397,10 @@ namespace Karaoke.QuanLySanPham
                     DonGiaNhap = int.Parse(txtGiaNhap.Text),
                     Loai = ((DTO.LoaiHangHoa)cmbLoai.SelectedValue).Ma,
                     TenHinhAnh = tenHinhAnh,
-                    DonViTinh = txtDVT.Text,
+                    DonViTinh = ((DTO.DonViTinh)cmbDVT.SelectedValue).Ma.ToString(),
                     NhaCungCap = ((DTO.NhaCungCap)cmbNhaCC.SelectedValue).MaNCC,
                     SoLuongToiThieu = int.Parse(txtTonToiThieu.Text),
+
                 }))
                 {
                     MessageBox.Show("Sửa sản phẩm thành công");

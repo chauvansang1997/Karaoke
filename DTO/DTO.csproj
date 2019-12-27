@@ -47,6 +47,7 @@
     <Compile Include="ChiTietHoaDon.cs" />
     <Compile Include="DatTiecDataSource.cs" />
     <Compile Include="ChucVu.cs" />
+    <Compile Include="DonViTinh.cs" />
     <Compile Include="GoiMonDataSource.cs" />
     <Compile Include="HangHoa.cs" />
     <Compile Include="HangHoaDataSource.cs" />
