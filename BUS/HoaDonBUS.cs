@@ -16,6 +16,12 @@ namespace BUS
         {
             return DAO.HoaDonDAO.ThemChiTietHoaDon(maDatPhong, maPhong, chiTietHoaDons);
         }
+
+        public static DataTable HoaDonDataSet(ThongTinDatPhong thongTinDatPhong)
+        {
+            return DAO.HoaDonDAO.HoaDonDataSet(thongTinDatPhong);
+
+        }
         public static string LayMaHoaDon(string maPhong)
         {
             return DAO.HoaDonDAO.LayMaHoaDon(maPhong);

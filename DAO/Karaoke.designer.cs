@@ -57,6 +57,9 @@ namespace DAO
     partial void InsertCTPNTB(CTPNTB instance);
     partial void UpdateCTPNTB(CTPNTB instance);
     partial void DeleteCTPNTB(CTPNTB instance);
+    partial void InsertDONVI(DONVI instance);
+    partial void UpdateDONVI(DONVI instance);
+    partial void DeleteDONVI(DONVI instance);
     partial void InsertHOADON(HOADON instance);
     partial void UpdateHOADON(HOADON instance);
     partial void DeleteHOADON(HOADON instance);
@@ -258,6 +261,14 @@ namespace DAO
 			get
 			{
 				return this.GetTable<DOANHTHU>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DONVI> DONVIs
+		{
+			get
+			{
+				return this.GetTable<DONVI>();
 			}
 		}
 		
@@ -2438,6 +2449,120 @@ namespace DAO
 					this._TONGDOANHTHU = value;
 				}
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DONVI")]
+	public partial class DONVI : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MADV;
+		
+		private string _TENDV;
+		
+		private EntitySet<SANPHAM> _SANPHAMs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMADVChanging(int value);
+    partial void OnMADVChanged();
+    partial void OnTENDVChanging(string value);
+    partial void OnTENDVChanged();
+    #endregion
+		
+		public DONVI()
+		{
+			this._SANPHAMs = new EntitySet<SANPHAM>(new Action<SANPHAM>(this.attach_SANPHAMs), new Action<SANPHAM>(this.detach_SANPHAMs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADV", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MADV
+		{
+			get
+			{
+				return this._MADV;
+			}
+			set
+			{
+				if ((this._MADV != value))
+				{
+					this.OnMADVChanging(value);
+					this.SendPropertyChanging();
+					this._MADV = value;
+					this.SendPropertyChanged("MADV");
+					this.OnMADVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENDV", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string TENDV
+		{
+			get
+			{
+				return this._TENDV;
+			}
+			set
+			{
+				if ((this._TENDV != value))
+				{
+					this.OnTENDVChanging(value);
+					this.SendPropertyChanging();
+					this._TENDV = value;
+					this.SendPropertyChanged("TENDV");
+					this.OnTENDVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DONVI_SANPHAM", Storage="_SANPHAMs", ThisKey="MADV", OtherKey="DVT")]
+		public EntitySet<SANPHAM> SANPHAMs
+		{
+			get
+			{
+				return this._SANPHAMs;
+			}
+			set
+			{
+				this._SANPHAMs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_SANPHAMs(SANPHAM entity)
+		{
+			this.SendPropertyChanging();
+			entity.DONVI = this;
+		}
+		
+		private void detach_SANPHAMs(SANPHAM entity)
+		{
+			this.SendPropertyChanging();
+			entity.DONVI = null;
 		}
 	}
 	
@@ -6520,6 +6645,8 @@ namespace DAO
 		
 		private EntityRef<NHACUNGCAP> _NHACUNGCAP;
 		
+		private EntityRef<DONVI> _DONVI;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -6552,6 +6679,7 @@ namespace DAO
 			this._CTPNSPs = new EntitySet<CTPNSP>(new Action<CTPNSP>(this.attach_CTPNSPs), new Action<CTPNSP>(this.detach_CTPNSPs));
 			this._LOAISANPHAM = default(EntityRef<LOAISANPHAM>);
 			this._NHACUNGCAP = default(EntityRef<NHACUNGCAP>);
+			this._DONVI = default(EntityRef<DONVI>);
 			OnCreated();
 		}
 		
@@ -6754,6 +6882,10 @@ namespace DAO
 			{
 				if ((this._DVT != value))
 				{
+					if (this._DONVI.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnDVTChanging(value);
 					this.SendPropertyChanging();
 					this._DVT = value;
@@ -6853,6 +6985,40 @@ namespace DAO
 						this._MANCC = default(string);
 					}
 					this.SendPropertyChanged("NHACUNGCAP");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DONVI_SANPHAM", Storage="_DONVI", ThisKey="DVT", OtherKey="MADV", IsForeignKey=true)]
+		public DONVI DONVI
+		{
+			get
+			{
+				return this._DONVI.Entity;
+			}
+			set
+			{
+				DONVI previousValue = this._DONVI.Entity;
+				if (((previousValue != value) 
+							|| (this._DONVI.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DONVI.Entity = null;
+						previousValue.SANPHAMs.Remove(this);
+					}
+					this._DONVI.Entity = value;
+					if ((value != null))
+					{
+						value.SANPHAMs.Add(this);
+						this._DVT = value.MADV;
+					}
+					else
+					{
+						this._DVT = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("DONVI");
 				}
 			}
 		}

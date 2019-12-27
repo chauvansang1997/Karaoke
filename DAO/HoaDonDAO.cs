@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+
 namespace DAO
 {
     public static class HoaDonDAO
@@ -21,15 +22,15 @@ namespace DAO
         /// <param name="maDatPhong"></param>
         /// <param name="chiTietHoaDons"></param>
         /// <returns></returns>
-        public static bool ThemChiTietHoaDon(string maDatPhong,string maPhong, List<ChiTietHoaDon> chiTietHoaDons)
+        public static bool ThemChiTietHoaDon(string maDatPhong, string maPhong, List<ChiTietHoaDon> chiTietHoaDons)
         {
             KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
 
             #region B1: xóa dữ liệu cũ trong chi tiết hóa đơn
             //xóa dữ liệu món ăn cũ trong bảng hóa đơn cập nhật dữ liệu mới
             var deleteSanPhams = from cthdma in karaokeDataContext.CHITIETGOIMONs
-                               where cthdma.MADATPHONG == maDatPhong && cthdma.MAPHONG == maPhong
-                               select cthdma;
+                                 where cthdma.MADATPHONG == maDatPhong && cthdma.MAPHONG == maPhong
+                                 select cthdma;
 
             if (deleteSanPhams.Count() != 0)
             {
@@ -59,7 +60,7 @@ namespace DAO
                     MASP = chiTietHoaDon.Ma,
                     SOLUONG = chiTietHoaDon.Soluong,
                     MAPHONG = maPhong,
-                    
+
                 });
 
             });
@@ -67,13 +68,66 @@ namespace DAO
 
             // kiểm tra dữ liệu có xóa hết không
             ChangeSet cs = karaokeDataContext.GetChangeSet();
-            if (cs.Deletes.Count == (deleteSanPhams.Count() )
+            if (cs.Deletes.Count == (deleteSanPhams.Count())
                && cs.Inserts.Count == chiTietHoaDons.Count)
             {
                 karaokeDataContext.SubmitChanges();
                 return true;
             }
             return false;
+        }
+
+        public static DataTable HoaDonDataSet(ThongTinDatPhong thongTinDatPhong)
+        {
+
+
+
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
+
+           var list = from ttdp in karaokeDataContext.THONGTINDATPHONGs
+            join ctdp in karaokeDataContext.CHITIETDATPHONGs
+            on ttdp.MADATPHONG equals ctdp.MADATPHONG
+                   join hoaDon in karaokeDataContext.HOADONs
+                   on ttdp.MADATPHONG equals hoaDon.MADATPHONG
+
+
+                   join ctgm in karaokeDataContext.CHITIETGOIMONs 
+                   on new { ctdp.MADATPHONG, ctdp.MAPHONG }  equals
+                    new  {  ctgm.MADATPHONG,ctgm.MAPHONG } into ps 
+                    from p in ps.DefaultIfEmpty()
+                      where ttdp.MADATPHONG == thongTinDatPhong.maDatPhong 
+      
+            select new
+            {
+                MAHOADON =  hoaDon.MAHD,
+                MADATPHONG = thongTinDatPhong.maDatPhong,
+                hoaDon.NGAYGIOLAP,
+                ttdp.KHACHHANG.MAKH,
+                ttdp.NGAYDAT,
+                ttdp.NGAYNHAN,
+                ttdp.NHANVIEN.MANV,
+                GIAMGIA = 0,
+                ctdp.MAPHONG,
+                ctdp.GIOVAO,
+                ctdp.GIORA,
+                p.MASP,
+                p.SOLUONG,
+                GIA = p == null ? 0 : (int)(p.GIA),
+                p.SANPHAM.TENSP,
+                p.SANPHAM.DVT,
+                ctdp.PHONG.MALOAIPHONG,
+                ctdp.PHONG.LOAIPHONG.TENLOAIPHONG,
+                GIAPHONG = (int)ctdp.PHONG.LOAIPHONG.GIA,
+                ttdp.KHACHHANG.TENKH,
+                ttdp.KHACHHANG.SDT,
+                p.SANPHAM.DONVI.TENDV
+
+
+
+            };
+
+
+            return Utility.ConvertToDataTable(list.ToList());
         }
         public static string LayMaHoaDon(string maPhong)
         {
@@ -138,7 +192,7 @@ namespace DAO
 
                 using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
                 {
-                   
+
 
                     list = (from cthdsp in karaokeDataContext.CHITIETGOIMONs
                             join sanPham in karaokeDataContext.SANPHAMs
@@ -342,19 +396,21 @@ namespace DAO
             KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
             string maHoaDon = TaoMa.TaoHoaDon();
             //tạo hóa đơn
-            karaokeDataContext.HOADONs.InsertOnSubmit(new HOADON() {
+            karaokeDataContext.HOADONs.InsertOnSubmit(new HOADON()
+            {
                 MADATPHONG = maDatPhong,
                 MAHD = maHoaDon,
                 NGAYGIOLAP = DateTime.Now,
                 THANHTIEN = thanhTien,
-                
+
             });
-            
+
             karaokeDataContext.TAOMAs.Where(taoMa => taoMa.ID == 3).First().MACUOI += 1;
 
             //Cập nhật trạng thái hiện tại của phòng
             karaokeDataContext.CHITIETDATPHONGs.Where(ctdp => ctdp.MADATPHONG == maDatPhong).ToList().ForEach(
-                    ctdp => {
+                    ctdp =>
+                    {
                         karaokeDataContext.PHONGs.Where(phong => phong.MAPHONG == ctdp.MAPHONG).First().TINHTRANG = "0";
                     }
                 );

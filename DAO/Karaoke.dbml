@@ -100,6 +100,13 @@
       <Column Name="TONGDOANHTHU" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.DONVI" Member="DONVIs">
+    <Type Name="DONVI">
+      <Column Name="MADV" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENDV" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="DONVI_SANPHAM" Member="SANPHAMs" ThisKey="MADV" OtherKey="DVT" Type="SANPHAM" />
+    </Type>
+  </Table>
   <Table Name="dbo.HOADON" Member="HOADONs">
     <Type Name="HOADON">
       <Column Name="MAHD" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -321,6 +328,7 @@
       <Association Name="SANPHAM_CTPNSP" Member="CTPNSPs" ThisKey="MASP" OtherKey="MASP" Type="CTPNSP" />
       <Association Name="LOAISANPHAM_SANPHAM" Member="LOAISANPHAM" ThisKey="LOAISP" OtherKey="MA" Type="LOAISANPHAM" IsForeignKey="true" />
       <Association Name="NHACUNGCAP_SANPHAM" Member="NHACUNGCAP" ThisKey="MANCC" OtherKey="MANCC" Type="NHACUNGCAP" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="DONVI_SANPHAM" Member="DONVI" ThisKey="DVT" OtherKey="MADV" Type="DONVI" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.SUDUNGTHIETBI" Member="SUDUNGTHIETBIs">

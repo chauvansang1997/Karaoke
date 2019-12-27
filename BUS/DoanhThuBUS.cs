@@ -21,5 +21,10 @@ namespace BUS
         {
             return DAO.QuanLyDoanhThu.DoanhThuDAO.XemDoanhThu(thangHD);
         }
+
+        public static DataTable DoanhThuTheoSanPham()
+        {
+            return DAO.QuanLyDoanhThu.DoanhThuDAO.DoanhThuTheoSanPham();
+        }
     }
 }

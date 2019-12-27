@@ -287,5 +287,12 @@ namespace Karaoke
             frmPhanQuyen phanQuyen = new frmPhanQuyen();
             phanQuyen.ShowDialog();
         }
+
+        private void báoCáoDoanhThuSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBaoCaoDoanhThuSanPham dtsp= new frmBaoCaoDoanhThuSanPham();
+            dtsp.ShowDialog();
+
+        }
     }
 }

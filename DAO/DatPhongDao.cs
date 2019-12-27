@@ -53,7 +53,9 @@ namespace DAO
                             maDatPhong = ttdp.MADATPHONG,
                             ngayDat = ttdp.NGAYDAT.Value,
                             ngayNhan = ttdp.NGAYNHAN.Value,
-                            tienCoc = (uint)ttdp.TIENCOC
+                            tienCoc = (uint)ttdp.TIENCOC,
+                            nhanVien = User.NhanVien
+                            
                         }).Skip((pageNumber - 1) * pageSize).Take(pageSize);
             return list.ToList();
 

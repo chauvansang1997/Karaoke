@@ -69,6 +69,11 @@
     <Compile Include="PhieuDatTiec.cs" />
     <Compile Include="PhieuNhapDataSource.cs" />
     <Compile Include="PhieuNhapHang.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Quyen.cs" />
     <Compile Include="SanPham.cs" />
     <Compile Include="TaiKhoan.cs" />
@@ -83,6 +88,13 @@
     <Compile Include="User.cs" />
     <Compile Include="User2.cs" />
     <Compile Include="Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

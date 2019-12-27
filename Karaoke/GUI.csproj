@@ -100,26 +100,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSetContainer\DoanhThuTheoSanPham.cs">
+      <DependentUpon>DoanhThuTheoSanPham.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetContainer\DoanhThuTheoSanPham.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoanhThuTheoSanPham.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetContainer\HoaDonDataSet.cs">
       <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetContainer\HoaDonDataSet.Designer.cs">
+      <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetContainer\HoaDonThanhToan.cs">
+      <DependentUpon>HoaDonThanhToan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetContainer\HoaDonThanhToan.Designer.cs">
+      <DependentUpon>HoaDonThanhToan.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="DataSetContainer\PhieuDatHangDataSet.Designer.cs">
+      <DependentUpon>PhieuDatHangDataSet.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PhieuDatHangDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetContainer\TonKhoDataSet.cs">
       <DependentUpon>TonKhoDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetContainer\TonKhoDataSet.Designer.cs">
+      <DependentUpon>TonKhoDataSet.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TonKhoDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DoanhThuDataSet.cs" />
     <Compile Include="DoanhThuDataSet.designer.cs">
@@ -130,6 +146,12 @@
     </Compile>
     <Compile Include="FoodLayout.designer.cs">
       <DependentUpon>FoodLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHoaDon.Designer.cs">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBaoCaoLuong.cs">
       <SubType>Form</SubType>
@@ -227,6 +249,12 @@
     <Compile Include="GUI_BaoCaoDoanhThu\frmBaoCaoDoanhThu.Designer.cs">
       <DependentUpon>frmBaoCaoDoanhThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_BaoCaoDoanhThu\frmBaoCaoDoanhThuSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_BaoCaoDoanhThu\frmBaoCaoDoanhThuSanPham.Designer.cs">
+      <DependentUpon>frmBaoCaoDoanhThuSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_DangNhap\frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +346,18 @@
     </Compile>
     <Compile Include="PhongKaoraoke\frmLoaiPhong.Designer.cs">
       <DependentUpon>frmLoaiPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\rptDoanhThuSanPham.cs">
+      <DependentUpon>rptDoanhThuSanPham.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="report\rptHoaDonThanhToan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHoaDonThanhToan.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ThongTinDatPhongLayout.cs">
       <SubType>UserControl</SubType>
@@ -540,6 +580,9 @@
     <EmbeddedResource Include="FoodLayout.resx">
       <DependentUpon>FoodLayout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmHoaDon.resx">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBaoCaoLuong.resx">
       <DependentUpon>frmBaoCaoLuong.cs</DependentUpon>
     </EmbeddedResource>
@@ -585,6 +628,9 @@
     <EmbeddedResource Include="GUI_BaoCaoDoanhThu\frmBaoCaoDoanhThu.resx">
       <DependentUpon>frmBaoCaoDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_BaoCaoDoanhThu\frmBaoCaoDoanhThuSanPham.resx">
+      <DependentUpon>frmBaoCaoDoanhThuSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_DangNhap\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -626,6 +672,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PhongKaoraoke\frmLoaiPhong.resx">
       <DependentUpon>frmLoaiPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\rptDoanhThuSanPham.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDoanhThuSanPham.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\rptHoaDonThanhToan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHoaDonThanhToan.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongTinDatPhongLayout.resx">
       <DependentUpon>ThongTinDatPhongLayout.cs</DependentUpon>
@@ -752,24 +806,46 @@
       <LastGenOutput>rptLuongTong.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="DataSetContainer\DoanhThuTheoSanPham.xsc">
+      <DependentUpon>DoanhThuTheoSanPham.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetContainer\DoanhThuTheoSanPham.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DoanhThuTheoSanPham.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetContainer\DoanhThuTheoSanPham.xss">
+      <DependentUpon>DoanhThuTheoSanPham.xsd</DependentUpon>
+    </None>
     <None Include="DataSetContainer\HoaDonDataSet.xsc">
       <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
     </None>
     <None Include="DataSetContainer\HoaDonDataSet.xsd">
-      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>HoaDonDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="DataSetContainer\HoaDonDataSet.xss">
       <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetContainer\HoaDonThanhToan.xsc">
+      <DependentUpon>HoaDonThanhToan.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetContainer\HoaDonThanhToan.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HoaDonThanhToan.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetContainer\HoaDonThanhToan.xss">
+      <DependentUpon>HoaDonThanhToan.xsd</DependentUpon>
     </None>
     <None Include="DataSetContainer\PhieuDatHangDataSet.xsc">
       <DependentUpon>PhieuDatHangDataSet.xsd</DependentUpon>
     </None>
     <None Include="DataSetContainer\PhieuDatHangDataSet.xsd">
-      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>PhieuDatHangDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="DataSetContainer\PhieuDatHangDataSet.xss">
       <DependentUpon>PhieuDatHangDataSet.xsd</DependentUpon>
@@ -778,9 +854,9 @@
       <DependentUpon>TonKhoDataSet.xsd</DependentUpon>
     </None>
     <None Include="DataSetContainer\TonKhoDataSet.xsd">
-      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>TonKhoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="DataSetContainer\TonKhoDataSet.xss">
       <DependentUpon>TonKhoDataSet.xsd</DependentUpon>

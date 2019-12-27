@@ -45,26 +45,55 @@ namespace DAO.QuanLyDoanhThu
 			return data;
 		}
 
-        public static DataTable XemDoanhThu(String thangHD)
+        public static DataTable DoanhThuTheoSanPham()
         {
-            string query = "EXECUTE usp_LoadDoanhThu @thangHD";
-            List<SqlParameter> parameters = new List<SqlParameter>()
+            using( KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
             {
-       
-                 new SqlParameter("@thangHD",SqlDbType.NVarChar){IsNullable=true,Value=thangHD??(Object)DBNull.Value}
-            };
-            DataTable table = null;
-            try
-            {
-                table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+                try
+                {
+                   return Utility.ConvertToDataTable( karaokeDataContext.CHITIETGOIMONs
+                        .GroupBy(ctgm=> ctgm.MASP).
+                        Join(karaokeDataContext.SANPHAMs
+                        , ctgm => ctgm.Key,
+                        sp => sp.MASP, (ctgm, sp) => new
+                        {
+                            
+                            sp.MASP,
+                            SOLUONG = ctgm.Sum(t => t.SOLUONG),
+                            GIA = (int)ctgm.Sum(t=> t.GIA),
+                            sp.TENSP,
+                            DONGIANHAP = (int)ctgm.Sum(t => t.SANPHAM.DONGIANHAP),
 
+                        }).ToList());
+                }
+                catch(Exception ex)
+                {
+                    Utility.Log(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                Utility.Log(ex);
-            }
-
-            return table;
+            return null;
         }
-    }
+
+        public static DataTable XemDoanhThu(String thangHD)
+		{
+			string query = "EXECUTE usp_LoadDoanhThu @thangHD";
+			List<SqlParameter> parameters = new List<SqlParameter>()
+			{
+	   
+				 new SqlParameter("@thangHD",SqlDbType.NVarChar){IsNullable=true,Value=thangHD??(Object)DBNull.Value}
+			};
+			DataTable table = null;
+			try
+			{
+				table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+
+			}
+			catch (Exception ex)
+			{
+				Utility.Log(ex);
+			}
+
+			return table;
+		}
+	}
 }

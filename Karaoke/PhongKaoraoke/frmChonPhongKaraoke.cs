@@ -85,7 +85,7 @@ namespace Karaoke.PhongKaoraoke
                 nhanVien = User.NhanVien,            
             });
             MessageBox.Show("Đặt phong thành công");
-            phongKaraoke.
+           // phongKaraoke.
             this.Close();
         }
 

@@ -524,6 +524,8 @@ namespace Karaoke.PhongKaoraoke
                 indexDatPhongHienTai = -1;
                 indexHienTai = -1;
                 hienThiTatCaPhong();
+                frmHoaDon hoaDon = new frmHoaDon(thongTinDatPhong);
+                hoaDon.ShowDialog();
             }
         }
     }
