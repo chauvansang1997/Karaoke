@@ -439,7 +439,9 @@ namespace DAO
 
 
             karaokeDataContext.CHITIETDATPHONGs.DeleteOnSubmit(chiTietDatPhong);
-
+            karaokeDataContext.PHONGs.Where(p => p.MAPHONG == phongChuyen).
+                First().TINHTRANG = "1";
+            karaokeDataContext.SubmitChanges();
 
             //string query = "EXEC uspChuyenPhong @maPhongHienTai,@maPhongChuyen ";
 

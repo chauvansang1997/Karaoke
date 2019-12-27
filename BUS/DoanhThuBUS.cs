@@ -22,9 +22,9 @@ namespace BUS
             return DAO.QuanLyDoanhThu.DoanhThuDAO.XemDoanhThu(thangHD);
         }
 
-        public static DataTable DoanhThuTheoSanPham()
+        public static DataTable DoanhThuTheoSanPham(DateTime date)
         {
-            return DAO.QuanLyDoanhThu.DoanhThuDAO.DoanhThuTheoSanPham();
+            return DAO.QuanLyDoanhThu.DoanhThuDAO.DoanhThuTheoSanPham(date);
         }
     }
 }

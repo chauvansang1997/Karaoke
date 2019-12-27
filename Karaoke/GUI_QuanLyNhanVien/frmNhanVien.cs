@@ -11,46 +11,46 @@ using System.Windows.Forms;
 
 namespace Karaoke.GUI_QuanLyNhanVien
 {
-    public partial class frmNhanVien : Form
-    {
+	public partial class frmNhanVien : Form
+	{
 		NhanVien nhanVien;
-        private void LoadDataTable()
-        {
-            dGVDSNV.DataSource = BUS.NhanVienBUS.LoadNhanVien();
-        }
+		private void LoadDataTable()
+		{
+			dGVDSNV.DataSource = BUS.NhanVienBUS.LoadNhanVien();
+		}
 
-        public void LoadComboBox()
-        {
-            cbxMaCVU.DisplayMember = "TenCV";
-            cbxMaCVU.ValueMember = "MaCV";
-            cbxMaCVU.DataSource = BUS.ChucVuBUS.LoadMaChucVu();
-        }
+		public void LoadComboBox()
+		{
+			cbxMaCVU.DisplayMember = "TenCV";
+			cbxMaCVU.ValueMember = "MaCV";
+			cbxMaCVU.DataSource = BUS.ChucVuBUS.LoadMaChucVu();
+		}
 
-        public frmNhanVien()
-        {
-            InitializeComponent();
+		public frmNhanVien()
+		{
+			InitializeComponent();
 			nhanVien = new NhanVien();
-        }
+		}
 
-        private void btnTaoTK_Click(object sender, EventArgs e)
-        {
-            frmTaiKhoan TaoTaiKhoan = new frmTaiKhoan();
-            if (TaoTaiKhoan.ShowDialog() != DialogResult.OK)
-            {
-                txtTaiKhoan.Text = TaoTaiKhoan.TheValue;
-            }
-        }
+		private void btnTaoTK_Click(object sender, EventArgs e)
+		{
+			frmTaiKhoan TaoTaiKhoan = new frmTaiKhoan();
+			if (TaoTaiKhoan.ShowDialog() != DialogResult.OK)
+			{
+				txtTaiKhoan.Text = TaoTaiKhoan.TheValue;
+			}
+		}
 
-        private void btnTraCuu_Click(object sender, EventArgs e)
-        {
-            dGVDSNV.DataSource = BUS.NhanVienBUS.TraCuuNhanVien(new DTO.NhanVien() { MaNV = txtMaNV.Text, HoTen = txtTenNV.Text, SoDienThoai = txtSDT.Text, DiaChi = txtDiaChi.Text }, cbxMaCVU.Text, txtTaiKhoan.Text);
-        }
+		private void btnTraCuu_Click(object sender, EventArgs e)
+		{
+			dGVDSNV.DataSource = BUS.NhanVienBUS.TraCuuNhanVien(new DTO.NhanVien() { HoTen = txtTenNV.Text, SoDienThoai = txtSDT.Text, DiaChi = txtDiaChi.Text }, cbxMaCVU.Text, txtTaiKhoan.Text);
+		}
 
 
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+		private void btnThoat_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 
 		private void frmNhanVien_Load(object sender, EventArgs e)
 		{
@@ -73,8 +73,6 @@ namespace Karaoke.GUI_QuanLyNhanVien
 
 		private void bindingToCombox(object dataSource)
 		{
-			txtMaNV.DataBindings.Clear();
-			txtMaNV.DataBindings.Add("Text", dataSource, "maNV");
 			txtTenNV.DataBindings.Clear();
 			txtTenNV.DataBindings.Add("Text", dataSource, "tenNV");
 			txtSDT.DataBindings.Clear();
@@ -99,12 +97,15 @@ namespace Karaoke.GUI_QuanLyNhanVien
 
 		private void btnThem_Click(object sender, EventArgs e)
 		{
-			nhanVien.MaNV = txtMaNV.Text;
 			nhanVien.HoTen = txtTenNV.Text;
 			nhanVien.SoDienThoai = txtSDT.Text;
 			nhanVien.DiaChi = txtDiaChi.Text;
 			string maCV = cbxMaCVU.SelectedValue.ToString();
 			string tenTK = txtTaiKhoan.Text.Trim();
+            if(maCV == "")
+            {
+                return;
+            }
 			if (BUS.NhanVienBUS.ThemNhanVien(nhanVien, maCV, tenTK))
 			{
 				MessageBox.Show("Thêm nhân viên thành công", "Thêm nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -118,7 +119,7 @@ namespace Karaoke.GUI_QuanLyNhanVien
 
 		private void btnCapNhat_Click(object sender, EventArgs e)
 		{
-			nhanVien.MaNV = txtMaNV.Text;
+			
 			nhanVien.HoTen = txtTenNV.Text;
 			nhanVien.SoDienThoai = txtSDT.Text;
 			nhanVien.DiaChi = txtDiaChi.Text;
@@ -137,33 +138,45 @@ namespace Karaoke.GUI_QuanLyNhanVien
 
 		private void btnXoa_Click(object sender, EventArgs e)
 		{
-			nhanVien.MaNV = txtMaNV.Text;
-			nhanVien.HoTen = txtTenNV.Text;
-			nhanVien.SoDienThoai = txtSDT.Text;
-			nhanVien.DiaChi = txtDiaChi.Text;
-			string maCV = cbxMaCVU.SelectedValue.ToString();
-			string tenTK = txtTaiKhoan.Text.Trim();
-            if (BUS.NhanVienBUS.XoaNhanVien(nhanVien.MaNV,tenTK,maCV))
+			if (nhanVien.MaNV != "")
+            {
+                nhanVien.HoTen = txtTenNV.Text;
+                nhanVien.SoDienThoai = txtSDT.Text;
+                nhanVien.DiaChi = txtDiaChi.Text;
+                string maCV = cbxMaCVU.SelectedValue.ToString();
+                string tenTK = txtTaiKhoan.Text.Trim();
+                if (BUS.NhanVienBUS.XoaNhanVien(nhanVien.MaNV, tenTK, maCV))
+                {
+                    MessageBox.Show("Xoá viên thành công", "Xoá nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmNhanVien_Load(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Xoá nhân viên thất bại", "Xoá nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+          
+		}
+
+		private void txtTuKhoa_TextChanged(object sender, EventArgs e)
+		{
+			string tuKhoa = txtTuKhoa.Text;
+			if (tuKhoa.Length <1)
 			{
-				MessageBox.Show("Xoá viên thành công", "Xoá nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				frmNhanVien_Load(sender, e);
 			}
 			else
 			{
-				MessageBox.Show("Xoá nhân viên thất bại", "Xoá nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				dGVDSNV.DataSource = BUS.NhanVienBUS.TimNhanVien(tuKhoa);
 			}
 		}
 
-        private void txtTuKhoa_TextChanged(object sender, EventArgs e)
+        private void dGVDSNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string tuKhoa = txtTuKhoa.Text;
-            if (tuKhoa.Length <1)
+            if (dGVDSNV.CurrentCell != null)
             {
-                frmNhanVien_Load(sender, e);
-            }
-            else
-            {
-                dGVDSNV.DataSource = BUS.NhanVienBUS.TimNhanVien(tuKhoa);
+                nhanVien.MaNV = dGVDSNV[0, dGVDSNV.CurrentCell.RowIndex].Value.ToString();
+
             }
         }
     }

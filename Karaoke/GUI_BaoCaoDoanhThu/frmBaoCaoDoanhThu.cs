@@ -39,15 +39,15 @@ namespace Karaoke.GUI_BaoCaoDoanhThu
 
 		private void loadRepport(DataTable dataTable)
 		{
-            if (dataTable == null)
-            {
-                MessageBox.Show("Lỗi datatable null", "Thông báo");
-                return;
-            }
-            else
-            {
-                dataSet.Tables[0].Merge(dataTable);
-            }
+            //if (dataTable == null)
+            //{
+            //    MessageBox.Show("Lỗi datatable null", "Thông báo");
+            //    return;
+            //}
+            //else
+            //{
+            //    dataSet.Tables[0].Merge(dataTable);
+            //}
 
 
 

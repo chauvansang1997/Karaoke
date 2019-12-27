@@ -39,7 +39,7 @@
             this.crBaoCaoDoanhThu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crBaoCaoDoanhThu.Cursor = System.Windows.Forms.Cursors.Default;
             this.crBaoCaoDoanhThu.Location = new System.Drawing.Point(0, 6);
-            this.crBaoCaoDoanhThu.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.crBaoCaoDoanhThu.Margin = new System.Windows.Forms.Padding(6);
             this.crBaoCaoDoanhThu.Name = "crBaoCaoDoanhThu";
             this.crBaoCaoDoanhThu.Size = new System.Drawing.Size(2192, 1233);
             this.crBaoCaoDoanhThu.TabIndex = 0;
@@ -51,7 +51,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2190, 1237);
             this.Controls.Add(this.crBaoCaoDoanhThu);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmBaoCaoDoanhThuSanPham";
             this.Text = "Báo cáo doanh thu sản phẩm";
             this.Load += new System.EventHandler(this.frmBaoCaoDoanhThuSanPham_Load);

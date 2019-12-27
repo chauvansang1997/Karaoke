@@ -23,7 +23,7 @@ namespace Karaoke.GUI_BaoCaoDoanhThu
 
         private void frmBaoCaoDoanhThuSanPham_Load(object sender, EventArgs e)
         {
-            DataTable data = BUS.DoanhThuBUS.DoanhThuTheoSanPham();
+            DataTable data = BUS.DoanhThuBUS.DoanhThuTheoSanPham(DateTime.Now);
             loadRepport(data);
 
         }

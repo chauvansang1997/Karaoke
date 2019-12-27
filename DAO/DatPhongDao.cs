@@ -135,7 +135,10 @@ namespace DAO
                     {
                         var phong = karaokeDataContext.PHONGs.Where(p => p.MAPHONG == ctdp.MAPHONG).First();
                         phong.TINHTRANG = "0";
-                        ctdp.GIORA = now;
+                        if (ctdp.GIORA == null)
+                        {
+                            ctdp.GIORA = now;
+                        }                        
                         //tính tiền giờ cho từng phòng
                         thanhTien += (long)((ctdp.GIORA - ctdp.GIOVAO).Value.TotalHours * phong.LOAIPHONG.GIA);
                         //lấy tiền trên giờ của từng phòng

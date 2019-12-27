@@ -9,7 +9,6 @@ namespace DAO
 {
     public static class TaoMa
     {
-        public static string TaoMaNhanVien { get; internal set; }
 
         public static string TaoMaNguyenLieu()
         {
@@ -117,6 +116,23 @@ namespace DAO
             using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
             {
                 var taoMaHoaDon = karaokeDataContext.TAOMAs.Where(s => s.ID == 16).First();
+
+                int maCuoi = taoMaHoaDon.MACUOI.Value + 1;
+                int soMa = taoMaHoaDon.SOMA.Value;
+                string tienTo = taoMaHoaDon.TIENTO;
+                maMoi = tienTo + maCuoi.ToString().PadLeft(soMa, '0');
+            }
+
+            return maMoi;
+        }
+        public static string TaoMaNhanVien()
+        {
+
+            string maMoi = "";
+
+            using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
+            {
+                var taoMaHoaDon = karaokeDataContext.TAOMAs.Where(s => s.ID == 17).First();
 
                 int maCuoi = taoMaHoaDon.MACUOI.Value + 1;
                 int soMa = taoMaHoaDon.SOMA.Value;

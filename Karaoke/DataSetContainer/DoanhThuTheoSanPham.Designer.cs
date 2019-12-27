@@ -287,6 +287,8 @@ namespace Karaoke.DataSetContainer {
             
             private global::System.Data.DataColumn columnTENSP;
             
+            private global::System.Data.DataColumn columnDONGIA;
+            
             private global::System.Data.DataColumn columnDONGIANHAP;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -356,6 +358,14 @@ namespace Karaoke.DataSetContainer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DONGIAColumn {
+                get {
+                    return this.columnDONGIA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn DONGIANHAPColumn {
                 get {
                     return this.columnDONGIANHAP;
@@ -399,13 +409,14 @@ namespace Karaoke.DataSetContainer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DOANHTHUTHEOSANPHAMRow AddDOANHTHUTHEOSANPHAMRow(string MASP, int SOLUONG, int GIA, string TENSP, int DONGIANHAP) {
+            public DOANHTHUTHEOSANPHAMRow AddDOANHTHUTHEOSANPHAMRow(string MASP, int SOLUONG, int GIA, string TENSP, int DONGIA, int DONGIANHAP) {
                 DOANHTHUTHEOSANPHAMRow rowDOANHTHUTHEOSANPHAMRow = ((DOANHTHUTHEOSANPHAMRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MASP,
                         SOLUONG,
                         GIA,
                         TENSP,
+                        DONGIA,
                         DONGIANHAP};
                 rowDOANHTHUTHEOSANPHAMRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDOANHTHUTHEOSANPHAMRow);
@@ -433,6 +444,7 @@ namespace Karaoke.DataSetContainer {
                 this.columnSOLUONG = base.Columns["SOLUONG"];
                 this.columnGIA = base.Columns["GIA"];
                 this.columnTENSP = base.Columns["TENSP"];
+                this.columnDONGIA = base.Columns["DONGIA"];
                 this.columnDONGIANHAP = base.Columns["DONGIANHAP"];
             }
             
@@ -447,6 +459,8 @@ namespace Karaoke.DataSetContainer {
                 base.Columns.Add(this.columnGIA);
                 this.columnTENSP = new global::System.Data.DataColumn("TENSP", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTENSP);
+                this.columnDONGIA = new global::System.Data.DataColumn("DONGIA", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDONGIA);
                 this.columnDONGIANHAP = new global::System.Data.DataColumn("DONGIANHAP", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDONGIANHAP);
             }
@@ -655,6 +669,22 @@ namespace Karaoke.DataSetContainer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int DONGIA {
+                get {
+                    try {
+                        return ((int)(this[this.tableDOANHTHUTHEOSANPHAM.DONGIAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DONGIA\' in table \'DOANHTHUTHEOSANPHAM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDOANHTHUTHEOSANPHAM.DONGIAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int DONGIANHAP {
                 get {
                     try {
@@ -715,6 +745,18 @@ namespace Karaoke.DataSetContainer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetTENSPNull() {
                 this[this.tableDOANHTHUTHEOSANPHAM.TENSPColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDONGIANull() {
+                return this.IsNull(this.tableDOANHTHUTHEOSANPHAM.DONGIAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDONGIANull() {
+                this[this.tableDOANHTHUTHEOSANPHAM.DONGIAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

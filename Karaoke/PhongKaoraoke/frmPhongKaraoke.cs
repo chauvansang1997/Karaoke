@@ -163,7 +163,7 @@ namespace Karaoke.PhongKaoraoke
             indexDatPhongHienTai = -1;
             trangThai = TrangThai.TatCa;
             dictionaryThongTinDpHienTai.Clear();
-            xemPhong = false;
+            xemPhong = true;
             settingsXemPhong.Checked = true;
             settingXemDanhSachDatPhong.Checked = false;
             dictionaryHienTai.Clear();
@@ -171,6 +171,7 @@ namespace Karaoke.PhongKaoraoke
             panelChoice.Top = btnTatCa.Top;
             hienThiTatCaPhong();
         }
+
         private void hienThiTatCaPhong()
         {
             indexHienTai = -1;
@@ -559,6 +560,8 @@ namespace Karaoke.PhongKaoraoke
                     indexDatPhongHienTai = -1;
                     indexHienTai = -1;
                     hienThiTatCaPhong();
+                    frmHoaDon hoaDon = new frmHoaDon(thongTinDatPhong);
+                    hoaDon.ShowDialog();
                 }
             }
            

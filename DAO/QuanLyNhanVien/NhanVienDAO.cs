@@ -43,13 +43,14 @@ namespace DAO.QuanLyNhanVien
             //}
 
             //return true;
-
+            string maNhanVien = TaoMa.TaoMaNhanVien();
             KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
             try
             {
+                karaokeDataContext.TAOMAs.Where(taoMa => taoMa.ID == 17).First().MACUOI += 1;
                 karaokeDataContext.NHANVIENs.InsertOnSubmit(new NHANVIEN()
                 {
-                    MANV = nv.MaNV,
+                    MANV = maNhanVien,
                     TENNV = nv.HoTen,
                     SDT = nv.SoDienThoai,
                     DIACHI = nv.DiaChi,

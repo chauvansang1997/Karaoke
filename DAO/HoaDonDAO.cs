@@ -120,7 +120,8 @@ namespace DAO
                 GIAPHONG = (int)ctdp.PHONG.LOAIPHONG.GIA,
                 ttdp.KHACHHANG.TENKH,
                 ttdp.KHACHHANG.SDT,
-                p.SANPHAM.DONVI.TENDV
+                p.SANPHAM.DONVI.TENDV,
+                GIO = (ctdp.GIORA.Value - ctdp.GIOVAO.Value).TotalHours
 
 
 

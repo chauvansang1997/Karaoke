@@ -321,6 +321,8 @@ namespace Karaoke.DataSetContainer {
             
             private global::System.Data.DataColumn columnSDT;
             
+            private global::System.Data.DataColumn columnGIO;
+            
             private global::System.Data.DataColumn columnTENDV;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -526,6 +528,14 @@ namespace Karaoke.DataSetContainer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn GIOColumn {
+                get {
+                    return this.columnGIO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn TENDVColumn {
                 get {
                     return this.columnTENDV;
@@ -591,6 +601,7 @@ namespace Karaoke.DataSetContainer {
                         int GIAPHONG, 
                         string TENKH, 
                         string SDT, 
+                        double GIO, 
                         string TENDV) {
                 HOADONTHANHTOANRow rowHOADONTHANHTOANRow = ((HOADONTHANHTOANRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
@@ -615,6 +626,7 @@ namespace Karaoke.DataSetContainer {
                         GIAPHONG,
                         TENKH,
                         SDT,
+                        GIO,
                         TENDV};
                 rowHOADONTHANHTOANRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHOADONTHANHTOANRow);
@@ -659,6 +671,7 @@ namespace Karaoke.DataSetContainer {
                 this.columnGIAPHONG = base.Columns["GIAPHONG"];
                 this.columnTENKH = base.Columns["TENKH"];
                 this.columnSDT = base.Columns["SDT"];
+                this.columnGIO = base.Columns["GIO"];
                 this.columnTENDV = base.Columns["TENDV"];
             }
             
@@ -707,6 +720,8 @@ namespace Karaoke.DataSetContainer {
                 base.Columns.Add(this.columnTENKH);
                 this.columnSDT = new global::System.Data.DataColumn("SDT", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSDT);
+                this.columnGIO = new global::System.Data.DataColumn("GIO", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGIO);
                 this.columnTENDV = new global::System.Data.DataColumn("TENDV", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTENDV);
             }
@@ -1187,6 +1202,22 @@ namespace Karaoke.DataSetContainer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double GIO {
+                get {
+                    try {
+                        return ((double)(this[this.tableHOADONTHANHTOAN.GIOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GIO\' in table \'HOADONTHANHTOAN\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHOADONTHANHTOAN.GIOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string TENDV {
                 get {
                     try {
@@ -1451,6 +1482,18 @@ namespace Karaoke.DataSetContainer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSDTNull() {
                 this[this.tableHOADONTHANHTOAN.SDTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsGIONull() {
+                return this.IsNull(this.tableHOADONTHANHTOAN.GIOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetGIONull() {
+                this[this.tableHOADONTHANHTOAN.GIOColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
