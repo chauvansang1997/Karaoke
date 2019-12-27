@@ -108,7 +108,20 @@ namespace DAO
                     where ctdp.MAPHONG == maPhong && ttdp.DATHANHTOAN == 0 && ttdp.NGAYNHAN != null
                     select ttdp.MADATPHONG).First();
         }
-
+        public static bool ThanhToanPhong(string maPhong)
+        {
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
+            var phong = karaokeDataContext.THONGTINDATPHONGs.Join(karaokeDataContext.CHITIETDATPHONGs,
+                ttdp => ttdp.MADATPHONG, ctdp => ctdp.MADATPHONG, (ttdp, ctdp) => new
+                {
+                    ttdp,
+                    ctdp
+                }).Where(p => p.ttdp.DATHANHTOAN == 0 && p.ctdp.MAPHONG == maPhong).First();
+            phong.ctdp.PHONG.TINHTRANG = "0";
+            phong.ctdp.GIORA = DateTime.Now;
+            karaokeDataContext.SubmitChanges();
+            return true;
+        }
         public static bool ThanhToanHoaDon(string maDatPhong)
         {
             KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
@@ -120,8 +133,15 @@ namespace DAO
             karaokeDataContext.CHITIETDATPHONGs.Where(ctdp => ctdp.MADATPHONG == maDatPhong).ToList().ForEach(
                     ctdp =>
                     {
-                        karaokeDataContext.PHONGs.Where(p => p.MAPHONG == ctdp.MAPHONG).First().TINHTRANG = "0";
+                        var phong = karaokeDataContext.PHONGs.Where(p => p.MAPHONG == ctdp.MAPHONG).First();
+                        phong.TINHTRANG = "0";
                         ctdp.GIORA = now;
+                        //tính tiền giờ cho từng phòng
+                        thanhTien += (long)((ctdp.GIORA - ctdp.GIOVAO).Value.TotalHours * phong.LOAIPHONG.GIA);
+                        //lấy tiền trên giờ của từng phòng
+                      
+
+
                         karaokeDataContext.CHITIETGOIMONs.Where(ctgm => ctgm.MADATPHONG == maDatPhong
                         && ctgm.MAPHONG == ctdp.MAPHONG).ToList().ForEach(
                                 ctgm =>
@@ -135,6 +155,9 @@ namespace DAO
 
                     }
                 );
+        
+
+
             //Tạo hóa đơn 
             string maHoaDon = TaoMa.TaoHoaDon();
             karaokeDataContext.TAOMAs.Where(taoMa => taoMa.ID == 3).First().MACUOI += 1;

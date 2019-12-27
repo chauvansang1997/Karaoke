@@ -59,7 +59,7 @@ namespace Karaoke.PhongKaoraoke
                 //txtGia.Text = phongHienTai.Gia.ToString();
                 //txtLoaiPhong.Text = phongHienTai.TenLoai;
                 txtTenKhachHang.Text = phongHienTai.GetKhachHang != null ? phongHienTai.GetKhachHang.Ten : "";
-                txtSDT.Text = phongHienTai.GetKhachHang != null ?  phongHienTai.GetKhachHang.SoDT : "" ;
+                txtSDT.Text = phongHienTai.GetKhachHang != null ? phongHienTai.GetKhachHang.SoDT : "";
             }
         }
 
@@ -124,20 +124,21 @@ namespace Karaoke.PhongKaoraoke
                 hienThiTatCaPhong();
 
             }
-            else {
+            else
+            {
                 totalPage = Utility.TinhKichThuocTrang(BUS.DatPhongBUS.DemThongTinDatPhong(0), pageSize);
                 txtTotalPage.Text = totalPage.ToString();
                 pageNumber = 1;
                 txtPageNumber.Text = "1";
                 hienThiTatCaPhong();
             }
-           
+
         }
         public void khoiTao()
         {
             txtTenKhachHang.Enabled = true;
             txtSDT.Enabled = true;
-            btnThanhToan.Enabled = false;
+            //btnThanhToan.Enabled = false;
             settingsXemPhong.Checked = true;
             trangThai = TrangThai.TatCa;
             indexHienTai = -1;
@@ -160,7 +161,14 @@ namespace Karaoke.PhongKaoraoke
             txtPageNumber.Text = "1";
             indexHienTai = -1;
             indexDatPhongHienTai = -1;
-            dictionaryHienTai = dictionaryAllLayout;
+            trangThai = TrangThai.TatCa;
+            dictionaryThongTinDpHienTai.Clear();
+            xemPhong = false;
+            settingsXemPhong.Checked = true;
+            settingXemDanhSachDatPhong.Checked = false;
+            dictionaryHienTai.Clear();
+            panelChoice.Height = btnTatCa.Height;
+            panelChoice.Top = btnTatCa.Top;
             hienThiTatCaPhong();
         }
         private void hienThiTatCaPhong()
@@ -194,6 +202,8 @@ namespace Karaoke.PhongKaoraoke
                         phongLayout.setClick((sender, e) =>
                         {
                             indexTruoc = indexHienTai;
+
+                           
                             if (indexTruoc != -1)
                             {
                                 if (listPhongLayout[indexTruoc].Phong.TinhTrang == 0)
@@ -205,7 +215,16 @@ namespace Karaoke.PhongKaoraoke
                                     listPhongLayout[indexTruoc].BackColor = Color.DarkRed;
                                 }
                             }
+
+                           
                             indexHienTai = phongLayout.IndexList;
+                            if (listPhongLayout[indexHienTai].Phong.TinhTrang == 0)
+                            {
+                                btnGoiMon.Enabled = false;
+                            }
+                            else {
+                                btnGoiMon.Enabled = true;
+                            }
 
                             PhongHienTai = phongLayout.Phong;
 
@@ -267,6 +286,7 @@ namespace Karaoke.PhongKaoraoke
                         thongTinDatPhongLayout.setClick((sender, e) =>
                         {
                             indexDatPhongTruoc = indexDatPhongHienTai;
+                          
                             if (indexTruoc != -1)
                             {
                                 if (listPhongLayout[indexTruoc].Phong.TinhTrang == 0)
@@ -471,13 +491,14 @@ namespace Karaoke.PhongKaoraoke
             xemPhong = true;
             settingXemDanhSachDatPhong.Checked = false;
             settingsXemPhong.Checked = true;
-            btnThanhToan.Enabled = false;
+            //btnThanhToan.Enabled = false;
             btnGoiMon.Enabled = true;
-            if (indexHienTai != -1) {
+            if (indexHienTai != -1)
+            {
                 dictionaryHienTai[pageNumber][indexHienTai].BackColor = Color.ForestGreen;
             }
 
-        
+
             thayDoiTrangThai();
         }
 
@@ -486,19 +507,19 @@ namespace Karaoke.PhongKaoraoke
             xemPhong = false;
             settingXemDanhSachDatPhong.Checked = true;
             settingsXemPhong.Checked = false;
-            btnThanhToan.Enabled = true;
+            //btnThanhToan.Enabled = true;
             btnGoiMon.Enabled = false;
             if (indexDatPhongHienTai != -1)
             {
                 dictionaryThongTinDpHienTai[pageNumber][indexDatPhongHienTai].BackColor = Color.ForestGreen;
             }
             thayDoiTrangThai();
-           // hienThiTatCaPhong();
+            // hienThiTatCaPhong();
         }
 
         private void btnGoiMon_Click(object sender, EventArgs e)
         {
-           // string soHoaDon = BUS.HoaDonBUS.LayMaHoaDon(listPhongLayout[indexHienTai].Phong.Ten);
+            // string soHoaDon = BUS.HoaDonBUS.LayMaHoaDon(listPhongLayout[indexHienTai].Phong.Ten);
             string maDatPhong = BUS.DatPhongBUS.LayMaDatPhong(listPhongLayout[indexHienTai].Phong.Ten);
 
             frmGoiMon goiMon = new frmGoiMon(maDatPhong, listPhongLayout[indexHienTai].Phong.Ten, this);
@@ -510,23 +531,37 @@ namespace Karaoke.PhongKaoraoke
             //}
             //else
             //{
-               
+
             //}
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if(thongTinDatPhong != null)
+            if (xemPhong)
             {
-                BUS.DatPhongBUS.ThanhToanHoaDon(thongTinDatPhong.maDatPhong);
-                dictionaryThongTinDpHienTai.Clear();
-                dictionaryHienTai.Clear();
-                indexDatPhongHienTai = -1;
-                indexHienTai = -1;
-                hienThiTatCaPhong();
-                frmHoaDon hoaDon = new frmHoaDon(thongTinDatPhong);
-                hoaDon.ShowDialog();
+                if(PhongHienTai.TinhTrang == 1)
+                {
+                    BUS.DatPhongBUS.ThanhToanPhong(PhongHienTai.Ten);
+                    dictionaryThongTinDpHienTai.Clear();
+                    dictionaryHienTai.Clear();
+                    indexDatPhongHienTai = -1;
+                    indexHienTai = -1;
+                    hienThiTatCaPhong();
+                }
             }
+            else
+            {
+                if (thongTinDatPhong != null)
+                {
+                    BUS.DatPhongBUS.ThanhToanHoaDon(thongTinDatPhong.maDatPhong);
+                    dictionaryThongTinDpHienTai.Clear();
+                    dictionaryHienTai.Clear();
+                    indexDatPhongHienTai = -1;
+                    indexHienTai = -1;
+                    hienThiTatCaPhong();
+                }
+            }
+           
         }
     }
 }

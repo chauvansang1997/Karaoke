@@ -31,13 +31,27 @@ namespace Karaoke.PhongKaoraoke
         }
         void LayoutDanhSachPhong() {
             dGVDanhSachPhong.Columns["GetKhachHang"].Visible = false;
-    
+            dGVDanhSachPhong.Columns["Ten"].HeaderText = "Tên";
+            dGVDanhSachPhong.Columns["Gia"].HeaderText = "Giá";
+            dGVDanhSachPhong.Columns["TenLoai"].HeaderText = "Loại Phòng";
+            dGVDanhSachPhong.Columns["TinhTrang"].Visible = false;
+
+        }
+        void LayoutDannhSachChonPhong()
+        {
+            dGVDanhSachChonPhong.Columns["GetKhachHang"].Visible = false;
+            dGVDanhSachChonPhong.Columns["Ten"].HeaderText = "Tên";
+            dGVDanhSachChonPhong.Columns["Gia"].HeaderText = "Giá";
+            dGVDanhSachChonPhong.Columns["TenLoai"].HeaderText = "Loại Phòng";
+            dGVDanhSachChonPhong.Columns["TinhTrang"].Visible = false;
+
         }
         void Init() {
             //lấy tất cả phòng đang trống hiện thị lên giao diện
             phongs = PhongBUS.XemPhong(0, pageSize, pageNumber);
             dGVDanhSachPhong.DataSource = phongs;
             LayoutDanhSachPhong();
+           // LayoutDannhSachChonPhong();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -53,6 +67,8 @@ namespace Karaoke.PhongKaoraoke
                 dGVDanhSachPhong.DataSource = phongs;
                 dGVDanhSachChonPhong.Columns["GetKhachHang"].Visible = false;
                 dGVDanhSachPhong.Columns["GetKhachHang"].Visible = false;
+                LayoutDannhSachChonPhong();
+                LayoutDanhSachPhong();
             }
         }
 
@@ -71,6 +87,8 @@ namespace Karaoke.PhongKaoraoke
                 dGVDanhSachPhong.DataSource = phongs;
                 dGVDanhSachChonPhong.Columns["GetKhachHang"].Visible = false;
                 dGVDanhSachPhong.Columns["GetKhachHang"].Visible = false;
+                LayoutDanhSachPhong();
+                LayoutDannhSachChonPhong();
             }
         }
 
@@ -84,8 +102,8 @@ namespace Karaoke.PhongKaoraoke
                 khachHang = khachHang,
                 nhanVien = User.NhanVien,            
             });
-            MessageBox.Show("Đặt phong thành công");
-           // phongKaraoke.
+            MessageBox.Show("Đặt phòng thành công");
+            phongKaraoke.reset();
             this.Close();
         }
 

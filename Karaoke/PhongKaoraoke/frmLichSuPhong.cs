@@ -35,24 +35,31 @@ namespace Karaoke.PhongKaoraoke
             dGvDanhSach.DataSource = BUS.PhongBUS.XemLichSuPhong(pageNumber, pageSize);
 
             dGvDanhSach.Columns[0].HeaderText = "Số hóa đơn";
-            dGvDanhSach.Columns[1].HeaderText = "Tên khách hàng";
-            dGvDanhSach.Columns[3].HeaderText = "Phòng";
-            dGvDanhSach.Columns[5].HeaderText = "Giá";
-            dGvDanhSach.Columns[4].HeaderText = "Loại phòng";
-            dGvDanhSach.Columns[2].HeaderText = "Số điện thoại";
-            dGvDanhSach.Columns[6].HeaderText = "Giờ vào";
-            dGvDanhSach.Columns[7].HeaderText = "Giờ ra";
+
+            dGvDanhSach.Columns[1].Visible = false;
+            dGvDanhSach.Columns[2].Visible = false;
+            dGvDanhSach.Columns[3].HeaderText = "Tên khách hàng";
+            dGvDanhSach.Columns[4].HeaderText = "Số điện thoại";
+            dGvDanhSach.Columns[5].Visible = false;
+            dGvDanhSach.Columns[6].HeaderText = "Tên nhân viên";
+            dGvDanhSach.Columns[7].HeaderText = "Ngày đặt phòng";
+            dGvDanhSach.Columns[8].HeaderText = "Ngày nhận phòng";
+            dGvDanhSach.Columns[9].HeaderText = "Tiền cọc";
+            dGvDanhSach.Columns[10].HeaderText = "Giảm giá";
+            //dGvDanhSach.Columns[3].HeaderText = "Phòng";
+            //dGvDanhSach.Columns[5].HeaderText = "Giá";
+            //dGvDanhSach.Columns[4].HeaderText = "Loại phòng";
+            //dGvDanhSach.Columns[2].HeaderText = "Số điện thoại";
+            //dGvDanhSach.Columns[6].HeaderText = "Giờ vào";
+            //dGvDanhSach.Columns[7].HeaderText = "Giờ ra";
         }
         private void dGvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if(dGvDanhSach.CurrentCell != null)
             {
                 int index = dGvDanhSach.CurrentCell.RowIndex;
-                txtTenKhachHang.Text = dGvDanhSach[1, index].Value.ToString();
-                txtTenPhong.Text = dGvDanhSach[3, index].Value.ToString();
-                txtSDT.Text = dGvDanhSach[2, index].Value.ToString();
-                txtGia.Text = dGvDanhSach[5, index].Value.ToString();
-                txtLoaiPhong.Text = dGvDanhSach[4, index].Value.ToString();
+                txtTenKhachHang.Text = dGvDanhSach[3, index].Value.ToString();
+                txtSDT.Text = dGvDanhSach[4, index].Value.ToString();
                 soHoaDon = dGvDanhSach[0, index].Value.ToString();
             }
         }

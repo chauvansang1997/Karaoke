@@ -403,65 +403,127 @@ namespace DAO
 
         public static bool ChuyenPhong(string phongHienTai, string phongChuyen)
         {
-            string query = "EXEC uspChuyenPhong @maPhongHienTai,@maPhongChuyen ";
+
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
+            var thongTinDatPhong = (from ttdp in karaokeDataContext.THONGTINDATPHONGs
+             join ctdp in karaokeDataContext.CHITIETDATPHONGs
+             on ttdp.MADATPHONG equals ctdp.MADATPHONG
+             where ctdp.MAPHONG == phongHienTai && ttdp.DATHANHTOAN == 0 && ttdp.NGAYNHAN != null
+             select ttdp).First();
+            var chiTietDatPhong =
+            karaokeDataContext.CHITIETDATPHONGs.Where(ctdp => ctdp.MAPHONG == phongHienTai &&
+            ctdp.MADATPHONG == thongTinDatPhong.MADATPHONG).First();
+            chiTietDatPhong.PHONG.TINHTRANG = "0";
+
+            var listSanPham = karaokeDataContext.CHITIETGOIMONs.Where(ctgm => ctgm.MADATPHONG == thongTinDatPhong.MADATPHONG &&
+            ctgm.MAPHONG == chiTietDatPhong.MAPHONG);
 
 
-            List<SqlParameter> parameters = new List<SqlParameter>()
+            karaokeDataContext.CHITIETDATPHONGs.InsertOnSubmit(new CHITIETDATPHONG()
             {
-                  new SqlParameter("@maPhongHienTai",SqlDbType.VarChar){ Value=phongHienTai  },
-                  new SqlParameter("@maPhongChuyen",SqlDbType.VarChar){ Value=phongChuyen },
+                GIOVAO = chiTietDatPhong.GIOVAO,
+                MADATPHONG = chiTietDatPhong.MADATPHONG,
+                MAPHONG = phongChuyen,
 
+            });
 
-            };
-            try
-            {
-                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+            if (listSanPham.Count() > 0) {
+               // karaokeDataContext.CHITIETGOIMONs.DeleteAllOnSubmit(listSanPham);
+                listSanPham.ToList().ForEach(
+                     sanPham =>
+                     {
+                         sanPham.MAPHONG = phongChuyen;
+                     }
+                    );
             }
-            catch (Exception ex)
-            {
-                Utility.Log(ex);
-                return false;
-            }
+
+
+            karaokeDataContext.CHITIETDATPHONGs.DeleteOnSubmit(chiTietDatPhong);
+
+
+            //string query = "EXEC uspChuyenPhong @maPhongHienTai,@maPhongChuyen ";
+
+
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //      new SqlParameter("@maPhongHienTai",SqlDbType.VarChar){ Value=phongHienTai  },
+            //      new SqlParameter("@maPhongChuyen",SqlDbType.VarChar){ Value=phongChuyen },
+
+
+            //};
+            //try
+            //{
+            //    Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+            //}
+            //catch (Exception ex)
+            //{
+            //    Utility.Log(ex);
+            //    return false;
+            //}
             return true;
-        }
-
-        public static DataTable XemLichSuPhong(int pageNumber, int pageSize)
-        {
-            string query = "EXEC uspXemLichSuDatPhong @pageNumber,@pageSize";
-
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@pageNumber",SqlDbType.Int){ Value=pageNumber  },
-                new SqlParameter("@pageSize",SqlDbType.Int){ Value=pageSize  },
-
-            };
-            DataTable table = null;
-            try
-            {
-                table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
-
-            }
-            catch (Exception ex)
-            {
-                Utility.Log(ex);
-            }
-
-            return table;
         }
         public static int DemLichSuPhong()
         {
-            string query = "EXEC uspDemLichSuDatPhong ";
-            int count = 0;
-            try
-            {
-                count = int.Parse(Dataprovider.ExcuteScalar(query).ToString());
-            }
-            catch (Exception ex)
-            {
-                Utility.Log(ex);
-            }
-            return count;
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
+            return karaokeDataContext.THONGTINDATPHONGs.Select(ttdp => ttdp).Count();
         }
+        public static DataTable XemLichSuPhong(int pageNumber, int pageSize)
+        {
+            KaraokeDataContext karaokeDataContext = new KaraokeDataContext();
+  
+
+            return Utility.ConvertToDataTable(karaokeDataContext.THONGTINDATPHONGs.
+                Join(karaokeDataContext.HOADONs, ttdp => ttdp.MADATPHONG,
+                     hoaDon => hoaDon.MADATPHONG, (ttdp, hoaDon) => new
+                     {
+                         hoaDon.MAHD,
+                         ttdp.MADATPHONG,
+                         ttdp.MAKH,
+                         ttdp.KHACHHANG.TENKH,
+                         ttdp.KHACHHANG.SDT,
+                         ttdp.MANV,
+                         ttdp.NHANVIEN.TENNV,
+                         ttdp.NGAYDAT,
+                         ttdp.NGAYNHAN,
+                         ttdp.TIENCOC,
+                         ttdp.GIAMGIA
+                     }
+                     ).Skip((pageNumber -1)*pageSize).Take(pageSize).ToList());
+            //string query = "EXEC uspXemLichSuDatPhong @pageNumber,@pageSize";
+
+            //List<SqlParameter> parameters = new List<SqlParameter>()
+            //{
+            //    new SqlParameter("@pageNumber",SqlDbType.Int){ Value=pageNumber  },
+            //    new SqlParameter("@pageSize",SqlDbType.Int){ Value=pageSize  },
+
+            //};
+            //DataTable table = null;
+            //try
+            //{
+            //    table = Dataprovider.ExcuteQuery(query, parameters.ToArray());
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    Utility.Log(ex);
+            //}
+
+            //return table;
+        }
+        //public static int DemLichSuPhong()
+        //{
+        //    string query = "EXEC uspDemLichSuDatPhong ";
+        //    int count = 0;
+        //    try
+        //    {
+        //        count = int.Parse(Dataprovider.ExcuteScalar(query).ToString());
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Utility.Log(ex);
+        //    }
+        //    return count;
+        //}
         public static DataTable XemLoaiPhong()
         {
             using (KaraokeDataContext karaokeDataContext = new KaraokeDataContext())
